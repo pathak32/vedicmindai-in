@@ -493,6 +493,7 @@ const SignInForm = React.memo(function SignInForm({ onSwitchTab }) {
 
     if (!user || hashPassword(form.password) !== user.passwordHash) {
       toast.error('Incorrect mobile number or password');
+      setErrors({ password: 'Incorrect mobile number or password' });
       return;
     }
     user.isNewUser = false;
