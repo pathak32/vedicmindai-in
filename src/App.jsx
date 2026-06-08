@@ -1,5 +1,6 @@
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
+import ForgotPassword from './pages/ForgotPassword';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { VedicAuthProvider } from '@/lib/VedicAuthContext';
 import { ProgressProvider } from '@/lib/ProgressContext';
@@ -102,6 +103,7 @@ function RouteTransition() {
               <Route path="/weekly-exam/results" element={<WeeklyExamResultsPage />} />
               <Route path="/olympiad" element={<OlympiadPage />} />
               <Route path="/olympiad/results" element={<OlympiadResultsPage />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/battle" element={<BattleModePage />} />
               <Route path="/payment-success" element={<PaymentSuccessPage />} />
               <Route path="/reviews" element={<ReviewsPage />} />
