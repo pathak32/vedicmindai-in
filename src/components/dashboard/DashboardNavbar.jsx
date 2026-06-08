@@ -374,7 +374,7 @@ export default function DashboardNavbar() {
             }}>🛡️ Admin Panel</Link>
           ); } return null; })()}
           <button onClick={() => { setMobileOpen(false); handleSignOut(); }} style={{
-            display: 'flex', alignItems: 'center', width: '100%', height: 56, padding: '0 16px',
+            display: 'flex', alignItems: 'center', width: '100%', minheight: 56, padding: '0 16px',
             fontSize: 15, fontFamily: 'var(--font-body)', fontWeight: 500,
             color: '#EF4444', background: 'transparent', border: 'none', cursor: 'pointer',
             textAlign: 'left',
