@@ -337,7 +337,7 @@ export default function DashboardNavbar() {
 
       {/* Mobile dropdown */}
       {mobileOpen && (
-        <div className="mobile-menu-container" style={{ position: 'fixed', top: 56, left: 0, width: '100vw', background: '#0A1628', zIndex: 999, animation: 'navSlideDown 0.2s ease-out', maxHeight: 'calc(100vh - 56px)', overflowY: 'auto' }}>
+        <div className="mobile-menu-container" style={{ position: 'fixed', top: 56, left: 0, width: '100vw', background: '#0A1628', zIndex: 999, animation: 'navSlideDown 0.2s ease-out', maxHeight: 'calc(100vh - 56px)',overflowY: 'scroll', WebkitOverflowScrolling: 'touch'}}>
           {[
             ...REGULAR_LINKS,
             { label: 'Daily Quiz', path: '/daily-quiz' },
