@@ -1,0 +1,27 @@
+import React from 'react';
+
+export default function Footer() {
+  return (
+    <footer className="bg-[#0A1628] py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <span className="font-heading text-xl font-bold text-white">VedicMind™</span>
+            <p className="text-blue-300 text-sm mt-1">Ancient Wisdom. Infinite Speed.</p>
+          </div>
+          <div className="flex gap-6 text-sm text-blue-300">
+            <a href="#" className="hover:text-white transition-colors">Privacy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <a href="#" className="hover:text-white transition-colors">Contact</a>
+          </div>
+          <p className="text-sm text-blue-400">© {new Date().getFullYear()} VedicMind™. All rights reserved.</p>
+        </div>
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: 24, paddingTop: 16, textAlign: 'center' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.5)', margin: 0 }}>
+            © 2026 VedicMind™ | vedicmindai.in | Ancient Wisdom. Infinite Speed.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
