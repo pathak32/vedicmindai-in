@@ -265,7 +265,7 @@ function ForgotPasswordLink() {
 const SignUpForm = React.memo(function SignUpForm({ onSwitchTab }) {
   const navigate = useNavigate();
   const [screen, setScreen] = useState('form'); // 'form' | 'otp'
-  const [form, setForm] = useState({ name: '', mobile: '', email: '', password: '', confirmPassword: '' });
+  const [form, setForm] = useState({ name: '', mobile: '', email: '', password: '', confirmPassword: '', dob: '' });
   const [errors, setErrors] = useState({});
   const [showPw, setShowPw] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
@@ -281,6 +281,7 @@ const SignUpForm = React.memo(function SignUpForm({ onSwitchTab }) {
     const e = {};
     if (!form.name.trim()) e.name = 'Name is required';
     if (!validateMobile(form.mobile)) e.mobile = 'Enter a valid 10-digit mobile number starting with 6–9';
+    if (!form.dob) e.dob = 'Date of birth is required';
     if (form.password.length < 8) e.password = 'Password must be at least 8 characters';
     if (form.password !== form.confirmPassword) e.confirmPassword = 'Passwords do not match';
     setErrors(e);
@@ -316,6 +317,7 @@ const SignUpForm = React.memo(function SignUpForm({ onSwitchTab }) {
       name: form.name.trim(),
       email: form.email || '',
       passwordHash: hashPassword(form.password),
+      dob: form.dob,
       createdAt: new Date().toISOString(),
       isNewUser: true,
     };
@@ -383,6 +385,16 @@ const SignUpForm = React.memo(function SignUpForm({ onSwitchTab }) {
           className={`w-full h-11 px-4 rounded-xl border bg-white text-[#0A1628] text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6] ${errors.name ? 'border-[#EF4444]' : 'border-[rgba(30,64,175,0.15)]'}`}
         />
         {errors.name && <p className="text-[#EF4444] text-xs mt-1">{errors.name}</p>}
+      </div>
+
+      {/* Date of Birth */}
+      <div>
+        <label className="block text-sm font-medium text-[#0A1628] mb-1.5">Date of Birth <span style={{ color: '#4B5563', fontSize: 12 }}>(used for password recovery)</span></label>
+        <input type="date" value={form.dob} onChange={e => setForm({ ...form, dob: e.target.value })}
+          style={{ fontSize: 16 }}
+          className={`w-full h-11 px-4 rounded-xl border bg-white text-[#0A1628] text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6] ${errors.dob ? 'border-[#EF4444]' : 'border-[rgba(30,64,175,0.15)]'}`}
+        />
+        {errors.dob && <p className="text-[#EF4444] text-xs mt-1">{errors.dob}</p>}
       </div>
 
       {/* Mobile */}
