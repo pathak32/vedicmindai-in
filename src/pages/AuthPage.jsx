@@ -533,8 +533,9 @@ const SignInForm = React.memo(function SignInForm({ onSwitchTab }) {
           </button>
         </div>
         {errors.password && <p className="text-[#EF4444] text-xs mt-1">{errors.password}</p>}
-        <ForgotPasswordLink />
-      </div>
+<div style={{textAlign:'right', marginTop: 4}}>
+  <a href="/forgot-password" style={{color:'#3B82F6', fontSize:14, fontFamily:'var(--font-body)', textDecoration:'none'}}>Forgot Password?</a>
+</div>      </div>
 
       <button type="button" onClick={handleSignIn}
         style={{
