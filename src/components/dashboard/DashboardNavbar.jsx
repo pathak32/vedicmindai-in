@@ -217,8 +217,8 @@ export default function DashboardNavbar() {
         setMobileOpen(false);
       }
     };
-    document.addEventListener('click', handler);
-    return () => document.removeEventListener('click', handler);
+   const timer = setTimeout(() => { document.addEventListener('click', handler); }, 100);
+   return () => { clearTimeout(timer); document.removeEventListener('click', handler); };
   }, [mobileOpen]);
 
   const allRegularLinks = [...REGULAR_LINKS, ...AFTER_QUIZ_LINKS];
