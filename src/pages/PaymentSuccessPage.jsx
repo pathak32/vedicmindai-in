@@ -59,6 +59,7 @@ export default function PaymentSuccessPage() {
     try {
       const profile = JSON.parse(localStorage.getItem('vedicmind_profile') || '{}');
       profile.subscriptionStatus = 'active';
+      profile.paymentStatus = 'completed';
       profile.planType = basePlan;
       localStorage.setItem('vedicmind_profile', JSON.stringify(profile));
     } catch {}
