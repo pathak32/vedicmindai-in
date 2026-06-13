@@ -1,1 +1,44 @@
-{"name":"toggle-group.jsx","path":"src/components/ui/toggle-group.jsx","sha":"c1cfc9a1441c3c1d72f3085b328ad29893642dea","size":1284,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/toggle-group.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/toggle-group.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/c1cfc9a1441c3c1d72f3085b328ad29893642dea","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/toggle-group.jsx?token=CFODAP33PFO3PIXWF43JLCLKFSQ2VAA","type":"file","content":"InVzZSBjbGllbnQiOwppbXBvcnQgKiBhcyBSZWFjdCBmcm9tICJyZWFjdCIK\naW1wb3J0ICogYXMgVG9nZ2xlR3JvdXBQcmltaXRpdmUgZnJvbSAiQHJhZGl4\nLXVpL3JlYWN0LXRvZ2dsZS1ncm91cCIKCmltcG9ydCB7IGNuIH0gZnJvbSAi\nQC9saWIvdXRpbHMiCmltcG9ydCB7IHRvZ2dsZVZhcmlhbnRzIH0gZnJvbSAi\nQC9jb21wb25lbnRzL3VpL3RvZ2dsZSIKCmNvbnN0IFRvZ2dsZUdyb3VwQ29u\ndGV4dCA9IFJlYWN0LmNyZWF0ZUNvbnRleHQoewogIHNpemU6ICJkZWZhdWx0\nIiwKICB2YXJpYW50OiAiZGVmYXVsdCIsCn0pCgpjb25zdCBUb2dnbGVHcm91\ncCA9IFJlYWN0LmZvcndhcmRSZWYoKHsgY2xhc3NOYW1lLCB2YXJpYW50LCBz\naXplLCBjaGlsZHJlbiwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoCiAgPFRvZ2ds\nZUdyb3VwUHJpbWl0aXZlLlJvb3QKICAgIHJlZj17cmVmfQogICAgY2xhc3NO\nYW1lPXtjbigiZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2Fw\nLTEiLCBjbGFzc05hbWUpfQogICAgey4uLnByb3BzfT4KICAgIDxUb2dnbGVH\ncm91cENvbnRleHQuUHJvdmlkZXIgdmFsdWU9e3sgdmFyaWFudCwgc2l6ZSB9\nfT4KICAgICAge2NoaWxkcmVufQogICAgPC9Ub2dnbGVHcm91cENvbnRleHQu\nUHJvdmlkZXI+CiAgPC9Ub2dnbGVHcm91cFByaW1pdGl2ZS5Sb290PgopKQoK\nVG9nZ2xlR3JvdXAuZGlzcGxheU5hbWUgPSBUb2dnbGVHcm91cFByaW1pdGl2\nZS5Sb290LmRpc3BsYXlOYW1lCgpjb25zdCBUb2dnbGVHcm91cEl0ZW0gPSBS\nZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgY2hpbGRyZW4sIHZhcmlh\nbnQsIHNpemUsIC4uLnByb3BzIH0sIHJlZikgPT4gewogIGNvbnN0IGNvbnRl\neHQgPSBSZWFjdC51c2VDb250ZXh0KFRvZ2dsZUdyb3VwQ29udGV4dCkKCiAg\ncmV0dXJuICgKICAgICg8VG9nZ2xlR3JvdXBQcmltaXRpdmUuSXRlbQogICAg\nICByZWY9e3JlZn0KICAgICAgY2xhc3NOYW1lPXtjbih0b2dnbGVWYXJpYW50\ncyh7CiAgICAgICAgdmFyaWFudDogY29udGV4dC52YXJpYW50IHx8IHZhcmlh\nbnQsCiAgICAgICAgc2l6ZTogY29udGV4dC5zaXplIHx8IHNpemUsCiAgICAg\nIH0pLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9PgogICAgICB7Y2hp\nbGRyZW59CiAgICA8L1RvZ2dsZUdyb3VwUHJpbWl0aXZlLkl0ZW0+KQogICk7\nCn0pCgpUb2dnbGVHcm91cEl0ZW0uZGlzcGxheU5hbWUgPSBUb2dnbGVHcm91\ncFByaW1pdGl2ZS5JdGVtLmRpc3BsYXlOYW1lCgpleHBvcnQgeyBUb2dnbGVH\ncm91cCwgVG9nZ2xlR3JvdXBJdGVtIH0K\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/toggle-group.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/c1cfc9a1441c3c1d72f3085b328ad29893642dea","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/toggle-group.jsx"}}
+"use client";
+import * as React from "react"
+import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group"
+
+import { cn } from "@/lib/utils"
+import { toggleVariants } from "@/components/ui/toggle"
+
+const ToggleGroupContext = React.createContext({
+  size: "default",
+  variant: "default",
+})
+
+const ToggleGroup = React.forwardRef(({ className, variant, size, children, ...props }, ref) => (
+  <ToggleGroupPrimitive.Root
+    ref={ref}
+    className={cn("flex items-center justify-center gap-1", className)}
+    {...props}>
+    <ToggleGroupContext.Provider value={{ variant, size }}>
+      {children}
+    </ToggleGroupContext.Provider>
+  </ToggleGroupPrimitive.Root>
+))
+
+ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName
+
+const ToggleGroupItem = React.forwardRef(({ className, children, variant, size, ...props }, ref) => {
+  const context = React.useContext(ToggleGroupContext)
+
+  return (
+    (<ToggleGroupPrimitive.Item
+      ref={ref}
+      className={cn(toggleVariants({
+        variant: context.variant || variant,
+        size: context.size || size,
+      }), className)}
+      {...props}>
+      {children}
+    </ToggleGroupPrimitive.Item>)
+  );
+})
+
+ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName
+
+export { ToggleGroup, ToggleGroupItem }
