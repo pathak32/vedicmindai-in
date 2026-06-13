@@ -1,43 +1,43 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { getSupabase } from './supabaseClient';
+import { saveUserProgress } from './supabaseDataService';
 
 const ProgressContext = createContext(null);
-
 const STORAGE_KEY = 'vedicmind_progress';
 
 const defaultProgress = {
-  currentLevel: 1,
-  currentLesson: 1,
-  completedLessons: [],
-  lessonScores: {},
-  totalXP: 0,
-  streak: 0,
-  lastStudyDate: null,
-  studyDates: [],
-  badges: [],
-  practiceHistory: [],
+  currentLevel: 1, currentLesson: 1, completedLessons: [],
+  lessonScores: {}, totalXP: 0, streak: 0, lastStudyDate: null,
+  studyDates: [], badges: [], practiceHistory: [],
 };
 
 export function ProgressProvider({ children }) {
   const [progress, setProgress] = useState(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    return stored ? JSON.parse(stored) : defaultProgress;
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || defaultProgress; } catch { return defaultProgress; }
   });
 
+  // Sync to localStorage + Supabase on change
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    (async () => {
+      try {
+        const supabase = await getSupabase();
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session?.user?.id) {
+          await saveUserProgress(session.user.id, progress);
+        }
+      } catch (e) { /* silent fail */ }
+    })();
   }, [progress]);
 
-  const addXP = (amount) => {
-    setProgress(prev => ({ ...prev, totalXP: prev.totalXP + amount }));
-  };
+  const addXP = (amount) => setProgress(prev => ({ ...prev, totalXP: prev.totalXP + amount }));
 
   const completeLesson = (lessonId, score) => {
     setProgress(prev => {
       const today = new Date().toISOString().split('T')[0];
       const newStudyDates = prev.studyDates.includes(today) ? prev.studyDates : [...prev.studyDates, today];
       const isConsecutive = prev.lastStudyDate
-        ? (new Date(today) - new Date(prev.lastStudyDate)) / 86400000 <= 1
-        : true;
+        ? (new Date(today) - new Date(prev.lastStudyDate)) / 86400000 <= 1 : true;
       return {
         ...prev,
         completedLessons: [...new Set([...prev.completedLessons, lessonId])],
