@@ -130,7 +130,10 @@ export default function WeeklyExamResultsPage() {
   else { perfMsg = 'Keep going! 🧮 Every attempt builds skill.'; perfColor = '#EF4444'; }
 
   const whatsappMsg = encodeURIComponent(
-    `I scored ${score}/120 on VedicMind's Weekly Vedic Maths Exam this Sunday! 🧮🏆\nGroup: ${groupLabel}\nCan you beat my score? Challenge accepted?\nTry FREE at vedicmindai.in`
+    `I scored ${score}/120 on VedicMind's Weekly Vedic Maths Exam this Sunday! 🧮🏆
+Group: ${groupLabel}
+Can you beat my score? Challenge accepted?
+Try FREE at vedicmindai.in`
   );
 
   const visibleCount = showAll ? questions.length : 5;
