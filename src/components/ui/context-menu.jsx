@@ -1,1 +1,156 @@
-{"name":"context-menu.jsx","path":"src/components/ui/context-menu.jsx","sha":"fdfdbae6c8f1c6e807033e5e9b7656da0e8a84c2","size":5995,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/context-menu.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/context-menu.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/fdfdbae6c8f1c6e807033e5e9b7656da0e8a84c2","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/context-menu.jsx?token=CFODAPYWITDB7SCDYKJPXLTKFSQY3AA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIENv\nbnRleHRNZW51UHJpbWl0aXZlIGZyb20gIkByYWRpeC11aS9yZWFjdC1jb250\nZXh0LW1lbnUiCmltcG9ydCB7IENoZWNrLCBDaGV2cm9uUmlnaHQsIENpcmNs\nZSB9IGZyb20gImx1Y2lkZS1yZWFjdCIKCmltcG9ydCB7IGNuIH0gZnJvbSAi\nQC9saWIvdXRpbHMiCgpjb25zdCBDb250ZXh0TWVudSA9IENvbnRleHRNZW51\nUHJpbWl0aXZlLlJvb3QKCmNvbnN0IENvbnRleHRNZW51VHJpZ2dlciA9IENv\nbnRleHRNZW51UHJpbWl0aXZlLlRyaWdnZXIKCmNvbnN0IENvbnRleHRNZW51\nR3JvdXAgPSBDb250ZXh0TWVudVByaW1pdGl2ZS5Hcm91cAoKY29uc3QgQ29u\ndGV4dE1lbnVQb3J0YWwgPSBDb250ZXh0TWVudVByaW1pdGl2ZS5Qb3J0YWwK\nCmNvbnN0IENvbnRleHRNZW51U3ViID0gQ29udGV4dE1lbnVQcmltaXRpdmUu\nU3ViCgpjb25zdCBDb250ZXh0TWVudVJhZGlvR3JvdXAgPSBDb250ZXh0TWVu\ndVByaW1pdGl2ZS5SYWRpb0dyb3VwCgpjb25zdCBDb250ZXh0TWVudVN1YlRy\naWdnZXIgPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgaW5zZXQs\nIGNoaWxkcmVuLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8Q29udGV4dE1l\nbnVQcmltaXRpdmUuU3ViVHJpZ2dlcgogICAgcmVmPXtyZWZ9CiAgICBjbGFz\nc05hbWU9e2NuKAogICAgICAiZmxleCBjdXJzb3ItZGVmYXVsdCBzZWxlY3Qt\nbm9uZSBpdGVtcy1jZW50ZXIgcm91bmRlZC1zbSBweC0yIHB5LTEuNSB0ZXh0\nLXNtIG91dGxpbmUtbm9uZSBmb2N1czpiZy1hY2NlbnQgZm9jdXM6dGV4dC1h\nY2NlbnQtZm9yZWdyb3VuZCBkYXRhLVtzdGF0ZT1vcGVuXTpiZy1hY2NlbnQg\nZGF0YS1bc3RhdGU9b3Blbl06dGV4dC1hY2NlbnQtZm9yZWdyb3VuZCIsCiAg\nICAgIGluc2V0ICYmICJwbC04IiwKICAgICAgY2xhc3NOYW1lCiAgICApfQog\nICAgey4uLnByb3BzfT4KICAgIHtjaGlsZHJlbn0KICAgIDxDaGV2cm9uUmln\naHQgY2xhc3NOYW1lPSJtbC1hdXRvIGgtNCB3LTQiIC8+CiAgPC9Db250ZXh0\nTWVudVByaW1pdGl2ZS5TdWJUcmlnZ2VyPgopKQpDb250ZXh0TWVudVN1YlRy\naWdnZXIuZGlzcGxheU5hbWUgPSBDb250ZXh0TWVudVByaW1pdGl2ZS5TdWJU\ncmlnZ2VyLmRpc3BsYXlOYW1lCgpjb25zdCBDb250ZXh0TWVudVN1YkNvbnRl\nbnQgPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMg\nfSwgcmVmKSA9PiAoCiAgPENvbnRleHRNZW51UHJpbWl0aXZlLlN1YkNvbnRl\nbnQKICAgIHJlZj17cmVmfQogICAgY2xhc3NOYW1lPXtjbigKICAgICAgInot\nNTAgbWluLXctWzhyZW1dIG92ZXJmbG93LWhpZGRlbiByb3VuZGVkLW1kIGJv\ncmRlciBiZy1wb3BvdmVyIHAtMSB0ZXh0LXBvcG92ZXItZm9yZWdyb3VuZCBz\naGFkb3ctbGcgZGF0YS1bc3RhdGU9b3Blbl06YW5pbWF0ZS1pbiBkYXRhLVtz\ndGF0ZT1jbG9zZWRdOmFuaW1hdGUtb3V0IGRhdGEtW3N0YXRlPWNsb3NlZF06\nZmFkZS1vdXQtMCBkYXRhLVtzdGF0ZT1vcGVuXTpmYWRlLWluLTAgZGF0YS1b\nc3RhdGU9Y2xvc2VkXTp6b29tLW91dC05NSBkYXRhLVtzdGF0ZT1vcGVuXTp6\nb29tLWluLTk1IGRhdGEtW3NpZGU9Ym90dG9tXTpzbGlkZS1pbi1mcm9tLXRv\ncC0yIGRhdGEtW3NpZGU9bGVmdF06c2xpZGUtaW4tZnJvbS1yaWdodC0yIGRh\ndGEtW3NpZGU9cmlnaHRdOnNsaWRlLWluLWZyb20tbGVmdC0yIGRhdGEtW3Np\nZGU9dG9wXTpzbGlkZS1pbi1mcm9tLWJvdHRvbS0yIiwKICAgICAgY2xhc3NO\nYW1lCiAgICApfQogICAgey4uLnByb3BzfSAvPgopKQpDb250ZXh0TWVudVN1\nYkNvbnRlbnQuZGlzcGxheU5hbWUgPSBDb250ZXh0TWVudVByaW1pdGl2ZS5T\ndWJDb250ZW50LmRpc3BsYXlOYW1lCgpjb25zdCBDb250ZXh0TWVudUNvbnRl\nbnQgPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMg\nfSwgcmVmKSA9PiAoCiAgPENvbnRleHRNZW51UHJpbWl0aXZlLlBvcnRhbD4K\nICAgIDxDb250ZXh0TWVudVByaW1pdGl2ZS5Db250ZW50CiAgICAgIHJlZj17\ncmVmfQogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJ6LTUwIG1pbi13\nLVs4cmVtXSBvdmVyZmxvdy1oaWRkZW4gcm91bmRlZC1tZCBib3JkZXIgYmct\ncG9wb3ZlciBwLTEgdGV4dC1wb3BvdmVyLWZvcmVncm91bmQgc2hhZG93LW1k\nIGRhdGEtW3N0YXRlPW9wZW5dOmFuaW1hdGUtaW4gZGF0YS1bc3RhdGU9Y2xv\nc2VkXTphbmltYXRlLW91dCBkYXRhLVtzdGF0ZT1jbG9zZWRdOmZhZGUtb3V0\nLTAgZGF0YS1bc3RhdGU9b3Blbl06ZmFkZS1pbi0wIGRhdGEtW3N0YXRlPWNs\nb3NlZF06em9vbS1vdXQtOTUgZGF0YS1bc3RhdGU9b3Blbl06em9vbS1pbi05\nNSBkYXRhLVtzaWRlPWJvdHRvbV06c2xpZGUtaW4tZnJvbS10b3AtMiBkYXRh\nLVtzaWRlPWxlZnRdOnNsaWRlLWluLWZyb20tcmlnaHQtMiBkYXRhLVtzaWRl\nPXJpZ2h0XTpzbGlkZS1pbi1mcm9tLWxlZnQtMiBkYXRhLVtzaWRlPXRvcF06\nc2xpZGUtaW4tZnJvbS1ib3R0b20tMiIsCiAgICAgICAgY2xhc3NOYW1lCiAg\nICAgICl9CiAgICAgIHsuLi5wcm9wc30gLz4KICA8L0NvbnRleHRNZW51UHJp\nbWl0aXZlLlBvcnRhbD4KKSkKQ29udGV4dE1lbnVDb250ZW50LmRpc3BsYXlO\nYW1lID0gQ29udGV4dE1lbnVQcmltaXRpdmUuQ29udGVudC5kaXNwbGF5TmFt\nZQoKY29uc3QgQ29udGV4dE1lbnVJdGVtID0gUmVhY3QuZm9yd2FyZFJlZigo\neyBjbGFzc05hbWUsIGluc2V0LCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8\nQ29udGV4dE1lbnVQcmltaXRpdmUuSXRlbQogICAgcmVmPXtyZWZ9CiAgICBj\nbGFzc05hbWU9e2NuKAogICAgICAicmVsYXRpdmUgZmxleCBjdXJzb3ItZGVm\nYXVsdCBzZWxlY3Qtbm9uZSBpdGVtcy1jZW50ZXIgcm91bmRlZC1zbSBweC0y\nIHB5LTEuNSB0ZXh0LXNtIG91dGxpbmUtbm9uZSBmb2N1czpiZy1hY2NlbnQg\nZm9jdXM6dGV4dC1hY2NlbnQtZm9yZWdyb3VuZCBkYXRhLVtkaXNhYmxlZF06\ncG9pbnRlci1ldmVudHMtbm9uZSBkYXRhLVtkaXNhYmxlZF06b3BhY2l0eS01\nMCIsCiAgICAgIGluc2V0ICYmICJwbC04IiwKICAgICAgY2xhc3NOYW1lCiAg\nICApfQogICAgey4uLnByb3BzfSAvPgopKQpDb250ZXh0TWVudUl0ZW0uZGlz\ncGxheU5hbWUgPSBDb250ZXh0TWVudVByaW1pdGl2ZS5JdGVtLmRpc3BsYXlO\nYW1lCgpjb25zdCBDb250ZXh0TWVudUNoZWNrYm94SXRlbSA9IFJlYWN0LmZv\ncndhcmRSZWYoKHsgY2xhc3NOYW1lLCBjaGlsZHJlbiwgY2hlY2tlZCwgLi4u\ncHJvcHMgfSwgcmVmKSA9PiAoCiAgPENvbnRleHRNZW51UHJpbWl0aXZlLkNo\nZWNrYm94SXRlbQogICAgcmVmPXtyZWZ9CiAgICBjbGFzc05hbWU9e2NuKAog\nICAgICAicmVsYXRpdmUgZmxleCBjdXJzb3ItZGVmYXVsdCBzZWxlY3Qtbm9u\nZSBpdGVtcy1jZW50ZXIgcm91bmRlZC1zbSBweS0xLjUgcGwtOCBwci0yIHRl\neHQtc20gb3V0bGluZS1ub25lIGZvY3VzOmJnLWFjY2VudCBmb2N1czp0ZXh0\nLWFjY2VudC1mb3JlZ3JvdW5kIGRhdGEtW2Rpc2FibGVkXTpwb2ludGVyLWV2\nZW50cy1ub25lIGRhdGEtW2Rpc2FibGVkXTpvcGFjaXR5LTUwIiwKICAgICAg\nY2xhc3NOYW1lCiAgICApfQogICAgY2hlY2tlZD17Y2hlY2tlZH0KICAgIHsu\nLi5wcm9wc30+CiAgICA8c3BhbiBjbGFzc05hbWU9ImFic29sdXRlIGxlZnQt\nMiBmbGV4IGgtMy41IHctMy41IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRl\nciI+CiAgICAgIDxDb250ZXh0TWVudVByaW1pdGl2ZS5JdGVtSW5kaWNhdG9y\nPgogICAgICAgIDxDaGVjayBjbGFzc05hbWU9ImgtNCB3LTQiIC8+CiAgICAg\nIDwvQ29udGV4dE1lbnVQcmltaXRpdmUuSXRlbUluZGljYXRvcj4KICAgIDwv\nc3Bhbj4KICAgIHtjaGlsZHJlbn0KICA8L0NvbnRleHRNZW51UHJpbWl0aXZl\nLkNoZWNrYm94SXRlbT4KKSkKQ29udGV4dE1lbnVDaGVja2JveEl0ZW0uZGlz\ncGxheU5hbWUgPQogIENvbnRleHRNZW51UHJpbWl0aXZlLkNoZWNrYm94SXRl\nbS5kaXNwbGF5TmFtZQoKY29uc3QgQ29udGV4dE1lbnVSYWRpb0l0ZW0gPSBS\nZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgY2hpbGRyZW4sIC4uLnBy\nb3BzIH0sIHJlZikgPT4gKAogIDxDb250ZXh0TWVudVByaW1pdGl2ZS5SYWRp\nb0l0ZW0KICAgIHJlZj17cmVmfQogICAgY2xhc3NOYW1lPXtjbigKICAgICAg\nInJlbGF0aXZlIGZsZXggY3Vyc29yLWRlZmF1bHQgc2VsZWN0LW5vbmUgaXRl\nbXMtY2VudGVyIHJvdW5kZWQtc20gcHktMS41IHBsLTggcHItMiB0ZXh0LXNt\nIG91dGxpbmUtbm9uZSBmb2N1czpiZy1hY2NlbnQgZm9jdXM6dGV4dC1hY2Nl\nbnQtZm9yZWdyb3VuZCBkYXRhLVtkaXNhYmxlZF06cG9pbnRlci1ldmVudHMt\nbm9uZSBkYXRhLVtkaXNhYmxlZF06b3BhY2l0eS01MCIsCiAgICAgIGNsYXNz\nTmFtZQogICAgKX0KICAgIHsuLi5wcm9wc30+CiAgICA8c3BhbiBjbGFzc05h\nbWU9ImFic29sdXRlIGxlZnQtMiBmbGV4IGgtMy41IHctMy41IGl0ZW1zLWNl\nbnRlciBqdXN0aWZ5LWNlbnRlciI+CiAgICAgIDxDb250ZXh0TWVudVByaW1p\ndGl2ZS5JdGVtSW5kaWNhdG9yPgogICAgICAgIDxDaXJjbGUgY2xhc3NOYW1l\nPSJoLTQgdy00IGZpbGwtY3VycmVudCIgLz4KICAgICAgPC9Db250ZXh0TWVu\ndVByaW1pdGl2ZS5JdGVtSW5kaWNhdG9yPgogICAgPC9zcGFuPgogICAge2No\naWxkcmVufQogIDwvQ29udGV4dE1lbnVQcmltaXRpdmUuUmFkaW9JdGVtPgop\nKQpDb250ZXh0TWVudVJhZGlvSXRlbS5kaXNwbGF5TmFtZSA9IENvbnRleHRN\nZW51UHJpbWl0aXZlLlJhZGlvSXRlbS5kaXNwbGF5TmFtZQoKY29uc3QgQ29u\ndGV4dE1lbnVMYWJlbCA9IFJlYWN0LmZvcndhcmRSZWYoKHsgY2xhc3NOYW1l\nLCBpbnNldCwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoCiAgPENvbnRleHRNZW51\nUHJpbWl0aXZlLkxhYmVsCiAgICByZWY9e3JlZn0KICAgIGNsYXNzTmFtZT17\nY24oCiAgICAgICJweC0yIHB5LTEuNSB0ZXh0LXNtIGZvbnQtc2VtaWJvbGQg\ndGV4dC1mb3JlZ3JvdW5kIiwKICAgICAgaW5zZXQgJiYgInBsLTgiLAogICAg\nICBjbGFzc05hbWUKICAgICl9CiAgICB7Li4ucHJvcHN9IC8+CikpCkNvbnRl\neHRNZW51TGFiZWwuZGlzcGxheU5hbWUgPSBDb250ZXh0TWVudVByaW1pdGl2\nZS5MYWJlbC5kaXNwbGF5TmFtZQoKY29uc3QgQ29udGV4dE1lbnVTZXBhcmF0\nb3IgPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMg\nfSwgcmVmKSA9PiAoCiAgPENvbnRleHRNZW51UHJpbWl0aXZlLlNlcGFyYXRv\ncgogICAgcmVmPXtyZWZ9CiAgICBjbGFzc05hbWU9e2NuKCItbXgtMSBteS0x\nIGgtcHggYmctYm9yZGVyIiwgY2xhc3NOYW1lKX0KICAgIHsuLi5wcm9wc30g\nLz4KKSkKQ29udGV4dE1lbnVTZXBhcmF0b3IuZGlzcGxheU5hbWUgPSBDb250\nZXh0TWVudVByaW1pdGl2ZS5TZXBhcmF0b3IuZGlzcGxheU5hbWUKCmNvbnN0\nIENvbnRleHRNZW51U2hvcnRjdXQgPSAoewogIGNsYXNzTmFtZSwKICAuLi5w\ncm9wcwp9KSA9PiB7CiAgcmV0dXJuICgKICAgICg8c3BhbgogICAgICBjbGFz\nc05hbWU9e2NuKCJtbC1hdXRvIHRleHQteHMgdHJhY2tpbmctd2lkZXN0IHRl\neHQtbXV0ZWQtZm9yZWdyb3VuZCIsIGNsYXNzTmFtZSl9CiAgICAgIHsuLi5w\ncm9wc30gLz4pCiAgKTsKfQpDb250ZXh0TWVudVNob3J0Y3V0LmRpc3BsYXlO\nYW1lID0gIkNvbnRleHRNZW51U2hvcnRjdXQiCgpleHBvcnQgewogIENvbnRl\neHRNZW51LAogIENvbnRleHRNZW51VHJpZ2dlciwKICBDb250ZXh0TWVudUNv\nbnRlbnQsCiAgQ29udGV4dE1lbnVJdGVtLAogIENvbnRleHRNZW51Q2hlY2ti\nb3hJdGVtLAogIENvbnRleHRNZW51UmFkaW9JdGVtLAogIENvbnRleHRNZW51\nTGFiZWwsCiAgQ29udGV4dE1lbnVTZXBhcmF0b3IsCiAgQ29udGV4dE1lbnVT\naG9ydGN1dCwKICBDb250ZXh0TWVudUdyb3VwLAogIENvbnRleHRNZW51UG9y\ndGFsLAogIENvbnRleHRNZW51U3ViLAogIENvbnRleHRNZW51U3ViQ29udGVu\ndCwKICBDb250ZXh0TWVudVN1YlRyaWdnZXIsCiAgQ29udGV4dE1lbnVSYWRp\nb0dyb3VwLAp9Cg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/context-menu.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/fdfdbae6c8f1c6e807033e5e9b7656da0e8a84c2","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/context-menu.jsx"}}
+import * as React from "react"
+import * as ContextMenuPrimitive from "@radix-ui/react-context-menu"
+import { Check, ChevronRight, Circle } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+const ContextMenu = ContextMenuPrimitive.Root
+
+const ContextMenuTrigger = ContextMenuPrimitive.Trigger
+
+const ContextMenuGroup = ContextMenuPrimitive.Group
+
+const ContextMenuPortal = ContextMenuPrimitive.Portal
+
+const ContextMenuSub = ContextMenuPrimitive.Sub
+
+const ContextMenuRadioGroup = ContextMenuPrimitive.RadioGroup
+
+const ContextMenuSubTrigger = React.forwardRef(({ className, inset, children, ...props }, ref) => (
+  <ContextMenuPrimitive.SubTrigger
+    ref={ref}
+    className={cn(
+      "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
+      inset && "pl-8",
+      className
+    )}
+    {...props}>
+    {children}
+    <ChevronRight className="ml-auto h-4 w-4" />
+  </ContextMenuPrimitive.SubTrigger>
+))
+ContextMenuSubTrigger.displayName = ContextMenuPrimitive.SubTrigger.displayName
+
+const ContextMenuSubContent = React.forwardRef(({ className, ...props }, ref) => (
+  <ContextMenuPrimitive.SubContent
+    ref={ref}
+    className={cn(
+      "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      className
+    )}
+    {...props} />
+))
+ContextMenuSubContent.displayName = ContextMenuPrimitive.SubContent.displayName
+
+const ContextMenuContent = React.forwardRef(({ className, ...props }, ref) => (
+  <ContextMenuPrimitive.Portal>
+    <ContextMenuPrimitive.Content
+      ref={ref}
+      className={cn(
+        "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        className
+      )}
+      {...props} />
+  </ContextMenuPrimitive.Portal>
+))
+ContextMenuContent.displayName = ContextMenuPrimitive.Content.displayName
+
+const ContextMenuItem = React.forwardRef(({ className, inset, ...props }, ref) => (
+  <ContextMenuPrimitive.Item
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      inset && "pl-8",
+      className
+    )}
+    {...props} />
+))
+ContextMenuItem.displayName = ContextMenuPrimitive.Item.displayName
+
+const ContextMenuCheckboxItem = React.forwardRef(({ className, children, checked, ...props }, ref) => (
+  <ContextMenuPrimitive.CheckboxItem
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className
+    )}
+    checked={checked}
+    {...props}>
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <ContextMenuPrimitive.ItemIndicator>
+        <Check className="h-4 w-4" />
+      </ContextMenuPrimitive.ItemIndicator>
+    </span>
+    {children}
+  </ContextMenuPrimitive.CheckboxItem>
+))
+ContextMenuCheckboxItem.displayName =
+  ContextMenuPrimitive.CheckboxItem.displayName
+
+const ContextMenuRadioItem = React.forwardRef(({ className, children, ...props }, ref) => (
+  <ContextMenuPrimitive.RadioItem
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className
+    )}
+    {...props}>
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <ContextMenuPrimitive.ItemIndicator>
+        <Circle className="h-4 w-4 fill-current" />
+      </ContextMenuPrimitive.ItemIndicator>
+    </span>
+    {children}
+  </ContextMenuPrimitive.RadioItem>
+))
+ContextMenuRadioItem.displayName = ContextMenuPrimitive.RadioItem.displayName
+
+const ContextMenuLabel = React.forwardRef(({ className, inset, ...props }, ref) => (
+  <ContextMenuPrimitive.Label
+    ref={ref}
+    className={cn(
+      "px-2 py-1.5 text-sm font-semibold text-foreground",
+      inset && "pl-8",
+      className
+    )}
+    {...props} />
+))
+ContextMenuLabel.displayName = ContextMenuPrimitive.Label.displayName
+
+const ContextMenuSeparator = React.forwardRef(({ className, ...props }, ref) => (
+  <ContextMenuPrimitive.Separator
+    ref={ref}
+    className={cn("-mx-1 my-1 h-px bg-border", className)}
+    {...props} />
+))
+ContextMenuSeparator.displayName = ContextMenuPrimitive.Separator.displayName
+
+const ContextMenuShortcut = ({
+  className,
+  ...props
+}) => {
+  return (
+    (<span
+      className={cn("ml-auto text-xs tracking-widest text-muted-foreground", className)}
+      {...props} />)
+  );
+}
+ContextMenuShortcut.displayName = "ContextMenuShortcut"
+
+export {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuCheckboxItem,
+  ContextMenuRadioItem,
+  ContextMenuLabel,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuGroup,
+  ContextMenuPortal,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuRadioGroup,
+}
