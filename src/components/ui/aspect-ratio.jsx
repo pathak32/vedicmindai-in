@@ -1,5 +1,1 @@
-import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio"
-
-const AspectRatio = AspectRatioPrimitive.Root
-
-export { AspectRatio }
+{"name":"aspect-ratio.jsx","path":"src/components/ui/aspect-ratio.jsx","sha":"c4abbf37f217c715a0eaade7f45ac78600df419f","size":140,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/aspect-ratio.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/aspect-ratio.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/c4abbf37f217c715a0eaade7f45ac78600df419f","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/aspect-ratio.jsx?token=CFODAP5WHOZD7CTLSPHZHIDKFSQYDAA","type":"file","content":"aW1wb3J0ICogYXMgQXNwZWN0UmF0aW9QcmltaXRpdmUgZnJvbSAiQHJhZGl4\nLXVpL3JlYWN0LWFzcGVjdC1yYXRpbyIKCmNvbnN0IEFzcGVjdFJhdGlvID0g\nQXNwZWN0UmF0aW9QcmltaXRpdmUuUm9vdAoKZXhwb3J0IHsgQXNwZWN0UmF0\naW8gfQo=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/aspect-ratio.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/c4abbf37f217c715a0eaade7f45ac78600df419f","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/aspect-ratio.jsx"}}
