@@ -1,1 +1,33 @@
-{"name":"ScrollToTop.jsx","path":"src/components/ScrollToTop.jsx","sha":"b6b92a35cd8b30a229f4069109342d20db357507","size":805,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ScrollToTop.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ScrollToTop.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/b6b92a35cd8b30a229f4069109342d20db357507","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ScrollToTop.jsx?token=CFODAPYXB5ZS74DK3CDVK2DKFSQUPAA","type":"file","content":"aW1wb3J0IHsgdXNlRWZmZWN0IH0gZnJvbSAicmVhY3QiOwppbXBvcnQgeyB1\nc2VMb2NhdGlvbiwgdXNlTmF2aWdhdGlvblR5cGUgfSBmcm9tICJyZWFjdC1y\nb3V0ZXItZG9tIjsKCmNvbnN0IGdldEhhc2hJZCA9IChoYXNoKSA9PiB7CiAg\nY29uc3QgcmF3SWQgPSBoYXNoLnNsaWNlKDEpOwoKICB0cnkgewogICAgcmV0\ndXJuIGRlY29kZVVSSUNvbXBvbmVudChyYXdJZCk7CiAgfSBjYXRjaCB7CiAg\nICByZXR1cm4gcmF3SWQ7CiAgfQp9OwoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rp\nb24gU2Nyb2xsVG9Ub3AoKSB7CiAgY29uc3QgeyBwYXRobmFtZSwgaGFzaCB9\nID0gdXNlTG9jYXRpb24oKTsKICBjb25zdCBuYXZpZ2F0aW9uVHlwZSA9IHVz\nZU5hdmlnYXRpb25UeXBlKCk7CgogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBp\nZiAobmF2aWdhdGlvblR5cGUgPT09ICJQT1AiKSByZXR1cm47CgogICAgaWYg\nKGhhc2gpIHsKICAgICAgY29uc3QgaWQgPSBnZXRIYXNoSWQoaGFzaCk7CiAg\nICAgIGNvbnN0IHRpbWVyID0gd2luZG93LnNldFRpbWVvdXQoKCkgPT4gewog\nICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKT8uc2Nyb2xsSW50\nb1ZpZXcoeyBiZWhhdmlvcjogInNtb290aCIgfSk7CiAgICAgIH0sIDUwKTsK\nICAgICAgcmV0dXJuICgpID0+IHdpbmRvdy5jbGVhclRpbWVvdXQodGltZXIp\nOwogICAgfQoKICAgIHdpbmRvdy5zY3JvbGxUbyh7IHRvcDogMCwgbGVmdDog\nMCwgYmVoYXZpb3I6ICJpbnN0YW50IiB9KTsKICB9LCBbcGF0aG5hbWUsIGhh\nc2gsIG5hdmlnYXRpb25UeXBlXSk7CgogIHJldHVybiBudWxsOwp9Cg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ScrollToTop.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/b6b92a35cd8b30a229f4069109342d20db357507","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ScrollToTop.jsx"}}
+import { useEffect } from "react";
+import { useLocation, useNavigationType } from "react-router-dom";
+
+const getHashId = (hash) => {
+  const rawId = hash.slice(1);
+
+  try {
+    return decodeURIComponent(rawId);
+  } catch {
+    return rawId;
+  }
+};
+
+export default function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  const navigationType = useNavigationType();
+
+  useEffect(() => {
+    if (navigationType === "POP") return;
+
+    if (hash) {
+      const id = getHashId(hash);
+      const timer = window.setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+      return () => window.clearTimeout(timer);
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname, hash, navigationType]);
+
+  return null;
+}
