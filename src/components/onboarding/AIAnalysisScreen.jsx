@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { base44 } from '@/api/base44Client';
+// base44 removed
 
 const LOADING_MESSAGES = [
   'Analyzing your profile...',
