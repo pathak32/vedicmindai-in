@@ -1,1 +1,68 @@
-{"name":"TestimonialsSection.jsx","path":"src/components/landing/TestimonialsSection.jsx","sha":"ae95ed26b6b86e84f0b2666cec5377ef4b52af31","size":2409,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/TestimonialsSection.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/TestimonialsSection.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/ae95ed26b6b86e84f0b2666cec5377ef4b52af31","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/landing/TestimonialsSection.jsx?token=CFODAP3IX2E7YJIGNJ6RRR3KFSQWBAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgbW90aW9uIH0g\nZnJvbSAnZnJhbWVyLW1vdGlvbic7CmltcG9ydCB7IFF1b3RlIH0gZnJvbSAn\nbHVjaWRlLXJlYWN0JzsKCmNvbnN0IHRlc3RpbW9uaWFscyA9IFsKICB7CiAg\nICB0ZXh0OiAnSSBzY29yZWQgOTggaW4gQ2xhc3MgMTAgbWF0aHMgYWZ0ZXIg\nNiB3ZWVrcyB3aXRoIFZlZGljTWluZCEnLAogICAgbmFtZTogJ1ByaXlhIFNo\nYXJtYScsCiAgICByb2xlOiAnQ2xhc3MgMTAgQ0JTRScsCiAgfSwKICB7CiAg\nICB0ZXh0OiAnTXkgQ0FUIHBlcmNlbnRpbGUganVtcGVkIDEyIHBvaW50cyBh\nZnRlciBsZWFybmluZyBOaWtoaWxhbSBhbmQgVXJkaHZhIHRlY2huaXF1ZXMu\nJywKICAgIG5hbWU6ICdSb2hhbiBNZWh0YScsCiAgICByb2xlOiAnTUJBIEFz\ncGlyYW50JywKICB9LAogIHsKICAgIHRleHQ6ICdNeSBkYXVnaHRlciBub3cg\nc29sdmVzIDItZGlnaXQgbXVsdGlwbGljYXRpb25zIGluIGhlciBoZWFkLiBI\nZXIgdGVhY2hlciBpcyBhbWF6ZWQhJywKICAgIG5hbWU6ICdTdW5pdGEgR3Vw\ndGEnLAogICAgcm9sZTogJ1BhcmVudCcsCiAgfSwKXTsKCmV4cG9ydCBkZWZh\ndWx0IGZ1bmN0aW9uIFRlc3RpbW9uaWFsc1NlY3Rpb24oKSB7CiAgcmV0dXJu\nICgKICAgIDxzZWN0aW9uIGlkPSJ0ZXN0aW1vbmlhbHMiIGNsYXNzTmFtZT0i\ncHktMjQgYmctd2hpdGUiPgogICAgICA8ZGl2IGNsYXNzTmFtZT0ibWF4LXct\nN3hsIG14LWF1dG8gcHgtNCBzbTpweC02IGxnOnB4LTgiPgogICAgICAgIDxt\nb3Rpb24uZGl2CiAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6\nIDIwIH19CiAgICAgICAgICB3aGlsZUluVmlldz17eyBvcGFjaXR5OiAxLCB5\nOiAwIH19CiAgICAgICAgICB2aWV3cG9ydD17eyBvbmNlOiB0cnVlIH19CiAg\nICAgICAgICBjbGFzc05hbWU9InRleHQtY2VudGVyIG1iLTE2IgogICAgICAg\nID4KICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1zbSBmb250LXNlbWli\nb2xkIHRleHQtWyMzQjgyRjZdIHVwcGVyY2FzZSB0cmFja2luZy13aWRlciBt\nYi0zIj5UZXN0aW1vbmlhbHM8L3A+CiAgICAgICAgICA8aDIgY2xhc3NOYW1l\nPSJmb250LWhlYWRpbmcgdGV4dC0zeGwgc206dGV4dC00eGwgZm9udC1ib2xk\nIHRleHQtWyMwQTE2MjhdIj4KICAgICAgICAgICAgTG92ZWQgYnkgc3R1ZGVu\ndHMgJiBwYXJlbnRzCiAgICAgICAgICA8L2gyPgogICAgICAgIDwvbW90aW9u\nLmRpdj4KCiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImdyaWQgbWQ6Z3JpZC1j\nb2xzLTMgZ2FwLTgiPgogICAgICAgICAge3Rlc3RpbW9uaWFscy5tYXAoKHQs\nIGkpID0+ICgKICAgICAgICAgICAgPG1vdGlvbi5kaXYKICAgICAgICAgICAg\nICBrZXk9e2l9CiAgICAgICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAw\nLCB5OiAzMCB9fQogICAgICAgICAgICAgIHdoaWxlSW5WaWV3PXt7IG9wYWNp\ndHk6IDEsIHk6IDAgfX0KICAgICAgICAgICAgICB2aWV3cG9ydD17eyBvbmNl\nOiB0cnVlIH19CiAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkZWxheTog\naSAqIDAuMTUgfX0KICAgICAgICAgICAgICBjbGFzc05hbWU9ImdsYXNzLWNh\ncmQtc29saWQgcC04IHJlbGF0aXZlIgogICAgICAgICAgICA+CiAgICAgICAg\nICAgICAgPFF1b3RlIGNsYXNzTmFtZT0idy04IGgtOCB0ZXh0LVsjM0I4MkY2\nXS8yMCBhYnNvbHV0ZSB0b3AtNiByaWdodC02IiAvPgogICAgICAgICAgICAg\nIDxwIGNsYXNzTmFtZT0idGV4dC1bIzBBMTYyOF0gdGV4dC1sZyBsZWFkaW5n\nLXJlbGF4ZWQgbWItNiBmb250LW1lZGl1bSI+CiAgICAgICAgICAgICAgICAi\ne3QudGV4dH0iCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICAgIDxk\naXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMyI+CiAgICAg\nICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idy0xMCBoLTEwIHJvdW5kZWQt\nZnVsbCBiZy1bIzBBMTYyOF0gdGV4dC13aGl0ZSBmbGV4IGl0ZW1zLWNlbnRl\nciBqdXN0aWZ5LWNlbnRlciB0ZXh0LXNtIGZvbnQtYm9sZCI+CiAgICAgICAg\nICAgICAgICAgIHt0Lm5hbWUuc3BsaXQoJyAnKS5tYXAobiA9PiBuWzBdKS5q\nb2luKCcnKX0KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAg\nICAgPGRpdj4KICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJmb250\nLXNlbWlib2xkIHRleHQtWyMwQTE2MjhdIHRleHQtc20iPnt0Lm5hbWV9PC9w\nPgogICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQteHMgdGV4\ndC1bIzRCNTU2M10iPnt0LnJvbGV9PC9wPgogICAgICAgICAgICAgICAgPC9k\naXY+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvbW90aW9u\nLmRpdj4KICAgICAgICAgICkpfQogICAgICAgIDwvZGl2PgogICAgICA8L2Rp\ndj4KICAgIDwvc2VjdGlvbj4KICApOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/TestimonialsSection.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/ae95ed26b6b86e84f0b2666cec5377ef4b52af31","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/TestimonialsSection.jsx"}}
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Quote } from 'lucide-react';
+
+const testimonials = [
+  {
+    text: 'I scored 98 in Class 10 maths after 6 weeks with VedicMind!',
+    name: 'Priya Sharma',
+    role: 'Class 10 CBSE',
+  },
+  {
+    text: 'My CAT percentile jumped 12 points after learning Nikhilam and Urdhva techniques.',
+    name: 'Rohan Mehta',
+    role: 'MBA Aspirant',
+  },
+  {
+    text: 'My daughter now solves 2-digit multiplications in her head. Her teacher is amazed!',
+    name: 'Sunita Gupta',
+    role: 'Parent',
+  },
+];
+
+export default function TestimonialsSection() {
+  return (
+    <section id="testimonials" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <p className="text-sm font-semibold text-[#3B82F6] uppercase tracking-wider mb-3">Testimonials</p>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#0A1628]">
+            Loved by students & parents
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="glass-card-solid p-8 relative"
+            >
+              <Quote className="w-8 h-8 text-[#3B82F6]/20 absolute top-6 right-6" />
+              <p className="text-[#0A1628] text-lg leading-relaxed mb-6 font-medium">
+                "{t.text}"
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#0A1628] text-white flex items-center justify-center text-sm font-bold">
+                  {t.name.split(' ').map(n => n[0]).join('')}
+                </div>
+                <div>
+                  <p className="font-semibold text-[#0A1628] text-sm">{t.name}</p>
+                  <p className="text-xs text-[#4B5563]">{t.role}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
