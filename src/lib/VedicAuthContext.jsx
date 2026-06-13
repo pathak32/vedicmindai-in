@@ -1,93 +1,170 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { getSupabase } from './supabaseClient';
-import { migrateLocalStorageToSupabase } from './supabaseDataService';
 
-const AuthContext = createContext(null);
+const VedicAuthContext = createContext(null);
+export const useVedicAuth = () => useContext(VedicAuthContext);
 
+// ─── Helpers ─────────────────────────────────────────────────────────────────
+// We use mobile as the Supabase email field: +919839320911 → "919839320911@vedicmindai.in"
+const mobileToEmail = (mobile) => {
+  const digits = mobile.replace(/\D/g, '');
+  return `${digits}@vedicmindai.in`;
+};
+
+// ─── Provider ────────────────────────────────────────────────────────────────
 export function VedicAuthProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser]       = useState(null);
+  const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    let subscription;
+    let sub;
     (async () => {
       const supabase = await getSupabase();
-
-      // Listener first — loading only becomes false here
-      const { data } = supabase.auth.onAuthStateChange(async (_event, session) => {
-        const currentUser = session?.user ?? null;
-        setUser(currentUser);
-        setLoading(false);
-
-        // Migrate localStorage data on first login
-        if (currentUser && (_event === 'SIGNED_IN' || _event === 'TOKEN_REFRESHED')) {
-          migrateLocalStorageToSupabase(currentUser.id);
-        }
-      });
-      subscription = data.subscription;
-
-      // Trigger current session check
+      // Get initial session
       const { data: { session } } = await supabase.auth.getSession();
-      // If no session and no auth state change fired yet, set loading false
-      if (!session) {
-        setLoading(false);
-      }
-    })();
+      setUser(session?.user ?? null);
+      if (session?.user) await loadProfile(session.user.id);
+      setLoading(false);
 
-    return () => subscription?.unsubscribe();
+      // Listen for auth changes
+      const { data } = supabase.auth.onAuthStateChange(async (_event, session) => {
+        setUser(session?.user ?? null);
+        if (session?.user) await loadProfile(session.user.id);
+        else setProfile(null);
+      });
+      sub = data.subscription;
+    })();
+    return () => sub?.unsubscribe();
   }, []);
 
-  const signUp = async (phone) => {
-    const supabase = await getSupabase();
-    return await supabase.auth.signInWithOtp({ phone });
+  const loadProfile = async (userId) => {
+    try {
+      const supabase = await getSupabase();
+      const { data } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', userId)
+        .single();
+      setProfile(data);
+    } catch (_) {}
   };
 
-  const signUpWithEmail = async (email, password) => {
+  // ── Sign Up ────────────────────────────────────────────────────────────────
+  const signUpWithPassword = async ({
+    name, mobile, dob, email, password,
+    securityQuestion, securityAnswer,
+    whatsapp, passwordHint,
+  }) => {
     const supabase = await getSupabase();
-    const result = await supabase.auth.signUp({ email, password });
-    if (result.data?.session) {
-      setUser(result.data.session.user);
-      setLoading(false);
-    }
-    return result;
+    const fakeEmail = mobileToEmail(mobile);
+
+    // 1. Create Supabase auth user
+    const { data, error } = await supabase.auth.signUp({
+      email: fakeEmail,
+      password,
+    });
+    if (error) throw new Error(error.message);
+
+    const userId = data.user?.id;
+    if (!userId) throw new Error('User creation failed');
+
+    // 2. Save profile to profiles table
+    const { error: profileErr } = await supabase.from('profiles').upsert({
+      id: userId,
+      name,
+      mobile,
+      dob,
+      email: email || null,
+      whatsapp,
+      password_hint: passwordHint,
+      security_question: securityQuestion,
+      security_answer: securityAnswer,
+      subscription_status: 'trial',
+      trial_start_date: new Date().toISOString(),
+      created_at: new Date().toISOString(),
+    });
+    if (profileErr) console.error('Profile save error:', profileErr.message);
+
+    return data;
   };
 
-  const signIn = async (phone, email, password) => {
+  // ── Sign In ────────────────────────────────────────────────────────────────
+  const signInWithPassword = async ({ mobile, password }) => {
     const supabase = await getSupabase();
-    if (email && password) {
-      const result = await supabase.auth.signInWithPassword({ email, password });
-      if (result.data?.session) {
-        setUser(result.data.session.user);
-        setLoading(false);
+    const fakeEmail = mobileToEmail(mobile);
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: fakeEmail,
+      password,
+    });
+    if (error) {
+      if (error.message.includes('Invalid login')) {
+        throw new Error('Mobile number or password is incorrect');
       }
-      return result;
+      throw new Error(error.message);
     }
-    return await supabase.auth.signInWithOtp({ phone });
+    return data;
   };
 
-  const verifyOtp = async (phone, token) => {
-    const supabase = await getSupabase();
-    const result = await supabase.auth.verifyOtp({ phone, token, type: 'sms' });
-    // Immediately update user state so DashboardPage doesn't redirect back
-    if (result.data?.session?.user) {
-      setUser(result.data.session.user);
-      setLoading(false);
-    }
-    return result;
-  };
-
+  // ── Sign Out ───────────────────────────────────────────────────────────────
   const signOut = async () => {
     const supabase = await getSupabase();
     await supabase.auth.signOut();
     setUser(null);
-    setLoading(false);
+    setProfile(null);
+  };
+
+  // ── Forgot Password — get hint ─────────────────────────────────────────────
+  const getPasswordHint = async (mobile) => {
+    const supabase = await getSupabase();
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('password_hint, security_question, name')
+      .eq('mobile', `+91${mobile}`)
+      .single();
+    if (error || !data) throw new Error('Mobile number not registered');
+    return data;
+  };
+
+  // ── Forgot Password — verify security answer ───────────────────────────────
+  const verifySecurityAnswer = async (mobile, answer) => {
+    const supabase = await getSupabase();
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('security_answer, password_hint')
+      .eq('mobile', `+91${mobile}`)
+      .single();
+    if (error || !data) throw new Error('Account not found');
+    if (data.security_answer !== answer.trim().toLowerCase()) {
+      throw new Error('Incorrect answer');
+    }
+    return data.password_hint;
+  };
+
+  // ── Reset Password ─────────────────────────────────────────────────────────
+  const resetPassword = async (mobile, newPassword) => {
+    const supabase = await getSupabase();
+    const fakeEmail = mobileToEmail(`+91${mobile}`);
+    // Sign in via admin is not possible from client — use update after re-auth
+    // Instead we use password reset via email (fakeEmail)
+    const { error } = await supabase.auth.updateUser({ password: newPassword });
+    if (error) throw new Error(error.message);
+    // Update hint too
+    const parts = newPassword.match(/^([A-Z]{1,2})(\d{2})@(\d{4})$/);
+    await supabase.from('profiles').update({ password_hint: newPassword }).eq('mobile', `+91${mobile}`);
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, signUp, signIn, signUpWithEmail, verifyOtp, signOut }}>
+    <VedicAuthContext.Provider value={{
+      user, profile, loading,
+      signUpWithPassword,
+      signInWithPassword,
+      signOut,
+      getPasswordHint,
+      verifySecurityAnswer,
+      resetPassword,
+    }}>
       {children}
-    </AuthContext.Provider>
+    </VedicAuthContext.Provider>
   );
 }
-
-export const useVedicAuth = () => useContext(AuthContext);
