@@ -1,1 +1,104 @@
-{"name":"OverallProgress.jsx","path":"src/components/dashboard/OverallProgress.jsx","sha":"34df5e1dd6781897a23004d7867e166bcdf92ef4","size":4189,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/OverallProgress.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/OverallProgress.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/34df5e1dd6781897a23004d7867e166bcdf92ef4","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/dashboard/OverallProgress.jsx?token=CFODAP4ACKD2G5B354PL27TKFSQVLAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IG1vdGlvbiB9IGZyb20gJ2ZyYW1lci1tb3Rpb24n\nOwoKY29uc3QgTEVWRUxTX0NPTkZJRyA9IFsKICB7IGVtb2ppOiAn8J+MsScs\nIGxhYmVsOiAnQmVnaW5uZXInLCB0b3RhbDogMTAsIGlkczogQXJyYXkuZnJv\nbSh7IGxlbmd0aDogMTAgfSwgKF8sIGkpID0+IGBsMV8ke2kgKyAxfWApIH0s\nCiAgeyBlbW9qaTogJ/Cfk4gnLCBsYWJlbDogJ0ludGVybWVkaWF0ZScsIHRv\ndGFsOiAxMiwgaWRzOiBBcnJheS5mcm9tKHsgbGVuZ3RoOiAxMiB9LCAoXywg\naSkgPT4gYGwyXyR7aSArIDF9YCkgfSwKICB7IGVtb2ppOiAn8J+UpScsIGxh\nYmVsOiAnQWR2YW5jZWQnLCB0b3RhbDogMTAsIGlkczogQXJyYXkuZnJvbSh7\nIGxlbmd0aDogMTAgfSwgKF8sIGkpID0+IGBsM18ke2kgKyAxfWApIH0sCiAg\neyBlbW9qaTogJ/CfkZEnLCBsYWJlbDogJ01hc3RlcicsIHRvdGFsOiA4LCBp\nZHM6IEFycmF5LmZyb20oeyBsZW5ndGg6IDggfSwgKF8sIGkpID0+IGBsNF8k\ne2kgKyAxfWApIH0sCl07Cgpjb25zdCBUT1RBTCA9IDQwOwoKZnVuY3Rpb24g\nQ2lyY3VsYXJSaW5nKHsgcGVyY2VudCB9KSB7CiAgY29uc3QgW2FuaW1QY3Qs\nIHNldEFuaW1QY3RdID0gdXNlU3RhdGUoMCk7CiAgY29uc3Qgc2l6ZSA9IDE2\nMDsKICBjb25zdCByID0gNjg7CiAgY29uc3QgY2lyYyA9IDIgKiBNYXRoLlBJ\nICogcjsKICBjb25zdCBkYXNoT2Zmc2V0ID0gY2lyYyAtIChhbmltUGN0IC8g\nMTAwKSAqIGNpcmM7CgogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBjb25zdCB0\naW1lciA9IHNldFRpbWVvdXQoKCkgPT4gewogICAgICBsZXQgc3RhcnQgPSAw\nOwogICAgICBjb25zdCB0YXJnZXQgPSBwZXJjZW50OwogICAgICBjb25zdCBp\nbnRlcnZhbCA9IHNldEludGVydmFsKCgpID0+IHsKICAgICAgICBzdGFydCA9\nIE1hdGgubWluKHN0YXJ0ICsgdGFyZ2V0IC8gNjAsIHRhcmdldCk7CiAgICAg\nICAgc2V0QW5pbVBjdChzdGFydCk7CiAgICAgICAgaWYgKHN0YXJ0ID49IHRh\ncmdldCkgY2xlYXJJbnRlcnZhbChpbnRlcnZhbCk7CiAgICAgIH0sIDI1KTsK\nICAgICAgcmV0dXJuICgpID0+IGNsZWFySW50ZXJ2YWwoaW50ZXJ2YWwpOwog\nICAgfSwgMjAwKTsKICAgIHJldHVybiAoKSA9PiBjbGVhclRpbWVvdXQodGlt\nZXIpOwogIH0sIFtwZXJjZW50XSk7CgogIHJldHVybiAoCiAgICA8ZGl2IGNs\nYXNzTmFtZT0icmVsYXRpdmUgaW5saW5lLWZsZXggaXRlbXMtY2VudGVyIGp1\nc3RpZnktY2VudGVyIiBzdHlsZT17eyB3aWR0aDogc2l6ZSwgaGVpZ2h0OiBz\naXplIH19PgogICAgICA8c3ZnIHdpZHRoPXtzaXplfSBoZWlnaHQ9e3NpemV9\nIHN0eWxlPXt7IHRyYW5zZm9ybTogJ3JvdGF0ZSgtOTBkZWcpJyB9fT4KICAg\nICAgICA8ZGVmcz4KICAgICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0icmlu\nZ0dyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAg\nICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcENvbG9yPSIjMEExNjI4\nIiAvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3BDb2xv\ncj0iIzNCODJGNiIgLz4KICAgICAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAg\nICAgICAgPC9kZWZzPgogICAgICAgIDxjaXJjbGUgY3g9e3NpemUgLyAyfSBj\neT17c2l6ZSAvIDJ9IHI9e3J9IGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U1RTdF\nQiIgc3Ryb2tlV2lkdGg9IjEwIiAvPgogICAgICAgIDxjaXJjbGUKICAgICAg\nICAgIGN4PXtzaXplIC8gMn0gY3k9e3NpemUgLyAyfSByPXtyfSBmaWxsPSJu\nb25lIgogICAgICAgICAgc3Ryb2tlPSJ1cmwoI3JpbmdHcmFkKSIgc3Ryb2tl\nV2lkdGg9IjEwIgogICAgICAgICAgc3Ryb2tlTGluZWNhcD0icm91bmQiCiAg\nICAgICAgICBzdHJva2VEYXNoYXJyYXk9e2NpcmN9CiAgICAgICAgICBzdHJv\na2VEYXNob2Zmc2V0PXtkYXNoT2Zmc2V0fQogICAgICAgICAgc3R5bGU9e3sg\ndHJhbnNpdGlvbjogJ3N0cm9rZS1kYXNob2Zmc2V0IDAuMDRzIGxpbmVhcicg\nfX0KICAgICAgICAvPgogICAgICA8L3N2Zz4KICAgICAgPGRpdiBjbGFzc05h\nbWU9ImFic29sdXRlIGluc2V0LTAgZmxleCBmbGV4LWNvbCBpdGVtcy1jZW50\nZXIganVzdGlmeS1jZW50ZXIiPgogICAgICAgIDxzcGFuIGNsYXNzTmFtZT0i\nZm9udC1oZWFkaW5nIHRleHQtM3hsIGZvbnQtYm9sZCB0ZXh0LVsjMEExNjI4\nXSI+e01hdGgucm91bmQoYW5pbVBjdCl9JTwvc3Bhbj4KICAgICAgPC9kaXY+\nCiAgICA8L2Rpdj4KICApOwp9CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBP\ndmVyYWxsUHJvZ3Jlc3MoeyBwcm9ncmVzcyB9KSB7CiAgY29uc3QgY29tcGxl\ndGVkID0gcHJvZ3Jlc3MuY29tcGxldGVkTGVzc29ucz8ubGVuZ3RoIHx8IDA7\nCiAgY29uc3QgcGVyY2VudCA9IE1hdGgucm91bmQoKGNvbXBsZXRlZCAvIFRP\nVEFMKSAqIDEwMCk7CgogIHJldHVybiAoCiAgICA8bW90aW9uLmRpdgogICAg\nICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDIwIH19CiAgICAgIGFuaW1h\ndGU9e3sgb3BhY2l0eTogMSwgeTogMCB9fQogICAgICB0cmFuc2l0aW9uPXt7\nIGRlbGF5OiAwLjEgfX0KICAgICAgY2xhc3NOYW1lPSJiZy13aGl0ZSByb3Vu\nZGVkLVsyMHB4XSBwLTYgYm9yZGVyIGJvcmRlci1bI0YwRjRGRl0iCiAgICAg\nIHN0eWxlPXt7IGJveFNoYWRvdzogJzAgNHB4IDI0cHggcmdiYSgxMCwyMiw0\nMCwwLjA2KScgfX0KICAgID4KICAgICAgPGgyIGNsYXNzTmFtZT0iZm9udC1o\nZWFkaW5nIHRleHQtbGcgZm9udC1ib2xkIHRleHQtWyMwQTE2MjhdIG1iLTUi\nPk92ZXJhbGwgUHJvZ3Jlc3M8L2gyPgogICAgICA8ZGl2IGNsYXNzTmFtZT0i\nZmxleCBmbGV4LWNvbCBzbTpmbGV4LXJvdyBpdGVtcy1jZW50ZXIgZ2FwLTYi\nPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGZsZXgtY29sIGl0ZW1z\nLWNlbnRlciI+CiAgICAgICAgICA8Q2lyY3VsYXJSaW5nIHBlcmNlbnQ9e3Bl\ncmNlbnR9IC8+CiAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQteHMgdGV4\ndC1bIzRCNTU2M10gbXQtMiB0ZXh0LWNlbnRlciI+e2NvbXBsZXRlZH0gb2Yg\ne1RPVEFMfSBsZXNzb25zIGNvbXBsZXRlZDwvcD4KICAgICAgICA8L2Rpdj4K\nCiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXgtMSB3LWZ1bGwgc3BhY2Ut\neS00Ij4KICAgICAgICAgIHtMRVZFTFNfQ09ORklHLm1hcCgobHYpID0+IHsK\nICAgICAgICAgICAgY29uc3QgZG9uZSA9IGx2Lmlkcy5maWx0ZXIoaWQgPT4g\ncHJvZ3Jlc3MuY29tcGxldGVkTGVzc29ucz8uaW5jbHVkZXMoaWQpKS5sZW5n\ndGg7CiAgICAgICAgICAgIGNvbnN0IHBjdCA9IE1hdGgucm91bmQoKGRvbmUg\nLyBsdi50b3RhbCkgKiAxMDApOwogICAgICAgICAgICByZXR1cm4gKAogICAg\nICAgICAgICAgIDxkaXYga2V5PXtsdi5sYWJlbH0+CiAgICAgICAgICAgICAg\nICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBqdXN0aWZ5LWJldHdlZW4gaXRlbXMt\nY2VudGVyIG1iLTEiPgogICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05h\nbWU9InRleHQtc20gZm9udC1tZWRpdW0gdGV4dC1bIzBBMTYyOF0iPntsdi5l\nbW9qaX0ge2x2LmxhYmVsfTwvc3Bhbj4KICAgICAgICAgICAgICAgICAgPHNw\nYW4gY2xhc3NOYW1lPSJ0ZXh0LXhzIHRleHQtWyM0QjU1NjNdIGZvbnQtbW9u\nbyI+e2RvbmV9L3tsdi50b3RhbH08L3NwYW4+CiAgICAgICAgICAgICAgICA8\nL2Rpdj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJoLTIgYmct\nWyNGMEY0RkZdIHJvdW5kZWQtZnVsbCBvdmVyZmxvdy1oaWRkZW4iPgogICAg\nICAgICAgICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgICAgICAgICAg\nIGluaXRpYWw9e3sgd2lkdGg6IDAgfX0KICAgICAgICAgICAgICAgICAgICBh\nbmltYXRlPXt7IHdpZHRoOiBgJHtwY3R9JWAgfX0KICAgICAgICAgICAgICAg\nICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAxLCBkZWxheTogMC4zLCBl\nYXNlOiAnZWFzZU91dCcgfX0KICAgICAgICAgICAgICAgICAgICBjbGFzc05h\nbWU9ImgtZnVsbCByb3VuZGVkLWZ1bGwgYmctWyMwQTE2MjhdIgogICAgICAg\nICAgICAgICAgICAvPgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAg\nICAgICAgPC9kaXY+CiAgICAgICAgICAgICk7CiAgICAgICAgICB9KX0KICAg\nICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICA8L21vdGlvbi5kaXY+CiAg\nKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/OverallProgress.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/34df5e1dd6781897a23004d7867e166bcdf92ef4","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/OverallProgress.jsx"}}
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+
+const LEVELS_CONFIG = [
+  { emoji: '🌱', label: 'Beginner', total: 10, ids: Array.from({ length: 10 }, (_, i) => `l1_${i + 1}`) },
+  { emoji: '📈', label: 'Intermediate', total: 12, ids: Array.from({ length: 12 }, (_, i) => `l2_${i + 1}`) },
+  { emoji: '🔥', label: 'Advanced', total: 10, ids: Array.from({ length: 10 }, (_, i) => `l3_${i + 1}`) },
+  { emoji: '👑', label: 'Master', total: 8, ids: Array.from({ length: 8 }, (_, i) => `l4_${i + 1}`) },
+];
+
+const TOTAL = 40;
+
+function CircularRing({ percent }) {
+  const [animPct, setAnimPct] = useState(0);
+  const size = 160;
+  const r = 68;
+  const circ = 2 * Math.PI * r;
+  const dashOffset = circ - (animPct / 100) * circ;
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      let start = 0;
+      const target = percent;
+      const interval = setInterval(() => {
+        start = Math.min(start + target / 60, target);
+        setAnimPct(start);
+        if (start >= target) clearInterval(interval);
+      }, 25);
+      return () => clearInterval(interval);
+    }, 200);
+    return () => clearTimeout(timer);
+  }, [percent]);
+
+  return (
+    <div className="relative inline-flex items-center justify-center" style={{ width: size, height: size }}>
+      <svg width={size} height={size} style={{ transform: 'rotate(-90deg)' }}>
+        <defs>
+          <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#0A1628" />
+            <stop offset="100%" stopColor="#3B82F6" />
+          </linearGradient>
+        </defs>
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#E5E7EB" strokeWidth="10" />
+        <circle
+          cx={size / 2} cy={size / 2} r={r} fill="none"
+          stroke="url(#ringGrad)" strokeWidth="10"
+          strokeLinecap="round"
+          strokeDasharray={circ}
+          strokeDashoffset={dashOffset}
+          style={{ transition: 'stroke-dashoffset 0.04s linear' }}
+        />
+      </svg>
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="font-heading text-3xl font-bold text-[#0A1628]">{Math.round(animPct)}%</span>
+      </div>
+    </div>
+  );
+}
+
+export default function OverallProgress({ progress }) {
+  const completed = progress.completedLessons?.length || 0;
+  const percent = Math.round((completed / TOTAL) * 100);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 }}
+      className="bg-white rounded-[20px] p-6 border border-[#F0F4FF]"
+      style={{ boxShadow: '0 4px 24px rgba(10,22,40,0.06)' }}
+    >
+      <h2 className="font-heading text-lg font-bold text-[#0A1628] mb-5">Overall Progress</h2>
+      <div className="flex flex-col sm:flex-row items-center gap-6">
+        <div className="flex flex-col items-center">
+          <CircularRing percent={percent} />
+          <p className="text-xs text-[#4B5563] mt-2 text-center">{completed} of {TOTAL} lessons completed</p>
+        </div>
+
+        <div className="flex-1 w-full space-y-4">
+          {LEVELS_CONFIG.map((lv) => {
+            const done = lv.ids.filter(id => progress.completedLessons?.includes(id)).length;
+            const pct = Math.round((done / lv.total) * 100);
+            return (
+              <div key={lv.label}>
+                <div className="flex justify-between items-center mb-1">
+                  <span className="text-sm font-medium text-[#0A1628]">{lv.emoji} {lv.label}</span>
+                  <span className="text-xs text-[#4B5563] font-mono">{done}/{lv.total}</span>
+                </div>
+                <div className="h-2 bg-[#F0F4FF] rounded-full overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: `${pct}%` }}
+                    transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
+                    className="h-full rounded-full bg-[#0A1628]"
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
