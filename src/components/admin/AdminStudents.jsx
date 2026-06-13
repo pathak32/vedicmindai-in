@@ -1,1 +1,117 @@
-{"name":"AdminStudents.jsx","path":"src/components/admin/AdminStudents.jsx","sha":"28cc604807ae4f110122fc849ff2f1069401ad5d","size":5969,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/admin/AdminStudents.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/admin/AdminStudents.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/28cc604807ae4f110122fc849ff2f1069401ad5d","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/admin/AdminStudents.jsx?token=CFODAPZF32PZYBPVO2PKVWTKFSQU3AA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VNZW1vIH0gZnJvbSAncmVh\nY3QnOwppbXBvcnQgeyBnZW5lcmF0ZUxlYWRlcmJvYXJkIH0gZnJvbSAnQC9s\naWIvbGVhZGVyYm9hcmRFbmdpbmUnOwoKY29uc3QgZ2xhc3MgPSB7CiAgYmFj\na2dyb3VuZDogJ3JnYmEoMjU1LDI1NSwyNTUsMC44NSknLAogIGJvcmRlcjog\nJzFweCBzb2xpZCByZ2JhKDMwLDY0LDE3NSwwLjEyKScsCiAgYm9yZGVyUmFk\naXVzOiAxNiwKICBib3hTaGFkb3c6ICcwIDRweCAyMHB4IHJnYmEoMTAsMjIs\nNDAsMC4wNiknLAp9OwoKLy8gR2VuZXJhdGUgbW9jayBzdHVkZW50IGxpc3Qg\nZnJvbSBsZWFkZXJib2FyZCBlbmdpbmUgKyBhbnkgbG9jYWwgc3RvcmFnZSBk\nYXRhCmZ1bmN0aW9uIGJ1aWxkU3R1ZGVudExpc3QoKSB7CiAgY29uc3QgcHJv\nZmlsZSAgPSAoKCkgPT4geyB0cnkgeyByZXR1cm4gSlNPTi5wYXJzZShsb2Nh\nbFN0b3JhZ2UuZ2V0SXRlbSgndmVkaWNtaW5kX3Byb2ZpbGUnKSkgfHwge307\nIH0gY2F0Y2ggeyByZXR1cm4ge307IH0gfSkoKTsKICBjb25zdCBwcm9ncmVz\ncyA9ICgoKSA9PiB7IHRyeSB7IHJldHVybiBKU09OLnBhcnNlKGxvY2FsU3Rv\ncmFnZS5nZXRJdGVtKCd2ZWRpY21pbmRfcHJvZ3Jlc3MnKSkgfHwge307IH0g\nY2F0Y2ggeyByZXR1cm4ge307IH0gfSkoKTsKICBjb25zdCBhdXRoICAgICA9\nICgoKSA9PiB7IHRyeSB7IHJldHVybiBKU09OLnBhcnNlKGxvY2FsU3RvcmFn\nZS5nZXRJdGVtKCd2ZWRpY21pbmRfYXV0aCcpKSB8fCB7fTsgfSBjYXRjaCB7\nIHJldHVybiB7fTsgfSB9KSgpOwoKICBjb25zdCBib2FyZCA9IGdlbmVyYXRl\nTGVhZGVyYm9hcmQocHJvZmlsZSwgcHJvZ3Jlc3MsICdnbG9iYWwnKTsKCiAg\ncmV0dXJuIGJvYXJkLm1hcCgoZW50cnksIGkpID0+ICh7CiAgICBpZDogZW50\ncnkuaWQsCiAgICBuYW1lOiBlbnRyeS5pc0Fub255bW91cyA/ICdBbm9ueW1v\ndXMnIDogZW50cnkubmFtZSwKICAgIGVtYWlsOiBlbnRyeS5pc0N1cnJlbnRV\nc2VyID8gKGF1dGguZW1haWwgfHwgJ+KAlCcpIDogYHN0dWRlbnQke2kgKyAx\nfUBzY2hvb2wuZWR1YCwKICAgIGdyYWRlOiBlbnRyeS5ncmFkZSB8fCAn4oCU\nJywKICAgIHNjaG9vbDogZW50cnkuc2Nob29sIHx8ICdEUFMgU2Nob29sJywK\nICAgIHF1aXpBdHRlbXB0czogZW50cnkuaXNDdXJyZW50VXNlciA/IChwcm9n\ncmVzcy5kYWlseVF1aXpIaXN0b3J5Py5sZW5ndGggfHwgMCkgOiBNYXRoLmZs\nb29yKE1hdGgucmFuZG9tKCkgKiAzMCksCiAgICBqb2luRGF0ZTogZW50cnku\naXNDdXJyZW50VXNlcgogICAgICA/IG5ldyBEYXRlKERhdGUubm93KCkgLSAz\nMCAqIDI0ICogMzYwMDAwMCkudG9Mb2NhbGVEYXRlU3RyaW5nKCkKICAgICAg\nOiBuZXcgRGF0ZShEYXRlLm5vdygpIC0gTWF0aC5yYW5kb20oKSAqIDkwICog\nMjQgKiAzNjAwMDAwKS50b0xvY2FsZURhdGVTdHJpbmcoKSwKICAgIHhwOiBl\nbnRyeS5zY29yZSwKICAgIGlzQ3VycmVudFVzZXI6IGVudHJ5LmlzQ3VycmVu\ndFVzZXIsCiAgfSkpOwp9CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBBZG1p\nblN0dWRlbnRzKCkgewogIGNvbnN0IFtzZWFyY2gsIHNldFNlYXJjaF0gPSB1\nc2VTdGF0ZSgnJyk7CiAgY29uc3Qgc3R1ZGVudHMgPSB1c2VNZW1vKCgpID0+\nIGJ1aWxkU3R1ZGVudExpc3QoKSwgW10pOwoKICBjb25zdCBmaWx0ZXJlZCA9\nIHVzZU1lbW8oKCkgPT4gewogICAgY29uc3QgcSA9IHNlYXJjaC50b0xvd2Vy\nQ2FzZSgpOwogICAgaWYgKCFxKSByZXR1cm4gc3R1ZGVudHM7CiAgICByZXR1\ncm4gc3R1ZGVudHMuZmlsdGVyKHMgPT4KICAgICAgcy5uYW1lLnRvTG93ZXJD\nYXNlKCkuaW5jbHVkZXMocSkgfHwKICAgICAgcy5zY2hvb2wudG9Mb3dlckNh\nc2UoKS5pbmNsdWRlcyhxKSB8fAogICAgICBzLmdyYWRlLnRvTG93ZXJDYXNl\nKCkuaW5jbHVkZXMocSkgfHwKICAgICAgcy5lbWFpbC50b0xvd2VyQ2FzZSgp\nLmluY2x1ZGVzKHEpCiAgICApOwogIH0sIFtzZWFyY2gsIHN0dWRlbnRzXSk7\nCgogIHJldHVybiAoCiAgICA8ZGl2PgogICAgICB7LyogU3VtbWFyeSByb3cg\nKi99CiAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2dyaWQnLCBncmlk\nVGVtcGxhdGVDb2x1bW5zOiAncmVwZWF0KGF1dG8tZml0LCBtaW5tYXgoMTUw\ncHgsIDFmcikpJywgZ2FwOiAxMiwgbWFyZ2luQm90dG9tOiAyMCB9fT4KICAg\nICAgICB7WwogICAgICAgICAgeyBsYWJlbDogJ/CfkaUgVG90YWwgU3R1ZGVu\ndHMnLCB2YWx1ZTogc3R1ZGVudHMubGVuZ3RoIH0sCiAgICAgICAgICB7IGxh\nYmVsOiAn4pyFIFF1aXogQ29tcGxldGVkJywgdmFsdWU6IHN0dWRlbnRzLmZp\nbHRlcihzID0+IHMucXVpekF0dGVtcHRzID4gMCkubGVuZ3RoIH0sCiAgICAg\nICAgICB7IGxhYmVsOiAn4q2QIEF2ZyBYUCcsIHZhbHVlOiBNYXRoLnJvdW5k\nKHN0dWRlbnRzLnJlZHVjZSgoYSwgcykgPT4gYSArIHMueHAsIDApIC8gc3R1\nZGVudHMubGVuZ3RoKSB9LAogICAgICAgIF0ubWFwKChzLCBpKSA9PiAoCiAg\nICAgICAgICA8ZGl2IGtleT17aX0gc3R5bGU9e3sgLi4uZ2xhc3MsIHBhZGRp\nbmc6ICcxNnB4IDIwcHgnIH19PgogICAgICAgICAgICA8ZGl2IHN0eWxlPXt7\nIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9udFNpemU6IDEz\nLCBjb2xvcjogJyM0QjU1NjMnLCBtYXJnaW5Cb3R0b206IDQgfX0+e3MubGFi\nZWx9PC9kaXY+CiAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZm9udEZhbWls\neTogJ3ZhcigtLWZvbnQtbW9ubyknLCBmb250U2l6ZTogMjYsIGZvbnRXZWln\naHQ6IDcwMCwgY29sb3I6ICcjMEExNjI4JyB9fT57cy52YWx1ZX08L2Rpdj4K\nICAgICAgICAgIDwvZGl2PgogICAgICAgICkpfQogICAgICA8L2Rpdj4KCiAg\nICAgIHsvKiBTZWFyY2ggKi99CiAgICAgIDxkaXYgc3R5bGU9e3sgLi4uZ2xh\nc3MsIHBhZGRpbmc6IDE2LCBtYXJnaW5Cb3R0b206IDE2IH19PgogICAgICAg\nIDxpbnB1dAogICAgICAgICAgdmFsdWU9e3NlYXJjaH0KICAgICAgICAgIG9u\nQ2hhbmdlPXtlID0+IHNldFNlYXJjaChlLnRhcmdldC52YWx1ZSl9CiAgICAg\nICAgICBwbGFjZWhvbGRlcj0i8J+UjSBTZWFyY2ggYnkgbmFtZSwgc2Nob29s\nLCBjbGFzcywgb3IgZW1haWwuLi4iCiAgICAgICAgICBzdHlsZT17ewogICAg\nICAgICAgICB3aWR0aDogJzEwMCUnLCBib3JkZXI6ICcxLjVweCBzb2xpZCBy\nZ2JhKDMwLDY0LDE3NSwwLjE1KScsIGJvcmRlclJhZGl1czogMTAsCiAgICAg\nICAgICAgIHBhZGRpbmc6ICcxMHB4IDE0cHgnLCBmb250RmFtaWx5OiAndmFy\nKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxNCwKICAgICAgICAgICAgY29s\nb3I6ICcjMEExNjI4JywgYmFja2dyb3VuZDogJyNGOEZBRkYnLCBvdXRsaW5l\nOiAnbm9uZScsIGJveFNpemluZzogJ2JvcmRlci1ib3gnLAogICAgICAgICAg\nfX0KICAgICAgICAvPgogICAgICA8L2Rpdj4KCiAgICAgIHsvKiBUYWJsZSAq\nL30KICAgICAgPGRpdiBzdHlsZT17eyAuLi5nbGFzcywgb3ZlcmZsb3c6ICdo\naWRkZW4nIH19PgogICAgICAgIDxkaXYgc3R5bGU9e3sgb3ZlcmZsb3dYOiAn\nYXV0bycgfX0+CiAgICAgICAgICA8dGFibGUgc3R5bGU9e3sgd2lkdGg6ICcx\nMDAlJywgYm9yZGVyQ29sbGFwc2U6ICdjb2xsYXBzZScsIGZvbnRGYW1pbHk6\nICd2YXIoLS1mb250LWJvZHkpJywgZm9udFNpemU6IDE0IH19PgogICAgICAg\nICAgICA8dGhlYWQ+CiAgICAgICAgICAgICAgPHRyIHN0eWxlPXt7IGJhY2tn\ncm91bmQ6ICcjRjBGNEZGJywgYm9yZGVyQm90dG9tOiAnMXB4IHNvbGlkIHJn\nYmEoMzAsNjQsMTc1LDAuMSknIH19PgogICAgICAgICAgICAgICAge1snTmFt\nZScsICdDbGFzcycsICdTY2hvb2wnLCAnRW1haWwnLCAnUXVpeiBBdHRlbXB0\ncycsICdYUCcsICdKb2luIERhdGUnXS5tYXAoaCA9PiAoCiAgICAgICAgICAg\nICAgICAgIDx0aCBrZXk9e2h9IHN0eWxlPXt7IHBhZGRpbmc6ICcxMnB4IDE2\ncHgnLCB0ZXh0QWxpZ246ICdsZWZ0JywgZm9udFdlaWdodDogNzAwLCBjb2xv\ncjogJyM0QjU1NjMnLCBmb250U2l6ZTogMTIsIHRleHRUcmFuc2Zvcm06ICd1\ncHBlcmNhc2UnLCBsZXR0ZXJTcGFjaW5nOiAnMC4wNWVtJywgd2hpdGVTcGFj\nZTogJ25vd3JhcCcgfX0+e2h9PC90aD4KICAgICAgICAgICAgICAgICkpfQog\nICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgIDwvdGhlYWQ+CiAgICAg\nICAgICAgIDx0Ym9keT4KICAgICAgICAgICAgICB7ZmlsdGVyZWQubWFwKChz\nLCBpKSA9PiAoCiAgICAgICAgICAgICAgICA8dHIga2V5PXtzLmlkfSBzdHls\nZT17eyBib3JkZXJCb3R0b206ICcxcHggc29saWQgcmdiYSgzMCw2NCwxNzUs\nMC4wNiknLCBiYWNrZ3JvdW5kOiBzLmlzQ3VycmVudFVzZXIgPyAncmdiYSg1\nOSwxMzAsMjQ2LDAuMDQpJyA6IGkgJSAyID09PSAwID8gJ3doaXRlJyA6ICcj\nRkFGQkZGJyB9fT4KICAgICAgICAgICAgICAgICAgPHRkIHN0eWxlPXt7IHBh\nZGRpbmc6ICcxMnB4IDE2cHgnLCBmb250V2VpZ2h0OiA2MDAsIGNvbG9yOiAn\nIzBBMTYyOCcsIHdoaXRlU3BhY2U6ICdub3dyYXAnIH19PgogICAgICAgICAg\nICAgICAgICAgIHtzLm5hbWV9CiAgICAgICAgICAgICAgICAgICAge3MuaXND\ndXJyZW50VXNlciAmJiA8c3BhbiBzdHlsZT17eyBtYXJnaW5MZWZ0OiA2LCBi\nYWNrZ3JvdW5kOiAnI0RCRUFGRScsIGNvbG9yOiAnIzFFNDBBRicsIGJvcmRl\nclJhZGl1czogMTAwLCBwYWRkaW5nOiAnMXB4IDhweCcsIGZvbnRTaXplOiAx\nMSwgZm9udFdlaWdodDogNzAwIH19PllvdTwvc3Bhbj59CiAgICAgICAgICAg\nICAgICAgIDwvdGQ+CiAgICAgICAgICAgICAgICAgIDx0ZCBzdHlsZT17eyBw\nYWRkaW5nOiAnMTJweCAxNnB4JywgY29sb3I6ICcjNEI1NTYzJyB9fT57cy5n\ncmFkZX08L3RkPgogICAgICAgICAgICAgICAgICA8dGQgc3R5bGU9e3sgcGFk\nZGluZzogJzEycHggMTZweCcsIGNvbG9yOiAnIzRCNTU2MycsIHdoaXRlU3Bh\nY2U6ICdub3dyYXAnIH19PntzLnNjaG9vbH08L3RkPgogICAgICAgICAgICAg\nICAgICA8dGQgc3R5bGU9e3sgcGFkZGluZzogJzEycHggMTZweCcsIGNvbG9y\nOiAnIzRCNTU2MycgfX0+e3MuZW1haWx9PC90ZD4KICAgICAgICAgICAgICAg\nICAgPHRkIHN0eWxlPXt7IHBhZGRpbmc6ICcxMnB4IDE2cHgnLCBmb250RmFt\naWx5OiAndmFyKC0tZm9udC1tb25vKScsIGNvbG9yOiAnIzBBMTYyOCcsIHRl\neHRBbGlnbjogJ2NlbnRlcicgfX0+e3MucXVpekF0dGVtcHRzfTwvdGQ+CiAg\nICAgICAgICAgICAgICAgIDx0ZCBzdHlsZT17eyBwYWRkaW5nOiAnMTJweCAx\nNnB4JywgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtbW9ubyknLCBjb2xvcjog\nJyNGNTlFMEInLCBmb250V2VpZ2h0OiA3MDAgfX0+e3MueHB9PC90ZD4KICAg\nICAgICAgICAgICAgICAgPHRkIHN0eWxlPXt7IHBhZGRpbmc6ICcxMnB4IDE2\ncHgnLCBjb2xvcjogJyM5Q0EzQUYnLCB3aGl0ZVNwYWNlOiAnbm93cmFwJyB9\nfT57cy5qb2luRGF0ZX08L3RkPgogICAgICAgICAgICAgICAgPC90cj4KICAg\nICAgICAgICAgICApKX0KICAgICAgICAgICAgICB7ZmlsdGVyZWQubGVuZ3Ro\nID09PSAwICYmICgKICAgICAgICAgICAgICAgIDx0cj48dGQgY29sU3Bhbj17\nN30gc3R5bGU9e3sgcGFkZGluZzogNDAsIHRleHRBbGlnbjogJ2NlbnRlcics\nIGNvbG9yOiAnIzlDQTNBRicgfX0+Tm8gc3R1ZGVudHMgZm91bmQuPC90ZD48\nL3RyPgogICAgICAgICAgICAgICl9CiAgICAgICAgICAgIDwvdGJvZHk+CiAg\nICAgICAgICA8L3RhYmxlPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYg\nc3R5bGU9e3sgcGFkZGluZzogJzEwcHggMTZweCcsIGJvcmRlclRvcDogJzFw\neCBzb2xpZCByZ2JhKDMwLDY0LDE3NSwwLjA4KScsIGZvbnRGYW1pbHk6ICd2\nYXIoLS1mb250LWJvZHkpJywgZm9udFNpemU6IDEzLCBjb2xvcjogJyM5Q0Ez\nQUYnIH19PgogICAgICAgICAgU2hvd2luZyB7ZmlsdGVyZWQubGVuZ3RofSBv\nZiB7c3R1ZGVudHMubGVuZ3RofSBzdHVkZW50cwogICAgICAgIDwvZGl2Pgog\nICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICk7Cn0=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/admin/AdminStudents.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/28cc604807ae4f110122fc849ff2f1069401ad5d","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/admin/AdminStudents.jsx"}}
+import React, { useState, useMemo } from 'react';
+import { generateLeaderboard } from '@/lib/leaderboardEngine';
+
+const glass = {
+  background: 'rgba(255,255,255,0.85)',
+  border: '1px solid rgba(30,64,175,0.12)',
+  borderRadius: 16,
+  boxShadow: '0 4px 20px rgba(10,22,40,0.06)',
+};
+
+// Generate mock student list from leaderboard engine + any local storage data
+function buildStudentList() {
+  const profile  = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile')) || {}; } catch { return {}; } })();
+  const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress')) || {}; } catch { return {}; } })();
+  const auth     = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth')) || {}; } catch { return {}; } })();
+
+  const board = generateLeaderboard(profile, progress, 'global');
+
+  return board.map((entry, i) => ({
+    id: entry.id,
+    name: entry.isAnonymous ? 'Anonymous' : entry.name,
+    email: entry.isCurrentUser ? (auth.email || '—') : `student${i + 1}@school.edu`,
+    grade: entry.grade || '—',
+    school: entry.school || 'DPS School',
+    quizAttempts: entry.isCurrentUser ? (progress.dailyQuizHistory?.length || 0) : Math.floor(Math.random() * 30),
+    joinDate: entry.isCurrentUser
+      ? new Date(Date.now() - 30 * 24 * 3600000).toLocaleDateString()
+      : new Date(Date.now() - Math.random() * 90 * 24 * 3600000).toLocaleDateString(),
+    xp: entry.score,
+    isCurrentUser: entry.isCurrentUser,
+  }));
+}
+
+export default function AdminStudents() {
+  const [search, setSearch] = useState('');
+  const students = useMemo(() => buildStudentList(), []);
+
+  const filtered = useMemo(() => {
+    const q = search.toLowerCase();
+    if (!q) return students;
+    return students.filter(s =>
+      s.name.toLowerCase().includes(q) ||
+      s.school.toLowerCase().includes(q) ||
+      s.grade.toLowerCase().includes(q) ||
+      s.email.toLowerCase().includes(q)
+    );
+  }, [search, students]);
+
+  return (
+    <div>
+      {/* Summary row */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 12, marginBottom: 20 }}>
+        {[
+          { label: '👥 Total Students', value: students.length },
+          { label: '✅ Quiz Completed', value: students.filter(s => s.quizAttempts > 0).length },
+          { label: '⭐ Avg XP', value: Math.round(students.reduce((a, s) => a + s.xp, 0) / students.length) },
+        ].map((s, i) => (
+          <div key={i} style={{ ...glass, padding: '16px 20px' }}>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginBottom: 4 }}>{s.label}</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 26, fontWeight: 700, color: '#0A1628' }}>{s.value}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Search */}
+      <div style={{ ...glass, padding: 16, marginBottom: 16 }}>
+        <input
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          placeholder="🔍 Search by name, school, class, or email..."
+          style={{
+            width: '100%', border: '1.5px solid rgba(30,64,175,0.15)', borderRadius: 10,
+            padding: '10px 14px', fontFamily: 'var(--font-body)', fontSize: 14,
+            color: '#0A1628', background: '#F8FAFF', outline: 'none', boxSizing: 'border-box',
+          }}
+        />
+      </div>
+
+      {/* Table */}
+      <div style={{ ...glass, overflow: 'hidden' }}>
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-body)', fontSize: 14 }}>
+            <thead>
+              <tr style={{ background: '#F0F4FF', borderBottom: '1px solid rgba(30,64,175,0.1)' }}>
+                {['Name', 'Class', 'School', 'Email', 'Quiz Attempts', 'XP', 'Join Date'].map(h => (
+                  <th key={h} style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 700, color: '#4B5563', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {filtered.map((s, i) => (
+                <tr key={s.id} style={{ borderBottom: '1px solid rgba(30,64,175,0.06)', background: s.isCurrentUser ? 'rgba(59,130,246,0.04)' : i % 2 === 0 ? 'white' : '#FAFBFF' }}>
+                  <td style={{ padding: '12px 16px', fontWeight: 600, color: '#0A1628', whiteSpace: 'nowrap' }}>
+                    {s.name}
+                    {s.isCurrentUser && <span style={{ marginLeft: 6, background: '#DBEAFE', color: '#1E40AF', borderRadius: 100, padding: '1px 8px', fontSize: 11, fontWeight: 700 }}>You</span>}
+                  </td>
+                  <td style={{ padding: '12px 16px', color: '#4B5563' }}>{s.grade}</td>
+                  <td style={{ padding: '12px 16px', color: '#4B5563', whiteSpace: 'nowrap' }}>{s.school}</td>
+                  <td style={{ padding: '12px 16px', color: '#4B5563' }}>{s.email}</td>
+                  <td style={{ padding: '12px 16px', fontFamily: 'var(--font-mono)', color: '#0A1628', textAlign: 'center' }}>{s.quizAttempts}</td>
+                  <td style={{ padding: '12px 16px', fontFamily: 'var(--font-mono)', color: '#F59E0B', fontWeight: 700 }}>{s.xp}</td>
+                  <td style={{ padding: '12px 16px', color: '#9CA3AF', whiteSpace: 'nowrap' }}>{s.joinDate}</td>
+                </tr>
+              ))}
+              {filtered.length === 0 && (
+                <tr><td colSpan={7} style={{ padding: 40, textAlign: 'center', color: '#9CA3AF' }}>No students found.</td></tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+        <div style={{ padding: '10px 16px', borderTop: '1px solid rgba(30,64,175,0.08)', fontFamily: 'var(--font-body)', fontSize: 13, color: '#9CA3AF' }}>
+          Showing {filtered.length} of {students.length} students
+        </div>
+      </div>
+    </div>
+  );
+}
