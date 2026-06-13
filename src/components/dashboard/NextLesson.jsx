@@ -1,1 +1,62 @@
-{"name":"NextLesson.jsx","path":"src/components/dashboard/NextLesson.jsx","sha":"e10b96b01ac724a59faa9145a082741352bc0182","size":2941,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/NextLesson.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/NextLesson.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/e10b96b01ac724a59faa9145a082741352bc0182","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/dashboard/NextLesson.jsx?token=CFODAPZKTU43IX34FR3HIO3KFSQVJAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgTGluayB9IGZy\nb20gJ3JlYWN0LXJvdXRlci1kb20nOwppbXBvcnQgeyBtb3Rpb24gfSBmcm9t\nICdmcmFtZXItbW90aW9uJzsKCmNvbnN0IEFMTF9MRVNTT05TID0gWwogIHsg\naWQ6ICdsMV8xJywgdGl0bGU6ICdOaWtoaWxhbSBTdXRyYScsIGxldmVsOiAn\n8J+MsSBCZWdpbm5lcicsIG1pbnM6IDE1LCB4cDogMTAwIH0sCiAgeyBpZDog\nJ2wxXzInLCB0aXRsZTogJ0VrYWRoaWtlbmEgUHVydmVuYScsIGxldmVsOiAn\n8J+MsSBCZWdpbm5lcicsIG1pbnM6IDEyLCB4cDogMTAwIH0sCiAgeyBpZDog\nJ2wxXzMnLCB0aXRsZTogJ1VyZGh2YSBUaXJ5YWdiaHlhbScsIGxldmVsOiAn\n8J+MsSBCZWdpbm5lcicsIG1pbnM6IDE4LCB4cDogMTIwIH0sCiAgeyBpZDog\nJ2wxXzQnLCB0aXRsZTogJ1BhcmF2YXJ0eWEgWW9qYXlldCcsIGxldmVsOiAn\n8J+MsSBCZWdpbm5lcicsIG1pbnM6IDIwLCB4cDogMTMwIH0sCiAgeyBpZDog\nJ2wxXzUnLCB0aXRsZTogJ0FudXJ1cHllbmEnLCBsZXZlbDogJ/CfjLEgQmVn\naW5uZXInLCBtaW5zOiAxNSwgeHA6IDEwMCB9LAogIHsgaWQ6ICdsMl8xJywg\ndGl0bGU6ICdWaW5jdWx1bSBOdW1iZXJzJywgbGV2ZWw6ICfwn5OIIEludGVy\nbWVkaWF0ZScsIG1pbnM6IDIwLCB4cDogMTUwIH0sCiAgeyBpZDogJ2wyXzIn\nLCB0aXRsZTogJ0R1cGxleCBNZXRob2QnLCBsZXZlbDogJ/Cfk4ggSW50ZXJt\nZWRpYXRlJywgbWluczogMTgsIHhwOiAxNTAgfSwKICB7IGlkOiAnbDNfMScs\nIHRpdGxlOiAnQWxnZWJyYWljIERpdmlzaW9uJywgbGV2ZWw6ICfwn5SlIEFk\ndmFuY2VkJywgbWluczogMjUsIHhwOiAyMDAgfSwKICB7IGlkOiAnbDRfMScs\nIHRpdGxlOiAnU3BlZWQgQXJpdGhtZXRpYycsIGxldmVsOiAn8J+RkSBNYXN0\nZXInLCBtaW5zOiAzMCwgeHA6IDI1MCB9LApdOwoKZXhwb3J0IGRlZmF1bHQg\nZnVuY3Rpb24gTmV4dExlc3Nvbih7IHByb2dyZXNzIH0pIHsKICBjb25zdCBj\nb21wbGV0ZWQgPSBuZXcgU2V0KHByb2dyZXNzLmNvbXBsZXRlZExlc3NvbnMg\nfHwgW10pOwogIGNvbnN0IG5leHQgPSBBTExfTEVTU09OUy5maW5kKChsKSA9\nPiAhY29tcGxldGVkLmhhcyhsLmlkKSk7CiAgY29uc3QgYWxsRG9uZSA9ICFu\nZXh0OwoKICByZXR1cm4gKAogICAgPG1vdGlvbi5kaXYKICAgICAgaW5pdGlh\nbD17eyBvcGFjaXR5OiAwLCB4OiAyMCB9fQogICAgICBhbmltYXRlPXt7IG9w\nYWNpdHk6IDEsIHg6IDAgfX0KICAgICAgdHJhbnNpdGlvbj17eyBkZWxheTog\nMC4xIH19CiAgICAgIGNsYXNzTmFtZT0iYmctd2hpdGUgcm91bmRlZC1bMjBw\neF0gcC02IGJvcmRlciBib3JkZXItWyNGMEY0RkZdIgogICAgICBzdHlsZT17\neyBib3hTaGFkb3c6ICcwIDRweCAyNHB4IHJnYmEoMTAsMjIsNDAsMC4wNikn\nIH19CiAgICA+CiAgICAgIHthbGxEb25lID8gKAogICAgICAgIDxkaXYgY2xh\nc3NOYW1lPSJ0ZXh0LWNlbnRlciBweS00Ij4KICAgICAgICAgIDxzcGFuIGNs\nYXNzTmFtZT0idGV4dC00eGwgYmxvY2sgbWItMyI+8J+Phjwvc3Bhbj4KICAg\nICAgICAgIDxwIGNsYXNzTmFtZT0iZm9udC1oZWFkaW5nIHRleHQtYmFzZSBm\nb250LWJvbGQgdGV4dC1bIzBBMTYyOF0gbWItMyI+CiAgICAgICAgICAgIFlv\ndSd2ZSBjb21wbGV0ZWQgYWxsIGxlc3NvbnMhCiAgICAgICAgICA8L3A+CiAg\nICAgICAgICA8TGluawogICAgICAgICAgICB0bz0iL3ByYWN0aWNlIgogICAg\nICAgICAgICBjbGFzc05hbWU9ImlubGluZS1mbGV4IGl0ZW1zLWNlbnRlciBq\ndXN0aWZ5LWNlbnRlciB3LWZ1bGwgaC0xMSByb3VuZGVkLXhsIGJnLVsjMEEx\nNjI4XSB0ZXh0LXdoaXRlIGZvbnQtc2VtaWJvbGQgdGV4dC1zbSBob3Zlcjpi\nZy1bIzBEMjI1Ml0gdHJhbnNpdGlvbi1jb2xvcnMiCiAgICAgICAgICA+CiAg\nICAgICAgICAgIFRyeSBQcmFjdGljZSBNb2RlIOKGkgogICAgICAgICAgPC9M\naW5rPgogICAgICAgIDwvZGl2PgogICAgICApIDogKAogICAgICAgIDw+CiAg\nICAgICAgICA8cCBjbGFzc05hbWU9InRleHQteHMgZm9udC1zZW1pYm9sZCB0\nZXh0LVsjNEI1NTYzXSB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZXIgbWItMiI+\n8J+TliBVcCBOZXh0PC9wPgogICAgICAgICAgPGgzIGNsYXNzTmFtZT0iZm9u\ndC1oZWFkaW5nIHRleHQteGwgZm9udC1ib2xkIHRleHQtWyMwQTE2MjhdIG1i\nLTMiPntuZXh0LnRpdGxlfTwvaDM+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFt\nZT0iZmxleCBmbGV4LXdyYXAgZ2FwLTIgbWItNCI+CiAgICAgICAgICAgIDxz\ncGFuIGNsYXNzTmFtZT0icHgtMi41IHB5LTEgcm91bmRlZC1mdWxsIGJnLVsj\nRjBGNEZGXSB0ZXh0LVsjMEExNjI4XSB0ZXh0LXhzIGZvbnQtbWVkaXVtIj57\nbmV4dC5sZXZlbH08L3NwYW4+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFt\nZT0icHgtMi41IHB5LTEgcm91bmRlZC1mdWxsIGJnLVsjRjBGNEZGXSB0ZXh0\nLVsjMEExNjI4XSB0ZXh0LXhzIGZvbnQtbWVkaXVtIj7ij7Ege25leHQubWlu\nc30gbWluPC9zcGFuPgogICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InB4\nLTIuNSBweS0xIHJvdW5kZWQtZnVsbCBiZy1bI0YwRjRGRl0gdGV4dC1bIzBB\nMTYyOF0gdGV4dC14cyBmb250LW1lZGl1bSI+4pqhICt7bmV4dC54cH0gWFA8\nL3NwYW4+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxMaW5rCiAgICAg\nICAgICAgIHRvPSIvbGVhcm4iCiAgICAgICAgICAgIGNsYXNzTmFtZT0iZmxl\neCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgdy1mdWxsIGgtMTEgcm91\nbmRlZC14bCBiZy1bIzBBMTYyOF0gdGV4dC13aGl0ZSBmb250LXNlbWlib2xk\nIHRleHQtc20gaG92ZXI6YmctWyMwRDIyNTJdIHRyYW5zaXRpb24tY29sb3Jz\nIgogICAgICAgICAgPgogICAgICAgICAgICBTdGFydCBMZXNzb24g4oaSCiAg\nICAgICAgICA8L0xpbms+CiAgICAgICAgPC8+CiAgICAgICl9CiAgICA8L21v\ndGlvbi5kaXY+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/NextLesson.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/e10b96b01ac724a59faa9145a082741352bc0182","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/NextLesson.jsx"}}
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const ALL_LESSONS = [
+  { id: 'l1_1', title: 'Nikhilam Sutra', level: '🌱 Beginner', mins: 15, xp: 100 },
+  { id: 'l1_2', title: 'Ekadhikena Purvena', level: '🌱 Beginner', mins: 12, xp: 100 },
+  { id: 'l1_3', title: 'Urdhva Tiryagbhyam', level: '🌱 Beginner', mins: 18, xp: 120 },
+  { id: 'l1_4', title: 'Paravartya Yojayet', level: '🌱 Beginner', mins: 20, xp: 130 },
+  { id: 'l1_5', title: 'Anurupyena', level: '🌱 Beginner', mins: 15, xp: 100 },
+  { id: 'l2_1', title: 'Vinculum Numbers', level: '📈 Intermediate', mins: 20, xp: 150 },
+  { id: 'l2_2', title: 'Duplex Method', level: '📈 Intermediate', mins: 18, xp: 150 },
+  { id: 'l3_1', title: 'Algebraic Division', level: '🔥 Advanced', mins: 25, xp: 200 },
+  { id: 'l4_1', title: 'Speed Arithmetic', level: '👑 Master', mins: 30, xp: 250 },
+];
+
+export default function NextLesson({ progress }) {
+  const completed = new Set(progress.completedLessons || []);
+  const next = ALL_LESSONS.find((l) => !completed.has(l.id));
+  const allDone = !next;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.1 }}
+      className="bg-white rounded-[20px] p-6 border border-[#F0F4FF]"
+      style={{ boxShadow: '0 4px 24px rgba(10,22,40,0.06)' }}
+    >
+      {allDone ? (
+        <div className="text-center py-4">
+          <span className="text-4xl block mb-3">🏆</span>
+          <p className="font-heading text-base font-bold text-[#0A1628] mb-3">
+            You've completed all lessons!
+          </p>
+          <Link
+            to="/practice"
+            className="inline-flex items-center justify-center w-full h-11 rounded-xl bg-[#0A1628] text-white font-semibold text-sm hover:bg-[#0D2252] transition-colors"
+          >
+            Try Practice Mode →
+          </Link>
+        </div>
+      ) : (
+        <>
+          <p className="text-xs font-semibold text-[#4B5563] uppercase tracking-wider mb-2">📖 Up Next</p>
+          <h3 className="font-heading text-xl font-bold text-[#0A1628] mb-3">{next.title}</h3>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="px-2.5 py-1 rounded-full bg-[#F0F4FF] text-[#0A1628] text-xs font-medium">{next.level}</span>
+            <span className="px-2.5 py-1 rounded-full bg-[#F0F4FF] text-[#0A1628] text-xs font-medium">⏱ {next.mins} min</span>
+            <span className="px-2.5 py-1 rounded-full bg-[#F0F4FF] text-[#0A1628] text-xs font-medium">⚡ +{next.xp} XP</span>
+          </div>
+          <Link
+            to="/learn"
+            className="flex items-center justify-center w-full h-11 rounded-xl bg-[#0A1628] text-white font-semibold text-sm hover:bg-[#0D2252] transition-colors"
+          >
+            Start Lesson →
+          </Link>
+        </>
+      )}
+    </motion.div>
+  );
+}
