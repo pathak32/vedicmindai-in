@@ -182,7 +182,9 @@ function QuestionRow({ index, answer, question, expanded, onToggle }) {
 
 function ShareModal({ score, onClose }) {
   const [copied, setCopied] = useState(false);
-  const shareText = `I scored ${score}/110 on VedicMind's Daily Quiz today! 🧮⚡ Can you beat me?\n👉 Join FREE: https://vedicmindai.in\n#VedicMind #VedicMaths #MentalMath`;
+  const shareText = `I scored ${score}/110 on VedicMind's Daily Quiz today! 🧮⚡ Can you beat me?
+👉 Join FREE: https://vedicmindai.in
+#VedicMind #VedicMaths #MentalMath`;
   const encodedText = encodeURIComponent(shareText);
 
   const handleCopy = () => {
