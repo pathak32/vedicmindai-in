@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { saveUserProfile, saveUserProgress } from '@/lib/supabaseDataService';
+import { getSupabase } from '@/lib/supabaseClient';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import Step1Role from '@/components/onboarding/Step1Role';
@@ -215,6 +217,24 @@ Respond with exactly this JSON structure:
     };
     localStorage.setItem('vedicmind_profile', JSON.stringify(profileObject));
 
+    // Save profile to Supabase async
+    (async () => {
+      try {
+        const supabase = await getSupabase();
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session?.user?.id) {
+          await saveUserProfile(session.user.id, {
+            name: profileObject.name,
+            goal: Array.isArray(profileObject.goals) ? profileObject.goals.join(',') : (profileObject.goals || ''),
+            class_group: 'class_a',
+            subscription_status: 'trial',
+            trial_start_date: new Date().toISOString(),
+            ai_analysis: profileObject.aiAnalysis || {},
+          });
+        }
+      } catch(e) { console.warn('Profile save failed:', e); }
+    })();
+
     const freshProgress = {
       currentLevel: 1,
       currentLesson: 'l1_01',
@@ -231,6 +251,15 @@ Respond with exactly this JSON structure:
       leaderboardOptOut: false,
     };
     localStorage.setItem('vedicmind_progress', JSON.stringify(freshProgress));
+
+    // Save progress to Supabase async
+    (async () => {
+      try {
+        const supabase = await getSupabase();
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session?.user?.id) await saveUserProgress(session.user.id, freshProgress);
+      } catch(e) { console.warn('Progress save failed:', e); }
+    })();
 
     navigate('/dashboard');
   };
