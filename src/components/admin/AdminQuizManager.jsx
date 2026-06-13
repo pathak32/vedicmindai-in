@@ -1,170 +1,169 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getSupabase } from '@/lib/supabaseClient';
 
-const glass = {
-  background: 'rgba(255,255,255,0.85)',
-  border: '1px solid rgba(30,64,175,0.12)',
-  borderRadius: 16,
-  boxShadow: '0 4px 20px rgba(10,22,40,0.06)',
-};
-
-const INPUT_STYLE = {
-  width: '100%', border: '1.5px solid rgba(30,64,175,0.15)', borderRadius: 10,
-  padding: '10px 14px', fontFamily: 'var(--font-body)', fontSize: 14,
-  color: '#0A1628', background: '#F8FAFF', outline: 'none',
-  boxSizing: 'border-box', marginBottom: 12,
-};
-
-const STORAGE_KEY = 'vedicmind_admin_quiz_questions';
-
-function loadQuestions() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) return JSON.parse(saved);
-  } catch {}
-  // Default seed questions
-  return [
-    { id: 'q1', question: 'What is 15²?', options: ['125','215','225','235'], correct: 2, sutra: 'Ekadhikena Purvena', tip: 'For any number ending in 5: multiply the tens digit by one more, then append 25.' },
-    { id: 'q2', question: 'What is 99 × 99?', options: ['9700','9801','9900','9999'], correct: 1, sutra: 'Nikhilam', tip: 'Deficit from 100 is 1. Cross: 99-1=98. Product of deficits: 01 → 9801.' },
-    { id: 'q3', question: 'What is 1000 − 437?', options: ['553','563','573','663'], correct: 1, sutra: 'Nikhilam Navatashcaramam Dashatah', tip: 'All from 9, last from 10: 9-4=5, 9-3=6, 10-7=3 → 563.' },
-    { id: 'q4', question: 'What is 23 × 11?', options: ['243','253','263','273'], correct: 1, sutra: 'Anurupyena', tip: 'Multiply by 11: write 2, middle digit 2+3=5, write 3 → 253.' },
-    { id: 'q5', question: 'What is 75²?', options: ['5525','5625','5725','5825'], correct: 1, sutra: 'Ekadhikena Purvena', tip: '7×8=56, append 25 → 5625.' },
-  ];
-}
-
-const BLANK_FORM = { question: '', options: ['', '', '', ''], correct: 0, sutra: '', tip: '' };
+const card = { background:'rgba(255,255,255,0.9)', border:'1px solid rgba(30,64,175,0.1)', borderRadius:14, padding:20, boxShadow:'0 2px 12px rgba(0,0,0,0.05)', marginBottom:16 };
+const btn = (color='#1e40af') => ({ padding:'8px 18px', borderRadius:9, background:color, color:'#fff', border:'none', cursor:'pointer', fontSize:13, fontWeight:600 });
+const EXAM_TYPES = ['daily','weekly','olympiad','jee','neet','ssc','upsc','general'];
+const DIFFICULTIES = [1,2,3,4,5];
+const SUTRAS = ['Ekadhikena Purvena','Nikhilam','Anurupyena','Paravartya','Shunyam','Anurupye','Sankalana-Vyavakalanabhyam','Puranapuranabhyam','Calana-Kalanabhyam','Yavadunam','Vyashtisamanstih','Shesanyankena Charamena','Sopaantyadvayamantyam','Ekanyunena Purvena','Gunitasamuchyah','Gunakasamuchyah'];
 
 export default function AdminQuizManager() {
-  const [questions, setQuestions] = useState(loadQuestions);
-  const [editing, setEditing] = useState(null);
-  const [form, setForm] = useState(BLANK_FORM);
-  const [search, setSearch] = useState('');
-  const [deleteConfirm, setDeleteConfirm] = useState(null);
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [generating, setGenerating] = useState(false);
+  const [filter, setFilter] = useState({ exam_type:'all', difficulty:'all' });
+  const [genConfig, setGenConfig] = useState({ sutra: SUTRAS[0], difficulty:3, exam_type:'daily', count:10 });
+  const [genResult, setGenResult] = useState('');
 
-  function persist(qs) {
-    setQuestions(qs);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(qs));
+  useEffect(() => { loadQuestions(); }, []);
+
+  async function loadQuestions() {
+    setLoading(true);
+    try {
+      const sb = await getSupabase();
+      let q = sb.from('questions').select('*').order('created_at', { ascending:false }).limit(100);
+      if (filter.exam_type !== 'all') q = q.eq('exam_type', filter.exam_type);
+      if (filter.difficulty !== 'all') q = q.eq('difficulty', parseInt(filter.difficulty));
+      const { data, error } = await q;
+      if (error) throw error;
+      setQuestions(data || []);
+    } catch(e) { console.error(e); setQuestions([]); }
+    finally { setLoading(false); }
   }
 
-  function startEdit(q) {
-    setForm({ ...q, options: [...q.options] });
-    setEditing(q.id);
+  async function generateQuestions() {
+    setGenerating(true);
+    setGenResult('Generating questions via AI...');
+    try {
+      const prompt = `Generate ${genConfig.count} multiple-choice Vedic Mathematics questions for the sutra "${genConfig.sutra}".
+Difficulty level: ${genConfig.difficulty}/5 (${genConfig.difficulty<=2?'Easy':genConfig.difficulty<=3?'Medium':genConfig.difficulty<=4?'Hard':'Expert'}).
+Exam type: ${genConfig.exam_type.toUpperCase()}.
+
+Return ONLY a valid JSON array, no markdown, no explanation. Format:
+[{"question_text":"...","option_a":"...","option_b":"...","option_c":"...","option_d":"...","correct_answer":"a","explanation":"..."}]
+
+Rules:
+- Questions must involve actual numbers and calculations
+- Each question must have exactly 4 options (a,b,c,d)
+- correct_answer must be "a","b","c", or "d"
+- Explanation must show the Vedic method step by step
+- Difficulty ${genConfig.difficulty}: ${genConfig.difficulty<=2?'simple 2-digit numbers':genConfig.difficulty<=3?'3-digit numbers':genConfig.difficulty<=4?'4-digit numbers and fractions':'complex multi-step problems'}`;
+
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json', 'x-api-key':'', 'anthropic-version':'2023-06-01' },
+        body: JSON.stringify({ model:'claude-sonnet-4-6', max_tokens:4000, messages:[{ role:'user', content:prompt }] })
+      });
+      const aiData = await res.json();
+      const text = aiData.content?.[0]?.text || '';
+      const clean = text.replace(/```json|```/g,'').trim();
+      const parsed = JSON.parse(clean);
+
+      const sb = await getSupabase();
+      const rows = parsed.map(q => ({
+        ...q,
+        sutra: genConfig.sutra,
+        difficulty: genConfig.difficulty,
+        exam_type: genConfig.exam_type,
+        topic: genConfig.sutra,
+      }));
+      const { error } = await sb.from('questions').insert(rows);
+      if (error) throw error;
+
+      setGenResult(`✅ ${parsed.length} questions generated and saved to Supabase!`);
+      loadQuestions();
+    } catch(e) {
+      setGenResult(`❌ Error: ${e.message}`);
+    } finally { setGenerating(false); }
   }
 
-  function startNew() {
-    setForm({ ...BLANK_FORM, options: ['', '', '', ''], id: `q_${Date.now()}` });
-    setEditing('new');
+  async function deleteQuestion(id) {
+    const sb = await getSupabase();
+    await sb.from('questions').delete().eq('id', id);
+    loadQuestions();
   }
-
-  function save() {
-    if (!form.question.trim()) return;
-    if (editing === 'new') {
-      persist([...questions, form]);
-    } else {
-      persist(questions.map(q => q.id === editing ? form : q));
-    }
-    setEditing(null);
-  }
-
-  function deleteQ(id) {
-    persist(questions.filter(q => q.id !== id));
-    setDeleteConfirm(null);
-  }
-
-  const filtered = questions.filter(q =>
-    !search || q.question.toLowerCase().includes(search.toLowerCase()) || q.sutra?.toLowerCase().includes(search.toLowerCase())
-  );
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, flexWrap: 'wrap', gap: 10 }}>
-        <div style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563' }}>{questions.length} quiz questions</div>
-        <button onClick={startNew} style={{ minHeight: 40, padding: '0 20px', background: '#0A1628', color: 'white', border: 'none', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>+ Add Question</button>
-      </div>
-
-      <input
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-        placeholder="🔍 Search questions..."
-        style={{ ...INPUT_STYLE, marginBottom: 16 }}
-      />
-
-      {/* Edit/New form */}
-      {editing && (
-        <div style={{ ...glass, padding: 24, marginBottom: 20 }}>
-          <h3 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: '#0A1628', marginBottom: 16 }}>
-            {editing === 'new' ? 'New Question' : 'Edit Question'}
-          </h3>
-          <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', display: 'block', marginBottom: 4 }}>Question Text *</label>
-          <textarea style={{ ...INPUT_STYLE, height: 72, resize: 'vertical' }} value={form.question} onChange={e => setForm(f => ({ ...f, question: e.target.value }))} placeholder="Enter the question..." />
-
-          <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', display: 'block', marginBottom: 8 }}>Options (select correct answer)</label>
-          {form.options.map((opt, i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 8 }}>
-              <button
-                onClick={() => setForm(f => ({ ...f, correct: i }))}
-                style={{
-                  width: 32, height: 32, borderRadius: '50%', border: 'none', cursor: 'pointer', flexShrink: 0,
-                  background: form.correct === i ? '#10B981' : '#F0F4FF',
-                  color: form.correct === i ? 'white' : '#4B5563',
-                  fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 13,
-                }}
-              >{String.fromCharCode(65 + i)}</button>
-              <input
-                style={{ ...INPUT_STYLE, marginBottom: 0, flex: 1 }}
-                value={opt}
-                onChange={e => setForm(f => { const opts = [...f.options]; opts[i] = e.target.value; return { ...f, options: opts }; })}
-                placeholder={`Option ${String.fromCharCode(65 + i)}`}
-              />
-            </div>
-          ))}
-
-          <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', display: 'block', marginBottom: 4, marginTop: 4 }}>Vedic Sutra</label>
-          <input style={INPUT_STYLE} value={form.sutra || ''} onChange={e => setForm(f => ({ ...f, sutra: e.target.value }))} placeholder="e.g. Nikhilam" />
-          <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', display: 'block', marginBottom: 4 }}>Vedic Tip / Explanation</label>
-          <textarea style={{ ...INPUT_STYLE, height: 72, resize: 'vertical' }} value={form.tip || ''} onChange={e => setForm(f => ({ ...f, tip: e.target.value }))} placeholder="Explain the Vedic trick..." />
-
-          <div style={{ display: 'flex', gap: 10, marginTop: 4 }}>
-            <button onClick={save} style={{ minHeight: 40, padding: '0 24px', background: '#10B981', color: 'white', border: 'none', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>Save</button>
-            <button onClick={() => setEditing(null)} style={{ minHeight: 40, padding: '0 20px', background: 'transparent', border: '1.5px solid #D1D5DB', color: '#4B5563', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>Cancel</button>
+      {/* Generator */}
+      <div style={card}>
+        <h3 style={{ fontSize:16, fontWeight:600, marginBottom:16 }}>🤖 AI Question Generator</h3>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:12, marginBottom:14 }}>
+          <div>
+            <label style={{ fontSize:12, color:'#6B7280', display:'block', marginBottom:4 }}>Sutra</label>
+            <select value={genConfig.sutra} onChange={e=>setGenConfig(p=>({...p,sutra:e.target.value}))} style={{ width:'100%', padding:'7px 10px', borderRadius:8, border:'1px solid #E5E7EB', fontSize:13 }}>
+              {SUTRAS.map(s=><option key={s} value={s}>{s}</option>)}
+            </select>
+          </div>
+          <div>
+            <label style={{ fontSize:12, color:'#6B7280', display:'block', marginBottom:4 }}>Difficulty (1-5)</label>
+            <select value={genConfig.difficulty} onChange={e=>setGenConfig(p=>({...p,difficulty:parseInt(e.target.value)}))} style={{ width:'100%', padding:'7px 10px', borderRadius:8, border:'1px solid #E5E7EB', fontSize:13 }}>
+              {DIFFICULTIES.map(d=><option key={d} value={d}>{d} — {d<=2?'Easy':d<=3?'Medium':d<=4?'Hard':'Expert'}</option>)}
+            </select>
+          </div>
+          <div>
+            <label style={{ fontSize:12, color:'#6B7280', display:'block', marginBottom:4 }}>Exam Type</label>
+            <select value={genConfig.exam_type} onChange={e=>setGenConfig(p=>({...p,exam_type:e.target.value}))} style={{ width:'100%', padding:'7px 10px', borderRadius:8, border:'1px solid #E5E7EB', fontSize:13 }}>
+              {EXAM_TYPES.map(t=><option key={t} value={t}>{t.toUpperCase()}</option>)}
+            </select>
+          </div>
+          <div>
+            <label style={{ fontSize:12, color:'#6B7280', display:'block', marginBottom:4 }}>Count</label>
+            <select value={genConfig.count} onChange={e=>setGenConfig(p=>({...p,count:parseInt(e.target.value)}))} style={{ width:'100%', padding:'7px 10px', borderRadius:8, border:'1px solid #E5E7EB', fontSize:13 }}>
+              {[5,10,15,20].map(n=><option key={n} value={n}>{n} questions</option>)}
+            </select>
           </div>
         </div>
-      )}
+        <button onClick={generateQuestions} disabled={generating} style={btn(generating?'#9CA3AF':'#7C3AED')}>
+          {generating ? '⏳ Generating...' : '✨ Generate with AI'}
+        </button>
+        {genResult && <p style={{ marginTop:12, fontSize:13, color: genResult.startsWith('✅')?'#059669':'#DC2626' }}>{genResult}</p>}
+      </div>
 
-      {/* Questions list */}
-      <div style={{ ...glass, overflow: 'hidden' }}>
-        {filtered.map((q, i) => (
-          <div key={q.id} style={{ padding: '14px 16px', borderBottom: i < filtered.length - 1 ? '1px solid rgba(30,64,175,0.06)' : 'none' }}>
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: '#9CA3AF', minWidth: 28, marginTop: 2 }}>Q{i + 1}</span>
-              <div style={{ flex: 1 }}>
-                <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628', marginBottom: 6 }}>{q.question}</div>
-                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 6 }}>
-                  {q.options.map((opt, oi) => (
-                    <span key={oi} style={{
-                      background: oi === q.correct ? '#D1FAE5' : '#F0F4FF',
-                      color: oi === q.correct ? '#065F46' : '#4B5563',
-                      borderRadius: 6, padding: '3px 10px', fontSize: 12, fontFamily: 'var(--font-body)',
-                      fontWeight: oi === q.correct ? 700 : 400,
-                    }}>{String.fromCharCode(65 + oi)}: {opt}</span>
-                  ))}
-                </div>
-                {q.sutra && <span style={{ background: '#DBEAFE', color: '#1E40AF', borderRadius: 100, padding: '2px 10px', fontSize: 12, fontFamily: 'var(--font-body)', fontWeight: 600 }}>{q.sutra}</span>}
-              </div>
-              <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
-                <button onClick={() => startEdit(q)} style={{ minHeight: 44, padding: '0 14px', background: '#F0F4FF', color: '#1E40AF', border: 'none', borderRadius: 8, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>Edit</button>
-                {deleteConfirm === q.id ? (
-                  <>
-                    <button onClick={() => deleteQ(q.id)} style={{ minHeight: 44, padding: '0 14px', background: '#EF4444', color: 'white', border: 'none', borderRadius: 8, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>Confirm</button>
-                    <button onClick={() => setDeleteConfirm(null)} style={{ minHeight: 44, padding: '0 10px', background: 'transparent', border: '1px solid #D1D5DB', color: '#4B5563', borderRadius: 8, fontFamily: 'var(--font-body)', fontSize: 13, cursor: 'pointer' }}>✕</button>
-                  </>
-                ) : (
-                  <button onClick={() => setDeleteConfirm(q.id)} style={{ minHeight: 44, padding: '0 14px', background: '#FEF2F2', color: '#DC2626', border: 'none', borderRadius: 8, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>Delete</button>
-                )}
-              </div>
-            </div>
+      {/* Filters + Table */}
+      <div style={card}>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:14, flexWrap:'wrap', gap:8 }}>
+          <h3 style={{ fontSize:16, fontWeight:600, margin:0 }}>Question Bank ({questions.length})</h3>
+          <div style={{ display:'flex', gap:8 }}>
+            <select value={filter.exam_type} onChange={e=>{setFilter(p=>({...p,exam_type:e.target.value}));setTimeout(loadQuestions,100);}} style={{ padding:'6px 10px', borderRadius:8, border:'1px solid #E5E7EB', fontSize:12 }}>
+              <option value="all">All Types</option>
+              {EXAM_TYPES.map(t=><option key={t} value={t}>{t.toUpperCase()}</option>)}
+            </select>
+            <select value={filter.difficulty} onChange={e=>{setFilter(p=>({...p,difficulty:e.target.value}));setTimeout(loadQuestions,100);}} style={{ padding:'6px 10px', borderRadius:8, border:'1px solid #E5E7EB', fontSize:12 }}>
+              <option value="all">All Levels</option>
+              {DIFFICULTIES.map(d=><option key={d} value={d}>Level {d}</option>)}
+            </select>
+            <button onClick={loadQuestions} style={btn()}>Refresh</button>
           </div>
-        ))}
-        {filtered.length === 0 && <div style={{ padding: 40, textAlign: 'center', color: '#9CA3AF', fontFamily: 'var(--font-body)' }}>No questions found.</div>}
+        </div>
+
+        {loading ? <p style={{ color:'#6B7280', textAlign:'center', padding:40 }}>Loading...</p> :
+         questions.length === 0 ? <p style={{ color:'#6B7280', textAlign:'center', padding:40 }}>No questions yet. Generate some above!</p> : (
+          <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
+            {questions.map((q,i) => (
+              <div key={q.id} style={{ background:'#F9FAFB', borderRadius:10, padding:14, border:'1px solid #F3F4F6' }}>
+                <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', gap:8 }}>
+                  <div style={{ flex:1 }}>
+                    <div style={{ display:'flex', gap:6, marginBottom:6 }}>
+                      <span style={{ background:'#EEF2FF', color:'#4338CA', fontSize:11, padding:'2px 8px', borderRadius:20, fontWeight:600 }}>{q.exam_type}</span>
+                      <span style={{ background:'#FEF3C7', color:'#92400E', fontSize:11, padding:'2px 8px', borderRadius:20, fontWeight:600 }}>L{q.difficulty}</span>
+                      <span style={{ background:'#F0FDF4', color:'#166534', fontSize:11, padding:'2px 8px', borderRadius:20 }}>{q.sutra}</span>
+                    </div>
+                    <p style={{ fontSize:13, fontWeight:600, margin:'0 0 6px', color:'#0A1628' }}>{q.question_text}</p>
+                    <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:4, fontSize:12, color:'#374151' }}>
+                      {['a','b','c','d'].map(opt => (
+                        <span key={opt} style={{ color: q.correct_answer===opt?'#059669':'inherit', fontWeight: q.correct_answer===opt?700:400 }}>
+                          {opt.toUpperCase()}) {q[`option_${opt}`]}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <button onClick={()=>deleteQuestion(q.id)} style={{ padding:'4px 10px', borderRadius:6, background:'#FEE2E2', color:'#DC2626', border:'none', cursor:'pointer', fontSize:12, flexShrink:0 }}>Delete</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
