@@ -1,1 +1,52 @@
-{"name":"PracticePage.jsx","path":"src/pages/PracticePage.jsx","sha":"289716bf9bc93851f9b09c91aa77a6dfcfd83f40","size":2259,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/PracticePage.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/PracticePage.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/289716bf9bc93851f9b09c91aa77a6dfcfd83f40","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/pages/PracticePage.jsx?token=CFODAP3ZKI4HGDBALXATFATKFSQ5NAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IHVzZU5hdmlnYXRlIH0gZnJvbSAncmVhY3Qtcm91\ndGVyLWRvbSc7CmltcG9ydCB7IG1vdGlvbiB9IGZyb20gJ2ZyYW1lci1tb3Rp\nb24nOwppbXBvcnQgRGFzaGJvYXJkTmF2YmFyIGZyb20gJ0AvY29tcG9uZW50\ncy9kYXNoYm9hcmQvRGFzaGJvYXJkTmF2YmFyJzsKaW1wb3J0IE1vZGVTZWxl\nY3RvciBmcm9tICdAL2NvbXBvbmVudHMvcHJhY3RpY2UvTW9kZVNlbGVjdG9y\nJzsKaW1wb3J0IFNwZWVkRHJpbGwgZnJvbSAnQC9jb21wb25lbnRzL3ByYWN0\naWNlL1NwZWVkRHJpbGwnOwppbXBvcnQgVG9waWNQcmFjdGljZSBmcm9tICdA\nL2NvbXBvbmVudHMvcHJhY3RpY2UvVG9waWNQcmFjdGljZSc7CmltcG9ydCBD\naGFsbGVuZ2VNb2RlIGZyb20gJ0AvY29tcG9uZW50cy9wcmFjdGljZS9DaGFs\nbGVuZ2VNb2RlJzsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFByYWN0aWNl\nUGFnZSgpIHsKICBjb25zdCBuYXZpZ2F0ZSA9IHVzZU5hdmlnYXRlKCk7CiAg\nY29uc3QgW21vZGUsIHNldE1vZGVdID0gdXNlU3RhdGUobnVsbCk7IC8vIG51\nbGwgfCAnc3BlZWQnIHwgJ3RvcGljJyB8ICdjaGFsbGVuZ2UnCiAgY29uc3Qg\nW3NlbGVjdGVkVG9waWMsIHNldFNlbGVjdGVkVG9waWNdID0gdXNlU3RhdGUo\nJ2VrYWRoaWtlbmEnKTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGlmICgh\nbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3ZlZGljbWluZF9hdXRoJykpIG5hdmln\nYXRlKCcvYXV0aCcpOwogIH0sIFtdKTsKCiAgcmV0dXJuICgKICAgIDxkaXYg\nc3R5bGU9e3sgbWluSGVpZ2h0OiAnMTAwdmgnLCBiYWNrZ3JvdW5kOiAnI0Yw\nRjRGRicsIHBhZGRpbmdUb3A6ICdlbnYoc2FmZS1hcmVhLWluc2V0LXRvcCwg\nMHB4KScsIHBhZGRpbmdCb3R0b206ICdlbnYoc2FmZS1hcmVhLWluc2V0LWJv\ndHRvbSwgMHB4KScgfX0+CiAgICAgIDxEYXNoYm9hcmROYXZiYXIgLz4KICAg\nICAgPG1haW4gc3R5bGU9e3sgbWF4V2lkdGg6IDkwMCwgbWFyZ2luOiAnMCBh\ndXRvJywgcGFkZGluZzogJzI0cHggMTZweCA4MHB4JyB9fT4KICAgICAgICA8\nbW90aW9uLmRpdiBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDIwIH19IGFu\naW1hdGU9e3sgb3BhY2l0eTogMSwgeTogMCB9fSB0cmFuc2l0aW9uPXt7IGR1\ncmF0aW9uOiAwLjMgfX0+CiAgICAgICAgICB7IW1vZGUgJiYgKAogICAgICAg\nICAgICA8PgogICAgICAgICAgICAgIDxoMSBjbGFzc05hbWU9ImZvbnQtaGVh\nZGluZyIgc3R5bGU9e3sgZm9udFNpemU6ICdjbGFtcCgyNHB4LDV2dywzMnB4\nKScsIGZvbnRXZWlnaHQ6IDcwMCwgY29sb3I6ICcjMEExNjI4JywgbWFyZ2lu\nQm90dG9tOiA4IH19PgogICAgICAgICAgICAgICAg4pqhIFByYWN0aWNlIEFy\nZW5hCiAgICAgICAgICAgICAgPC9oMT4KICAgICAgICAgICAgICA8cCBzdHls\nZT17eyBmb250U2l6ZTogMTYsIGNvbG9yOiAnIzRCNTU2MycsIGZvbnRGYW1p\nbHk6ICd2YXIoLS1mb250LWJvZHkpJywgbWFyZ2luQm90dG9tOiAzMiB9fT4K\nICAgICAgICAgICAgICAgIFNoYXJwZW4geW91ciBWZWRpYyBNYXRocyBzcGVl\nZCB3aXRoIHRhcmdldGVkIHByYWN0aWNlCiAgICAgICAgICAgICAgPC9wPgog\nICAgICAgICAgICAgIDxNb2RlU2VsZWN0b3IKICAgICAgICAgICAgICAgIHNl\nbGVjdGVkVG9waWM9e3NlbGVjdGVkVG9waWN9CiAgICAgICAgICAgICAgICBv\nblRvcGljQ2hhbmdlPXtzZXRTZWxlY3RlZFRvcGljfQogICAgICAgICAgICAg\nICAgb25TdGFydD17KG0pID0+IHNldE1vZGUobSl9CiAgICAgICAgICAgICAg\nLz4KICAgICAgICAgICAgPC8+CiAgICAgICAgICApfQogICAgICAgICAge21v\nZGUgPT09ICdzcGVlZCcgJiYgKAogICAgICAgICAgICA8U3BlZWREcmlsbCBv\nbkV4aXQ9eygpID0+IHNldE1vZGUobnVsbCl9IC8+CiAgICAgICAgICApfQog\nICAgICAgICAge21vZGUgPT09ICd0b3BpYycgJiYgKAogICAgICAgICAgICA8\nVG9waWNQcmFjdGljZSB0b3BpYz17c2VsZWN0ZWRUb3BpY30gb25FeGl0PXso\nKSA9PiBzZXRNb2RlKG51bGwpfSBvbkNoYW5nZVRvcGljPXsoKSA9PiBzZXRN\nb2RlKG51bGwpfSAvPgogICAgICAgICAgKX0KICAgICAgICAgIHttb2RlID09\nPSAnY2hhbGxlbmdlJyAmJiAoCiAgICAgICAgICAgIDxDaGFsbGVuZ2VNb2Rl\nIG9uRXhpdD17KCkgPT4gc2V0TW9kZShudWxsKX0gLz4KICAgICAgICAgICl9\nCiAgICAgICAgPC9tb3Rpb24uZGl2PgogICAgICA8L21haW4+CiAgICA8L2Rp\ndj4KICApOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/PracticePage.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/289716bf9bc93851f9b09c91aa77a6dfcfd83f40","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/PracticePage.jsx"}}
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+import ModeSelector from '@/components/practice/ModeSelector';
+import SpeedDrill from '@/components/practice/SpeedDrill';
+import TopicPractice from '@/components/practice/TopicPractice';
+import ChallengeMode from '@/components/practice/ChallengeMode';
+
+export default function PracticePage() {
+  const navigate = useNavigate();
+  const [mode, setMode] = useState(null); // null | 'speed' | 'topic' | 'challenge'
+  const [selectedTopic, setSelectedTopic] = useState('ekadhikena');
+
+  useEffect(() => {
+    if (!localStorage.getItem('vedicmind_auth')) navigate('/auth');
+  }, []);
+
+  return (
+    <div style={{ minHeight: '100vh', background: '#F0F4FF', paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
+      <DashboardNavbar />
+      <main style={{ maxWidth: 900, margin: '0 auto', padding: '24px 16px 80px' }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+          {!mode && (
+            <>
+              <h1 className="font-heading" style={{ fontSize: 'clamp(24px,5vw,32px)', fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>
+                ⚡ Practice Arena
+              </h1>
+              <p style={{ fontSize: 16, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 32 }}>
+                Sharpen your Vedic Maths speed with targeted practice
+              </p>
+              <ModeSelector
+                selectedTopic={selectedTopic}
+                onTopicChange={setSelectedTopic}
+                onStart={(m) => setMode(m)}
+              />
+            </>
+          )}
+          {mode === 'speed' && (
+            <SpeedDrill onExit={() => setMode(null)} />
+          )}
+          {mode === 'topic' && (
+            <TopicPractice topic={selectedTopic} onExit={() => setMode(null)} onChangeTopic={() => setMode(null)} />
+          )}
+          {mode === 'challenge' && (
+            <ChallengeMode onExit={() => setMode(null)} />
+          )}
+        </motion.div>
+      </main>
+    </div>
+  );
+}
