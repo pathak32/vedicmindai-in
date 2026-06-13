@@ -1,1 +1,111 @@
-{"name":"LoadingScreen.jsx","path":"src/components/onboarding/LoadingScreen.jsx","sha":"06062517d23f43fa8f5ec1301c41fab1118a7ccb","size":3576,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/LoadingScreen.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/LoadingScreen.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/06062517d23f43fa8f5ec1301c41fab1118a7ccb","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/onboarding/LoadingScreen.jsx?token=CFODAP7AYPXHRVG3NXY73H3KFSQW3AA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IG1vdGlvbiB9IGZyb20gJ2ZyYW1lci1tb3Rpb24n\nOwoKY29uc3QgU1RFUFMgPSBbCiAgJ1VuZGVyc3RhbmRpbmcgeW91ciBsZWFy\nbmluZyBzdHlsZS4uLicsCiAgJ0NhbGN1bGF0aW5nIHlvdXIgb3B0aW1hbCBz\ndGFydGluZyBsZXZlbC4uLicsCiAgJ1BlcnNvbmFsaXppbmcgeW91ciA0MC1s\nZXNzb24gY3VycmljdWx1bS4uLicsCiAgJ0dlbmVyYXRpbmcgeW91ciBBSSBs\nZWFybmluZyBwbGFuLi4uJywKXTsKCmNvbnN0IFNURVBfREVMQVlTID0gWzMw\nMCwgMTEwMCwgMTkwMCwgMjcwMF07IC8vIG1zIHdoZW4gZWFjaCBsaWdodHMg\ndXAKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIExvYWRpbmdTY3JlZW4oeyBh\ncGlEb25lIH0pIHsKICBjb25zdCBbYWN0aXZlU3RlcCwgc2V0QWN0aXZlU3Rl\ncF0gPSB1c2VTdGF0ZSgtMSk7CiAgY29uc3QgW3Byb2dyZXNzLCBzZXRQcm9n\ncmVzc10gPSB1c2VTdGF0ZSgwKTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAg\nIGNvbnN0IHRpbWVycyA9IFNURVBfREVMQVlTLm1hcCgoZGVsYXksIGkpID0+\nCiAgICAgIHNldFRpbWVvdXQoKCkgPT4gc2V0QWN0aXZlU3RlcChpKSwgZGVs\nYXkpCiAgICApOwogICAgcmV0dXJuICgpID0+IHRpbWVycy5mb3JFYWNoKGNs\nZWFyVGltZW91dCk7CiAgfSwgW10pOwoKICAvLyBBbmltYXRlIHByb2dyZXNz\nIGJhciAwIOKGkiA4NSUgb3ZlciAzLjJzCiAgdXNlRWZmZWN0KCgpID0+IHsK\nICAgIGNvbnN0IHN0YXJ0ID0gRGF0ZS5ub3coKTsKICAgIGNvbnN0IGR1cmF0\naW9uID0gMzIwMDsKICAgIGNvbnN0IHRhcmdldCA9IDg1OwogICAgY29uc3Qg\nZnJhbWUgPSAoKSA9PiB7CiAgICAgIGNvbnN0IGVsYXBzZWQgPSBEYXRlLm5v\ndygpIC0gc3RhcnQ7CiAgICAgIGNvbnN0IHBjdCA9IE1hdGgubWluKChlbGFw\nc2VkIC8gZHVyYXRpb24pICogdGFyZ2V0LCB0YXJnZXQpOwogICAgICBzZXRQ\ncm9ncmVzcyhwY3QpOwogICAgICBpZiAocGN0IDwgdGFyZ2V0KSByZXF1ZXN0\nQW5pbWF0aW9uRnJhbWUoZnJhbWUpOwogICAgfTsKICAgIHJlcXVlc3RBbmlt\nYXRpb25GcmFtZShmcmFtZSk7CiAgfSwgW10pOwoKICAvLyBKdW1wIHRvIDEw\nMCUgd2hlbiBBUEkgZG9uZQogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBpZiAo\nYXBpRG9uZSkgc2V0UHJvZ3Jlc3MoMTAwKTsKICB9LCBbYXBpRG9uZV0pOwoK\nICByZXR1cm4gKAogICAgPG1vdGlvbi5kaXYKICAgICAgaW5pdGlhbD17eyBv\ncGFjaXR5OiAwIH19CiAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSB9fQog\nICAgICBleGl0PXt7IG9wYWNpdHk6IDAgfX0KICAgICAgdHJhbnNpdGlvbj17\neyBkdXJhdGlvbjogMC4zIH19CiAgICAgIHN0eWxlPXt7IHRleHRBbGlnbjog\nJ2NlbnRlcicsIHBhZGRpbmc6ICcxNnB4IDAnIH19CiAgICA+CiAgICAgIHsv\nKiBCcmFpbiBwdWxzZSAqL30KICAgICAgPG1vdGlvbi5zcGFuCiAgICAgICAg\nYW5pbWF0ZT17eyBzY2FsZTogWzEsIDEuMTUsIDFdIH19CiAgICAgICAgdHJh\nbnNpdGlvbj17eyByZXBlYXQ6IEluZmluaXR5LCBkdXJhdGlvbjogMS44LCBl\nYXNlOiAnZWFzZUluT3V0JyB9fQogICAgICAgIHN0eWxlPXt7IGZvbnRTaXpl\nOiA2NCwgZGlzcGxheTogJ2Jsb2NrJywgbGluZUhlaWdodDogMSB9fQogICAg\nICA+CiAgICAgICAg8J+noAogICAgICA8L21vdGlvbi5zcGFuPgoKICAgICAg\nPGgyIGNsYXNzTmFtZT0iZm9udC1oZWFkaW5nIiBzdHlsZT17eyBmb250U2l6\nZTogMjQsIGZvbnRXZWlnaHQ6IDcwMCwgY29sb3I6ICd3aGl0ZScsIG1hcmdp\nblRvcDogMTYsIHRleHRBbGlnbjogJ2NlbnRlcicgfX0+CiAgICAgICAgQW5h\nbHl6aW5nIHlvdXIgcHJvZmlsZS4uLgogICAgICA8L2gyPgogICAgICA8cCBz\ndHlsZT17eyBmb250U2l6ZTogMTQsIGNvbG9yOiAncmdiYSgyNTUsMjU1LDI1\nNSwwLjYpJywgdGV4dEFsaWduOiAnY2VudGVyJywgbWFyZ2luQm90dG9tOiAz\nMiB9fT4KICAgICAgICBZb3VyIHBlcnNvbmFsaXplZCBWZWRpYyBNYXRocyBw\nbGFuIGlzIGJlaW5nIGNyYWZ0ZWQKICAgICAgPC9wPgoKICAgICAgey8qIExv\nYWRpbmcgc3RlcHMgKi99CiAgICAgIDxkaXYgc3R5bGU9e3sgdGV4dEFsaWdu\nOiAnbGVmdCcsIHBhZGRpbmc6ICcwIDhweCcgfX0+CiAgICAgICAge1NURVBT\nLm1hcCgodGV4dCwgaSkgPT4gewogICAgICAgICAgY29uc3QgaXNBY3RpdmUg\nPSBhY3RpdmVTdGVwID09PSBpOwogICAgICAgICAgY29uc3QgaXNEb25lID0g\nYWN0aXZlU3RlcCA+IGk7CiAgICAgICAgICByZXR1cm4gKAogICAgICAgICAg\nICA8bW90aW9uLmRpdgogICAgICAgICAgICAgIGtleT17aX0KICAgICAgICAg\nICAgICBhbmltYXRlPXt7CiAgICAgICAgICAgICAgICBvcGFjaXR5OiBhY3Rp\ndmVTdGVwID49IGkgPyAxIDogMC4zLAogICAgICAgICAgICAgIH19CiAgICAg\nICAgICAgICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMC40IH19CiAgICAg\nICAgICAgICAgc3R5bGU9e3sKICAgICAgICAgICAgICAgIGRpc3BsYXk6ICdm\nbGV4JywKICAgICAgICAgICAgICAgIGFsaWduSXRlbXM6ICdjZW50ZXInLAog\nICAgICAgICAgICAgICAgZ2FwOiAxMCwKICAgICAgICAgICAgICAgIG1hcmdp\nbkJvdHRvbTogMTQsCiAgICAgICAgICAgICAgICBmb250U2l6ZTogMTQsCiAg\nICAgICAgICAgICAgICBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScs\nCiAgICAgICAgICAgICAgICBjb2xvcjogaXNEb25lID8gJyMxMEI5ODEnIDog\nJ3doaXRlJywKICAgICAgICAgICAgICB9fQogICAgICAgICAgICA+CiAgICAg\nICAgICAgICAgPHNwYW4gc3R5bGU9e3sgZm9udFNpemU6IDE2LCBmbGV4U2hy\naW5rOiAwLCB0cmFuc2l0aW9uOiAnY29sb3IgMC4zcycgfX0+CiAgICAgICAg\nICAgICAgICB7aXNEb25lID8gJ+KckycgOiAn4pymJ30KICAgICAgICAgICAg\nICA8L3NwYW4+CiAgICAgICAgICAgICAgPHNwYW4+e3RleHR9PC9zcGFuPgog\nICAgICAgICAgICA8L21vdGlvbi5kaXY+CiAgICAgICAgICApOwogICAgICAg\nIH0pfQogICAgICA8L2Rpdj4KCiAgICAgIHsvKiBQcm9ncmVzcyBiYXIgKi99\nCiAgICAgIDxkaXYgc3R5bGU9e3sgbWFyZ2luVG9wOiAyOCwgYmFja2dyb3Vu\nZDogJ3JnYmEoMjU1LDI1NSwyNTUsMC4xKScsIGJvcmRlclJhZGl1czogMTAw\nLCBoZWlnaHQ6IDYsIG92ZXJmbG93OiAnaGlkZGVuJyB9fT4KICAgICAgICA8\nbW90aW9uLmRpdgogICAgICAgICAgYW5pbWF0ZT17eyB3aWR0aDogYCR7cHJv\nZ3Jlc3N9JWAgfX0KICAgICAgICAgIHRyYW5zaXRpb249e3sgZHVyYXRpb246\nIDAuMSB9fQogICAgICAgICAgc3R5bGU9e3sgaGVpZ2h0OiAnMTAwJScsIGJh\nY2tncm91bmQ6ICcjM0I4MkY2JywgYm9yZGVyUmFkaXVzOiAxMDAgfX0KICAg\nICAgICAvPgogICAgICA8L2Rpdj4KICAgICAgPHAgc3R5bGU9e3sgZm9udFNp\nemU6IDEyLCBjb2xvcjogJ3JnYmEoMjU1LDI1NSwyNTUsMC40KScsIG1hcmdp\nblRvcDogMTAsIHRleHRBbGlnbjogJ2NlbnRlcicgfX0+CiAgICAgICAgVGhp\ncyB1c3VhbGx5IHRha2VzIDXigJMxMCBzZWNvbmRzCiAgICAgIDwvcD4KICAg\nIDwvbW90aW9uLmRpdj4KICApOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/LoadingScreen.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/06062517d23f43fa8f5ec1301c41fab1118a7ccb","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/LoadingScreen.jsx"}}
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+
+const STEPS = [
+  'Understanding your learning style...',
+  'Calculating your optimal starting level...',
+  'Personalizing your 40-lesson curriculum...',
+  'Generating your AI learning plan...',
+];
+
+const STEP_DELAYS = [300, 1100, 1900, 2700]; // ms when each lights up
+
+export default function LoadingScreen({ apiDone }) {
+  const [activeStep, setActiveStep] = useState(-1);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const timers = STEP_DELAYS.map((delay, i) =>
+      setTimeout(() => setActiveStep(i), delay)
+    );
+    return () => timers.forEach(clearTimeout);
+  }, []);
+
+  // Animate progress bar 0 → 85% over 3.2s
+  useEffect(() => {
+    const start = Date.now();
+    const duration = 3200;
+    const target = 85;
+    const frame = () => {
+      const elapsed = Date.now() - start;
+      const pct = Math.min((elapsed / duration) * target, target);
+      setProgress(pct);
+      if (pct < target) requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  }, []);
+
+  // Jump to 100% when API done
+  useEffect(() => {
+    if (apiDone) setProgress(100);
+  }, [apiDone]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      style={{ textAlign: 'center', padding: '16px 0' }}
+    >
+      {/* Brain pulse */}
+      <motion.span
+        animate={{ scale: [1, 1.15, 1] }}
+        transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+        style={{ fontSize: 64, display: 'block', lineHeight: 1 }}
+      >
+        🧠
+      </motion.span>
+
+      <h2 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: 'white', marginTop: 16, textAlign: 'center' }}>
+        Analyzing your profile...
+      </h2>
+      <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', textAlign: 'center', marginBottom: 32 }}>
+        Your personalized Vedic Maths plan is being crafted
+      </p>
+
+      {/* Loading steps */}
+      <div style={{ textAlign: 'left', padding: '0 8px' }}>
+        {STEPS.map((text, i) => {
+          const isActive = activeStep === i;
+          const isDone = activeStep > i;
+          return (
+            <motion.div
+              key={i}
+              animate={{
+                opacity: activeStep >= i ? 1 : 0.3,
+              }}
+              transition={{ duration: 0.4 }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 10,
+                marginBottom: 14,
+                fontSize: 14,
+                fontFamily: 'var(--font-body)',
+                color: isDone ? '#10B981' : 'white',
+              }}
+            >
+              <span style={{ fontSize: 16, flexShrink: 0, transition: 'color 0.3s' }}>
+                {isDone ? '✓' : '✦'}
+              </span>
+              <span>{text}</span>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Progress bar */}
+      <div style={{ marginTop: 28, background: 'rgba(255,255,255,0.1)', borderRadius: 100, height: 6, overflow: 'hidden' }}>
+        <motion.div
+          animate={{ width: `${progress}%` }}
+          transition={{ duration: 0.1 }}
+          style={{ height: '100%', background: '#3B82F6', borderRadius: 100 }}
+        />
+      </div>
+      <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', marginTop: 10, textAlign: 'center' }}>
+        This usually takes 5–10 seconds
+      </p>
+    </motion.div>
+  );
+}
