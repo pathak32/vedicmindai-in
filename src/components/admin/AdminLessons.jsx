@@ -1,1 +1,112 @@
-{"name":"AdminLessons.jsx","path":"src/components/admin/AdminLessons.jsx","sha":"00f5972b6784fc57b3f8bafa5de5792f7b84c61a","size":7091,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/admin/AdminLessons.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/admin/AdminLessons.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/00f5972b6784fc57b3f8bafa5de5792f7b84c61a","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/admin/AdminLessons.jsx?token=CFODAP5T6UTGSKPMYQM75HTKFSQUXAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnOwppbXBv\ncnQgeyBDVVJSSUNVTFVNIH0gZnJvbSAnQC9jb21wb25lbnRzL2xlYXJuL2N1\ncnJpY3VsdW1EYXRhJzsKCmNvbnN0IGdsYXNzID0gewogIGJhY2tncm91bmQ6\nICdyZ2JhKDI1NSwyNTUsMjU1LDAuODUpJywKICBib3JkZXI6ICcxcHggc29s\naWQgcmdiYSgzMCw2NCwxNzUsMC4xMiknLAogIGJvcmRlclJhZGl1czogMTYs\nCiAgYm94U2hhZG93OiAnMCA0cHggMjBweCByZ2JhKDEwLDIyLDQwLDAuMDYp\nJywKfTsKCmNvbnN0IElOUFVUX1NUWUxFID0gewogIHdpZHRoOiAnMTAwJScs\nIGJvcmRlcjogJzEuNXB4IHNvbGlkIHJnYmEoMzAsNjQsMTc1LDAuMTUpJywg\nYm9yZGVyUmFkaXVzOiAxMCwKICBwYWRkaW5nOiAnMTBweCAxNHB4JywgZm9u\ndEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTQsCiAg\nY29sb3I6ICcjMEExNjI4JywgYmFja2dyb3VuZDogJyNGOEZBRkYnLCBvdXRs\naW5lOiAnbm9uZScsCiAgYm94U2l6aW5nOiAnYm9yZGVyLWJveCcsIG1hcmdp\nbkJvdHRvbTogMTIsCn07CgpmdW5jdGlvbiBmbGF0dGVuTGVzc29ucygpIHsK\nICByZXR1cm4gQ1VSUklDVUxVTS5mbGF0TWFwKGxldmVsID0+IGxldmVsLmxl\nc3NvbnMubWFwKGwgPT4gKHsgLi4ubCwgbGV2ZWxOYW1lOiBsZXZlbC5uYW1l\nLCBsZXZlbEljb246IGxldmVsLmljb24sIGxldmVsOiBsZXZlbC5sZXZlbCB9\nKSkpOwp9CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBBZG1pbkxlc3NvbnMo\nKSB7CiAgY29uc3QgW2xlc3NvbnMsIHNldExlc3NvbnNdID0gdXNlU3RhdGUo\nZmxhdHRlbkxlc3NvbnMpOwogIGNvbnN0IFtlZGl0aW5nLCBzZXRFZGl0aW5n\nXSA9IHVzZVN0YXRlKG51bGwpOyAvLyBsZXNzb24gaWQgb3IgJ25ldycKICBj\nb25zdCBbZm9ybSwgc2V0Rm9ybV0gPSB1c2VTdGF0ZSh7fSk7CgogIGZ1bmN0\naW9uIHN0YXJ0RWRpdChsZXNzb24pIHsKICAgIHNldEZvcm0oeyAuLi5sZXNz\nb24gfSk7CiAgICBzZXRFZGl0aW5nKGxlc3Nvbi5pZCk7CiAgfQoKICBmdW5j\ndGlvbiBzdGFydE5ldygpIHsKICAgIHNldEZvcm0oeyBpZDogYGN1c3RvbV8k\ne0RhdGUubm93KCl9YCwgdGl0bGU6ICcnLCBkZXNjcmlwdGlvbjogJycsIHlv\ndXR1YmVfdmlkZW9faWQ6ICcnLCB4cDogNTAsIGxldmVsOiAxLCBsZXZlbE5h\nbWU6ICdCZWdpbm5lcicsIGxldmVsSWNvbjogJ/CfjLEnLCBpc0Fzc2Vzc21l\nbnQ6IGZhbHNlIH0pOwogICAgc2V0RWRpdGluZygnbmV3Jyk7CiAgfQoKICBm\ndW5jdGlvbiBzYXZlKCkgewogICAgaWYgKGVkaXRpbmcgPT09ICduZXcnKSB7\nCiAgICAgIHNldExlc3NvbnMocHJldiA9PiBbLi4ucHJldiwgZm9ybV0pOwog\nICAgfSBlbHNlIHsKICAgICAgc2V0TGVzc29ucyhwcmV2ID0+IHByZXYubWFw\nKGwgPT4gbC5pZCA9PT0gZWRpdGluZyA/IHsgLi4ubCwgLi4uZm9ybSB9IDog\nbCkpOwogICAgfQogICAgc2V0RWRpdGluZyhudWxsKTsKICB9CgogIGNvbnN0\nIGxldmVsQ29sb3JzID0geyAxOiAnIzEwQjk4MScsIDI6ICcjM0I4MkY2Jywg\nMzogJyM4QjVDRjYnLCA0OiAnI0Y1OUUwQicgfTsKCiAgcmV0dXJuICgKICAg\nIDxkaXY+CiAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBq\ndXN0aWZ5Q29udGVudDogJ3NwYWNlLWJldHdlZW4nLCBhbGlnbkl0ZW1zOiAn\nY2VudGVyJywgbWFyZ2luQm90dG9tOiAxNiB9fT4KICAgICAgICA8ZGl2IHN0\neWxlPXt7IGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9udFNp\nemU6IDE1LCBjb2xvcjogJyM0QjU1NjMnIH19PntsZXNzb25zLmxlbmd0aH0g\nbGVzc29ucyB0b3RhbDwvZGl2PgogICAgICAgIDxidXR0b24gb25DbGljaz17\nc3RhcnROZXd9IHN0eWxlPXt7CiAgICAgICAgICBtaW5IZWlnaHQ6IDQwLCBw\nYWRkaW5nOiAnMCAyMHB4JywgYmFja2dyb3VuZDogJyMwQTE2MjgnLCBjb2xv\ncjogJ3doaXRlJywKICAgICAgICAgIGJvcmRlcjogJ25vbmUnLCBib3JkZXJS\nYWRpdXM6IDEwLCBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZv\nbnRXZWlnaHQ6IDYwMCwgZm9udFNpemU6IDE0LCBjdXJzb3I6ICdwb2ludGVy\nJywKICAgICAgICB9fT4rIEFkZCBMZXNzb248L2J1dHRvbj4KICAgICAgPC9k\naXY+CgogICAgICB7LyogRWRpdC9OZXcgZm9ybSAqL30KICAgICAge2VkaXRp\nbmcgJiYgKAogICAgICAgIDxkaXYgc3R5bGU9e3sgLi4uZ2xhc3MsIHBhZGRp\nbmc6IDI0LCBtYXJnaW5Cb3R0b206IDIwIH19PgogICAgICAgICAgPGgzIHN0\neWxlPXt7IGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9udFdl\naWdodDogNzAwLCBmb250U2l6ZTogMTYsIGNvbG9yOiAnIzBBMTYyOCcsIG1h\ncmdpbkJvdHRvbTogMTYgfX0+CiAgICAgICAgICAgIHtlZGl0aW5nID09PSAn\nbmV3JyA/ICdOZXcgTGVzc29uJyA6IGBFZGl0OiAke2Zvcm0udGl0bGV9YH0K\nICAgICAgICAgIDwvaDM+CiAgICAgICAgICA8bGFiZWwgc3R5bGU9e3sgZm9u\ndEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTMsIGNv\nbG9yOiAnIzRCNTU2MycsIGRpc3BsYXk6ICdibG9jaycsIG1hcmdpbkJvdHRv\nbTogNCB9fT5UaXRsZTwvbGFiZWw+CiAgICAgICAgICA8aW5wdXQgc3R5bGU9\ne0lOUFVUX1NUWUxFfSB2YWx1ZT17Zm9ybS50aXRsZSB8fCAnJ30gb25DaGFu\nZ2U9e2UgPT4gc2V0Rm9ybShmID0+ICh7IC4uLmYsIHRpdGxlOiBlLnRhcmdl\ndC52YWx1ZSB9KSl9IHBsYWNlaG9sZGVyPSJMZXNzb24gdGl0bGUiIC8+CiAg\nICAgICAgICA8bGFiZWwgc3R5bGU9e3sgZm9udEZhbWlseTogJ3ZhcigtLWZv\nbnQtYm9keSknLCBmb250U2l6ZTogMTMsIGNvbG9yOiAnIzRCNTU2MycsIGRp\nc3BsYXk6ICdibG9jaycsIG1hcmdpbkJvdHRvbTogNCB9fT5EZXNjcmlwdGlv\nbjwvbGFiZWw+CiAgICAgICAgICA8dGV4dGFyZWEgc3R5bGU9e3sgLi4uSU5Q\nVVRfU1RZTEUsIGhlaWdodDogODAsIHJlc2l6ZTogJ3ZlcnRpY2FsJyB9fSB2\nYWx1ZT17Zm9ybS5kZXNjcmlwdGlvbiB8fCAnJ30gb25DaGFuZ2U9e2UgPT4g\nc2V0Rm9ybShmID0+ICh7IC4uLmYsIGRlc2NyaXB0aW9uOiBlLnRhcmdldC52\nYWx1ZSB9KSl9IHBsYWNlaG9sZGVyPSJMZXNzb24gZGVzY3JpcHRpb24iIC8+\nCiAgICAgICAgICA8bGFiZWwgc3R5bGU9e3sgZm9udEZhbWlseTogJ3Zhcigt\nLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTMsIGNvbG9yOiAnIzRCNTU2Mycs\nIGRpc3BsYXk6ICdibG9jaycsIG1hcmdpbkJvdHRvbTogNCB9fT5Db250ZW50\nIC8gTm90ZXM8L2xhYmVsPgogICAgICAgICAgPHRleHRhcmVhIHN0eWxlPXt7\nIC4uLklOUFVUX1NUWUxFLCBoZWlnaHQ6IDEwMCwgcmVzaXplOiAndmVydGlj\nYWwnIH19IHZhbHVlPXtmb3JtLmNvbnRlbnQgfHwgJyd9IG9uQ2hhbmdlPXtl\nID0+IHNldEZvcm0oZiA9PiAoeyAuLi5mLCBjb250ZW50OiBlLnRhcmdldC52\nYWx1ZSB9KSl9IHBsYWNlaG9sZGVyPSJMZXNzb24gY29udGVudCAobWFya2Rv\nd24gc3VwcG9ydGVkKSIgLz4KICAgICAgICAgIDxsYWJlbCBzdHlsZT17eyBm\nb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxMywg\nY29sb3I6ICcjNEI1NTYzJywgZGlzcGxheTogJ2Jsb2NrJywgbWFyZ2luQm90\ndG9tOiA0IH19PllvdVR1YmUgVmlkZW8gSUQ8L2xhYmVsPgogICAgICAgICAg\nPGlucHV0IHN0eWxlPXtJTlBVVF9TVFlMRX0gdmFsdWU9e2Zvcm0ueW91dHVi\nZV92aWRlb19pZCB8fCAnJ30gb25DaGFuZ2U9e2UgPT4gc2V0Rm9ybShmID0+\nICh7IC4uLmYsIHlvdXR1YmVfdmlkZW9faWQ6IGUudGFyZ2V0LnZhbHVlIH0p\nKX0gcGxhY2Vob2xkZXI9ImUuZy4gZFF3NHc5V2dYY1EiIC8+CiAgICAgICAg\nICA8bGFiZWwgc3R5bGU9e3sgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9k\neSknLCBmb250U2l6ZTogMTMsIGNvbG9yOiAnIzRCNTU2MycsIGRpc3BsYXk6\nICdibG9jaycsIG1hcmdpbkJvdHRvbTogNCB9fT5YUCBSZXdhcmQ8L2xhYmVs\nPgogICAgICAgICAgPGlucHV0IHR5cGU9Im51bWJlciIgc3R5bGU9e3sgLi4u\nSU5QVVRfU1RZTEUsIHdpZHRoOiAxMjAgfX0gdmFsdWU9e2Zvcm0ueHAgfHwg\nNTB9IG9uQ2hhbmdlPXtlID0+IHNldEZvcm0oZiA9PiAoeyAuLi5mLCB4cDog\ncGFyc2VJbnQoZS50YXJnZXQudmFsdWUpIH0pKX0gLz4KICAgICAgICAgIDxk\naXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBnYXA6IDEwLCBtYXJnaW5U\nb3A6IDQgfX0+CiAgICAgICAgICAgIDxidXR0b24gb25DbGljaz17c2F2ZX0g\nc3R5bGU9e3sgbWluSGVpZ2h0OiA0MCwgcGFkZGluZzogJzAgMjRweCcsIGJh\nY2tncm91bmQ6ICcjMTBCOTgxJywgY29sb3I6ICd3aGl0ZScsIGJvcmRlcjog\nJ25vbmUnLCBib3JkZXJSYWRpdXM6IDEwLCBmb250RmFtaWx5OiAndmFyKC0t\nZm9udC1ib2R5KScsIGZvbnRXZWlnaHQ6IDYwMCwgZm9udFNpemU6IDE0LCBj\ndXJzb3I6ICdwb2ludGVyJyB9fT5TYXZlPC9idXR0b24+CiAgICAgICAgICAg\nIDxidXR0b24gb25DbGljaz17KCkgPT4gc2V0RWRpdGluZyhudWxsKX0gc3R5\nbGU9e3sgbWluSGVpZ2h0OiA0MCwgcGFkZGluZzogJzAgMjBweCcsIGJhY2tn\ncm91bmQ6ICd0cmFuc3BhcmVudCcsIGJvcmRlcjogJzEuNXB4IHNvbGlkICNE\nMUQ1REInLCBjb2xvcjogJyM0QjU1NjMnLCBib3JkZXJSYWRpdXM6IDEwLCBm\nb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRXZWlnaHQ6IDYw\nMCwgZm9udFNpemU6IDE0LCBjdXJzb3I6ICdwb2ludGVyJyB9fT5DYW5jZWw8\nL2J1dHRvbj4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAg\nICApfQoKICAgICAgey8qIExlc3NvbnMgZ3JvdXBlZCBieSBsZXZlbCAqL30K\nICAgICAge1sxLCAyLCAzLCA0XS5tYXAobHZsID0+IHsKICAgICAgICBjb25z\ndCBsdmxMZXNzb25zID0gbGVzc29ucy5maWx0ZXIobCA9PiBsLmxldmVsID09\nPSBsdmwpOwogICAgICAgIGlmICghbHZsTGVzc29ucy5sZW5ndGgpIHJldHVy\nbiBudWxsOwogICAgICAgIGNvbnN0IG1ldGEgPSBDVVJSSUNVTFVNLmZpbmQo\nYyA9PiBjLmxldmVsID09PSBsdmwpOwogICAgICAgIHJldHVybiAoCiAgICAg\nICAgICA8ZGl2IGtleT17bHZsfSBzdHlsZT17eyBtYXJnaW5Cb3R0b206IDIw\nIH19PgogICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRGYW1pbHk6ICd2\nYXIoLS1mb250LWJvZHkpJywgZm9udFdlaWdodDogNzAwLCBmb250U2l6ZTog\nMTQsIGNvbG9yOiBsZXZlbENvbG9yc1tsdmxdLCBtYXJnaW5Cb3R0b206IDgs\nIHRleHRUcmFuc2Zvcm06ICd1cHBlcmNhc2UnLCBsZXR0ZXJTcGFjaW5nOiAn\nMC4wNWVtJyB9fT4KICAgICAgICAgICAgICB7bWV0YT8uaWNvbn0gTGV2ZWwg\ne2x2bH0g4oCUIHttZXRhPy5uYW1lfSAoe2x2bExlc3NvbnMubGVuZ3RofSBs\nZXNzb25zKQogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBz\ndHlsZT17eyAuLi5nbGFzcywgb3ZlcmZsb3c6ICdoaWRkZW4nIH19PgogICAg\nICAgICAgICAgIHtsdmxMZXNzb25zLm1hcCgobGVzc29uLCBpKSA9PiAoCiAg\nICAgICAgICAgICAgICA8ZGl2IGtleT17bGVzc29uLmlkfSBzdHlsZT17ewog\nICAgICAgICAgICAgICAgICBkaXNwbGF5OiAnZmxleCcsIGFsaWduSXRlbXM6\nICdjZW50ZXInLCBnYXA6IDEyLCBwYWRkaW5nOiAnMTJweCAxNnB4JywKICAg\nICAgICAgICAgICAgICAgYm9yZGVyQm90dG9tOiBpIDwgbHZsTGVzc29ucy5s\nZW5ndGggLSAxID8gJzFweCBzb2xpZCByZ2JhKDMwLDY0LDE3NSwwLjA2KScg\nOiAnbm9uZScsCiAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQ6IGVkaXRp\nbmcgPT09IGxlc3Nvbi5pZCA/ICdyZ2JhKDU5LDEzMCwyNDYsMC4wNCknIDog\nJ3RyYW5zcGFyZW50JywKICAgICAgICAgICAgICAgIH19PgogICAgICAgICAg\nICAgICAgICA8c3BhbiBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9u\ndC1tb25vKScsIGZvbnRTaXplOiAxMiwgY29sb3I6ICcjOUNBM0FGJywgbWlu\nV2lkdGg6IDUwLCBmbGV4U2hyaW5rOiAwIH19PntsZXNzb24uaWR9PC9zcGFu\nPgogICAgICAgICAgICAgICAgICA8c3BhbiBzdHlsZT17eyBmbGV4OiAxLCBm\nb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxNCwg\nY29sb3I6ICcjMEExNjI4JywgZm9udFdlaWdodDogNTAwIH19PntsZXNzb24u\ndGl0bGV9PC9zcGFuPgogICAgICAgICAgICAgICAgICB7bGVzc29uLnlvdXR1\nYmVfdmlkZW9faWQgJiYgPHNwYW4gc3R5bGU9e3sgYmFja2dyb3VuZDogJyNG\nRUYyRjInLCBjb2xvcjogJyNEQzI2MjYnLCBib3JkZXJSYWRpdXM6IDEwMCwg\ncGFkZGluZzogJzJweCA4cHgnLCBmb250U2l6ZTogMTEsIGZvbnRXZWlnaHQ6\nIDcwMCwgZmxleFNocmluazogMCB9fT7ilrYgVmlkZW88L3NwYW4+fQogICAg\nICAgICAgICAgICAgICB7bGVzc29uLmlzQXNzZXNzbWVudCAmJiA8c3BhbiBz\ndHlsZT17eyBiYWNrZ3JvdW5kOiAnI0ZFRjNDNycsIGNvbG9yOiAnIzkyNDAw\nRScsIGJvcmRlclJhZGl1czogMTAwLCBwYWRkaW5nOiAnMnB4IDhweCcsIGZv\nbnRTaXplOiAxMSwgZm9udFdlaWdodDogNzAwLCBmbGV4U2hyaW5rOiAwIH19\nPvCfk50gQXNzZXNzbWVudDwvc3Bhbj59CiAgICAgICAgICAgICAgICAgIDxz\ncGFuIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LW1vbm8pJywg\nZm9udFNpemU6IDEyLCBjb2xvcjogJyNGNTlFMEInLCBmbGV4U2hyaW5rOiAw\nIH19Pit7bGVzc29uLnhwfXhwPC9zcGFuPgogICAgICAgICAgICAgICAgICA8\nYnV0dG9uIG9uQ2xpY2s9eygpID0+IHN0YXJ0RWRpdChsZXNzb24pfSBzdHls\nZT17eyBtaW5IZWlnaHQ6IDQ0LCBwYWRkaW5nOiAnMCAxNHB4JywgYmFja2dy\nb3VuZDogJyNGMEY0RkYnLCBjb2xvcjogJyMxRTQwQUYnLCBib3JkZXI6ICdu\nb25lJywgYm9yZGVyUmFkaXVzOiA4LCBmb250RmFtaWx5OiAndmFyKC0tZm9u\ndC1ib2R5KScsIGZvbnRXZWlnaHQ6IDYwMCwgZm9udFNpemU6IDEzLCBjdXJz\nb3I6ICdwb2ludGVyJywgZmxleFNocmluazogMCB9fT5FZGl0PC9idXR0b24+\nCiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICApKX0KICAg\nICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICApOwog\nICAgICB9KX0KICAgIDwvZGl2PgogICk7Cn0=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/admin/AdminLessons.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/00f5972b6784fc57b3f8bafa5de5792f7b84c61a","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/admin/AdminLessons.jsx"}}
+import React, { useState } from 'react';
+import { CURRICULUM } from '@/components/learn/curriculumData';
+
+const glass = {
+  background: 'rgba(255,255,255,0.85)',
+  border: '1px solid rgba(30,64,175,0.12)',
+  borderRadius: 16,
+  boxShadow: '0 4px 20px rgba(10,22,40,0.06)',
+};
+
+const INPUT_STYLE = {
+  width: '100%', border: '1.5px solid rgba(30,64,175,0.15)', borderRadius: 10,
+  padding: '10px 14px', fontFamily: 'var(--font-body)', fontSize: 14,
+  color: '#0A1628', background: '#F8FAFF', outline: 'none',
+  boxSizing: 'border-box', marginBottom: 12,
+};
+
+function flattenLessons() {
+  return CURRICULUM.flatMap(level => level.lessons.map(l => ({ ...l, levelName: level.name, levelIcon: level.icon, level: level.level })));
+}
+
+export default function AdminLessons() {
+  const [lessons, setLessons] = useState(flattenLessons);
+  const [editing, setEditing] = useState(null); // lesson id or 'new'
+  const [form, setForm] = useState({});
+
+  function startEdit(lesson) {
+    setForm({ ...lesson });
+    setEditing(lesson.id);
+  }
+
+  function startNew() {
+    setForm({ id: `custom_${Date.now()}`, title: '', description: '', youtube_video_id: '', xp: 50, level: 1, levelName: 'Beginner', levelIcon: '🌱', isAssessment: false });
+    setEditing('new');
+  }
+
+  function save() {
+    if (editing === 'new') {
+      setLessons(prev => [...prev, form]);
+    } else {
+      setLessons(prev => prev.map(l => l.id === editing ? { ...l, ...form } : l));
+    }
+    setEditing(null);
+  }
+
+  const levelColors = { 1: '#10B981', 2: '#3B82F6', 3: '#8B5CF6', 4: '#F59E0B' };
+
+  return (
+    <div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+        <div style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563' }}>{lessons.length} lessons total</div>
+        <button onClick={startNew} style={{
+          minHeight: 40, padding: '0 20px', background: '#0A1628', color: 'white',
+          border: 'none', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer',
+        }}>+ Add Lesson</button>
+      </div>
+
+      {/* Edit/New form */}
+      {editing && (
+        <div style={{ ...glass, padding: 24, marginBottom: 20 }}>
+          <h3 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: '#0A1628', marginBottom: 16 }}>
+            {editing === 'new' ? 'New Lesson' : `Edit: ${form.title}`}
+          </h3>
+          <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', display: 'block', marginBottom: 4 }}>Title</label>
+          <input style={INPUT_STYLE} value={form.title || ''} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} placeholder="Lesson title" />
+          <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', display: 'block', marginBottom: 4 }}>Description</label>
+          <textarea style={{ ...INPUT_STYLE, height: 80, resize: 'vertical' }} value={form.description || ''} onChange={e => setForm(f => ({ ...f, description: e.target.value }))} placeholder="Lesson description" />
+          <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', display: 'block', marginBottom: 4 }}>Content / Notes</label>
+          <textarea style={{ ...INPUT_STYLE, height: 100, resize: 'vertical' }} value={form.content || ''} onChange={e => setForm(f => ({ ...f, content: e.target.value }))} placeholder="Lesson content (markdown supported)" />
+          <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', display: 'block', marginBottom: 4 }}>YouTube Video ID</label>
+          <input style={INPUT_STYLE} value={form.youtube_video_id || ''} onChange={e => setForm(f => ({ ...f, youtube_video_id: e.target.value }))} placeholder="e.g. dQw4w9WgXcQ" />
+          <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', display: 'block', marginBottom: 4 }}>XP Reward</label>
+          <input type="number" style={{ ...INPUT_STYLE, width: 120 }} value={form.xp || 50} onChange={e => setForm(f => ({ ...f, xp: parseInt(e.target.value) }))} />
+          <div style={{ display: 'flex', gap: 10, marginTop: 4 }}>
+            <button onClick={save} style={{ minHeight: 40, padding: '0 24px', background: '#10B981', color: 'white', border: 'none', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>Save</button>
+            <button onClick={() => setEditing(null)} style={{ minHeight: 40, padding: '0 20px', background: 'transparent', border: '1.5px solid #D1D5DB', color: '#4B5563', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>Cancel</button>
+          </div>
+        </div>
+      )}
+
+      {/* Lessons grouped by level */}
+      {[1, 2, 3, 4].map(lvl => {
+        const lvlLessons = lessons.filter(l => l.level === lvl);
+        if (!lvlLessons.length) return null;
+        const meta = CURRICULUM.find(c => c.level === lvl);
+        return (
+          <div key={lvl} style={{ marginBottom: 20 }}>
+            <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: levelColors[lvl], marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              {meta?.icon} Level {lvl} — {meta?.name} ({lvlLessons.length} lessons)
+            </div>
+            <div style={{ ...glass, overflow: 'hidden' }}>
+              {lvlLessons.map((lesson, i) => (
+                <div key={lesson.id} style={{
+                  display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px',
+                  borderBottom: i < lvlLessons.length - 1 ? '1px solid rgba(30,64,175,0.06)' : 'none',
+                  background: editing === lesson.id ? 'rgba(59,130,246,0.04)' : 'transparent',
+                }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: '#9CA3AF', minWidth: 50, flexShrink: 0 }}>{lesson.id}</span>
+                  <span style={{ flex: 1, fontFamily: 'var(--font-body)', fontSize: 14, color: '#0A1628', fontWeight: 500 }}>{lesson.title}</span>
+                  {lesson.youtube_video_id && <span style={{ background: '#FEF2F2', color: '#DC2626', borderRadius: 100, padding: '2px 8px', fontSize: 11, fontWeight: 700, flexShrink: 0 }}>▶ Video</span>}
+                  {lesson.isAssessment && <span style={{ background: '#FEF3C7', color: '#92400E', borderRadius: 100, padding: '2px 8px', fontSize: 11, fontWeight: 700, flexShrink: 0 }}>📝 Assessment</span>}
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: '#F59E0B', flexShrink: 0 }}>+{lesson.xp}xp</span>
+                  <button onClick={() => startEdit(lesson)} style={{ minHeight: 44, padding: '0 14px', background: '#F0F4FF', color: '#1E40AF', border: 'none', borderRadius: 8, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 13, cursor: 'pointer', flexShrink: 0 }}>Edit</button>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
