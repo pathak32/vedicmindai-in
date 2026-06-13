@@ -1,11 +1,1 @@
-import { QueryClient } from '@tanstack/react-query';
-
-
-export const queryClientInstance = new QueryClient({
-	defaultOptions: {
-		queries: {
-			refetchOnWindowFocus: false,
-			retry: 1,
-		},
-	},
-});
+{"name":"query-client.js","path":"src/lib/query-client.js","sha":"9b4d087911d64d0909bd9823f1aa3eb50e2a7340","size":197,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/query-client.js?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/query-client.js","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/9b4d087911d64d0909bd9823f1aa3eb50e2a7340","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/lib/query-client.js?token=CFODAP7OCBIANT5TAHWH4MDKFSQ3XAA","type":"file","content":"aW1wb3J0IHsgUXVlcnlDbGllbnQgfSBmcm9tICdAdGFuc3RhY2svcmVhY3Qt\ncXVlcnknOwoKCmV4cG9ydCBjb25zdCBxdWVyeUNsaWVudEluc3RhbmNlID0g\nbmV3IFF1ZXJ5Q2xpZW50KHsKCWRlZmF1bHRPcHRpb25zOiB7CgkJcXVlcmll\nczogewoJCQlyZWZldGNoT25XaW5kb3dGb2N1czogZmFsc2UsCgkJCXJldHJ5\nOiAxLAoJCX0sCgl9LAp9KTs=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/query-client.js?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/9b4d087911d64d0909bd9823f1aa3eb50e2a7340","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/query-client.js"}}
