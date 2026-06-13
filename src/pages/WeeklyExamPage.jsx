@@ -8,6 +8,8 @@ import {
   getSeedFromWeekAndGroup, getThisWeekResult,
   saveExamResult, getClassGroup, getClassGroupLabel, getGradeForGroup,
 } from '@/lib/weeklyExamEngine';
+import { getSupabase } from '@/lib/supabaseClient';
+import { saveUserProgress } from '@/lib/supabaseDataService';
 import { QUESTION_BANKS } from '@/lib/weeklyQuestionBanks';
 
 const glass = {
@@ -369,6 +371,26 @@ function ExamInterface({ classGroup }) {
     };
 
     saveExamResult(result);
+
+    // Also save to Supabase
+    (async () => {
+      try {
+        const supabase = await getSupabase();
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session?.user?.id) {
+          const weekStart = new Date();
+          weekStart.setDate(weekStart.getDate() - weekStart.getDay());
+          await supabase.from('weekly_exam_results').upsert({
+            user_id: session.user.id,
+            week_start: weekStart.toISOString().split('T')[0],
+            score: result.score || 0,
+            total_possible: result.total || 100,
+            answers: result.answers || [],
+          }, { onConflict: 'user_id,week_start' });
+        }
+      } catch(e) { console.warn('Weekly exam Supabase save failed:', e); }
+    })();
+
     navigate('/weekly-exam/results');
   };
 
