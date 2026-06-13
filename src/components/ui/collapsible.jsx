@@ -1,11 +1,1 @@
-"use client"
-
-import * as CollapsiblePrimitive from "@radix-ui/react-collapsible"
-
-const Collapsible = CollapsiblePrimitive.Root
-
-const CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger
-
-const CollapsibleContent = CollapsiblePrimitive.CollapsibleContent
-
-export { Collapsible, CollapsibleTrigger, CollapsibleContent }
+{"name":"collapsible.jsx","path":"src/components/ui/collapsible.jsx","sha":"9fa48946afd1eb56bd932377fd888e3986304676","size":329,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/collapsible.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/collapsible.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/9fa48946afd1eb56bd932377fd888e3986304676","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/collapsible.jsx?token=CFODAP7JCY6CYXTFVUI3MIDKFSQYXAA","type":"file","content":"InVzZSBjbGllbnQiCgppbXBvcnQgKiBhcyBDb2xsYXBzaWJsZVByaW1pdGl2\nZSBmcm9tICJAcmFkaXgtdWkvcmVhY3QtY29sbGFwc2libGUiCgpjb25zdCBD\nb2xsYXBzaWJsZSA9IENvbGxhcHNpYmxlUHJpbWl0aXZlLlJvb3QKCmNvbnN0\nIENvbGxhcHNpYmxlVHJpZ2dlciA9IENvbGxhcHNpYmxlUHJpbWl0aXZlLkNv\nbGxhcHNpYmxlVHJpZ2dlcgoKY29uc3QgQ29sbGFwc2libGVDb250ZW50ID0g\nQ29sbGFwc2libGVQcmltaXRpdmUuQ29sbGFwc2libGVDb250ZW50CgpleHBv\ncnQgeyBDb2xsYXBzaWJsZSwgQ29sbGFwc2libGVUcmlnZ2VyLCBDb2xsYXBz\naWJsZUNvbnRlbnQgfQo=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/collapsible.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/9fa48946afd1eb56bd932377fd888e3986304676","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/collapsible.jsx"}}
