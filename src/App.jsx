@@ -33,6 +33,7 @@ import PaymentSuccessPage from '@/pages/PaymentSuccessPage';
 import ReviewsPage from '@/pages/ReviewsPage';
 import ReportCardPage from '@/pages/ReportCardPage';
 import ForgotPasswordPage from '@/pages/ForgotPasswordPage';
+import ResetPasswordPage from '@/pages/ResetPasswordPage';
 import MobileBottomNav from '@/components/MobileLayout';
 import MobileAppHeader from '@/components/MobileAppHeader';
 
@@ -108,6 +109,7 @@ function RouteTransition() {
               <Route path="/reviews" element={<ReviewsPage />} />
               <Route path="/report-card" element={<ReportCardPage />} />
               <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+              <Route path="/reset-password" element={<ResetPasswordPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </motion.div>
