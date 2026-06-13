@@ -1,1 +1,22 @@
-{"name":"checkbox.jsx","path":"src/components/ui/checkbox.jsx","sha":"5e0c96bf7bcb9878da9239772b3ff361a5e8a1c0","size":880,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/checkbox.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/checkbox.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/5e0c96bf7bcb9878da9239772b3ff361a5e8a1c0","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/checkbox.jsx?token=CFODAP4E4G7QNCB3CA4F7YLKFSQYTAA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIENo\nZWNrYm94UHJpbWl0aXZlIGZyb20gIkByYWRpeC11aS9yZWFjdC1jaGVja2Jv\neCIKaW1wb3J0IHsgQ2hlY2sgfSBmcm9tICJsdWNpZGUtcmVhY3QiCgppbXBv\ncnQgeyBjbiB9IGZyb20gIkAvbGliL3V0aWxzIgoKY29uc3QgQ2hlY2tib3gg\nPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwg\ncmVmKSA9PiAoCiAgPENoZWNrYm94UHJpbWl0aXZlLlJvb3QKICAgIHJlZj17\ncmVmfQogICAgY2xhc3NOYW1lPXtjbigKICAgICAgInBlZXIgaC00IHctNCBz\naHJpbmstMCByb3VuZGVkLXNtIGJvcmRlciBib3JkZXItcHJpbWFyeSBzaGFk\nb3cgZm9jdXMtdmlzaWJsZTpvdXRsaW5lLW5vbmUgZm9jdXMtdmlzaWJsZTpy\naW5nLTEgZm9jdXMtdmlzaWJsZTpyaW5nLXJpbmcgZGlzYWJsZWQ6Y3Vyc29y\nLW5vdC1hbGxvd2VkIGRpc2FibGVkOm9wYWNpdHktNTAgZGF0YS1bc3RhdGU9\nY2hlY2tlZF06YmctcHJpbWFyeSBkYXRhLVtzdGF0ZT1jaGVja2VkXTp0ZXh0\nLXByaW1hcnktZm9yZWdyb3VuZCIsCiAgICAgIGNsYXNzTmFtZQogICAgKX0K\nICAgIHsuLi5wcm9wc30+CiAgICA8Q2hlY2tib3hQcmltaXRpdmUuSW5kaWNh\ndG9yIGNsYXNzTmFtZT17Y24oImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnkt\nY2VudGVyIHRleHQtY3VycmVudCIpfT4KICAgICAgPENoZWNrIGNsYXNzTmFt\nZT0iaC00IHctNCIgLz4KICAgIDwvQ2hlY2tib3hQcmltaXRpdmUuSW5kaWNh\ndG9yPgogIDwvQ2hlY2tib3hQcmltaXRpdmUuUm9vdD4KKSkKQ2hlY2tib3gu\nZGlzcGxheU5hbWUgPSBDaGVja2JveFByaW1pdGl2ZS5Sb290LmRpc3BsYXlO\nYW1lCgpleHBvcnQgeyBDaGVja2JveCB9Cg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/checkbox.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/5e0c96bf7bcb9878da9239772b3ff361a5e8a1c0","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/checkbox.jsx"}}
+import * as React from "react"
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+import { Check } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+const Checkbox = React.forwardRef(({ className, ...props }, ref) => (
+  <CheckboxPrimitive.Root
+    ref={ref}
+    className={cn(
+      "peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground",
+      className
+    )}
+    {...props}>
+    <CheckboxPrimitive.Indicator className={cn("flex items-center justify-center text-current")}>
+      <Check className="h-4 w-4" />
+    </CheckboxPrimitive.Indicator>
+  </CheckboxPrimitive.Root>
+))
+Checkbox.displayName = CheckboxPrimitive.Root.displayName
+
+export { Checkbox }
