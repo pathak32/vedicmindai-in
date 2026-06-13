@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { hasCompletedTodayQuiz } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry } from '@/lib/leaderboardEngine';
 import { getWeeklyExamStatus } from '@/lib/weeklyExamEngine';
@@ -20,9 +21,8 @@ const AFTER_QUIZ_LINKS = [
 ];
 
 function AdminNavLink({ mobile, onClick }) {
-  const location = { pathname: typeof window !== 'undefined' ? window.location.pathname : '' };
-  const auth = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth')); } catch { return null; } })();
-  if (!auth || auth.role !== 'admin') return null;
+  const { user } = useVedicAuth();
+  if (!user || user.user_metadata?.role !== 'admin') return null;
   const active = window.location.pathname === '/admin';
   if (mobile) {
     return (
@@ -202,8 +202,10 @@ export default function DashboardNavbar() {
     } catch { return 0; }
   }, []);
 
-  const handleSignOut = () => {
-    localStorage.removeItem('vedicmind_auth');
+  const { user, signOut } = useVedicAuth();
+
+  const handleSignOut = async () => {
+    await signOut();
     localStorage.removeItem('vedicmind_profile');
     localStorage.removeItem('vedicmind_progress');
     navigate('/');
@@ -217,16 +219,8 @@ export default function DashboardNavbar() {
         setMobileOpen(false);
       }
     };
-    // Use timeout to prevent immediate close on mobile tap
-    const timer = setTimeout(() => {
-      document.addEventListener('click', handler);
-      document.addEventListener('touchend', handler);
-    }, 100);
-    return () => {
-      clearTimeout(timer);
-      document.removeEventListener('click', handler);
-      document.removeEventListener('touchend', handler);
-    };
+    document.addEventListener('click', handler);
+    return () => document.removeEventListener('click', handler);
   }, [mobileOpen]);
 
   const allRegularLinks = [...REGULAR_LINKS, ...AFTER_QUIZ_LINKS];
@@ -334,7 +328,7 @@ export default function DashboardNavbar() {
           </div>
 
           {/* Mobile hamburger */}
-          <button onClick={(e) => { e.stopPropagation(); setMobileOpen(prev => !prev); }} className="show-mobile hamburger-btn" style={{ width: 48, height: 48, padding: 12, background: 'none', border: 'none', cursor: 'pointer', alignItems: 'center', justifyContent: 'center' }}>
+          <button onClick={() => setMobileOpen(prev => !prev)} className="show-mobile hamburger-btn" style={{ width: 48, height: 48, padding: 12, background: 'none', border: 'none', cursor: 'pointer', alignItems: 'center', justifyContent: 'center' }}>
             {mobileOpen ? <X size={24} color="#0A1628" /> : <Menu size={24} color="#0A1628" />}
           </button>
         </div>
@@ -345,7 +339,7 @@ export default function DashboardNavbar() {
 
       {/* Mobile dropdown */}
       {mobileOpen && (
-        <div className="mobile-menu-container" style={{ position: 'fixed', top: 56, left: 0, width: '100vw', background: '#0A1628', zIndex: 999, animation: 'navSlideDown 0.2s ease-out', maxHeight: 'calc(100vh - 56px)', overflowY: 'scroll', WebkitOverflowScrolling: 'touch', paddingBottom: 80 }}>
+        <div className="mobile-menu-container" style={{ position: 'fixed', top: 56, left: 0, width: '100vw', background: '#0A1628', zIndex: 999, animation: 'navSlideDown 0.2s ease-out', maxHeight: 'calc(100vh - 56px)', overflowY: 'auto' }}>
           {[
             ...REGULAR_LINKS,
             { label: 'Daily Quiz', path: '/daily-quiz' },
@@ -371,7 +365,7 @@ export default function DashboardNavbar() {
               </Link>
             );
           })}
-          {(() => { const auth = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth')); } catch { return null; } })(); if (auth && auth.role === 'admin') { return (
+          {(() => { if (user && user.user_metadata?.role === 'admin') { return (
             <Link to="/admin" onClick={() => setMobileOpen(false)} style={{
               display: 'flex', alignItems: 'center', height: 56, padding: '0 16px',
               fontSize: 15, fontFamily: 'var(--font-body)',
@@ -382,12 +376,12 @@ export default function DashboardNavbar() {
             }}>🛡️ Admin Panel</Link>
           ); } return null; })()}
           <button onClick={() => { setMobileOpen(false); handleSignOut(); }} style={{
-            display: 'flex', alignItems: 'center', width: '100%', minHeight: 56, padding: '0 16px',
+            display: 'flex', alignItems: 'center', width: '100%', height: 56, padding: '0 16px',
             fontSize: 15, fontFamily: 'var(--font-body)', fontWeight: 500,
-            color: '#EF4444', background: 'rgba(239,68,68,0.1)', border: 'none', cursor: 'pointer',
-            textAlign: 'left', borderTop: '1px solid rgba(239,68,68,0.3)',
+            color: '#EF4444', background: 'transparent', border: 'none', cursor: 'pointer',
+            textAlign: 'left',
           }}>
-            🚪 Sign Out
+            Sign Out
           </button>
         </div>
       )}
