@@ -1,1 +1,137 @@
-{"name":"HeroSection.jsx","path":"src/components/landing/HeroSection.jsx","sha":"8942f82990a8bd52818122e45b9108ff862c2ffe","size":6196,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/HeroSection.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/HeroSection.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/8942f82990a8bd52818122e45b9108ff862c2ffe","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/landing/HeroSection.jsx?token=CFODAP3DNQEW32URIJOLXWDKFSQV3AA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IExpbmsgfSBmcm9tICdyZWFjdC1yb3V0ZXItZG9t\nJzsKaW1wb3J0IHsgbW90aW9uLCBBbmltYXRlUHJlc2VuY2UgfSBmcm9tICdm\ncmFtZXItbW90aW9uJzsKaW1wb3J0IHsgQXJyb3dSaWdodCwgQ2hldnJvbkRv\nd24gfSBmcm9tICdsdWNpZGUtcmVhY3QnOwoKY29uc3QgdHJpY2tzID0gWwog\nIHsgY2FsYzogJzk4IMOXIDk3ID0gOTUwNicsIGxhYmVsOiAnTmlraGlsYW0g\nTWV0aG9kIOKAlCAzIHNlY29uZHMnIH0sCiAgeyBjYWxjOiAnNzXCsiA9IDU2\nMjUnLCBsYWJlbDogJ0VrYWRoaWtlbmEg4oCUIGluc3RhbnRseScgfSwKICB7\nIGNhbGM6ICfiiJo1MzI5ID0gNzMnLCBsYWJlbDogJ1BhdHRlcm4gTWV0aG9k\nIOKAlCAyIHNlY29uZHMnIH0sCl07CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlv\nbiBIZXJvU2VjdGlvbigpIHsKICBjb25zdCBbY3VycmVudFRyaWNrLCBzZXRD\ndXJyZW50VHJpY2tdID0gdXNlU3RhdGUoMCk7CgogIHVzZUVmZmVjdCgoKSA9\nPiB7CiAgICBjb25zdCBpbnRlcnZhbCA9IHNldEludGVydmFsKCgpID0+IHsK\nICAgICAgc2V0Q3VycmVudFRyaWNrKHByZXYgPT4gKHByZXYgKyAxKSAlIHRy\naWNrcy5sZW5ndGgpOwogICAgfSwgMzAwMCk7CiAgICByZXR1cm4gKCkgPT4g\nY2xlYXJJbnRlcnZhbChpbnRlcnZhbCk7CiAgfSwgW10pOwoKICByZXR1cm4g\nKAogICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJyZWxhdGl2ZSBtaW4taC1zY3Jl\nZW4gZmxleCBpdGVtcy1jZW50ZXIgb3ZlcmZsb3ctaGlkZGVuIj4KICAgICAg\ney8qIEJhY2tncm91bmQgKi99CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJhYnNv\nbHV0ZSBpbnNldC0wIGJnLWdyYWRpZW50LXRvLWJyIGZyb20tWyMwQTE2Mjhd\nIHZpYS1bIzBEMjI1Ml0gdG8tWyMwQTE2MjhdIj4KICAgICAgICA8ZGl2IGNs\nYXNzTmFtZT0iYWJzb2x1dGUgdG9wLTEvNCBsZWZ0LTEvNCB3LTk2IGgtOTYg\nYmctWyMxRTQwQUZdLzIwIHJvdW5kZWQtZnVsbCBibHVyLTN4bCIgLz4KICAg\nICAgICA8ZGl2IGNsYXNzTmFtZT0iYWJzb2x1dGUgYm90dG9tLTEvNCByaWdo\ndC0xLzQgdy04MCBoLTgwIGJnLVsjM0I4MkY2XS8xNSByb3VuZGVkLWZ1bGwg\nYmx1ci0zeGwiIC8+CiAgICAgIDwvZGl2PgoKICAgICAgPGRpdiBjbGFzc05h\nbWU9InJlbGF0aXZlIHotMTAgbWF4LXctN3hsIG14LWF1dG8gcHgtNCBzbTpw\neC02IGxnOnB4LTggcHktMzIgdy1mdWxsIj4KICAgICAgICA8ZGl2IGNsYXNz\nTmFtZT0iZ3JpZCBsZzpncmlkLWNvbHMtMiBnYXAtMTIgaXRlbXMtY2VudGVy\nIj4KICAgICAgICAgIHsvKiBMZWZ0IGNvbnRlbnQgKi99CiAgICAgICAgICA8\nbW90aW9uLmRpdgogICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAs\nIHk6IDMwIH19CiAgICAgICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSwg\neTogMCB9fQogICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAw\nLjggfX0KICAgICAgICAgID4KICAgICAgICAgICAgPGgxIGNsYXNzTmFtZT0i\nZm9udC1oZWFkaW5nIHRleHQtNHhsIHNtOnRleHQtNXhsIGxnOnRleHQtWzU2\ncHhdIGZvbnQtYm9sZCB0ZXh0LXdoaXRlIGxlYWRpbmctdGlnaHQiPgogICAg\nICAgICAgICAgIEFuY2llbnQgV2lzZG9tLnsnICd9CiAgICAgICAgICAgICAg\nPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LVsjM0I4MkY2XSI+TW9kZXJuIFNwZWVk\nLjwvc3Bhbj57JyAnfQogICAgICAgICAgICAgIFZlZGljIE1hdGhlbWF0aWNz\nIFJlaW1hZ2luZWQuCiAgICAgICAgICAgIDwvaDE+CiAgICAgICAgICAgIDxw\nIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9u\ndFNpemU6ICdjbGFtcCgxNXB4LDIuNXZ3LDE4cHgpJywgY29sb3I6ICcjQ0JE\nNUUxJywgbWFyZ2luVG9wOiAxMiwgbGluZUhlaWdodDogMS42LCBtYXhXaWR0\naDogNTYwIH19PgogICAgICAgICAgICAgIEpvaW4gMSwwMDArIHN0dWRlbnRz\nIGNhbGN1bGF0aW5nIDEww5cgZmFzdGVyIHdpdGggYW5jaWVudCBWZWRpYyB0\nZWNobmlxdWVzIOKAlCBubyBhYmFjdXMsIG5vIGNhbGN1bGF0b3IgbmVlZGVk\nLgogICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0i\nbXQtNiB0ZXh0LWxnIHNtOnRleHQteGwgdGV4dC1ibHVlLTIwMCBmb250LWJv\nZHkgbGVhZGluZy1yZWxheGVkIG1heC13LWxnIj4KICAgICAgICAgICAgICBN\nYXN0ZXIgY2FsY3VsYXRpb24gdGVjaG5pcXVlcyB0aGF0IG1ha2UgeW91ciBi\ncmFpbiAxMHggZmFzdGVyIOKAlCBwZXJzb25hbGl6ZWQgYnkgQUkgZm9yIHlv\ndXIgZXhhY3QgbGVhcm5pbmcgbGV2ZWwuCiAgICAgICAgICAgIDwvcD4KICAg\nICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTggZmxleCBmbGV4LXdyYXAg\nZ2FwLTQiPgogICAgICAgICAgICAgIDxMaW5rCiAgICAgICAgICAgICAgICB0\nbz0iL2F1dGgiCiAgICAgICAgICAgICAgICBjbGFzc05hbWU9ImlubGluZS1m\nbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiBoLTEyIHB4LTcgcm91bmRlZC14bCBi\nZy1bIzNCODJGNl0gdGV4dC13aGl0ZSBmb250LXNlbWlib2xkIGhvdmVyOmJn\nLVsjMjU2M0VCXSB0cmFuc2l0aW9uLWNvbG9ycyIKICAgICAgICAgICAgICA+\nCiAgICAgICAgICAgICAgICBTdGFydCBMZWFybmluZyBGcmVlCiAgICAgICAg\nICAgICAgICA8QXJyb3dSaWdodCBjbGFzc05hbWU9InctNCBoLTQiIC8+CiAg\nICAgICAgICAgICAgPC9MaW5rPgogICAgICAgICAgICAgIDxidXR0b24KICAg\nICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IGRvY3VtZW50LmdldEVsZW1l\nbnRCeUlkKCdob3ctaXQtd29ya3MnKT8uc2Nyb2xsSW50b1ZpZXcoeyBiZWhh\ndmlvcjogJ3Ntb290aCcgfSl9CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9\nImlubGluZS1mbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiBoLTEyIHB4LTcgcm91\nbmRlZC14bCBib3JkZXItWzEuNXB4XSBib3JkZXItd2hpdGUvMzAgdGV4dC13\naGl0ZSBmb250LXNlbWlib2xkIGhvdmVyOmJnLXdoaXRlLzEwIHRyYW5zaXRp\nb24tY29sb3JzIgogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIFNl\nZSBIb3cgSXQgV29ya3MKICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAg\nICAgICAgPC9kaXY+CgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQt\nMTIgZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTMiPgogICAgICAgICAgICAgIDxk\naXYgY2xhc3NOYW1lPSJmbGV4IC1zcGFjZS14LTIiPgogICAgICAgICAgICAg\nICAge1snUCcsICdSJywgJ0EnLCAnUyddLm1hcCgobGV0dGVyLCBpKSA9PiAo\nCiAgICAgICAgICAgICAgICAgIDxkaXYga2V5PXtpfSBjbGFzc05hbWU9Inct\nOCBoLTggcm91bmRlZC1mdWxsIGJnLVsjMUU0MEFGXSBib3JkZXItMiBib3Jk\nZXItWyMwQTE2MjhdIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVy\nIHRleHQtd2hpdGUgdGV4dC14cyBmb250LWJvbGQiPgogICAgICAgICAgICAg\nICAgICAgIHtsZXR0ZXJ9CiAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAg\nICAgICAgICAgICAgKSl9CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAg\nICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXNtIHRleHQtYmx1ZS0yMDAiPgog\nICAgICAgICAgICAgICAgVHJ1c3RlZCBieSA8c3BhbiBjbGFzc05hbWU9InRl\neHQtd2hpdGUgZm9udC1zZW1pYm9sZCI+MSwwMDArPC9zcGFuPiBzdHVkZW50\ncyBhY3Jvc3MgQ0JTRSwgSUNTRSwgVVAgQm9hcmQgJmFtcDsgU3RhdGUgQm9h\ncmRzCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8L2Rpdj4KICAg\nICAgICAgIDwvbW90aW9uLmRpdj4KCiAgICAgICAgICB7LyogUmlnaHQgLSBm\nbG9hdGluZyBjYXJkcyAqL30KICAgICAgICAgIDxtb3Rpb24uZGl2CiAgICAg\nICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeDogNDAgfX0KICAgICAg\nICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB4OiAwIH19CiAgICAgICAg\nICAgIHRyYW5zaXRpb249e3sgZHVyYXRpb246IDAuOCwgZGVsYXk6IDAuMyB9\nfQogICAgICAgICAgICBjbGFzc05hbWU9ImhpZGRlbiBsZzpmbGV4IGZsZXgt\nY29sIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByZWxhdGl2ZSIKICAg\nICAgICAgID4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InJlbGF0aXZl\nIHctZnVsbCBtYXgtdy1zbSI+CiAgICAgICAgICAgICAgPEFuaW1hdGVQcmVz\nZW5jZSBtb2RlPSJ3YWl0Ij4KICAgICAgICAgICAgICAgIDxtb3Rpb24uZGl2\nCiAgICAgICAgICAgICAgICAgIGtleT17Y3VycmVudFRyaWNrfQogICAgICAg\nICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDIwLCBzY2Fs\nZTogMC45NSB9fQogICAgICAgICAgICAgICAgICBhbmltYXRlPXt7IG9wYWNp\ndHk6IDEsIHk6IDAsIHNjYWxlOiAxIH19CiAgICAgICAgICAgICAgICAgIGV4\naXQ9e3sgb3BhY2l0eTogMCwgeTogLTIwLCBzY2FsZTogMC45NSB9fQogICAg\nICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAwLjUgfX0K\nICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJnbGFzcy1jYXJkIHAtOCB0\nZXh0LWNlbnRlciIKICAgICAgICAgICAgICAgICAgc3R5bGU9e3sgYmFja2dy\nb3VuZDogJ3JnYmEoMjU1LDI1NSwyNTUsMC4xKScsIGJhY2tkcm9wRmlsdGVy\nOiAnYmx1cigyNHB4KScsIGJvcmRlcjogJzFweCBzb2xpZCByZ2JhKDI1NSwy\nNTUsMjU1LDAuMiknIH19CiAgICAgICAgICAgICAgICA+CiAgICAgICAgICAg\nICAgICAgIDxwIGNsYXNzTmFtZT0iZm9udC1tb25vIHRleHQtM3hsIGZvbnQt\nYm9sZCB0ZXh0LXdoaXRlIHRyYWNraW5nLXdpZGUiPgogICAgICAgICAgICAg\nICAgICAgIHt0cmlja3NbY3VycmVudFRyaWNrXS5jYWxjfQogICAgICAgICAg\nICAgICAgICA8L3A+CiAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0i\nbXQtMyB0ZXh0LXNtIHRleHQtYmx1ZS0yMDAgZm9udC1ib2R5Ij4KICAgICAg\nICAgICAgICAgICAgICB7dHJpY2tzW2N1cnJlbnRUcmlja10ubGFiZWx9CiAg\nICAgICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICAgIDwvbW90aW9u\nLmRpdj4KICAgICAgICAgICAgICA8L0FuaW1hdGVQcmVzZW5jZT4KCiAgICAg\nICAgICAgICAgey8qIERlY29yYXRpdmUgZG90cyAqL30KICAgICAgICAgICAg\nICA8ZGl2IGNsYXNzTmFtZT0iYWJzb2x1dGUgLXRvcC04IC1yaWdodC04IHct\nMTYgaC0xNiBiZy1bIzNCODJGNl0vMjAgcm91bmRlZC1mdWxsIGFuaW1hdGUt\nZmxvYXQiIC8+CiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImFic29s\ndXRlIC1ib3R0b20tNiAtbGVmdC02IHctMTIgaC0xMiBiZy1bIzFFNDBBRl0v\nMjAgcm91bmRlZC1mdWxsIGFuaW1hdGUtZmxvYXQtZGVsYXllZCIgLz4KICAg\nICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICB7LyogU21hbGwgdHJpY2sg\ncHJldmlld3MgKi99CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4\nIGdhcC0zIG10LTYiPgogICAgICAgICAgICAgIHt0cmlja3MubWFwKChfLCBp\nKSA9PiAoCiAgICAgICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAg\nICAgIGtleT17aX0KICAgICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4g\nc2V0Q3VycmVudFRyaWNrKGkpfQogICAgICAgICAgICAgICAgICBjbGFzc05h\nbWU9e2B3LTIuNSBoLTIuNSByb3VuZGVkLWZ1bGwgdHJhbnNpdGlvbi1hbGwg\nJHsKICAgICAgICAgICAgICAgICAgICBpID09PSBjdXJyZW50VHJpY2sgPyAn\nYmctWyMzQjgyRjZdIHNjYWxlLTEyNScgOiAnYmctd2hpdGUvMzAnCiAgICAg\nICAgICAgICAgICAgIH1gfQogICAgICAgICAgICAgICAgLz4KICAgICAgICAg\nICAgICApKX0KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L21vdGlv\nbi5kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgoKICAgICAgey8q\nIFNjcm9sbCBpbmRpY2F0b3IgKi99CiAgICAgIDxtb3Rpb24uZGl2CiAgICAg\nICAgYW5pbWF0ZT17eyB5OiBbMCwgOCwgMF0gfX0KICAgICAgICB0cmFuc2l0\naW9uPXt7IHJlcGVhdDogSW5maW5pdHksIGR1cmF0aW9uOiAyIH19CiAgICAg\nICAgY2xhc3NOYW1lPSJhYnNvbHV0ZSBib3R0b20tOCBsZWZ0LTEvMiAtdHJh\nbnNsYXRlLXgtMS8yIgogICAgICA+CiAgICAgICAgPENoZXZyb25Eb3duIGNs\nYXNzTmFtZT0idy02IGgtNiB0ZXh0LXdoaXRlLzQwIiAvPgogICAgICA8L21v\ndGlvbi5kaXY+CiAgICA8L3NlY3Rpb24+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/HeroSection.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/8942f82990a8bd52818122e45b9108ff862c2ffe","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/HeroSection.jsx"}}
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+
+const tricks = [
+  { calc: '98 × 97 = 9506', label: 'Nikhilam Method — 3 seconds' },
+  { calc: '75² = 5625', label: 'Ekadhikena — instantly' },
+  { calc: '√5329 = 73', label: 'Pattern Method — 2 seconds' },
+];
+
+export default function HeroSection() {
+  const [currentTrick, setCurrentTrick] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTrick(prev => (prev + 1) % tricks.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#0D2252] to-[#0A1628]">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1E40AF]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#3B82F6]/15 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left content */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-[56px] font-bold text-white leading-tight">
+              Ancient Wisdom.{' '}
+              <span className="text-[#3B82F6]">Modern Speed.</span>{' '}
+              Vedic Mathematics Reimagined.
+            </h1>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(15px,2.5vw,18px)', color: '#CBD5E1', marginTop: 12, lineHeight: 1.6, maxWidth: 560 }}>
+              Join 1,000+ students calculating 10× faster with ancient Vedic techniques — no abacus, no calculator needed.
+            </p>
+            <p className="mt-6 text-lg sm:text-xl text-blue-200 font-body leading-relaxed max-w-lg">
+              Master calculation techniques that make your brain 10x faster — personalized by AI for your exact learning level.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/auth"
+                className="inline-flex items-center gap-2 h-12 px-7 rounded-xl bg-[#3B82F6] text-white font-semibold hover:bg-[#2563EB] transition-colors"
+              >
+                Start Learning Free
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <button
+                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-flex items-center gap-2 h-12 px-7 rounded-xl border-[1.5px] border-white/30 text-white font-semibold hover:bg-white/10 transition-colors"
+              >
+                See How It Works
+              </button>
+            </div>
+
+            <div className="mt-12 flex items-center gap-3">
+              <div className="flex -space-x-2">
+                {['P', 'R', 'A', 'S'].map((letter, i) => (
+                  <div key={i} className="w-8 h-8 rounded-full bg-[#1E40AF] border-2 border-[#0A1628] flex items-center justify-center text-white text-xs font-bold">
+                    {letter}
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-blue-200">
+                Trusted by <span className="text-white font-semibold">1,000+</span> students across CBSE, ICSE, UP Board &amp; State Boards
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Right - floating cards */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="hidden lg:flex flex-col items-center justify-center relative"
+          >
+            <div className="relative w-full max-w-sm">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentTrick}
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                  transition={{ duration: 0.5 }}
+                  className="glass-card p-8 text-center"
+                  style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(24px)', border: '1px solid rgba(255,255,255,0.2)' }}
+                >
+                  <p className="font-mono text-3xl font-bold text-white tracking-wide">
+                    {tricks[currentTrick].calc}
+                  </p>
+                  <p className="mt-3 text-sm text-blue-200 font-body">
+                    {tricks[currentTrick].label}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Decorative dots */}
+              <div className="absolute -top-8 -right-8 w-16 h-16 bg-[#3B82F6]/20 rounded-full animate-float" />
+              <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-[#1E40AF]/20 rounded-full animate-float-delayed" />
+            </div>
+
+            {/* Small trick previews */}
+            <div className="flex gap-3 mt-6">
+              {tricks.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentTrick(i)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${
+                    i === currentTrick ? 'bg-[#3B82F6] scale-125' : 'bg-white/30'
+                  }`}
+                />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        animate={{ y: [0, 8, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <ChevronDown className="w-6 h-6 text-white/40" />
+      </motion.div>
+    </section>
+  );
+}
