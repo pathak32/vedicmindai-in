@@ -1,1 +1,106 @@
-{"name":"FamiliesReviewsSection.jsx","path":"src/components/landing/FamiliesReviewsSection.jsx","sha":"8fb8a8a5633d8fb3a72f3405e397adc2f79ec116","size":5152,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/FamiliesReviewsSection.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/FamiliesReviewsSection.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/8fb8a8a5633d8fb3a72f3405e397adc2f79ec116","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/landing/FamiliesReviewsSection.jsx?token=CFODAP75HAY572RAAN2JLN3KFSQVVAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IExpbmsgfSBmcm9tICdyZWFjdC1yb3V0ZXItZG9t\nJzsKCmNvbnN0IFNBTVBMRV9SRVZJRVdTID0gWwogIHsgaWQ6ICcxJywgcm9s\nZTogJ1BhcmVudCcsIG5hbWU6ICdTdW5pdGEnLCBjaXR5OiAnTXVtYmFpJywg\nc3RhcnM6IDUsIGR1cmF0aW9uOiAnMSBtb250aCcsIHRleHQ6ICdNeSBkYXVn\naHRlclwncyBtZW50YWwgbWF0aCBoYXMgaW1wcm92ZWQgZHJhbWF0aWNhbGx5\nISBTaGUgbm93IGNhbGN1bGF0ZXMgZmFzdGVyIHRoYW4gaGVyIGNhbGN1bGF0\nb3IuIFZlZGljTWluZCBpcyBhIGdlbS4nLCBkYXRlOiAnMjAyNS0wNS0xMFQw\nMDowMDowMC4wMDBaJywgYXBwcm92ZWQ6IHRydWUgfSwKICB7IGlkOiAnMics\nIHJvbGU6ICdTdHVkZW50JywgbmFtZTogJ0FyanVuJywgY2l0eTogJ1B1bmUn\nLCBzdGFyczogNSwgZHVyYXRpb246ICczIG1vbnRocycsIHRleHQ6ICdUaGUg\nZGFpbHkgcXVpeiBpcyBhZGRpY3RpdmUhIElcJ3ZlIG5vdCBtaXNzZWQgYSBz\naW5nbGUgZGF5IGluIDIgbW9udGhzLiBNeSBtYXRocyBzY29yZSBpbiBzY2hv\nb2wgd2VudCBmcm9tIDcyJSB0byA5NCUuJywgZGF0ZTogJzIwMjUtMDUtMThU\nMDA6MDA6MDAuMDAwWicsIGFwcHJvdmVkOiB0cnVlIH0sCiAgeyBpZDogJzMn\nLCByb2xlOiAnUGFyZW50JywgbmFtZTogJ0thdml0aGEnLCBjaXR5OiAnQ2hl\nbm5haScsIHN0YXJzOiA1LCBkdXJhdGlvbjogJzIgd2Vla3MnLCB0ZXh0OiAn\nVmVyeSB3ZWxsIHN0cnVjdHVyZWQgY291cnNlLiBUaGUgVmVkaWMgbWV0aG9k\ncyBhcmUgZXhwbGFpbmVkIHNpbXBseSBhbmQgbXkgc29uIGxvdmVzIHRoZSBs\nZWFkZXJib2FyZCBjb21wZXRpdGlvbi4nLCBkYXRlOiAnMjAyNS0wNi0wMVQw\nMDowMDowMC4wMDBaJywgYXBwcm92ZWQ6IHRydWUgfSwKXTsKCmZ1bmN0aW9u\nIFN0YXJSb3coeyBzdGFycyB9KSB7CiAgcmV0dXJuICgKICAgIDxkaXYgc3R5\nbGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBnYXA6IDIgfX0+CiAgICAgIHtbMSwg\nMiwgMywgNCwgNV0ubWFwKHMgPT4gKAogICAgICAgIDxzcGFuIGtleT17c30g\nc3R5bGU9e3sgY29sb3I6IHMgPD0gc3RhcnMgPyAnI0Y1OUUwQicgOiAnI0Qx\nRDVEQicsIGZvbnRTaXplOiAxNiB9fT7imIU8L3NwYW4+CiAgICAgICkpfQog\nICAgPC9kaXY+CiAgKTsKfQoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gRmFt\naWxpZXNSZXZpZXdzU2VjdGlvbigpIHsKICBjb25zdCBbcmV2aWV3cywgc2V0\nUmV2aWV3c10gPSB1c2VTdGF0ZShTQU1QTEVfUkVWSUVXUyk7CgogIHVzZUVm\nZmVjdCgoKSA9PiB7CiAgICB0cnkgewogICAgICBjb25zdCBzdG9yZWQgPSBK\nU09OLnBhcnNlKGxvY2FsU3RvcmFnZS5nZXRJdGVtKCd2ZWRpY21pbmRfcmV2\naWV3cycpIHx8ICdbXScpOwogICAgICBjb25zdCBhcHByb3ZlZCA9IHN0b3Jl\nZC5maWx0ZXIociA9PiByLmFwcHJvdmVkKTsKICAgICAgaWYgKGFwcHJvdmVk\nLmxlbmd0aCA+IDApIHsKICAgICAgICBjb25zdCB0b3AzID0gWy4uLmFwcHJv\ndmVkXS5zb3J0KChhLCBiKSA9PiBiLnN0YXJzIC0gYS5zdGFycykuc2xpY2Uo\nMCwgMyk7CiAgICAgICAgc2V0UmV2aWV3cyh0b3AzKTsKICAgICAgfQogICAg\nfSBjYXRjaCB7fQogIH0sIFtdKTsKCiAgY29uc3Qgcm9sZUNvbG9yID0geyBT\ndHVkZW50OiAnI0RCRUFGRScsIFBhcmVudDogJyNEMUZBRTUnLCBHdWFyZGlh\nbjogJyNFREU5RkUnIH07CiAgY29uc3Qgcm9sZVRleHQgID0geyBTdHVkZW50\nOiAnIzFFNDBBRicsIFBhcmVudDogJyMwNjVGNDYnLCBHdWFyZGlhbjogJyM1\nQjIxQjYnIH07CgogIHJldHVybiAoCiAgICA8c2VjdGlvbiBzdHlsZT17eyBi\nYWNrZ3JvdW5kOiAnI0YwRjRGRicsIHBhZGRpbmc6ICc3MnB4IDE2cHgnIH19\nPgogICAgICA8ZGl2IHN0eWxlPXt7IG1heFdpZHRoOiAxMTAwLCBtYXJnaW46\nICcwIGF1dG8nIH19PgogICAgICAgIHsvKiBIZWFkaW5nICovfQogICAgICAg\nIDxkaXYgc3R5bGU9e3sgdGV4dEFsaWduOiAnY2VudGVyJywgbWFyZ2luQm90\ndG9tOiA0OCB9fT4KICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTog\nJ2lubGluZS1mbGV4JywgYWxpZ25JdGVtczogJ2NlbnRlcicsIGdhcDogNiwg\nYmFja2dyb3VuZDogJyNEQkVBRkUnLCBib3JkZXJSYWRpdXM6IDk5LCBwYWRk\naW5nOiAnNnB4IDE2cHgnLCBtYXJnaW5Cb3R0b206IDEyIH19PgogICAgICAg\nICAgICA8c3BhbiBzdHlsZT17eyBmb250U2l6ZTogMTQgfX0+8J+SrDwvc3Bh\nbj4KICAgICAgICAgICAgPHNwYW4gc3R5bGU9e3sgZm9udEZhbWlseTogJ3Zh\ncigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTMsIGZvbnRXZWlnaHQ6IDYw\nMCwgY29sb3I6ICcjMUU0MEFGJyB9fT5TdHVkZW50ICYgUGFyZW50IFJldmll\nd3M8L3NwYW4+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxoMiBjbGFz\nc05hbWU9ImZvbnQtaGVhZGluZyIgc3R5bGU9e3sgZm9udFNpemU6ICdjbGFt\ncCgyNnB4LDR2dywzNnB4KScsIGZvbnRXZWlnaHQ6IDcwMCwgY29sb3I6ICcj\nMEExNjI4JywgbWFyZ2luQm90dG9tOiAxMCB9fT4KICAgICAgICAgICAgV2hh\ndCBGYW1pbGllcyBTYXkKICAgICAgICAgIDwvaDI+CiAgICAgICAgICA8cCBz\ndHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRT\naXplOiAxNiwgY29sb3I6ICcjNEI1NTYzJywgbWFyZ2luOiAwIH19PgogICAg\nICAgICAgICBUaG91c2FuZHMgb2Ygc3R1ZGVudHMgaW1wcm92aW5nIHRoZWly\nIHNwZWVkIG1hdGhzIGV2ZXJ5IGRheQogICAgICAgICAgPC9wPgogICAgICAg\nIDwvZGl2PgoKICAgICAgICB7LyogQ2FyZHMgKi99CiAgICAgICAgPHN0eWxl\nPntgCiAgICAgICAgICBAbWVkaWEobWluLXdpZHRoOjY0MHB4KXsgLnJldmll\nd3MtZ3JpZHsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoMywxZnIp\nICFpbXBvcnRhbnQ7IH0gfQogICAgICAgIGB9PC9zdHlsZT4KICAgICAgICA8\nZGl2IGNsYXNzTmFtZT0icmV2aWV3cy1ncmlkIiBzdHlsZT17eyBkaXNwbGF5\nOiAnZ3JpZCcsIGdyaWRUZW1wbGF0ZUNvbHVtbnM6ICcxZnInLCBnYXA6IDIw\nLCBtYXJnaW5Cb3R0b206IDMyIH19PgogICAgICAgICAge3Jldmlld3MubWFw\nKHIgPT4gKAogICAgICAgICAgICA8ZGl2IGtleT17ci5pZH0gc3R5bGU9e3sK\nICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiAncmdiYSgyNTUsMjU1LDI1NSww\nLjg1KScsCiAgICAgICAgICAgICAgYmFja2Ryb3BGaWx0ZXI6ICdibHVyKDE2\ncHgpJywKICAgICAgICAgICAgICBXZWJraXRCYWNrZHJvcEZpbHRlcjogJ2Js\ndXIoMTZweCknLAogICAgICAgICAgICAgIGJvcmRlcjogJzFweCBzb2xpZCBy\nZ2JhKDMwLDY0LDE3NSwwLjEyKScsCiAgICAgICAgICAgICAgYm9yZGVyUmFk\naXVzOiAxNiwKICAgICAgICAgICAgICBwYWRkaW5nOiAnMjRweCAyMHB4JywK\nICAgICAgICAgICAgICBib3hTaGFkb3c6ICcwIDRweCAyMHB4IHJnYmEoMTAs\nMjIsNDAsMC4wNiknLAogICAgICAgICAgICB9fT4KICAgICAgICAgICAgICA8\nU3RhclJvdyBzdGFycz17ci5zdGFyc30gLz4KICAgICAgICAgICAgICA8cCBz\ndHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRT\naXplOiAxNCwgY29sb3I6ICcjMzc0MTUxJywgbGluZUhlaWdodDogMS42NSwg\nbWFyZ2luOiAnMTJweCAwIDE2cHgnLCBmb250U3R5bGU6ICdpdGFsaWMnIH19\nPgogICAgICAgICAgICAgICAgIntyLnRleHR9IgogICAgICAgICAgICAgIDwv\ncD4KICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4\nJywgYWxpZ25JdGVtczogJ2NlbnRlcicsIGp1c3RpZnlDb250ZW50OiAnc3Bh\nY2UtYmV0d2VlbicsIGZsZXhXcmFwOiAnd3JhcCcsIGdhcDogNiB9fT4KICAg\nICAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgICAgIDxkaXYgc3R5\nbGU9e3sgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250V2Vp\nZ2h0OiA3MDAsIGZvbnRTaXplOiAxNCwgY29sb3I6ICcjMEExNjI4JyB9fT57\nci5uYW1lfTwvZGl2PgogICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7\nIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9udFNpemU6IDEy\nLCBjb2xvcjogJyM2QjcyODAnIH19PntyLmNpdHl9IMK3IHtyLmR1cmF0aW9u\nfTwvZGl2PgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAg\nICA8c3BhbiBzdHlsZT17ewogICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5k\nOiByb2xlQ29sb3Jbci5yb2xlXSB8fCAnI0YwRjRGRicsCiAgICAgICAgICAg\nICAgICAgIGNvbG9yOiByb2xlVGV4dFtyLnJvbGVdIHx8ICcjNEI1NTYzJywK\nICAgICAgICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiA5OSwgcGFkZGluZzog\nJzNweCAxMHB4JywgZm9udFNpemU6IDExLAogICAgICAgICAgICAgICAgICBm\nb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRXZWlnaHQ6IDYw\nMCwKICAgICAgICAgICAgICAgIH19PgogICAgICAgICAgICAgICAgICB7ci5y\nb2xlfQogICAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICAgIDwv\nZGl2PgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICkpfQogICAgICAg\nIDwvZGl2PgoKICAgICAgICB7LyogQ1RBICovfQogICAgICAgIDxkaXYgc3R5\nbGU9e3sgdGV4dEFsaWduOiAnY2VudGVyJyB9fT4KICAgICAgICAgIDxMaW5r\nIHRvPSIvcmV2aWV3cyIgc3R5bGU9e3sgdGV4dERlY29yYXRpb246ICdub25l\nJyB9fT4KICAgICAgICAgICAgPGJ1dHRvbiBzdHlsZT17ewogICAgICAgICAg\nICAgIHBhZGRpbmc6ICcxMnB4IDI4cHgnLCBiYWNrZ3JvdW5kOiAndHJhbnNw\nYXJlbnQnLCBjb2xvcjogJyMwQTE2MjgnLAogICAgICAgICAgICAgIGJvcmRl\ncjogJzEuNXB4IHNvbGlkIHJnYmEoMTAsMjIsNDAsMC4yNSknLCBib3JkZXJS\nYWRpdXM6IDEwLAogICAgICAgICAgICAgIGZvbnRGYW1pbHk6ICd2YXIoLS1m\nb250LWJvZHkpJywgZm9udFNpemU6IDE0LCBmb250V2VpZ2h0OiA2MDAsIGN1\ncnNvcjogJ3BvaW50ZXInLAogICAgICAgICAgICB9fT4KICAgICAgICAgICAg\nICBSZWFkIGFsbCByZXZpZXdzIOKGkgogICAgICAgICAgICA8L2J1dHRvbj4K\nICAgICAgICAgIDwvTGluaz4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+\nCiAgICA8L3NlY3Rpb24+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/FamiliesReviewsSection.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/8fb8a8a5633d8fb3a72f3405e397adc2f79ec116","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/FamiliesReviewsSection.jsx"}}
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+const SAMPLE_REVIEWS = [
+  { id: '1', role: 'Parent', name: 'Sunita', city: 'Mumbai', stars: 5, duration: '1 month', text: 'My daughter\'s mental math has improved dramatically! She now calculates faster than her calculator. VedicMind is a gem.', date: '2025-05-10T00:00:00.000Z', approved: true },
+  { id: '2', role: 'Student', name: 'Arjun', city: 'Pune', stars: 5, duration: '3 months', text: 'The daily quiz is addictive! I\'ve not missed a single day in 2 months. My maths score in school went from 72% to 94%.', date: '2025-05-18T00:00:00.000Z', approved: true },
+  { id: '3', role: 'Parent', name: 'Kavitha', city: 'Chennai', stars: 5, duration: '2 weeks', text: 'Very well structured course. The Vedic methods are explained simply and my son loves the leaderboard competition.', date: '2025-06-01T00:00:00.000Z', approved: true },
+];
+
+function StarRow({ stars }) {
+  return (
+    <div style={{ display: 'flex', gap: 2 }}>
+      {[1, 2, 3, 4, 5].map(s => (
+        <span key={s} style={{ color: s <= stars ? '#F59E0B' : '#D1D5DB', fontSize: 16 }}>★</span>
+      ))}
+    </div>
+  );
+}
+
+export default function FamiliesReviewsSection() {
+  const [reviews, setReviews] = useState(SAMPLE_REVIEWS);
+
+  useEffect(() => {
+    try {
+      const stored = JSON.parse(localStorage.getItem('vedicmind_reviews') || '[]');
+      const approved = stored.filter(r => r.approved);
+      if (approved.length > 0) {
+        const top3 = [...approved].sort((a, b) => b.stars - a.stars).slice(0, 3);
+        setReviews(top3);
+      }
+    } catch {}
+  }, []);
+
+  const roleColor = { Student: '#DBEAFE', Parent: '#D1FAE5', Guardian: '#EDE9FE' };
+  const roleText  = { Student: '#1E40AF', Parent: '#065F46', Guardian: '#5B21B6' };
+
+  return (
+    <section style={{ background: '#F0F4FF', padding: '72px 16px' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+        {/* Heading */}
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#DBEAFE', borderRadius: 99, padding: '6px 16px', marginBottom: 12 }}>
+            <span style={{ fontSize: 14 }}>💬</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#1E40AF' }}>Student & Parent Reviews</span>
+          </div>
+          <h2 className="font-heading" style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 700, color: '#0A1628', marginBottom: 10 }}>
+            What Families Say
+          </h2>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: '#4B5563', margin: 0 }}>
+            Thousands of students improving their speed maths every day
+          </p>
+        </div>
+
+        {/* Cards */}
+        <style>{`
+          @media(min-width:640px){ .reviews-grid{ grid-template-columns: repeat(3,1fr) !important; } }
+        `}</style>
+        <div className="reviews-grid" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 20, marginBottom: 32 }}>
+          {reviews.map(r => (
+            <div key={r.id} style={{
+              background: 'rgba(255,255,255,0.85)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              border: '1px solid rgba(30,64,175,0.12)',
+              borderRadius: 16,
+              padding: '24px 20px',
+              boxShadow: '0 4px 20px rgba(10,22,40,0.06)',
+            }}>
+              <StarRow stars={r.stars} />
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', lineHeight: 1.65, margin: '12px 0 16px', fontStyle: 'italic' }}>
+                "{r.text}"
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 6 }}>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: '#0A1628' }}>{r.name}</div>
+                  <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#6B7280' }}>{r.city} · {r.duration}</div>
+                </div>
+                <span style={{
+                  background: roleColor[r.role] || '#F0F4FF',
+                  color: roleText[r.role] || '#4B5563',
+                  borderRadius: 99, padding: '3px 10px', fontSize: 11,
+                  fontFamily: 'var(--font-body)', fontWeight: 600,
+                }}>
+                  {r.role}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div style={{ textAlign: 'center' }}>
+          <Link to="/reviews" style={{ textDecoration: 'none' }}>
+            <button style={{
+              padding: '12px 28px', background: 'transparent', color: '#0A1628',
+              border: '1.5px solid rgba(10,22,40,0.25)', borderRadius: 10,
+              fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600, cursor: 'pointer',
+            }}>
+              Read all reviews →
+            </button>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
