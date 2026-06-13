@@ -1,1 +1,176 @@
-{"name":"supabaseDataService.js","path":"src/lib/supabaseDataService.js","sha":"26ed89930027bce23b3b125fad37e6ef439744d7","size":6444,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/supabaseDataService.js?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/supabaseDataService.js","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/26ed89930027bce23b3b125fad37e6ef439744d7","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/lib/supabaseDataService.js?token=CFODAP5GLWVTPTBHGASMA4DKFSQ33AA","type":"file","content":"aW1wb3J0IHsgZ2V0U3VwYWJhc2UgfSBmcm9tICcuL3N1cGFiYXNlQ2xpZW50\nJzsKCi8vIOKUgOKUgOKUgCBVU0VSIFBST0ZJTEUg4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACgpleHBvcnQgYXN5bmMg\nZnVuY3Rpb24gZ2V0VXNlclByb2ZpbGUodXNlcklkKSB7CiAgY29uc3Qgc3Vw\nYWJhc2UgPSBhd2FpdCBnZXRTdXBhYmFzZSgpOwogIGNvbnN0IHsgZGF0YSwg\nZXJyb3IgfSA9IGF3YWl0IHN1cGFiYXNlCiAgICAuZnJvbSgndXNlcnMnKQog\nICAgLnNlbGVjdCgnKicpCiAgICAuZXEoJ2lkJywgdXNlcklkKQogICAgLnNp\nbmdsZSgpOwogIGlmIChlcnJvciAmJiBlcnJvci5jb2RlICE9PSAnUEdSU1Qx\nMTYnKSBjb25zb2xlLmVycm9yKCdnZXRVc2VyUHJvZmlsZTonLCBlcnJvcik7\nCiAgcmV0dXJuIGRhdGEgfHwge307Cn0KCmV4cG9ydCBhc3luYyBmdW5jdGlv\nbiBzYXZlVXNlclByb2ZpbGUodXNlcklkLCBwcm9maWxlKSB7CiAgY29uc3Qg\nc3VwYWJhc2UgPSBhd2FpdCBnZXRTdXBhYmFzZSgpOwogIGNvbnN0IHsgZXJy\nb3IgfSA9IGF3YWl0IHN1cGFiYXNlCiAgICAuZnJvbSgndXNlcnMnKQogICAg\nLnVwc2VydCh7IGlkOiB1c2VySWQsIC4uLnByb2ZpbGUsIHVwZGF0ZWRfYXQ6\nIG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSB9KTsKICBpZiAoZXJyb3IpIGNv\nbnNvbGUuZXJyb3IoJ3NhdmVVc2VyUHJvZmlsZTonLCBlcnJvcik7CiAgcmV0\ndXJuICFlcnJvcjsKfQoKLy8g4pSA4pSA4pSAIFVTRVIgUFJPR1JFU1Mg4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACgpleHBv\ncnQgYXN5bmMgZnVuY3Rpb24gZ2V0VXNlclByb2dyZXNzKHVzZXJJZCkgewog\nIGNvbnN0IHN1cGFiYXNlID0gYXdhaXQgZ2V0U3VwYWJhc2UoKTsKICBjb25z\ndCB7IGRhdGEsIGVycm9yIH0gPSBhd2FpdCBzdXBhYmFzZQogICAgLmZyb20o\nJ3Byb2dyZXNzJykKICAgIC5zZWxlY3QoJyonKQogICAgLmVxKCdpZCcsIHVz\nZXJJZCkKICAgIC5zaW5nbGUoKTsKICBpZiAoZXJyb3IgJiYgZXJyb3IuY29k\nZSAhPT0gJ1BHUlNUMTE2JykgY29uc29sZS5lcnJvcignZ2V0VXNlclByb2dy\nZXNzOicsIGVycm9yKTsKICByZXR1cm4gZGF0YSB8fCB7CiAgICBjb21wbGV0\nZWRfbGVzc29uczogW10sCiAgICBsZXNzb25fc2NvcmVzOiB7fSwKICAgIHRv\ndGFsX3hwOiAwLAogICAgc3RyZWFrOiAwLAogICAgYmFkZ2VzOiBbXSwKICAg\nIGN1cnJlbnRfbGV2ZWw6IDEsCiAgICBkYWlseV9xdWl6X3N0cmVhazogMCwK\nICAgIGRhaWx5X3F1aXpfaGlzdG9yeTogW10sCiAgfTsKfQoKZXhwb3J0IGFz\neW5jIGZ1bmN0aW9uIHNhdmVVc2VyUHJvZ3Jlc3ModXNlcklkLCBwcm9ncmVz\ncykgewogIGNvbnN0IHN1cGFiYXNlID0gYXdhaXQgZ2V0U3VwYWJhc2UoKTsK\nICBjb25zdCB7IGVycm9yIH0gPSBhd2FpdCBzdXBhYmFzZQogICAgLmZyb20o\nJ3Byb2dyZXNzJykKICAgIC51cHNlcnQoewogICAgICBpZDogdXNlcklkLAog\nICAgICBjb21wbGV0ZWRfbGVzc29uczogcHJvZ3Jlc3MuY29tcGxldGVkTGVz\nc29ucyB8fCBwcm9ncmVzcy5jb21wbGV0ZWRfbGVzc29ucyB8fCBbXSwKICAg\nICAgbGVzc29uX3Njb3JlczogcHJvZ3Jlc3MubGVzc29uU2NvcmVzIHx8IHBy\nb2dyZXNzLmxlc3Nvbl9zY29yZXMgfHwge30sCiAgICAgIHRvdGFsX3hwOiBw\ncm9ncmVzcy50b3RhbFhQID8/IHByb2dyZXNzLnRvdGFsX3hwID8/IDAsCiAg\nICAgIHN0cmVhazogcHJvZ3Jlc3Muc3RyZWFrID8/IDAsCiAgICAgIGJhZGdl\nczogcHJvZ3Jlc3MuYmFkZ2VzIHx8IFtdLAogICAgICBjdXJyZW50X2xldmVs\nOiBwcm9ncmVzcy5jdXJyZW50TGV2ZWwgPz8gcHJvZ3Jlc3MuY3VycmVudF9s\nZXZlbCA/PyAxLAogICAgICBkYWlseV9xdWl6X3N0cmVhazogcHJvZ3Jlc3Mu\nZGFpbHlRdWl6U3RyZWFrID8/IHByb2dyZXNzLmRhaWx5X3F1aXpfc3RyZWFr\nID8/IDAsCiAgICAgIGxhc3RfYWN0aXZpdHlfZGF0ZTogbmV3IERhdGUoKS50\nb0lTT1N0cmluZygpLnNwbGl0KCdUJylbMF0sCiAgICAgIHVwZGF0ZWRfYXQ6\nIG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSwKICAgIH0pOwogIGlmIChlcnJv\ncikgY29uc29sZS5lcnJvcignc2F2ZVVzZXJQcm9ncmVzczonLCBlcnJvcik7\nCiAgcmV0dXJuICFlcnJvcjsKfQoKLy8g4pSA4pSA4pSAIERBSUxZIFFVSVog\nSElTVE9SWSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKCmV4cG9ydCBh\nc3luYyBmdW5jdGlvbiBnZXREYWlseVF1aXpIaXN0b3J5KHVzZXJJZCkgewog\nIGNvbnN0IHN1cGFiYXNlID0gYXdhaXQgZ2V0U3VwYWJhc2UoKTsKICBjb25z\ndCB7IGRhdGEsIGVycm9yIH0gPSBhd2FpdCBzdXBhYmFzZQogICAgLmZyb20o\nJ2RhaWx5X3F1aXpfcmVzdWx0cycpCiAgICAuc2VsZWN0KCcqJykKICAgIC5l\ncSgndXNlcl9pZCcsIHVzZXJJZCkKICAgIC5vcmRlcigncXVpel9kYXRlJywg\neyBhc2NlbmRpbmc6IGZhbHNlIH0pCiAgICAubGltaXQoMzApOwogIGlmIChl\ncnJvcikgY29uc29sZS5lcnJvcignZ2V0RGFpbHlRdWl6SGlzdG9yeTonLCBl\ncnJvcik7CiAgcmV0dXJuIGRhdGEgfHwgW107Cn0KCmV4cG9ydCBhc3luYyBm\ndW5jdGlvbiBzYXZlRGFpbHlRdWl6UmVzdWx0KHVzZXJJZCwgcmVzdWx0KSB7\nCiAgY29uc3Qgc3VwYWJhc2UgPSBhd2FpdCBnZXRTdXBhYmFzZSgpOwogIGNv\nbnN0IHRvZGF5ID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpLnNwbGl0KCdU\nJylbMF07CiAgY29uc3QgeyBlcnJvciB9ID0gYXdhaXQgc3VwYWJhc2UKICAg\nIC5mcm9tKCdkYWlseV9xdWl6X3Jlc3VsdHMnKQogICAgLnVwc2VydCh7CiAg\nICAgIHVzZXJfaWQ6IHVzZXJJZCwKICAgICAgcXVpel9kYXRlOiB0b2RheSwK\nICAgICAgc2NvcmU6IHJlc3VsdC5zY29yZSB8fCAwLAogICAgICB0b3RhbF9w\nb3NzaWJsZTogcmVzdWx0LnRvdGFsUG9zc2libGUgfHwgMTEwLAogICAgICBh\nbnN3ZXJzOiByZXN1bHQuYW5zd2VycyB8fCBbXSwKICAgICAgdGltZV90YWtl\nbjogcmVzdWx0LnRpbWVUYWtlbiB8fCAwLAogICAgICByYW5rOiByZXN1bHQu\ncmFuayB8fCBudWxsLAogICAgfSwgeyBvbkNvbmZsaWN0OiAndXNlcl9pZCxx\ndWl6X2RhdGUnIH0pOwogIGlmIChlcnJvcikgY29uc29sZS5lcnJvcignc2F2\nZURhaWx5UXVpelJlc3VsdDonLCBlcnJvcik7CiAgcmV0dXJuICFlcnJvcjsK\nfQoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGdldFRvZGF5UXVpelJlc3VsdCh1\nc2VySWQpIHsKICBjb25zdCBzdXBhYmFzZSA9IGF3YWl0IGdldFN1cGFiYXNl\nKCk7CiAgY29uc3QgdG9kYXkgPSBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCku\nc3BsaXQoJ1QnKVswXTsKICBjb25zdCB7IGRhdGEsIGVycm9yIH0gPSBhd2Fp\ndCBzdXBhYmFzZQogICAgLmZyb20oJ2RhaWx5X3F1aXpfcmVzdWx0cycpCiAg\nICAuc2VsZWN0KCcqJykKICAgIC5lcSgndXNlcl9pZCcsIHVzZXJJZCkKICAg\nIC5lcSgncXVpel9kYXRlJywgdG9kYXkpCiAgICAuc2luZ2xlKCk7CiAgaWYg\nKGVycm9yICYmIGVycm9yLmNvZGUgIT09ICdQR1JTVDExNicpIGNvbnNvbGUu\nZXJyb3IoJ2dldFRvZGF5UXVpelJlc3VsdDonLCBlcnJvcik7CiAgcmV0dXJu\nIGRhdGEgfHwgbnVsbDsKfQoKLy8g4pSA4pSA4pSAIExFQURFUkJPQVJEIOKU\ngOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU\ngOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU\ngOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU\ngOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU\ngAoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGdldExlYWRlcmJvYXJkKGNsYXNz\nR3JvdXAgPSAnY2xhc3NfYScpIHsKICBjb25zdCBzdXBhYmFzZSA9IGF3YWl0\nIGdldFN1cGFiYXNlKCk7CiAgY29uc3QgeyBkYXRhLCBlcnJvciB9ID0gYXdh\naXQgc3VwYWJhc2UKICAgIC5mcm9tKCdwcm9ncmVzcycpCiAgICAuc2VsZWN0\nKCdpZCwgdG90YWxfeHAsIHN0cmVhaywgdXNlcnMhaW5uZXIobmFtZSwgY2xh\nc3NfZ3JvdXApJykKICAgIC5lcSgndXNlcnMuY2xhc3NfZ3JvdXAnLCBjbGFz\nc0dyb3VwKQogICAgLm9yZGVyKCd0b3RhbF94cCcsIHsgYXNjZW5kaW5nOiBm\nYWxzZSB9KQogICAgLmxpbWl0KDUwKTsKICBpZiAoZXJyb3IpIGNvbnNvbGUu\nZXJyb3IoJ2dldExlYWRlcmJvYXJkOicsIGVycm9yKTsKICByZXR1cm4gZGF0\nYSB8fCBbXTsKfQoKLy8g4pSA4pSA4pSAIE1JR1JBVEUgbG9jYWxTdG9yYWdl\nIOKGkiBTdXBhYmFzZSAob25lLXRpbWUgb24gbG9naW4pIOKUgOKUgOKUgOKU\ngOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU\ngOKUgAoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIG1pZ3JhdGVMb2NhbFN0b3Jh\nZ2VUb1N1cGFiYXNlKHVzZXJJZCkgewogIHRyeSB7CiAgICAvLyBDaGVjayBp\nZiBhbHJlYWR5IG1pZ3JhdGVkCiAgICBjb25zdCBtaWdyYXRlZCA9IGxvY2Fs\nU3RvcmFnZS5nZXRJdGVtKCd2ZWRpY21pbmRfc3VwYWJhc2VfbWlncmF0ZWQn\nKTsKICAgIGlmIChtaWdyYXRlZCkgcmV0dXJuOwoKICAgIGNvbnN0IHByb2Zp\nbGUgPSBKU09OLnBhcnNlKGxvY2FsU3RvcmFnZS5nZXRJdGVtKCd2ZWRpY21p\nbmRfcHJvZmlsZScpIHx8ICd7fScpOwogICAgY29uc3QgcHJvZ3Jlc3MgPSBK\nU09OLnBhcnNlKGxvY2FsU3RvcmFnZS5nZXRJdGVtKCd2ZWRpY21pbmRfcHJv\nZ3Jlc3MnKSB8fCAne30nKTsKCiAgICAvLyBTYXZlIHByb2ZpbGUgaWYgZXhp\nc3RzCiAgICBpZiAoT2JqZWN0LmtleXMocHJvZmlsZSkubGVuZ3RoID4gMCkg\newogICAgICBhd2FpdCBzYXZlVXNlclByb2ZpbGUodXNlcklkLCB7CiAgICAg\nICAgbmFtZTogcHJvZmlsZS5uYW1lLAogICAgICAgIGVtYWlsOiBwcm9maWxl\nLmVtYWlsLAogICAgICAgIHBob25lOiBwcm9maWxlLnBob25lLAogICAgICAg\nIGdvYWw6IHByb2ZpbGUuZ29hbCwKICAgICAgICBjbGFzc19ncm91cDogcHJv\nZmlsZS5jbGFzc0dyb3VwIHx8ICdjbGFzc19hJywKICAgICAgICBzdWJzY3Jp\ncHRpb25fc3RhdHVzOiBwcm9maWxlLnN1YnNjcmlwdGlvblN0YXR1cyB8fCAn\ndHJpYWwnLAogICAgICAgIHBheW1lbnRfc3RhdHVzOiBwcm9maWxlLnBheW1l\nbnRTdGF0dXMsCiAgICAgICAgYWlfYW5hbHlzaXM6IHByb2ZpbGUuYWlBbmFs\neXNpcyB8fCB7fSwKICAgICAgfSk7CiAgICB9CgogICAgLy8gU2F2ZSBwcm9n\ncmVzcyBpZiBleGlzdHMKICAgIGlmIChPYmplY3Qua2V5cyhwcm9ncmVzcyku\nbGVuZ3RoID4gMCkgewogICAgICBhd2FpdCBzYXZlVXNlclByb2dyZXNzKHVz\nZXJJZCwgcHJvZ3Jlc3MpOwoKICAgICAgLy8gTWlncmF0ZSBkYWlseSBxdWl6\nIGhpc3RvcnkKICAgICAgY29uc3QgcXVpekhpc3RvcnkgPSBwcm9ncmVzcy5k\nYWlseVF1aXpIaXN0b3J5IHx8IFtdOwogICAgICBpZiAocXVpekhpc3Rvcnku\nbGVuZ3RoID4gMCkgewogICAgICAgIGNvbnN0IHN1cGFiYXNlID0gYXdhaXQg\nZ2V0U3VwYWJhc2UoKTsKICAgICAgICBmb3IgKGNvbnN0IGVudHJ5IG9mIHF1\naXpIaXN0b3J5LnNsaWNlKDAsIDMwKSkgewogICAgICAgICAgYXdhaXQgc3Vw\nYWJhc2UuZnJvbSgnZGFpbHlfcXVpel9yZXN1bHRzJykudXBzZXJ0KHsKICAg\nICAgICAgICAgdXNlcl9pZDogdXNlcklkLAogICAgICAgICAgICBxdWl6X2Rh\ndGU6IGVudHJ5LmRhdGUsCiAgICAgICAgICAgIHNjb3JlOiBlbnRyeS5zY29y\nZSB8fCAwLAogICAgICAgICAgICB0b3RhbF9wb3NzaWJsZTogZW50cnkudG90\nYWxQb3NzaWJsZSB8fCAxMTAsCiAgICAgICAgICAgIGFuc3dlcnM6IGVudHJ5\nLmFuc3dlcnMgfHwgW10sCiAgICAgICAgICB9LCB7IG9uQ29uZmxpY3Q6ICd1\nc2VyX2lkLHF1aXpfZGF0ZScgfSk7CiAgICAgICAgfQogICAgICB9CiAgICB9\nCgogICAgbG9jYWxTdG9yYWdlLnNldEl0ZW0oJ3ZlZGljbWluZF9zdXBhYmFz\nZV9taWdyYXRlZCcsICd0cnVlJyk7CiAgICBjb25zb2xlLmxvZygn4pyFIGxv\nY2FsU3RvcmFnZSBtaWdyYXRlZCB0byBTdXBhYmFzZScpOwogIH0gY2F0Y2gg\nKGUpIHsKICAgIGNvbnNvbGUuZXJyb3IoJ01pZ3JhdGlvbiBlcnJvcjonLCBl\nKTsKICB9Cn0K\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/supabaseDataService.js?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/26ed89930027bce23b3b125fad37e6ef439744d7","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/supabaseDataService.js"}}
+import { getSupabase } from './supabaseClient';
+
+// ─── USER PROFILE ────────────────────────────────────────────────────────────
+
+export async function getUserProfile(userId) {
+  const supabase = await getSupabase();
+  const { data, error } = await supabase
+    .from('users')
+    .select('*')
+    .eq('id', userId)
+    .single();
+  if (error && error.code !== 'PGRST116') console.error('getUserProfile:', error);
+  return data || {};
+}
+
+export async function saveUserProfile(userId, profile) {
+  const supabase = await getSupabase();
+  const { error } = await supabase
+    .from('users')
+    .upsert({ id: userId, ...profile, updated_at: new Date().toISOString() });
+  if (error) console.error('saveUserProfile:', error);
+  return !error;
+}
+
+// ─── USER PROGRESS ───────────────────────────────────────────────────────────
+
+export async function getUserProgress(userId) {
+  const supabase = await getSupabase();
+  const { data, error } = await supabase
+    .from('progress')
+    .select('*')
+    .eq('id', userId)
+    .single();
+  if (error && error.code !== 'PGRST116') console.error('getUserProgress:', error);
+  return data || {
+    completed_lessons: [],
+    lesson_scores: {},
+    total_xp: 0,
+    streak: 0,
+    badges: [],
+    current_level: 1,
+    daily_quiz_streak: 0,
+    daily_quiz_history: [],
+  };
+}
+
+export async function saveUserProgress(userId, progress) {
+  const supabase = await getSupabase();
+  const { error } = await supabase
+    .from('progress')
+    .upsert({
+      id: userId,
+      completed_lessons: progress.completedLessons || progress.completed_lessons || [],
+      lesson_scores: progress.lessonScores || progress.lesson_scores || {},
+      total_xp: progress.totalXP ?? progress.total_xp ?? 0,
+      streak: progress.streak ?? 0,
+      badges: progress.badges || [],
+      current_level: progress.currentLevel ?? progress.current_level ?? 1,
+      daily_quiz_streak: progress.dailyQuizStreak ?? progress.daily_quiz_streak ?? 0,
+      last_activity_date: new Date().toISOString().split('T')[0],
+      updated_at: new Date().toISOString(),
+    });
+  if (error) console.error('saveUserProgress:', error);
+  return !error;
+}
+
+// ─── DAILY QUIZ HISTORY ──────────────────────────────────────────────────────
+
+export async function getDailyQuizHistory(userId) {
+  const supabase = await getSupabase();
+  const { data, error } = await supabase
+    .from('daily_quiz_results')
+    .select('*')
+    .eq('user_id', userId)
+    .order('quiz_date', { ascending: false })
+    .limit(30);
+  if (error) console.error('getDailyQuizHistory:', error);
+  return data || [];
+}
+
+export async function saveDailyQuizResult(userId, result) {
+  const supabase = await getSupabase();
+  const today = new Date().toISOString().split('T')[0];
+  const { error } = await supabase
+    .from('daily_quiz_results')
+    .upsert({
+      user_id: userId,
+      quiz_date: today,
+      score: result.score || 0,
+      total_possible: result.totalPossible || 110,
+      answers: result.answers || [],
+      time_taken: result.timeTaken || 0,
+      rank: result.rank || null,
+    }, { onConflict: 'user_id,quiz_date' });
+  if (error) console.error('saveDailyQuizResult:', error);
+  return !error;
+}
+
+export async function getTodayQuizResult(userId) {
+  const supabase = await getSupabase();
+  const today = new Date().toISOString().split('T')[0];
+  const { data, error } = await supabase
+    .from('daily_quiz_results')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('quiz_date', today)
+    .single();
+  if (error && error.code !== 'PGRST116') console.error('getTodayQuizResult:', error);
+  return data || null;
+}
+
+// ─── LEADERBOARD ─────────────────────────────────────────────────────────────
+
+export async function getLeaderboard(classGroup = 'class_a') {
+  const supabase = await getSupabase();
+  const { data, error } = await supabase
+    .from('progress')
+    .select('id, total_xp, streak, users!inner(name, class_group)')
+    .eq('users.class_group', classGroup)
+    .order('total_xp', { ascending: false })
+    .limit(50);
+  if (error) console.error('getLeaderboard:', error);
+  return data || [];
+}
+
+// ─── MIGRATE localStorage → Supabase (one-time on login) ────────────────────
+
+export async function migrateLocalStorageToSupabase(userId) {
+  try {
+    // Check if already migrated
+    const migrated = localStorage.getItem('vedicmind_supabase_migrated');
+    if (migrated) return;
+
+    const profile = JSON.parse(localStorage.getItem('vedicmind_profile') || '{}');
+    const progress = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+
+    // Save profile if exists
+    if (Object.keys(profile).length > 0) {
+      await saveUserProfile(userId, {
+        name: profile.name,
+        email: profile.email,
+        phone: profile.phone,
+        goal: profile.goal,
+        class_group: profile.classGroup || 'class_a',
+        subscription_status: profile.subscriptionStatus || 'trial',
+        payment_status: profile.paymentStatus,
+        ai_analysis: profile.aiAnalysis || {},
+      });
+    }
+
+    // Save progress if exists
+    if (Object.keys(progress).length > 0) {
+      await saveUserProgress(userId, progress);
+
+      // Migrate daily quiz history
+      const quizHistory = progress.dailyQuizHistory || [];
+      if (quizHistory.length > 0) {
+        const supabase = await getSupabase();
+        for (const entry of quizHistory.slice(0, 30)) {
+          await supabase.from('daily_quiz_results').upsert({
+            user_id: userId,
+            quiz_date: entry.date,
+            score: entry.score || 0,
+            total_possible: entry.totalPossible || 110,
+            answers: entry.answers || [],
+          }, { onConflict: 'user_id,quiz_date' });
+        }
+      }
+    }
+
+    localStorage.setItem('vedicmind_supabase_migrated', 'true');
+    console.log('✅ localStorage migrated to Supabase');
+  } catch (e) {
+    console.error('Migration error:', e);
+  }
+}
