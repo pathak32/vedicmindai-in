@@ -1,1 +1,218 @@
-{"name":"OlympiadResultsPage.jsx","path":"src/pages/OlympiadResultsPage.jsx","sha":"0a074529966cf9b5c986fb3094a74943e27d2761","size":7956,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/OlympiadResultsPage.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/OlympiadResultsPage.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/0a074529966cf9b5c986fb3094a74943e27d2761","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/pages/OlympiadResultsPage.jsx?token=CFODAPZZB2AGZV2JRF4DGRLKFSQ5HAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IHVzZU5hdmlnYXRlIH0gZnJvbSAncmVhY3Qtcm91\ndGVyLWRvbSc7CmltcG9ydCB7IHRvYXN0IH0gZnJvbSAnc29ubmVyJzsKaW1w\nb3J0IHsgZ2V0T2x5bXBpYWRMZXZlbExhYmVsIH0gZnJvbSAnQC9saWIvb2x5\nbXBpYWRFbmdpbmUnOwoKZnVuY3Rpb24gdXNlQ291bnRVcCh0YXJnZXQsIGR1\ncmF0aW9uID0gMTUwMCkgewogIGNvbnN0IFt2YWwsIHNldFZhbF0gPSB1c2VT\ndGF0ZSgwKTsKICB1c2VFZmZlY3QoKCkgPT4gewogICAgaWYgKCF0YXJnZXQp\nIHJldHVybjsKICAgIGNvbnN0IHN0ZXBzID0gNjA7CiAgICBjb25zdCBpbmMg\nPSB0YXJnZXQgLyBzdGVwczsKICAgIGxldCBjdXJyZW50ID0gMDsKICAgIGNv\nbnN0IGlkID0gc2V0SW50ZXJ2YWwoKCkgPT4gewogICAgICBjdXJyZW50ICs9\nIGluYzsKICAgICAgaWYgKGN1cnJlbnQgPj0gdGFyZ2V0KSB7IHNldFZhbCh0\nYXJnZXQpOyBjbGVhckludGVydmFsKGlkKTsgfQogICAgICBlbHNlIHNldFZh\nbChNYXRoLmZsb29yKGN1cnJlbnQpKTsKICAgIH0sIGR1cmF0aW9uIC8gc3Rl\ncHMpOwogICAgcmV0dXJuICgpID0+IGNsZWFySW50ZXJ2YWwoaWQpOwogIH0s\nIFt0YXJnZXQsIGR1cmF0aW9uXSk7CiAgcmV0dXJuIHZhbDsKfQoKZnVuY3Rp\nb24gTWVkYWxBbmltYXRpb24oeyBzY29yZSB9KSB7CiAgbGV0IG1lZGFsID0g\nJ/Cfj4UnOwogIGlmIChzY29yZSA+PSAxNTApIG1lZGFsID0gJ/CfpYcnOwog\nIGVsc2UgaWYgKHNjb3JlID49IDEyMCkgbWVkYWwgPSAn8J+liCc7CiAgZWxz\nZSBpZiAoc2NvcmUgPj0gOTApIG1lZGFsID0gJ/CfpYknOwoKICByZXR1cm4g\nKAogICAgPGRpdiBzdHlsZT17ewogICAgICBmb250U2l6ZTogNzIsCiAgICAg\nIGFuaW1hdGlvbjogJ21lZGFsRHJvcCAwLjhzIGN1YmljLWJlemllcigwLjM0\nLDEuNTYsMC42NCwxKSBmb3J3YXJkcycsCiAgICAgIGRpc3BsYXk6ICdpbmxp\nbmUtYmxvY2snLCBtYXJnaW5Cb3R0b206IDgsCiAgICB9fT4KICAgICAge21l\nZGFsfQogICAgPC9kaXY+CiAgKTsKfQoKZnVuY3Rpb24gZ2V0TWVzc2FnZShz\nY29yZSkgewogIGlmIChzY29yZSA+PSAxNTApIHJldHVybiAn8J+MnyBFeHRy\nYW9yZGluYXJ5ISBPbHltcGlhZCBDaGFtcGlvbiBtYXRlcmlhbCEnOwogIGlm\nIChzY29yZSA+PSAxMjApIHJldHVybiAn8J+PhiBCcmlsbGlhbnQhIFlvdVwn\ncmUgYW1vbmcgdGhlIGVsaXRlISc7CiAgaWYgKHNjb3JlID49IDkwKSByZXR1\ncm4gJ/Cfjq8gU3Ryb25nIHBlcmZvcm1hbmNlISBLZWVwIGNvbXBldGluZyEn\nOwogIGlmIChzY29yZSA+PSA2MCkgcmV0dXJuICfwn5KqIEdvb2QgZWZmb3J0\nISBNb3JlIHByYWN0aWNlIG5leHQgcXVhcnRlciEnOwogIHJldHVybiAn8J+T\nmiBLZWVwIGxlYXJuaW5nISBFdmVyeSBPbHltcGlhZCBtYWtlcyB5b3Ugc3Ry\nb25nZXIuJzsKfQoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gT2x5bXBpYWRS\nZXN1bHRzUGFnZSgpIHsKICBjb25zdCBuYXZpZ2F0ZSA9IHVzZU5hdmlnYXRl\nKCk7CiAgY29uc3QgcHJvZ3Jlc3MgPSBKU09OLnBhcnNlKGxvY2FsU3RvcmFn\nZS5nZXRJdGVtKCd2ZWRpY21pbmRfcHJvZ3Jlc3MnKSB8fCAne30nKTsKICBj\nb25zdCBoaXN0b3J5ID0gcHJvZ3Jlc3Mub2x5bXBpYWRIaXN0b3J5IHx8IFtd\nOwogIGNvbnN0IHJlc3VsdCA9IGhpc3RvcnlbaGlzdG9yeS5sZW5ndGggLSAx\nXTsKCiAgY29uc3Qgc2NvcmUgPSByZXN1bHQ/LnNjb3JlID8/IDA7CiAgY29u\nc3QgdG90YWwgPSByZXN1bHQ/LnRvdGFsUG9zc2libGUgPz8gMTgwOwogIGNv\nbnN0IGNvcnJlY3QgPSByZXN1bHQ/LmNvcnJlY3QgPz8gMDsKICBjb25zdCB3\ncm9uZyA9IHJlc3VsdD8ud3JvbmcgPz8gMDsKICBjb25zdCBhY2N1cmFjeSA9\nIGNvcnJlY3QgKyB3cm9uZyA+IDAgPyBNYXRoLnJvdW5kKChjb3JyZWN0IC8g\nKGNvcnJlY3QgKyB3cm9uZykpICogMTAwKSA6IDA7CiAgY29uc3QgdGltZVRh\na2VuID0gcmVzdWx0Py50aW1lVGFrZW4gPz8gMDsKICBjb25zdCBsZXZlbCA9\nIHJlc3VsdD8ubGV2ZWwgPz8gJ3Nlbmlvcic7CiAgY29uc3QgcXVhcnRlciA9\nIHJlc3VsdD8ucXVhcnRlciA/PyAnJzsKCiAgY29uc3QgZGlzcGxheVNjb3Jl\nID0gdXNlQ291bnRVcChzY29yZSk7CgogIGNvbnN0IGZvcm1hdFRpbWUgPSAo\ncykgPT4gewogICAgY29uc3QgbSA9IE1hdGguZmxvb3IocyAvIDYwKTsKICAg\nIGNvbnN0IHNlYyA9IHMgJSA2MDsKICAgIHJldHVybiBgJHttfW0gJHtzZWN9\nc2A7CiAgfTsKCiAgY29uc3QgaGFuZGxlU2hhcmUgPSAoKSA9PiB7CiAgICBj\nb25zdCB0ZXh0ID0gYEkganVzdCBjb21wZXRlZCBpbiB0aGUgVmVkaWNNaW5k\nIE9seW1waWFkISDwn4+F8J+nrlxuU2NvcmU6ICR7c2NvcmV9LzE4MCB8IExl\ndmVsOiAke2dldE9seW1waWFkTGV2ZWxMYWJlbChsZXZlbCl9XG5RdWFydGVy\nOiAke3F1YXJ0ZXJ9XG5UaGluayB5b3UgY2FuIGJlYXQgbWU/XG5SZWdpc3Rl\nciBhdCB2ZWRpY21pbmRhaS5pbmA7CiAgICBjb25zdCB1cmwgPSBgaHR0cHM6\nLy93YS5tZS8/dGV4dD0ke2VuY29kZVVSSUNvbXBvbmVudCh0ZXh0KX1gOwog\nICAgd2luZG93Lm9wZW4odXJsLCAnX2JsYW5rJyk7CiAgfTsKCiAgY29uc3Qg\naGFuZGxlRG93bmxvYWRDZXJ0aWZpY2F0ZSA9ICgpID0+IHsKICAgIHRvYXN0\nLnN1Y2Nlc3MoJ0NlcnRpZmljYXRlIGZlYXR1cmUgY29taW5nIHNvb24hIFdl\nXCdsbCBlbWFpbCBpdCB0byB5b3UuIPCfj4UnKTsKICB9OwoKICBjb25zdCBz\ndGF0cyA9IFsKICAgIHsgbGFiZWw6ICdDb3JyZWN0JywgdmFsdWU6IGNvcnJl\nY3QsIGNvbG9yOiAnIzEwQjk4MScgfSwKICAgIHsgbGFiZWw6ICdXcm9uZycs\nIHZhbHVlOiB3cm9uZywgY29sb3I6ICcjRUY0NDQ0JyB9LAogICAgeyBsYWJl\nbDogJ0FjY3VyYWN5JywgdmFsdWU6IGAke2FjY3VyYWN5fSVgLCBjb2xvcjog\nJyNGNTlFMEInIH0sCiAgICB7IGxhYmVsOiAnVGltZScsIHZhbHVlOiBmb3Jt\nYXRUaW1lKHRpbWVUYWtlbiksIGNvbG9yOiAnIzYwQTVGQScgfSwKICBdOwoK\nICByZXR1cm4gKAogICAgPGRpdiBzdHlsZT17eyBiYWNrZ3JvdW5kOiAnIzBB\nMTYyOCcsIG1pbkhlaWdodDogJzEwMHZoJywgcGFkZGluZzogJzMycHggMTZw\neCA0OHB4JywgZGlzcGxheTogJ2ZsZXgnLCBqdXN0aWZ5Q29udGVudDogJ2Nl\nbnRlcicgfX0+CiAgICAgIDxzdHlsZT57YAogICAgICAgIEBrZXlmcmFtZXMg\nbWVkYWxEcm9wewogICAgICAgICAgMCV7b3BhY2l0eTowO3RyYW5zZm9ybTpz\nY2FsZSgwKSB0cmFuc2xhdGVZKC00MHB4KX0KICAgICAgICAgIDgwJXt0cmFu\nc2Zvcm06c2NhbGUoMS4zKSB0cmFuc2xhdGVZKDApfQogICAgICAgICAgMTAw\nJXtvcGFjaXR5OjE7dHJhbnNmb3JtOnNjYWxlKDEpIHRyYW5zbGF0ZVkoMCl9\nCiAgICAgICAgfQogICAgICAgIEBtZWRpYShtYXgtd2lkdGg6NTAwcHgpewog\nICAgICAgICAgLm9seS1zdGF0cy1ncmlke2dyaWQtdGVtcGxhdGUtY29sdW1u\nczoxZnIgMWZyIWltcG9ydGFudDt9CiAgICAgICAgfQogICAgICBgfTwvc3R5\nbGU+CgogICAgICA8ZGl2IHN0eWxlPXt7IG1heFdpZHRoOiA0ODAsIHdpZHRo\nOiAnMTAwJScsIHRleHRBbGlnbjogJ2NlbnRlcicgfX0+CgogICAgICAgIHsv\nKiBNZWRhbCAqL30KICAgICAgICA8TWVkYWxBbmltYXRpb24gc2NvcmU9e3Nj\nb3JlfSAvPgoKICAgICAgICB7LyogU2NvcmUgKi99CiAgICAgICAgPGRpdiBz\ndHlsZT17eyBtYXJnaW5Cb3R0b206IDggfX0+CiAgICAgICAgICA8c3BhbiBz\ndHlsZT17ewogICAgICAgICAgICBmb250RmFtaWx5OiAndmFyKC0tZm9udC1o\nZWFkaW5nKScsIGZvbnRTaXplOiA1NiwgZm9udFdlaWdodDogNzAwLCBjb2xv\ncjogJyNGNTlFMEInLAogICAgICAgICAgfX0+CiAgICAgICAgICAgIHtkaXNw\nbGF5U2NvcmV9CiAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICA8c3BhbiBz\ndHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1oZWFkaW5nKScsIGZv\nbnRTaXplOiAyOCwgY29sb3I6ICd3aGl0ZScgfX0+CiAgICAgICAgICAgIC97\ndG90YWx9CiAgICAgICAgICA8L3NwYW4+CiAgICAgICAgPC9kaXY+CiAgICAg\nICAgPGRpdiBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5\nKScsIGZvbnRTaXplOiAxMywgY29sb3I6ICdyZ2JhKDI1NSwyNTUsMjU1LDAu\nNiknLCBtYXJnaW5Cb3R0b206IDE2IH19PgogICAgICAgICAgT2x5bXBpYWQg\nU2NvcmUKICAgICAgICA8L2Rpdj4KCiAgICAgICAgey8qIE1lZGFsIGxhYmVs\nICovfQogICAgICAgIHtyZXN1bHQ/Lm1lZGFsICYmICgKICAgICAgICAgIDxk\naXYgc3R5bGU9e3sKICAgICAgICAgICAgZGlzcGxheTogJ2lubGluZS1ibG9j\naycsIGJhY2tncm91bmQ6ICdyZ2JhKDI0NSwxNTgsMTEsMC4yKScsCiAgICAg\nICAgICAgIGJvcmRlcjogJzFweCBzb2xpZCByZ2JhKDI0NSwxNTgsMTEsMC40\nKScsCiAgICAgICAgICAgIGJvcmRlclJhZGl1czogOTksIHBhZGRpbmc6ICc2\ncHggMThweCcsCiAgICAgICAgICAgIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250\nLWJvZHkpJywgZm9udFNpemU6IDEzLCBmb250V2VpZ2h0OiA3MDAsIGNvbG9y\nOiAnI0Y1OUUwQicsCiAgICAgICAgICAgIG1hcmdpbkJvdHRvbTogMTYsCiAg\nICAgICAgICB9fT4KICAgICAgICAgICAge3Jlc3VsdC5tZWRhbH0KICAgICAg\nICAgIDwvZGl2PgogICAgICAgICl9CgogICAgICAgIHsvKiBQZXJmb3JtYW5j\nZSBtZXNzYWdlICovfQogICAgICAgIDxwIHN0eWxlPXt7CiAgICAgICAgICBm\nb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxNSwg\nY29sb3I6ICd3aGl0ZScsCiAgICAgICAgICBsaW5lSGVpZ2h0OiAxLjYsIG1h\ncmdpbkJvdHRvbTogMjQsCiAgICAgICAgfX0+CiAgICAgICAgICB7Z2V0TWVz\nc2FnZShzY29yZSl9CiAgICAgICAgPC9wPgoKICAgICAgICB7LyogU3RhdHMg\nZ3JpZCAqL30KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ib2x5LXN0YXRzLWdy\naWQiIHN0eWxlPXt7CiAgICAgICAgICBkaXNwbGF5OiAnZ3JpZCcsIGdyaWRU\nZW1wbGF0ZUNvbHVtbnM6ICdyZXBlYXQoNCwxZnIpJywgZ2FwOiAxMCwgbWFy\nZ2luQm90dG9tOiAyNCwKICAgICAgICB9fT4KICAgICAgICAgIHtzdGF0cy5t\nYXAocyA9PiAoCiAgICAgICAgICAgIDxkaXYga2V5PXtzLmxhYmVsfSBzdHls\nZT17ewogICAgICAgICAgICAgIGJhY2tncm91bmQ6ICdyZ2JhKDI1NSwyNTUs\nMjU1LDAuMDYpJywgYm9yZGVyOiAnMXB4IHNvbGlkIHJnYmEoMjU1LDI1NSwy\nNTUsMC4xKScsCiAgICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiAxMiwgcGFk\nZGluZzogJzE0cHggOHB4JywKICAgICAgICAgICAgfX0+CiAgICAgICAgICAg\nICAgPGRpdiBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1tb25v\nKScsIGZvbnRTaXplOiAxOCwgZm9udFdlaWdodDogNzAwLCBjb2xvcjogcy5j\nb2xvciwgbWFyZ2luQm90dG9tOiA0IH19PgogICAgICAgICAgICAgICAge3Mu\ndmFsdWV9CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPGRp\ndiBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZv\nbnRTaXplOiAxMSwgY29sb3I6ICdyZ2JhKDI1NSwyNTUsMjU1LDAuNSknLCB0\nZXh0VHJhbnNmb3JtOiAndXBwZXJjYXNlJywgbGV0dGVyU3BhY2luZzogJzAu\nMDZlbScgfX0+CiAgICAgICAgICAgICAgICB7cy5sYWJlbH0KICAgICAgICAg\nICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICApKX0K\nICAgICAgICA8L2Rpdj4KCiAgICAgICAgey8qIENlcnRpZmljYXRlIGNhcmQg\nKi99CiAgICAgICAgPGRpdiBzdHlsZT17ewogICAgICAgICAgYm9yZGVyOiAn\nMnB4IHNvbGlkICNGNTlFMEInLCBib3JkZXJSYWRpdXM6IDE2LCBwYWRkaW5n\nOiAnMjBweCAyMHB4IDI0cHgnLAogICAgICAgICAgbWFyZ2luQm90dG9tOiAx\nNiwKICAgICAgICAgIGJhY2tncm91bmQ6ICdyZ2JhKDI0NSwxNTgsMTEsMC4w\nNSknLAogICAgICAgIH19PgogICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250\nU2l6ZTogMjgsIG1hcmdpbkJvdHRvbTogOCB9fT7wn4+FPC9kaXY+CiAgICAg\nICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJv\nZHkpJywgZm9udFdlaWdodDogNzAwLCBmb250U2l6ZTogMTUsIGNvbG9yOiAn\nI0Y1OUUwQicsIG1hcmdpbkJvdHRvbTogNCB9fT4KICAgICAgICAgICAgWW91\nciBDZXJ0aWZpY2F0ZSBpcyBSZWFkeQogICAgICAgICAgPC9kaXY+CiAgICAg\nICAgICA8ZGl2IGNsYXNzTmFtZT0iZm9udC1oZWFkaW5nIiBzdHlsZT17eyBm\nb250U2l6ZTogMTgsIGNvbG9yOiAnd2hpdGUnLCBtYXJnaW5Cb3R0b206IDQg\nfX0+CiAgICAgICAgICAgIFZlZGljTWluZCBPbHltcGlhZCB7cXVhcnRlcn0K\nICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250\nRmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxMywgY29s\nb3I6ICdyZ2JhKDI1NSwyNTUsMjU1LDAuNyknLCBtYXJnaW5Cb3R0b206IDQg\nfX0+CiAgICAgICAgICAgIHtnZXRPbHltcGlhZExldmVsTGFiZWwobGV2ZWwp\nfQogICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZv\nbnRGYW1pbHk6ICd2YXIoLS1mb250LW1vbm8pJywgZm9udFNpemU6IDEzLCBj\nb2xvcjogJyNGNTlFMEInLCBtYXJnaW5Cb3R0b206IDIwIH19PgogICAgICAg\nICAgICBTY29yZToge3Njb3JlfSAvIDE4MAogICAgICAgICAgPC9kaXY+CiAg\nICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgIG9uQ2xpY2s9e2hhbmRsZURv\nd25sb2FkQ2VydGlmaWNhdGV9CiAgICAgICAgICAgIHN0eWxlPXt7CiAgICAg\nICAgICAgICAgd2lkdGg6ICcxMDAlJywgaGVpZ2h0OiA0OCwgYmFja2dyb3Vu\nZDogJyNGNTlFMEInLCBjb2xvcjogJyMwQTE2MjgnLAogICAgICAgICAgICAg\nIGJvcmRlcjogJ25vbmUnLCBib3JkZXJSYWRpdXM6IDEyLCBmb250RmFtaWx5\nOiAndmFyKC0tZm9udC1ib2R5KScsCiAgICAgICAgICAgICAgZm9udFdlaWdo\ndDogNzAwLCBmb250U2l6ZTogMTUsIGN1cnNvcjogJ3BvaW50ZXInLAogICAg\nICAgICAgICB9fQogICAgICAgICAgPgogICAgICAgICAgICBEb3dubG9hZCBD\nZXJ0aWZpY2F0ZSDwn5OECiAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICA8\nL2Rpdj4KCiAgICAgICAgey8qIFNoYXJlICovfQogICAgICAgIDxidXR0b24K\nICAgICAgICAgIG9uQ2xpY2s9e2hhbmRsZVNoYXJlfQogICAgICAgICAgc3R5\nbGU9e3sKICAgICAgICAgICAgd2lkdGg6ICcxMDAlJywgaGVpZ2h0OiA0OCwg\nYmFja2dyb3VuZDogJyMyNUQzNjYnLCBjb2xvcjogJ3doaXRlJywKICAgICAg\nICAgICAgYm9yZGVyOiAnbm9uZScsIGJvcmRlclJhZGl1czogMTIsIGZvbnRG\nYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywKICAgICAgICAgICAgZm9udFdl\naWdodDogNzAwLCBmb250U2l6ZTogMTUsIGN1cnNvcjogJ3BvaW50ZXInLCBt\nYXJnaW5Cb3R0b206IDEyLAogICAgICAgICAgfX0KICAgICAgICA+CiAgICAg\nICAgICBTaGFyZSBNeSBBY2hpZXZlbWVudCDwn4+GCiAgICAgICAgPC9idXR0\nb24+CgogICAgICAgIHsvKiBCYWNrICovfQogICAgICAgIDxidXR0b24KICAg\nICAgICAgIG9uQ2xpY2s9eygpID0+IG5hdmlnYXRlKCcvZGFzaGJvYXJkJyl9\nCiAgICAgICAgICBzdHlsZT17ewogICAgICAgICAgICB3aWR0aDogJzEwMCUn\nLCBoZWlnaHQ6IDQ0LCBiYWNrZ3JvdW5kOiAndHJhbnNwYXJlbnQnLAogICAg\nICAgICAgICBib3JkZXI6ICcxcHggc29saWQgcmdiYSgyNTUsMjU1LDI1NSww\nLjMpJywgYm9yZGVyUmFkaXVzOiAxMiwKICAgICAgICAgICAgY29sb3I6ICd3\naGl0ZScsIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9udFNp\nemU6IDE0LCBjdXJzb3I6ICdwb2ludGVyJywKICAgICAgICAgIH19CiAgICAg\nICAgPgogICAgICAgICAgQmFjayB0byBEYXNoYm9hcmQKICAgICAgICA8L2J1\ndHRvbj4KICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KICApOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/OlympiadResultsPage.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/0a074529966cf9b5c986fb3094a74943e27d2761","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/OlympiadResultsPage.jsx"}}
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'sonner';
+import { getOlympiadLevelLabel } from '@/lib/olympiadEngine';
+
+function useCountUp(target, duration = 1500) {
+  const [val, setVal] = useState(0);
+  useEffect(() => {
+    if (!target) return;
+    const steps = 60;
+    const inc = target / steps;
+    let current = 0;
+    const id = setInterval(() => {
+      current += inc;
+      if (current >= target) { setVal(target); clearInterval(id); }
+      else setVal(Math.floor(current));
+    }, duration / steps);
+    return () => clearInterval(id);
+  }, [target, duration]);
+  return val;
+}
+
+function MedalAnimation({ score }) {
+  let medal = '🏅';
+  if (score >= 150) medal = '🥇';
+  else if (score >= 120) medal = '🥈';
+  else if (score >= 90) medal = '🥉';
+
+  return (
+    <div style={{
+      fontSize: 72,
+      animation: 'medalDrop 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards',
+      display: 'inline-block', marginBottom: 8,
+    }}>
+      {medal}
+    </div>
+  );
+}
+
+function getMessage(score) {
+  if (score >= 150) return '🌟 Extraordinary! Olympiad Champion material!';
+  if (score >= 120) return '🏆 Brilliant! You\'re among the elite!';
+  if (score >= 90) return '🎯 Strong performance! Keep competing!';
+  if (score >= 60) return '💪 Good effort! More practice next quarter!';
+  return '📚 Keep learning! Every Olympiad makes you stronger.';
+}
+
+export default function OlympiadResultsPage() {
+  const navigate = useNavigate();
+  const progress = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+  const history = progress.olympiadHistory || [];
+  const result = history[history.length - 1];
+
+  const score = result?.score ?? 0;
+  const total = result?.totalPossible ?? 180;
+  const correct = result?.correct ?? 0;
+  const wrong = result?.wrong ?? 0;
+  const accuracy = correct + wrong > 0 ? Math.round((correct / (correct + wrong)) * 100) : 0;
+  const timeTaken = result?.timeTaken ?? 0;
+  const level = result?.level ?? 'senior';
+  const quarter = result?.quarter ?? '';
+
+  const displayScore = useCountUp(score);
+
+  const formatTime = (s) => {
+    const m = Math.floor(s / 60);
+    const sec = s % 60;
+    return `${m}m ${sec}s`;
+  };
+
+  const handleShare = () => {
+    const text = `I just competed in the VedicMind Olympiad! 🏅🧮\nScore: ${score}/180 | Level: ${getOlympiadLevelLabel(level)}\nQuarter: ${quarter}\nThink you can beat me?\nRegister at vedicmindai.in`;
+    const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+  };
+
+  const handleDownloadCertificate = () => {
+    toast.success('Certificate feature coming soon! We\'ll email it to you. 🏅');
+  };
+
+  const stats = [
+    { label: 'Correct', value: correct, color: '#10B981' },
+    { label: 'Wrong', value: wrong, color: '#EF4444' },
+    { label: 'Accuracy', value: `${accuracy}%`, color: '#F59E0B' },
+    { label: 'Time', value: formatTime(timeTaken), color: '#60A5FA' },
+  ];
+
+  return (
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px 48px', display: 'flex', justifyContent: 'center' }}>
+      <style>{`
+        @keyframes medalDrop{
+          0%{opacity:0;transform:scale(0) translateY(-40px)}
+          80%{transform:scale(1.3) translateY(0)}
+          100%{opacity:1;transform:scale(1) translateY(0)}
+        }
+        @media(max-width:500px){
+          .oly-stats-grid{grid-template-columns:1fr 1fr!important;}
+        }
+      `}</style>
+
+      <div style={{ maxWidth: 480, width: '100%', textAlign: 'center' }}>
+
+        {/* Medal */}
+        <MedalAnimation score={score} />
+
+        {/* Score */}
+        <div style={{ marginBottom: 8 }}>
+          <span style={{
+            fontFamily: 'var(--font-heading)', fontSize: 56, fontWeight: 700, color: '#F59E0B',
+          }}>
+            {displayScore}
+          </span>
+          <span style={{ fontFamily: 'var(--font-heading)', fontSize: 28, color: 'white' }}>
+            /{total}
+          </span>
+        </div>
+        <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.6)', marginBottom: 16 }}>
+          Olympiad Score
+        </div>
+
+        {/* Medal label */}
+        {result?.medal && (
+          <div style={{
+            display: 'inline-block', background: 'rgba(245,158,11,0.2)',
+            border: '1px solid rgba(245,158,11,0.4)',
+            borderRadius: 99, padding: '6px 18px',
+            fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 700, color: '#F59E0B',
+            marginBottom: 16,
+          }}>
+            {result.medal}
+          </div>
+        )}
+
+        {/* Performance message */}
+        <p style={{
+          fontFamily: 'var(--font-body)', fontSize: 15, color: 'white',
+          lineHeight: 1.6, marginBottom: 24,
+        }}>
+          {getMessage(score)}
+        </p>
+
+        {/* Stats grid */}
+        <div className="oly-stats-grid" style={{
+          display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10, marginBottom: 24,
+        }}>
+          {stats.map(s => (
+            <div key={s.label} style={{
+              background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: 12, padding: '14px 8px',
+            }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 18, fontWeight: 700, color: s.color, marginBottom: 4 }}>
+                {s.value}
+              </div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Certificate card */}
+        <div style={{
+          border: '2px solid #F59E0B', borderRadius: 16, padding: '20px 20px 24px',
+          marginBottom: 16,
+          background: 'rgba(245,158,11,0.05)',
+        }}>
+          <div style={{ fontSize: 28, marginBottom: 8 }}>🏅</div>
+          <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, color: '#F59E0B', marginBottom: 4 }}>
+            Your Certificate is Ready
+          </div>
+          <div className="font-heading" style={{ fontSize: 18, color: 'white', marginBottom: 4 }}>
+            VedicMind Olympiad {quarter}
+          </div>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.7)', marginBottom: 4 }}>
+            {getOlympiadLevelLabel(level)}
+          </div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#F59E0B', marginBottom: 20 }}>
+            Score: {score} / 180
+          </div>
+          <button
+            onClick={handleDownloadCertificate}
+            style={{
+              width: '100%', height: 48, background: '#F59E0B', color: '#0A1628',
+              border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)',
+              fontWeight: 700, fontSize: 15, cursor: 'pointer',
+            }}
+          >
+            Download Certificate 📄
+          </button>
+        </div>
+
+        {/* Share */}
+        <button
+          onClick={handleShare}
+          style={{
+            width: '100%', height: 48, background: '#25D366', color: 'white',
+            border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)',
+            fontWeight: 700, fontSize: 15, cursor: 'pointer', marginBottom: 12,
+          }}
+        >
+          Share My Achievement 🏆
+        </button>
+
+        {/* Back */}
+        <button
+          onClick={() => navigate('/dashboard')}
+          style={{
+            width: '100%', height: 44, background: 'transparent',
+            border: '1px solid rgba(255,255,255,0.3)', borderRadius: 12,
+            color: 'white', fontFamily: 'var(--font-body)', fontSize: 14, cursor: 'pointer',
+          }}
+        >
+          Back to Dashboard
+        </button>
+      </div>
+    </div>
+  );
+}
