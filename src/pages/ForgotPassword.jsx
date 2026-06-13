@@ -1,1 +1,76 @@
-{"name":"ForgotPassword.jsx","path":"src/pages/ForgotPassword.jsx","sha":"31d20a69b54499d7edbc07fc6ab07707db940d37","size":2434,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/ForgotPassword.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/ForgotPassword.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/31d20a69b54499d7edbc07fc6ab07707db940d37","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/pages/ForgotPassword.jsx?token=CFODAPZPQ3GZ6G6BBLS7SE3KFSQ4ZAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAicmVhY3QiOwppbXBv\ncnQgeyBMaW5rIH0gZnJvbSAicmVhY3Qtcm91dGVyLWRvbSI7CmltcG9ydCB7\nIGJhc2U0NCB9IGZyb20gIkAvYXBpL2Jhc2U0NENsaWVudCI7CmltcG9ydCB7\nIEJ1dHRvbiB9IGZyb20gIkAvY29tcG9uZW50cy91aS9idXR0b24iOwppbXBv\ncnQgeyBJbnB1dCB9IGZyb20gIkAvY29tcG9uZW50cy91aS9pbnB1dCI7Cmlt\ncG9ydCB7IExhYmVsIH0gZnJvbSAiQC9jb21wb25lbnRzL3VpL2xhYmVsIjsK\naW1wb3J0IHsgTWFpbCwgQXJyb3dMZWZ0LCBMb2FkZXIyIH0gZnJvbSAibHVj\naWRlLXJlYWN0IjsKaW1wb3J0IEF1dGhMYXlvdXQgZnJvbSAiQC9jb21wb25l\nbnRzL0F1dGhMYXlvdXQiOwoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gRm9y\nZ290UGFzc3dvcmQoKSB7CiAgY29uc3QgW2VtYWlsLCBzZXRFbWFpbF0gPSB1\nc2VTdGF0ZSgiIik7CiAgY29uc3QgW2xvYWRpbmcsIHNldExvYWRpbmddID0g\ndXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtzZW50LCBzZXRTZW50XSA9IHVz\nZVN0YXRlKGZhbHNlKTsKCiAgY29uc3QgaGFuZGxlU3VibWl0ID0gYXN5bmMg\nKGUpID0+IHsKICAgIGUucHJldmVudERlZmF1bHQoKTsKICAgIHNldExvYWRp\nbmcodHJ1ZSk7CiAgICB0cnkgewogICAgICBhd2FpdCBiYXNlNDQuYXV0aC5y\nZXNldFBhc3N3b3JkUmVxdWVzdChlbWFpbCk7CiAgICB9IGNhdGNoIHsKICAg\nICAgLy8gQWx3YXlzIHNob3cgc3VjY2VzcyByZWdhcmRsZXNzCiAgICB9IGZp\nbmFsbHkgewogICAgICBzZXRMb2FkaW5nKGZhbHNlKTsKICAgICAgc2V0U2Vu\ndCh0cnVlKTsKICAgIH0KICB9OwoKICByZXR1cm4gKAogICAgPEF1dGhMYXlv\ndXQKICAgICAgaWNvbj17TWFpbH0KICAgICAgdGl0bGU9IlJlc2V0IHBhc3N3\nb3JkIgogICAgICBzdWJ0aXRsZT0iV2UnbGwgc2VuZCB5b3UgYSBsaW5rIHRv\nIHJlc2V0IGl0IgogICAgICBmb290ZXI9ewogICAgICAgIDxMaW5rIHRvPSIv\nbG9naW4iIGNsYXNzTmFtZT0idGV4dC1wcmltYXJ5IGZvbnQtbWVkaXVtIGhv\ndmVyOnVuZGVybGluZSI+CiAgICAgICAgICA8QXJyb3dMZWZ0IGNsYXNzTmFt\nZT0idy0zIGgtMyBpbmxpbmUgbXItMSIgLz5CYWNrIHRvIGxvZyBpbgogICAg\nICAgIDwvTGluaz4KICAgICAgfQogICAgPgogICAgICB7c2VudCA/ICgKICAg\nICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1mb3JlZ3JvdW5kIHRl\neHQtY2VudGVyIj4KICAgICAgICAgIElmIGFuIGFjY291bnQgZXhpc3RzIHdp\ndGggdGhhdCBlbWFpbCwgeW91J2xsIHJlY2VpdmUgYSBwYXNzd29yZCByZXNl\ndCBsaW5rIHNob3J0bHkuCiAgICAgICAgPC9wPgogICAgICApIDogKAogICAg\nICAgIDxmb3JtIG9uU3VibWl0PXtoYW5kbGVTdWJtaXR9IGNsYXNzTmFtZT0i\nc3BhY2UteS00Ij4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15\nLTIiPgogICAgICAgICAgICA8TGFiZWwgaHRtbEZvcj0iZW1haWwiPkVtYWls\nIGFkZHJlc3M8L0xhYmVsPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0i\ncmVsYXRpdmUiPgogICAgICAgICAgICAgIDxNYWlsIGNsYXNzTmFtZT0iYWJz\nb2x1dGUgbGVmdC0zIHRvcC0xLzIgLXRyYW5zbGF0ZS15LTEvMiB3LTQgaC00\nIHRleHQtbXV0ZWQtZm9yZWdyb3VuZCIgYXJpYS1oaWRkZW49InRydWUiIC8+\nCiAgICAgICAgICAgICAgPElucHV0CiAgICAgICAgICAgICAgICBpZD0iZW1h\naWwiCiAgICAgICAgICAgICAgICB0eXBlPSJlbWFpbCIKICAgICAgICAgICAg\nICAgIGF1dG9Db21wbGV0ZT0iZW1haWwiCiAgICAgICAgICAgICAgICBhdXRv\nRm9jdXMKICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPSJ5b3VAZXhhbXBs\nZS5jb20iCiAgICAgICAgICAgICAgICB2YWx1ZT17ZW1haWx9CiAgICAgICAg\nICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldEVtYWlsKGUudGFyZ2V0LnZh\nbHVlKX0KICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0icGwtMTAgaC0xMiIK\nICAgICAgICAgICAgICAgIHJlcXVpcmVkCiAgICAgICAgICAgICAgLz4KICAg\nICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxC\ndXR0b24gdHlwZT0ic3VibWl0IiBjbGFzc05hbWU9InctZnVsbCBoLTEyIGZv\nbnQtbWVkaXVtIiBkaXNhYmxlZD17bG9hZGluZ30+CiAgICAgICAgICAgIHts\nb2FkaW5nID8gKAogICAgICAgICAgICAgIDw+CiAgICAgICAgICAgICAgICA8\nTG9hZGVyMiBjbGFzc05hbWU9InctNCBoLTQgbXItMiBhbmltYXRlLXNwaW4i\nIC8+CiAgICAgICAgICAgICAgICBTZW5kaW5nLi4uCiAgICAgICAgICAgICAg\nPC8+CiAgICAgICAgICAgICkgOiAoCiAgICAgICAgICAgICAgIlNlbmQgcmVz\nZXQgbGluayIKICAgICAgICAgICAgKX0KICAgICAgICAgIDwvQnV0dG9uPgog\nICAgICAgIDwvZm9ybT4KICAgICAgKX0KICAgIDwvQXV0aExheW91dD4KICAp\nOwp9Cg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/ForgotPassword.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/31d20a69b54499d7edbc07fc6ab07707db940d37","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/ForgotPassword.jsx"}}
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { base44 } from "@/api/base44Client";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Mail, ArrowLeft, Loader2 } from "lucide-react";
+import AuthLayout from "@/components/AuthLayout";
+
+export default function ForgotPassword() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await base44.auth.resetPasswordRequest(email);
+    } catch {
+      // Always show success regardless
+    } finally {
+      setLoading(false);
+      setSent(true);
+    }
+  };
+
+  return (
+    <AuthLayout
+      icon={Mail}
+      title="Reset password"
+      subtitle="We'll send you a link to reset it"
+      footer={
+        <Link to="/login" className="text-primary font-medium hover:underline">
+          <ArrowLeft className="w-3 h-3 inline mr-1" />Back to log in
+        </Link>
+      }
+    >
+      {sent ? (
+        <p className="text-sm text-foreground text-center">
+          If an account exists with that email, you'll receive a password reset link shortly.
+        </p>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="email">Email address</Label>
+            <div className="relative">
+              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
+              <Input
+                id="email"
+                type="email"
+                autoComplete="email"
+                autoFocus
+                placeholder="you@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="pl-10 h-12"
+                required
+              />
+            </div>
+          </div>
+          <Button type="submit" className="w-full h-12 font-medium" disabled={loading}>
+            {loading ? (
+              <>
+                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              "Send reset link"
+            )}
+          </Button>
+        </form>
+      )}
+    </AuthLayout>
+  );
+}
