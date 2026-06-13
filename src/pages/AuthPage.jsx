@@ -1,1 +1,482 @@
-{"name":"AuthPage.jsx","path":"src/pages/AuthPage.jsx","sha":"677786507bd023f3fc8ef13bd319f9f220a6c60a","size":21652,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/AuthPage.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/AuthPage.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/677786507bd023f3fc8ef13bd319f9f220a6c60a","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/pages/AuthPage.jsx?token=CFODAPZ56C2UAN3JJTEBZFTKFSQ4LAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VSZWYsIHVzZUVmZmVjdCB9\nIGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgdXNlTmF2aWdhdGUgfSBmcm9tICdy\nZWFjdC1yb3V0ZXItZG9tJzsKaW1wb3J0IHsgbW90aW9uIH0gZnJvbSAnZnJh\nbWVyLW1vdGlvbic7CmltcG9ydCB7IHRvYXN0IH0gZnJvbSAnc29ubmVyJzsK\naW1wb3J0IHsgdXNlVmVkaWNBdXRoIH0gZnJvbSAnQC9saWIvVmVkaWNBdXRo\nQ29udGV4dCc7CmltcG9ydCB7IHNhdmVVc2VyUHJvZmlsZSB9IGZyb20gJ0Av\nbGliL3N1cGFiYXNlRGF0YVNlcnZpY2UnOwoKZnVuY3Rpb24gdmFsaWRhdGVN\nb2JpbGUobSkgewogIHJldHVybiAvXls2LTldXGR7OX0kLy50ZXN0KG0pOwp9\nCgpmdW5jdGlvbiBPVFBJbnB1dCh7IHZhbHVlLCBvbkNoYW5nZSwgc2hha2Ug\nfSkgewogIGNvbnN0IHJlZnMgPSB1c2VSZWYoW10pOwogIGNvbnN0IGRpZ2l0\ncyA9IHZhbHVlLnNwbGl0KCcnKTsKCiAgY29uc3QgaGFuZGxlS2V5ID0gKGks\nIGUpID0+IHsKICAgIGlmIChlLmtleSA9PT0gJ0JhY2tzcGFjZScpIHsKICAg\nICAgZS5wcmV2ZW50RGVmYXVsdCgpOwogICAgICBjb25zdCBuZXh0ID0gWy4u\nLmRpZ2l0c107CiAgICAgIGlmIChuZXh0W2ldKSB7IG5leHRbaV0gPSAnJzsg\nb25DaGFuZ2UobmV4dC5qb2luKCcnKSk7IH0KICAgICAgZWxzZSBpZiAoaSA+\nIDApIHsgbmV4dFtpIC0gMV0gPSAnJzsgb25DaGFuZ2UobmV4dC5qb2luKCcn\nKSk7IHJlZnMuY3VycmVudFtpIC0gMV0/LmZvY3VzKCk7IH0KICAgIH0KICB9\nOwoKICBjb25zdCBoYW5kbGVDaGFuZ2UgPSAoaSwgZSkgPT4gewogICAgY29u\nc3QgY2hhciA9IGUudGFyZ2V0LnZhbHVlLnJlcGxhY2UoL1xEL2csICcnKS5z\nbGljZSgtMSk7CiAgICBjb25zdCBuZXh0ID0gWy4uLmRpZ2l0c107CiAgICBu\nZXh0W2ldID0gY2hhcjsKICAgIG9uQ2hhbmdlKG5leHQuam9pbignJykpOwog\nICAgaWYgKGNoYXIgJiYgaSA8IDUpIHJlZnMuY3VycmVudFtpICsgMV0/LmZv\nY3VzKCk7CiAgfTsKCiAgY29uc3QgaGFuZGxlUGFzdGUgPSAoZSkgPT4gewog\nICAgZS5wcmV2ZW50RGVmYXVsdCgpOwogICAgY29uc3QgcGFzdGVkID0gZS5j\nbGlwYm9hcmREYXRhLmdldERhdGEoJ3RleHQnKS5yZXBsYWNlKC9cRC9nLCAn\nJykuc2xpY2UoMCwgNik7CiAgICBvbkNoYW5nZShwYXN0ZWQucGFkRW5kKDYs\nICcnKS5zbGljZSgwLCA2KSk7CiAgICByZWZzLmN1cnJlbnRbTWF0aC5taW4o\ncGFzdGVkLmxlbmd0aCwgNSldPy5mb2N1cygpOwogIH07CgogIHJldHVybiAo\nCiAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JywgZ2FwOiA4LCBq\ndXN0aWZ5Q29udGVudDogJ2NlbnRlcicgfX0+CiAgICAgIHtbMCwgMSwgMiwg\nMywgNCwgNV0ubWFwKGkgPT4gKAogICAgICAgIDxtb3Rpb24uaW5wdXQKICAg\nICAgICAgIGtleT17aX0KICAgICAgICAgIHJlZj17ZWwgPT4gcmVmcy5jdXJy\nZW50W2ldID0gZWx9CiAgICAgICAgICB0eXBlPSJ0ZWwiIGlucHV0TW9kZT0i\nbnVtZXJpYyIgbWF4TGVuZ3RoPXsxfQogICAgICAgICAgdmFsdWU9e2RpZ2l0\nc1tpXSB8fCAnJ30KICAgICAgICAgIG9uQ2hhbmdlPXtlID0+IGhhbmRsZUNo\nYW5nZShpLCBlKX0KICAgICAgICAgIG9uS2V5RG93bj17ZSA9PiBoYW5kbGVL\nZXkoaSwgZSl9CiAgICAgICAgICBvblBhc3RlPXtoYW5kbGVQYXN0ZX0KICAg\nICAgICAgIGFuaW1hdGU9e3NoYWtlID8geyB4OiBbLTYsIDYsIC02LCA2LCAw\nXSB9IDoge319CiAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAw\nLjMgfX0KICAgICAgICAgIHN0eWxlPXt7CiAgICAgICAgICAgIHdpZHRoOiA0\nNCwgaGVpZ2h0OiA1MiwgdGV4dEFsaWduOiAnY2VudGVyJywKICAgICAgICAg\nICAgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtbW9ubyknLCBmb250U2l6ZTog\nMjQsIGNvbG9yOiAnIzBBMTYyOCcsCiAgICAgICAgICAgIGJvcmRlcjogYDEu\nNXB4IHNvbGlkICR7ZGlnaXRzW2ldID8gJyMzQjgyRjYnIDogJ3JnYmEoMzAs\nNjQsMTc1LDAuMTUpJ31gLAogICAgICAgICAgICBib3JkZXJSYWRpdXM6IDEw\nLCBvdXRsaW5lOiAnbm9uZScsIGJhY2tncm91bmQ6ICd3aGl0ZScsCiAgICAg\nICAgICB9fQogICAgICAgIC8+CiAgICAgICkpfQogICAgPC9kaXY+CiAgKTsK\nfQoKZnVuY3Rpb24gUmVzZW5kVGltZXIoeyBvblJlc2VuZCB9KSB7CiAgY29u\nc3QgW3NlY3MsIHNldFNlY3NdID0gdXNlU3RhdGUoMzApOwogIFJlYWN0LnVz\nZUVmZmVjdCgoKSA9PiB7CiAgICBpZiAoc2VjcyA8PSAwKSByZXR1cm47CiAg\nICBjb25zdCB0ID0gc2V0VGltZW91dCgoKSA9PiBzZXRTZWNzKHMgPT4gcyAt\nIDEpLCAxMDAwKTsKICAgIHJldHVybiAoKSA9PiBjbGVhclRpbWVvdXQodCk7\nCiAgfSwgW3NlY3NdKTsKCiAgaWYgKHNlY3MgPiAwKSByZXR1cm4gKAogICAg\nPHAgc3R5bGU9e3sgdGV4dEFsaWduOiAnY2VudGVyJywgZm9udEZhbWlseTog\nJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTQsIGNvbG9yOiAnIzlD\nQTNBRicsIG1hcmdpbjogMCB9fT4KICAgICAgUmVzZW5kIGluIHtzZWNzfXMK\nICAgIDwvcD4KICApOwogIHJldHVybiAoCiAgICA8YnV0dG9uIHR5cGU9ImJ1\ndHRvbiIgb25DbGljaz17KCkgPT4geyBzZXRTZWNzKDMwKTsgb25SZXNlbmQo\nKTsgfX0KICAgICAgc3R5bGU9e3sgYmFja2dyb3VuZDogJ25vbmUnLCBib3Jk\nZXI6ICdub25lJywgY3Vyc29yOiAncG9pbnRlcicsIGZvbnRGYW1pbHk6ICd2\nYXIoLS1mb250LWJvZHkpJywgZm9udFNpemU6IDE0LCBjb2xvcjogJyMzQjgy\nRjYnLCBkaXNwbGF5OiAnYmxvY2snLCBtYXJnaW46ICcwIGF1dG8nIH19Pgog\nICAgICBSZXNlbmQgT1RQCiAgICA8L2J1dHRvbj4KICApOwp9Cgpjb25zdCBT\naWduVXBGb3JtID0gUmVhY3QubWVtbyhmdW5jdGlvbiBTaWduVXBGb3JtKHsg\nb25Td2l0Y2hUYWIgfSkgewogIGNvbnN0IHsgc2lnblVwLCB2ZXJpZnlPdHAs\nIHNpZ25VcFdpdGhFbWFpbCB9ID0gdXNlVmVkaWNBdXRoKCk7CiAgY29uc3Qg\nbmF2aWdhdGUgPSB1c2VOYXZpZ2F0ZSgpOwogIGNvbnN0IFtzY3JlZW4sIHNl\ndFNjcmVlbl0gPSB1c2VTdGF0ZSgnZm9ybScpOwogIGNvbnN0IFtuYW1lLCBz\nZXROYW1lXSA9IHVzZVN0YXRlKCcnKTsKICBjb25zdCBbcGhvbmUsIHNldFBo\nb25lXSA9IHVzZVN0YXRlKCcnKTsKICBjb25zdCBbdXNlRW1haWxTaWdudXAs\nIHNldFVzZUVtYWlsU2lnbnVwXSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25z\ndCBbZW1haWxTaWdudXAsIHNldEVtYWlsU2lnbnVwXSA9IHVzZVN0YXRlKCcn\nKTsKICBjb25zdCBbcGFzc3dvcmRTaWdudXAsIHNldFBhc3N3b3JkU2lnbnVw\nXSA9IHVzZVN0YXRlKCcnKTsKICBjb25zdCBbZXJyb3JzLCBzZXRFcnJvcnNd\nID0gdXNlU3RhdGUoe30pOwogIGNvbnN0IFtvdHBWYWx1ZSwgc2V0T3RwVmFs\ndWVdID0gdXNlU3RhdGUoJycpOwogIGNvbnN0IFtvdHBTaGFrZSwgc2V0T3Rw\nU2hha2VdID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtvdHBFcnJvciwg\nc2V0T3RwRXJyb3JdID0gdXNlU3RhdGUoJycpOwoKICBjb25zdCBoYW5kbGVT\naWduVXAgPSBhc3luYyAoKSA9PiB7CiAgICBpZiAodXNlRW1haWxTaWdudXAp\nIHsKICAgICAgaWYgKCFlbWFpbFNpZ251cCB8fCAhcGFzc3dvcmRTaWdudXAp\nIHsKICAgICAgICBzZXRFcnJvcnMoeyBlbWFpbDogJ0VtYWlsIGFuZCBwYXNz\nd29yZCByZXF1aXJlZCcgfSk7CiAgICAgICAgcmV0dXJuOwogICAgICB9CiAg\nICAgIHRyeSB7CiAgICAgICAgYXdhaXQgc2lnblVwV2l0aEVtYWlsKGVtYWls\nU2lnbnVwLCBwYXNzd29yZFNpZ251cCk7CiAgICAgICAgdG9hc3Quc3VjY2Vz\ncygnQWNjb3VudCBjcmVhdGVkIScpOwogICAgICAgIG5hdmlnYXRlKCcvZGFz\naGJvYXJkJyk7CiAgICAgIH0gY2F0Y2ggKGVycikgewogICAgICAgIHRvYXN0\nLmVycm9yKGVyci5tZXNzYWdlIHx8ICdTaWduIHVwIGZhaWxlZC4nKTsKICAg\nICAgfQogICAgICByZXR1cm47CiAgICB9CiAgICBjb25zdCBlID0ge307CiAg\nICBpZiAoIW5hbWUudHJpbSgpKSBlLm5hbWUgPSAnTmFtZSBpcyByZXF1aXJl\nZCc7CiAgICBpZiAoIXZhbGlkYXRlTW9iaWxlKHBob25lKSkgZS5waG9uZSA9\nICdFbnRlciBhIHZhbGlkIDEwLWRpZ2l0IG1vYmlsZSBudW1iZXInOwogICAg\nc2V0RXJyb3JzKGUpOwogICAgaWYgKE9iamVjdC5rZXlzKGUpLmxlbmd0aCA+\nIDApIHJldHVybjsKICAgIHRyeSB7CiAgICAgIGF3YWl0IHNpZ25VcChgKzkx\nJHtwaG9uZX1gKTsKICAgICAgc2V0T3RwVmFsdWUoJycpOwogICAgICBzZXRP\ndHBFcnJvcignJyk7CiAgICAgIHNldFNjcmVlbignb3RwJyk7CiAgICAgIHRv\nYXN0LnN1Y2Nlc3MoJ09UUCBzZW50IHRvIHlvdXIgcGhvbmUhJyk7CiAgICB9\nIGNhdGNoIChlcnIpIHsKICAgICAgdG9hc3QuZXJyb3IoZXJyLm1lc3NhZ2Ug\nfHwgJ1NpZ24gdXAgZmFpbGVkLiBQbGVhc2UgdHJ5IGFnYWluLicpOwogICAg\nfQogIH07CgogIGNvbnN0IGhhbmRsZVZlcmlmeU90cCA9IGFzeW5jICgpID0+\nIHsKICAgIGlmIChvdHBWYWx1ZS5sZW5ndGggPCA2KSByZXR1cm47CiAgICB0\ncnkgewogICAgICBjb25zdCByZXN1bHQgPSBhd2FpdCB2ZXJpZnlPdHAoYCs5\nMSR7cGhvbmV9YCwgb3RwVmFsdWUpOwogICAgICBjb25zdCB1c2VySWQgPSBy\nZXN1bHQ/LmRhdGE/LnVzZXI/LmlkOwogICAgICBpZiAodXNlcklkICYmIG5h\nbWUpIHsKICAgICAgICBhd2FpdCBzYXZlVXNlclByb2ZpbGUodXNlcklkLCB7\nCiAgICAgICAgICBuYW1lOiBuYW1lLnRyaW0oKSwKICAgICAgICAgIHBob25l\nOiBgKzkxJHtwaG9uZX1gLAogICAgICAgICAgc3Vic2NyaXB0aW9uX3N0YXR1\nczogJ3RyaWFsJywKICAgICAgICAgIHRyaWFsX3N0YXJ0X2RhdGU6IG5ldyBE\nYXRlKCkudG9JU09TdHJpbmcoKSwKICAgICAgICB9KTsKICAgICAgICBsb2Nh\nbFN0b3JhZ2Uuc2V0SXRlbSgndmVkaWNtaW5kX3Byb2ZpbGUnLCBKU09OLnN0\ncmluZ2lmeSh7CiAgICAgICAgICBuYW1lOiBuYW1lLnRyaW0oKSwgcGhvbmU6\nIGArOTEke3Bob25lfWAsCiAgICAgICAgICBzdWJzY3JpcHRpb25TdGF0dXM6\nICd0cmlhbCcsIHRyaWFsU3RhcnREYXRlOiBuZXcgRGF0ZSgpLnRvSVNPU3Ry\naW5nKCksCiAgICAgICAgfSkpOwogICAgICB9CiAgICAgIHRvYXN0LnN1Y2Nl\nc3MoJ0FjY291bnQgY3JlYXRlZCBzdWNjZXNzZnVsbHkhJyk7CiAgICAgIG5h\ndmlnYXRlKCcvZGFzaGJvYXJkJyk7CiAgICB9IGNhdGNoIChlcnIpIHsKICAg\nICAgc2V0T3RwU2hha2UodHJ1ZSk7CiAgICAgIHNldE90cEVycm9yKGVyci5t\nZXNzYWdlIHx8ICdJbnZhbGlkIE9UUC4gUGxlYXNlIHRyeSBhZ2Fpbi4nKTsK\nICAgICAgc2V0T3RwVmFsdWUoJycpOwogICAgICBzZXRUaW1lb3V0KCgpID0+\nIHNldE90cFNoYWtlKGZhbHNlKSwgNDAwKTsKICAgIH0KICB9OwoKICBjb25z\ndCBoYW5kbGVSZXNlbmRPdHAgPSBhc3luYyAoKSA9PiB7CiAgICB0cnkgewog\nICAgICBhd2FpdCBzaWduVXAoYCs5MSR7cGhvbmV9YCk7CiAgICAgIHNldE90\ncFZhbHVlKCcnKTsKICAgICAgc2V0T3RwRXJyb3IoJycpOwogICAgICB0b2Fz\ndC5zdWNjZXNzKCdPVFAgcmVzZW50IScpOwogICAgfSBjYXRjaCAoZXJyKSB7\nCiAgICAgIHRvYXN0LmVycm9yKGVyci5tZXNzYWdlIHx8ICdGYWlsZWQgdG8g\ncmVzZW5kIE9UUC4nKTsKICAgIH0KICB9OwoKICBpZiAoc2NyZWVuID09PSAn\nb3RwJykgewogICAgcmV0dXJuICgKICAgICAgPGRpdiBjbGFzc05hbWU9InNw\nYWNlLXktNSI+CiAgICAgICAgPGRpdiBzdHlsZT17eyB0ZXh0QWxpZ246ICdj\nZW50ZXInIH19PgogICAgICAgICAgPGgzIGNsYXNzTmFtZT0iZm9udC1oZWFk\naW5nIiBzdHlsZT17eyBmb250U2l6ZTogMjIsIGZvbnRXZWlnaHQ6IDcwMCwg\nY29sb3I6ICcjMEExNjI4JywgbWFyZ2luQm90dG9tOiA2IH19PlZlcmlmeSBQ\naG9uZTwvaDM+CiAgICAgICAgICA8cCBzdHlsZT17eyBmb250RmFtaWx5OiAn\ndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxNCwgY29sb3I6ICcjNEI1\nNTYzJywgbWFyZ2luOiAwIH19PgogICAgICAgICAgICBFbnRlciB0aGUgNi1k\naWdpdCBjb2RlIHNlbnQgdG8gKzkxIHtwaG9uZX0KICAgICAgICAgIDwvcD4K\nICAgICAgICA8L2Rpdj4KICAgICAgICA8T1RQSW5wdXQgdmFsdWU9e290cFZh\nbHVlfSBvbkNoYW5nZT17c2V0T3RwVmFsdWV9IHNoYWtlPXtvdHBTaGFrZX0g\nLz4KICAgICAgICB7b3RwRXJyb3IgJiYgPHAgc3R5bGU9e3sgdGV4dEFsaWdu\nOiAnY2VudGVyJywgY29sb3I6ICcjRUY0NDQ0JywgZm9udEZhbWlseTogJ3Zh\ncigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTMsIG1hcmdpbjogMCB9fT57\nb3RwRXJyb3J9PC9wPn0KICAgICAgICA8YnV0dG9uIHR5cGU9ImJ1dHRvbiIg\nb25DbGljaz17aGFuZGxlVmVyaWZ5T3RwfSBkaXNhYmxlZD17b3RwVmFsdWUu\nbGVuZ3RoIDwgNn0KICAgICAgICAgIGNsYXNzTmFtZT0idy1mdWxsIGgtMTEg\ncm91bmRlZC14bCBiZy1bIzBBMTYyOF0gdGV4dC13aGl0ZSBmb250LXNlbWli\nb2xkIHRleHQtc20gaG92ZXI6YmctWyMwRDIyNTJdIHRyYW5zaXRpb24tY29s\nb3JzIGRpc2FibGVkOm9wYWNpdHktNDAgZGlzYWJsZWQ6Y3Vyc29yLW5vdC1h\nbGxvd2VkIj4KICAgICAgICAgIFZlcmlmeSBPVFAKICAgICAgICA8L2J1dHRv\nbj4KICAgICAgICA8UmVzZW5kVGltZXIga2V5PXtwaG9uZX0gb25SZXNlbmQ9\ne2hhbmRsZVJlc2VuZE90cH0gLz4KICAgICAgICA8YnV0dG9uIHR5cGU9ImJ1\ndHRvbiIgb25DbGljaz17KCkgPT4geyBzZXRTY3JlZW4oJ2Zvcm0nKTsgc2V0\nT3RwVmFsdWUoJycpOyBzZXRPdHBFcnJvcignJyk7IH19CiAgICAgICAgICBz\ndHlsZT17eyBkaXNwbGF5OiAnYmxvY2snLCBtYXJnaW46ICcwIGF1dG8nLCBi\nYWNrZ3JvdW5kOiAnbm9uZScsIGJvcmRlcjogJ25vbmUnLCBjdXJzb3I6ICdw\nb2ludGVyJywgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250\nU2l6ZTogMTMsIGNvbG9yOiAnIzlDQTNBRicgfX0+CiAgICAgICAgICDihpAg\nQmFjawogICAgICAgIDwvYnV0dG9uPgogICAgICA8L2Rpdj4KICAgICk7CiAg\nfQoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktNCI+\nCiAgICAgIHshdXNlRW1haWxTaWdudXAgJiYgKAogICAgICAgIDw+CiAgICAg\nICAgICA8ZGl2PgogICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPSJibG9j\nayB0ZXh0LXNtIGZvbnQtbWVkaXVtIHRleHQtWyMwQTE2MjhdIG1iLTEuNSI+\nRnVsbCBOYW1lPC9sYWJlbD4KICAgICAgICAgICAgPGlucHV0IHR5cGU9InRl\neHQiIHZhbHVlPXtuYW1lfSBvbkNoYW5nZT17ZSA9PiBzZXROYW1lKGUudGFy\nZ2V0LnZhbHVlKX0KICAgICAgICAgICAgICBwbGFjZWhvbGRlcj0iWW91ciBm\ndWxsIG5hbWUiIGF1dG9Db21wbGV0ZT0ibmFtZSIgc3R5bGU9e3sgZm9udFNp\nemU6IDE2IH19CiAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgdy1mdWxsIGgt\nMTEgcHgtNCByb3VuZGVkLXhsIGJvcmRlciBiZy13aGl0ZSB0ZXh0LVsjMEEx\nNjI4XSB0ZXh0LXNtIGZvY3VzOm91dGxpbmUtbm9uZSBmb2N1czpyaW5nLTIg\nZm9jdXM6cmluZy1bIzNCODJGNl0gJHtlcnJvcnMubmFtZSA/ICdib3JkZXIt\nWyNFRjQ0NDRdJyA6ICdib3JkZXItW3JnYmEoMzAsNjQsMTc1LDAuMTUpXSd9\nYH0KICAgICAgICAgICAgLz4KICAgICAgICAgICAge2Vycm9ycy5uYW1lICYm\nIDxwIGNsYXNzTmFtZT0idGV4dC1bI0VGNDQ0NF0gdGV4dC14cyBtdC0xIj57\nZXJyb3JzLm5hbWV9PC9wPn0KICAgICAgICAgIDwvZGl2PgogICAgICAgICAg\nPGRpdj4KICAgICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT0iYmxvY2sgdGV4\ndC1zbSBmb250LW1lZGl1bSB0ZXh0LVsjMEExNjI4XSBtYi0xLjUiPk1vYmls\nZSBOdW1iZXI8L2xhYmVsPgogICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGRp\nc3BsYXk6ICdmbGV4JywgYWxpZ25JdGVtczogJ2NlbnRlcicsIGJvcmRlcjog\nYDFweCBzb2xpZCAke2Vycm9ycy5waG9uZSA/ICcjRUY0NDQ0JyA6ICdyZ2Jh\nKDMwLDY0LDE3NSwwLjE1KSd9YCwgYm9yZGVyUmFkaXVzOiAxMiwgb3ZlcmZs\nb3c6ICdoaWRkZW4nLCBiYWNrZ3JvdW5kOiAnd2hpdGUnLCBoZWlnaHQ6IDQ0\nIH19PgogICAgICAgICAgICAgIDxzcGFuIHN0eWxlPXt7IHBhZGRpbmc6ICcw\nIDEwcHggMCAxNHB4JywgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSkn\nLCBmb250U2l6ZTogMTQsIGNvbG9yOiAnIzRCNTU2MycsIGJvcmRlclJpZ2h0\nOiAnMXB4IHNvbGlkIHJnYmEoMzAsNjQsMTc1LDAuMTUpJywgd2hpdGVTcGFj\nZTogJ25vd3JhcCcsIGxpbmVIZWlnaHQ6ICc0NHB4JywgZmxleFNocmluazog\nMCB9fT4rOTE8L3NwYW4+CiAgICAgICAgICAgICAgPGlucHV0IHR5cGU9InRl\nbCIgaW5wdXRNb2RlPSJudW1lcmljIiBhdXRvQ29tcGxldGU9InRlbCIgdmFs\ndWU9e3Bob25lfQogICAgICAgICAgICAgICAgb25DaGFuZ2U9e2UgPT4gc2V0\nUGhvbmUoZS50YXJnZXQudmFsdWUucmVwbGFjZSgvXEQvZywgJycpLnNsaWNl\nKDAsIDEwKSl9CiAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcj0iMTAtZGln\naXQgbW9iaWxlIG51bWJlciIKICAgICAgICAgICAgICAgIHN0eWxlPXt7IGZs\nZXg6IDEsIHBhZGRpbmc6ICcwIDE0cHgnLCBib3JkZXI6ICdub25lJywgb3V0\nbGluZTogJ25vbmUnLCBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScs\nIGZvbnRTaXplOiAxNiwgY29sb3I6ICcjMEExNjI4JywgYmFja2dyb3VuZDog\nJ3RyYW5zcGFyZW50JyB9fQogICAgICAgICAgICAgIC8+CiAgICAgICAgICAg\nIDwvZGl2PgogICAgICAgICAgICB7ZXJyb3JzLnBob25lICYmIDxwIGNsYXNz\nTmFtZT0idGV4dC1bI0VGNDQ0NF0gdGV4dC14cyBtdC0xIj57ZXJyb3JzLnBo\nb25lfTwvcD59CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8Lz4KICAgICAg\nKX0KCiAgICAgIHt1c2VFbWFpbFNpZ251cCAmJiAoCiAgICAgICAgPGRpdiBz\ndHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGZsZXhEaXJlY3Rpb246ICdjb2x1\nbW4nLCBnYXA6IDggfX0+CiAgICAgICAgICA8aW5wdXQgdHlwZT0iZW1haWwi\nIHZhbHVlPXtlbWFpbFNpZ251cH0gb25DaGFuZ2U9e2UgPT4gc2V0RW1haWxT\naWdudXAoZS50YXJnZXQudmFsdWUpfQogICAgICAgICAgICBwbGFjZWhvbGRl\ncj0ieW91ckBlbWFpbC5jb20iCiAgICAgICAgICAgIHN0eWxlPXt7IGhlaWdo\ndDogNDQsIHBhZGRpbmc6ICcwIDE2cHgnLCBib3JkZXJSYWRpdXM6IDEyLCBi\nb3JkZXI6ICcxcHggc29saWQgcmdiYSgzMCw2NCwxNzUsMC4xNSknLCBmb250\nU2l6ZTogMTYsIG91dGxpbmU6ICdub25lJywgZm9udEZhbWlseTogJ3Zhcigt\nLWZvbnQtYm9keSknLCBjb2xvcjogJyMwQTE2MjgnIH19CiAgICAgICAgICAv\nPgogICAgICAgICAgPGlucHV0IHR5cGU9InBhc3N3b3JkIiB2YWx1ZT17cGFz\nc3dvcmRTaWdudXB9IG9uQ2hhbmdlPXtlID0+IHNldFBhc3N3b3JkU2lnbnVw\nKGUudGFyZ2V0LnZhbHVlKX0KICAgICAgICAgICAgcGxhY2Vob2xkZXI9IlBh\nc3N3b3JkIChtaW4gNiBjaGFycykiCiAgICAgICAgICAgIHN0eWxlPXt7IGhl\naWdodDogNDQsIHBhZGRpbmc6ICcwIDE2cHgnLCBib3JkZXJSYWRpdXM6IDEy\nLCBib3JkZXI6ICcxcHggc29saWQgcmdiYSgzMCw2NCwxNzUsMC4xNSknLCBm\nb250U2l6ZTogMTYsIG91dGxpbmU6ICdub25lJywgZm9udEZhbWlseTogJ3Zh\ncigtLWZvbnQtYm9keSknLCBjb2xvcjogJyMwQTE2MjgnIH19CiAgICAgICAg\nICAvPgogICAgICAgICAge2Vycm9ycy5lbWFpbCAmJiA8cCBzdHlsZT17eyBj\nb2xvcjogJyNFRjQ0NDQnLCBmb250U2l6ZTogMTIsIG1hcmdpbjogMCB9fT57\nZXJyb3JzLmVtYWlsfTwvcD59CiAgICAgICAgPC9kaXY+CiAgICAgICl9Cgog\nICAgICA8cCBzdHlsZT17eyB0ZXh0QWxpZ246ICdjZW50ZXInLCBmb250U2l6\nZTogMTMsIGNvbG9yOiAnIzZCNzI4MCcsIG1hcmdpbjogJzRweCAwJyB9fT4K\nICAgICAgICBvcnsnICd9CiAgICAgICAgPGJ1dHRvbiB0eXBlPSJidXR0b24i\nIG9uQ2xpY2s9eygpID0+IHNldFVzZUVtYWlsU2lnbnVwKCF1c2VFbWFpbFNp\nZ251cCl9CiAgICAgICAgICBzdHlsZT17eyBiYWNrZ3JvdW5kOiAnbm9uZScs\nIGJvcmRlcjogJ25vbmUnLCBjb2xvcjogJyMzQjgyRjYnLCBjdXJzb3I6ICdw\nb2ludGVyJywgZm9udFNpemU6IDEzLCBmb250V2VpZ2h0OiA2MDAgfX0+CiAg\nICAgICAgICB7dXNlRW1haWxTaWdudXAgPyAnVXNlIFBob25lIE9UUCBpbnN0\nZWFkJyA6ICdTaWduIHVwIHdpdGggRW1haWwnfQogICAgICAgIDwvYnV0dG9u\nPgogICAgICA8L3A+CgogICAgICA8YnV0dG9uIHR5cGU9ImJ1dHRvbiIgb25D\nbGljaz17aGFuZGxlU2lnblVwfQogICAgICAgIGNsYXNzTmFtZT0idy1mdWxs\nIGgtMTEgcm91bmRlZC14bCBiZy1bIzBBMTYyOF0gdGV4dC13aGl0ZSBmb250\nLXNlbWlib2xkIHRleHQtc20gaG92ZXI6YmctWyMwRDIyNTJdIHRyYW5zaXRp\nb24tY29sb3JzIj4KICAgICAgICB7dXNlRW1haWxTaWdudXAgPyAnQ3JlYXRl\nIEFjY291bnQg4oaSJyA6ICdTZW5kIE9UUCDihpInfQogICAgICA8L2J1dHRv\nbj4KICAgIDwvZGl2PgogICk7Cn0pOwoKY29uc3QgU2lnbkluRm9ybSA9IFJl\nYWN0Lm1lbW8oZnVuY3Rpb24gU2lnbkluRm9ybSh7IG9uU3dpdGNoVGFiIH0p\nIHsKICBjb25zdCB7IHNpZ25JbiwgdmVyaWZ5T3RwIH0gPSB1c2VWZWRpY0F1\ndGgoKTsKICBjb25zdCBuYXZpZ2F0ZSA9IHVzZU5hdmlnYXRlKCk7CiAgY29u\nc3QgW3NjcmVlbiwgc2V0U2NyZWVuXSA9IHVzZVN0YXRlKCdwaG9uZScpOwog\nIGNvbnN0IFtwaG9uZSwgc2V0UGhvbmVdID0gdXNlU3RhdGUoJycpOwogIGNv\nbnN0IFtlbWFpbCwgc2V0RW1haWxdID0gdXNlU3RhdGUoJycpOwogIGNvbnN0\nIFtwYXNzd29yZCwgc2V0UGFzc3dvcmRdID0gdXNlU3RhdGUoJycpOwogIGNv\nbnN0IFt1c2VFbWFpbCwgc2V0VXNlRW1haWxdID0gdXNlU3RhdGUoZmFsc2Up\nOwogIGNvbnN0IFtlcnJvcnMsIHNldEVycm9yc10gPSB1c2VTdGF0ZSh7fSk7\nCiAgY29uc3QgW290cFZhbHVlLCBzZXRPdHBWYWx1ZV0gPSB1c2VTdGF0ZSgn\nJyk7CiAgY29uc3QgW290cFNoYWtlLCBzZXRPdHBTaGFrZV0gPSB1c2VTdGF0\nZShmYWxzZSk7CiAgY29uc3QgW290cEVycm9yLCBzZXRPdHBFcnJvcl0gPSB1\nc2VTdGF0ZSgnJyk7CgogIGNvbnN0IGhhbmRsZVNlbmRPVFAgPSBhc3luYyAo\nKSA9PiB7CiAgICBpZiAodXNlRW1haWwpIHsKICAgICAgaWYgKCFlbWFpbCB8\nfCAhcGFzc3dvcmQpIHsKICAgICAgICBzZXRFcnJvcnMoeyBlbWFpbDogJ0Vt\nYWlsIGFuZCBwYXNzd29yZCByZXF1aXJlZCcgfSk7CiAgICAgICAgcmV0dXJu\nOwogICAgICB9CiAgICAgIHRyeSB7CiAgICAgICAgYXdhaXQgc2lnbkluKG51\nbGwsIGVtYWlsLCBwYXNzd29yZCk7CiAgICAgICAgdG9hc3Quc3VjY2Vzcygn\nU2lnbmVkIGluIHN1Y2Nlc3NmdWxseSEnKTsKICAgICAgICBuYXZpZ2F0ZSgn\nL2Rhc2hib2FyZCcpOwogICAgICB9IGNhdGNoIChlcnIpIHsKICAgICAgICB0\nb2FzdC5lcnJvcihlcnIubWVzc2FnZSB8fCAnTG9naW4gZmFpbGVkLicpOwog\nICAgICB9CiAgICAgIHJldHVybjsKICAgIH0KICAgIGNvbnN0IGUgPSB7fTsK\nICAgIGlmICghdmFsaWRhdGVNb2JpbGUocGhvbmUpKSBlLnBob25lID0gJ0Vu\ndGVyIGEgdmFsaWQgMTAtZGlnaXQgbW9iaWxlIG51bWJlcic7CiAgICBzZXRF\ncnJvcnMoZSk7CiAgICBpZiAoT2JqZWN0LmtleXMoZSkubGVuZ3RoID4gMCkg\ncmV0dXJuOwogICAgdHJ5IHsKICAgICAgYXdhaXQgc2lnbkluKGArOTEke3Bo\nb25lfWApOwogICAgICBzZXRPdHBWYWx1ZSgnJyk7CiAgICAgIHNldE90cEVy\ncm9yKCcnKTsKICAgICAgc2V0U2NyZWVuKCdvdHAnKTsKICAgICAgdG9hc3Qu\nc3VjY2VzcygnT1RQIHNlbnQgdG8geW91ciBwaG9uZSEnKTsKICAgIH0gY2F0\nY2ggKGVycikgewogICAgICB0b2FzdC5lcnJvcihlcnIubWVzc2FnZSB8fCAn\nRmFpbGVkIHRvIHNlbmQgT1RQLiBQbGVhc2UgdHJ5IGFnYWluLicpOwogICAg\nfQogIH07CgogIGNvbnN0IGhhbmRsZVZlcmlmeU9UUCA9IGFzeW5jICgpID0+\nIHsKICAgIGlmIChvdHBWYWx1ZS5sZW5ndGggPCA2KSByZXR1cm47CiAgICB0\ncnkgewogICAgICBhd2FpdCB2ZXJpZnlPdHAoYCs5MSR7cGhvbmV9YCwgb3Rw\nVmFsdWUpOwogICAgICB0b2FzdC5zdWNjZXNzKCdTaWduZWQgaW4gc3VjY2Vz\nc2Z1bGx5IScpOwogICAgICBuYXZpZ2F0ZSgnL2Rhc2hib2FyZCcpOwogICAg\nfSBjYXRjaCAoZXJyKSB7CiAgICAgIHNldE90cFNoYWtlKHRydWUpOwogICAg\nICBzZXRPdHBFcnJvcihlcnIubWVzc2FnZSB8fCAnSW52YWxpZCBPVFAuIFBs\nZWFzZSB0cnkgYWdhaW4uJyk7CiAgICAgIHNldE90cFZhbHVlKCcnKTsKICAg\nICAgc2V0VGltZW91dCgoKSA9PiBzZXRPdHBTaGFrZShmYWxzZSksIDQwMCk7\nCiAgICB9CiAgfTsKCiAgY29uc3QgaGFuZGxlUmVzZW5kT1RQID0gYXN5bmMg\nKCkgPT4gewogICAgdHJ5IHsKICAgICAgYXdhaXQgc2lnbkluKGArOTEke3Bo\nb25lfWApOwogICAgICBzZXRPdHBWYWx1ZSgnJyk7CiAgICAgIHNldE90cEVy\ncm9yKCcnKTsKICAgICAgdG9hc3Quc3VjY2VzcygnT1RQIHJlc2VudCEnKTsK\nICAgIH0gY2F0Y2ggKGVycikgewogICAgICB0b2FzdC5lcnJvcihlcnIubWVz\nc2FnZSB8fCAnRmFpbGVkIHRvIHJlc2VuZCBPVFAuJyk7CiAgICB9CiAgfTsK\nCiAgaWYgKHNjcmVlbiA9PT0gJ290cCcpIHsKICAgIHJldHVybiAoCiAgICAg\nIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15LTUiPgogICAgICAgIDxkaXYgc3R5\nbGU9e3sgdGV4dEFsaWduOiAnY2VudGVyJyB9fT4KICAgICAgICAgIDxoMyBj\nbGFzc05hbWU9ImZvbnQtaGVhZGluZyIgc3R5bGU9e3sgZm9udFNpemU6IDIy\nLCBmb250V2VpZ2h0OiA3MDAsIGNvbG9yOiAnIzBBMTYyOCcsIG1hcmdpbkJv\ndHRvbTogNiB9fT5FbnRlciBPVFA8L2gzPgogICAgICAgICAgPHAgc3R5bGU9\ne3sgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTog\nMTQsIGNvbG9yOiAnIzRCNTU2MycsIG1hcmdpbjogMCB9fT4KICAgICAgICAg\nICAgV2Ugc2VudCBhIDYtZGlnaXQgY29kZSB0byArOTEge3Bob25lfQogICAg\nICAgICAgPC9wPgogICAgICAgIDwvZGl2PgogICAgICAgIDxPVFBJbnB1dCB2\nYWx1ZT17b3RwVmFsdWV9IG9uQ2hhbmdlPXtzZXRPdHBWYWx1ZX0gc2hha2U9\ne290cFNoYWtlfSAvPgogICAgICAgIHtvdHBFcnJvciAmJiA8cCBzdHlsZT17\neyB0ZXh0QWxpZ246ICdjZW50ZXInLCBjb2xvcjogJyNFRjQ0NDQnLCBmb250\nRmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxMywgbWFy\nZ2luOiAwIH19PntvdHBFcnJvcn08L3A+fQogICAgICAgIDxidXR0b24gdHlw\nZT0iYnV0dG9uIiBvbkNsaWNrPXtoYW5kbGVWZXJpZnlPVFB9IGRpc2FibGVk\nPXtvdHBWYWx1ZS5sZW5ndGggPCA2fQogICAgICAgICAgY2xhc3NOYW1lPSJ3\nLWZ1bGwgaC0xMSByb3VuZGVkLXhsIGJnLVsjMEExNjI4XSB0ZXh0LXdoaXRl\nIGZvbnQtc2VtaWJvbGQgdGV4dC1zbSBob3ZlcjpiZy1bIzBEMjI1Ml0gdHJh\nbnNpdGlvbi1jb2xvcnMgZGlzYWJsZWQ6b3BhY2l0eS00MCBkaXNhYmxlZDpj\ndXJzb3Itbm90LWFsbG93ZWQiPgogICAgICAgICAgVmVyaWZ5IE9UUAogICAg\nICAgIDwvYnV0dG9uPgogICAgICAgIDxSZXNlbmRUaW1lciBrZXk9e3Bob25l\nfSBvblJlc2VuZD17aGFuZGxlUmVzZW5kT1RQfSAvPgogICAgICAgIDxidXR0\nb24gdHlwZT0iYnV0dG9uIiBvbkNsaWNrPXsoKSA9PiB7IHNldFNjcmVlbign\ncGhvbmUnKTsgc2V0T3RwVmFsdWUoJycpOyBzZXRPdHBFcnJvcignJyk7IH19\nCiAgICAgICAgICBzdHlsZT17eyBkaXNwbGF5OiAnYmxvY2snLCBtYXJnaW46\nICcwIGF1dG8nLCBiYWNrZ3JvdW5kOiAnbm9uZScsIGJvcmRlcjogJ25vbmUn\nLCBjdXJzb3I6ICdwb2ludGVyJywgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQt\nYm9keSknLCBmb250U2l6ZTogMTMsIGNvbG9yOiAnIzlDQTNBRicgfX0+CiAg\nICAgICAgICDihpAgQmFjawogICAgICAgIDwvYnV0dG9uPgogICAgICA8L2Rp\ndj4KICAgICk7CiAgfQoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9\nInNwYWNlLXktNCI+CiAgICAgIDxkaXY+CiAgICAgICAgPGxhYmVsIGNsYXNz\nTmFtZT0iYmxvY2sgdGV4dC1zbSBmb250LW1lZGl1bSB0ZXh0LVsjMEExNjI4\nXSBtYi0xLjUiPk1vYmlsZSBOdW1iZXI8L2xhYmVsPgogICAgICAgIDxkaXYg\nc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBhbGlnbkl0ZW1zOiAnY2VudGVy\nJywgYm9yZGVyOiBgMXB4IHNvbGlkICR7ZXJyb3JzLnBob25lID8gJyNFRjQ0\nNDQnIDogJ3JnYmEoMzAsNjQsMTc1LDAuMTUpJ31gLCBib3JkZXJSYWRpdXM6\nIDEyLCBvdmVyZmxvdzogJ2hpZGRlbicsIGJhY2tncm91bmQ6ICd3aGl0ZScs\nIGhlaWdodDogNDQgfX0+CiAgICAgICAgICA8c3BhbiBzdHlsZT17eyBwYWRk\naW5nOiAnMCAxMHB4IDAgMTRweCcsIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250\nLWJvZHkpJywgZm9udFNpemU6IDE0LCBjb2xvcjogJyM0QjU1NjMnLCBib3Jk\nZXJSaWdodDogJzFweCBzb2xpZCByZ2JhKDMwLDY0LDE3NSwwLjE1KScsIHdo\naXRlU3BhY2U6ICdub3dyYXAnLCBsaW5lSGVpZ2h0OiAnNDRweCcsIGZsZXhT\naHJpbms6IDAgfX0+KzkxPC9zcGFuPgogICAgICAgICAgPGlucHV0IHR5cGU9\nInRlbCIgaW5wdXRNb2RlPSJudW1lcmljIiBhdXRvQ29tcGxldGU9InRlbCIg\ndmFsdWU9e3Bob25lfQogICAgICAgICAgICBvbkNoYW5nZT17ZSA9PiBzZXRQ\naG9uZShlLnRhcmdldC52YWx1ZS5yZXBsYWNlKC9cRC9nLCAnJykuc2xpY2Uo\nMCwgMTApKX0KICAgICAgICAgICAgcGxhY2Vob2xkZXI9IjEwLWRpZ2l0IG1v\nYmlsZSBudW1iZXIiCiAgICAgICAgICAgIHN0eWxlPXt7IGZsZXg6IDEsIHBh\nZGRpbmc6ICcwIDE0cHgnLCBib3JkZXI6ICdub25lJywgb3V0bGluZTogJ25v\nbmUnLCBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXpl\nOiAxNiwgY29sb3I6ICcjMEExNjI4JywgYmFja2dyb3VuZDogJ3RyYW5zcGFy\nZW50JyB9fQogICAgICAgICAgLz4KICAgICAgICA8L2Rpdj4KICAgICAgICB7\nZXJyb3JzLnBob25lICYmIDxwIGNsYXNzTmFtZT0idGV4dC1bI0VGNDQ0NF0g\ndGV4dC14cyBtdC0xIj57ZXJyb3JzLnBob25lfTwvcD59CiAgICAgIDwvZGl2\nPgoKICAgICAgPHAgc3R5bGU9e3sgdGV4dEFsaWduOiAnY2VudGVyJywgZm9u\ndFNpemU6IDEzLCBjb2xvcjogJyM2QjcyODAnLCBtYXJnaW46ICc0cHggMCcg\nfX0+CiAgICAgICAgb3J7JyAnfQogICAgICAgIDxidXR0b24gdHlwZT0iYnV0\ndG9uIiBvbkNsaWNrPXsoKSA9PiBzZXRVc2VFbWFpbCghdXNlRW1haWwpfQog\nICAgICAgICAgc3R5bGU9e3sgYmFja2dyb3VuZDogJ25vbmUnLCBib3JkZXI6\nICdub25lJywgY29sb3I6ICcjM0I4MkY2JywgY3Vyc29yOiAncG9pbnRlcics\nIGZvbnRTaXplOiAxMywgZm9udFdlaWdodDogNjAwIH19PgogICAgICAgICAg\ne3VzZUVtYWlsID8gJ1VzZSBQaG9uZSBPVFAgaW5zdGVhZCcgOiAnU2lnbiBp\nbiB3aXRoIEVtYWlsJ30KICAgICAgICA8L2J1dHRvbj4KICAgICAgPC9wPgoK\nICAgICAge3VzZUVtYWlsICYmICgKICAgICAgICA8ZGl2IHN0eWxlPXt7IGRp\nc3BsYXk6ICdmbGV4JywgZmxleERpcmVjdGlvbjogJ2NvbHVtbicsIGdhcDog\nOCB9fT4KICAgICAgICAgIDxpbnB1dCB0eXBlPSJlbWFpbCIgdmFsdWU9e2Vt\nYWlsfSBvbkNoYW5nZT17ZSA9PiBzZXRFbWFpbChlLnRhcmdldC52YWx1ZSl9\nCiAgICAgICAgICAgIHBsYWNlaG9sZGVyPSJ5b3VyQGVtYWlsLmNvbSIKICAg\nICAgICAgICAgc3R5bGU9e3sgaGVpZ2h0OiA0NCwgcGFkZGluZzogJzAgMTZw\neCcsIGJvcmRlclJhZGl1czogMTIsIGJvcmRlcjogJzFweCBzb2xpZCByZ2Jh\nKDMwLDY0LDE3NSwwLjE1KScsIGZvbnRTaXplOiAxNiwgb3V0bGluZTogJ25v\nbmUnLCBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGNvbG9yOiAn\nIzBBMTYyOCcgfX0KICAgICAgICAgIC8+CiAgICAgICAgICA8aW5wdXQgdHlw\nZT0icGFzc3dvcmQiIHZhbHVlPXtwYXNzd29yZH0gb25DaGFuZ2U9e2UgPT4g\nc2V0UGFzc3dvcmQoZS50YXJnZXQudmFsdWUpfQogICAgICAgICAgICBwbGFj\nZWhvbGRlcj0iUGFzc3dvcmQiCiAgICAgICAgICAgIHN0eWxlPXt7IGhlaWdo\ndDogNDQsIHBhZGRpbmc6ICcwIDE2cHgnLCBib3JkZXJSYWRpdXM6IDEyLCBi\nb3JkZXI6ICcxcHggc29saWQgcmdiYSgzMCw2NCwxNzUsMC4xNSknLCBmb250\nU2l6ZTogMTYsIG91dGxpbmU6ICdub25lJywgZm9udEZhbWlseTogJ3Zhcigt\nLWZvbnQtYm9keSknLCBjb2xvcjogJyMwQTE2MjgnIH19CiAgICAgICAgICAv\nPgogICAgICAgICAge2Vycm9ycy5lbWFpbCAmJiA8cCBzdHlsZT17eyBjb2xv\ncjogJyNFRjQ0NDQnLCBmb250U2l6ZTogMTIsIG1hcmdpbjogMCB9fT57ZXJy\nb3JzLmVtYWlsfTwvcD59CiAgICAgICAgPC9kaXY+CiAgICAgICl9CgogICAg\nICA8YnV0dG9uIHR5cGU9ImJ1dHRvbiIgb25DbGljaz17aGFuZGxlU2VuZE9U\nUH0KICAgICAgICBzdHlsZT17ewogICAgICAgICAgd2lkdGg6ICcxMDAlJywg\nbWluSGVpZ2h0OiA0NCwgYmFja2dyb3VuZDogJyMwQTE2MjgnLCBjb2xvcjog\nJ3doaXRlJywKICAgICAgICAgIGJvcmRlcjogJ25vbmUnLCBib3JkZXJSYWRp\ndXM6IDEyLCBmb250U2l6ZTogMTYsIGZvbnRXZWlnaHQ6IDYwMCwKICAgICAg\nICAgIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgY3Vyc29yOiAn\ncG9pbnRlcicsCiAgICAgICAgICBkaXNwbGF5OiAnZmxleCcsIGFsaWduSXRl\nbXM6ICdjZW50ZXInLCBqdXN0aWZ5Q29udGVudDogJ2NlbnRlcicsCiAgICAg\nICAgfX0+CiAgICAgICAge3VzZUVtYWlsID8gJ1NpZ24gSW4g4oaSJyA6ICdT\nZW5kIE9UUCDihpInfQogICAgICA8L2J1dHRvbj4KICAgIDwvZGl2PgogICk7\nCn0pOwoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQXV0aFBhZ2UoKSB7CiAg\nY29uc3QgW3RhYiwgc2V0VGFiXSA9IHVzZVN0YXRlKCdzaWdudXAnKTsKICBj\nb25zdCB7IHVzZXIsIGxvYWRpbmcgfSA9IHVzZVZlZGljQXV0aCgpOwogIGNv\nbnN0IG5hdmlnYXRlID0gdXNlTmF2aWdhdGUoKTsKCiAgLy8gQXV0by1yZWRp\ncmVjdCBpZiBhbHJlYWR5IGxvZ2dlZCBpbgogIHVzZUVmZmVjdCgoKSA9PiB7\nCiAgICBpZiAoIWxvYWRpbmcgJiYgdXNlcikgewogICAgICBuYXZpZ2F0ZSgn\nL2Rhc2hib2FyZCcsIHsgcmVwbGFjZTogdHJ1ZSB9KTsKICAgIH0KICB9LCBb\ndXNlciwgbG9hZGluZ10pOwoKICAvLyBTaG93IG5vdGhpbmcgd2hpbGUgY2hl\nY2tpbmcgYXV0aAogIGlmIChsb2FkaW5nKSByZXR1cm4gbnVsbDsKICBpZiAo\ndXNlcikgcmV0dXJuIG51bGw7CgogIGNvbnN0IHRhYkJ0biA9ICh0KSA9PiAo\newogICAgZmxleDogMSwgbWluSGVpZ2h0OiA0OCwgYm9yZGVyOiAnbm9uZScs\nIGN1cnNvcjogJ3BvaW50ZXInLAogICAgYm9yZGVyUmFkaXVzOiA4LCBwYWRk\naW5nOiAnMTBweCAyNHB4JywKICAgIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250\nLWJvZHkpJywgZm9udFNpemU6IDE0LCBmb250V2VpZ2h0OiA2MDAsCiAgICB0\ncmFuc2l0aW9uOiAnYWxsIDAuMnMnLAogICAgYmFja2dyb3VuZDogdGFiID09\nPSB0ID8gJ3doaXRlJyA6ICd0cmFuc3BhcmVudCcsCiAgICBjb2xvcjogdGFi\nID09PSB0ID8gJyMwQTE2MjgnIDogJyM0QjU1NjMnLAogICAgYm94U2hhZG93\nOiB0YWIgPT09IHQgPyAnMCAxcHggNHB4IHJnYmEoMCwwLDAsMC4xMiknIDog\nJ25vbmUnLAogIH0pOwoKICByZXR1cm4gKAogICAgPGRpdiBzdHlsZT17eyBk\naXNwbGF5OiAnZmxleCcsIGZsZXhEaXJlY3Rpb246ICdyb3cnLCBtaW5IZWln\naHQ6ICcxMDB2aCcsIHdpZHRoOiAnMTAwJScsIG92ZXJmbG93WDogJ2hpZGRl\nbicgfX0+CiAgICAgIDxzdHlsZT57YAogICAgICAgIEBtZWRpYSAobWF4LXdp\nZHRoOiA2NDBweCkgewogICAgICAgICAgLmF1dGgtbGVmdCB7IGRpc3BsYXk6\nIG5vbmUgIWltcG9ydGFudDsgfQogICAgICAgICAgLmF1dGgtcmlnaHQgeyB3\naWR0aDogMTAwJSAhaW1wb3J0YW50OyBwYWRkaW5nOiAyNHB4IDE2cHggIWlt\ncG9ydGFudDsgfQogICAgICAgICAgLmF1dGgtY2FyZCB7IHBhZGRpbmc6IDI0\ncHggMTZweCAhaW1wb3J0YW50OyB9CiAgICAgICAgfQogICAgICBgfTwvc3R5\nbGU+CgogICAgICA8ZGl2IGNsYXNzTmFtZT0iYXV0aC1sZWZ0IiBzdHlsZT17\newogICAgICAgIHdpZHRoOiAnNTAlJywgYmFja2dyb3VuZDogJ2xpbmVhci1n\ncmFkaWVudCgxMzVkZWcsICMwQTE2MjggMCUsICMwRDIyNTIgNjAlLCAjMUU0\nMEFGIDEwMCUpJywKICAgICAgICBkaXNwbGF5OiAnZmxleCcsIGZsZXhEaXJl\nY3Rpb246ICdjb2x1bW4nLCBhbGlnbkl0ZW1zOiAnY2VudGVyJywganVzdGlm\neUNvbnRlbnQ6ICdjZW50ZXInLAogICAgICAgIHBhZGRpbmc6ICc0OHB4IDQw\ncHgnLCBwb3NpdGlvbjogJ3JlbGF0aXZlJywgb3ZlcmZsb3c6ICdoaWRkZW4n\nLAogICAgICB9fT4KICAgICAgICB7WwogICAgICAgICAgeyB0ZXh0OiAnNzPD\nlzk3PTcwODEnLCBzdHlsZTogeyB0b3A6ICcxNSUnLCBsZWZ0OiAnMTAlJyB9\nIH0sCiAgICAgICAgICB7IHRleHQ6ICfiiJoxNzY0PTQyJywgICBzdHlsZTog\neyB0b3A6ICc1NSUnLCByaWdodDogJzglJyB9IH0sCiAgICAgICAgICB7IHRl\neHQ6ICcyNcKyPTYyNScsICAgIHN0eWxlOiB7IGJvdHRvbTogJzIwJScsIGxl\nZnQ6ICcxNSUnIH0gfSwKICAgICAgICBdLm1hcCgoeyB0ZXh0LCBzdHlsZSB9\nKSA9PiAoCiAgICAgICAgICA8c3BhbiBrZXk9e3RleHR9IHN0eWxlPXt7IHBv\nc2l0aW9uOiAnYWJzb2x1dGUnLCBmb250RmFtaWx5OiAndmFyKC0tZm9udC1t\nb25vKScsIGZvbnRTaXplOiAxMywgY29sb3I6ICdyZ2JhKDI1NSwyNTUsMjU1\nLDAuMDcpJywgdXNlclNlbGVjdDogJ25vbmUnLCBwb2ludGVyRXZlbnRzOiAn\nbm9uZScsIC4uLnN0eWxlIH19Pnt0ZXh0fTwvc3Bhbj4KICAgICAgICApKX0K\nICAgICAgICA8ZGl2IHN0eWxlPXt7IHBvc2l0aW9uOiAncmVsYXRpdmUnLCB6\nSW5kZXg6IDIsIHRleHRBbGlnbjogJ2NlbnRlcicsIG1heFdpZHRoOiAzNjAg\nfX0+CiAgICAgICAgICA8c3BhbiBzdHlsZT17eyBmb250U2l6ZTogNjQsIGRp\nc3BsYXk6ICdibG9jaycsIG1hcmdpbkJvdHRvbTogMjQgfX0+8J+nrjwvc3Bh\nbj4KICAgICAgICAgIDxoMiBjbGFzc05hbWU9ImZvbnQtaGVhZGluZyIgc3R5\nbGU9e3sgZm9udFNpemU6IDM2LCBmb250V2VpZ2h0OiA3MDAsIGNvbG9yOiAn\nd2hpdGUnLCBsaW5lSGVpZ2h0OiAxLjIsIG1hcmdpbkJvdHRvbTogMjQsIHdo\naXRlU3BhY2U6ICdwcmUtbGluZScgfX0+CiAgICAgICAgICAgIHsiQW5jaWVu\ndCBXaXNkb20uXG5JbmZpbml0ZSBTcGVlZC4ifQogICAgICAgICAgPC9oMj4K\nICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBmbGV4\nRGlyZWN0aW9uOiAnY29sdW1uJywgZ2FwOiAxNiwgdGV4dEFsaWduOiAnbGVm\ndCcgfX0+CiAgICAgICAgICAgIHtbJzQwIFZlZGljIE1hdGhzIGxlc3NvbnMg\n4oCUIEJlZ2lubmVyIHRvIE1hc3RlcicsICdBSSBUdXRvciBhdmFpbGFibGUg\nMjQvNycsICdEYWlseSBRdWl6LCBMZWFkZXJib2FyZCAmIEFwdGl0dWRlIOKA\nlCBMaXZlIE5vdyEg8J+OiScsICfimqEgQmF0dGxlIE1vZGUgJiBXZWVrbHkg\nRXhhbSDigJQgTmV3IEZlYXR1cmVzJ10ubWFwKHBvaW50ID0+ICgKICAgICAg\nICAgICAgICA8ZGl2IGtleT17cG9pbnR9IHN0eWxlPXt7IGRpc3BsYXk6ICdm\nbGV4JywgYWxpZ25JdGVtczogJ2NlbnRlcicsIGdhcDogMTIgfX0+CiAgICAg\nICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IHdpZHRoOiAyMCwgaGVpZ2h0OiAy\nMCwgYm9yZGVyUmFkaXVzOiAnNTAlJywgYmFja2dyb3VuZDogJ3JnYmEoMjU1\nLDI1NSwyNTUsMC4xNSknLCBkaXNwbGF5OiAnZmxleCcsIGFsaWduSXRlbXM6\nICdjZW50ZXInLCBqdXN0aWZ5Q29udGVudDogJ2NlbnRlcicsIGZsZXhTaHJp\nbms6IDAsIGZvbnRTaXplOiAxMSwgY29sb3I6ICd3aGl0ZScgfX0+4pyTPC9k\naXY+CiAgICAgICAgICAgICAgICA8c3BhbiBzdHlsZT17eyBmb250RmFtaWx5\nOiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxNSwgY29sb3I6ICdy\nZ2JhKDI1NSwyNTUsMjU1LDAuODUpJyB9fT57cG9pbnR9PC9zcGFuPgogICAg\nICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICApKX0KICAgICAgICAgIDwv\nZGl2PgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KCiAgICAgIDxkaXYg\nY2xhc3NOYW1lPSJhdXRoLXJpZ2h0IiBzdHlsZT17eyB3aWR0aDogJzUwJScs\nIGJhY2tncm91bmQ6ICd3aGl0ZScsIGRpc3BsYXk6ICdmbGV4JywgYWxpZ25J\ndGVtczogJ2ZsZXgtc3RhcnQnLCBqdXN0aWZ5Q29udGVudDogJ2NlbnRlcics\nIHBhZGRpbmc6ICc0MHB4IDI0cHgnLCBtaW5IZWlnaHQ6ICcxMDB2aCcsIGJv\neFNpemluZzogJ2JvcmRlci1ib3gnIH19PgogICAgICAgIDxkaXYgY2xhc3NO\nYW1lPSJ3LWZ1bGwgbWF4LXctbWQiIHN0eWxlPXt7IGFuaW1hdGlvbjogJ2F1\ndGhGYWRlSW4gMC4ycyBlYXNlLW91dCcgfX0+CiAgICAgICAgICA8c3R5bGU+\ne2BAa2V5ZnJhbWVzIGF1dGhGYWRlSW4geyBmcm9tIHsgb3BhY2l0eTogMDsg\ndHJhbnNmb3JtOiB0cmFuc2xhdGVZKDEycHgpOyB9IHRvIHsgb3BhY2l0eTog\nMTsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDApOyB9IH1gfTwvc3R5bGU+CiAg\nICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZ2xhc3MtY2FyZCBhdXRoLWNhcmQi\nIHN0eWxlPXt7IHBhZGRpbmc6ICczMnB4IDI4cHgnIH19PgogICAgICAgICAg\nICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JywgYmFja2dyb3VuZDog\nJyNGMEY0RkYnLCBib3JkZXJSYWRpdXM6IDEyLCBwYWRkaW5nOiA0LCBtYXJn\naW5Cb3R0b206IDMyIH19PgogICAgICAgICAgICAgIDxidXR0b24gdHlwZT0i\nYnV0dG9uIiBzdHlsZT17dGFiQnRuKCdzaWdudXAnKX0gb25DbGljaz17KCkg\nPT4gc2V0VGFiKCdzaWdudXAnKX0+U2lnbiBVcDwvYnV0dG9uPgogICAgICAg\nICAgICAgIDxidXR0b24gdHlwZT0iYnV0dG9uIiBzdHlsZT17dGFiQnRuKCdz\naWduaW4nKX0gb25DbGljaz17KCkgPT4gc2V0VGFiKCdzaWduaW4nKX0+U2ln\nbiBJbjwvYnV0dG9uPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAg\ne3RhYiA9PT0gJ3NpZ251cCcgPyAoCiAgICAgICAgICAgICAgPFNpZ25VcEZv\ncm0gb25Td2l0Y2hUYWI9eygpID0+IHNldFRhYignc2lnbmluJyl9IC8+CiAg\nICAgICAgICAgICkgOiAoCiAgICAgICAgICAgICAgPFNpZ25JbkZvcm0gb25T\nd2l0Y2hUYWI9eygpID0+IHNldFRhYignc2lnbnVwJyl9IC8+CiAgICAgICAg\nICAgICl9CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxwIGNsYXNzTmFt\nZT0idGV4dC1jZW50ZXIgdGV4dC1zbSB0ZXh0LVsjNEI1NTYzXSBtdC02Ij4K\nICAgICAgICAgICAge3RhYiA9PT0gJ3NpZ251cCcgPyAnQWxyZWFkeSBoYXZl\nIGFuIGFjY291bnQ/ICcgOiAiRG9uJ3QgaGF2ZSBhbiBhY2NvdW50PyAifQog\nICAgICAgICAgICA8YnV0dG9uIHR5cGU9ImJ1dHRvbiIKICAgICAgICAgICAg\nICBvbkNsaWNrPXsoKSA9PiBzZXRUYWIodGFiID09PSAnc2lnbnVwJyA/ICdz\naWduaW4nIDogJ3NpZ251cCcpfQogICAgICAgICAgICAgIGNsYXNzTmFtZT0i\ndGV4dC1bIzNCODJGNl0gZm9udC1zZW1pYm9sZCBob3Zlcjp1bmRlcmxpbmUi\nPgogICAgICAgICAgICAgIHt0YWIgPT09ICdzaWdudXAnID8gJ1NpZ24gSW4n\nIDogJ1NpZ24gVXAnfQogICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAg\nIDwvcD4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICA8L2Rpdj4K\nICApOwp9Cg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/AuthPage.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/677786507bd023f3fc8ef13bd319f9f220a6c60a","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/AuthPage.jsx"}}
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { toast } from 'sonner';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { saveUserProfile } from '@/lib/supabaseDataService';
+
+function validateMobile(m) {
+  return /^[6-9]\d{9}$/.test(m);
+}
+
+function OTPInput({ value, onChange, shake }) {
+  const refs = useRef([]);
+  const digits = value.split('');
+
+  const handleKey = (i, e) => {
+    if (e.key === 'Backspace') {
+      e.preventDefault();
+      const next = [...digits];
+      if (next[i]) { next[i] = ''; onChange(next.join('')); }
+      else if (i > 0) { next[i - 1] = ''; onChange(next.join('')); refs.current[i - 1]?.focus(); }
+    }
+  };
+
+  const handleChange = (i, e) => {
+    const char = e.target.value.replace(/\D/g, '').slice(-1);
+    const next = [...digits];
+    next[i] = char;
+    onChange(next.join(''));
+    if (char && i < 5) refs.current[i + 1]?.focus();
+  };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pasted = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
+    onChange(pasted.padEnd(6, '').slice(0, 6));
+    refs.current[Math.min(pasted.length, 5)]?.focus();
+  };
+
+  return (
+    <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
+      {[0, 1, 2, 3, 4, 5].map(i => (
+        <motion.input
+          key={i}
+          ref={el => refs.current[i] = el}
+          type="tel" inputMode="numeric" maxLength={1}
+          value={digits[i] || ''}
+          onChange={e => handleChange(i, e)}
+          onKeyDown={e => handleKey(i, e)}
+          onPaste={handlePaste}
+          animate={shake ? { x: [-6, 6, -6, 6, 0] } : {}}
+          transition={{ duration: 0.3 }}
+          style={{
+            width: 44, height: 52, textAlign: 'center',
+            fontFamily: 'var(--font-mono)', fontSize: 24, color: '#0A1628',
+            border: `1.5px solid ${digits[i] ? '#3B82F6' : 'rgba(30,64,175,0.15)'}`,
+            borderRadius: 10, outline: 'none', background: 'white',
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function ResendTimer({ onResend }) {
+  const [secs, setSecs] = useState(30);
+  React.useEffect(() => {
+    if (secs <= 0) return;
+    const t = setTimeout(() => setSecs(s => s - 1), 1000);
+    return () => clearTimeout(t);
+  }, [secs]);
+
+  if (secs > 0) return (
+    <p style={{ textAlign: 'center', fontFamily: 'var(--font-body)', fontSize: 14, color: '#9CA3AF', margin: 0 }}>
+      Resend in {secs}s
+    </p>
+  );
+  return (
+    <button type="button" onClick={() => { setSecs(30); onResend(); }}
+      style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 14, color: '#3B82F6', display: 'block', margin: '0 auto' }}>
+      Resend OTP
+    </button>
+  );
+}
+
+const SignUpForm = React.memo(function SignUpForm({ onSwitchTab }) {
+  const { signUp, verifyOtp, signUpWithEmail } = useVedicAuth();
+  const navigate = useNavigate();
+  const [screen, setScreen] = useState('form');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [useEmailSignup, setUseEmailSignup] = useState(false);
+  const [emailSignup, setEmailSignup] = useState('');
+  const [passwordSignup, setPasswordSignup] = useState('');
+  const [errors, setErrors] = useState({});
+  const [otpValue, setOtpValue] = useState('');
+  const [otpShake, setOtpShake] = useState(false);
+  const [otpError, setOtpError] = useState('');
+
+  const handleSignUp = async () => {
+    if (useEmailSignup) {
+      if (!emailSignup || !passwordSignup) {
+        setErrors({ email: 'Email and password required' });
+        return;
+      }
+      try {
+        await signUpWithEmail(emailSignup, passwordSignup);
+        toast.success('Account created!');
+        navigate('/dashboard');
+      } catch (err) {
+        toast.error(err.message || 'Sign up failed.');
+      }
+      return;
+    }
+    const e = {};
+    if (!name.trim()) e.name = 'Name is required';
+    if (!validateMobile(phone)) e.phone = 'Enter a valid 10-digit mobile number';
+    setErrors(e);
+    if (Object.keys(e).length > 0) return;
+    try {
+      await signUp(`+91${phone}`);
+      setOtpValue('');
+      setOtpError('');
+      setScreen('otp');
+      toast.success('OTP sent to your phone!');
+    } catch (err) {
+      toast.error(err.message || 'Sign up failed. Please try again.');
+    }
+  };
+
+  const handleVerifyOtp = async () => {
+    if (otpValue.length < 6) return;
+    try {
+      const result = await verifyOtp(`+91${phone}`, otpValue);
+      const userId = result?.data?.user?.id;
+      if (userId && name) {
+        await saveUserProfile(userId, {
+          name: name.trim(),
+          phone: `+91${phone}`,
+          subscription_status: 'trial',
+          trial_start_date: new Date().toISOString(),
+        });
+        localStorage.setItem('vedicmind_profile', JSON.stringify({
+          name: name.trim(), phone: `+91${phone}`,
+          subscriptionStatus: 'trial', trialStartDate: new Date().toISOString(),
+        }));
+      }
+      toast.success('Account created successfully!');
+      navigate('/dashboard');
+    } catch (err) {
+      setOtpShake(true);
+      setOtpError(err.message || 'Invalid OTP. Please try again.');
+      setOtpValue('');
+      setTimeout(() => setOtpShake(false), 400);
+    }
+  };
+
+  const handleResendOtp = async () => {
+    try {
+      await signUp(`+91${phone}`);
+      setOtpValue('');
+      setOtpError('');
+      toast.success('OTP resent!');
+    } catch (err) {
+      toast.error(err.message || 'Failed to resend OTP.');
+    }
+  };
+
+  if (screen === 'otp') {
+    return (
+      <div className="space-y-5">
+        <div style={{ textAlign: 'center' }}>
+          <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>Verify Phone</h3>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563', margin: 0 }}>
+            Enter the 6-digit code sent to +91 {phone}
+          </p>
+        </div>
+        <OTPInput value={otpValue} onChange={setOtpValue} shake={otpShake} />
+        {otpError && <p style={{ textAlign: 'center', color: '#EF4444', fontFamily: 'var(--font-body)', fontSize: 13, margin: 0 }}>{otpError}</p>}
+        <button type="button" onClick={handleVerifyOtp} disabled={otpValue.length < 6}
+          className="w-full h-11 rounded-xl bg-[#0A1628] text-white font-semibold text-sm hover:bg-[#0D2252] transition-colors disabled:opacity-40 disabled:cursor-not-allowed">
+          Verify OTP
+        </button>
+        <ResendTimer key={phone} onResend={handleResendOtp} />
+        <button type="button" onClick={() => { setScreen('form'); setOtpValue(''); setOtpError(''); }}
+          style={{ display: 'block', margin: '0 auto', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 13, color: '#9CA3AF' }}>
+          ← Back
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      {!useEmailSignup && (
+        <>
+          <div>
+            <label className="block text-sm font-medium text-[#0A1628] mb-1.5">Full Name</label>
+            <input type="text" value={name} onChange={e => setName(e.target.value)}
+              placeholder="Your full name" autoComplete="name" style={{ fontSize: 16 }}
+              className={`w-full h-11 px-4 rounded-xl border bg-white text-[#0A1628] text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6] ${errors.name ? 'border-[#EF4444]' : 'border-[rgba(30,64,175,0.15)]'}`}
+            />
+            {errors.name && <p className="text-[#EF4444] text-xs mt-1">{errors.name}</p>}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-[#0A1628] mb-1.5">Mobile Number</label>
+            <div style={{ display: 'flex', alignItems: 'center', border: `1px solid ${errors.phone ? '#EF4444' : 'rgba(30,64,175,0.15)'}`, borderRadius: 12, overflow: 'hidden', background: 'white', height: 44 }}>
+              <span style={{ padding: '0 10px 0 14px', fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563', borderRight: '1px solid rgba(30,64,175,0.15)', whiteSpace: 'nowrap', lineHeight: '44px', flexShrink: 0 }}>+91</span>
+              <input type="tel" inputMode="numeric" autoComplete="tel" value={phone}
+                onChange={e => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
+                placeholder="10-digit mobile number"
+                style={{ flex: 1, padding: '0 14px', border: 'none', outline: 'none', fontFamily: 'var(--font-body)', fontSize: 16, color: '#0A1628', background: 'transparent' }}
+              />
+            </div>
+            {errors.phone && <p className="text-[#EF4444] text-xs mt-1">{errors.phone}</p>}
+          </div>
+        </>
+      )}
+
+      {useEmailSignup && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <input type="email" value={emailSignup} onChange={e => setEmailSignup(e.target.value)}
+            placeholder="your@email.com"
+            style={{ height: 44, padding: '0 16px', borderRadius: 12, border: '1px solid rgba(30,64,175,0.15)', fontSize: 16, outline: 'none', fontFamily: 'var(--font-body)', color: '#0A1628' }}
+          />
+          <input type="password" value={passwordSignup} onChange={e => setPasswordSignup(e.target.value)}
+            placeholder="Password (min 6 chars)"
+            style={{ height: 44, padding: '0 16px', borderRadius: 12, border: '1px solid rgba(30,64,175,0.15)', fontSize: 16, outline: 'none', fontFamily: 'var(--font-body)', color: '#0A1628' }}
+          />
+          {errors.email && <p style={{ color: '#EF4444', fontSize: 12, margin: 0 }}>{errors.email}</p>}
+        </div>
+      )}
+
+      <p style={{ textAlign: 'center', fontSize: 13, color: '#6B7280', margin: '4px 0' }}>
+        or{' '}
+        <button type="button" onClick={() => setUseEmailSignup(!useEmailSignup)}
+          style={{ background: 'none', border: 'none', color: '#3B82F6', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+          {useEmailSignup ? 'Use Phone OTP instead' : 'Sign up with Email'}
+        </button>
+      </p>
+
+      <button type="button" onClick={handleSignUp}
+        className="w-full h-11 rounded-xl bg-[#0A1628] text-white font-semibold text-sm hover:bg-[#0D2252] transition-colors">
+        {useEmailSignup ? 'Create Account →' : 'Send OTP →'}
+      </button>
+    </div>
+  );
+});
+
+const SignInForm = React.memo(function SignInForm({ onSwitchTab }) {
+  const { signIn, verifyOtp } = useVedicAuth();
+  const navigate = useNavigate();
+  const [screen, setScreen] = useState('phone');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [useEmail, setUseEmail] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [otpValue, setOtpValue] = useState('');
+  const [otpShake, setOtpShake] = useState(false);
+  const [otpError, setOtpError] = useState('');
+
+  const handleSendOTP = async () => {
+    if (useEmail) {
+      if (!email || !password) {
+        setErrors({ email: 'Email and password required' });
+        return;
+      }
+      try {
+        await signIn(null, email, password);
+        toast.success('Signed in successfully!');
+        navigate('/dashboard');
+      } catch (err) {
+        toast.error(err.message || 'Login failed.');
+      }
+      return;
+    }
+    const e = {};
+    if (!validateMobile(phone)) e.phone = 'Enter a valid 10-digit mobile number';
+    setErrors(e);
+    if (Object.keys(e).length > 0) return;
+    try {
+      await signIn(`+91${phone}`);
+      setOtpValue('');
+      setOtpError('');
+      setScreen('otp');
+      toast.success('OTP sent to your phone!');
+    } catch (err) {
+      toast.error(err.message || 'Failed to send OTP. Please try again.');
+    }
+  };
+
+  const handleVerifyOTP = async () => {
+    if (otpValue.length < 6) return;
+    try {
+      await verifyOtp(`+91${phone}`, otpValue);
+      toast.success('Signed in successfully!');
+      navigate('/dashboard');
+    } catch (err) {
+      setOtpShake(true);
+      setOtpError(err.message || 'Invalid OTP. Please try again.');
+      setOtpValue('');
+      setTimeout(() => setOtpShake(false), 400);
+    }
+  };
+
+  const handleResendOTP = async () => {
+    try {
+      await signIn(`+91${phone}`);
+      setOtpValue('');
+      setOtpError('');
+      toast.success('OTP resent!');
+    } catch (err) {
+      toast.error(err.message || 'Failed to resend OTP.');
+    }
+  };
+
+  if (screen === 'otp') {
+    return (
+      <div className="space-y-5">
+        <div style={{ textAlign: 'center' }}>
+          <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>Enter OTP</h3>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563', margin: 0 }}>
+            We sent a 6-digit code to +91 {phone}
+          </p>
+        </div>
+        <OTPInput value={otpValue} onChange={setOtpValue} shake={otpShake} />
+        {otpError && <p style={{ textAlign: 'center', color: '#EF4444', fontFamily: 'var(--font-body)', fontSize: 13, margin: 0 }}>{otpError}</p>}
+        <button type="button" onClick={handleVerifyOTP} disabled={otpValue.length < 6}
+          className="w-full h-11 rounded-xl bg-[#0A1628] text-white font-semibold text-sm hover:bg-[#0D2252] transition-colors disabled:opacity-40 disabled:cursor-not-allowed">
+          Verify OTP
+        </button>
+        <ResendTimer key={phone} onResend={handleResendOTP} />
+        <button type="button" onClick={() => { setScreen('phone'); setOtpValue(''); setOtpError(''); }}
+          style={{ display: 'block', margin: '0 auto', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 13, color: '#9CA3AF' }}>
+          ← Back
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      <div>
+        <label className="block text-sm font-medium text-[#0A1628] mb-1.5">Mobile Number</label>
+        <div style={{ display: 'flex', alignItems: 'center', border: `1px solid ${errors.phone ? '#EF4444' : 'rgba(30,64,175,0.15)'}`, borderRadius: 12, overflow: 'hidden', background: 'white', height: 44 }}>
+          <span style={{ padding: '0 10px 0 14px', fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563', borderRight: '1px solid rgba(30,64,175,0.15)', whiteSpace: 'nowrap', lineHeight: '44px', flexShrink: 0 }}>+91</span>
+          <input type="tel" inputMode="numeric" autoComplete="tel" value={phone}
+            onChange={e => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
+            placeholder="10-digit mobile number"
+            style={{ flex: 1, padding: '0 14px', border: 'none', outline: 'none', fontFamily: 'var(--font-body)', fontSize: 16, color: '#0A1628', background: 'transparent' }}
+          />
+        </div>
+        {errors.phone && <p className="text-[#EF4444] text-xs mt-1">{errors.phone}</p>}
+      </div>
+
+      <p style={{ textAlign: 'center', fontSize: 13, color: '#6B7280', margin: '4px 0' }}>
+        or{' '}
+        <button type="button" onClick={() => setUseEmail(!useEmail)}
+          style={{ background: 'none', border: 'none', color: '#3B82F6', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+          {useEmail ? 'Use Phone OTP instead' : 'Sign in with Email'}
+        </button>
+      </p>
+
+      {useEmail && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <input type="email" value={email} onChange={e => setEmail(e.target.value)}
+            placeholder="your@email.com"
+            style={{ height: 44, padding: '0 16px', borderRadius: 12, border: '1px solid rgba(30,64,175,0.15)', fontSize: 16, outline: 'none', fontFamily: 'var(--font-body)', color: '#0A1628' }}
+          />
+          <input type="password" value={password} onChange={e => setPassword(e.target.value)}
+            placeholder="Password"
+            style={{ height: 44, padding: '0 16px', borderRadius: 12, border: '1px solid rgba(30,64,175,0.15)', fontSize: 16, outline: 'none', fontFamily: 'var(--font-body)', color: '#0A1628' }}
+          />
+          {errors.email && <p style={{ color: '#EF4444', fontSize: 12, margin: 0 }}>{errors.email}</p>}
+        </div>
+      )}
+
+      <button type="button" onClick={handleSendOTP}
+        style={{
+          width: '100%', minHeight: 44, background: '#0A1628', color: 'white',
+          border: 'none', borderRadius: 12, fontSize: 16, fontWeight: 600,
+          fontFamily: 'var(--font-body)', cursor: 'pointer',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+        {useEmail ? 'Sign In →' : 'Send OTP →'}
+      </button>
+    </div>
+  );
+});
+
+export default function AuthPage() {
+  const [tab, setTab] = useState('signup');
+  const { user, loading } = useVedicAuth();
+  const navigate = useNavigate();
+
+  // Auto-redirect if already logged in
+  useEffect(() => {
+    if (!loading && user) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [user, loading]);
+
+  // Show nothing while checking auth
+  if (loading) return null;
+  if (user) return null;
+
+  const tabBtn = (t) => ({
+    flex: 1, minHeight: 48, border: 'none', cursor: 'pointer',
+    borderRadius: 8, padding: '10px 24px',
+    fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600,
+    transition: 'all 0.2s',
+    background: tab === t ? 'white' : 'transparent',
+    color: tab === t ? '#0A1628' : '#4B5563',
+    boxShadow: tab === t ? '0 1px 4px rgba(0,0,0,0.12)' : 'none',
+  });
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'row', minHeight: '100vh', width: '100%', overflowX: 'hidden' }}>
+      <style>{`
+        @media (max-width: 640px) {
+          .auth-left { display: none !important; }
+          .auth-right { width: 100% !important; padding: 24px 16px !important; }
+          .auth-card { padding: 24px 16px !important; }
+        }
+      `}</style>
+
+      <div className="auth-left" style={{
+        width: '50%', background: 'linear-gradient(135deg, #0A1628 0%, #0D2252 60%, #1E40AF 100%)',
+        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+        padding: '48px 40px', position: 'relative', overflow: 'hidden',
+      }}>
+        {[
+          { text: '73×97=7081', style: { top: '15%', left: '10%' } },
+          { text: '√1764=42',   style: { top: '55%', right: '8%' } },
+          { text: '25²=625',    style: { bottom: '20%', left: '15%' } },
+        ].map(({ text, style }) => (
+          <span key={text} style={{ position: 'absolute', fontFamily: 'var(--font-mono)', fontSize: 13, color: 'rgba(255,255,255,0.07)', userSelect: 'none', pointerEvents: 'none', ...style }}>{text}</span>
+        ))}
+        <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', maxWidth: 360 }}>
+          <span style={{ fontSize: 64, display: 'block', marginBottom: 24 }}>🧮</span>
+          <h2 className="font-heading" style={{ fontSize: 36, fontWeight: 700, color: 'white', lineHeight: 1.2, marginBottom: 24, whiteSpace: 'pre-line' }}>
+            {"Ancient Wisdom.\nInfinite Speed."}
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16, textAlign: 'left' }}>
+            {['40 Vedic Maths lessons — Beginner to Master', 'AI Tutor available 24/7', 'Daily Quiz, Leaderboard & Aptitude — Live Now! 🎉', '⚡ Battle Mode & Weekly Exam — New Features'].map(point => (
+              <div key={point} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ width: 20, height: 20, borderRadius: '50%', background: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 11, color: 'white' }}>✓</div>
+                <span style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'rgba(255,255,255,0.85)' }}>{point}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="auth-right" style={{ width: '50%', background: 'white', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '40px 24px', minHeight: '100vh', boxSizing: 'border-box' }}>
+        <div className="w-full max-w-md" style={{ animation: 'authFadeIn 0.2s ease-out' }}>
+          <style>{`@keyframes authFadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }`}</style>
+          <div className="glass-card auth-card" style={{ padding: '32px 28px' }}>
+            <div style={{ display: 'flex', background: '#F0F4FF', borderRadius: 12, padding: 4, marginBottom: 32 }}>
+              <button type="button" style={tabBtn('signup')} onClick={() => setTab('signup')}>Sign Up</button>
+              <button type="button" style={tabBtn('signin')} onClick={() => setTab('signin')}>Sign In</button>
+            </div>
+            {tab === 'signup' ? (
+              <SignUpForm onSwitchTab={() => setTab('signin')} />
+            ) : (
+              <SignInForm onSwitchTab={() => setTab('signup')} />
+            )}
+          </div>
+          <p className="text-center text-sm text-[#4B5563] mt-6">
+            {tab === 'signup' ? 'Already have an account? ' : "Don't have an account? "}
+            <button type="button"
+              onClick={() => setTab(tab === 'signup' ? 'signin' : 'signup')}
+              className="text-[#3B82F6] font-semibold hover:underline">
+              {tab === 'signup' ? 'Sign In' : 'Sign Up'}
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
