@@ -1,1 +1,49 @@
-{"name":"StepProgress.jsx","path":"src/components/onboarding/StepProgress.jsx","sha":"f08b49c84c93a1f9fb12b8b83e6fabbc1836d7f6","size":2050,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/StepProgress.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/StepProgress.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/f08b49c84c93a1f9fb12b8b83e6fabbc1836d7f6","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/onboarding/StepProgress.jsx?token=CFODAP6OD7NA73HXKEOQXTTKFSQXJAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgQ2hlY2sgfSBm\ncm9tICdsdWNpZGUtcmVhY3QnOwoKY29uc3QgU1RFUFMgPSBbJ1dobyBBcmUg\nWW91JywgJ1lvdXIgRGV0YWlscycsICdBY2FkZW1pYyBQcm9maWxlJywgJ1lv\ndXIgR29hbHMnXTsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFN0ZXBQcm9n\ncmVzcyh7IGN1cnJlbnRTdGVwIH0pIHsKICByZXR1cm4gKAogICAgPGRpdiBj\nbGFzc05hbWU9InctZnVsbCBtYXgtdy0yeGwgbXgtYXV0byBweC00IHB5LTYi\nPgogICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVz\ndGlmeS1iZXR3ZWVuIHJlbGF0aXZlIj4KICAgICAgICB7LyogY29ubmVjdGlu\nZyBsaW5lICovfQogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJhYnNvbHV0ZSB0\nb3AtNCBsZWZ0LTAgcmlnaHQtMCBoLTAuNSBiZy1bI0U1RTdFQl0gei0wIiAv\nPgogICAgICAgIDxkaXYKICAgICAgICAgIGNsYXNzTmFtZT0iYWJzb2x1dGUg\ndG9wLTQgbGVmdC0wIGgtMC41IGJnLVsjMEExNjI4XSB6LTAgdHJhbnNpdGlv\nbi1hbGwgZHVyYXRpb24tNTAwIgogICAgICAgICAgc3R5bGU9e3sgd2lkdGg6\nIGAkeyhNYXRoLm1heCgwLCBjdXJyZW50U3RlcCAtIDEpIC8gMykgKiAxMDB9\nJWAgfX0KICAgICAgICAvPgogICAgICAgIHtTVEVQUy5tYXAoKGxhYmVsLCBp\nKSA9PiB7CiAgICAgICAgICBjb25zdCBzdGVwTnVtID0gaSArIDE7CiAgICAg\nICAgICBjb25zdCBkb25lID0gY3VycmVudFN0ZXAgPiBzdGVwTnVtOwogICAg\nICAgICAgY29uc3QgYWN0aXZlID0gY3VycmVudFN0ZXAgPT09IHN0ZXBOdW07\nCiAgICAgICAgICByZXR1cm4gKAogICAgICAgICAgICA8ZGl2IGtleT17aX0g\nY2xhc3NOYW1lPSJmbGV4IGZsZXgtY29sIGl0ZW1zLWNlbnRlciB6LTEwIj4K\nICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT17YHJlbGF0aXZlIHctOCBo\nLTggcm91bmRlZC1mdWxsIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2Vu\ndGVyIGJvcmRlci0yIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTMwMCAkewog\nICAgICAgICAgICAgICAgZG9uZSA/ICdiZy1bIzBBMTYyOF0gYm9yZGVyLVsj\nMEExNjI4XScgOgogICAgICAgICAgICAgICAgYWN0aXZlID8gJ2JnLVsjMEEx\nNjI4XSBib3JkZXItWyMwQTE2MjhdJyA6CiAgICAgICAgICAgICAgICAnYmct\nd2hpdGUgYm9yZGVyLVsjRDFENURCXScKICAgICAgICAgICAgICB9YH0+CiAg\nICAgICAgICAgICAgICB7ZG9uZSA/ICgKICAgICAgICAgICAgICAgICAgPENo\nZWNrIGNsYXNzTmFtZT0idy00IGgtNCB0ZXh0LXdoaXRlIiAvPgogICAgICAg\nICAgICAgICAgKSA6ICgKICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NO\nYW1lPXtgdGV4dC14cyBmb250LWJvbGQgZm9udC1tb25vICR7YWN0aXZlID8g\nJ3RleHQtd2hpdGUnIDogJ3RleHQtWyM5Q0EzQUZdJ31gfT4KICAgICAgICAg\nICAgICAgICAgICB7c3RlcE51bX0KICAgICAgICAgICAgICAgICAgPC9zcGFu\nPgogICAgICAgICAgICAgICAgKX0KICAgICAgICAgICAgICAgIHthY3RpdmUg\nJiYgKAogICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9ImFic29s\ndXRlIGluc2V0LTAgcm91bmRlZC1mdWxsIGJvcmRlci0yIGJvcmRlci1bIzBB\nMTYyOF0gYW5pbWF0ZS1waW5nIG9wYWNpdHktNDAiIC8+CiAgICAgICAgICAg\nICAgICApfQogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgIDxz\ncGFuIGNsYXNzTmFtZT17YG10LTIgdGV4dC1bMTBweF0gc206dGV4dC14cyBm\nb250LW1lZGl1bSB0ZXh0LWNlbnRlciBtYXgtdy1bNjBweF0gc206bWF4LXct\nWzgwcHhdIGxlYWRpbmctdGlnaHQgJHsKICAgICAgICAgICAgICAgIGFjdGl2\nZSA/ICd0ZXh0LVsjMEExNjI4XScgOiBkb25lID8gJ3RleHQtWyM0QjU1NjNd\nJyA6ICd0ZXh0LVsjOUNBM0FGXScKICAgICAgICAgICAgICB9YH0+CiAgICAg\nICAgICAgICAgICB7bGFiZWx9CiAgICAgICAgICAgICAgPC9zcGFuPgogICAg\nICAgICAgICA8L2Rpdj4KICAgICAgICAgICk7CiAgICAgICAgfSl9CiAgICAg\nIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/StepProgress.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/f08b49c84c93a1f9fb12b8b83e6fabbc1836d7f6","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/StepProgress.jsx"}}
+import React from 'react';
+import { Check } from 'lucide-react';
+
+const STEPS = ['Who Are You', 'Your Details', 'Academic Profile', 'Your Goals'];
+
+export default function StepProgress({ currentStep }) {
+  return (
+    <div className="w-full max-w-2xl mx-auto px-4 py-6">
+      <div className="flex items-center justify-between relative">
+        {/* connecting line */}
+        <div className="absolute top-4 left-0 right-0 h-0.5 bg-[#E5E7EB] z-0" />
+        <div
+          className="absolute top-4 left-0 h-0.5 bg-[#0A1628] z-0 transition-all duration-500"
+          style={{ width: `${(Math.max(0, currentStep - 1) / 3) * 100}%` }}
+        />
+        {STEPS.map((label, i) => {
+          const stepNum = i + 1;
+          const done = currentStep > stepNum;
+          const active = currentStep === stepNum;
+          return (
+            <div key={i} className="flex flex-col items-center z-10">
+              <div className={`relative w-8 h-8 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${
+                done ? 'bg-[#0A1628] border-[#0A1628]' :
+                active ? 'bg-[#0A1628] border-[#0A1628]' :
+                'bg-white border-[#D1D5DB]'
+              }`}>
+                {done ? (
+                  <Check className="w-4 h-4 text-white" />
+                ) : (
+                  <span className={`text-xs font-bold font-mono ${active ? 'text-white' : 'text-[#9CA3AF]'}`}>
+                    {stepNum}
+                  </span>
+                )}
+                {active && (
+                  <span className="absolute inset-0 rounded-full border-2 border-[#0A1628] animate-ping opacity-40" />
+                )}
+              </div>
+              <span className={`mt-2 text-[10px] sm:text-xs font-medium text-center max-w-[60px] sm:max-w-[80px] leading-tight ${
+                active ? 'text-[#0A1628]' : done ? 'text-[#4B5563]' : 'text-[#9CA3AF]'
+              }`}>
+                {label}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
