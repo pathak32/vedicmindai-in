@@ -1,1 +1,92 @@
-{"name":"drawer.jsx","path":"src/components/ui/drawer.jsx","sha":"6d21646d8e212d938b7c0e6a537715c563ac2086","size":2359,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/drawer.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/drawer.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/6d21646d8e212d938b7c0e6a537715c563ac2086","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/drawer.jsx?token=CFODAPYFSAPB4F4A55DZ44DKFSQY7AA","type":"file","content":"InVzZSBjbGllbnQiCgppbXBvcnQgKiBhcyBSZWFjdCBmcm9tICJyZWFjdCIK\naW1wb3J0IHsgRHJhd2VyIGFzIERyYXdlclByaW1pdGl2ZSB9IGZyb20gInZh\ndWwiCgppbXBvcnQgeyBjbiB9IGZyb20gIkAvbGliL3V0aWxzIgoKY29uc3Qg\nRHJhd2VyID0gKHsKICBzaG91bGRTY2FsZUJhY2tncm91bmQgPSB0cnVlLAog\nIC4uLnByb3BzCn0pID0+ICgKICA8RHJhd2VyUHJpbWl0aXZlLlJvb3Qgc2hv\ndWxkU2NhbGVCYWNrZ3JvdW5kPXtzaG91bGRTY2FsZUJhY2tncm91bmR9IHsu\nLi5wcm9wc30gLz4KKQpEcmF3ZXIuZGlzcGxheU5hbWUgPSAiRHJhd2VyIgoK\nY29uc3QgRHJhd2VyVHJpZ2dlciA9IERyYXdlclByaW1pdGl2ZS5UcmlnZ2Vy\nCgpjb25zdCBEcmF3ZXJQb3J0YWwgPSBEcmF3ZXJQcmltaXRpdmUuUG9ydGFs\nCgpjb25zdCBEcmF3ZXJDbG9zZSA9IERyYXdlclByaW1pdGl2ZS5DbG9zZQoK\nY29uc3QgRHJhd2VyT3ZlcmxheSA9IFJlYWN0LmZvcndhcmRSZWYoKHsgY2xh\nc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8RHJhd2VyUHJpbWl0\naXZlLk92ZXJsYXkKICAgIHJlZj17cmVmfQogICAgY2xhc3NOYW1lPXtjbigi\nZml4ZWQgaW5zZXQtMCB6LTUwIGJnLWJsYWNrLzgwIiwgY2xhc3NOYW1lKX0K\nICAgIHsuLi5wcm9wc30gLz4KKSkKRHJhd2VyT3ZlcmxheS5kaXNwbGF5TmFt\nZSA9IERyYXdlclByaW1pdGl2ZS5PdmVybGF5LmRpc3BsYXlOYW1lCgpjb25z\ndCBEcmF3ZXJDb250ZW50ID0gUmVhY3QuZm9yd2FyZFJlZigoeyBjbGFzc05h\nbWUsIGNoaWxkcmVuLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8RHJhd2Vy\nUG9ydGFsPgogICAgPERyYXdlck92ZXJsYXkgLz4KICAgIDxEcmF3ZXJQcmlt\naXRpdmUuQ29udGVudAogICAgICByZWY9e3JlZn0KICAgICAgY2xhc3NOYW1l\nPXtjbigKICAgICAgICAiZml4ZWQgaW5zZXQteC0wIGJvdHRvbS0wIHotNTAg\nbXQtMjQgZmxleCBoLWF1dG8gZmxleC1jb2wgcm91bmRlZC10LVsxMHB4XSBi\nb3JkZXIgYmctYmFja2dyb3VuZCIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAg\nICl9CiAgICAgIHsuLi5wcm9wc30+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJt\neC1hdXRvIG10LTQgaC0yIHctWzEwMHB4XSByb3VuZGVkLWZ1bGwgYmctbXV0\nZWQiIC8+CiAgICAgIHtjaGlsZHJlbn0KICAgIDwvRHJhd2VyUHJpbWl0aXZl\nLkNvbnRlbnQ+CiAgPC9EcmF3ZXJQb3J0YWw+CikpCkRyYXdlckNvbnRlbnQu\nZGlzcGxheU5hbWUgPSAiRHJhd2VyQ29udGVudCIKCmNvbnN0IERyYXdlckhl\nYWRlciA9ICh7CiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn0pID0+ICgKICA8\nZGl2CiAgICBjbGFzc05hbWU9e2NuKCJncmlkIGdhcC0xLjUgcC00IHRleHQt\nY2VudGVyIHNtOnRleHQtbGVmdCIsIGNsYXNzTmFtZSl9CiAgICB7Li4ucHJv\ncHN9IC8+CikKRHJhd2VySGVhZGVyLmRpc3BsYXlOYW1lID0gIkRyYXdlckhl\nYWRlciIKCmNvbnN0IERyYXdlckZvb3RlciA9ICh7CiAgY2xhc3NOYW1lLAog\nIC4uLnByb3BzCn0pID0+ICgKICA8ZGl2IGNsYXNzTmFtZT17Y24oIm10LWF1\ndG8gZmxleCBmbGV4LWNvbCBnYXAtMiBwLTQiLCBjbGFzc05hbWUpfSB7Li4u\ncHJvcHN9IC8+CikKRHJhd2VyRm9vdGVyLmRpc3BsYXlOYW1lID0gIkRyYXdl\nckZvb3RlciIKCmNvbnN0IERyYXdlclRpdGxlID0gUmVhY3QuZm9yd2FyZFJl\nZigoeyBjbGFzc05hbWUsIC4uLnByb3BzIH0sIHJlZikgPT4gKAogIDxEcmF3\nZXJQcmltaXRpdmUuVGl0bGUKICAgIHJlZj17cmVmfQogICAgY2xhc3NOYW1l\nPXtjbigidGV4dC1sZyBmb250LXNlbWlib2xkIGxlYWRpbmctbm9uZSB0cmFj\na2luZy10aWdodCIsIGNsYXNzTmFtZSl9CiAgICB7Li4ucHJvcHN9IC8+Cikp\nCkRyYXdlclRpdGxlLmRpc3BsYXlOYW1lID0gRHJhd2VyUHJpbWl0aXZlLlRp\ndGxlLmRpc3BsYXlOYW1lCgpjb25zdCBEcmF3ZXJEZXNjcmlwdGlvbiA9IFJl\nYWN0LmZvcndhcmRSZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYp\nID0+ICgKICA8RHJhd2VyUHJpbWl0aXZlLkRlc2NyaXB0aW9uCiAgICByZWY9\ne3JlZn0KICAgIGNsYXNzTmFtZT17Y24oInRleHQtc20gdGV4dC1tdXRlZC1m\nb3JlZ3JvdW5kIiwgY2xhc3NOYW1lKX0KICAgIHsuLi5wcm9wc30gLz4KKSkK\nRHJhd2VyRGVzY3JpcHRpb24uZGlzcGxheU5hbWUgPSBEcmF3ZXJQcmltaXRp\ndmUuRGVzY3JpcHRpb24uZGlzcGxheU5hbWUKCmV4cG9ydCB7CiAgRHJhd2Vy\nLAogIERyYXdlclBvcnRhbCwKICBEcmF3ZXJPdmVybGF5LAogIERyYXdlclRy\naWdnZXIsCiAgRHJhd2VyQ2xvc2UsCiAgRHJhd2VyQ29udGVudCwKICBEcmF3\nZXJIZWFkZXIsCiAgRHJhd2VyRm9vdGVyLAogIERyYXdlclRpdGxlLAogIERy\nYXdlckRlc2NyaXB0aW9uLAp9Cg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/drawer.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/6d21646d8e212d938b7c0e6a537715c563ac2086","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/drawer.jsx"}}
+"use client"
+
+import * as React from "react"
+import { Drawer as DrawerPrimitive } from "vaul"
+
+import { cn } from "@/lib/utils"
+
+const Drawer = ({
+  shouldScaleBackground = true,
+  ...props
+}) => (
+  <DrawerPrimitive.Root shouldScaleBackground={shouldScaleBackground} {...props} />
+)
+Drawer.displayName = "Drawer"
+
+const DrawerTrigger = DrawerPrimitive.Trigger
+
+const DrawerPortal = DrawerPrimitive.Portal
+
+const DrawerClose = DrawerPrimitive.Close
+
+const DrawerOverlay = React.forwardRef(({ className, ...props }, ref) => (
+  <DrawerPrimitive.Overlay
+    ref={ref}
+    className={cn("fixed inset-0 z-50 bg-black/80", className)}
+    {...props} />
+))
+DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
+
+const DrawerContent = React.forwardRef(({ className, children, ...props }, ref) => (
+  <DrawerPortal>
+    <DrawerOverlay />
+    <DrawerPrimitive.Content
+      ref={ref}
+      className={cn(
+        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background",
+        className
+      )}
+      {...props}>
+      <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
+      {children}
+    </DrawerPrimitive.Content>
+  </DrawerPortal>
+))
+DrawerContent.displayName = "DrawerContent"
+
+const DrawerHeader = ({
+  className,
+  ...props
+}) => (
+  <div
+    className={cn("grid gap-1.5 p-4 text-center sm:text-left", className)}
+    {...props} />
+)
+DrawerHeader.displayName = "DrawerHeader"
+
+const DrawerFooter = ({
+  className,
+  ...props
+}) => (
+  <div className={cn("mt-auto flex flex-col gap-2 p-4", className)} {...props} />
+)
+DrawerFooter.displayName = "DrawerFooter"
+
+const DrawerTitle = React.forwardRef(({ className, ...props }, ref) => (
+  <DrawerPrimitive.Title
+    ref={ref}
+    className={cn("text-lg font-semibold leading-none tracking-tight", className)}
+    {...props} />
+))
+DrawerTitle.displayName = DrawerPrimitive.Title.displayName
+
+const DrawerDescription = React.forwardRef(({ className, ...props }, ref) => (
+  <DrawerPrimitive.Description
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props} />
+))
+DrawerDescription.displayName = DrawerPrimitive.Description.displayName
+
+export {
+  Drawer,
+  DrawerPortal,
+  DrawerOverlay,
+  DrawerTrigger,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerTitle,
+  DrawerDescription,
+}
