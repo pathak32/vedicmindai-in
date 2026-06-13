@@ -1,18 +1,1 @@
-import * as React from "react"
-
-import { cn } from "@/lib/utils"
-
-const Textarea = React.forwardRef(({ className, ...props }, ref) => {
-  return (
-    (<textarea
-      className={cn(
-        "flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-        className
-      )}
-      ref={ref}
-      {...props} />)
-  );
-})
-Textarea.displayName = "Textarea"
-
-export { Textarea }
+{"name":"textarea.jsx","path":"src/components/ui/textarea.jsx","sha":"b1a0b40747b3ec3c6bd857c72de0e501e2e5a0a6","size":587,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/textarea.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/textarea.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/b1a0b40747b3ec3c6bd857c72de0e501e2e5a0a6","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/textarea.jsx?token=CFODAP4NGR2GP76GLFT32VLKFSQ2NAA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCgppbXBvcnQgeyBjbiB9\nIGZyb20gIkAvbGliL3V0aWxzIgoKY29uc3QgVGV4dGFyZWEgPSBSZWFjdC5m\nb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwgcmVmKSA9PiB7\nCiAgcmV0dXJuICgKICAgICg8dGV4dGFyZWEKICAgICAgY2xhc3NOYW1lPXtj\nbigKICAgICAgICAiZmxleCBtaW4taC1bNjBweF0gdy1mdWxsIHJvdW5kZWQt\nbWQgYm9yZGVyIGJvcmRlci1pbnB1dCBiZy10cmFuc3BhcmVudCBweC0zIHB5\nLTIgdGV4dC1iYXNlIHNoYWRvdy1zbSBwbGFjZWhvbGRlcjp0ZXh0LW11dGVk\nLWZvcmVncm91bmQgZm9jdXMtdmlzaWJsZTpvdXRsaW5lLW5vbmUgZm9jdXMt\ndmlzaWJsZTpyaW5nLTEgZm9jdXMtdmlzaWJsZTpyaW5nLXJpbmcgZGlzYWJs\nZWQ6Y3Vyc29yLW5vdC1hbGxvd2VkIGRpc2FibGVkOm9wYWNpdHktNTAgbWQ6\ndGV4dC1zbSIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHJl\nZj17cmVmfQogICAgICB7Li4ucHJvcHN9IC8+KQogICk7Cn0pClRleHRhcmVh\nLmRpc3BsYXlOYW1lID0gIlRleHRhcmVhIgoKZXhwb3J0IHsgVGV4dGFyZWEg\nfQo=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/textarea.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/b1a0b40747b3ec3c6bd857c72de0e501e2e5a0a6","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/textarea.jsx"}}
