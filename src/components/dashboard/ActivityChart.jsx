@@ -1,1 +1,80 @@
-{"name":"ActivityChart.jsx","path":"src/components/dashboard/ActivityChart.jsx","sha":"62d28c2ef9b8d34ea8406bfb44e6307cd330416a","size":3075,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/ActivityChart.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/ActivityChart.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/62d28c2ef9b8d34ea8406bfb44e6307cd330416a","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/dashboard/ActivityChart.jsx?token=CFODAPYSMRZ4GRZF7U6K3N3KFSQVDAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZU1lbW8gfSBmcm9tICdyZWFjdCc7CmltcG9y\ndCB7IG1vdGlvbiB9IGZyb20gJ2ZyYW1lci1tb3Rpb24nOwppbXBvcnQgeyBB\ncmVhQ2hhcnQsIEFyZWEsIFhBeGlzLCBZQXhpcywgVG9vbHRpcCwgUmVzcG9u\nc2l2ZUNvbnRhaW5lciB9IGZyb20gJ3JlY2hhcnRzJzsKCmZ1bmN0aW9uIGdl\ndExhc3Q3RGF5cygpIHsKICByZXR1cm4gQXJyYXkuZnJvbSh7IGxlbmd0aDog\nNyB9LCAoXywgaSkgPT4gewogICAgY29uc3QgZCA9IG5ldyBEYXRlKCk7CiAg\nICBkLnNldERhdGUoZC5nZXREYXRlKCkgLSAoNiAtIGkpKTsKICAgIHJldHVy\nbiB7CiAgICAgIGxhYmVsOiBkLnRvTG9jYWxlRGF0ZVN0cmluZygnZW4nLCB7\nIHdlZWtkYXk6ICdzaG9ydCcgfSksCiAgICAgIGRhdGVTdHI6CiAgICAgICAg\nZC5nZXRGdWxsWWVhcigpICsKICAgICAgICAnLScgKwogICAgICAgIFN0cmlu\nZyhkLmdldE1vbnRoKCkgKyAxKS5wYWRTdGFydCgyLCAnMCcpICsKICAgICAg\nICAnLScgKwogICAgICAgIFN0cmluZyhkLmdldERhdGUoKSkucGFkU3RhcnQo\nMiwgJzAnKSwKICAgIH07CiAgfSk7Cn0KCmV4cG9ydCBkZWZhdWx0IGZ1bmN0\naW9uIEFjdGl2aXR5Q2hhcnQoeyBwcm9ncmVzcyB9KSB7CiAgY29uc3QgZGF5\ncyA9IGdldExhc3Q3RGF5cygpOwoKICBjb25zdCBkYXRhID0gdXNlTWVtbygo\nKSA9PiB7CiAgICByZXR1cm4gZGF5cy5tYXAoKHsgbGFiZWwsIGRhdGVTdHIg\nfSkgPT4gewogICAgICAvLyBDb3VudCBsZXNzb25zIGNvbXBsZXRlZCBvbiB0\naGlzIGRheSB1c2luZyBwcmFjdGljZUhpc3RvcnkgZGF0ZXMKICAgICAgY29u\nc3QgcHJhY3RpY2VDb3VudCA9IChwcm9ncmVzcy5wcmFjdGljZUhpc3Rvcnkg\nfHwgW10pLmZpbHRlcigocikgPT4gewogICAgICAgIGNvbnN0IGQgPSByLmRh\ndGUgPyByLmRhdGUuc2xpY2UoMCwgMTApIDogJyc7CiAgICAgICAgcmV0dXJu\nIGQgPT09IGRhdGVTdHIgJiYgci5jb3JyZWN0OwogICAgICB9KS5sZW5ndGg7\nCgogICAgICBjb25zdCBzdHVkeUNvdW50ID0gKHByb2dyZXNzLnN0dWR5RGF0\nZXMgfHwgW10pLmluY2x1ZGVzKGRhdGVTdHIpID8gTWF0aC5tYXgoMSwgcHJh\nY3RpY2VDb3VudCkgOiAwOwogICAgICByZXR1cm4geyBkYXk6IGxhYmVsLCBs\nZXNzb25zOiBzdHVkeUNvdW50IH07CiAgICB9KTsKICB9LCBbcHJvZ3Jlc3Nd\nKTsKCiAgY29uc3QgaGFzRGF0YSA9IGRhdGEuc29tZSgoZCkgPT4gZC5sZXNz\nb25zID4gMCk7CgogIHJldHVybiAoCiAgICA8bW90aW9uLmRpdgogICAgICBp\nbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDIwIH19CiAgICAgIGFuaW1hdGU9\ne3sgb3BhY2l0eTogMSwgeTogMCB9fQogICAgICB0cmFuc2l0aW9uPXt7IGRl\nbGF5OiAwLjMgfX0KICAgICAgY2xhc3NOYW1lPSJiZy13aGl0ZSByb3VuZGVk\nLVsyMHB4XSBwLTYgYm9yZGVyIGJvcmRlci1bI0YwRjRGRl0iCiAgICAgIHN0\neWxlPXt7IGJveFNoYWRvdzogJzAgNHB4IDI0cHggcmdiYSgxMCwyMiw0MCww\nLjA2KScgfX0KICAgID4KICAgICAgPGgyIGNsYXNzTmFtZT0iZm9udC1oZWFk\naW5nIHRleHQtbGcgZm9udC1ib2xkIHRleHQtWyMwQTE2MjhdIG1iLTQiPllv\ndXIgQWN0aXZpdHkg4oCUIExhc3QgNyBEYXlzPC9oMj4KCiAgICAgIHtoYXNE\nYXRhID8gKAogICAgICAgIDxSZXNwb25zaXZlQ29udGFpbmVyIHdpZHRoPSIx\nMDAlIiBoZWlnaHQ9ezIwMH0+CiAgICAgICAgICA8QXJlYUNoYXJ0IGRhdGE9\ne2RhdGF9IG1hcmdpbj17eyB0b3A6IDUsIHJpZ2h0OiA1LCBsZWZ0OiAtMjAs\nIGJvdHRvbTogMCB9fT4KICAgICAgICAgICAgPGRlZnM+CiAgICAgICAgICAg\nICAgPGxpbmVhckdyYWRpZW50IGlkPSJhcmVhR3JhZCIgeDE9IjAiIHkxPSIw\nIiB4Mj0iMCIgeTI9IjEiPgogICAgICAgICAgICAgICAgPHN0b3Agb2Zmc2V0\nPSI1JSIgc3RvcENvbG9yPSIjMEExNjI4IiBzdG9wT3BhY2l0eT17MC4xNX0g\nLz4KICAgICAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iOTUlIiBzdG9wQ29s\nb3I9IiMwQTE2MjgiIHN0b3BPcGFjaXR5PXswfSAvPgogICAgICAgICAgICAg\nIDwvbGluZWFyR3JhZGllbnQ+CiAgICAgICAgICAgIDwvZGVmcz4KICAgICAg\nICAgICAgPFhBeGlzIGRhdGFLZXk9ImRheSIgdGljaz17eyBmb250U2l6ZTog\nMTIsIGZpbGw6ICcjOUNBM0FGJyB9fSBheGlzTGluZT17ZmFsc2V9IHRpY2tM\naW5lPXtmYWxzZX0gLz4KICAgICAgICAgICAgPFlBeGlzIHRpY2s9e3sgZm9u\ndFNpemU6IDEyLCBmaWxsOiAnIzlDQTNBRicgfX0gYXhpc0xpbmU9e2ZhbHNl\nfSB0aWNrTGluZT17ZmFsc2V9IGFsbG93RGVjaW1hbHM9e2ZhbHNlfSAvPgog\nICAgICAgICAgICA8VG9vbHRpcAogICAgICAgICAgICAgIGNvbnRlbnRTdHls\nZT17eyBiYWNrZ3JvdW5kOiAnI2ZmZicsIGJvcmRlcjogJzFweCBzb2xpZCAj\nRjBGNEZGJywgYm9yZGVyUmFkaXVzOiAxMiwgZm9udFNpemU6IDEyIH19CiAg\nICAgICAgICAgICAgaXRlbVN0eWxlPXt7IGNvbG9yOiAnIzBBMTYyOCcgfX0K\nICAgICAgICAgICAgLz4KICAgICAgICAgICAgPEFyZWEKICAgICAgICAgICAg\nICB0eXBlPSJtb25vdG9uZSIgZGF0YUtleT0ibGVzc29ucyIgc3Ryb2tlPSIj\nM0I4MkY2IiBzdHJva2VXaWR0aD17Mn0KICAgICAgICAgICAgICBmaWxsPSJ1\ncmwoI2FyZWFHcmFkKSIgZG90PXtmYWxzZX0gYWN0aXZlRG90PXt7IHI6IDQs\nIGZpbGw6ICcjM0I4MkY2JyB9fQogICAgICAgICAgICAvPgogICAgICAgICAg\nPC9BcmVhQ2hhcnQ+CiAgICAgICAgPC9SZXNwb25zaXZlQ29udGFpbmVyPgog\nICAgICApIDogKAogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJoLVsyMDBweF0g\nZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgdGV4dC1jZW50ZXIi\nPgogICAgICAgICAgPGRpdj4KICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1l\nPSJ0ZXh0LTR4bCBibG9jayBtYi0zIj7wn5OIPC9zcGFuPgogICAgICAgICAg\nICA8cCBjbGFzc05hbWU9InRleHQtWyM5Q0EzQUZdIHRleHQtc20iPlN0YXJ0\nIGxlYXJuaW5nIHRvIHNlZSB5b3VyIHByb2dyZXNzIGhlcmU8L3A+CiAgICAg\nICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgKX0KICAgIDwvbW90\naW9uLmRpdj4KICApOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/ActivityChart.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/62d28c2ef9b8d34ea8406bfb44e6307cd330416a","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/ActivityChart.jsx"}}
+import React, { useMemo } from 'react';
+import { motion } from 'framer-motion';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+
+function getLast7Days() {
+  return Array.from({ length: 7 }, (_, i) => {
+    const d = new Date();
+    d.setDate(d.getDate() - (6 - i));
+    return {
+      label: d.toLocaleDateString('en', { weekday: 'short' }),
+      dateStr:
+        d.getFullYear() +
+        '-' +
+        String(d.getMonth() + 1).padStart(2, '0') +
+        '-' +
+        String(d.getDate()).padStart(2, '0'),
+    };
+  });
+}
+
+export default function ActivityChart({ progress }) {
+  const days = getLast7Days();
+
+  const data = useMemo(() => {
+    return days.map(({ label, dateStr }) => {
+      // Count lessons completed on this day using practiceHistory dates
+      const practiceCount = (progress.practiceHistory || []).filter((r) => {
+        const d = r.date ? r.date.slice(0, 10) : '';
+        return d === dateStr && r.correct;
+      }).length;
+
+      const studyCount = (progress.studyDates || []).includes(dateStr) ? Math.max(1, practiceCount) : 0;
+      return { day: label, lessons: studyCount };
+    });
+  }, [progress]);
+
+  const hasData = data.some((d) => d.lessons > 0);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3 }}
+      className="bg-white rounded-[20px] p-6 border border-[#F0F4FF]"
+      style={{ boxShadow: '0 4px 24px rgba(10,22,40,0.06)' }}
+    >
+      <h2 className="font-heading text-lg font-bold text-[#0A1628] mb-4">Your Activity — Last 7 Days</h2>
+
+      {hasData ? (
+        <ResponsiveContainer width="100%" height={200}>
+          <AreaChart data={data} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
+            <defs>
+              <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#0A1628" stopOpacity={0.15} />
+                <stop offset="95%" stopColor="#0A1628" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <XAxis dataKey="day" tick={{ fontSize: 12, fill: '#9CA3AF' }} axisLine={false} tickLine={false} />
+            <YAxis tick={{ fontSize: 12, fill: '#9CA3AF' }} axisLine={false} tickLine={false} allowDecimals={false} />
+            <Tooltip
+              contentStyle={{ background: '#fff', border: '1px solid #F0F4FF', borderRadius: 12, fontSize: 12 }}
+              itemStyle={{ color: '#0A1628' }}
+            />
+            <Area
+              type="monotone" dataKey="lessons" stroke="#3B82F6" strokeWidth={2}
+              fill="url(#areaGrad)" dot={false} activeDot={{ r: 4, fill: '#3B82F6' }}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      ) : (
+        <div className="h-[200px] flex items-center justify-center text-center">
+          <div>
+            <span className="text-4xl block mb-3">📈</span>
+            <p className="text-[#9CA3AF] text-sm">Start learning to see your progress here</p>
+          </div>
+        </div>
+      )}
+    </motion.div>
+  );
+}
