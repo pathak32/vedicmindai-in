@@ -9,12 +9,12 @@ function validateMobile(m) { return /^[6-9]\d{9}$/.test(m); }
 function validateDOB(d) { return /^\d{2}\/\d{2}\/\d{4}$/.test(d); }
 
 function generatePasswordHint(name, dob) {
-  // e.g. name="Hitesh Pathak", dob="15/06/1985" → hint: "Hi15@1985"
-  const initials = name.trim().split(' ').map(w => w[0]?.toUpperCase() || '').join('').slice(0, 2);
-  const parts = dob.split('/');
-  const day = parts[0] || '';
-  const year = parts[2] || '';
-  return `${initials}${day}@${year}`;
+  // hint: DDMM + first 4 letters of name (e.g. 0506Hite)
+  const namePart = name.trim().split("").filter(c => /[a-zA-Z]/.test(c)).slice(0, 4).join("");
+  const parts = dob.split("/");
+  const dd = (parts[0] || "").padStart(2, "0");
+  const mm = (parts[1] || "").padStart(2, "0");
+  return dd + mm + namePart;
 }
 
 // ─── Sign Up Form ────────────────────────────────────────────────────────────
@@ -43,7 +43,7 @@ function SignUpForm({ onSwitchTab }) {
     if (!name.trim())           e.name   = 'Name required';
     if (!validateMobile(mobile))e.mobile = 'Valid 10-digit number required';
     if (!validateDOB(dob))      e.dob    = 'Format: DD/MM/YYYY';
-    if (!password || password.length < 6) e.password = 'Min 6 characters';
+    if (!password || password.length < 8) e.password = 'Min 8 characters';
     if (!secQ.trim())           e.secQ   = 'Security question required';
     if (!secA.trim())           e.secA   = 'Security answer required';
     if (!sameNum && !validateMobile(whatsapp)) e.whatsapp = 'Valid WhatsApp number required';
@@ -134,10 +134,11 @@ function SignUpForm({ onSwitchTab }) {
         <label style={lbl}>Date of Birth * (DD/MM/YYYY)</label>
         <input value={dob}
           onChange={e => {
-            let v = e.target.value.replace(/[^\d/]/g,'');
-            if (v.length === 2 && dob.length === 1) v += '/';
-            if (v.length === 5 && dob.length === 4) v += '/';
-            setDob(v.slice(0,10));
+            const raw = e.target.value.replace(/\D/g,'').slice(0,8);
+            let v = raw;
+            if (raw.length > 4) v = raw.slice(0,2) + '/' + raw.slice(2,4) + '/' + raw.slice(4);
+            else if (raw.length > 2) v = raw.slice(0,2) + '/' + raw.slice(2);
+            setDob(v);
           }}
           placeholder="15/06/1985" style={inp(errors.dob)} maxLength={10} />
         {errors.dob && <Err>{errors.dob}</Err>}
@@ -155,13 +156,13 @@ function SignUpForm({ onSwitchTab }) {
         <label style={lbl}>Password *</label>
         {hint && (
           <p style={{ fontSize:12, color:'#6B7280', margin:'0 0 4px', fontFamily:'var(--font-mono)' }}>
-            💡 Suggested: <strong>{hint}</strong> (Name initials + Day + @ + Year)
+            💡 Suggested: <strong>{hint}</strong> (DDMM + First 4 letters of name)
           </p>
         )}
         <div style={{ position:'relative' }}>
           <input type={showPass?'text':'password'} value={password}
             onChange={e => setPassword(e.target.value)}
-            placeholder="Min 6 characters"
+            placeholder="Min 8 characters"
             style={{ ...inp(errors.password), paddingRight:44 }} />
           <button type="button" onClick={() => setShowPass(!showPass)}
             style={{ position:'absolute', right:12, top:'50%', transform:'translateY(-50%)', background:'none', border:'none', cursor:'pointer', fontSize:16, color:'#6B7280' }}>
