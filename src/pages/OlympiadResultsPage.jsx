@@ -69,7 +69,11 @@ export default function OlympiadResultsPage() {
   };
 
   const handleShare = () => {
-    const text = `I just competed in the VedicMind Olympiad! 🏅🧮\nScore: ${score}/180 | Level: ${getOlympiadLevelLabel(level)}\nQuarter: ${quarter}\nThink you can beat me?\nRegister at vedicmindai.in`;
+    const text = `I just competed in the VedicMind Olympiad! 🏅🧮
+Score: ${score}/180 | Level: ${getOlympiadLevelLabel(level)}
+Quarter: ${quarter}
+Think you can beat me?
+Register at vedicmindai.in`;
     const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   };
