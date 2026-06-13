@@ -1,1 +1,79 @@
-{"name":"StreakWidget.jsx","path":"src/components/dashboard/StreakWidget.jsx","sha":"990e43e9c66803f9825558d7983dd6409bd3e467","size":2759,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/StreakWidget.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/StreakWidget.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/990e43e9c66803f9825558d7983dd6409bd3e467","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/dashboard/StreakWidget.jsx?token=CFODAP4H7SS2YB6LE4WOAG3KFSQVNAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgbW90aW9uIH0g\nZnJvbSAnZnJhbWVyLW1vdGlvbic7CmltcG9ydCB7IGdldFRvZGF5U3RyaW5n\nIH0gZnJvbSAnQC91dGlscy9oZWxwZXJzJzsKCmZ1bmN0aW9uIGdldFdlZWtE\nYXlzKCkgewogIGNvbnN0IGRheXMgPSBbJ1MnLCAnTScsICdUJywgJ1cnLCAn\nVCcsICdGJywgJ1MnXTsKICByZXR1cm4gQXJyYXkuZnJvbSh7IGxlbmd0aDog\nNyB9LCAoXywgaSkgPT4gewogICAgY29uc3QgZCA9IG5ldyBEYXRlKCk7CiAg\nICBjb25zdCBkYXlPZldlZWsgPSBkLmdldERheSgpOwogICAgY29uc3QgZGlm\nZiA9IGkgLSAoKGRheU9mV2VlayArIDcgLSAwKSAlIDcpOyAvLyBzdGFydCBm\ncm9tIFN1bmRheQogICAgY29uc3QgZGF0ZSA9IG5ldyBEYXRlKGQpOwogICAg\nZGF0ZS5zZXREYXRlKGQuZ2V0RGF0ZSgpIC0gKGRheU9mV2VlayAtIGkpKTsK\nICAgIGNvbnN0IGRhdGVTdHIgPQogICAgICBkYXRlLmdldEZ1bGxZZWFyKCkg\nKwogICAgICAnLScgKwogICAgICBTdHJpbmcoZGF0ZS5nZXRNb250aCgpICsg\nMSkucGFkU3RhcnQoMiwgJzAnKSArCiAgICAgICctJyArCiAgICAgIFN0cmlu\nZyhkYXRlLmdldERhdGUoKSkucGFkU3RhcnQoMiwgJzAnKTsKICAgIHJldHVy\nbiB7IGxhYmVsOiBkYXlzW2ldLCBkYXRlU3RyLCBpc1RvZGF5OiBpID09PSBk\nYXlPZldlZWsgfTsKICB9KTsKfQoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24g\nU3RyZWFrV2lkZ2V0KHsgcHJvZ3Jlc3MgfSkgewogIGNvbnN0IHRvZGF5ID0g\nZ2V0VG9kYXlTdHJpbmcoKTsKICBjb25zdCBzdHVkaWVkVG9kYXkgPSAocHJv\nZ3Jlc3Muc3R1ZHlEYXRlcyB8fCBbXSkuaW5jbHVkZXModG9kYXkpOwogIGNv\nbnN0IHdlZWtEYXlzID0gZ2V0V2Vla0RheXMoKTsKCiAgcmV0dXJuICgKICAg\nIDxtb3Rpb24uZGl2CiAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeDog\nMjAgfX0KICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB4OiAwIH19CiAg\nICAgIGNsYXNzTmFtZT0icm91bmRlZC1bMjBweF0gcC02IHRleHQtd2hpdGUi\nCiAgICAgIHN0eWxlPXt7IGJhY2tncm91bmQ6ICdsaW5lYXItZ3JhZGllbnQo\nMTM1ZGVnLCAjMEExNjI4IDAlLCAjMEQyMjUyIDEwMCUpJyB9fQogICAgPgog\nICAgICA8ZGl2IGNsYXNzTmFtZT0idGV4dC1jZW50ZXIgbWItNSI+CiAgICAg\nICAgPG1vdGlvbi5zcGFuCiAgICAgICAgICBhbmltYXRlPXt7IHNjYWxlOiBb\nMSwgMS4xMiwgMV0gfX0KICAgICAgICAgIHRyYW5zaXRpb249e3sgcmVwZWF0\nOiBJbmZpbml0eSwgZHVyYXRpb246IDIgfX0KICAgICAgICAgIGNsYXNzTmFt\nZT0idGV4dC01eGwgYmxvY2sgbWItMyIKICAgICAgICAgIHN0eWxlPXt7IGZp\nbHRlcjogJ2Ryb3Atc2hhZG93KDAgMCAxMnB4IHJnYmEoMjQ5LDExNSwyMiww\nLjcpKScgfX0KICAgICAgICA+CiAgICAgICAgICDwn5SlCiAgICAgICAgPC9t\nb3Rpb24uc3Bhbj4KICAgICAgICA8aDIgY2xhc3NOYW1lPSJmb250LWhlYWRp\nbmcgdGV4dC0zeGwgZm9udC1ib2xkIHRleHQtd2hpdGUiPgogICAgICAgICAg\ne3Byb2dyZXNzLnN0cmVhayB8fCAwfSBEYXkgU3RyZWFrIQogICAgICAgIDwv\naDI+CiAgICAgIDwvZGl2PgoKICAgICAgey8qIDctZGF5IG1pbmkgY2FsZW5k\nYXIgKi99CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGp1c3RpZnktYmV0\nd2VlbiBtYi00Ij4KICAgICAgICB7d2Vla0RheXMubWFwKCh7IGxhYmVsLCBk\nYXRlU3RyLCBpc1RvZGF5IH0pID0+IHsKICAgICAgICAgIGNvbnN0IHN0dWRp\nZWQgPSAocHJvZ3Jlc3Muc3R1ZHlEYXRlcyB8fCBbXSkuaW5jbHVkZXMoZGF0\nZVN0cik7CiAgICAgICAgICByZXR1cm4gKAogICAgICAgICAgICA8ZGl2IGtl\neT17ZGF0ZVN0cn0gY2xhc3NOYW1lPSJmbGV4IGZsZXgtY29sIGl0ZW1zLWNl\nbnRlciBnYXAtMSI+CiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0\nZXh0LVsxMHB4XSB0ZXh0LWJsdWUtMzAwIj57bGFiZWx9PC9zcGFuPgogICAg\nICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPXtgdy03IGgtNyByb3VuZGVkLWZ1\nbGwgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgJHsKICAgICAg\nICAgICAgICAgIGlzVG9kYXkgJiYgc3R1ZGllZAogICAgICAgICAgICAgICAg\nICA/ICdiZy1bIzNCODJGNl0nCiAgICAgICAgICAgICAgICAgIDogaXNUb2Rh\neSAmJiAhc3R1ZGllZAogICAgICAgICAgICAgICAgICA/ICdib3JkZXItMiBi\nb3JkZXItZGFzaGVkIGJvcmRlci1ibHVlLTMwMCcKICAgICAgICAgICAgICAg\nICAgOiBzdHVkaWVkCiAgICAgICAgICAgICAgICAgID8gJ2JnLXdoaXRlLzIw\nJwogICAgICAgICAgICAgICAgICA6ICdib3JkZXIgYm9yZGVyLXdoaXRlLzIw\nJwogICAgICAgICAgICAgIH1gfT4KICAgICAgICAgICAgICAgIHtzdHVkaWVk\nICYmIDxkaXYgY2xhc3NOYW1lPSJ3LTIgaC0yIHJvdW5kZWQtZnVsbCBiZy13\naGl0ZSIgLz59CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwv\nZGl2PgogICAgICAgICAgKTsKICAgICAgICB9KX0KICAgICAgPC9kaXY+Cgog\nICAgICA8cCBjbGFzc05hbWU9InRleHQtY2VudGVyIHRleHQteHMgdGV4dC1i\nbHVlLTIwMCBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgIHtzdHVkaWVkVG9k\nYXkKICAgICAgICAgID8gJ0dyZWF0IGpvYiEgWW91IHN0dWRpZWQgdG9kYXkh\nIOKchScKICAgICAgICAgIDogJ0tlZXAgaXQgdXAhIFN0dWR5IHRvZGF5IHRv\nIG1haW50YWluIHlvdXIgc3RyZWFrJ30KICAgICAgPC9wPgogICAgPC9tb3Rp\nb24uZGl2PgogICk7Cn0=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/StreakWidget.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/990e43e9c66803f9825558d7983dd6409bd3e467","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/StreakWidget.jsx"}}
+import React from 'react';
+import { motion } from 'framer-motion';
+import { getTodayString } from '@/utils/helpers';
+
+function getWeekDays() {
+  const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  return Array.from({ length: 7 }, (_, i) => {
+    const d = new Date();
+    const dayOfWeek = d.getDay();
+    const diff = i - ((dayOfWeek + 7 - 0) % 7); // start from Sunday
+    const date = new Date(d);
+    date.setDate(d.getDate() - (dayOfWeek - i));
+    const dateStr =
+      date.getFullYear() +
+      '-' +
+      String(date.getMonth() + 1).padStart(2, '0') +
+      '-' +
+      String(date.getDate()).padStart(2, '0');
+    return { label: days[i], dateStr, isToday: i === dayOfWeek };
+  });
+}
+
+export default function StreakWidget({ progress }) {
+  const today = getTodayString();
+  const studiedToday = (progress.studyDates || []).includes(today);
+  const weekDays = getWeekDays();
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      className="rounded-[20px] p-6 text-white"
+      style={{ background: 'linear-gradient(135deg, #0A1628 0%, #0D2252 100%)' }}
+    >
+      <div className="text-center mb-5">
+        <motion.span
+          animate={{ scale: [1, 1.12, 1] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="text-5xl block mb-3"
+          style={{ filter: 'drop-shadow(0 0 12px rgba(249,115,22,0.7))' }}
+        >
+          🔥
+        </motion.span>
+        <h2 className="font-heading text-3xl font-bold text-white">
+          {progress.streak || 0} Day Streak!
+        </h2>
+      </div>
+
+      {/* 7-day mini calendar */}
+      <div className="flex justify-between mb-4">
+        {weekDays.map(({ label, dateStr, isToday }) => {
+          const studied = (progress.studyDates || []).includes(dateStr);
+          return (
+            <div key={dateStr} className="flex flex-col items-center gap-1">
+              <span className="text-[10px] text-blue-300">{label}</span>
+              <div className={`w-7 h-7 rounded-full flex items-center justify-center ${
+                isToday && studied
+                  ? 'bg-[#3B82F6]'
+                  : isToday && !studied
+                  ? 'border-2 border-dashed border-blue-300'
+                  : studied
+                  ? 'bg-white/20'
+                  : 'border border-white/20'
+              }`}>
+                {studied && <div className="w-2 h-2 rounded-full bg-white" />}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <p className="text-center text-xs text-blue-200 leading-relaxed">
+        {studiedToday
+          ? 'Great job! You studied today! ✅'
+          : 'Keep it up! Study today to maintain your streak'}
+      </p>
+    </motion.div>
+  );
+}
