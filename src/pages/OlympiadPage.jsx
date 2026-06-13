@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { base44 } from '@/api/base44Client';
+// base44 removed
 import {
   getOlympiadLevel,
   getOlympiadLevelLabel,
