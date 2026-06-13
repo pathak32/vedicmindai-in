@@ -1,1 +1,154 @@
-{"name":"ResultsCard.jsx","path":"src/components/onboarding/ResultsCard.jsx","sha":"88b492d07512099a84bbfeeb587932159a14aabb","size":5440,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/ResultsCard.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/ResultsCard.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/88b492d07512099a84bbfeeb587932159a14aabb","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/onboarding/ResultsCard.jsx?token=CFODAP26THBHZQB3CDMBZI3KFSQW5AA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0JzsKaW1w\nb3J0IHsgbW90aW9uIH0gZnJvbSAnZnJhbWVyLW1vdGlvbic7CmltcG9ydCBj\nb25mZXR0aSBmcm9tICdjYW52YXMtY29uZmV0dGknOwoKZXhwb3J0IGRlZmF1\nbHQgZnVuY3Rpb24gUmVzdWx0c0NhcmQoeyBhaUFuYWx5c2lzLCBvblN0YXJ0\nIH0pIHsKICB1c2VFZmZlY3QoKCkgPT4gewogICAgLy8gMyBjb25mZXR0aSBi\ndXJzdHMKICAgIGNvbnN0IGNvbG9ycyA9IFsnIzBBMTYyOCcsICcjM0I4MkY2\nJywgJyNGNTlFMEInLCAnIzEwQjk4MScsICcjRkZGRkZGJ107CiAgICBjb25m\nZXR0aSh7IG9yaWdpbjogeyB4OiAwLjIsIHk6IDAuNiB9LCBhbmdsZTogNjAs\nICBzcHJlYWQ6IDcwLCBwYXJ0aWNsZUNvdW50OiA4MCwgY29sb3JzIH0pOwog\nICAgY29uZmV0dGkoeyBvcmlnaW46IHsgeDogMC44LCB5OiAwLjYgfSwgYW5n\nbGU6IDEyMCwgc3ByZWFkOiA3MCwgcGFydGljbGVDb3VudDogODAsIGNvbG9y\ncyB9KTsKICAgIGNvbmZldHRpKHsgb3JpZ2luOiB7IHg6IDAuNSwgeTogMC41\nIH0sIGFuZ2xlOiA5MCwgIHNwcmVhZDogMTAwLCBwYXJ0aWNsZUNvdW50OiA4\nMCwgY29sb3JzIH0pOwogIH0sIFtdKTsKCiAgY29uc3Qgc3RhdHMgPSBbCiAg\nICB7IGVtb2ppOiAn8J+TiicsIGxhYmVsOiAnU3RhcnRpbmcgTGV2ZWwnLCAg\nIHZhbHVlOiBhaUFuYWx5c2lzLnN0YXJ0aW5nTGV2ZWwgfSwKICAgIHsgZW1v\namk6ICfij7HvuI8nLCBsYWJlbDogJ0VzdC4gQ29tcGxldGlvbicsICB2YWx1\nZTogYCR7YWlBbmFseXNpcy5lc3RpbWF0ZWRXZWVrc30gd2Vla3NgIH0sCiAg\nICB7IGVtb2ppOiAn8J+ThScsIGxhYmVsOiAnRGFpbHkgTGVzc29ucycsICAg\nIHZhbHVlOiBgJHthaUFuYWx5c2lzLmRhaWx5TGVzc29uc30gbGVzc29uc2Ag\nfSwKICBdOwoKICByZXR1cm4gKAogICAgPG1vdGlvbi5kaXYKICAgICAgaW5p\ndGlhbD17eyBvcGFjaXR5OiAwLCB5OiAyMCB9fQogICAgICBhbmltYXRlPXt7\nIG9wYWNpdHk6IDEsIHk6IDAgfX0KICAgICAgdHJhbnNpdGlvbj17eyBkdXJh\ndGlvbjogMC41IH19CiAgICAgIHN0eWxlPXt7IGNvbG9yOiAnd2hpdGUnLCBm\nb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScgfX0KICAgID4KICAgICAg\ney8qIEhlYWRlciAqL30KICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAn\nZmxleCcsIGFsaWduSXRlbXM6ICdjZW50ZXInLCBnYXA6IDEyLCBtYXJnaW5C\nb3R0b206IDE2IH19PgogICAgICAgIDxzcGFuIHN0eWxlPXt7IGZvbnRTaXpl\nOiAzNiB9fT7inKg8L3NwYW4+CiAgICAgICAgPGgyIGNsYXNzTmFtZT0iZm9u\ndC1oZWFkaW5nIiBzdHlsZT17eyBmb250U2l6ZTogMjQsIGZvbnRXZWlnaHQ6\nIDcwMCwgY29sb3I6ICd3aGl0ZScsIGxpbmVIZWlnaHQ6IDEuMiB9fT4KICAg\nICAgICAgIFlvdXIgVmVkaWNNaW5kIFBsYW4gaXMgUmVhZHkhCiAgICAgICAg\nPC9oMj4KICAgICAgPC9kaXY+CgogICAgICB7LyogR3JlZXRpbmcgKi99CiAg\nICAgIDxkaXYgc3R5bGU9e3sKICAgICAgICBiYWNrZ3JvdW5kOiAncmdiYSgy\nNTUsMjU1LDI1NSwwLjA2KScsCiAgICAgICAgYm9yZGVyUmFkaXVzOiAxMiwK\nICAgICAgICBwYWRkaW5nOiAxNiwKICAgICAgICBtYXJnaW46ICcxNnB4IDAn\nLAogICAgICB9fT4KICAgICAgICA8cCBzdHlsZT17eyBmb250U2l6ZTogMTUs\nIGZvbnRTdHlsZTogJ2l0YWxpYycsIGNvbG9yOiAncmdiYSgyNTUsMjU1LDI1\nNSwwLjkpJywgbWFyZ2luOiAwLCBsaW5lSGVpZ2h0OiAxLjYgfX0+CiAgICAg\nICAgICB7YWlBbmFseXNpcy5ncmVldGluZ30KICAgICAgICA8L3A+CiAgICAg\nIDwvZGl2PgoKICAgICAgey8qIFN0YXQgQmFkZ2VzICovfQogICAgICA8ZGl2\nIHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JywgZ2FwOiAxMCwgZmxleFdyYXA6\nICd3cmFwJywgbWFyZ2luQm90dG9tOiAyMCB9fT4KICAgICAgICB7c3RhdHMu\nbWFwKHMgPT4gKAogICAgICAgICAgPGRpdgogICAgICAgICAgICBrZXk9e3Mu\nbGFiZWx9CiAgICAgICAgICAgIHN0eWxlPXt7CiAgICAgICAgICAgICAgZmxl\neDogJzEgMSAxMDBweCcsCiAgICAgICAgICAgICAgYmFja2dyb3VuZDogJ3Jn\nYmEoNTksMTMwLDI0NiwwLjE1KScsCiAgICAgICAgICAgICAgYm9yZGVyOiAn\nMXB4IHNvbGlkIHJnYmEoNTksMTMwLDI0NiwwLjMpJywKICAgICAgICAgICAg\nICBib3JkZXJSYWRpdXM6IDEyLAogICAgICAgICAgICAgIHBhZGRpbmc6ICcx\nMnB4IDE2cHgnLAogICAgICAgICAgICAgIHRleHRBbGlnbjogJ2NlbnRlcics\nCiAgICAgICAgICAgIH19CiAgICAgICAgICA+CiAgICAgICAgICAgIDxkaXYg\nc3R5bGU9e3sgZm9udFNpemU6IDIwLCBtYXJnaW5Cb3R0b206IDQgfX0+e3Mu\nZW1vaml9PC9kaXY+CiAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZm9udFNp\nemU6IDExLCBjb2xvcjogJ3JnYmEoMjU1LDI1NSwyNTUsMC42KScsIHRleHRU\ncmFuc2Zvcm06ICd1cHBlcmNhc2UnLCBsZXR0ZXJTcGFjaW5nOiAnMC4wNmVt\nJywgbWFyZ2luQm90dG9tOiA0IH19PgogICAgICAgICAgICAgIHtzLmxhYmVs\nfQogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBzdHlsZT17\neyBmb250U2l6ZTogMTgsIGZvbnRXZWlnaHQ6IDcwMCwgY29sb3I6ICd3aGl0\nZScgfX0+CiAgICAgICAgICAgICAge3MudmFsdWV9CiAgICAgICAgICAgIDwv\nZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgKSl9CiAgICAgIDwvZGl2\nPgoKICAgICAgey8qIFdoeSBWZWRpYyBNYXRocyAqL30KICAgICAgPGRpdiBz\ndHlsZT17eyBtYXJnaW5Ub3A6IDIwIH19PgogICAgICAgIDxwIHN0eWxlPXt7\nIGZvbnRTaXplOiAxMywgY29sb3I6ICcjM0I4MkY2JywgdGV4dFRyYW5zZm9y\nbTogJ3VwcGVyY2FzZScsIGxldHRlclNwYWNpbmc6ICcwLjA3ZW0nLCBtYXJn\naW5Cb3R0b206IDggfX0+CiAgICAgICAgICBXaHkgVmVkaWMgTWF0aHMgZm9y\nIHlvdToKICAgICAgICA8L3A+CiAgICAgICAgPHAgc3R5bGU9e3sgZm9udFNp\nemU6IDE0LCBjb2xvcjogJ3JnYmEoMjU1LDI1NSwyNTUsMC44NSknLCBsaW5l\nSGVpZ2h0OiAxLjY1LCBtYXJnaW46IDAgfX0+CiAgICAgICAgICB7YWlBbmFs\neXNpcy53aHlWZWRpY01hdGhzfQogICAgICAgIDwvcD4KICAgICAgPC9kaXY+\nCgogICAgICB7LyogRm9jdXMgQXJlYXMgKi99CiAgICAgIDxkaXYgc3R5bGU9\ne3sgbWFyZ2luVG9wOiAyMCB9fT4KICAgICAgICA8cCBzdHlsZT17eyBmb250\nU2l6ZTogMTMsIGNvbG9yOiAnIzNCODJGNicsIHRleHRUcmFuc2Zvcm06ICd1\ncHBlcmNhc2UnLCBsZXR0ZXJTcGFjaW5nOiAnMC4wN2VtJywgbWFyZ2luQm90\ndG9tOiAxMCB9fT4KICAgICAgICAgIFlvdXIgVG9wIEZvY3VzIEFyZWFzOgog\nICAgICAgIDwvcD4KICAgICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdm\nbGV4JywgZmxleFdyYXA6ICd3cmFwJywgZ2FwOiA4IH19PgogICAgICAgICAg\neyhhaUFuYWx5c2lzLnRvcEZvY3VzQXJlYXMgfHwgW10pLnNsaWNlKDAsIDMp\nLm1hcCgoYXJlYSwgaSkgPT4gKAogICAgICAgICAgICA8c3BhbgogICAgICAg\nICAgICAgIGtleT17aX0KICAgICAgICAgICAgICBzdHlsZT17ewogICAgICAg\nICAgICAgICAgYmFja2dyb3VuZDogJ3JnYmEoMTYsMTg1LDEyOSwwLjE1KScs\nCiAgICAgICAgICAgICAgICBib3JkZXI6ICcxcHggc29saWQgcmdiYSgxNiwx\nODUsMTI5LDAuMyknLAogICAgICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiAx\nMDAsCiAgICAgICAgICAgICAgICBwYWRkaW5nOiAnNnB4IDE2cHgnLAogICAg\nICAgICAgICAgICAgZm9udFNpemU6IDEzLAogICAgICAgICAgICAgICAgY29s\nb3I6ICcjMTBCOTgxJywKICAgICAgICAgICAgICB9fQogICAgICAgICAgICA+\nCiAgICAgICAgICAgICAge2FyZWF9CiAgICAgICAgICAgIDwvc3Bhbj4KICAg\nICAgICAgICkpfQogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KCiAgICAg\nIHsvKiBNb3RpdmF0aW9uYWwgUXVvdGUgKi99CiAgICAgIDxkaXYgc3R5bGU9\ne3sgbWFyZ2luVG9wOiAyMCwgYm9yZGVyTGVmdDogJzNweCBzb2xpZCAjRjU5\nRTBCJywgcGFkZGluZ0xlZnQ6IDE2IH19PgogICAgICAgIDxwIGNsYXNzTmFt\nZT0iZm9udC1oZWFkaW5nIiBzdHlsZT17eyBmb250U2l6ZTogMTYsIGZvbnRT\ndHlsZTogJ2l0YWxpYycsIGNvbG9yOiAncmdiYSgyNTUsMjU1LDI1NSwwLjgp\nJywgbWFyZ2luOiAwLCBsaW5lSGVpZ2h0OiAxLjYgfX0+CiAgICAgICAgICAi\ne2FpQW5hbHlzaXMubW90aXZhdGlvbmFsUXVvdGV9IgogICAgICAgIDwvcD4K\nICAgICAgPC9kaXY+CgogICAgICB7LyogUGVyc29uYWxpemVkIFRpcCAqL30K\nICAgICAgPGRpdiBzdHlsZT17ewogICAgICAgIG1hcmdpblRvcDogMTYsCiAg\nICAgICAgYmFja2dyb3VuZDogJ3JnYmEoMjQ1LDE1OCwxMSwwLjEpJywKICAg\nICAgICBib3JkZXI6ICcxcHggc29saWQgcmdiYSgyNDUsMTU4LDExLDAuMikn\nLAogICAgICAgIGJvcmRlclJhZGl1czogMTIsCiAgICAgICAgcGFkZGluZzog\nJzE0cHggMTZweCcsCiAgICAgIH19PgogICAgICAgIDxwIHN0eWxlPXt7IGZv\nbnRTaXplOiAxMywgY29sb3I6ICdyZ2JhKDI1NSwyNTUsMjU1LDAuODUpJywg\nbWFyZ2luOiAwLCBsaW5lSGVpZ2h0OiAxLjYgfX0+CiAgICAgICAgICDwn5Kh\nIHthaUFuYWx5c2lzLnBlcnNvbmFsaXplZFRpcH0KICAgICAgICA8L3A+CiAg\nICAgIDwvZGl2PgoKICAgICAgey8qIFN0YXJ0IEJ1dHRvbiAqL30KICAgICAg\nPHN0eWxlPntgCiAgICAgICAgQGtleWZyYW1lcyBwdWxzZS1nbG93IHsKICAg\nICAgICAgIDAlLCAxMDAlIHsgYm94LXNoYWRvdzogMCA0cHggMjBweCByZ2Jh\nKDE2LDE4NSwxMjksMC4zNSk7IH0KICAgICAgICAgIDUwJSAgICAgICB7IGJv\neC1zaGFkb3c6IDAgNHB4IDMycHggcmdiYSgxNiwxODUsMTI5LDAuNik7IH0K\nICAgICAgICB9CiAgICAgIGB9PC9zdHlsZT4KICAgICAgPGJ1dHRvbgogICAg\nICAgIG9uQ2xpY2s9e29uU3RhcnR9CiAgICAgICAgc3R5bGU9e3sKICAgICAg\nICAgIG1hcmdpblRvcDogMjgsCiAgICAgICAgICB3aWR0aDogJzEwMCUnLAog\nICAgICAgICAgbWluSGVpZ2h0OiA1MiwKICAgICAgICAgIGJhY2tncm91bmQ6\nICdsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjMTBCOTgxLCAjMDU5NjY5KScs\nCiAgICAgICAgICBjb2xvcjogJ3doaXRlJywKICAgICAgICAgIGJvcmRlcjog\nJ25vbmUnLAogICAgICAgICAgYm9yZGVyUmFkaXVzOiAxNCwKICAgICAgICAg\nIGZvbnRTaXplOiAxNywKICAgICAgICAgIGZvbnRXZWlnaHQ6IDcwMCwKICAg\nICAgICAgIGN1cnNvcjogJ3BvaW50ZXInLAogICAgICAgICAgZm9udEZhbWls\neTogJ3ZhcigtLWZvbnQtYm9keSknLAogICAgICAgICAgYW5pbWF0aW9uOiAn\ncHVsc2UtZ2xvdyAycyBlYXNlLWluLW91dCBpbmZpbml0ZScsCiAgICAgICAg\nfX0KICAgICAgPgogICAgICAgIPCfmoAgU3RhcnQgTXkgSm91cm5leSDihpIK\nICAgICAgPC9idXR0b24+CiAgICA8L21vdGlvbi5kaXY+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/ResultsCard.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/88b492d07512099a84bbfeeb587932159a14aabb","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/ResultsCard.jsx"}}
+import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import confetti from 'canvas-confetti';
+
+export default function ResultsCard({ aiAnalysis, onStart }) {
+  useEffect(() => {
+    // 3 confetti bursts
+    const colors = ['#0A1628', '#3B82F6', '#F59E0B', '#10B981', '#FFFFFF'];
+    confetti({ origin: { x: 0.2, y: 0.6 }, angle: 60,  spread: 70, particleCount: 80, colors });
+    confetti({ origin: { x: 0.8, y: 0.6 }, angle: 120, spread: 70, particleCount: 80, colors });
+    confetti({ origin: { x: 0.5, y: 0.5 }, angle: 90,  spread: 100, particleCount: 80, colors });
+  }, []);
+
+  const stats = [
+    { emoji: '📊', label: 'Starting Level',   value: aiAnalysis.startingLevel },
+    { emoji: '⏱️', label: 'Est. Completion',  value: `${aiAnalysis.estimatedWeeks} weeks` },
+    { emoji: '📅', label: 'Daily Lessons',    value: `${aiAnalysis.dailyLessons} lessons` },
+  ];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      style={{ color: 'white', fontFamily: 'var(--font-body)' }}
+    >
+      {/* Header */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
+        <span style={{ fontSize: 36 }}>✨</span>
+        <h2 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: 'white', lineHeight: 1.2 }}>
+          Your VedicMind Plan is Ready!
+        </h2>
+      </div>
+
+      {/* Greeting */}
+      <div style={{
+        background: 'rgba(255,255,255,0.06)',
+        borderRadius: 12,
+        padding: 16,
+        margin: '16px 0',
+      }}>
+        <p style={{ fontSize: 15, fontStyle: 'italic', color: 'rgba(255,255,255,0.9)', margin: 0, lineHeight: 1.6 }}>
+          {aiAnalysis.greeting}
+        </p>
+      </div>
+
+      {/* Stat Badges */}
+      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 20 }}>
+        {stats.map(s => (
+          <div
+            key={s.label}
+            style={{
+              flex: '1 1 100px',
+              background: 'rgba(59,130,246,0.15)',
+              border: '1px solid rgba(59,130,246,0.3)',
+              borderRadius: 12,
+              padding: '12px 16px',
+              textAlign: 'center',
+            }}
+          >
+            <div style={{ fontSize: 20, marginBottom: 4 }}>{s.emoji}</div>
+            <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 4 }}>
+              {s.label}
+            </div>
+            <div style={{ fontSize: 18, fontWeight: 700, color: 'white' }}>
+              {s.value}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Why Vedic Maths */}
+      <div style={{ marginTop: 20 }}>
+        <p style={{ fontSize: 13, color: '#3B82F6', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>
+          Why Vedic Maths for you:
+        </p>
+        <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, margin: 0 }}>
+          {aiAnalysis.whyVedicMaths}
+        </p>
+      </div>
+
+      {/* Focus Areas */}
+      <div style={{ marginTop: 20 }}>
+        <p style={{ fontSize: 13, color: '#3B82F6', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 10 }}>
+          Your Top Focus Areas:
+        </p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+          {(aiAnalysis.topFocusAreas || []).slice(0, 3).map((area, i) => (
+            <span
+              key={i}
+              style={{
+                background: 'rgba(16,185,129,0.15)',
+                border: '1px solid rgba(16,185,129,0.3)',
+                borderRadius: 100,
+                padding: '6px 16px',
+                fontSize: 13,
+                color: '#10B981',
+              }}
+            >
+              {area}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Motivational Quote */}
+      <div style={{ marginTop: 20, borderLeft: '3px solid #F59E0B', paddingLeft: 16 }}>
+        <p className="font-heading" style={{ fontSize: 16, fontStyle: 'italic', color: 'rgba(255,255,255,0.8)', margin: 0, lineHeight: 1.6 }}>
+          "{aiAnalysis.motivationalQuote}"
+        </p>
+      </div>
+
+      {/* Personalized Tip */}
+      <div style={{
+        marginTop: 16,
+        background: 'rgba(245,158,11,0.1)',
+        border: '1px solid rgba(245,158,11,0.2)',
+        borderRadius: 12,
+        padding: '14px 16px',
+      }}>
+        <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.6 }}>
+          💡 {aiAnalysis.personalizedTip}
+        </p>
+      </div>
+
+      {/* Start Button */}
+      <style>{`
+        @keyframes pulse-glow {
+          0%, 100% { box-shadow: 0 4px 20px rgba(16,185,129,0.35); }
+          50%       { box-shadow: 0 4px 32px rgba(16,185,129,0.6); }
+        }
+      `}</style>
+      <button
+        onClick={onStart}
+        style={{
+          marginTop: 28,
+          width: '100%',
+          minHeight: 52,
+          background: 'linear-gradient(135deg, #10B981, #059669)',
+          color: 'white',
+          border: 'none',
+          borderRadius: 14,
+          fontSize: 17,
+          fontWeight: 700,
+          cursor: 'pointer',
+          fontFamily: 'var(--font-body)',
+          animation: 'pulse-glow 2s ease-in-out infinite',
+        }}
+      >
+        🚀 Start My Journey →
+      </button>
+    </motion.div>
+  );
+}
