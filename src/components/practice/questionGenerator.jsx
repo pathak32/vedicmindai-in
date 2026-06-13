@@ -1,1 +1,136 @@
-{"name":"questionGenerator.jsx","path":"src/components/practice/questionGenerator.jsx","sha":"6dc04e16e60293650b47550bf31e3a225b7ec1ce","size":5376,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/practice/questionGenerator.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/practice/questionGenerator.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/6dc04e16e60293650b47550bf31e3a225b7ec1ce","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/practice/questionGenerator.jsx?token=CFODAP4F7LPYIZKRG2CHJLLKFSQXTAA","type":"file","content":"ZnVuY3Rpb24gcmFuZEZyb20oYXJyKSB7CiAgcmV0dXJuIGFycltNYXRoLmZs\nb29yKE1hdGgucmFuZG9tKCkgKiBhcnIubGVuZ3RoKV07Cn0KCmZ1bmN0aW9u\nIHNodWZmbGUoYXJyKSB7CiAgY29uc3QgYSA9IFsuLi5hcnJdOwogIGZvciAo\nbGV0IGkgPSBhLmxlbmd0aCAtIDE7IGkgPiAwOyBpLS0pIHsKICAgIGNvbnN0\nIGogPSBNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiAoaSArIDEpKTsKICAg\nIFthW2ldLCBhW2pdXSA9IFthW2pdLCBhW2ldXTsKICB9CiAgcmV0dXJuIGE7\nCn0KCmZ1bmN0aW9uIG1ha2VDaG9pY2VzKGNvcnJlY3QpIHsKICBjb25zdCB3\ncm9uZ3MgPSBuZXcgU2V0KCk7CiAgY29uc3QgZGVsdGFzID0gWzEwLCAyMCwg\nMTAwLCAyNSwgNTAsIDc1LCA1LCAxNV07CiAgd2hpbGUgKHdyb25ncy5zaXpl\nIDwgMykgewogICAgY29uc3QgZGVsdGEgPSByYW5kRnJvbShkZWx0YXMpICog\nKE1hdGgucmFuZG9tKCkgPCAwLjUgPyAxIDogLTEpOwogICAgY29uc3QgdyA9\nIGNvcnJlY3QgKyBkZWx0YTsKICAgIGlmICh3ID4gMCAmJiB3ICE9PSBjb3Jy\nZWN0KSB3cm9uZ3MuYWRkKHcpOwogIH0KICBjb25zdCBvcHRpb25zID0gc2h1\nZmZsZShbY29ycmVjdCwgLi4ud3JvbmdzXSk7CiAgcmV0dXJuIHsgb3B0aW9u\ncywgY29ycmVjdEluZGV4OiBvcHRpb25zLmluZGV4T2YoY29ycmVjdCkgfTsK\nfQoKZXhwb3J0IGZ1bmN0aW9uIGdlbmVyYXRlUXVlc3Rpb24odG9waWMpIHsK\nICBpZiAodG9waWMgPT09ICdla2FkaGlrZW5hJykgewogICAgY29uc3QgbnVt\ncyA9IFsxNSwgMjUsIDM1LCA0NSwgNTUsIDY1LCA3NSwgODUsIDk1XTsKICAg\nIGNvbnN0IG4gPSByYW5kRnJvbShudW1zKTsKICAgIGNvbnN0IGQgPSBNYXRo\nLmZsb29yKG4gLyAxMCk7CiAgICBjb25zdCBhbnN3ZXIgPSBkICogKGQgKyAx\nKSAqIDEwMCArIDI1OwogICAgY29uc3QgeyBvcHRpb25zLCBjb3JyZWN0SW5k\nZXggfSA9IG1ha2VDaG9pY2VzKGFuc3dlcik7CiAgICByZXR1cm4geyBxdWVz\ndGlvbjogYFdoYXQgaXMgJHtufcKyP2AsIGFuc3dlciwgb3B0aW9ucywgY29y\ncmVjdEluZGV4LCB0b3BpYyB9OwogIH0KCiAgaWYgKHRvcGljID09PSAnbmlr\naGlsYW1fMTAwJykgewogICAgY29uc3QgcG9vbCA9IFs5MSwgOTIsIDkzLCA5\nNCwgOTUsIDk2LCA5NywgOTgsIDk5XTsKICAgIGNvbnN0IGEgPSByYW5kRnJv\nbShwb29sKSwgYiA9IHJhbmRGcm9tKHBvb2wpOwogICAgY29uc3QgZGVmQSA9\nIGEgLSAxMDAsIGRlZkIgPSBiIC0gMTAwOwogICAgY29uc3QgY3Jvc3MgPSBh\nICsgZGVmQjsKICAgIGNvbnN0IHByb2QgPSBkZWZBICogZGVmQjsKICAgIGNv\nbnN0IGFuc3dlciA9IGNyb3NzICogMTAwICsgcHJvZDsKICAgIGNvbnN0IHsg\nb3B0aW9ucywgY29ycmVjdEluZGV4IH0gPSBtYWtlQ2hvaWNlcyhhbnN3ZXIp\nOwogICAgcmV0dXJuIHsgcXVlc3Rpb246IGBDYWxjdWxhdGUgJHthfSDDlyAk\ne2J9YCwgYW5zd2VyLCBvcHRpb25zLCBjb3JyZWN0SW5kZXgsIHRvcGljIH07\nCiAgfQoKICBpZiAodG9waWMgPT09ICdtdWx0aXBseV8xMScpIHsKICAgIGNv\nbnN0IG51bXMgPSBbMTIsIDEzLCAxNCwgMjEsIDIyLCAyMywgMjQsIDMxLCAz\nMiwgNDEsIDQzLCA1MiwgNjEsIDcxLCA4MV07CiAgICBjb25zdCBuID0gcmFu\nZEZyb20obnVtcyk7CiAgICBjb25zdCBhbnN3ZXIgPSBuICogMTE7CiAgICBj\nb25zdCB7IG9wdGlvbnMsIGNvcnJlY3RJbmRleCB9ID0gbWFrZUNob2ljZXMo\nYW5zd2VyKTsKICAgIHJldHVybiB7IHF1ZXN0aW9uOiBgV2hhdCBpcyAke259\nIMOXIDExP2AsIGFuc3dlciwgb3B0aW9ucywgY29ycmVjdEluZGV4LCB0b3Bp\nYyB9OwogIH0KCiAgaWYgKHRvcGljID09PSAnbXVsdGlwbHlfOScpIHsKICAg\nIGNvbnN0IG51bXMgPSBbMTEsIDEyLCAxMywgMTQsIDE1LCAxNiwgMTcsIDE4\nLCAyMSwgMjIsIDIzLCAyNCwgMjVdOwogICAgY29uc3QgbiA9IHJhbmRGcm9t\nKG51bXMpOwogICAgY29uc3QgYW5zd2VyID0gbiAqIDk7CiAgICBjb25zdCB7\nIG9wdGlvbnMsIGNvcnJlY3RJbmRleCB9ID0gbWFrZUNob2ljZXMoYW5zd2Vy\nKTsKICAgIHJldHVybiB7IHF1ZXN0aW9uOiBgV2hhdCBpcyAke259IMOXIDk/\nYCwgYW5zd2VyLCBvcHRpb25zLCBjb3JyZWN0SW5kZXgsIHRvcGljIH07CiAg\nfQoKICBpZiAodG9waWMgPT09ICdtdWx0aXBseV85OScpIHsKICAgIGNvbnN0\nIG51bXMgPSBbMTEsIDEyLCAxMywgMTQsIDE1LCAyMSwgMjIsIDIzLCAyNCwg\nMjUsIDMxLCAzMl07CiAgICBjb25zdCBuID0gcmFuZEZyb20obnVtcyk7CiAg\nICBjb25zdCBhbnN3ZXIgPSBuICogOTk7CiAgICBjb25zdCB7IG9wdGlvbnMs\nIGNvcnJlY3RJbmRleCB9ID0gbWFrZUNob2ljZXMoYW5zd2VyKTsKICAgIHJl\ndHVybiB7IHF1ZXN0aW9uOiBgV2hhdCBpcyAke259IMOXIDk5P2AsIGFuc3dl\nciwgb3B0aW9ucywgY29ycmVjdEluZGV4LCB0b3BpYyB9OwogIH0KCiAgaWYg\nKHRvcGljID09PSAnZGlnaXRfc3VtJykgewogICAgY29uc3QgYSA9IE1hdGgu\nZmxvb3IoTWF0aC5yYW5kb20oKSAqIDkwKSArIDEwOwogICAgY29uc3QgYiA9\nIE1hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIDkwKSArIDEwOwogICAgY29u\nc3QgcHJvZHVjdCA9IGEgKiBiOwogICAgY29uc3QgZHMgPSAobikgPT4geyBs\nZXQgcyA9IG47IHdoaWxlIChzID49IDEwKSB7IHMgPSBTdHJpbmcocykuc3Bs\naXQoJycpLnJlZHVjZSgoYSwgZCkgPT4gYSArIHBhcnNlSW50KGQpLCAwKTsg\nfSByZXR1cm4gczsgfTsKICAgIGNvbnN0IGFuc3dlciA9IGRzKHByb2R1Y3Qp\nOwogICAgY29uc3Qgd3JvbmdQb29sID0gWzEsIDIsIDMsIDQsIDUsIDYsIDcs\nIDgsIDldLmZpbHRlcih4ID0+IHggIT09IGFuc3dlcik7CiAgICBjb25zdCB3\ncm9uZ3MgPSBzaHVmZmxlKHdyb25nUG9vbCkuc2xpY2UoMCwgMyk7CiAgICBj\nb25zdCBvcHRpb25zID0gc2h1ZmZsZShbYW5zd2VyLCAuLi53cm9uZ3NdKTsK\nICAgIHJldHVybiB7IHF1ZXN0aW9uOiBgV2hhdCBpcyB0aGUgZGlnaXQgc3Vt\nIG9mICR7YX0gw5cgJHtifSA9ICR7cHJvZHVjdH0/YCwgYW5zd2VyLCBvcHRp\nb25zLCBjb3JyZWN0SW5kZXg6IG9wdGlvbnMuaW5kZXhPZihhbnN3ZXIpLCB0\nb3BpYyB9OwogIH0KCiAgLy8gZmFsbGJhY2s6IG11bHRpcGx5XzExCiAgcmV0\ndXJuIGdlbmVyYXRlUXVlc3Rpb24oJ211bHRpcGx5XzExJyk7Cn0KCmV4cG9y\ndCBmdW5jdGlvbiBnZW5lcmF0ZU1peGVkKCkgewogIGNvbnN0IHRvcGljcyA9\nIFsnZWthZGhpa2VuYScsICduaWtoaWxhbV8xMDAnLCAnbXVsdGlwbHlfMTEn\nLCAnbXVsdGlwbHlfOScsICdtdWx0aXBseV85OSddOwogIC8vIGJpYXMgdG93\nYXJkIGhhcmRlciB0b3BpY3MgZm9yIGNoYWxsZW5nZQogIGNvbnN0IHdlaWdo\ndGVkID0gWyduaWtoaWxhbV8xMDAnLCAnbmlraGlsYW1fMTAwJywgJ2VrYWRo\naWtlbmEnLCAnbXVsdGlwbHlfOTknLCAnbXVsdGlwbHlfOTknLCAnbXVsdGlw\nbHlfMTEnLCAnbXVsdGlwbHlfOSddOwogIHJldHVybiBnZW5lcmF0ZVF1ZXN0\naW9uKHJhbmRGcm9tKHdlaWdodGVkKSk7Cn0KCmV4cG9ydCBjb25zdCBUT1BJ\nQ19PUFRJT05TID0gWwogIHsgdmFsdWU6ICdla2FkaGlrZW5hJywgICBsYWJl\nbDogJ0VrYWRoaWtlbmEgUHVydmVuYSDigJQgU3F1YXJpbmcgaW4gNXMnIH0s\nCiAgeyB2YWx1ZTogJ25pa2hpbGFtXzEwMCcsIGxhYmVsOiAnTmlraGlsYW0g\n4oCUIE5lYXIgQmFzZSBNdWx0aXBsaWNhdGlvbicgfSwKICB7IHZhbHVlOiAn\nbXVsdGlwbHlfMTEnLCAgbGFiZWw6ICdVcmRodmEtVGlyeWFnYmh5YW0g4oCU\nIE11bHRpcGx5IGJ5IDExJyB9LAogIHsgdmFsdWU6ICdtdWx0aXBseV85Jywg\nICBsYWJlbDogJ011bHRpcGxpY2F0aW9uIGJ5IDknIH0sCiAgeyB2YWx1ZTog\nJ211bHRpcGx5Xzk5JywgIGxhYmVsOiAnTXVsdGlwbGljYXRpb24gYnkgOTkn\nIH0sCiAgeyB2YWx1ZTogJ2RpZ2l0X3N1bScsICAgIGxhYmVsOiAnRGlnaXQg\nU3VtIFZlcmlmaWNhdGlvbicgfSwKXTsKCmV4cG9ydCBmdW5jdGlvbiBnZXRU\nb2RheVN0cmluZygpIHsKICBjb25zdCBkID0gbmV3IERhdGUoKTsKICByZXR1\ncm4gZC5nZXRGdWxsWWVhcigpICsgJy0nICsgU3RyaW5nKGQuZ2V0TW9udGgo\nKSArIDEpLnBhZFN0YXJ0KDIsICcwJykgKyAnLScgKyBTdHJpbmcoZC5nZXRE\nYXRlKCkpLnBhZFN0YXJ0KDIsICcwJyk7Cn0KCmV4cG9ydCBmdW5jdGlvbiBz\nYXZlUHJvZ3Jlc3MoeyB4cEVhcm5lZCwgbW9kZSwgc2NvcmUsIGFjY3VyYWN5\nIH0pIHsKICBjb25zdCBwID0gSlNPTi5wYXJzZShsb2NhbFN0b3JhZ2UuZ2V0\nSXRlbSgndmVkaWNtaW5kX3Byb2dyZXNzJykgfHwgJ3t9Jyk7CiAgcC50b3Rh\nbFhQID0gTWF0aC5tYXgoMCwgKHAudG90YWxYUCB8fCAwKSArIHhwRWFybmVk\nKTsKICBpZiAoIXAucHJhY3RpY2VIaXN0b3J5KSBwLnByYWN0aWNlSGlzdG9y\neSA9IFtdOwogIHAucHJhY3RpY2VIaXN0b3J5LnB1c2goeyBtb2RlLCBkYXRl\nOiBnZXRUb2RheVN0cmluZygpLCBzY29yZSwgeHBFYXJuZWQsIGFjY3VyYWN5\nIH0pOwogIGlmICghcC5iYWRnZXMpIHAuYmFkZ2VzID0gW107CgogIC8vIGJh\nZGdlIGNoZWNrcwogIGlmIChtb2RlID09PSAnc3BlZWQnICYmIHhwRWFybmVk\nID4gMjAwICYmICFwLmJhZGdlcy5pbmNsdWRlcygnc3BlZWRfZGVtb24nKSkg\ncC5iYWRnZXMucHVzaCgnc3BlZWRfZGVtb24nKTsKICBpZiAobW9kZSA9PT0g\nJ2NoYWxsZW5nZScgJiYgIXAuYmFkZ2VzLmluY2x1ZGVzKCdjaGFsbGVuZ2Vy\nJykpIHAuYmFkZ2VzLnB1c2goJ2NoYWxsZW5nZXInKTsKCiAgLy8gc3RyZWFr\nCiAgY29uc3QgdG9kYXkgPSBnZXRUb2RheVN0cmluZygpOwogIGlmICghcC5z\ndHVkeURhdGVzKSBwLnN0dWR5RGF0ZXMgPSBbXTsKICBpZiAoIXAuc3R1ZHlE\nYXRlcy5pbmNsdWRlcyh0b2RheSkpIHAuc3R1ZHlEYXRlcy5wdXNoKHRvZGF5\nKTsKCiAgY29uc3QgeWVzdGVyZGF5ID0gKCgpID0+IHsKICAgIGNvbnN0IGQg\nPSBuZXcgRGF0ZSgpOyBkLnNldERhdGUoZC5nZXREYXRlKCkgLSAxKTsKICAg\nIHJldHVybiBkLmdldEZ1bGxZZWFyKCkgKyAnLScgKyBTdHJpbmcoZC5nZXRN\nb250aCgpICsgMSkucGFkU3RhcnQoMiwgJzAnKSArICctJyArIFN0cmluZyhk\nLmdldERhdGUoKSkucGFkU3RhcnQoMiwgJzAnKTsKICB9KSgpOwoKICBpZiAo\nIXAubGFzdFN0dWR5RGF0ZSkgeyBwLnN0cmVhayA9IDE7IH0KICBlbHNlIGlm\nIChwLmxhc3RTdHVkeURhdGUgPT09IHRvZGF5KSB7IC8qIHVuY2hhbmdlZCAq\nLyB9CiAgZWxzZSBpZiAocC5sYXN0U3R1ZHlEYXRlID09PSB5ZXN0ZXJkYXkp\nIHsgcC5zdHJlYWsgPSAocC5zdHJlYWsgfHwgMCkgKyAxOyB9CiAgZWxzZSB7\nIHAuc3RyZWFrID0gMTsgfQogIHAubGFzdFN0dWR5RGF0ZSA9IHRvZGF5OwoK\nICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbSgndmVkaWNtaW5kX3Byb2dyZXNzJywg\nSlNPTi5zdHJpbmdpZnkocCkpOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/practice/questionGenerator.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/6dc04e16e60293650b47550bf31e3a225b7ec1ce","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/practice/questionGenerator.jsx"}}
+function randFrom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function makeChoices(correct) {
+  const wrongs = new Set();
+  const deltas = [10, 20, 100, 25, 50, 75, 5, 15];
+  while (wrongs.size < 3) {
+    const delta = randFrom(deltas) * (Math.random() < 0.5 ? 1 : -1);
+    const w = correct + delta;
+    if (w > 0 && w !== correct) wrongs.add(w);
+  }
+  const options = shuffle([correct, ...wrongs]);
+  return { options, correctIndex: options.indexOf(correct) };
+}
+
+export function generateQuestion(topic) {
+  if (topic === 'ekadhikena') {
+    const nums = [15, 25, 35, 45, 55, 65, 75, 85, 95];
+    const n = randFrom(nums);
+    const d = Math.floor(n / 10);
+    const answer = d * (d + 1) * 100 + 25;
+    const { options, correctIndex } = makeChoices(answer);
+    return { question: `What is ${n}²?`, answer, options, correctIndex, topic };
+  }
+
+  if (topic === 'nikhilam_100') {
+    const pool = [91, 92, 93, 94, 95, 96, 97, 98, 99];
+    const a = randFrom(pool), b = randFrom(pool);
+    const defA = a - 100, defB = b - 100;
+    const cross = a + defB;
+    const prod = defA * defB;
+    const answer = cross * 100 + prod;
+    const { options, correctIndex } = makeChoices(answer);
+    return { question: `Calculate ${a} × ${b}`, answer, options, correctIndex, topic };
+  }
+
+  if (topic === 'multiply_11') {
+    const nums = [12, 13, 14, 21, 22, 23, 24, 31, 32, 41, 43, 52, 61, 71, 81];
+    const n = randFrom(nums);
+    const answer = n * 11;
+    const { options, correctIndex } = makeChoices(answer);
+    return { question: `What is ${n} × 11?`, answer, options, correctIndex, topic };
+  }
+
+  if (topic === 'multiply_9') {
+    const nums = [11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25];
+    const n = randFrom(nums);
+    const answer = n * 9;
+    const { options, correctIndex } = makeChoices(answer);
+    return { question: `What is ${n} × 9?`, answer, options, correctIndex, topic };
+  }
+
+  if (topic === 'multiply_99') {
+    const nums = [11, 12, 13, 14, 15, 21, 22, 23, 24, 25, 31, 32];
+    const n = randFrom(nums);
+    const answer = n * 99;
+    const { options, correctIndex } = makeChoices(answer);
+    return { question: `What is ${n} × 99?`, answer, options, correctIndex, topic };
+  }
+
+  if (topic === 'digit_sum') {
+    const a = Math.floor(Math.random() * 90) + 10;
+    const b = Math.floor(Math.random() * 90) + 10;
+    const product = a * b;
+    const ds = (n) => { let s = n; while (s >= 10) { s = String(s).split('').reduce((a, d) => a + parseInt(d), 0); } return s; };
+    const answer = ds(product);
+    const wrongPool = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(x => x !== answer);
+    const wrongs = shuffle(wrongPool).slice(0, 3);
+    const options = shuffle([answer, ...wrongs]);
+    return { question: `What is the digit sum of ${a} × ${b} = ${product}?`, answer, options, correctIndex: options.indexOf(answer), topic };
+  }
+
+  // fallback: multiply_11
+  return generateQuestion('multiply_11');
+}
+
+export function generateMixed() {
+  const topics = ['ekadhikena', 'nikhilam_100', 'multiply_11', 'multiply_9', 'multiply_99'];
+  // bias toward harder topics for challenge
+  const weighted = ['nikhilam_100', 'nikhilam_100', 'ekadhikena', 'multiply_99', 'multiply_99', 'multiply_11', 'multiply_9'];
+  return generateQuestion(randFrom(weighted));
+}
+
+export const TOPIC_OPTIONS = [
+  { value: 'ekadhikena',   label: 'Ekadhikena Purvena — Squaring in 5s' },
+  { value: 'nikhilam_100', label: 'Nikhilam — Near Base Multiplication' },
+  { value: 'multiply_11',  label: 'Urdhva-Tiryagbhyam — Multiply by 11' },
+  { value: 'multiply_9',   label: 'Multiplication by 9' },
+  { value: 'multiply_99',  label: 'Multiplication by 99' },
+  { value: 'digit_sum',    label: 'Digit Sum Verification' },
+];
+
+export function getTodayString() {
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+
+export function saveProgress({ xpEarned, mode, score, accuracy }) {
+  const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+  p.totalXP = Math.max(0, (p.totalXP || 0) + xpEarned);
+  if (!p.practiceHistory) p.practiceHistory = [];
+  p.practiceHistory.push({ mode, date: getTodayString(), score, xpEarned, accuracy });
+  if (!p.badges) p.badges = [];
+
+  // badge checks
+  if (mode === 'speed' && xpEarned > 200 && !p.badges.includes('speed_demon')) p.badges.push('speed_demon');
+  if (mode === 'challenge' && !p.badges.includes('challenger')) p.badges.push('challenger');
+
+  // streak
+  const today = getTodayString();
+  if (!p.studyDates) p.studyDates = [];
+  if (!p.studyDates.includes(today)) p.studyDates.push(today);
+
+  const yesterday = (() => {
+    const d = new Date(); d.setDate(d.getDate() - 1);
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  })();
+
+  if (!p.lastStudyDate) { p.streak = 1; }
+  else if (p.lastStudyDate === today) { /* unchanged */ }
+  else if (p.lastStudyDate === yesterday) { p.streak = (p.streak || 0) + 1; }
+  else { p.streak = 1; }
+  p.lastStudyDate = today;
+
+  localStorage.setItem('vedicmind_progress', JSON.stringify(p));
+}
