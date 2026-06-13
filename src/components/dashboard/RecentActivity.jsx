@@ -1,1 +1,54 @@
-{"name":"RecentActivity.jsx","path":"src/components/dashboard/RecentActivity.jsx","sha":"b39c208c45692f295b4627bad6971ccb126da170","size":2086,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/RecentActivity.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/RecentActivity.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/b39c208c45692f295b4627bad6971ccb126da170","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/dashboard/RecentActivity.jsx?token=CFODAP7UIG3D7YYJQDHOFBLKFSQVNAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgbW90aW9uIH0g\nZnJvbSAnZnJhbWVyLW1vdGlvbic7CmltcG9ydCB7IEJvb2tPcGVuIH0gZnJv\nbSAnbHVjaWRlLXJlYWN0JzsKCmZ1bmN0aW9uIHRpbWVBZ28oaXNvRGF0ZSkg\newogIGNvbnN0IGRpZmYgPSAoRGF0ZS5ub3coKSAtIG5ldyBEYXRlKGlzb0Rh\ndGUpLmdldFRpbWUoKSkgLyAxMDAwOwogIGlmIChkaWZmIDwgNjApIHJldHVy\nbiAnSnVzdCBub3cnOwogIGlmIChkaWZmIDwgMzYwMCkgcmV0dXJuIGAke01h\ndGguZmxvb3IoZGlmZiAvIDYwKX0gbWludXRlcyBhZ29gOwogIGlmIChkaWZm\nIDwgODY0MDApIHJldHVybiBgJHtNYXRoLmZsb29yKGRpZmYgLyAzNjAwKX0g\naG91cnMgYWdvYDsKICBpZiAoZGlmZiA8IDE3MjgwMCkgcmV0dXJuICdZZXN0\nZXJkYXknOwogIHJldHVybiBgJHtNYXRoLmZsb29yKGRpZmYgLyA4NjQwMCl9\nIGRheXMgYWdvYDsKfQoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gUmVjZW50\nQWN0aXZpdHkoeyBwcm9ncmVzcyB9KSB7CiAgLy8gQnVpbGQgYWN0aXZpdHkg\nZnJvbSBwcmFjdGljZUhpc3RvcnkgKG1vc3QgcmVjZW50IDUpCiAgY29uc3Qg\naXRlbXMgPSBbLi4uKHByb2dyZXNzLnByYWN0aWNlSGlzdG9yeSB8fCBbXSld\nCiAgICAuc29ydCgoYSwgYikgPT4gbmV3IERhdGUoYi5kYXRlKSAtIG5ldyBE\nYXRlKGEuZGF0ZSkpCiAgICAuc2xpY2UoMCwgNSk7CgogIHJldHVybiAoCiAg\nICA8bW90aW9uLmRpdgogICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6\nIDIwIH19CiAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSwgeTogMCB9fQog\nICAgICB0cmFuc2l0aW9uPXt7IGRlbGF5OiAwLjQgfX0KICAgICAgY2xhc3NO\nYW1lPSJiZy13aGl0ZSByb3VuZGVkLVsyMHB4XSBwLTYgYm9yZGVyIGJvcmRl\nci1bI0YwRjRGRl0iCiAgICAgIHN0eWxlPXt7IGJveFNoYWRvdzogJzAgNHB4\nIDI0cHggcmdiYSgxMCwyMiw0MCwwLjA2KScgfX0KICAgID4KICAgICAgPGgy\nIGNsYXNzTmFtZT0iZm9udC1oZWFkaW5nIHRleHQtbGcgZm9udC1ib2xkIHRl\neHQtWyMwQTE2MjhdIG1iLTQiPlJlY2VudCBBY3Rpdml0eTwvaDI+CgogICAg\nICB7aXRlbXMubGVuZ3RoID09PSAwID8gKAogICAgICAgIDxkaXYgY2xhc3NO\nYW1lPSJ0ZXh0LWNlbnRlciBweS04Ij4KICAgICAgICAgIDxzcGFuIGNsYXNz\nTmFtZT0idGV4dC00eGwgYmxvY2sgbWItMyI+8J+agDwvc3Bhbj4KICAgICAg\nICAgIDxwIGNsYXNzTmFtZT0idGV4dC1bIzlDQTNBRl0gdGV4dC1zbSI+Tm8g\nYWN0aXZpdHkgeWV0LiBTdGFydCB5b3VyIGZpcnN0IGxlc3NvbiE8L3A+CiAg\nICAgICAgPC9kaXY+CiAgICAgICkgOiAoCiAgICAgICAgPGRpdiBjbGFzc05h\nbWU9InNwYWNlLXktMyI+CiAgICAgICAgICB7aXRlbXMubWFwKChpdGVtLCBp\nKSA9PiAoCiAgICAgICAgICAgIDxkaXYga2V5PXtpfSBjbGFzc05hbWU9ImZs\nZXggaXRlbXMtY2VudGVyIGdhcC0zIj4KICAgICAgICAgICAgICA8ZGl2IGNs\nYXNzTmFtZT0idy05IGgtOSByb3VuZGVkLXhsIGJnLVsjRjBGNEZGXSBmbGV4\nIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBmbGV4LXNocmluay0wIj4K\nICAgICAgICAgICAgICAgIDxCb29rT3BlbiBjbGFzc05hbWU9InctNCBoLTQg\ndGV4dC1bIzFFNDBBRl0iIC8+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAg\nICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXgtMSBtaW4tdy0wIj4KICAg\nICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1zbSBmb250LW1lZGl1\nbSB0ZXh0LVsjMEExNjI4XSB0cnVuY2F0ZSI+CiAgICAgICAgICAgICAgICAg\nIHtpdGVtLmNvcnJlY3QgPyAn4pyFJyA6ICfinYwnfSBQcmFjdGljZSByb3Vu\nZCDigJQge2l0ZW0uZGlmZmljdWx0eSB8fCAnZWFzeSd9IG1vZGUKICAgICAg\nICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0i\ndGV4dC14cyB0ZXh0LVsjOUNBM0FGXSI+e3RpbWVBZ28oaXRlbS5kYXRlKX08\nL3A+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2Pgog\nICAgICAgICAgKSl9CiAgICAgICAgPC9kaXY+CiAgICAgICl9CiAgICA8L21v\ndGlvbi5kaXY+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/RecentActivity.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/b39c208c45692f295b4627bad6971ccb126da170","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/RecentActivity.jsx"}}
+import React from 'react';
+import { motion } from 'framer-motion';
+import { BookOpen } from 'lucide-react';
+
+function timeAgo(isoDate) {
+  const diff = (Date.now() - new Date(isoDate).getTime()) / 1000;
+  if (diff < 60) return 'Just now';
+  if (diff < 3600) return `${Math.floor(diff / 60)} minutes ago`;
+  if (diff < 86400) return `${Math.floor(diff / 3600)} hours ago`;
+  if (diff < 172800) return 'Yesterday';
+  return `${Math.floor(diff / 86400)} days ago`;
+}
+
+export default function RecentActivity({ progress }) {
+  // Build activity from practiceHistory (most recent 5)
+  const items = [...(progress.practiceHistory || [])]
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 5);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4 }}
+      className="bg-white rounded-[20px] p-6 border border-[#F0F4FF]"
+      style={{ boxShadow: '0 4px 24px rgba(10,22,40,0.06)' }}
+    >
+      <h2 className="font-heading text-lg font-bold text-[#0A1628] mb-4">Recent Activity</h2>
+
+      {items.length === 0 ? (
+        <div className="text-center py-8">
+          <span className="text-4xl block mb-3">🚀</span>
+          <p className="text-[#9CA3AF] text-sm">No activity yet. Start your first lesson!</p>
+        </div>
+      ) : (
+        <div className="space-y-3">
+          {items.map((item, i) => (
+            <div key={i} className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-[#F0F4FF] flex items-center justify-center flex-shrink-0">
+                <BookOpen className="w-4 h-4 text-[#1E40AF]" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium text-[#0A1628] truncate">
+                  {item.correct ? '✅' : '❌'} Practice round — {item.difficulty || 'easy'} mode
+                </p>
+                <p className="text-xs text-[#9CA3AF]">{timeAgo(item.date)}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </motion.div>
+  );
+}
