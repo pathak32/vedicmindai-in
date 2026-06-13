@@ -1,1 +1,91 @@
-{"name":"LevelCards.jsx","path":"src/components/dashboard/LevelCards.jsx","sha":"5df901e1eebd155ebf90ba37df6737bb49c96c27","size":3703,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/LevelCards.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/LevelCards.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/5df901e1eebd155ebf90ba37df6737bb49c96c27","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/dashboard/LevelCards.jsx?token=CFODAPYRP3JRHHHUAJVVESDKFSQVHAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgTGluayB9IGZy\nb20gJ3JlYWN0LXJvdXRlci1kb20nOwppbXBvcnQgeyBtb3Rpb24gfSBmcm9t\nICdmcmFtZXItbW90aW9uJzsKaW1wb3J0IHsgaXNMZXZlbFVubG9ja2VkIH0g\nZnJvbSAnQC91dGlscy9oZWxwZXJzJzsKCmNvbnN0IExFVkVMUyA9IFsKICB7\nIG51bTogMSwgZW1vamk6ICfwn4yxJywgbGFiZWw6ICdCZWdpbm5lcicsIHRv\ndGFsOiAxMCwgcHJlZml4OiAnbDFfJyB9LAogIHsgbnVtOiAyLCBlbW9qaTog\nJ/Cfk4gnLCBsYWJlbDogJ0ludGVybWVkaWF0ZScsIHRvdGFsOiAxMiwgcHJl\nZml4OiAnbDJfJyB9LAogIHsgbnVtOiAzLCBlbW9qaTogJ/CflKUnLCBsYWJl\nbDogJ0FkdmFuY2VkJywgdG90YWw6IDEwLCBwcmVmaXg6ICdsM18nIH0sCiAg\neyBudW06IDQsIGVtb2ppOiAn8J+RkScsIGxhYmVsOiAnTWFzdGVyJywgdG90\nYWw6IDgsIHByZWZpeDogJ2w0XycgfSwKXTsKCmV4cG9ydCBkZWZhdWx0IGZ1\nbmN0aW9uIExldmVsQ2FyZHMoeyBwcm9ncmVzcyB9KSB7CiAgcmV0dXJuICgK\nICAgIDxtb3Rpb24uZGl2CiAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwg\neTogMjAgfX0KICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAwIH19\nCiAgICAgIHRyYW5zaXRpb249e3sgZGVsYXk6IDAuMiB9fQogICAgICBjbGFz\nc05hbWU9ImJnLXdoaXRlIHJvdW5kZWQtWzIwcHhdIHAtNiBib3JkZXIgYm9y\nZGVyLVsjRjBGNEZGXSIKICAgICAgc3R5bGU9e3sgYm94U2hhZG93OiAnMCA0\ncHggMjRweCByZ2JhKDEwLDIyLDQwLDAuMDYpJyB9fQogICAgPgogICAgICA8\naDIgY2xhc3NOYW1lPSJmb250LWhlYWRpbmcgdGV4dC1sZyBmb250LWJvbGQg\ndGV4dC1bIzBBMTYyOF0gbWItNCI+TGV2ZWxzPC9oMj4KICAgICAgPGRpdiBj\nbGFzc05hbWU9ImdyaWQgZ3JpZC1jb2xzLTIgZ2FwLTQiPgogICAgICAgIHtM\nRVZFTFMubWFwKChsdikgPT4gewogICAgICAgICAgY29uc3QgdW5sb2NrZWQg\nPSBpc0xldmVsVW5sb2NrZWQobHYubnVtLCBwcm9ncmVzcyk7CiAgICAgICAg\nICBjb25zdCBpZHMgPSBBcnJheS5mcm9tKHsgbGVuZ3RoOiBsdi50b3RhbCB9\nLCAoXywgaSkgPT4gYCR7bHYucHJlZml4fSR7aSArIDF9YCk7CiAgICAgICAg\nICBjb25zdCBkb25lID0gaWRzLmZpbHRlcihpZCA9PiBwcm9ncmVzcy5jb21w\nbGV0ZWRMZXNzb25zPy5pbmNsdWRlcyhpZCkpLmxlbmd0aDsKICAgICAgICAg\nIGNvbnN0IHBjdCA9IE1hdGgucm91bmQoKGRvbmUgLyBsdi50b3RhbCkgKiAx\nMDApOwogICAgICAgICAgY29uc3QgYWxsRG9uZSA9IGRvbmUgPT09IGx2LnRv\ndGFsOwogICAgICAgICAgY29uc3QgaW5Qcm9ncmVzcyA9IGRvbmUgPiAwICYm\nICFhbGxEb25lOwogICAgICAgICAgY29uc3Qgbm90U3RhcnRlZCA9IGRvbmUg\nPT09IDA7CgogICAgICAgICAgcmV0dXJuICgKICAgICAgICAgICAgPGRpdgog\nICAgICAgICAgICAgIGtleT17bHYubnVtfQogICAgICAgICAgICAgIGNsYXNz\nTmFtZT17YHJvdW5kZWQtMnhsIHAtNCBib3JkZXIgdHJhbnNpdGlvbi1hbGwg\nJHsKICAgICAgICAgICAgICAgICF1bmxvY2tlZCA/ICdiZy1bI0Y5RkFGQl0g\nYm9yZGVyLVsjRTVFN0VCXSBvcGFjaXR5LTYwJyA6ICdiZy13aGl0ZSBib3Jk\nZXItWyNGMEY0RkZdIGhvdmVyOmJvcmRlci1bIzBBMTYyOF0vMjAnCiAgICAg\nICAgICAgICAgfWB9CiAgICAgICAgICAgID4KICAgICAgICAgICAgICA8ZGl2\nIGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTIgbWItMyI+CiAg\nICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtMnhsIj57dW5s\nb2NrZWQgPyBsdi5lbW9qaSA6ICfwn5SSJ308L3NwYW4+CiAgICAgICAgICAg\nICAgICA8c3BhbiBjbGFzc05hbWU9ImZvbnQtaGVhZGluZyB0ZXh0LXNtIGZv\nbnQtYm9sZCB0ZXh0LVsjMEExNjI4XSI+e2x2LmxhYmVsfTwvc3Bhbj4KICAg\nICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgICAgPGRpdiBjbGFzc05h\nbWU9ImgtMS41IGJnLVsjRjBGNEZGXSByb3VuZGVkLWZ1bGwgb3ZlcmZsb3ct\naGlkZGVuIG1iLTIiPgogICAgICAgICAgICAgICAgPG1vdGlvbi5kaXYKICAg\nICAgICAgICAgICAgICAgaW5pdGlhbD17eyB3aWR0aDogMCB9fQogICAgICAg\nICAgICAgICAgICBhbmltYXRlPXt7IHdpZHRoOiB1bmxvY2tlZCA/IGAke3Bj\ndH0lYCA6ICcwJScgfX0KICAgICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17\neyBkdXJhdGlvbjogMC44LCBkZWxheTogMC40LCBlYXNlOiAnZWFzZU91dCcg\nfX0KICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJoLWZ1bGwgYmctWyMw\nQTE2MjhdIHJvdW5kZWQtZnVsbCIKICAgICAgICAgICAgICAgIC8+CiAgICAg\nICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0i\ndGV4dC14cyB0ZXh0LVsjNEI1NTYzXSBmb250LW1vbm8gbWItMyI+e2RvbmV9\nL3tsdi50b3RhbH0gbGVzc29uczwvcD4KCiAgICAgICAgICAgICAgeyF1bmxv\nY2tlZCAmJiAoCiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQt\nWzEwcHhdIHRleHQtWyM5Q0EzQUZdIGxlYWRpbmctdGlnaHQiPgogICAgICAg\nICAgICAgICAgICBDb21wbGV0ZSBMZXZlbCB7bHYubnVtIC0gMX0gQXNzZXNz\nbWVudCB0byB1bmxvY2sKICAgICAgICAgICAgICAgIDwvcD4KICAgICAgICAg\nICAgICApfQoKICAgICAgICAgICAgICB7dW5sb2NrZWQgJiYgYWxsRG9uZSAm\nJiAoCiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9ImlubGluZS1m\nbGV4IGl0ZW1zLWNlbnRlciBnYXAtMSBweC0yIHB5LTEgcm91bmRlZC1mdWxs\nIGJnLWdyZWVuLTEwMCB0ZXh0LWdyZWVuLTgwMCB0ZXh0LXhzIGZvbnQtc2Vt\naWJvbGQiPgogICAgICAgICAgICAgICAgICDinIUgQ29tcGxldGVkCiAgICAg\nICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICAgICAgKX0KCiAgICAgICAg\nICAgICAge3VubG9ja2VkICYmIGluUHJvZ3Jlc3MgJiYgKAogICAgICAgICAg\nICAgICAgPExpbmsKICAgICAgICAgICAgICAgICAgdG89Ii9sZWFybiIKICAg\nICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJpbmxpbmUtZmxleCBpdGVtcy1j\nZW50ZXIgZ2FwLTEgcHgtMyBweS0xLjUgcm91bmRlZC14bCBiZy1ibHVlLTUw\nIHRleHQtYmx1ZS04MDAgdGV4dC14cyBmb250LXNlbWlib2xkIGhvdmVyOmJn\nLWJsdWUtMTAwIHRyYW5zaXRpb24tY29sb3JzIgogICAgICAgICAgICAgICAg\nPgogICAgICAgICAgICAgICAgICDilrbvuI8gQ29udGludWUg4oaSCiAgICAg\nICAgICAgICAgICA8L0xpbms+CiAgICAgICAgICAgICAgKX0KCiAgICAgICAg\nICAgICAge3VubG9ja2VkICYmIG5vdFN0YXJ0ZWQgJiYgKAogICAgICAgICAg\nICAgICAgPExpbmsKICAgICAgICAgICAgICAgICAgdG89Ii9sZWFybiIKICAg\nICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJpbmxpbmUtZmxleCBpdGVtcy1j\nZW50ZXIgZ2FwLTEgcHgtMyBweS0xLjUgcm91bmRlZC14bCBiZy1bIzBBMTYy\nOF0gdGV4dC13aGl0ZSB0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgaG92ZXI6Ymct\nWyMwRDIyNTJdIHRyYW5zaXRpb24tY29sb3JzIgogICAgICAgICAgICAgICAg\nPgogICAgICAgICAgICAgICAgICBTdGFydAogICAgICAgICAgICAgICAgPC9M\naW5rPgogICAgICAgICAgICAgICl9CiAgICAgICAgICAgIDwvZGl2PgogICAg\nICAgICAgKTsKICAgICAgICB9KX0KICAgICAgPC9kaXY+CiAgICA8L21vdGlv\nbi5kaXY+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/LevelCards.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/5df901e1eebd155ebf90ba37df6737bb49c96c27","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/LevelCards.jsx"}}
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { isLevelUnlocked } from '@/utils/helpers';
+
+const LEVELS = [
+  { num: 1, emoji: '🌱', label: 'Beginner', total: 10, prefix: 'l1_' },
+  { num: 2, emoji: '📈', label: 'Intermediate', total: 12, prefix: 'l2_' },
+  { num: 3, emoji: '🔥', label: 'Advanced', total: 10, prefix: 'l3_' },
+  { num: 4, emoji: '👑', label: 'Master', total: 8, prefix: 'l4_' },
+];
+
+export default function LevelCards({ progress }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+      className="bg-white rounded-[20px] p-6 border border-[#F0F4FF]"
+      style={{ boxShadow: '0 4px 24px rgba(10,22,40,0.06)' }}
+    >
+      <h2 className="font-heading text-lg font-bold text-[#0A1628] mb-4">Levels</h2>
+      <div className="grid grid-cols-2 gap-4">
+        {LEVELS.map((lv) => {
+          const unlocked = isLevelUnlocked(lv.num, progress);
+          const ids = Array.from({ length: lv.total }, (_, i) => `${lv.prefix}${i + 1}`);
+          const done = ids.filter(id => progress.completedLessons?.includes(id)).length;
+          const pct = Math.round((done / lv.total) * 100);
+          const allDone = done === lv.total;
+          const inProgress = done > 0 && !allDone;
+          const notStarted = done === 0;
+
+          return (
+            <div
+              key={lv.num}
+              className={`rounded-2xl p-4 border transition-all ${
+                !unlocked ? 'bg-[#F9FAFB] border-[#E5E7EB] opacity-60' : 'bg-white border-[#F0F4FF] hover:border-[#0A1628]/20'
+              }`}
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-2xl">{unlocked ? lv.emoji : '🔒'}</span>
+                <span className="font-heading text-sm font-bold text-[#0A1628]">{lv.label}</span>
+              </div>
+
+              <div className="h-1.5 bg-[#F0F4FF] rounded-full overflow-hidden mb-2">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: unlocked ? `${pct}%` : '0%' }}
+                  transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+                  className="h-full bg-[#0A1628] rounded-full"
+                />
+              </div>
+
+              <p className="text-xs text-[#4B5563] font-mono mb-3">{done}/{lv.total} lessons</p>
+
+              {!unlocked && (
+                <p className="text-[10px] text-[#9CA3AF] leading-tight">
+                  Complete Level {lv.num - 1} Assessment to unlock
+                </p>
+              )}
+
+              {unlocked && allDone && (
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold">
+                  ✅ Completed
+                </span>
+              )}
+
+              {unlocked && inProgress && (
+                <Link
+                  to="/learn"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-blue-50 text-blue-800 text-xs font-semibold hover:bg-blue-100 transition-colors"
+                >
+                  ▶️ Continue →
+                </Link>
+              )}
+
+              {unlocked && notStarted && (
+                <Link
+                  to="/learn"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-[#0A1628] text-white text-xs font-semibold hover:bg-[#0D2252] transition-colors"
+                >
+                  Start
+                </Link>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </motion.div>
+  );
+}
