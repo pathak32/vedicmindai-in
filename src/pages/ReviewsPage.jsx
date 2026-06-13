@@ -1,1 +1,368 @@
-{"name":"ReviewsPage.jsx","path":"src/pages/ReviewsPage.jsx","sha":"888b0dcbbfb921983ac990685c7d6363c601b8ca","size":18030,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/ReviewsPage.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/ReviewsPage.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/888b0dcbbfb921983ac990685c7d6363c601b8ca","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/pages/ReviewsPage.jsx?token=CFODAP6WKCFWE5ZW2IJ4TITKFSQ5ZAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IHVzZU5hdmlnYXRlIH0gZnJvbSAncmVhY3Qtcm91\ndGVyLWRvbSc7CmltcG9ydCB7IGdldFN1cGFiYXNlIH0gZnJvbSAnQC9saWIv\nc3VwYWJhc2VDbGllbnQnOwppbXBvcnQgeyBtb3Rpb24sIEFuaW1hdGVQcmVz\nZW5jZSB9IGZyb20gJ2ZyYW1lci1tb3Rpb24nOwppbXBvcnQgRGFzaGJvYXJk\nTmF2YmFyIGZyb20gJ0AvY29tcG9uZW50cy9kYXNoYm9hcmQvRGFzaGJvYXJk\nTmF2YmFyJzsKCmNvbnN0IGdsYXNzID0gewogIGJhY2tncm91bmQ6ICdyZ2Jh\nKDI1NSwyNTUsMjU1LDAuNzUpJywKICBiYWNrZHJvcEZpbHRlcjogJ2JsdXIo\nMjBweCknLAogIFdlYmtpdEJhY2tkcm9wRmlsdGVyOiAnYmx1cigyMHB4KScs\nCiAgYm9yZGVyOiAnMXB4IHNvbGlkIHJnYmEoMzAsNjQsMTc1LDAuMTUpJywK\nICBib3hTaGFkb3c6ICcwIDhweCAzMnB4IHJnYmEoMTAsMjIsNDAsMC4wOCkn\nLAogIGJvcmRlclJhZGl1czogMTYsCn07CgpmdW5jdGlvbiBTdGFyUmF0aW5n\nKHsgdmFsdWUsIG9uQ2hhbmdlLCByZWFkT25seSB9KSB7CiAgcmV0dXJuICgK\nICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBnYXA6IDYgfX0+\nCiAgICAgIHtbMSwgMiwgMywgNCwgNV0ubWFwKHN0YXIgPT4gKAogICAgICAg\nIDxidXR0b24KICAgICAgICAgIGtleT17c3Rhcn0KICAgICAgICAgIHR5cGU9\nImJ1dHRvbiIKICAgICAgICAgIG9uQ2xpY2s9eygpID0+ICFyZWFkT25seSAm\nJiBvbkNoYW5nZSAmJiBvbkNoYW5nZShzdGFyKX0KICAgICAgICAgIHN0eWxl\nPXt7CiAgICAgICAgICAgIGJhY2tncm91bmQ6ICdub25lJywgYm9yZGVyOiAn\nbm9uZScsIGN1cnNvcjogcmVhZE9ubHkgPyAnZGVmYXVsdCcgOiAncG9pbnRl\ncicsCiAgICAgICAgICAgIGZvbnRTaXplOiByZWFkT25seSA/IDE2IDogMjgs\nIHBhZGRpbmc6IDAsCiAgICAgICAgICAgIGNvbG9yOiBzdGFyIDw9IHZhbHVl\nID8gJyNGNTlFMEInIDogJyNEMUQ1REInLAogICAgICAgICAgICBsaW5lSGVp\nZ2h0OiAxLAogICAgICAgICAgfX0KICAgICAgICA+CiAgICAgICAgICDimIUK\nICAgICAgICA8L2J1dHRvbj4KICAgICAgKSl9CiAgICA8L2Rpdj4KICApOwp9\nCgpmdW5jdGlvbiBSZXZpZXdDYXJkKHsgcmV2aWV3IH0pIHsKICBjb25zdCBy\nb2xlQ29sb3IgPSB7IFN0dWRlbnQ6ICcjREJFQUZFJywgUGFyZW50OiAnI0Qx\nRkFFNScsIEd1YXJkaWFuOiAnI0VERTlGRScgfTsKICBjb25zdCByb2xlVGV4\ndCAgPSB7IFN0dWRlbnQ6ICcjMUU0MEFGJywgUGFyZW50OiAnIzA2NUY0Nics\nIEd1YXJkaWFuOiAnIzVCMjFCNicgfTsKICByZXR1cm4gKAogICAgPGRpdiBz\ndHlsZT17eyAuLi5nbGFzcywgcGFkZGluZzogMjAgfX0+CiAgICAgIDxkaXYg\nc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBqdXN0aWZ5Q29udGVudDogJ3Nw\nYWNlLWJldHdlZW4nLCBhbGlnbkl0ZW1zOiAnZmxleC1zdGFydCcsIG1hcmdp\nbkJvdHRvbTogMTAsIGZsZXhXcmFwOiAnd3JhcCcsIGdhcDogOCB9fT4KICAg\nICAgICA8ZGl2PgogICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250RmFtaWx5\nOiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRXZWlnaHQ6IDcwMCwgZm9udFNp\nemU6IDE1LCBjb2xvcjogJyMwQTE2MjgnIH19PgogICAgICAgICAgICB7cmV2\naWV3Lm5hbWV9CiAgICAgICAgICAgIHtyZXZpZXcuY2l0eSAmJiA8c3BhbiBz\ndHlsZT17eyBmb250V2VpZ2h0OiA0MDAsIGNvbG9yOiAnIzZCNzI4MCcsIGZv\nbnRTaXplOiAxMyB9fT4gwrcge3Jldmlldy5jaXR5fTwvc3Bhbj59CiAgICAg\nICAgICA8L2Rpdj4KICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTog\nJ2ZsZXgnLCBhbGlnbkl0ZW1zOiAnY2VudGVyJywgZ2FwOiA4LCBtYXJnaW5U\nb3A6IDQsIGZsZXhXcmFwOiAnd3JhcCcgfX0+CiAgICAgICAgICAgIDxTdGFy\nUmF0aW5nIHZhbHVlPXtyZXZpZXcuc3RhcnN9IHJlYWRPbmx5IC8+CiAgICAg\nICAgICAgIDxzcGFuIHN0eWxlPXt7CiAgICAgICAgICAgICAgYmFja2dyb3Vu\nZDogcm9sZUNvbG9yW3Jldmlldy5yb2xlXSB8fCAnI0YwRjRGRicsCiAgICAg\nICAgICAgICAgY29sb3I6IHJvbGVUZXh0W3Jldmlldy5yb2xlXSB8fCAnIzRC\nNTU2MycsCiAgICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiA5OSwgcGFkZGlu\nZzogJzJweCAxMHB4JywgZm9udFNpemU6IDExLAogICAgICAgICAgICAgIGZv\nbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9udFdlaWdodDogNjAw\nLAogICAgICAgICAgICB9fT4KICAgICAgICAgICAgICB7cmV2aWV3LnJvbGV9\nCiAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgICAgPHNwYW4gc3R5bGU9\ne3sgZm9udFNpemU6IDExLCBjb2xvcjogJyM5Q0EzQUYnLCBmb250RmFtaWx5\nOiAndmFyKC0tZm9udC1ib2R5KScgfX0+e3Jldmlldy5kdXJhdGlvbn08L3Nw\nYW4+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8\nc3BhbiBzdHlsZT17eyBmb250U2l6ZTogMTEsIGNvbG9yOiAnIzlDQTNBRics\nIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZmxleFNocmluazog\nMCB9fT4KICAgICAgICAgIHtuZXcgRGF0ZShyZXZpZXcuZGF0ZSkudG9Mb2Nh\nbGVEYXRlU3RyaW5nKCdlbi1JTicsIHsgbW9udGg6ICdzaG9ydCcsIGRheTog\nJ251bWVyaWMnLCB5ZWFyOiAnbnVtZXJpYycgfSl9CiAgICAgICAgPC9zcGFu\nPgogICAgICA8L2Rpdj4KICAgICAgPHAgc3R5bGU9e3sgZm9udEZhbWlseTog\nJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTQsIGNvbG9yOiAnIzM3\nNDE1MScsIGxpbmVIZWlnaHQ6IDEuNjUsIG1hcmdpbjogMCB9fT4KICAgICAg\nICAie3Jldmlldy50ZXh0fSIKICAgICAgPC9wPgogICAgPC9kaXY+CiAgKTsK\nfQoKZnVuY3Rpb24gU3VibWl0UmV2aWV3Rm9ybSh7IG9uU3VibWl0LCBvbkNs\nb3NlIH0pIHsKICBjb25zdCBbZm9ybSwgc2V0Rm9ybV0gPSB1c2VTdGF0ZSh7\nIHJvbGU6ICdTdHVkZW50JywgbmFtZTogJycsIGNpdHk6ICcnLCBzdGFyczog\nMCwgZHVyYXRpb246ICcnLCB0ZXh0OiAnJyB9KTsKICBjb25zdCBbZXJyb3Is\nIHNldEVycm9yXSA9IHVzZVN0YXRlKCcnKTsKCiAgY29uc3QgRFVSQVRJT05T\nID0gWycxIHdlZWsnLCAnMiB3ZWVrcycsICcxIG1vbnRoJywgJzMgbW9udGhz\nJywgJzYgbW9udGhzKyddOwoKICBjb25zdCBoYW5kbGVTdWJtaXQgPSAoZSkg\nPT4gewogICAgZS5wcmV2ZW50RGVmYXVsdCgpOwogICAgaWYgKCFmb3JtLm5h\nbWUudHJpbSgpKSB7IHNldEVycm9yKCdQbGVhc2UgZW50ZXIgeW91ciBuYW1l\nLicpOyByZXR1cm47IH0KICAgIGlmICghZm9ybS5zdGFycykgeyBzZXRFcnJv\ncignUGxlYXNlIHNlbGVjdCBhIHN0YXIgcmF0aW5nLicpOyByZXR1cm47IH0K\nICAgIGlmICghZm9ybS5kdXJhdGlvbikgeyBzZXRFcnJvcignUGxlYXNlIHNl\nbGVjdCBob3cgbG9uZyB5b3VcJ3ZlIGJlZW4gdXNpbmcgVmVkaWNNaW5kLicp\nOyByZXR1cm47IH0KICAgIGlmICghZm9ybS50ZXh0LnRyaW0oKSkgeyBzZXRF\ncnJvcignUGxlYXNlIHNoYXJlIHlvdXIgZXhwZXJpZW5jZS4nKTsgcmV0dXJu\nOyB9CiAgICBzZXRFcnJvcignJyk7CiAgICBjb25zdCByZXZpZXcgPSB7CiAg\nICAgIGlkOiBEYXRlLm5vdygpLnRvU3RyaW5nKCksCiAgICAgIC4uLmZvcm0s\nCiAgICAgIG5hbWU6IGZvcm0ubmFtZS50cmltKCksCiAgICAgIGNpdHk6IGZv\ncm0uY2l0eS50cmltKCksCiAgICAgIHRleHQ6IGZvcm0udGV4dC50cmltKCks\nCiAgICAgIGRhdGU6IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSwKICAgICAg\nYXBwcm92ZWQ6IHRydWUsCiAgICB9OwogICAgY29uc3QgZXhpc3RpbmcgPSBK\nU09OLnBhcnNlKGxvY2FsU3RvcmFnZS5nZXRJdGVtKCd2ZWRpY21pbmRfcmV2\naWV3cycpIHx8ICdbXScpOwogICAgbG9jYWxTdG9yYWdlLnNldEl0ZW0oJ3Zl\nZGljbWluZF9yZXZpZXdzJywgSlNPTi5zdHJpbmdpZnkoWy4uLmV4aXN0aW5n\nLCByZXZpZXddKSk7CgogICAgLy8gU2F2ZSB0byBTdXBhYmFzZQogICAgKGFz\neW5jICgpID0+IHsKICAgICAgdHJ5IHsKICAgICAgICBjb25zdCBzdXBhYmFz\nZSA9IGF3YWl0IGdldFN1cGFiYXNlKCk7CiAgICAgICAgY29uc3QgeyBkYXRh\nOiB7IHNlc3Npb24gfSB9ID0gYXdhaXQgc3VwYWJhc2UuYXV0aC5nZXRTZXNz\naW9uKCk7CiAgICAgICAgYXdhaXQgc3VwYWJhc2UuZnJvbSgncmV2aWV3cycp\nLmluc2VydCh7CiAgICAgICAgICB1c2VyX2lkOiBzZXNzaW9uPy51c2VyPy5p\nZCB8fCBudWxsLAogICAgICAgICAgbmFtZTogcmV2aWV3Lm5hbWUsCiAgICAg\nICAgICByYXRpbmc6IHJldmlldy5zdGFycyB8fCA1LAogICAgICAgICAgbWVz\nc2FnZTogcmV2aWV3LnRleHQsCiAgICAgICAgICBhcHByb3ZlZDogdHJ1ZSwK\nICAgICAgICB9KTsKICAgICAgfSBjYXRjaChlKSB7IGNvbnNvbGUud2Fybign\nUmV2aWV3IFN1cGFiYXNlIHNhdmUgZmFpbGVkOicsIGUpOyB9CiAgICB9KSgp\nOwoKICAgIG9uU3VibWl0KHJldmlldyk7CiAgfTsKCiAgcmV0dXJuICgKICAg\nIDxkaXYgc3R5bGU9e3sgcG9zaXRpb246ICdmaXhlZCcsIGluc2V0OiAwLCB6\nSW5kZXg6IDUwMCwgZGlzcGxheTogJ2ZsZXgnLCBhbGlnbkl0ZW1zOiAnZmxl\neC1lbmQnLCBqdXN0aWZ5Q29udGVudDogJ2NlbnRlcicgfX0+CiAgICAgIDxk\naXYgb25DbGljaz17b25DbG9zZX0gc3R5bGU9e3sgcG9zaXRpb246ICdhYnNv\nbHV0ZScsIGluc2V0OiAwLCBiYWNrZ3JvdW5kOiAncmdiYSgxMCwyMiw0MCww\nLjUpJyB9fSAvPgogICAgICA8bW90aW9uLmRpdgogICAgICAgIGluaXRpYWw9\ne3sgeTogJzEwMCUnIH19CiAgICAgICAgYW5pbWF0ZT17eyB5OiAwIH19CiAg\nICAgICAgZXhpdD17eyB5OiAnMTAwJScgfX0KICAgICAgICB0cmFuc2l0aW9u\nPXt7IHR5cGU6ICdzcHJpbmcnLCBkYW1waW5nOiAyNiB9fQogICAgICAgIHN0\neWxlPXt7CiAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJywgYmFja2dy\nb3VuZDogJ3doaXRlJywgYm9yZGVyUmFkaXVzOiAnMjBweCAyMHB4IDAgMCcs\nCiAgICAgICAgICBwYWRkaW5nOiAnMjhweCAyMHB4Jywgd2lkdGg6ICcxMDAl\nJywgbWF4V2lkdGg6IDU0MCwgbWF4SGVpZ2h0OiAnOTB2aCcsIG92ZXJmbG93\nWTogJ2F1dG8nLAogICAgICAgICAgekluZGV4OiAxLAogICAgICAgIH19CiAg\nICAgID4KICAgICAgICA8aDIgY2xhc3NOYW1lPSJmb250LWhlYWRpbmciIHN0\neWxlPXt7IGZvbnRTaXplOiAyMiwgZm9udFdlaWdodDogNzAwLCBjb2xvcjog\nJyMwQTE2MjgnLCBtYXJnaW5Cb3R0b206IDIwIH19PlNoYXJlIFlvdXIgU3Rv\ncnkg8J+SrDwvaDI+CgogICAgICAgIDxmb3JtIG9uU3VibWl0PXtoYW5kbGVT\ndWJtaXR9IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JywgZmxleERpcmVjdGlv\nbjogJ2NvbHVtbicsIGdhcDogMTYgfX0+CiAgICAgICAgICB7LyogUm9sZSBw\naWxscyAqL30KICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxsYWJlbCBz\ndHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRT\naXplOiAxMywgZm9udFdlaWdodDogNjAwLCBjb2xvcjogJyMwQTE2MjgnLCBk\naXNwbGF5OiAnYmxvY2snLCBtYXJnaW5Cb3R0b206IDggfX0+SSBhbSBhLi4u\nPC9sYWJlbD4KICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAn\nZmxleCcsIGdhcDogOCB9fT4KICAgICAgICAgICAgICB7WydTdHVkZW50Jywg\nJ1BhcmVudCcsICdHdWFyZGlhbiddLm1hcChyID0+ICgKICAgICAgICAgICAg\nICAgIDxidXR0b24KICAgICAgICAgICAgICAgICAga2V5PXtyfQogICAgICAg\nICAgICAgICAgICB0eXBlPSJidXR0b24iCiAgICAgICAgICAgICAgICAgIG9u\nQ2xpY2s9eygpID0+IHNldEZvcm0oZiA9PiAoeyAuLi5mLCByb2xlOiByIH0p\nKX0KICAgICAgICAgICAgICAgICAgc3R5bGU9e3sKICAgICAgICAgICAgICAg\nICAgICBwYWRkaW5nOiAnOHB4IDE2cHgnLCBib3JkZXJSYWRpdXM6IDk5LCBi\nb3JkZXI6IGAxLjVweCBzb2xpZCAke2Zvcm0ucm9sZSA9PT0gciA/ICcjMEEx\nNjI4JyA6ICdyZ2JhKDMwLDY0LDE3NSwwLjIpJ31gLAogICAgICAgICAgICAg\nICAgICAgIGJhY2tncm91bmQ6IGZvcm0ucm9sZSA9PT0gciA/ICcjMEExNjI4\nJyA6ICd3aGl0ZScsCiAgICAgICAgICAgICAgICAgICAgY29sb3I6IGZvcm0u\ncm9sZSA9PT0gciA/ICd3aGl0ZScgOiAnIzRCNTU2MycsCiAgICAgICAgICAg\nICAgICAgICAgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250\nU2l6ZTogMTMsIGZvbnRXZWlnaHQ6IDUwMCwgY3Vyc29yOiAncG9pbnRlcics\nCiAgICAgICAgICAgICAgICAgIH19CiAgICAgICAgICAgICAgICA+e3J9PC9i\ndXR0b24+CiAgICAgICAgICAgICAgKSl9CiAgICAgICAgICAgIDwvZGl2Pgog\nICAgICAgICAgPC9kaXY+CgogICAgICAgICAgey8qIE5hbWUgKyBDaXR5ICov\nfQogICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZ3JpZCcsIGdy\naWRUZW1wbGF0ZUNvbHVtbnM6ICcxZnIgMWZyJywgZ2FwOiAxMiB9fT4KICAg\nICAgICAgICAgPGRpdj4KICAgICAgICAgICAgICA8bGFiZWwgc3R5bGU9e3sg\nZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTMs\nIGZvbnRXZWlnaHQ6IDYwMCwgY29sb3I6ICcjMEExNjI4JywgZGlzcGxheTog\nJ2Jsb2NrJywgbWFyZ2luQm90dG9tOiA2IH19PkZpcnN0IE5hbWU8L2xhYmVs\nPgogICAgICAgICAgICAgIDxpbnB1dAogICAgICAgICAgICAgICAgdmFsdWU9\ne2Zvcm0ubmFtZX0KICAgICAgICAgICAgICAgIG9uQ2hhbmdlPXtlID0+IHNl\ndEZvcm0oZiA9PiAoeyAuLi5mLCBuYW1lOiBlLnRhcmdldC52YWx1ZSB9KSl9\nCiAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcj0iWW91ciBuYW1lIgogICAg\nICAgICAgICAgICAgc3R5bGU9e3sgd2lkdGg6ICcxMDAlJywgaGVpZ2h0OiA0\nNCwgYm9yZGVyUmFkaXVzOiAxMCwgYm9yZGVyOiAnMS41cHggc29saWQgcmdi\nYSgzMCw2NCwxNzUsMC4xNSknLCBwYWRkaW5nOiAnMCAxMnB4JywgZm9udEZh\nbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTQsIG91dGxp\nbmU6ICdub25lJywgYm94U2l6aW5nOiAnYm9yZGVyLWJveCcgfX0KICAgICAg\nICAgICAgICAvPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRp\ndj4KICAgICAgICAgICAgICA8bGFiZWwgc3R5bGU9e3sgZm9udEZhbWlseTog\nJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTMsIGZvbnRXZWlnaHQ6\nIDYwMCwgY29sb3I6ICcjMEExNjI4JywgZGlzcGxheTogJ2Jsb2NrJywgbWFy\nZ2luQm90dG9tOiA2IH19PkNpdHk8L2xhYmVsPgogICAgICAgICAgICAgIDxp\nbnB1dAogICAgICAgICAgICAgICAgdmFsdWU9e2Zvcm0uY2l0eX0KICAgICAg\nICAgICAgICAgIG9uQ2hhbmdlPXtlID0+IHNldEZvcm0oZiA9PiAoeyAuLi5m\nLCBjaXR5OiBlLnRhcmdldC52YWx1ZSB9KSl9CiAgICAgICAgICAgICAgICBw\nbGFjZWhvbGRlcj0iWW91ciBjaXR5IgogICAgICAgICAgICAgICAgc3R5bGU9\ne3sgd2lkdGg6ICcxMDAlJywgaGVpZ2h0OiA0NCwgYm9yZGVyUmFkaXVzOiAx\nMCwgYm9yZGVyOiAnMS41cHggc29saWQgcmdiYSgzMCw2NCwxNzUsMC4xNSkn\nLCBwYWRkaW5nOiAnMCAxMnB4JywgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQt\nYm9keSknLCBmb250U2l6ZTogMTQsIG91dGxpbmU6ICdub25lJywgYm94U2l6\naW5nOiAnYm9yZGVyLWJveCcgfX0KICAgICAgICAgICAgICAvPgogICAgICAg\nICAgICA8L2Rpdj4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIHsvKiBT\ndGFyIHJhdGluZyAqL30KICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxs\nYWJlbCBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScs\nIGZvbnRTaXplOiAxMywgZm9udFdlaWdodDogNjAwLCBjb2xvcjogJyMwQTE2\nMjgnLCBkaXNwbGF5OiAnYmxvY2snLCBtYXJnaW5Cb3R0b206IDggfX0+WW91\nciBSYXRpbmc8L2xhYmVsPgogICAgICAgICAgICA8U3RhclJhdGluZyB2YWx1\nZT17Zm9ybS5zdGFyc30gb25DaGFuZ2U9e3MgPT4gc2V0Rm9ybShmID0+ICh7\nIC4uLmYsIHN0YXJzOiBzIH0pKX0gLz4KICAgICAgICAgIDwvZGl2PgoKICAg\nICAgICAgIHsvKiBEdXJhdGlvbiAqL30KICAgICAgICAgIDxkaXY+CiAgICAg\nICAgICAgIDxsYWJlbCBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9u\ndC1ib2R5KScsIGZvbnRTaXplOiAxMywgZm9udFdlaWdodDogNjAwLCBjb2xv\ncjogJyMwQTE2MjgnLCBkaXNwbGF5OiAnYmxvY2snLCBtYXJnaW5Cb3R0b206\nIDggfX0+SG93IGxvbmcgaGF2ZSB5b3UgYmVlbiB1c2luZyBWZWRpY01pbmQ/\nPC9sYWJlbD4KICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAn\nZmxleCcsIGZsZXhXcmFwOiAnd3JhcCcsIGdhcDogOCB9fT4KICAgICAgICAg\nICAgICB7RFVSQVRJT05TLm1hcChkID0+ICgKICAgICAgICAgICAgICAgIDxi\ndXR0b24KICAgICAgICAgICAgICAgICAga2V5PXtkfQogICAgICAgICAgICAg\nICAgICB0eXBlPSJidXR0b24iCiAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9\neygpID0+IHNldEZvcm0oZiA9PiAoeyAuLi5mLCBkdXJhdGlvbjogZCB9KSl9\nCiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7CiAgICAgICAgICAgICAgICAg\nICAgcGFkZGluZzogJzZweCAxNHB4JywgYm9yZGVyUmFkaXVzOiA5OSwgYm9y\nZGVyOiBgMS41cHggc29saWQgJHtmb3JtLmR1cmF0aW9uID09PSBkID8gJyMz\nQjgyRjYnIDogJ3JnYmEoMzAsNjQsMTc1LDAuMiknfWAsCiAgICAgICAgICAg\nICAgICAgICAgYmFja2dyb3VuZDogZm9ybS5kdXJhdGlvbiA9PT0gZCA/ICcj\nREJFQUZFJyA6ICd3aGl0ZScsCiAgICAgICAgICAgICAgICAgICAgY29sb3I6\nIGZvcm0uZHVyYXRpb24gPT09IGQgPyAnIzFFNDBBRicgOiAnIzRCNTU2Mycs\nCiAgICAgICAgICAgICAgICAgICAgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQt\nYm9keSknLCBmb250U2l6ZTogMTIsIGZvbnRXZWlnaHQ6IDUwMCwgY3Vyc29y\nOiAncG9pbnRlcicsCiAgICAgICAgICAgICAgICAgIH19CiAgICAgICAgICAg\nICAgICA+e2R9PC9idXR0b24+CiAgICAgICAgICAgICAgKSl9CiAgICAgICAg\nICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CgogICAgICAgICAgey8qIEV4\ncGVyaWVuY2UgdGV4dGFyZWEgKi99CiAgICAgICAgICA8ZGl2PgogICAgICAg\nICAgICA8bGFiZWwgc3R5bGU9e3sgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQt\nYm9keSknLCBmb250U2l6ZTogMTMsIGZvbnRXZWlnaHQ6IDYwMCwgY29sb3I6\nICcjMEExNjI4JywgZGlzcGxheTogJ2Jsb2NrJywgbWFyZ2luQm90dG9tOiA2\nIH19PgogICAgICAgICAgICAgIFlvdXIgRXhwZXJpZW5jZSA8c3BhbiBzdHls\nZT17eyBmb250V2VpZ2h0OiA0MDAsIGNvbG9yOiAnIzlDQTNBRicgfX0+KG1h\neCAzMDAgY2hhcnMpPC9zcGFuPgogICAgICAgICAgICA8L2xhYmVsPgogICAg\nICAgICAgICA8dGV4dGFyZWEKICAgICAgICAgICAgICB2YWx1ZT17Zm9ybS50\nZXh0fQogICAgICAgICAgICAgIG9uQ2hhbmdlPXtlID0+IHNldEZvcm0oZiA9\nPiAoeyAuLi5mLCB0ZXh0OiBlLnRhcmdldC52YWx1ZS5zbGljZSgwLCAzMDAp\nIH0pKX0KICAgICAgICAgICAgICBwbGFjZWhvbGRlcj0iVGVsbCBvdGhlcnMg\nYWJvdXQgeW91ciBleHBlcmllbmNlIHdpdGggVmVkaWNNaW5kLi4uIgogICAg\nICAgICAgICAgIHJvd3M9ezR9CiAgICAgICAgICAgICAgc3R5bGU9e3sgd2lk\ndGg6ICcxMDAlJywgYm9yZGVyUmFkaXVzOiAxMCwgYm9yZGVyOiAnMS41cHgg\nc29saWQgcmdiYSgzMCw2NCwxNzUsMC4xNSknLCBwYWRkaW5nOiAnMTBweCAx\nMnB4JywgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6\nZTogMTQsIG91dGxpbmU6ICdub25lJywgcmVzaXplOiAnbm9uZScsIGJveFNp\nemluZzogJ2JvcmRlci1ib3gnLCBsaW5lSGVpZ2h0OiAxLjUgfX0KICAgICAg\nICAgICAgLz4KICAgICAgICAgICAgPGRpdiBzdHlsZT17eyB0ZXh0QWxpZ246\nICdyaWdodCcsIGZvbnRTaXplOiAxMSwgY29sb3I6ICcjOUNBM0FGJywgZm9u\ndEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBtYXJnaW5Ub3A6IDIgfX0+\ne2Zvcm0udGV4dC5sZW5ndGh9LzMwMDwvZGl2PgogICAgICAgICAgPC9kaXY+\nCgogICAgICAgICAgey8qIFBob3RvIHVwbG9hZCAoVUkgb25seSkgKi99CiAg\nICAgICAgICA8ZGl2PgogICAgICAgICAgICA8bGFiZWwgc3R5bGU9e3sgZm9u\ndEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTMsIGZv\nbnRXZWlnaHQ6IDYwMCwgY29sb3I6ICcjMEExNjI4JywgZGlzcGxheTogJ2Js\nb2NrJywgbWFyZ2luQm90dG9tOiA2IH19PgogICAgICAgICAgICAgIFVwbG9h\nZCBhIFBob3RvIDxzcGFuIHN0eWxlPXt7IGZvbnRXZWlnaHQ6IDQwMCwgY29s\nb3I6ICcjOUNBM0FGJyB9fT4ob3B0aW9uYWwpPC9zcGFuPgogICAgICAgICAg\nICA8L2xhYmVsPgogICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGJvcmRlcjog\nJzJweCBkYXNoZWQgcmdiYSgzMCw2NCwxNzUsMC4yKScsIGJvcmRlclJhZGl1\nczogMTAsIHBhZGRpbmc6ICcxNnB4IDIwcHgnLCB0ZXh0QWxpZ246ICdjZW50\nZXInLCBjdXJzb3I6ICdwb2ludGVyJyB9fT4KICAgICAgICAgICAgICA8c3Bh\nbiBzdHlsZT17eyBmb250U2l6ZTogMjQgfX0+8J+TuDwvc3Bhbj4KICAgICAg\nICAgICAgICA8cCBzdHlsZT17eyBtYXJnaW46ICc0cHggMCAwJywgZm9udEZh\nbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTIsIGNvbG9y\nOiAnIzlDQTNBRicgfX0+VGFwIHRvIGFkZCBhIHBob3RvPC9wPgogICAgICAg\nICAgICA8L2Rpdj4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIHtlcnJv\nciAmJiA8cCBzdHlsZT17eyBjb2xvcjogJyNFRjQ0NDQnLCBmb250RmFtaWx5\nOiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxMywgbWFyZ2luOiAw\nIH19PntlcnJvcn08L3A+fQoKICAgICAgICAgIDxidXR0b24KICAgICAgICAg\nICAgdHlwZT0ic3VibWl0IgogICAgICAgICAgICBzdHlsZT17eyB3aWR0aDog\nJzEwMCUnLCBtaW5IZWlnaHQ6IDQ4LCBiYWNrZ3JvdW5kOiAnIzBBMTYyOCcs\nIGNvbG9yOiAnd2hpdGUnLCBib3JkZXI6ICdub25lJywgYm9yZGVyUmFkaXVz\nOiAxMiwgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6\nZTogMTUsIGZvbnRXZWlnaHQ6IDYwMCwgY3Vyc29yOiAncG9pbnRlcicgfX0K\nICAgICAgICAgID4KICAgICAgICAgICAgU2hhcmUgTXkgU3Rvcnkg4pyoCiAg\nICAgICAgICA8L2J1dHRvbj4KICAgICAgICA8L2Zvcm0+CiAgICAgIDwvbW90\naW9uLmRpdj4KICAgIDwvZGl2PgogICk7Cn0KCmV4cG9ydCBkZWZhdWx0IGZ1\nbmN0aW9uIFJldmlld3NQYWdlKCkgewogIGNvbnN0IG5hdmlnYXRlID0gdXNl\nTmF2aWdhdGUoKTsKICBjb25zdCBbcmV2aWV3cywgc2V0UmV2aWV3c10gPSB1\nc2VTdGF0ZShbXSk7CiAgY29uc3QgW2ZpbHRlciwgc2V0RmlsdGVyXSA9IHVz\nZVN0YXRlKCdBbGwnKTsKICBjb25zdCBbc29ydCwgc2V0U29ydF0gPSB1c2VT\ndGF0ZSgnTGF0ZXN0Jyk7CiAgY29uc3QgW3Nob3dGb3JtLCBzZXRTaG93Rm9y\nbV0gPSB1c2VTdGF0ZShmYWxzZSk7CiAgY29uc3QgW3N1Ym1pdHRlZCwgc2V0\nU3VibWl0dGVkXSA9IHVzZVN0YXRlKGZhbHNlKTsKCiAgdXNlRWZmZWN0KCgp\nID0+IHsKICAgIGNvbnN0IHN0b3JlZCA9IEpTT04ucGFyc2UobG9jYWxTdG9y\nYWdlLmdldEl0ZW0oJ3ZlZGljbWluZF9yZXZpZXdzJykgfHwgJ1tdJyk7CiAg\nICAvLyBTZWVkIHNvbWUgc2FtcGxlIHJldmlld3MgaWYgZW1wdHkKICAgIGlm\nIChzdG9yZWQubGVuZ3RoID09PSAwKSB7CiAgICAgIGNvbnN0IHNhbXBsZXMg\nPSBbCiAgICAgICAgeyBpZDogJzEnLCByb2xlOiAnUGFyZW50JywgbmFtZTog\nJ1N1bml0YScsIGNpdHk6ICdNdW1iYWknLCBzdGFyczogNSwgZHVyYXRpb246\nICcxIG1vbnRoJywgdGV4dDogJ015IGRhdWdodGVyXCdzIG1lbnRhbCBtYXRo\nIGhhcyBpbXByb3ZlZCBkcmFtYXRpY2FsbHkhIFNoZSBub3cgY2FsY3VsYXRl\ncyBmYXN0ZXIgdGhhbiBoZXIgY2FsY3VsYXRvci4gVmVkaWNNaW5kIGlzIGEg\nZ2VtLicsIGRhdGU6ICcyMDI1LTA1LTEwVDAwOjAwOjAwLjAwMFonLCBhcHBy\nb3ZlZDogdHJ1ZSB9LAogICAgICAgIHsgaWQ6ICcyJywgcm9sZTogJ1N0dWRl\nbnQnLCBuYW1lOiAnQXJqdW4nLCBjaXR5OiAnUHVuZScsIHN0YXJzOiA1LCBk\ndXJhdGlvbjogJzMgbW9udGhzJywgdGV4dDogJ1RoZSBkYWlseSBxdWl6IGlz\nIGFkZGljdGl2ZSEgSVwndmUgbm90IG1pc3NlZCBhIHNpbmdsZSBkYXkgaW4g\nMiBtb250aHMuIE15IG1hdGhzIHNjb3JlIGluIHNjaG9vbCB3ZW50IGZyb20g\nNzIlIHRvIDk0JS4nLCBkYXRlOiAnMjAyNS0wNS0xOFQwMDowMDowMC4wMDBa\nJywgYXBwcm92ZWQ6IHRydWUgfSwKICAgICAgICB7IGlkOiAnMycsIHJvbGU6\nICdQYXJlbnQnLCBuYW1lOiAnS2F2aXRoYScsIGNpdHk6ICdDaGVubmFpJywg\nc3RhcnM6IDQsIGR1cmF0aW9uOiAnMiB3ZWVrcycsIHRleHQ6ICdWZXJ5IHdl\nbGwgc3RydWN0dXJlZCBjb3Vyc2UuIFRoZSBWZWRpYyBtZXRob2RzIGFyZSBl\neHBsYWluZWQgc2ltcGx5IGFuZCBteSBzb24gbG92ZXMgdGhlIGxlYWRlcmJv\nYXJkIGNvbXBldGl0aW9uLicsIGRhdGU6ICcyMDI1LTA2LTAxVDAwOjAwOjAw\nLjAwMFonLCBhcHByb3ZlZDogdHJ1ZSB9LAogICAgICBdOwogICAgICBsb2Nh\nbFN0b3JhZ2Uuc2V0SXRlbSgndmVkaWNtaW5kX3Jldmlld3MnLCBKU09OLnN0\ncmluZ2lmeShzYW1wbGVzKSk7CiAgICAgIHNldFJldmlld3Moc2FtcGxlcyk7\nCiAgICB9IGVsc2UgewogICAgICBzZXRSZXZpZXdzKHN0b3JlZC5maWx0ZXIo\nciA9PiByLmFwcHJvdmVkKSk7CiAgICB9CiAgfSwgW10pOwoKICBjb25zdCBm\naWx0ZXJlZCA9IHJldmlld3MKICAgIC5maWx0ZXIociA9PiBmaWx0ZXIgPT09\nICdBbGwnIHx8IHIucm9sZSA9PT0gZmlsdGVyKQogICAgLnNvcnQoKGEsIGIp\nID0+IHNvcnQgPT09ICdMYXRlc3QnCiAgICAgID8gbmV3IERhdGUoYi5kYXRl\nKSAtIG5ldyBEYXRlKGEuZGF0ZSkKICAgICAgOiBiLnN0YXJzIC0gYS5zdGFy\ncwogICAgKTsKCiAgY29uc3QgaGFuZGxlU3VibWl0ID0gKHJldmlldykgPT4g\newogICAgc2V0UmV2aWV3cyhwcmV2ID0+IFsuLi5wcmV2LCByZXZpZXddKTsK\nICAgIHNldFNob3dGb3JtKGZhbHNlKTsKICAgIHNldFN1Ym1pdHRlZCh0cnVl\nKTsKICAgIHNldFRpbWVvdXQoKCkgPT4gc2V0U3VibWl0dGVkKGZhbHNlKSwg\nNDAwMCk7CiAgfTsKCiAgY29uc3QgYXZnUmF0aW5nID0gcmV2aWV3cy5sZW5n\ndGggPyAocmV2aWV3cy5yZWR1Y2UoKHMsIHIpID0+IHMgKyByLnN0YXJzLCAw\nKSAvIHJldmlld3MubGVuZ3RoKS50b0ZpeGVkKDEpIDogJ+KAlCc7CgogIHJl\ndHVybiAoCiAgICA8ZGl2IHN0eWxlPXt7IG1pbkhlaWdodDogJzEwMHZoJywg\nYmFja2dyb3VuZDogJyNGMEY0RkYnIH19PgogICAgICA8RGFzaGJvYXJkTmF2\nYmFyIC8+CiAgICAgIDxtYWluIHN0eWxlPXt7IG1heFdpZHRoOiA5MDAsIG1h\ncmdpbjogJzAgYXV0bycsIHBhZGRpbmc6ICczMnB4IDE2cHggODBweCcgfX0+\nCgogICAgICAgIHsvKiBIZWFkZXIgKi99CiAgICAgICAgPGRpdiBzdHlsZT17\neyB0ZXh0QWxpZ246ICdjZW50ZXInLCBtYXJnaW5Cb3R0b206IDMyIH19Pgog\nICAgICAgICAgPGgxIGNsYXNzTmFtZT0iZm9udC1oZWFkaW5nIiBzdHlsZT17\neyBmb250U2l6ZTogJ2NsYW1wKDI2cHgsNXZ3LDM2cHgpJywgZm9udFdlaWdo\ndDogNzAwLCBjb2xvcjogJyMwQTE2MjgnLCBtYXJnaW5Cb3R0b206IDggfX0+\nCiAgICAgICAgICAgIFdoYXQgRmFtaWxpZXMgU2F5IPCfkqwKICAgICAgICAg\nIDwvaDE+CiAgICAgICAgICA8cCBzdHlsZT17eyBmb250RmFtaWx5OiAndmFy\nKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxNSwgY29sb3I6ICcjNEI1NTYz\nJywgbWFyZ2luQm90dG9tOiAxNiB9fT4KICAgICAgICAgICAgUmVhbCBzdG9y\naWVzIGZyb20gc3R1ZGVudHMgYW5kIHBhcmVudHMgYWNyb3NzIEluZGlhCiAg\nICAgICAgICA8L3A+CiAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6\nICdmbGV4JywganVzdGlmeUNvbnRlbnQ6ICdjZW50ZXInLCBhbGlnbkl0ZW1z\nOiAnY2VudGVyJywgZ2FwOiAxNiwgZmxleFdyYXA6ICd3cmFwJyB9fT4KICAg\nICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGFsaWdu\nSXRlbXM6ICdjZW50ZXInLCBnYXA6IDYgfX0+CiAgICAgICAgICAgICAgPHNw\nYW4gc3R5bGU9e3sgZm9udFNpemU6IDI0LCBjb2xvcjogJyNGNTlFMEInIH19\nPuKYhTwvc3Bhbj4KICAgICAgICAgICAgICA8c3BhbiBzdHlsZT17eyBmb250\nRmFtaWx5OiAndmFyKC0tZm9udC1tb25vKScsIGZvbnRTaXplOiAyMiwgZm9u\ndFdlaWdodDogNzAwLCBjb2xvcjogJyMwQTE2MjgnIH19PnthdmdSYXRpbmd9\nPC9zcGFuPgogICAgICAgICAgICAgIDxzcGFuIHN0eWxlPXt7IGZvbnRGYW1p\nbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9udFNpemU6IDEzLCBjb2xvcjog\nJyM0QjU1NjMnIH19PsK3IHtyZXZpZXdzLmxlbmd0aH0gcmV2aWV3czwvc3Bh\nbj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxidXR0b24KICAg\nICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRTaG93Rm9ybSh0cnVlKX0K\nICAgICAgICAgICAgICBzdHlsZT17eyBwYWRkaW5nOiAnMTBweCAyNHB4Jywg\nYmFja2dyb3VuZDogJyMwQTE2MjgnLCBjb2xvcjogJ3doaXRlJywgYm9yZGVy\nOiAnbm9uZScsIGJvcmRlclJhZGl1czogMTAsIGZvbnRGYW1pbHk6ICd2YXIo\nLS1mb250LWJvZHkpJywgZm9udFNpemU6IDE0LCBmb250V2VpZ2h0OiA2MDAs\nIGN1cnNvcjogJ3BvaW50ZXInLCBtaW5IZWlnaHQ6IDQ0IH19CiAgICAgICAg\nICAgID4KICAgICAgICAgICAgICArIFNoYXJlIFlvdXIgU3RvcnkKICAgICAg\nICAgICAgPC9idXR0b24+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rp\ndj4KCiAgICAgICAgey8qIFN1Y2Nlc3MgdG9hc3QgKi99CiAgICAgICAgPEFu\naW1hdGVQcmVzZW5jZT4KICAgICAgICAgIHtzdWJtaXR0ZWQgJiYgKAogICAg\nICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgICAgIGluaXRpYWw9e3sg\nb3BhY2l0eTogMCwgeTogLTEwIH19CiAgICAgICAgICAgICAgYW5pbWF0ZT17\neyBvcGFjaXR5OiAxLCB5OiAwIH19CiAgICAgICAgICAgICAgZXhpdD17eyBv\ncGFjaXR5OiAwIH19CiAgICAgICAgICAgICAgc3R5bGU9e3sgYmFja2dyb3Vu\nZDogJyNFQ0ZERjUnLCBib3JkZXI6ICcxcHggc29saWQgI0E3RjNEMCcsIGJv\ncmRlclJhZGl1czogMTIsIHBhZGRpbmc6ICcxNHB4IDIwcHgnLCBtYXJnaW5C\nb3R0b206IDIwLCBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZv\nbnRTaXplOiAxNCwgY29sb3I6ICcjMDY1RjQ2JywgdGV4dEFsaWduOiAnY2Vu\ndGVyJyB9fQogICAgICAgICAgICA+CiAgICAgICAgICAgICAg4pyFIFRoYW5r\nIHlvdSEgWW91ciByZXZpZXcgaGFzIGJlZW4gc2hhcmVkLgogICAgICAgICAg\nICA8L21vdGlvbi5kaXY+CiAgICAgICAgICApfQogICAgICAgIDwvQW5pbWF0\nZVByZXNlbmNlPgoKICAgICAgICB7LyogRmlsdGVyICsgU29ydCAqL30KICAg\nICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JywgZ2FwOiAxMiwg\nZmxleFdyYXA6ICd3cmFwJywgbWFyZ2luQm90dG9tOiAyNCwgYWxpZ25JdGVt\nczogJ2NlbnRlcicsIGp1c3RpZnlDb250ZW50OiAnc3BhY2UtYmV0d2Vlbicg\nfX0+CiAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4Jywg\nZ2FwOiA4IH19PgogICAgICAgICAgICB7WydBbGwnLCAnU3R1ZGVudHMnLCAn\nUGFyZW50cyddLm1hcChmID0+ICgKICAgICAgICAgICAgICA8YnV0dG9uCiAg\nICAgICAgICAgICAgICBrZXk9e2Z9CiAgICAgICAgICAgICAgICBvbkNsaWNr\nPXsoKSA9PiBzZXRGaWx0ZXIoZiA9PT0gJ1N0dWRlbnRzJyA/ICdTdHVkZW50\nJyA6IGYgPT09ICdQYXJlbnRzJyA/ICdQYXJlbnQnIDogJ0FsbCcpfQogICAg\nICAgICAgICAgICAgc3R5bGU9e3sKICAgICAgICAgICAgICAgICAgcGFkZGlu\nZzogJzZweCAxNnB4JywgYm9yZGVyUmFkaXVzOiA5OSwgYm9yZGVyOiBgMS41\ncHggc29saWQgJHsoZmlsdGVyID09PSAnQWxsJyAmJiBmID09PSAnQWxsJykg\nfHwgZmlsdGVyID09PSBmLnNsaWNlKDAsIC0xKSB8fCAoZiA9PT0gJ1N0dWRl\nbnRzJyAmJiBmaWx0ZXIgPT09ICdTdHVkZW50JykgfHwgKGYgPT09ICdQYXJl\nbnRzJyAmJiBmaWx0ZXIgPT09ICdQYXJlbnQnKSA/ICcjMEExNjI4JyA6ICdy\nZ2JhKDMwLDY0LDE3NSwwLjIpJ31gLAogICAgICAgICAgICAgICAgICBiYWNr\nZ3JvdW5kOiAoZmlsdGVyID09PSAnQWxsJyAmJiBmID09PSAnQWxsJykgfHwg\nKGYgPT09ICdTdHVkZW50cycgJiYgZmlsdGVyID09PSAnU3R1ZGVudCcpIHx8\nIChmID09PSAnUGFyZW50cycgJiYgZmlsdGVyID09PSAnUGFyZW50JykgPyAn\nIzBBMTYyOCcgOiAnd2hpdGUnLAogICAgICAgICAgICAgICAgICBjb2xvcjog\nKGZpbHRlciA9PT0gJ0FsbCcgJiYgZiA9PT0gJ0FsbCcpIHx8IChmID09PSAn\nU3R1ZGVudHMnICYmIGZpbHRlciA9PT0gJ1N0dWRlbnQnKSB8fCAoZiA9PT0g\nJ1BhcmVudHMnICYmIGZpbHRlciA9PT0gJ1BhcmVudCcpID8gJ3doaXRlJyA6\nICcjNEI1NTYzJywKICAgICAgICAgICAgICAgICAgZm9udEZhbWlseTogJ3Zh\ncigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTMsIGN1cnNvcjogJ3BvaW50\nZXInLCBmb250V2VpZ2h0OiA1MDAsCiAgICAgICAgICAgICAgICB9fQogICAg\nICAgICAgICAgID57Zn08L2J1dHRvbj4KICAgICAgICAgICAgKSl9CiAgICAg\nICAgICA8L2Rpdj4KICAgICAgICAgIDxzZWxlY3QKICAgICAgICAgICAgdmFs\ndWU9e3NvcnR9CiAgICAgICAgICAgIG9uQ2hhbmdlPXtlID0+IHNldFNvcnQo\nZS50YXJnZXQudmFsdWUpfQogICAgICAgICAgICBzdHlsZT17eyBoZWlnaHQ6\nIDM2LCBib3JkZXJSYWRpdXM6IDgsIGJvcmRlcjogJzEuNXB4IHNvbGlkIHJn\nYmEoMzAsNjQsMTc1LDAuMTUpJywgcGFkZGluZzogJzAgMTJweCcsIGZvbnRG\nYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9udFNpemU6IDEzLCBvdXRs\naW5lOiAnbm9uZScsIGJhY2tncm91bmQ6ICd3aGl0ZScsIGNvbG9yOiAnIzBB\nMTYyOCcsIGN1cnNvcjogJ3BvaW50ZXInIH19CiAgICAgICAgICA+CiAgICAg\nICAgICAgIDxvcHRpb24gdmFsdWU9IkxhdGVzdCI+TGF0ZXN0IGZpcnN0PC9v\ncHRpb24+CiAgICAgICAgICAgIDxvcHRpb24gdmFsdWU9IkhpZ2hlc3QiPkhp\nZ2hlc3QgcmF0ZWQ8L29wdGlvbj4KICAgICAgICAgIDwvc2VsZWN0PgogICAg\nICAgIDwvZGl2PgoKICAgICAgICB7LyogUmV2aWV3IGdyaWQgKi99CiAgICAg\nICAgPHN0eWxlPntgCiAgICAgICAgICBAbWVkaWEobWluLXdpZHRoOjY0MHB4\nKXsgLnJldmlldy1ncmlkeyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IDFmciAx\nZnIgIWltcG9ydGFudDsgfSB9CiAgICAgICAgYH08L3N0eWxlPgogICAgICAg\nIDxkaXYgY2xhc3NOYW1lPSJyZXZpZXctZ3JpZCIgc3R5bGU9e3sgZGlzcGxh\neTogJ2dyaWQnLCBncmlkVGVtcGxhdGVDb2x1bW5zOiAnMWZyJywgZ2FwOiAx\nNiB9fT4KICAgICAgICAgIHtmaWx0ZXJlZC5tYXAociA9PiA8UmV2aWV3Q2Fy\nZCBrZXk9e3IuaWR9IHJldmlldz17cn0gLz4pfQogICAgICAgICAge2ZpbHRl\ncmVkLmxlbmd0aCA9PT0gMCAmJiAoCiAgICAgICAgICAgIDxkaXYgc3R5bGU9\ne3sgdGV4dEFsaWduOiAnY2VudGVyJywgcGFkZGluZzogJzQwcHggMCcsIGNv\nbG9yOiAnIzRCNTU2MycsIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkp\nJyB9fT4KICAgICAgICAgICAgICBObyByZXZpZXdzIHlldC4gQmUgdGhlIGZp\ncnN0IHRvIHNoYXJlIHlvdXIgc3RvcnkhCiAgICAgICAgICAgIDwvZGl2Pgog\nICAgICAgICAgKX0KICAgICAgICA8L2Rpdj4KICAgICAgPC9tYWluPgoKICAg\nICAgPEFuaW1hdGVQcmVzZW5jZT4KICAgICAgICB7c2hvd0Zvcm0gJiYgPFN1\nYm1pdFJldmlld0Zvcm0gb25TdWJtaXQ9e2hhbmRsZVN1Ym1pdH0gb25DbG9z\nZT17KCkgPT4gc2V0U2hvd0Zvcm0oZmFsc2UpfSAvPn0KICAgICAgPC9Bbmlt\nYXRlUHJlc2VuY2U+CiAgICA8L2Rpdj4KICApOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/ReviewsPage.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/888b0dcbbfb921983ac990685c7d6363c601b8ca","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/ReviewsPage.jsx"}}
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getSupabase } from '@/lib/supabaseClient';
+import { motion, AnimatePresence } from 'framer-motion';
+import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+
+const glass = {
+  background: 'rgba(255,255,255,0.75)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  border: '1px solid rgba(30,64,175,0.15)',
+  boxShadow: '0 8px 32px rgba(10,22,40,0.08)',
+  borderRadius: 16,
+};
+
+function StarRating({ value, onChange, readOnly }) {
+  return (
+    <div style={{ display: 'flex', gap: 6 }}>
+      {[1, 2, 3, 4, 5].map(star => (
+        <button
+          key={star}
+          type="button"
+          onClick={() => !readOnly && onChange && onChange(star)}
+          style={{
+            background: 'none', border: 'none', cursor: readOnly ? 'default' : 'pointer',
+            fontSize: readOnly ? 16 : 28, padding: 0,
+            color: star <= value ? '#F59E0B' : '#D1D5DB',
+            lineHeight: 1,
+          }}
+        >
+          ★
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function ReviewCard({ review }) {
+  const roleColor = { Student: '#DBEAFE', Parent: '#D1FAE5', Guardian: '#EDE9FE' };
+  const roleText  = { Student: '#1E40AF', Parent: '#065F46', Guardian: '#5B21B6' };
+  return (
+    <div style={{ ...glass, padding: 20 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10, flexWrap: 'wrap', gap: 8 }}>
+        <div>
+          <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, color: '#0A1628' }}>
+            {review.name}
+            {review.city && <span style={{ fontWeight: 400, color: '#6B7280', fontSize: 13 }}> · {review.city}</span>}
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 4, flexWrap: 'wrap' }}>
+            <StarRating value={review.stars} readOnly />
+            <span style={{
+              background: roleColor[review.role] || '#F0F4FF',
+              color: roleText[review.role] || '#4B5563',
+              borderRadius: 99, padding: '2px 10px', fontSize: 11,
+              fontFamily: 'var(--font-body)', fontWeight: 600,
+            }}>
+              {review.role}
+            </span>
+            <span style={{ fontSize: 11, color: '#9CA3AF', fontFamily: 'var(--font-body)' }}>{review.duration}</span>
+          </div>
+        </div>
+        <span style={{ fontSize: 11, color: '#9CA3AF', fontFamily: 'var(--font-body)', flexShrink: 0 }}>
+          {new Date(review.date).toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' })}
+        </span>
+      </div>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0 }}>
+        "{review.text}"
+      </p>
+    </div>
+  );
+}
+
+function SubmitReviewForm({ onSubmit, onClose }) {
+  const [form, setForm] = useState({ role: 'Student', name: '', city: '', stars: 0, duration: '', text: '' });
+  const [error, setError] = useState('');
+
+  const DURATIONS = ['1 week', '2 weeks', '1 month', '3 months', '6 months+'];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!form.name.trim()) { setError('Please enter your name.'); return; }
+    if (!form.stars) { setError('Please select a star rating.'); return; }
+    if (!form.duration) { setError('Please select how long you\'ve been using VedicMind.'); return; }
+    if (!form.text.trim()) { setError('Please share your experience.'); return; }
+    setError('');
+    const review = {
+      id: Date.now().toString(),
+      ...form,
+      name: form.name.trim(),
+      city: form.city.trim(),
+      text: form.text.trim(),
+      date: new Date().toISOString(),
+      approved: true,
+    };
+    const existing = JSON.parse(localStorage.getItem('vedicmind_reviews') || '[]');
+    localStorage.setItem('vedicmind_reviews', JSON.stringify([...existing, review]));
+
+    // Save to Supabase
+    (async () => {
+      try {
+        const supabase = await getSupabase();
+        const { data: { session } } = await supabase.auth.getSession();
+        await supabase.from('reviews').insert({
+          user_id: session?.user?.id || null,
+          name: review.name,
+          rating: review.stars || 5,
+          message: review.text,
+          approved: true,
+        });
+      } catch(e) { console.warn('Review Supabase save failed:', e); }
+    })();
+
+    onSubmit(review);
+  };
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, zIndex: 500, display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
+      <div onClick={onClose} style={{ position: 'absolute', inset: 0, background: 'rgba(10,22,40,0.5)' }} />
+      <motion.div
+        initial={{ y: '100%' }}
+        animate={{ y: 0 }}
+        exit={{ y: '100%' }}
+        transition={{ type: 'spring', damping: 26 }}
+        style={{
+          position: 'relative', background: 'white', borderRadius: '20px 20px 0 0',
+          padding: '28px 20px', width: '100%', maxWidth: 540, maxHeight: '90vh', overflowY: 'auto',
+          zIndex: 1,
+        }}
+      >
+        <h2 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>Share Your Story 💬</h2>
+
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          {/* Role pills */}
+          <div>
+            <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 8 }}>I am a...</label>
+            <div style={{ display: 'flex', gap: 8 }}>
+              {['Student', 'Parent', 'Guardian'].map(r => (
+                <button
+                  key={r}
+                  type="button"
+                  onClick={() => setForm(f => ({ ...f, role: r }))}
+                  style={{
+                    padding: '8px 16px', borderRadius: 99, border: `1.5px solid ${form.role === r ? '#0A1628' : 'rgba(30,64,175,0.2)'}`,
+                    background: form.role === r ? '#0A1628' : 'white',
+                    color: form.role === r ? 'white' : '#4B5563',
+                    fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 500, cursor: 'pointer',
+                  }}
+                >{r}</button>
+              ))}
+            </div>
+          </div>
+
+          {/* Name + City */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <div>
+              <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 6 }}>First Name</label>
+              <input
+                value={form.name}
+                onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                placeholder="Your name"
+                style={{ width: '100%', height: 44, borderRadius: 10, border: '1.5px solid rgba(30,64,175,0.15)', padding: '0 12px', fontFamily: 'var(--font-body)', fontSize: 14, outline: 'none', boxSizing: 'border-box' }}
+              />
+            </div>
+            <div>
+              <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 6 }}>City</label>
+              <input
+                value={form.city}
+                onChange={e => setForm(f => ({ ...f, city: e.target.value }))}
+                placeholder="Your city"
+                style={{ width: '100%', height: 44, borderRadius: 10, border: '1.5px solid rgba(30,64,175,0.15)', padding: '0 12px', fontFamily: 'var(--font-body)', fontSize: 14, outline: 'none', boxSizing: 'border-box' }}
+              />
+            </div>
+          </div>
+
+          {/* Star rating */}
+          <div>
+            <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 8 }}>Your Rating</label>
+            <StarRating value={form.stars} onChange={s => setForm(f => ({ ...f, stars: s }))} />
+          </div>
+
+          {/* Duration */}
+          <div>
+            <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 8 }}>How long have you been using VedicMind?</label>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+              {DURATIONS.map(d => (
+                <button
+                  key={d}
+                  type="button"
+                  onClick={() => setForm(f => ({ ...f, duration: d }))}
+                  style={{
+                    padding: '6px 14px', borderRadius: 99, border: `1.5px solid ${form.duration === d ? '#3B82F6' : 'rgba(30,64,175,0.2)'}`,
+                    background: form.duration === d ? '#DBEAFE' : 'white',
+                    color: form.duration === d ? '#1E40AF' : '#4B5563',
+                    fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 500, cursor: 'pointer',
+                  }}
+                >{d}</button>
+              ))}
+            </div>
+          </div>
+
+          {/* Experience textarea */}
+          <div>
+            <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 6 }}>
+              Your Experience <span style={{ fontWeight: 400, color: '#9CA3AF' }}>(max 300 chars)</span>
+            </label>
+            <textarea
+              value={form.text}
+              onChange={e => setForm(f => ({ ...f, text: e.target.value.slice(0, 300) }))}
+              placeholder="Tell others about your experience with VedicMind..."
+              rows={4}
+              style={{ width: '100%', borderRadius: 10, border: '1.5px solid rgba(30,64,175,0.15)', padding: '10px 12px', fontFamily: 'var(--font-body)', fontSize: 14, outline: 'none', resize: 'none', boxSizing: 'border-box', lineHeight: 1.5 }}
+            />
+            <div style={{ textAlign: 'right', fontSize: 11, color: '#9CA3AF', fontFamily: 'var(--font-body)', marginTop: 2 }}>{form.text.length}/300</div>
+          </div>
+
+          {/* Photo upload (UI only) */}
+          <div>
+            <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 6 }}>
+              Upload a Photo <span style={{ fontWeight: 400, color: '#9CA3AF' }}>(optional)</span>
+            </label>
+            <div style={{ border: '2px dashed rgba(30,64,175,0.2)', borderRadius: 10, padding: '16px 20px', textAlign: 'center', cursor: 'pointer' }}>
+              <span style={{ fontSize: 24 }}>📸</span>
+              <p style={{ margin: '4px 0 0', fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF' }}>Tap to add a photo</p>
+            </div>
+          </div>
+
+          {error && <p style={{ color: '#EF4444', fontFamily: 'var(--font-body)', fontSize: 13, margin: 0 }}>{error}</p>}
+
+          <button
+            type="submit"
+            style={{ width: '100%', minHeight: 48, background: '#0A1628', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontSize: 15, fontWeight: 600, cursor: 'pointer' }}
+          >
+            Share My Story ✨
+          </button>
+        </form>
+      </motion.div>
+    </div>
+  );
+}
+
+export default function ReviewsPage() {
+  const navigate = useNavigate();
+  const [reviews, setReviews] = useState([]);
+  const [filter, setFilter] = useState('All');
+  const [sort, setSort] = useState('Latest');
+  const [showForm, setShowForm] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem('vedicmind_reviews') || '[]');
+    // Seed some sample reviews if empty
+    if (stored.length === 0) {
+      const samples = [
+        { id: '1', role: 'Parent', name: 'Sunita', city: 'Mumbai', stars: 5, duration: '1 month', text: 'My daughter\'s mental math has improved dramatically! She now calculates faster than her calculator. VedicMind is a gem.', date: '2025-05-10T00:00:00.000Z', approved: true },
+        { id: '2', role: 'Student', name: 'Arjun', city: 'Pune', stars: 5, duration: '3 months', text: 'The daily quiz is addictive! I\'ve not missed a single day in 2 months. My maths score in school went from 72% to 94%.', date: '2025-05-18T00:00:00.000Z', approved: true },
+        { id: '3', role: 'Parent', name: 'Kavitha', city: 'Chennai', stars: 4, duration: '2 weeks', text: 'Very well structured course. The Vedic methods are explained simply and my son loves the leaderboard competition.', date: '2025-06-01T00:00:00.000Z', approved: true },
+      ];
+      localStorage.setItem('vedicmind_reviews', JSON.stringify(samples));
+      setReviews(samples);
+    } else {
+      setReviews(stored.filter(r => r.approved));
+    }
+  }, []);
+
+  const filtered = reviews
+    .filter(r => filter === 'All' || r.role === filter)
+    .sort((a, b) => sort === 'Latest'
+      ? new Date(b.date) - new Date(a.date)
+      : b.stars - a.stars
+    );
+
+  const handleSubmit = (review) => {
+    setReviews(prev => [...prev, review]);
+    setShowForm(false);
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 4000);
+  };
+
+  const avgRating = reviews.length ? (reviews.reduce((s, r) => s + r.stars, 0) / reviews.length).toFixed(1) : '—';
+
+  return (
+    <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
+      <DashboardNavbar />
+      <main style={{ maxWidth: 900, margin: '0 auto', padding: '32px 16px 80px' }}>
+
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: 32 }}>
+          <h1 className="font-heading" style={{ fontSize: 'clamp(26px,5vw,36px)', fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>
+            What Families Say 💬
+          </h1>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563', marginBottom: 16 }}>
+            Real stories from students and parents across India
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontSize: 24, color: '#F59E0B' }}>★</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: '#0A1628' }}>{avgRating}</span>
+              <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563' }}>· {reviews.length} reviews</span>
+            </div>
+            <button
+              onClick={() => setShowForm(true)}
+              style={{ padding: '10px 24px', background: '#0A1628', color: 'white', border: 'none', borderRadius: 10, fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600, cursor: 'pointer', minHeight: 44 }}
+            >
+              + Share Your Story
+            </button>
+          </div>
+        </div>
+
+        {/* Success toast */}
+        <AnimatePresence>
+          {submitted && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              style={{ background: '#ECFDF5', border: '1px solid #A7F3D0', borderRadius: 12, padding: '14px 20px', marginBottom: 20, fontFamily: 'var(--font-body)', fontSize: 14, color: '#065F46', textAlign: 'center' }}
+            >
+              ✅ Thank you! Your review has been shared.
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Filter + Sort */}
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', gap: 8 }}>
+            {['All', 'Students', 'Parents'].map(f => (
+              <button
+                key={f}
+                onClick={() => setFilter(f === 'Students' ? 'Student' : f === 'Parents' ? 'Parent' : 'All')}
+                style={{
+                  padding: '6px 16px', borderRadius: 99, border: `1.5px solid ${(filter === 'All' && f === 'All') || filter === f.slice(0, -1) || (f === 'Students' && filter === 'Student') || (f === 'Parents' && filter === 'Parent') ? '#0A1628' : 'rgba(30,64,175,0.2)'}`,
+                  background: (filter === 'All' && f === 'All') || (f === 'Students' && filter === 'Student') || (f === 'Parents' && filter === 'Parent') ? '#0A1628' : 'white',
+                  color: (filter === 'All' && f === 'All') || (f === 'Students' && filter === 'Student') || (f === 'Parents' && filter === 'Parent') ? 'white' : '#4B5563',
+                  fontFamily: 'var(--font-body)', fontSize: 13, cursor: 'pointer', fontWeight: 500,
+                }}
+              >{f}</button>
+            ))}
+          </div>
+          <select
+            value={sort}
+            onChange={e => setSort(e.target.value)}
+            style={{ height: 36, borderRadius: 8, border: '1.5px solid rgba(30,64,175,0.15)', padding: '0 12px', fontFamily: 'var(--font-body)', fontSize: 13, outline: 'none', background: 'white', color: '#0A1628', cursor: 'pointer' }}
+          >
+            <option value="Latest">Latest first</option>
+            <option value="Highest">Highest rated</option>
+          </select>
+        </div>
+
+        {/* Review grid */}
+        <style>{`
+          @media(min-width:640px){ .review-grid{ grid-template-columns: 1fr 1fr !important; } }
+        `}</style>
+        <div className="review-grid" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16 }}>
+          {filtered.map(r => <ReviewCard key={r.id} review={r} />)}
+          {filtered.length === 0 && (
+            <div style={{ textAlign: 'center', padding: '40px 0', color: '#4B5563', fontFamily: 'var(--font-body)' }}>
+              No reviews yet. Be the first to share your story!
+            </div>
+          )}
+        </div>
+      </main>
+
+      <AnimatePresence>
+        {showForm && <SubmitReviewForm onSubmit={handleSubmit} onClose={() => setShowForm(false)} />}
+      </AnimatePresence>
+    </div>
+  );
+}
