@@ -1,1 +1,89 @@
-{"name":"WelcomeHero.jsx","path":"src/components/dashboard/WelcomeHero.jsx","sha":"8360bfde7de6a92f73b3dd2a132d395a0674be8f","size":3206,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/WelcomeHero.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/WelcomeHero.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/8360bfde7de6a92f73b3dd2a132d395a0674be8f","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/dashboard/WelcomeHero.jsx?token=CFODAP76DT3AM7XEUNA5KGTKFSQVRAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IExpbmsgfSBmcm9tICdyZWFjdC1yb3V0ZXItZG9t\nJzsKaW1wb3J0IHsgbW90aW9uIH0gZnJvbSAnZnJhbWVyLW1vdGlvbic7Cgpm\ndW5jdGlvbiB1c2VDb3VudFVwKHRhcmdldCwgZHVyYXRpb24gPSAxMjAwKSB7\nCiAgY29uc3QgW3ZhbHVlLCBzZXRWYWx1ZV0gPSB1c2VTdGF0ZSgwKTsKICB1\nc2VFZmZlY3QoKCkgPT4gewogICAgaWYgKHRhcmdldCA9PT0gMCkgcmV0dXJu\nOwogICAgbGV0IHN0YXJ0ID0gMDsKICAgIGNvbnN0IHN0ZXAgPSB0YXJnZXQg\nLyAoZHVyYXRpb24gLyAxNik7CiAgICBjb25zdCB0aW1lciA9IHNldEludGVy\ndmFsKCgpID0+IHsKICAgICAgc3RhcnQgPSBNYXRoLm1pbihzdGFydCArIHN0\nZXAsIHRhcmdldCk7CiAgICAgIHNldFZhbHVlKE1hdGguZmxvb3Ioc3RhcnQp\nKTsKICAgICAgaWYgKHN0YXJ0ID49IHRhcmdldCkgY2xlYXJJbnRlcnZhbCh0\naW1lcik7CiAgICB9LCAxNik7CiAgICByZXR1cm4gKCkgPT4gY2xlYXJJbnRl\ncnZhbCh0aW1lcik7CiAgfSwgW3RhcmdldF0pOwogIHJldHVybiB2YWx1ZTsK\nfQoKZnVuY3Rpb24gZ2V0R3JlZXRpbmcoKSB7CiAgY29uc3QgaCA9IG5ldyBE\nYXRlKCkuZ2V0SG91cnMoKTsKICBpZiAoaCA+PSA1ICYmIGggPCAxMikgcmV0\ndXJuICdHb29kIG1vcm5pbmcnOwogIGlmIChoID49IDEyICYmIGggPCAxOCkg\ncmV0dXJuICdHb29kIGFmdGVybm9vbic7CiAgcmV0dXJuICdHb29kIGV2ZW5p\nbmcnOwp9Cgpjb25zdCBMRVZFTF9JTkZPID0gewogIDE6IHsgbGFiZWw6ICdC\nZWdpbm5lcicsIGVtb2ppOiAn8J+MsScgfSwKICAyOiB7IGxhYmVsOiAnSW50\nZXJtZWRpYXRlJywgZW1vamk6ICfwn5OIJyB9LAogIDM6IHsgbGFiZWw6ICdB\nZHZhbmNlZCcsIGVtb2ppOiAn8J+UpScgfSwKICA0OiB7IGxhYmVsOiAnTWFz\ndGVyJywgZW1vamk6ICfwn5GRJyB9LAp9OwoKZXhwb3J0IGRlZmF1bHQgZnVu\nY3Rpb24gV2VsY29tZUhlcm8oeyB1c2VyLCBwcm9ncmVzcyB9KSB7CiAgY29u\nc3QgbGVzc29uc0NvdW50ID0gdXNlQ291bnRVcChwcm9ncmVzcy5jb21wbGV0\nZWRMZXNzb25zPy5sZW5ndGggfHwgMCk7CiAgY29uc3Qgc3RyZWFrQ291bnQg\nPSB1c2VDb3VudFVwKHByb2dyZXNzLnN0cmVhayB8fCAwKTsKICBjb25zdCB4\ncENvdW50ID0gdXNlQ291bnRVcChwcm9ncmVzcy50b3RhbFhQIHx8IDApOwoK\nICBjb25zdCBuYW1lID0gdXNlcj8ubmFtZT8uc3BsaXQoJyAnKVswXSB8fCAn\nTGVhcm5lcic7CiAgY29uc3QgbGV2ZWwgPSBMRVZFTF9JTkZPW3Byb2dyZXNz\nLmN1cnJlbnRMZXZlbF0gfHwgTEVWRUxfSU5GT1sxXTsKCiAgY29uc3QgZGF5\nc1NpbmNlID0gdXNlcj8uY3JlYXRlZEF0CiAgICA/IE1hdGgubWF4KDEsIE1h\ndGguZmxvb3IoKERhdGUubm93KCkgLSBuZXcgRGF0ZSh1c2VyLmNyZWF0ZWRB\ndCkuZ2V0VGltZSgpKSAvIDg2NDAwMDAwKSkKICAgIDogMTsKCiAgcmV0dXJu\nICgKICAgIDxtb3Rpb24uZGl2CiAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTog\nMCwgeTogMjAgfX0KICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAw\nIH19CiAgICAgIGNsYXNzTmFtZT0icm91bmRlZC1bMjBweF0gcC02IHNtOnAt\nOCB0ZXh0LXdoaXRlIgogICAgICBzdHlsZT17eyBiYWNrZ3JvdW5kOiAnbGlu\nZWFyLWdyYWRpZW50KDEzNWRlZywgIzBBMTYyOCAwJSwgIzBEMjI1MiA2MCUs\nICMxRTQwQUYgMTAwJSknIH19CiAgICA+CiAgICAgIDxkaXYgY2xhc3NOYW1l\nPSJmbGV4IGl0ZW1zLXN0YXJ0IGp1c3RpZnktYmV0d2VlbiBmbGV4LXdyYXAg\nZ2FwLTMgbWItNiI+CiAgICAgICAgPGRpdj4KICAgICAgICAgIDxoMSBjbGFz\nc05hbWU9ImZvbnQtaGVhZGluZyB0ZXh0LTJ4bCBzbTp0ZXh0LTN4bCBmb250\nLWJvbGQiPgogICAgICAgICAgICB7Z2V0R3JlZXRpbmcoKX0sIHtuYW1lfSEg\n8J+MnwogICAgICAgICAgPC9oMT4KICAgICAgICAgIDxwIGNsYXNzTmFtZT0i\ndGV4dC1ibHVlLTIwMCB0ZXh0LXNtIG10LTEiPkRheSB7ZGF5c1NpbmNlfSBv\nZiB5b3VyIFZlZGljIE1hdGhzIGpvdXJuZXk8L3A+CiAgICAgICAgPC9kaXY+\nCiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJweC0zIHB5LTEuNSByb3VuZGVk\nLWZ1bGwgYmctd2hpdGUvMTUgdGV4dC13aGl0ZSB0ZXh0LXNtIGZvbnQtc2Vt\naWJvbGQgYm9yZGVyIGJvcmRlci13aGl0ZS8yMCI+CiAgICAgICAgICB7bGV2\nZWwuZW1vaml9IHtsZXZlbC5sYWJlbH0KICAgICAgICA8L3NwYW4+CiAgICAg\nIDwvZGl2PgoKICAgICAgey8qIFN0YXRzICovfQogICAgICA8ZGl2IGNsYXNz\nTmFtZT0iZ3JpZCBncmlkLWNvbHMtMyBnYXAtMyBtYi02Ij4KICAgICAgICB7\nWwogICAgICAgICAgeyBpY29uOiAn8J+TmicsIGxhYmVsOiAnTGVzc29ucycs\nIHZhbHVlOiBsZXNzb25zQ291bnQgfSwKICAgICAgICAgIHsgaWNvbjogJ/Cf\nlKUnLCBsYWJlbDogJ0RheSBTdHJlYWsnLCB2YWx1ZTogc3RyZWFrQ291bnQg\nfSwKICAgICAgICAgIHsgaWNvbjogJ+KaoScsIGxhYmVsOiAnVG90YWwgWFAn\nLCB2YWx1ZTogeHBDb3VudCB9LAogICAgICAgIF0ubWFwKChzdGF0KSA9PiAo\nCiAgICAgICAgICA8ZGl2IGtleT17c3RhdC5sYWJlbH0gY2xhc3NOYW1lPSJy\nb3VuZGVkLTJ4bCBiZy13aGl0ZS8xMCBiYWNrZHJvcC1ibHVyLXNtIGJvcmRl\nciBib3JkZXItd2hpdGUvMTUgcC0zIHRleHQtY2VudGVyIj4KICAgICAgICAg\nICAgPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LXhsIj57c3RhdC5pY29ufTwvc3Bh\nbj4KICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJmb250LW1vbm8gdGV4dC14\nbCBmb250LWJvbGQgdGV4dC13aGl0ZSBtdC0xIj57c3RhdC52YWx1ZX08L3A+\nCiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1ibHVlLTIwMCB0ZXh0\nLXhzIj57c3RhdC5sYWJlbH08L3A+CiAgICAgICAgICA8L2Rpdj4KICAgICAg\nICApKX0KICAgICAgPC9kaXY+CgogICAgICA8TGluawogICAgICAgIHRvPSIv\nbGVhcm4iCiAgICAgICAgY2xhc3NOYW1lPSJpbmxpbmUtZmxleCBpdGVtcy1j\nZW50ZXIgZ2FwLTIgaC0xMSBweC02IHJvdW5kZWQteGwgYmctd2hpdGUgdGV4\ndC1bIzBBMTYyOF0gZm9udC1zZW1pYm9sZCB0ZXh0LXNtIGhvdmVyOmJnLWJs\ndWUtNTAgdHJhbnNpdGlvbi1jb2xvcnMiCiAgICAgID4KICAgICAgICBDb250\naW51ZSBMZWFybmluZyDihpIKICAgICAgPC9MaW5rPgogICAgPC9tb3Rpb24u\nZGl2PgogICk7Cn0=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/WelcomeHero.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/8360bfde7de6a92f73b3dd2a132d395a0674be8f","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/WelcomeHero.jsx"}}
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+function useCountUp(target, duration = 1200) {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (target === 0) return;
+    let start = 0;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start = Math.min(start + step, target);
+      setValue(Math.floor(start));
+      if (start >= target) clearInterval(timer);
+    }, 16);
+    return () => clearInterval(timer);
+  }, [target]);
+  return value;
+}
+
+function getGreeting() {
+  const h = new Date().getHours();
+  if (h >= 5 && h < 12) return 'Good morning';
+  if (h >= 12 && h < 18) return 'Good afternoon';
+  return 'Good evening';
+}
+
+const LEVEL_INFO = {
+  1: { label: 'Beginner', emoji: '🌱' },
+  2: { label: 'Intermediate', emoji: '📈' },
+  3: { label: 'Advanced', emoji: '🔥' },
+  4: { label: 'Master', emoji: '👑' },
+};
+
+export default function WelcomeHero({ user, progress }) {
+  const lessonsCount = useCountUp(progress.completedLessons?.length || 0);
+  const streakCount = useCountUp(progress.streak || 0);
+  const xpCount = useCountUp(progress.totalXP || 0);
+
+  const name = user?.name?.split(' ')[0] || 'Learner';
+  const level = LEVEL_INFO[progress.currentLevel] || LEVEL_INFO[1];
+
+  const daysSince = user?.createdAt
+    ? Math.max(1, Math.floor((Date.now() - new Date(user.createdAt).getTime()) / 86400000))
+    : 1;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="rounded-[20px] p-6 sm:p-8 text-white"
+      style={{ background: 'linear-gradient(135deg, #0A1628 0%, #0D2252 60%, #1E40AF 100%)' }}
+    >
+      <div className="flex items-start justify-between flex-wrap gap-3 mb-6">
+        <div>
+          <h1 className="font-heading text-2xl sm:text-3xl font-bold">
+            {getGreeting()}, {name}! 🌟
+          </h1>
+          <p className="text-blue-200 text-sm mt-1">Day {daysSince} of your Vedic Maths journey</p>
+        </div>
+        <span className="px-3 py-1.5 rounded-full bg-white/15 text-white text-sm font-semibold border border-white/20">
+          {level.emoji} {level.label}
+        </span>
+      </div>
+
+      {/* Stats */}
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        {[
+          { icon: '📚', label: 'Lessons', value: lessonsCount },
+          { icon: '🔥', label: 'Day Streak', value: streakCount },
+          { icon: '⚡', label: 'Total XP', value: xpCount },
+        ].map((stat) => (
+          <div key={stat.label} className="rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 p-3 text-center">
+            <span className="text-xl">{stat.icon}</span>
+            <p className="font-mono text-xl font-bold text-white mt-1">{stat.value}</p>
+            <p className="text-blue-200 text-xs">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <Link
+        to="/learn"
+        className="inline-flex items-center gap-2 h-11 px-6 rounded-xl bg-white text-[#0A1628] font-semibold text-sm hover:bg-blue-50 transition-colors"
+      >
+        Continue Learning →
+      </Link>
+    </motion.div>
+  );
+}
