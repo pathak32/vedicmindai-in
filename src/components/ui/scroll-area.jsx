@@ -1,1 +1,38 @@
-{"name":"scroll-area.jsx","path":"src/components/ui/scroll-area.jsx","sha":"dc3d3840ca9a57627ec2edcc938111a877c67761","size":1362,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/scroll-area.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/scroll-area.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/dc3d3840ca9a57627ec2edcc938111a877c67761","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/scroll-area.jsx?token=CFODAP3JUFGYC4BW7USYYD3KFSQZZAA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIFNj\ncm9sbEFyZWFQcmltaXRpdmUgZnJvbSAiQHJhZGl4LXVpL3JlYWN0LXNjcm9s\nbC1hcmVhIgoKaW1wb3J0IHsgY24gfSBmcm9tICJAL2xpYi91dGlscyIKCmNv\nbnN0IFNjcm9sbEFyZWEgPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFt\nZSwgY2hpbGRyZW4sIC4uLnByb3BzIH0sIHJlZikgPT4gKAogIDxTY3JvbGxB\ncmVhUHJpbWl0aXZlLlJvb3QKICAgIHJlZj17cmVmfQogICAgY2xhc3NOYW1l\nPXtjbigicmVsYXRpdmUgb3ZlcmZsb3ctaGlkZGVuIiwgY2xhc3NOYW1lKX0K\nICAgIHsuLi5wcm9wc30+CiAgICA8U2Nyb2xsQXJlYVByaW1pdGl2ZS5WaWV3\ncG9ydCBjbGFzc05hbWU9ImgtZnVsbCB3LWZ1bGwgcm91bmRlZC1baW5oZXJp\ndF0iPgogICAgICB7Y2hpbGRyZW59CiAgICA8L1Njcm9sbEFyZWFQcmltaXRp\ndmUuVmlld3BvcnQ+CiAgICA8U2Nyb2xsQmFyIC8+CiAgICA8U2Nyb2xsQXJl\nYVByaW1pdGl2ZS5Db3JuZXIgLz4KICA8L1Njcm9sbEFyZWFQcmltaXRpdmUu\nUm9vdD4KKSkKU2Nyb2xsQXJlYS5kaXNwbGF5TmFtZSA9IFNjcm9sbEFyZWFQ\ncmltaXRpdmUuUm9vdC5kaXNwbGF5TmFtZQoKY29uc3QgU2Nyb2xsQmFyID0g\nUmVhY3QuZm9yd2FyZFJlZigoeyBjbGFzc05hbWUsIG9yaWVudGF0aW9uID0g\nInZlcnRpY2FsIiwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoCiAgPFNjcm9sbEFy\nZWFQcmltaXRpdmUuU2Nyb2xsQXJlYVNjcm9sbGJhcgogICAgcmVmPXtyZWZ9\nCiAgICBvcmllbnRhdGlvbj17b3JpZW50YXRpb259CiAgICBjbGFzc05hbWU9\ne2NuKAogICAgICAiZmxleCB0b3VjaC1ub25lIHNlbGVjdC1ub25lIHRyYW5z\naXRpb24tY29sb3JzIiwKICAgICAgb3JpZW50YXRpb24gPT09ICJ2ZXJ0aWNh\nbCIgJiYKICAgICAgICAiaC1mdWxsIHctMi41IGJvcmRlci1sIGJvcmRlci1s\nLXRyYW5zcGFyZW50IHAtWzFweF0iLAogICAgICBvcmllbnRhdGlvbiA9PT0g\nImhvcml6b250YWwiICYmCiAgICAgICAgImgtMi41IGZsZXgtY29sIGJvcmRl\nci10IGJvcmRlci10LXRyYW5zcGFyZW50IHAtWzFweF0iLAogICAgICBjbGFz\nc05hbWUKICAgICl9CiAgICB7Li4ucHJvcHN9PgogICAgPFNjcm9sbEFyZWFQ\ncmltaXRpdmUuU2Nyb2xsQXJlYVRodW1iIGNsYXNzTmFtZT0icmVsYXRpdmUg\nZmxleC0xIHJvdW5kZWQtZnVsbCBiZy1ib3JkZXIiIC8+CiAgPC9TY3JvbGxB\ncmVhUHJpbWl0aXZlLlNjcm9sbEFyZWFTY3JvbGxiYXI+CikpClNjcm9sbEJh\nci5kaXNwbGF5TmFtZSA9IFNjcm9sbEFyZWFQcmltaXRpdmUuU2Nyb2xsQXJl\nYVNjcm9sbGJhci5kaXNwbGF5TmFtZQoKZXhwb3J0IHsgU2Nyb2xsQXJlYSwg\nU2Nyb2xsQmFyIH0K\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/scroll-area.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/dc3d3840ca9a57627ec2edcc938111a877c67761","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/scroll-area.jsx"}}
+import * as React from "react"
+import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
+
+import { cn } from "@/lib/utils"
+
+const ScrollArea = React.forwardRef(({ className, children, ...props }, ref) => (
+  <ScrollAreaPrimitive.Root
+    ref={ref}
+    className={cn("relative overflow-hidden", className)}
+    {...props}>
+    <ScrollAreaPrimitive.Viewport className="h-full w-full rounded-[inherit]">
+      {children}
+    </ScrollAreaPrimitive.Viewport>
+    <ScrollBar />
+    <ScrollAreaPrimitive.Corner />
+  </ScrollAreaPrimitive.Root>
+))
+ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName
+
+const ScrollBar = React.forwardRef(({ className, orientation = "vertical", ...props }, ref) => (
+  <ScrollAreaPrimitive.ScrollAreaScrollbar
+    ref={ref}
+    orientation={orientation}
+    className={cn(
+      "flex touch-none select-none transition-colors",
+      orientation === "vertical" &&
+        "h-full w-2.5 border-l border-l-transparent p-[1px]",
+      orientation === "horizontal" &&
+        "h-2.5 flex-col border-t border-t-transparent p-[1px]",
+      className
+    )}
+    {...props}>
+    <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-border" />
+  </ScrollAreaPrimitive.ScrollAreaScrollbar>
+))
+ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName
+
+export { ScrollArea, ScrollBar }
