@@ -1,1 +1,170 @@
-{"name":"EditProfileForm.jsx","path":"src/components/profile/EditProfileForm.jsx","sha":"0c513fdeb74c1b92c57da28c414286788302ffe6","size":6617,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/profile/EditProfileForm.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/profile/EditProfileForm.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/0c513fdeb74c1b92c57da28c414286788302ffe6","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/profile/EditProfileForm.jsx?token=CFODAP45EYGII632JUGLZZTKFSQXXAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnOwppbXBv\ncnQgU2VsZWN0aW9uRHJhd2VyIGZyb20gJ0AvY29tcG9uZW50cy91aS9TZWxl\nY3Rpb25EcmF3ZXInOwoKY29uc3QgR0VOREVSUyA9IFsnTWFsZScsICdGZW1h\nbGUnLCAnUHJlZmVyIG5vdCB0byBzYXknXTsKY29uc3QgTEFOR1VBR0VTID0g\nWydFbmdsaXNoJywgJ+CkueCkv+CkguCkpuClgCcsICfgrqTgrq7grr/grrTg\nr40nLCAn4KSu4KSw4KS+4KSg4KWAJ107CmNvbnN0IFRJTUVfT1BUSU9OUyA9\nIFsnMTUgbWluL2RheScsICczMCBtaW4vZGF5JywgJzQ1IG1pbi9kYXknLCAn\nMSBocisvZGF5J107CmNvbnN0IENMQVNTRVMgPSBBcnJheS5mcm9tKHsgbGVu\nZ3RoOiAxMiB9LCAoXywgaSkgPT4gYENsYXNzICR7aSArIDF9YCk7CmNvbnN0\nIEJPQVJEUyA9IFsnQ0JTRScsICdJQ1NFJywgJ1N0YXRlIEJvYXJkJywgJ0lC\nJywgJ0lHQ1NFJywgJ090aGVyJ107CmNvbnN0IEVYQU1TID0gWydKRUUgTWFp\nbi9BZHZhbmNlZCcsICdDQVQnLCAnVVBTQyBDaXZpbCBTZXJ2aWNlcycsICdT\nU0MgQ0dMJywgJ0lCUFMvU0JJIEJhbmtpbmcnLCAnR01BVCcsICdPdGhlcidd\nOwoKY29uc3QgZ2xhc3MgPSB7CiAgYmFja2dyb3VuZDogJ3JnYmEoMjU1LDI1\nNSwyNTUsMC44NSknLAogIGJhY2tkcm9wRmlsdGVyOiAnYmx1cigyMHB4KScs\nCiAgV2Via2l0QmFja2Ryb3BGaWx0ZXI6ICdibHVyKDIwcHgpJywKICBib3Jk\nZXI6ICcxcHggc29saWQgcmdiYSgzMCw2NCwxNzUsMC4xNSknLAogIGJveFNo\nYWRvdzogJzAgOHB4IDMycHggcmdiYSgxMCwyMiw0MCwwLjA4KScsCiAgYm9y\nZGVyUmFkaXVzOiAxNiwKfTsKCmNvbnN0IGlucHV0U3R5bGUgPSB7CiAgd2lk\ndGg6ICcxMDAlJywgbWluSGVpZ2h0OiA0NCwgZm9udFNpemU6IDE2LCBwYWRk\naW5nOiAnMTBweCAxNHB4JywKICBib3JkZXI6ICcxLjVweCBzb2xpZCByZ2Jh\nKDMwLDY0LDE3NSwwLjE1KScsIGJvcmRlclJhZGl1czogMTAsCiAgZm9udEZh\nbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBjb2xvcjogJyMwQTE2MjgnLCBi\nYWNrZ3JvdW5kOiAnd2hpdGUnLAogIG91dGxpbmU6ICdub25lJywgYm94U2l6\naW5nOiAnYm9yZGVyLWJveCcsCn07Cgpjb25zdCBsYWJlbFN0eWxlID0geyBm\nb250U2l6ZTogMTMsIGNvbG9yOiAnIzRCNTU2MycsIGZvbnRGYW1pbHk6ICd2\nYXIoLS1mb250LWJvZHkpJywgbWFyZ2luQm90dG9tOiA2LCBkaXNwbGF5OiAn\nYmxvY2snIH07CgpmdW5jdGlvbiBQaWxsR3JvdXAoeyBvcHRpb25zLCB2YWx1\nZSwgb25DaGFuZ2UgfSkgewogIHJldHVybiAoCiAgICA8ZGl2IHN0eWxlPXt7\nIGRpc3BsYXk6ICdmbGV4JywgZmxleFdyYXA6ICd3cmFwJywgZ2FwOiA4IH19\nPgogICAgICB7b3B0aW9ucy5tYXAobyA9PiAoCiAgICAgICAgPGJ1dHRvbgog\nICAgICAgICAga2V5PXtvfQogICAgICAgICAgdHlwZT0iYnV0dG9uIgogICAg\nICAgICAgb25DbGljaz17KCkgPT4gb25DaGFuZ2Uobyl9CiAgICAgICAgICBz\ndHlsZT17ewogICAgICAgICAgICBwYWRkaW5nOiAnOHB4IDE2cHgnLCBtaW5I\nZWlnaHQ6IDQwLCBib3JkZXJSYWRpdXM6IDEwMCwgZm9udFNpemU6IDE0LAog\nICAgICAgICAgICBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGN1\ncnNvcjogJ3BvaW50ZXInLCBib3JkZXI6ICdub25lJywKICAgICAgICAgICAg\nYmFja2dyb3VuZDogdmFsdWUgPT09IG8gPyAnIzBBMTYyOCcgOiAnI0YwRjRG\nRicsCiAgICAgICAgICAgIGNvbG9yOiB2YWx1ZSA9PT0gbyA/ICd3aGl0ZScg\nOiAnIzBBMTYyOCcsCiAgICAgICAgICAgIGZvbnRXZWlnaHQ6IHZhbHVlID09\nPSBvID8gNjAwIDogNDAwLAogICAgICAgICAgICB0cmFuc2l0aW9uOiAnYWxs\nIDAuMTVzJywKICAgICAgICAgIH19CiAgICAgICAgPgogICAgICAgICAge299\nCiAgICAgICAgPC9idXR0b24+CiAgICAgICkpfQogICAgPC9kaXY+CiAgKTsK\nfQoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gRWRpdFByb2ZpbGVGb3JtKHsg\ncHJvZmlsZSwgb25TYXZlLCBvbkNhbmNlbCB9KSB7CiAgY29uc3QgW2Zvcm0s\nIHNldEZvcm1dID0gdXNlU3RhdGUoewogICAgbmFtZTogcHJvZmlsZS5uYW1l\nIHx8ICcnLAogICAgYWdlOiBwcm9maWxlLmFnZSB8fCAnJywKICAgIGdlbmRl\ncjogcHJvZmlsZS5nZW5kZXIgfHwgJycsCiAgICBncmFkZTogcHJvZmlsZS5n\ncmFkZSB8fCAnJywKICAgIGJvYXJkOiBwcm9maWxlLmJvYXJkIHx8ICcnLAog\nICAgZXhhbTogcHJvZmlsZS5leGFtIHx8ICcnLAogICAgbGFuZ3VhZ2U6IHBy\nb2ZpbGUubGFuZ3VhZ2UgfHwgJ0VuZ2xpc2gnLAogICAgdGltZUNvbW1pdG1l\nbnQ6IHByb2ZpbGUudGltZUNvbW1pdG1lbnQgfHwgJycsCiAgICAuLi5wcm9m\naWxlLAogIH0pOwogIGNvbnN0IFtlcnJvcnMsIHNldEVycm9yc10gPSB1c2VT\ndGF0ZSh7fSk7CgogIGNvbnN0IHNldCA9IChrZXksIHZhbCkgPT4gc2V0Rm9y\nbShmID0+ICh7IC4uLmYsIFtrZXldOiB2YWwgfSkpOwoKICBjb25zdCB2YWxp\nZGF0ZSA9ICgpID0+IHsKICAgIGNvbnN0IGUgPSB7fTsKICAgIGlmICghZm9y\nbS5uYW1lPy50cmltKCkpIGUubmFtZSA9ICdOYW1lIGlzIHJlcXVpcmVkJzsK\nICAgIGlmICghZm9ybS5hZ2UgfHwgTnVtYmVyKGZvcm0uYWdlKSA8IDYgfHwg\nTnVtYmVyKGZvcm0uYWdlKSA+IDYwKSBlLmFnZSA9ICdFbnRlciBhZ2UgNuKA\nkzYwJzsKICAgIGlmICghZm9ybS5nZW5kZXIpIGUuZ2VuZGVyID0gJ1NlbGVj\ndCBnZW5kZXInOwogICAgc2V0RXJyb3JzKGUpOwogICAgcmV0dXJuIE9iamVj\ndC5rZXlzKGUpLmxlbmd0aCA9PT0gMDsKICB9OwoKICBjb25zdCBoYW5kbGVT\nYXZlID0gKCkgPT4gewogICAgaWYgKCF2YWxpZGF0ZSgpKSByZXR1cm47CiAg\nICBvblNhdmUoeyAuLi5wcm9maWxlLCAuLi5mb3JtIH0pOwogIH07CgogIHJl\ndHVybiAoCiAgICA8ZGl2IHN0eWxlPXt7IC4uLmdsYXNzLCBwYWRkaW5nOiAy\nNCB9fT4KICAgICAgPGgzIGNsYXNzTmFtZT0iZm9udC1oZWFkaW5nIiBzdHls\nZT17eyBmb250U2l6ZTogMTgsIGZvbnRXZWlnaHQ6IDcwMCwgY29sb3I6ICcj\nMEExNjI4JywgbWFyZ2luQm90dG9tOiAyMCB9fT5FZGl0IFByb2ZpbGU8L2gz\nPgoKICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZ3JpZCcsIGdyaWRU\nZW1wbGF0ZUNvbHVtbnM6ICdyZXBlYXQoYXV0by1maXQsIG1pbm1heCgyMDBw\neCwgMWZyKSknLCBnYXA6IDE2LCBtYXJnaW5Cb3R0b206IDE2IH19PgogICAg\nICAgIDxkaXY+CiAgICAgICAgICA8bGFiZWwgc3R5bGU9e2xhYmVsU3R5bGV9\nPkZ1bGwgTmFtZTwvbGFiZWw+CiAgICAgICAgICA8aW5wdXQgdmFsdWU9e2Zv\ncm0ubmFtZX0gb25DaGFuZ2U9e2UgPT4gc2V0KCduYW1lJywgZS50YXJnZXQu\ndmFsdWUpfSBzdHlsZT17aW5wdXRTdHlsZX0gLz4KICAgICAgICAgIHtlcnJv\ncnMubmFtZSAmJiA8cCBzdHlsZT17eyBjb2xvcjogJyNFRjQ0NDQnLCBmb250\nU2l6ZTogMTIsIG1hcmdpblRvcDogNCB9fT57ZXJyb3JzLm5hbWV9PC9wPn0K\nICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2PgogICAgICAgICAgPGxhYmVs\nIHN0eWxlPXtsYWJlbFN0eWxlfT5BZ2U8L2xhYmVsPgogICAgICAgICAgPGlu\ncHV0IHR5cGU9Im51bWJlciIgbWluPXs2fSBtYXg9ezYwfSB2YWx1ZT17Zm9y\nbS5hZ2V9IG9uQ2hhbmdlPXtlID0+IHNldCgnYWdlJywgZS50YXJnZXQudmFs\ndWUpfSBzdHlsZT17aW5wdXRTdHlsZX0gLz4KICAgICAgICAgIHtlcnJvcnMu\nYWdlICYmIDxwIHN0eWxlPXt7IGNvbG9yOiAnI0VGNDQ0NCcsIGZvbnRTaXpl\nOiAxMiwgbWFyZ2luVG9wOiA0IH19PntlcnJvcnMuYWdlfTwvcD59CiAgICAg\nICAgPC9kaXY+CiAgICAgIDwvZGl2PgoKICAgICAgPGRpdiBzdHlsZT17eyBt\nYXJnaW5Cb3R0b206IDE2IH19PgogICAgICAgIDxsYWJlbCBzdHlsZT17bGFi\nZWxTdHlsZX0+R2VuZGVyPC9sYWJlbD4KICAgICAgICA8UGlsbEdyb3VwIG9w\ndGlvbnM9e0dFTkRFUlN9IHZhbHVlPXtmb3JtLmdlbmRlcn0gb25DaGFuZ2U9\ne3YgPT4gc2V0KCdnZW5kZXInLCB2KX0gLz4KICAgICAgICB7ZXJyb3JzLmdl\nbmRlciAmJiA8cCBzdHlsZT17eyBjb2xvcjogJyNFRjQ0NDQnLCBmb250U2l6\nZTogMTIsIG1hcmdpblRvcDogNCB9fT57ZXJyb3JzLmdlbmRlcn08L3A+fQog\nICAgICA8L2Rpdj4KCiAgICAgIHsocHJvZmlsZS5yb2xlID09PSAnU3R1ZGVu\ndCcgfHwgcHJvZmlsZS5yb2xlID09PSAnUGFyZW50JykgJiYgKAogICAgICAg\nIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2dyaWQnLCBncmlkVGVtcGxhdGVD\nb2x1bW5zOiAncmVwZWF0KGF1dG8tZml0LCBtaW5tYXgoMTYwcHgsIDFmcikp\nJywgZ2FwOiAxNiwgbWFyZ2luQm90dG9tOiAxNiB9fT4KICAgICAgICAgIDxk\naXY+CiAgICAgICAgICAgIDxsYWJlbCBzdHlsZT17bGFiZWxTdHlsZX0+e3By\nb2ZpbGUucm9sZSA9PT0gJ1BhcmVudCcgPyAiQ2hpbGQncyBDbGFzcyIgOiAn\nWW91ciBDbGFzcyd9PC9sYWJlbD4KICAgICAgICAgICAgPFNlbGVjdGlvbkRy\nYXdlcgogICAgICAgICAgICAgIHZhbHVlPXtmb3JtLmdyYWRlfQogICAgICAg\nICAgICAgIG9uQ2hhbmdlPXt2ID0+IHNldCgnZ3JhZGUnLCB2KX0KICAgICAg\nICAgICAgICBvcHRpb25zPXtDTEFTU0VTfQogICAgICAgICAgICAgIHBsYWNl\naG9sZGVyPSJTZWxlY3QuLi4iCiAgICAgICAgICAgICAgbGFiZWw9e3Byb2Zp\nbGUucm9sZSA9PT0gJ1BhcmVudCcgPyAiQ2hpbGQncyBDbGFzcyIgOiAnWW91\nciBDbGFzcyd9CiAgICAgICAgICAgIC8+CiAgICAgICAgICA8L2Rpdj4KICAg\nICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxsYWJlbCBzdHlsZT17bGFiZWxT\ndHlsZX0+Qm9hcmQ8L2xhYmVsPgogICAgICAgICAgICA8U2VsZWN0aW9uRHJh\nd2VyCiAgICAgICAgICAgICAgdmFsdWU9e2Zvcm0uYm9hcmR9CiAgICAgICAg\nICAgICAgb25DaGFuZ2U9e3YgPT4gc2V0KCdib2FyZCcsIHYpfQogICAgICAg\nICAgICAgIG9wdGlvbnM9e0JPQVJEU30KICAgICAgICAgICAgICBwbGFjZWhv\nbGRlcj0iU2VsZWN0Li4uIgogICAgICAgICAgICAgIGxhYmVsPSJCb2FyZCIK\nICAgICAgICAgICAgLz4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2\nPgogICAgICApfQoKICAgICAge3Byb2ZpbGUucm9sZSA9PT0gJ0V4YW0gQXNw\naXJhbnQnICYmICgKICAgICAgICA8ZGl2IHN0eWxlPXt7IG1hcmdpbkJvdHRv\nbTogMTYgfX0+CiAgICAgICAgICA8bGFiZWwgc3R5bGU9e2xhYmVsU3R5bGV9\nPlRhcmdldCBFeGFtPC9sYWJlbD4KICAgICAgICAgIDxTZWxlY3Rpb25EcmF3\nZXIKICAgICAgICAgICAgdmFsdWU9e2Zvcm0uZXhhbX0KICAgICAgICAgICAg\nb25DaGFuZ2U9e3YgPT4gc2V0KCdleGFtJywgdil9CiAgICAgICAgICAgIG9w\ndGlvbnM9e0VYQU1TfQogICAgICAgICAgICBwbGFjZWhvbGRlcj0iU2VsZWN0\nLi4uIgogICAgICAgICAgICBsYWJlbD0iVGFyZ2V0IEV4YW0iCiAgICAgICAg\nICAvPgogICAgICAgIDwvZGl2PgogICAgICApfQoKICAgICAgPGRpdiBzdHls\nZT17eyBtYXJnaW5Cb3R0b206IDE2IH19PgogICAgICAgIDxsYWJlbCBzdHls\nZT17bGFiZWxTdHlsZX0+TGFuZ3VhZ2UgUHJlZmVyZW5jZTwvbGFiZWw+CiAg\nICAgICAgPFBpbGxHcm91cCBvcHRpb25zPXtMQU5HVUFHRVN9IHZhbHVlPXtm\nb3JtLmxhbmd1YWdlfSBvbkNoYW5nZT17diA9PiBzZXQoJ2xhbmd1YWdlJywg\ndil9IC8+CiAgICAgIDwvZGl2PgoKICAgICAgPGRpdiBzdHlsZT17eyBtYXJn\naW5Cb3R0b206IDIwIH19PgogICAgICAgIDxsYWJlbCBzdHlsZT17bGFiZWxT\ndHlsZX0+RGFpbHkgVGltZSBDb21taXRtZW50PC9sYWJlbD4KICAgICAgICA8\nUGlsbEdyb3VwIG9wdGlvbnM9e1RJTUVfT1BUSU9OU30gdmFsdWU9e2Zvcm0u\ndGltZUNvbW1pdG1lbnR9IG9uQ2hhbmdlPXt2ID0+IHNldCgndGltZUNvbW1p\ndG1lbnQnLCB2KX0gLz4KICAgICAgPC9kaXY+CgogICAgICA8ZGl2IHN0eWxl\nPXt7IGRpc3BsYXk6ICdmbGV4JywgZ2FwOiAxMiwgZmxleFdyYXA6ICd3cmFw\nJyB9fT4KICAgICAgICA8YnV0dG9uCiAgICAgICAgICBvbkNsaWNrPXtoYW5k\nbGVTYXZlfQogICAgICAgICAgc3R5bGU9e3sgbWluSGVpZ2h0OiA0NCwgcGFk\nZGluZzogJzAgMjhweCcsIGJhY2tncm91bmQ6ICcjMEExNjI4JywgY29sb3I6\nICd3aGl0ZScsIGJvcmRlcjogJ25vbmUnLCBib3JkZXJSYWRpdXM6IDEyLCBm\nb250U2l6ZTogMTUsIGZvbnRXZWlnaHQ6IDYwMCwgY3Vyc29yOiAncG9pbnRl\ncicsIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJyB9fQogICAgICAg\nID4KICAgICAgICAgIFNhdmUgQ2hhbmdlcwogICAgICAgIDwvYnV0dG9uPgog\nICAgICAgIDxidXR0b24KICAgICAgICAgIG9uQ2xpY2s9e29uQ2FuY2VsfQog\nICAgICAgICAgc3R5bGU9e3sgbWluSGVpZ2h0OiA0NCwgcGFkZGluZzogJzAg\nMjBweCcsIGJhY2tncm91bmQ6ICd0cmFuc3BhcmVudCcsIGNvbG9yOiAnIzBB\nMTYyOCcsIGJvcmRlcjogJzEuNXB4IHNvbGlkIHJnYmEoMzAsNjQsMTc1LDAu\nMiknLCBib3JkZXJSYWRpdXM6IDEyLCBmb250U2l6ZTogMTUsIGZvbnRXZWln\naHQ6IDYwMCwgY3Vyc29yOiAncG9pbnRlcicsIGZvbnRGYW1pbHk6ICd2YXIo\nLS1mb250LWJvZHkpJyB9fQogICAgICAgID4KICAgICAgICAgIENhbmNlbAog\nICAgICAgIDwvYnV0dG9uPgogICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICk7\nCn0=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/profile/EditProfileForm.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/0c513fdeb74c1b92c57da28c414286788302ffe6","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/profile/EditProfileForm.jsx"}}
+import React, { useState } from 'react';
+import SelectionDrawer from '@/components/ui/SelectionDrawer';
+
+const GENDERS = ['Male', 'Female', 'Prefer not to say'];
+const LANGUAGES = ['English', 'हिंदी', 'தமிழ்', 'मराठी'];
+const TIME_OPTIONS = ['15 min/day', '30 min/day', '45 min/day', '1 hr+/day'];
+const CLASSES = Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`);
+const BOARDS = ['CBSE', 'ICSE', 'State Board', 'IB', 'IGCSE', 'Other'];
+const EXAMS = ['JEE Main/Advanced', 'CAT', 'UPSC Civil Services', 'SSC CGL', 'IBPS/SBI Banking', 'GMAT', 'Other'];
+
+const glass = {
+  background: 'rgba(255,255,255,0.85)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  border: '1px solid rgba(30,64,175,0.15)',
+  boxShadow: '0 8px 32px rgba(10,22,40,0.08)',
+  borderRadius: 16,
+};
+
+const inputStyle = {
+  width: '100%', minHeight: 44, fontSize: 16, padding: '10px 14px',
+  border: '1.5px solid rgba(30,64,175,0.15)', borderRadius: 10,
+  fontFamily: 'var(--font-body)', color: '#0A1628', background: 'white',
+  outline: 'none', boxSizing: 'border-box',
+};
+
+const labelStyle = { fontSize: 13, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 6, display: 'block' };
+
+function PillGroup({ options, value, onChange }) {
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+      {options.map(o => (
+        <button
+          key={o}
+          type="button"
+          onClick={() => onChange(o)}
+          style={{
+            padding: '8px 16px', minHeight: 40, borderRadius: 100, fontSize: 14,
+            fontFamily: 'var(--font-body)', cursor: 'pointer', border: 'none',
+            background: value === o ? '#0A1628' : '#F0F4FF',
+            color: value === o ? 'white' : '#0A1628',
+            fontWeight: value === o ? 600 : 400,
+            transition: 'all 0.15s',
+          }}
+        >
+          {o}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export default function EditProfileForm({ profile, onSave, onCancel }) {
+  const [form, setForm] = useState({
+    name: profile.name || '',
+    age: profile.age || '',
+    gender: profile.gender || '',
+    grade: profile.grade || '',
+    board: profile.board || '',
+    exam: profile.exam || '',
+    language: profile.language || 'English',
+    timeCommitment: profile.timeCommitment || '',
+    ...profile,
+  });
+  const [errors, setErrors] = useState({});
+
+  const set = (key, val) => setForm(f => ({ ...f, [key]: val }));
+
+  const validate = () => {
+    const e = {};
+    if (!form.name?.trim()) e.name = 'Name is required';
+    if (!form.age || Number(form.age) < 6 || Number(form.age) > 60) e.age = 'Enter age 6–60';
+    if (!form.gender) e.gender = 'Select gender';
+    setErrors(e);
+    return Object.keys(e).length === 0;
+  };
+
+  const handleSave = () => {
+    if (!validate()) return;
+    onSave({ ...profile, ...form });
+  };
+
+  return (
+    <div style={{ ...glass, padding: 24 }}>
+      <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>Edit Profile</h3>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 16 }}>
+        <div>
+          <label style={labelStyle}>Full Name</label>
+          <input value={form.name} onChange={e => set('name', e.target.value)} style={inputStyle} />
+          {errors.name && <p style={{ color: '#EF4444', fontSize: 12, marginTop: 4 }}>{errors.name}</p>}
+        </div>
+        <div>
+          <label style={labelStyle}>Age</label>
+          <input type="number" min={6} max={60} value={form.age} onChange={e => set('age', e.target.value)} style={inputStyle} />
+          {errors.age && <p style={{ color: '#EF4444', fontSize: 12, marginTop: 4 }}>{errors.age}</p>}
+        </div>
+      </div>
+
+      <div style={{ marginBottom: 16 }}>
+        <label style={labelStyle}>Gender</label>
+        <PillGroup options={GENDERS} value={form.gender} onChange={v => set('gender', v)} />
+        {errors.gender && <p style={{ color: '#EF4444', fontSize: 12, marginTop: 4 }}>{errors.gender}</p>}
+      </div>
+
+      {(profile.role === 'Student' || profile.role === 'Parent') && (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16, marginBottom: 16 }}>
+          <div>
+            <label style={labelStyle}>{profile.role === 'Parent' ? "Child's Class" : 'Your Class'}</label>
+            <SelectionDrawer
+              value={form.grade}
+              onChange={v => set('grade', v)}
+              options={CLASSES}
+              placeholder="Select..."
+              label={profile.role === 'Parent' ? "Child's Class" : 'Your Class'}
+            />
+          </div>
+          <div>
+            <label style={labelStyle}>Board</label>
+            <SelectionDrawer
+              value={form.board}
+              onChange={v => set('board', v)}
+              options={BOARDS}
+              placeholder="Select..."
+              label="Board"
+            />
+          </div>
+        </div>
+      )}
+
+      {profile.role === 'Exam Aspirant' && (
+        <div style={{ marginBottom: 16 }}>
+          <label style={labelStyle}>Target Exam</label>
+          <SelectionDrawer
+            value={form.exam}
+            onChange={v => set('exam', v)}
+            options={EXAMS}
+            placeholder="Select..."
+            label="Target Exam"
+          />
+        </div>
+      )}
+
+      <div style={{ marginBottom: 16 }}>
+        <label style={labelStyle}>Language Preference</label>
+        <PillGroup options={LANGUAGES} value={form.language} onChange={v => set('language', v)} />
+      </div>
+
+      <div style={{ marginBottom: 20 }}>
+        <label style={labelStyle}>Daily Time Commitment</label>
+        <PillGroup options={TIME_OPTIONS} value={form.timeCommitment} onChange={v => set('timeCommitment', v)} />
+      </div>
+
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+        <button
+          onClick={handleSave}
+          style={{ minHeight: 44, padding: '0 28px', background: '#0A1628', color: 'white', border: 'none', borderRadius: 12, fontSize: 15, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
+        >
+          Save Changes
+        </button>
+        <button
+          onClick={onCancel}
+          style={{ minHeight: 44, padding: '0 20px', background: 'transparent', color: '#0A1628', border: '1.5px solid rgba(30,64,175,0.2)', borderRadius: 12, fontSize: 15, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  );
+}
