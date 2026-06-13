@@ -1,1 +1,225 @@
-{"name":"Step2Details.jsx","path":"src/components/onboarding/Step2Details.jsx","sha":"f9253a53998664a536150aea97c199569a7cefd0","size":7399,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/Step2Details.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/Step2Details.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/f9253a53998664a536150aea97c199569a7cefd0","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/onboarding/Step2Details.jsx?token=CFODAPZ2BLZU4ODUUY6BUYLKFSQXBAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnOwppbXBv\ncnQgU2VsZWN0aW9uRHJhd2VyIGZyb20gJ0AvY29tcG9uZW50cy91aS9TZWxl\nY3Rpb25EcmF3ZXInOwoKY29uc3Qgc2VsZWN0U3R5bGUgPSB7CiAgYmFja2dy\nb3VuZDogJ3JnYmEoMjU1LDI1NSwyNTUsMC4xKScsCiAgYm9yZGVyOiAnMS41\ncHggc29saWQgcmdiYSgyNTUsMjU1LDI1NSwwLjIpJywKICBib3JkZXJSYWRp\ndXM6IDEwLAogIGNvbG9yOiAnd2hpdGUnLAogIHBhZGRpbmc6ICcxMHB4IDE0\ncHgnLAogIG1pbkhlaWdodDogNDQsCiAgZm9udFNpemU6IDE2LAogIHdpZHRo\nOiAnMTAwJScsCiAgb3V0bGluZTogJ25vbmUnLAogIGFwcGVhcmFuY2U6ICdh\ndXRvJywKICBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsCn07Cgpj\nb25zdCBpbnB1dFN0eWxlID0geyAuLi5zZWxlY3RTdHlsZSB9OwoKY29uc3Qg\nbGFiZWxTdHlsZSA9IHsKICBkaXNwbGF5OiAnYmxvY2snLAogIGZvbnRTaXpl\nOiAxNCwKICBjb2xvcjogJ3JnYmEoMjU1LDI1NSwyNTUsMC43KScsCiAgbWFy\nZ2luQm90dG9tOiA4LAogIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkp\nJywKfTsKCmNvbnN0IGZpZWxkV3JhcCA9IHsgbWFyZ2luQm90dG9tOiAyMCB9\nOwoKZnVuY3Rpb24gRmllbGQoeyBsYWJlbCwgZXJyb3IsIGNoaWxkcmVuIH0p\nIHsKICByZXR1cm4gKAogICAgPGRpdiBzdHlsZT17ZmllbGRXcmFwfT4KICAg\nICAgPGxhYmVsIHN0eWxlPXtsYWJlbFN0eWxlfT57bGFiZWx9PC9sYWJlbD4K\nICAgICAge2NoaWxkcmVufQogICAgICB7ZXJyb3IgJiYgPHAgc3R5bGU9e3sg\nY29sb3I6ICcjRUY0NDQ0JywgZm9udFNpemU6IDEyLCBtYXJnaW5Ub3A6IDUg\nfX0+e2Vycm9yfTwvcD59CiAgICA8L2Rpdj4KICApOwp9CgpmdW5jdGlvbiBT\ndHlsZWRTZWxlY3QoeyB2YWx1ZSwgb25DaGFuZ2UsIG9wdGlvbnMsIHBsYWNl\naG9sZGVyLCBsYWJlbCB9KSB7CiAgcmV0dXJuICgKICAgIDxTZWxlY3Rpb25E\ncmF3ZXIKICAgICAgdmFsdWU9e3ZhbHVlfQogICAgICBvbkNoYW5nZT17b25D\naGFuZ2V9CiAgICAgIG9wdGlvbnM9e29wdGlvbnN9CiAgICAgIHBsYWNlaG9s\nZGVyPXtwbGFjZWhvbGRlciB8fCAnU2VsZWN0Li4uJ30KICAgICAgbGFiZWw9\ne2xhYmVsfQogICAgICBkYXJrCiAgICAvPgogICk7Cn0KCmNvbnN0IENMQVNT\nRVMgPSBBcnJheS5mcm9tKHsgbGVuZ3RoOiAxMiB9LCAoXywgaSkgPT4gYENs\nYXNzICR7aSArIDF9YCk7CmNvbnN0IEJPQVJEUyA9IFsnQ0JTRScsICdJQ1NF\nJywgJ1N0YXRlIEJvYXJkJywgJ0lCJywgJ0lHQ1NFJywgJ090aGVyJ107CmNv\nbnN0IEVYQU1TID0gWydKRUUgTWFpbi9BZHZhbmNlZCcsICdDQVQnLCAnVVBT\nQyBDaXZpbCBTZXJ2aWNlcycsICdTU0MgQ0dMJywgJ0lCUFMvU0JJIEJhbmtp\nbmcnLCAnR01BVCcsICdPdGhlciddOwpjb25zdCBTVEFHRVMgPSBbJ0p1c3Qg\nU3RhcnRpbmcnLCAnNisgTW9udGhzIHRvIEV4YW0nLCAnMyBNb250aHMgdG8g\nRXhhbScsICdGaW5hbCBNb250aCddOwpjb25zdCBQVVJQT1NFUyA9IFsnQ2Fy\nZWVyIEdyb3d0aCcsICdQZXJzb25hbCBJbnRlcmVzdCcsICdIZWxwIG15IENo\naWxkcmVuJywgJ01lbnRhbCBBZ2lsaXR5JywgJ090aGVyJ107CmNvbnN0IEdF\nTkRFUlMgPSBbJ01hbGUnLCAnRmVtYWxlJywgJ1ByZWZlciBub3QgdG8gc2F5\nJ107CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBTdGVwMkRldGFpbHMoeyBk\nYXRhLCBvblVwZGF0ZSwgb25OZXh0LCBvbkJhY2sgfSkgewogIGNvbnN0IFtl\ncnJvcnMsIHNldEVycm9yc10gPSB1c2VTdGF0ZSh7fSk7CiAgY29uc3QgeyBy\nb2xlLCBncmFkZSwgYm9hcmQsIGV4YW0sIGV4YW1TdGFnZSwgcHVycG9zZSwg\nYWdlLCBnZW5kZXIgfSA9IGRhdGE7CgogIGNvbnN0IHZhbGlkYXRlID0gKCkg\nPT4gewogICAgY29uc3QgZSA9IHt9OwogICAgaWYgKHJvbGUgPT09ICdTdHVk\nZW50JykgewogICAgICBpZiAoIWdyYWRlKSBlLmdyYWRlID0gJ1BsZWFzZSBz\nZWxlY3QgeW91ciBjbGFzcy4nOwogICAgICBpZiAoIWJvYXJkKSBlLmJvYXJk\nID0gJ1BsZWFzZSBzZWxlY3QgeW91ciBib2FyZC4nOwogICAgfQogICAgaWYg\nKHJvbGUgPT09ICdFeGFtIEFzcGlyYW50JykgewogICAgICBpZiAoIWV4YW0p\nIGUuZXhhbSA9ICdQbGVhc2Ugc2VsZWN0IHlvdXIgdGFyZ2V0IGV4YW0uJzsK\nICAgICAgaWYgKCFleGFtU3RhZ2UpIGUuZXhhbVN0YWdlID0gJ1BsZWFzZSBz\nZWxlY3QgeW91ciBwcmVwYXJhdGlvbiBzdGFnZS4nOwogICAgfQogICAgaWYg\nKHJvbGUgPT09ICdXb3JraW5nIFByb2Zlc3Npb25hbCcpIHsKICAgICAgaWYg\nKCFwdXJwb3NlKSBlLnB1cnBvc2UgPSAnUGxlYXNlIHNlbGVjdCBhIHB1cnBv\nc2UuJzsKICAgIH0KICAgIGlmIChyb2xlID09PSAnUGFyZW50JykgewogICAg\nICBpZiAoIWdyYWRlKSBlLmdyYWRlID0gIlBsZWFzZSBzZWxlY3QgeW91ciBj\naGlsZCdzIGNsYXNzLiI7CiAgICAgIGlmICghYm9hcmQpIGUuYm9hcmQgPSAi\nUGxlYXNlIHNlbGVjdCB5b3VyIGNoaWxkJ3MgYm9hcmQuIjsKICAgIH0KICAg\nIGlmICghYWdlKSB7CiAgICAgIGUuYWdlID0gJ1BsZWFzZSBlbnRlciB5b3Vy\nIGFnZS4nOwogICAgfSBlbHNlIGlmIChOdW1iZXIoYWdlKSA8IDYgfHwgTnVt\nYmVyKGFnZSkgPiA2MCkgewogICAgICBlLmFnZSA9ICdBZ2UgbXVzdCBiZSBi\nZXR3ZWVuIDYgYW5kIDYwLic7CiAgICB9CiAgICBpZiAoIWdlbmRlcikgZS5n\nZW5kZXIgPSAnUGxlYXNlIHNlbGVjdCBhIGdlbmRlci4nOwogICAgc2V0RXJy\nb3JzKGUpOwogICAgcmV0dXJuIE9iamVjdC5rZXlzKGUpLmxlbmd0aCA9PT0g\nMDsKICB9OwoKICBjb25zdCBoYW5kbGVOZXh0ID0gKCkgPT4gewogICAgaWYg\nKHZhbGlkYXRlKCkpIG9uTmV4dCgpOwogIH07CgogIHJldHVybiAoCiAgICA8\nZGl2PgogICAgICA8aDIgY2xhc3NOYW1lPSJmb250LWhlYWRpbmcgbWItMSIg\nc3R5bGU9e3sgZm9udFNpemU6IDI2LCBmb250V2VpZ2h0OiA3MDAsIGNvbG9y\nOiAnd2hpdGUnIH19PgogICAgICAgIFRlbGwgdXMgYWJvdXQgeW91cnNlbGYK\nICAgICAgPC9oMj4KICAgICAgPHAgc3R5bGU9e3sgZm9udFNpemU6IDE0LCBj\nb2xvcjogJ3JnYmEoMjU1LDI1NSwyNTUsMC43KScsIG1hcmdpbkJvdHRvbTog\nMjggfX0+CiAgICAgICAgV2UnbGwgY3VzdG9taXplIHlvdXIgY3VycmljdWx1\nbSBiYXNlZCBvbiB0aGlzLgogICAgICA8L3A+CgogICAgICB7LyogUm9sZS1j\nb25kaXRpb25hbCBmaWVsZHMgKi99CiAgICAgIHtyb2xlID09PSAnU3R1ZGVu\ndCcgJiYgKAogICAgICAgIDw+CiAgICAgICAgICA8RmllbGQgbGFiZWw9Illv\ndXIgQ2xhc3MiIGVycm9yPXtlcnJvcnMuZ3JhZGV9PgogICAgICAgICAgICA8\nU3R5bGVkU2VsZWN0IHZhbHVlPXtncmFkZX0gb25DaGFuZ2U9e3YgPT4gb25V\ncGRhdGUoeyBncmFkZTogdiB9KX0gb3B0aW9ucz17Q0xBU1NFU30gcGxhY2Vo\nb2xkZXI9IlNlbGVjdCBjbGFzcy4uLiIgbGFiZWw9IllvdXIgQ2xhc3MiIC8+\nCiAgICAgICAgICA8L0ZpZWxkPgogICAgICAgICAgPEZpZWxkIGxhYmVsPSJZ\nb3VyIEJvYXJkIiBlcnJvcj17ZXJyb3JzLmJvYXJkfT4KICAgICAgICAgICAg\nPFN0eWxlZFNlbGVjdCB2YWx1ZT17Ym9hcmR9IG9uQ2hhbmdlPXt2ID0+IG9u\nVXBkYXRlKHsgYm9hcmQ6IHYgfSl9IG9wdGlvbnM9e0JPQVJEU30gcGxhY2Vo\nb2xkZXI9IlNlbGVjdCBib2FyZC4uLiIgbGFiZWw9IllvdXIgQm9hcmQiIC8+\nCiAgICAgICAgICA8L0ZpZWxkPgogICAgICAgIDwvPgogICAgICApfQoKICAg\nICAge3JvbGUgPT09ICdFeGFtIEFzcGlyYW50JyAmJiAoCiAgICAgICAgPD4K\nICAgICAgICAgIDxGaWVsZCBsYWJlbD0iVGFyZ2V0IEV4YW0iIGVycm9yPXtl\ncnJvcnMuZXhhbX0+CiAgICAgICAgICAgIDxTdHlsZWRTZWxlY3QgdmFsdWU9\ne2V4YW19IG9uQ2hhbmdlPXt2ID0+IG9uVXBkYXRlKHsgZXhhbTogdiB9KX0g\nb3B0aW9ucz17RVhBTVN9IHBsYWNlaG9sZGVyPSJTZWxlY3QgZXhhbS4uLiIg\nbGFiZWw9IlRhcmdldCBFeGFtIiAvPgogICAgICAgICAgPC9GaWVsZD4KICAg\nICAgICAgIDxGaWVsZCBsYWJlbD0iUHJlcGFyYXRpb24gU3RhZ2UiIGVycm9y\nPXtlcnJvcnMuZXhhbVN0YWdlfT4KICAgICAgICAgICAgPFN0eWxlZFNlbGVj\ndCB2YWx1ZT17ZXhhbVN0YWdlfSBvbkNoYW5nZT17diA9PiBvblVwZGF0ZSh7\nIGV4YW1TdGFnZTogdiB9KX0gb3B0aW9ucz17U1RBR0VTfSBwbGFjZWhvbGRl\ncj0iU2VsZWN0IHN0YWdlLi4uIiBsYWJlbD0iUHJlcGFyYXRpb24gU3RhZ2Ui\nIC8+CiAgICAgICAgICA8L0ZpZWxkPgogICAgICAgIDwvPgogICAgICApfQoK\nICAgICAge3JvbGUgPT09ICdXb3JraW5nIFByb2Zlc3Npb25hbCcgJiYgKAog\nICAgICAgIDxGaWVsZCBsYWJlbD0iV2h5IGFyZSB5b3UgbGVhcm5pbmcgVmVk\naWMgTWF0aHM/IiBlcnJvcj17ZXJyb3JzLnB1cnBvc2V9PgogICAgICAgICAg\nPFN0eWxlZFNlbGVjdCB2YWx1ZT17cHVycG9zZX0gb25DaGFuZ2U9e3YgPT4g\nb25VcGRhdGUoeyBwdXJwb3NlOiB2IH0pfSBvcHRpb25zPXtQVVJQT1NFU30g\ncGxhY2Vob2xkZXI9IlNlbGVjdCBwdXJwb3NlLi4uIiBsYWJlbD0iV2h5IGFy\nZSB5b3UgbGVhcm5pbmcgVmVkaWMgTWF0aHM/IiAvPgogICAgICAgIDwvRmll\nbGQ+CiAgICAgICl9CgogICAgICB7cm9sZSA9PT0gJ1BhcmVudCcgJiYgKAog\nICAgICAgIDw+CiAgICAgICAgICA8RmllbGQgbGFiZWw9IkNoaWxkJ3MgQ2xh\nc3MiIGVycm9yPXtlcnJvcnMuZ3JhZGV9PgogICAgICAgICAgICA8U3R5bGVk\nU2VsZWN0IHZhbHVlPXtncmFkZX0gb25DaGFuZ2U9e3YgPT4gb25VcGRhdGUo\neyBncmFkZTogdiB9KX0gb3B0aW9ucz17Q0xBU1NFU30gcGxhY2Vob2xkZXI9\nIlNlbGVjdCBjbGFzcy4uLiIgbGFiZWw9IkNoaWxkJ3MgQ2xhc3MiIC8+CiAg\nICAgICAgICA8L0ZpZWxkPgogICAgICAgICAgPEZpZWxkIGxhYmVsPSJDaGls\nZCdzIEJvYXJkIiBlcnJvcj17ZXJyb3JzLmJvYXJkfT4KICAgICAgICAgICAg\nPFN0eWxlZFNlbGVjdCB2YWx1ZT17Ym9hcmR9IG9uQ2hhbmdlPXt2ID0+IG9u\nVXBkYXRlKHsgYm9hcmQ6IHYgfSl9IG9wdGlvbnM9e0JPQVJEU30gcGxhY2Vo\nb2xkZXI9IlNlbGVjdCBib2FyZC4uLiIgbGFiZWw9IkNoaWxkJ3MgQm9hcmQi\nIC8+CiAgICAgICAgICA8L0ZpZWxkPgogICAgICAgIDwvPgogICAgICApfQoK\nICAgICAgey8qIEFnZSAqL30KICAgICAgPEZpZWxkIGxhYmVsPSJZb3VyIEFn\nZSIgZXJyb3I9e2Vycm9ycy5hZ2V9PgogICAgICAgIDxpbnB1dAogICAgICAg\nICAgdHlwZT0ibnVtYmVyIgogICAgICAgICAgbWluPXs2fQogICAgICAgICAg\nbWF4PXs2MH0KICAgICAgICAgIHBsYWNlaG9sZGVyPSJlLmcuIDE2IgogICAg\nICAgICAgdmFsdWU9e2FnZX0KICAgICAgICAgIG9uQ2hhbmdlPXtlID0+IG9u\nVXBkYXRlKHsgYWdlOiBlLnRhcmdldC52YWx1ZSB9KX0KICAgICAgICAgIHN0\neWxlPXtpbnB1dFN0eWxlfQogICAgICAgIC8+CiAgICAgIDwvRmllbGQ+Cgog\nICAgICB7LyogR2VuZGVyICovfQogICAgICA8RmllbGQgbGFiZWw9IkdlbmRl\nciIgZXJyb3I9e2Vycm9ycy5nZW5kZXJ9PgogICAgICAgIDxkaXYgc3R5bGU9\ne3sgZGlzcGxheTogJ2ZsZXgnLCBnYXA6IDEwLCBmbGV4V3JhcDogJ3dyYXAn\nIH19PgogICAgICAgICAge0dFTkRFUlMubWFwKGcgPT4gewogICAgICAgICAg\nICBjb25zdCBzZWwgPSBnZW5kZXIgPT09IGc7CiAgICAgICAgICAgIHJldHVy\nbiAoCiAgICAgICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICAgICAga2V5\nPXtnfQogICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gb25VcGRhdGUo\neyBnZW5kZXI6IGcgfSl9CiAgICAgICAgICAgICAgICBzdHlsZT17ewogICAg\nICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiBzZWwgPyAnIzNCODJGNicgOiAn\ncmdiYSgyNTUsMjU1LDI1NSwwLjA2KScsCiAgICAgICAgICAgICAgICAgIGJv\ncmRlcjogYDEuNXB4IHNvbGlkICR7c2VsID8gJyMzQjgyRjYnIDogJ3JnYmEo\nMjU1LDI1NSwyNTUsMC4yKSd9YCwKICAgICAgICAgICAgICAgICAgYm9yZGVy\nUmFkaXVzOiAxMDAsCiAgICAgICAgICAgICAgICAgIHBhZGRpbmc6ICc4cHgg\nMjBweCcsCiAgICAgICAgICAgICAgICAgIG1pbkhlaWdodDogNDAsCiAgICAg\nICAgICAgICAgICAgIGNvbG9yOiAnd2hpdGUnLAogICAgICAgICAgICAgICAg\nICBmb250U2l6ZTogMTQsCiAgICAgICAgICAgICAgICAgIGN1cnNvcjogJ3Bv\naW50ZXInLAogICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uOiAnYWxsIDAu\nMThzJywKICAgICAgICAgICAgICAgICAgZm9udEZhbWlseTogJ3ZhcigtLWZv\nbnQtYm9keSknLAogICAgICAgICAgICAgICAgfX0KICAgICAgICAgICAgICA+\nCiAgICAgICAgICAgICAgICB7Z30KICAgICAgICAgICAgICA8L2J1dHRvbj4K\nICAgICAgICAgICAgKTsKICAgICAgICAgIH0pfQogICAgICAgIDwvZGl2Pgog\nICAgICA8L0ZpZWxkPgoKICAgICAgey8qIEJ1dHRvbnMgKi99CiAgICAgIDxk\naXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBnYXA6IDEyLCBtYXJnaW5U\nb3A6IDggfX0+CiAgICAgICAgPGJ1dHRvbgogICAgICAgICAgb25DbGljaz17\nb25CYWNrfQogICAgICAgICAgc3R5bGU9e3sKICAgICAgICAgICAgZmxleDog\nMSwKICAgICAgICAgICAgbWluSGVpZ2h0OiA0NCwKICAgICAgICAgICAgYmFj\na2dyb3VuZDogJ3RyYW5zcGFyZW50JywKICAgICAgICAgICAgYm9yZGVyOiAn\nMS41cHggc29saWQgcmdiYSgyNTUsMjU1LDI1NSwwLjMpJywKICAgICAgICAg\nICAgYm9yZGVyUmFkaXVzOiAxMiwKICAgICAgICAgICAgY29sb3I6ICd3aGl0\nZScsCiAgICAgICAgICAgIGZvbnRTaXplOiAxNSwKICAgICAgICAgICAgZm9u\ndFdlaWdodDogNjAwLAogICAgICAgICAgICBjdXJzb3I6ICdwb2ludGVyJywK\nICAgICAgICAgICAgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLAog\nICAgICAgICAgfX0KICAgICAgICA+CiAgICAgICAgICDihpAgQmFjawogICAg\nICAgIDwvYnV0dG9uPgogICAgICAgIDxidXR0b24KICAgICAgICAgIG9uQ2xp\nY2s9e2hhbmRsZU5leHR9CiAgICAgICAgICBzdHlsZT17ewogICAgICAgICAg\nICBmbGV4OiAyLAogICAgICAgICAgICBtaW5IZWlnaHQ6IDQ0LAogICAgICAg\nICAgICBiYWNrZ3JvdW5kOiAnIzNCODJGNicsCiAgICAgICAgICAgIGJvcmRl\ncjogJ25vbmUnLAogICAgICAgICAgICBib3JkZXJSYWRpdXM6IDEyLAogICAg\nICAgICAgICBjb2xvcjogJ3doaXRlJywKICAgICAgICAgICAgZm9udFNpemU6\nIDE1LAogICAgICAgICAgICBmb250V2VpZ2h0OiA2MDAsCiAgICAgICAgICAg\nIGN1cnNvcjogJ3BvaW50ZXInLAogICAgICAgICAgICBmb250RmFtaWx5OiAn\ndmFyKC0tZm9udC1ib2R5KScsCiAgICAgICAgICB9fQogICAgICAgID4KICAg\nICAgICAgIE5leHQg4oaSCiAgICAgICAgPC9idXR0b24+CiAgICAgIDwvZGl2\nPgogICAgPC9kaXY+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/Step2Details.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/f9253a53998664a536150aea97c199569a7cefd0","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/Step2Details.jsx"}}
+import React, { useState } from 'react';
+import SelectionDrawer from '@/components/ui/SelectionDrawer';
+
+const selectStyle = {
+  background: 'rgba(255,255,255,0.1)',
+  border: '1.5px solid rgba(255,255,255,0.2)',
+  borderRadius: 10,
+  color: 'white',
+  padding: '10px 14px',
+  minHeight: 44,
+  fontSize: 16,
+  width: '100%',
+  outline: 'none',
+  appearance: 'auto',
+  fontFamily: 'var(--font-body)',
+};
+
+const inputStyle = { ...selectStyle };
+
+const labelStyle = {
+  display: 'block',
+  fontSize: 14,
+  color: 'rgba(255,255,255,0.7)',
+  marginBottom: 8,
+  fontFamily: 'var(--font-body)',
+};
+
+const fieldWrap = { marginBottom: 20 };
+
+function Field({ label, error, children }) {
+  return (
+    <div style={fieldWrap}>
+      <label style={labelStyle}>{label}</label>
+      {children}
+      {error && <p style={{ color: '#EF4444', fontSize: 12, marginTop: 5 }}>{error}</p>}
+    </div>
+  );
+}
+
+function StyledSelect({ value, onChange, options, placeholder, label }) {
+  return (
+    <SelectionDrawer
+      value={value}
+      onChange={onChange}
+      options={options}
+      placeholder={placeholder || 'Select...'}
+      label={label}
+      dark
+    />
+  );
+}
+
+const CLASSES = Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`);
+const BOARDS = ['CBSE', 'ICSE', 'State Board', 'IB', 'IGCSE', 'Other'];
+const EXAMS = ['JEE Main/Advanced', 'CAT', 'UPSC Civil Services', 'SSC CGL', 'IBPS/SBI Banking', 'GMAT', 'Other'];
+const STAGES = ['Just Starting', '6+ Months to Exam', '3 Months to Exam', 'Final Month'];
+const PURPOSES = ['Career Growth', 'Personal Interest', 'Help my Children', 'Mental Agility', 'Other'];
+const GENDERS = ['Male', 'Female', 'Prefer not to say'];
+
+export default function Step2Details({ data, onUpdate, onNext, onBack }) {
+  const [errors, setErrors] = useState({});
+  const { role, grade, board, exam, examStage, purpose, age, gender } = data;
+
+  const validate = () => {
+    const e = {};
+    if (role === 'Student') {
+      if (!grade) e.grade = 'Please select your class.';
+      if (!board) e.board = 'Please select your board.';
+    }
+    if (role === 'Exam Aspirant') {
+      if (!exam) e.exam = 'Please select your target exam.';
+      if (!examStage) e.examStage = 'Please select your preparation stage.';
+    }
+    if (role === 'Working Professional') {
+      if (!purpose) e.purpose = 'Please select a purpose.';
+    }
+    if (role === 'Parent') {
+      if (!grade) e.grade = "Please select your child's class.";
+      if (!board) e.board = "Please select your child's board.";
+    }
+    if (!age) {
+      e.age = 'Please enter your age.';
+    } else if (Number(age) < 6 || Number(age) > 60) {
+      e.age = 'Age must be between 6 and 60.';
+    }
+    if (!gender) e.gender = 'Please select a gender.';
+    setErrors(e);
+    return Object.keys(e).length === 0;
+  };
+
+  const handleNext = () => {
+    if (validate()) onNext();
+  };
+
+  return (
+    <div>
+      <h2 className="font-heading mb-1" style={{ fontSize: 26, fontWeight: 700, color: 'white' }}>
+        Tell us about yourself
+      </h2>
+      <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', marginBottom: 28 }}>
+        We'll customize your curriculum based on this.
+      </p>
+
+      {/* Role-conditional fields */}
+      {role === 'Student' && (
+        <>
+          <Field label="Your Class" error={errors.grade}>
+            <StyledSelect value={grade} onChange={v => onUpdate({ grade: v })} options={CLASSES} placeholder="Select class..." label="Your Class" />
+          </Field>
+          <Field label="Your Board" error={errors.board}>
+            <StyledSelect value={board} onChange={v => onUpdate({ board: v })} options={BOARDS} placeholder="Select board..." label="Your Board" />
+          </Field>
+        </>
+      )}
+
+      {role === 'Exam Aspirant' && (
+        <>
+          <Field label="Target Exam" error={errors.exam}>
+            <StyledSelect value={exam} onChange={v => onUpdate({ exam: v })} options={EXAMS} placeholder="Select exam..." label="Target Exam" />
+          </Field>
+          <Field label="Preparation Stage" error={errors.examStage}>
+            <StyledSelect value={examStage} onChange={v => onUpdate({ examStage: v })} options={STAGES} placeholder="Select stage..." label="Preparation Stage" />
+          </Field>
+        </>
+      )}
+
+      {role === 'Working Professional' && (
+        <Field label="Why are you learning Vedic Maths?" error={errors.purpose}>
+          <StyledSelect value={purpose} onChange={v => onUpdate({ purpose: v })} options={PURPOSES} placeholder="Select purpose..." label="Why are you learning Vedic Maths?" />
+        </Field>
+      )}
+
+      {role === 'Parent' && (
+        <>
+          <Field label="Child's Class" error={errors.grade}>
+            <StyledSelect value={grade} onChange={v => onUpdate({ grade: v })} options={CLASSES} placeholder="Select class..." label="Child's Class" />
+          </Field>
+          <Field label="Child's Board" error={errors.board}>
+            <StyledSelect value={board} onChange={v => onUpdate({ board: v })} options={BOARDS} placeholder="Select board..." label="Child's Board" />
+          </Field>
+        </>
+      )}
+
+      {/* Age */}
+      <Field label="Your Age" error={errors.age}>
+        <input
+          type="number"
+          min={6}
+          max={60}
+          placeholder="e.g. 16"
+          value={age}
+          onChange={e => onUpdate({ age: e.target.value })}
+          style={inputStyle}
+        />
+      </Field>
+
+      {/* Gender */}
+      <Field label="Gender" error={errors.gender}>
+        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          {GENDERS.map(g => {
+            const sel = gender === g;
+            return (
+              <button
+                key={g}
+                onClick={() => onUpdate({ gender: g })}
+                style={{
+                  background: sel ? '#3B82F6' : 'rgba(255,255,255,0.06)',
+                  border: `1.5px solid ${sel ? '#3B82F6' : 'rgba(255,255,255,0.2)'}`,
+                  borderRadius: 100,
+                  padding: '8px 20px',
+                  minHeight: 40,
+                  color: 'white',
+                  fontSize: 14,
+                  cursor: 'pointer',
+                  transition: 'all 0.18s',
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                {g}
+              </button>
+            );
+          })}
+        </div>
+      </Field>
+
+      {/* Buttons */}
+      <div style={{ display: 'flex', gap: 12, marginTop: 8 }}>
+        <button
+          onClick={onBack}
+          style={{
+            flex: 1,
+            minHeight: 44,
+            background: 'transparent',
+            border: '1.5px solid rgba(255,255,255,0.3)',
+            borderRadius: 12,
+            color: 'white',
+            fontSize: 15,
+            fontWeight: 600,
+            cursor: 'pointer',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
+          ← Back
+        </button>
+        <button
+          onClick={handleNext}
+          style={{
+            flex: 2,
+            minHeight: 44,
+            background: '#3B82F6',
+            border: 'none',
+            borderRadius: 12,
+            color: 'white',
+            fontSize: 15,
+            fontWeight: 600,
+            cursor: 'pointer',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
+          Next →
+        </button>
+      </div>
+    </div>
+  );
+}
