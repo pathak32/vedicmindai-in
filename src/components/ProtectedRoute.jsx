@@ -1,1 +1,21 @@
-{"name":"ProtectedRoute.jsx","path":"src/components/ProtectedRoute.jsx","sha":"e1731c1661213e47986f995e3d5af457158339e9","size":557,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ProtectedRoute.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ProtectedRoute.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/e1731c1661213e47986f995e3d5af457158339e9","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ProtectedRoute.jsx?token=CFODAPZGORFCXPP6X6AYVHLKFSQUNAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgTmF2aWdhdGUs\nIE91dGxldCB9IGZyb20gJ3JlYWN0LXJvdXRlci1kb20nOwppbXBvcnQgeyB1\nc2VWZWRpY0F1dGggfSBmcm9tICdAL2xpYi9WZWRpY0F1dGhDb250ZXh0JzsK\nCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFByb3RlY3RlZFJvdXRlKCkgewog\nIGNvbnN0IHsgdXNlciwgbG9hZGluZyB9ID0gdXNlVmVkaWNBdXRoKCk7Cgog\nIGlmIChsb2FkaW5nKSB7CiAgICByZXR1cm4gKAogICAgICA8ZGl2IGNsYXNz\nTmFtZT0iZml4ZWQgaW5zZXQtMCBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5\nLWNlbnRlciBiZy1iYWNrZ3JvdW5kIj4KICAgICAgICA8ZGl2IGNsYXNzTmFt\nZT0idy04IGgtOCBib3JkZXItNCBib3JkZXItWyNGMEY0RkZdIGJvcmRlci10\nLVsjMEExNjI4XSByb3VuZGVkLWZ1bGwgYW5pbWF0ZS1zcGluIiAvPgogICAg\nICA8L2Rpdj4KICAgICk7CiAgfQoKICBpZiAoIXVzZXIpIHsKICAgIHJldHVy\nbiA8TmF2aWdhdGUgdG89Ii9hdXRoIiByZXBsYWNlIC8+OwogIH0KCiAgcmV0\ndXJuIDxPdXRsZXQgLz47Cn0=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ProtectedRoute.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/e1731c1661213e47986f995e3d5af457158339e9","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ProtectedRoute.jsx"}}
+import React from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
+
+export default function ProtectedRoute() {
+  const { user, loading } = useVedicAuth();
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-background">
+        <div className="w-8 h-8 border-4 border-[#F0F4FF] border-t-[#0A1628] rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Navigate to="/auth" replace />;
+  }
+
+  return <Outlet />;
+}
