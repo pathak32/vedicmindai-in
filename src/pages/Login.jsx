@@ -1,1 +1,125 @@
-{"name":"Login.jsx","path":"src/pages/Login.jsx","sha":"0f8de769fad2192c5c37faa9bd3e9789440cbac2","size":3986,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/Login.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/Login.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/0f8de769fad2192c5c37faa9bd3e9789440cbac2","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/pages/Login.jsx?token=CFODAP44LEJUPTFBZ53A5ITKFSQ5BAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAicmVhY3QiOwppbXBv\ncnQgeyBMaW5rIH0gZnJvbSAicmVhY3Qtcm91dGVyLWRvbSI7CmltcG9ydCB7\nIGJhc2U0NCB9IGZyb20gIkAvYXBpL2Jhc2U0NENsaWVudCI7CmltcG9ydCB7\nIEJ1dHRvbiB9IGZyb20gIkAvY29tcG9uZW50cy91aS9idXR0b24iOwppbXBv\ncnQgeyBJbnB1dCB9IGZyb20gIkAvY29tcG9uZW50cy91aS9pbnB1dCI7Cmlt\ncG9ydCB7IExhYmVsIH0gZnJvbSAiQC9jb21wb25lbnRzL3VpL2xhYmVsIjsK\naW1wb3J0IHsgTG9nSW4sIE1haWwsIExvY2ssIExvYWRlcjIgfSBmcm9tICJs\ndWNpZGUtcmVhY3QiOwppbXBvcnQgQXV0aExheW91dCBmcm9tICJAL2NvbXBv\nbmVudHMvQXV0aExheW91dCI7CmltcG9ydCBHb29nbGVJY29uIGZyb20gIkAv\nY29tcG9uZW50cy9Hb29nbGVJY29uIjsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0\naW9uIExvZ2luKCkgewogIGNvbnN0IFtlbWFpbCwgc2V0RW1haWxdID0gdXNl\nU3RhdGUoIiIpOwogIGNvbnN0IFtwYXNzd29yZCwgc2V0UGFzc3dvcmRdID0g\ndXNlU3RhdGUoIiIpOwogIGNvbnN0IFtlcnJvciwgc2V0RXJyb3JdID0gdXNl\nU3RhdGUoIiIpOwogIGNvbnN0IFtsb2FkaW5nLCBzZXRMb2FkaW5nXSA9IHVz\nZVN0YXRlKGZhbHNlKTsKCiAgY29uc3QgaGFuZGxlU3VibWl0ID0gYXN5bmMg\nKGUpID0+IHsKICAgIGUucHJldmVudERlZmF1bHQoKTsKICAgIHNldEVycm9y\nKCIiKTsKICAgIHNldExvYWRpbmcodHJ1ZSk7CiAgICB0cnkgewogICAgICBh\nd2FpdCBiYXNlNDQuYXV0aC5sb2dpblZpYUVtYWlsUGFzc3dvcmQoZW1haWws\nIHBhc3N3b3JkKTsKICAgICAgd2luZG93LmxvY2F0aW9uLmhyZWYgPSAiLyI7\nCiAgICB9IGNhdGNoIChlcnIpIHsKICAgICAgc2V0RXJyb3IoZXJyLm1lc3Nh\nZ2UgfHwgIkludmFsaWQgZW1haWwgb3IgcGFzc3dvcmQiKTsKICAgIH0gZmlu\nYWxseSB7CiAgICAgIHNldExvYWRpbmcoZmFsc2UpOwogICAgfQogIH07Cgog\nIGNvbnN0IGhhbmRsZUdvb2dsZSA9ICgpID0+IHsKICAgIGJhc2U0NC5hdXRo\nLmxvZ2luV2l0aFByb3ZpZGVyKCJnb29nbGUiLCAiLyIpOwogIH07CgogIHJl\ndHVybiAoCiAgICA8QXV0aExheW91dAogICAgICBpY29uPXtMb2dJbn0KICAg\nICAgdGl0bGU9IldlbGNvbWUgYmFjayIKICAgICAgc3VidGl0bGU9IkxvZyBp\nbiB0byB5b3VyIGFjY291bnQiCiAgICAgIGZvb3Rlcj17CiAgICAgICAgPD4K\nICAgICAgICAgIERvbid0IGhhdmUgYW4gYWNjb3VudD97IiAifQogICAgICAg\nICAgPExpbmsgdG89Ii9yZWdpc3RlciIgY2xhc3NOYW1lPSJ0ZXh0LXByaW1h\ncnkgZm9udC1tZWRpdW0gaG92ZXI6dW5kZXJsaW5lIj4KICAgICAgICAgICAg\nQ3JlYXRlIG9uZQogICAgICAgICAgPC9MaW5rPgogICAgICAgIDwvPgogICAg\nICB9CiAgICA+CiAgICAgIDxCdXR0b24KICAgICAgICB2YXJpYW50PSJvdXRs\naW5lIgogICAgICAgIGNsYXNzTmFtZT0idy1mdWxsIGgtMTIgdGV4dC1zbSBm\nb250LW1lZGl1bSBtYi02IgogICAgICAgIG9uQ2xpY2s9e2hhbmRsZUdvb2ds\nZX0KICAgICAgPgogICAgICAgIDxHb29nbGVJY29uIGNsYXNzTmFtZT0idy01\nIGgtNSBtci0yIiAvPgogICAgICAgIENvbnRpbnVlIHdpdGggR29vZ2xlCiAg\nICAgIDwvQnV0dG9uPgoKICAgICAgPGRpdiBjbGFzc05hbWU9InJlbGF0aXZl\nIG1iLTYiPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJhYnNvbHV0ZSBpbnNl\ndC0wIGZsZXggaXRlbXMtY2VudGVyIj4KICAgICAgICAgIDxkaXYgY2xhc3NO\nYW1lPSJ3LWZ1bGwgYm9yZGVyLXQgYm9yZGVyLWJvcmRlciIgLz4KICAgICAg\nICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icmVsYXRpdmUgZmxl\neCBqdXN0aWZ5LWNlbnRlciB0ZXh0LXhzIHVwcGVyY2FzZSI+CiAgICAgICAg\nICA8c3BhbiBjbGFzc05hbWU9ImJnLWNhcmQgcHgtMyB0ZXh0LW11dGVkLWZv\ncmVncm91bmQiPm9yPC9zcGFuPgogICAgICAgIDwvZGl2PgogICAgICA8L2Rp\ndj4KCiAgICAgIHtlcnJvciAmJiAoCiAgICAgICAgPGRpdiBjbGFzc05hbWU9\nIm1iLTQgcC0zIHJvdW5kZWQtbGcgYmctZGVzdHJ1Y3RpdmUvMTAgdGV4dC1k\nZXN0cnVjdGl2ZSB0ZXh0LXNtIj4KICAgICAgICAgIHtlcnJvcn0KICAgICAg\nICA8L2Rpdj4KICAgICAgKX0KCiAgICAgIDxmb3JtIG9uU3VibWl0PXtoYW5k\nbGVTdWJtaXR9IGNsYXNzTmFtZT0ic3BhY2UteS00Ij4KICAgICAgICA8ZGl2\nIGNsYXNzTmFtZT0ic3BhY2UteS0yIj4KICAgICAgICAgIDxMYWJlbCBodG1s\nRm9yPSJlbWFpbCI+RW1haWw8L0xhYmVsPgogICAgICAgICAgPGRpdiBjbGFz\nc05hbWU9InJlbGF0aXZlIj4KICAgICAgICAgICAgPE1haWwgY2xhc3NOYW1l\nPSJhYnNvbHV0ZSBsZWZ0LTMgdG9wLTEvMiAtdHJhbnNsYXRlLXktMS8yIHct\nNCBoLTQgdGV4dC1tdXRlZC1mb3JlZ3JvdW5kIiBhcmlhLWhpZGRlbj0idHJ1\nZSIgLz4KICAgICAgICAgICAgPElucHV0CiAgICAgICAgICAgICAgaWQ9ImVt\nYWlsIgogICAgICAgICAgICAgIHR5cGU9ImVtYWlsIgogICAgICAgICAgICAg\nIGF1dG9Db21wbGV0ZT0iZW1haWwiCiAgICAgICAgICAgICAgYXV0b0ZvY3Vz\nCiAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9InlvdUBleGFtcGxlLmNvbSIK\nICAgICAgICAgICAgICB2YWx1ZT17ZW1haWx9CiAgICAgICAgICAgICAgb25D\naGFuZ2U9eyhlKSA9PiBzZXRFbWFpbChlLnRhcmdldC52YWx1ZSl9CiAgICAg\nICAgICAgICAgY2xhc3NOYW1lPSJwbC0xMCBoLTEyIgogICAgICAgICAgICAg\nIHJlcXVpcmVkCiAgICAgICAgICAgIC8+CiAgICAgICAgICA8L2Rpdj4KICAg\nICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3BhY2UteS0y\nIj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRl\nciBqdXN0aWZ5LWJldHdlZW4iPgogICAgICAgICAgICA8TGFiZWwgaHRtbEZv\ncj0icGFzc3dvcmQiPlBhc3N3b3JkPC9MYWJlbD4KICAgICAgICAgICAgPExp\nbmsgdG89Ii9mb3Jnb3QtcGFzc3dvcmQiIGNsYXNzTmFtZT0idGV4dC14cyB0\nZXh0LXByaW1hcnkgaG92ZXI6dW5kZXJsaW5lIj4KICAgICAgICAgICAgICBG\nb3Jnb3QgcGFzc3dvcmQ/CiAgICAgICAgICAgIDwvTGluaz4KICAgICAgICAg\nIDwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InJlbGF0aXZlIj4K\nICAgICAgICAgICAgPExvY2sgY2xhc3NOYW1lPSJhYnNvbHV0ZSBsZWZ0LTMg\ndG9wLTEvMiAtdHJhbnNsYXRlLXktMS8yIHctNCBoLTQgdGV4dC1tdXRlZC1m\nb3JlZ3JvdW5kIiBhcmlhLWhpZGRlbj0idHJ1ZSIgLz4KICAgICAgICAgICAg\nPElucHV0CiAgICAgICAgICAgICAgaWQ9InBhc3N3b3JkIgogICAgICAgICAg\nICAgIHR5cGU9InBhc3N3b3JkIgogICAgICAgICAgICAgIGF1dG9Db21wbGV0\nZT0iY3VycmVudC1wYXNzd29yZCIKICAgICAgICAgICAgICBwbGFjZWhvbGRl\ncj0i4oCi4oCi4oCi4oCi4oCi4oCi4oCi4oCiIgogICAgICAgICAgICAgIHZh\nbHVlPXtwYXNzd29yZH0KICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+\nIHNldFBhc3N3b3JkKGUudGFyZ2V0LnZhbHVlKX0KICAgICAgICAgICAgICBj\nbGFzc05hbWU9InBsLTEwIGgtMTIiCiAgICAgICAgICAgICAgcmVxdWlyZWQK\nICAgICAgICAgICAgLz4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2\nPgogICAgICAgIDxCdXR0b24gdHlwZT0ic3VibWl0IiBjbGFzc05hbWU9Inct\nZnVsbCBoLTEyIGZvbnQtbWVkaXVtIiBkaXNhYmxlZD17bG9hZGluZ30+CiAg\nICAgICAgICB7bG9hZGluZyA/ICgKICAgICAgICAgICAgPD4KICAgICAgICAg\nICAgICA8TG9hZGVyMiBjbGFzc05hbWU9InctNCBoLTQgbXItMiBhbmltYXRl\nLXNwaW4iIC8+CiAgICAgICAgICAgICAgTG9nZ2luZyBpbi4uLgogICAgICAg\nICAgICA8Lz4KICAgICAgICAgICkgOiAoCiAgICAgICAgICAgICJMb2cgaW4i\nCiAgICAgICAgICApfQogICAgICAgIDwvQnV0dG9uPgogICAgICA8L2Zvcm0+\nCiAgICA8L0F1dGhMYXlvdXQ+CiAgKTsKfQo=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/Login.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/0f8de769fad2192c5c37faa9bd3e9789440cbac2","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/Login.jsx"}}
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { base44 } from "@/api/base44Client";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { LogIn, Mail, Lock, Loader2 } from "lucide-react";
+import AuthLayout from "@/components/AuthLayout";
+import GoogleIcon from "@/components/GoogleIcon";
+
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+    try {
+      await base44.auth.loginViaEmailPassword(email, password);
+      window.location.href = "/";
+    } catch (err) {
+      setError(err.message || "Invalid email or password");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogle = () => {
+    base44.auth.loginWithProvider("google", "/");
+  };
+
+  return (
+    <AuthLayout
+      icon={LogIn}
+      title="Welcome back"
+      subtitle="Log in to your account"
+      footer={
+        <>
+          Don't have an account?{" "}
+          <Link to="/register" className="text-primary font-medium hover:underline">
+            Create one
+          </Link>
+        </>
+      }
+    >
+      <Button
+        variant="outline"
+        className="w-full h-12 text-sm font-medium mb-6"
+        onClick={handleGoogle}
+      >
+        <GoogleIcon className="w-5 h-5 mr-2" />
+        Continue with Google
+      </Button>
+
+      <div className="relative mb-6">
+        <div className="absolute inset-0 flex items-center">
+          <div className="w-full border-t border-border" />
+        </div>
+        <div className="relative flex justify-center text-xs uppercase">
+          <span className="bg-card px-3 text-muted-foreground">or</span>
+        </div>
+      </div>
+
+      {error && (
+        <div className="mb-4 p-3 rounded-lg bg-destructive/10 text-destructive text-sm">
+          {error}
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <div className="relative">
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
+            <Input
+              id="email"
+              type="email"
+              autoComplete="email"
+              autoFocus
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="pl-10 h-12"
+              required
+            />
+          </div>
+        </div>
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <Label htmlFor="password">Password</Label>
+            <Link to="/forgot-password" className="text-xs text-primary hover:underline">
+              Forgot password?
+            </Link>
+          </div>
+          <div className="relative">
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
+            <Input
+              id="password"
+              type="password"
+              autoComplete="current-password"
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="pl-10 h-12"
+              required
+            />
+          </div>
+        </div>
+        <Button type="submit" className="w-full h-12 font-medium" disabled={loading}>
+          {loading ? (
+            <>
+              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              Logging in...
+            </>
+          ) : (
+            "Log in"
+          )}
+        </Button>
+      </form>
+    </AuthLayout>
+  );
+}
