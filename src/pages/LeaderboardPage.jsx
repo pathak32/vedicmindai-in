@@ -44,8 +44,7 @@ function Toggle({ value, onChange }) {
 export default function LeaderboardPage() {
   const navigate = useNavigate();
 
-  const auth     = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth')) || null; } catch { return null; } })();
-  const profile  = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile')) || {}; } catch { return {}; } })();
+const auth     = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth')) || JSON.parse(localStorage.getItem('vedicmind-auth'))?.user || null; } catch { return null; } })();  const profile  = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile')) || {}; } catch { return {}; } })();
   const [progress, setProgress] = useState(() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress')) || {}; } catch { return {}; } });
 
   React.useEffect(() => {
