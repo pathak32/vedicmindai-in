@@ -17,7 +17,7 @@ const TABS = [
   { id: 'analytics', label: '📊 Analytics' },
 ];
 
-const ADMIN_EMAILS = ['test1@vedicmindai.in', 'hitesh@vedicmindai.in', 'admin@vedicmindai.in', 'pathak32032@gmail.com'];
+const ADMIN_EMAILS = ['test1@vedicmindai.in', 'hitesh@vedicmindai.in', 'admin@vedicmindai.in', 'pathak32032@gmail.com', '918573000191@vedicmindai.in'];
 
 export default function AdminPanel() {
   const navigate = useNavigate();
