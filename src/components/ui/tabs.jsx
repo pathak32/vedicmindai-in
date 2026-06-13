@@ -1,1 +1,41 @@
-{"name":"tabs.jsx","path":"src/components/ui/tabs.jsx","sha":"b674eb93009a3f5da27631ea28a99604fc6321cd","size":1529,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/tabs.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/tabs.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/b674eb93009a3f5da27631ea28a99604fc6321cd","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/tabs.jsx?token=CFODAP57BDKYWIDXDQBMGK3KFSQ2NAA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIFRh\nYnNQcmltaXRpdmUgZnJvbSAiQHJhZGl4LXVpL3JlYWN0LXRhYnMiCgppbXBv\ncnQgeyBjbiB9IGZyb20gIkAvbGliL3V0aWxzIgoKY29uc3QgVGFicyA9IFRh\nYnNQcmltaXRpdmUuUm9vdAoKY29uc3QgVGFic0xpc3QgPSBSZWFjdC5mb3J3\nYXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoCiAg\nPFRhYnNQcmltaXRpdmUuTGlzdAogICAgcmVmPXtyZWZ9CiAgICBjbGFzc05h\nbWU9e2NuKAogICAgICAiaW5saW5lLWZsZXggaC05IGl0ZW1zLWNlbnRlciBq\ndXN0aWZ5LWNlbnRlciByb3VuZGVkLWxnIGJnLW11dGVkIHAtMSB0ZXh0LW11\ndGVkLWZvcmVncm91bmQiLAogICAgICBjbGFzc05hbWUKICAgICl9CiAgICB7\nLi4ucHJvcHN9IC8+CikpClRhYnNMaXN0LmRpc3BsYXlOYW1lID0gVGFic1By\naW1pdGl2ZS5MaXN0LmRpc3BsYXlOYW1lCgpjb25zdCBUYWJzVHJpZ2dlciA9\nIFJlYWN0LmZvcndhcmRSZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCBy\nZWYpID0+ICgKICA8VGFic1ByaW1pdGl2ZS5UcmlnZ2VyCiAgICByZWY9e3Jl\nZn0KICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICJpbmxpbmUtZmxleCBpdGVt\ncy1jZW50ZXIganVzdGlmeS1jZW50ZXIgd2hpdGVzcGFjZS1ub3dyYXAgcm91\nbmRlZC1tZCBweC0zIHB5LTEgdGV4dC1zbSBmb250LW1lZGl1bSByaW5nLW9m\nZnNldC1iYWNrZ3JvdW5kIHRyYW5zaXRpb24tYWxsIGZvY3VzLXZpc2libGU6\nb3V0bGluZS1ub25lIGZvY3VzLXZpc2libGU6cmluZy0yIGZvY3VzLXZpc2li\nbGU6cmluZy1yaW5nIGZvY3VzLXZpc2libGU6cmluZy1vZmZzZXQtMiBkaXNh\nYmxlZDpwb2ludGVyLWV2ZW50cy1ub25lIGRpc2FibGVkOm9wYWNpdHktNTAg\nZGF0YS1bc3RhdGU9YWN0aXZlXTpiZy1iYWNrZ3JvdW5kIGRhdGEtW3N0YXRl\nPWFjdGl2ZV06dGV4dC1mb3JlZ3JvdW5kIGRhdGEtW3N0YXRlPWFjdGl2ZV06\nc2hhZG93IiwKICAgICAgY2xhc3NOYW1lCiAgICApfQogICAgey4uLnByb3Bz\nfSAvPgopKQpUYWJzVHJpZ2dlci5kaXNwbGF5TmFtZSA9IFRhYnNQcmltaXRp\ndmUuVHJpZ2dlci5kaXNwbGF5TmFtZQoKY29uc3QgVGFic0NvbnRlbnQgPSBS\nZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwgcmVm\nKSA9PiAoCiAgPFRhYnNQcmltaXRpdmUuQ29udGVudAogICAgcmVmPXtyZWZ9\nCiAgICBjbGFzc05hbWU9e2NuKAogICAgICAibXQtMiByaW5nLW9mZnNldC1i\nYWNrZ3JvdW5kIGZvY3VzLXZpc2libGU6b3V0bGluZS1ub25lIGZvY3VzLXZp\nc2libGU6cmluZy0yIGZvY3VzLXZpc2libGU6cmluZy1yaW5nIGZvY3VzLXZp\nc2libGU6cmluZy1vZmZzZXQtMiIsCiAgICAgIGNsYXNzTmFtZQogICAgKX0K\nICAgIHsuLi5wcm9wc30gLz4KKSkKVGFic0NvbnRlbnQuZGlzcGxheU5hbWUg\nPSBUYWJzUHJpbWl0aXZlLkNvbnRlbnQuZGlzcGxheU5hbWUKCmV4cG9ydCB7\nIFRhYnMsIFRhYnNMaXN0LCBUYWJzVHJpZ2dlciwgVGFic0NvbnRlbnQgfQo=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/tabs.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/b674eb93009a3f5da27631ea28a99604fc6321cd","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/tabs.jsx"}}
+import * as React from "react"
+import * as TabsPrimitive from "@radix-ui/react-tabs"
+
+import { cn } from "@/lib/utils"
+
+const Tabs = TabsPrimitive.Root
+
+const TabsList = React.forwardRef(({ className, ...props }, ref) => (
+  <TabsPrimitive.List
+    ref={ref}
+    className={cn(
+      "inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
+      className
+    )}
+    {...props} />
+))
+TabsList.displayName = TabsPrimitive.List.displayName
+
+const TabsTrigger = React.forwardRef(({ className, ...props }, ref) => (
+  <TabsPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow",
+      className
+    )}
+    {...props} />
+))
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
+
+const TabsContent = React.forwardRef(({ className, ...props }, ref) => (
+  <TabsPrimitive.Content
+    ref={ref}
+    className={cn(
+      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      className
+    )}
+    {...props} />
+))
+TabsContent.displayName = TabsPrimitive.Content.displayName
+
+export { Tabs, TabsList, TabsTrigger, TabsContent }
