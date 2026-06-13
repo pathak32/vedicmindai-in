@@ -1,1 +1,86 @@
-{"name":"table.jsx","path":"src/components/ui/table.jsx","sha":"07443a1a5a091046a7bed640882106fbc2df47cf","size":2231,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/table.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/table.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/07443a1a5a091046a7bed640882106fbc2df47cf","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/table.jsx?token=CFODAPZ4PE6UD3O5FS3PO4DKFSQ2LAA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCgppbXBvcnQgeyBjbiB9\nIGZyb20gIkAvbGliL3V0aWxzIgoKY29uc3QgVGFibGUgPSBSZWFjdC5mb3J3\nYXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoCiAg\nPGRpdiBjbGFzc05hbWU9InJlbGF0aXZlIHctZnVsbCBvdmVyZmxvdy1hdXRv\nIj4KICAgIDx0YWJsZQogICAgICByZWY9e3JlZn0KICAgICAgY2xhc3NOYW1l\nPXtjbigidy1mdWxsIGNhcHRpb24tYm90dG9tIHRleHQtc20iLCBjbGFzc05h\nbWUpfQogICAgICB7Li4ucHJvcHN9IC8+CiAgPC9kaXY+CikpClRhYmxlLmRp\nc3BsYXlOYW1lID0gIlRhYmxlIgoKY29uc3QgVGFibGVIZWFkZXIgPSBSZWFj\ndC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwgcmVmKSA9\nPiAoCiAgPHRoZWFkIHJlZj17cmVmfSBjbGFzc05hbWU9e2NuKCJbJl90cl06\nYm9yZGVyLWIiLCBjbGFzc05hbWUpfSB7Li4ucHJvcHN9IC8+CikpClRhYmxl\nSGVhZGVyLmRpc3BsYXlOYW1lID0gIlRhYmxlSGVhZGVyIgoKY29uc3QgVGFi\nbGVCb2R5ID0gUmVhY3QuZm9yd2FyZFJlZigoeyBjbGFzc05hbWUsIC4uLnBy\nb3BzIH0sIHJlZikgPT4gKAogIDx0Ym9keQogICAgcmVmPXtyZWZ9CiAgICBj\nbGFzc05hbWU9e2NuKCJbJl90cjpsYXN0LWNoaWxkXTpib3JkZXItMCIsIGNs\nYXNzTmFtZSl9CiAgICB7Li4ucHJvcHN9IC8+CikpClRhYmxlQm9keS5kaXNw\nbGF5TmFtZSA9ICJUYWJsZUJvZHkiCgpjb25zdCBUYWJsZUZvb3RlciA9IFJl\nYWN0LmZvcndhcmRSZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYp\nID0+ICgKICA8dGZvb3QKICAgIHJlZj17cmVmfQogICAgY2xhc3NOYW1lPXtj\nbigiYm9yZGVyLXQgYmctbXV0ZWQvNTAgZm9udC1tZWRpdW0gWyY+dHJdOmxh\nc3Q6Ym9yZGVyLWItMCIsIGNsYXNzTmFtZSl9CiAgICB7Li4ucHJvcHN9IC8+\nCikpClRhYmxlRm9vdGVyLmRpc3BsYXlOYW1lID0gIlRhYmxlRm9vdGVyIgoK\nY29uc3QgVGFibGVSb3cgPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFt\nZSwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoCiAgPHRyCiAgICByZWY9e3JlZn0K\nICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICJib3JkZXItYiB0cmFuc2l0aW9u\nLWNvbG9ycyBob3ZlcjpiZy1tdXRlZC81MCBkYXRhLVtzdGF0ZT1zZWxlY3Rl\nZF06YmctbXV0ZWQiLAogICAgICBjbGFzc05hbWUKICAgICl9CiAgICB7Li4u\ncHJvcHN9IC8+CikpClRhYmxlUm93LmRpc3BsYXlOYW1lID0gIlRhYmxlUm93\nIgoKY29uc3QgVGFibGVIZWFkID0gUmVhY3QuZm9yd2FyZFJlZigoeyBjbGFz\nc05hbWUsIC4uLnByb3BzIH0sIHJlZikgPT4gKAogIDx0aAogICAgcmVmPXty\nZWZ9CiAgICBjbGFzc05hbWU9e2NuKAogICAgICAiaC0xMCBweC0yIHRleHQt\nbGVmdCBhbGlnbi1taWRkbGUgZm9udC1tZWRpdW0gdGV4dC1tdXRlZC1mb3Jl\nZ3JvdW5kIFsmOmhhcyhbcm9sZT1jaGVja2JveF0pXTpwci0wIFsmPltyb2xl\nPWNoZWNrYm94XV06dHJhbnNsYXRlLXktWzJweF0iLAogICAgICBjbGFzc05h\nbWUKICAgICl9CiAgICB7Li4ucHJvcHN9IC8+CikpClRhYmxlSGVhZC5kaXNw\nbGF5TmFtZSA9ICJUYWJsZUhlYWQiCgpjb25zdCBUYWJsZUNlbGwgPSBSZWFj\ndC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwgcmVmKSA9\nPiAoCiAgPHRkCiAgICByZWY9e3JlZn0KICAgIGNsYXNzTmFtZT17Y24oCiAg\nICAgICJwLTIgYWxpZ24tbWlkZGxlIFsmOmhhcyhbcm9sZT1jaGVja2JveF0p\nXTpwci0wIFsmPltyb2xlPWNoZWNrYm94XV06dHJhbnNsYXRlLXktWzJweF0i\nLAogICAgICBjbGFzc05hbWUKICAgICl9CiAgICB7Li4ucHJvcHN9IC8+Cikp\nClRhYmxlQ2VsbC5kaXNwbGF5TmFtZSA9ICJUYWJsZUNlbGwiCgpjb25zdCBU\nYWJsZUNhcHRpb24gPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwg\nLi4ucHJvcHMgfSwgcmVmKSA9PiAoCiAgPGNhcHRpb24KICAgIHJlZj17cmVm\nfQogICAgY2xhc3NOYW1lPXtjbigibXQtNCB0ZXh0LXNtIHRleHQtbXV0ZWQt\nZm9yZWdyb3VuZCIsIGNsYXNzTmFtZSl9CiAgICB7Li4ucHJvcHN9IC8+Cikp\nClRhYmxlQ2FwdGlvbi5kaXNwbGF5TmFtZSA9ICJUYWJsZUNhcHRpb24iCgpl\neHBvcnQgewogIFRhYmxlLAogIFRhYmxlSGVhZGVyLAogIFRhYmxlQm9keSwK\nICBUYWJsZUZvb3RlciwKICBUYWJsZUhlYWQsCiAgVGFibGVSb3csCiAgVGFi\nbGVDZWxsLAogIFRhYmxlQ2FwdGlvbiwKfQo=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/table.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/07443a1a5a091046a7bed640882106fbc2df47cf","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/table.jsx"}}
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+const Table = React.forwardRef(({ className, ...props }, ref) => (
+  <div className="relative w-full overflow-auto">
+    <table
+      ref={ref}
+      className={cn("w-full caption-bottom text-sm", className)}
+      {...props} />
+  </div>
+))
+Table.displayName = "Table"
+
+const TableHeader = React.forwardRef(({ className, ...props }, ref) => (
+  <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} />
+))
+TableHeader.displayName = "TableHeader"
+
+const TableBody = React.forwardRef(({ className, ...props }, ref) => (
+  <tbody
+    ref={ref}
+    className={cn("[&_tr:last-child]:border-0", className)}
+    {...props} />
+))
+TableBody.displayName = "TableBody"
+
+const TableFooter = React.forwardRef(({ className, ...props }, ref) => (
+  <tfoot
+    ref={ref}
+    className={cn("border-t bg-muted/50 font-medium [&>tr]:last:border-b-0", className)}
+    {...props} />
+))
+TableFooter.displayName = "TableFooter"
+
+const TableRow = React.forwardRef(({ className, ...props }, ref) => (
+  <tr
+    ref={ref}
+    className={cn(
+      "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
+      className
+    )}
+    {...props} />
+))
+TableRow.displayName = "TableRow"
+
+const TableHead = React.forwardRef(({ className, ...props }, ref) => (
+  <th
+    ref={ref}
+    className={cn(
+      "h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+      className
+    )}
+    {...props} />
+))
+TableHead.displayName = "TableHead"
+
+const TableCell = React.forwardRef(({ className, ...props }, ref) => (
+  <td
+    ref={ref}
+    className={cn(
+      "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+      className
+    )}
+    {...props} />
+))
+TableCell.displayName = "TableCell"
+
+const TableCaption = React.forwardRef(({ className, ...props }, ref) => (
+  <caption
+    ref={ref}
+    className={cn("mt-4 text-sm text-muted-foreground", className)}
+    {...props} />
+))
+TableCaption.displayName = "TableCaption"
+
+export {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableCaption,
+}
