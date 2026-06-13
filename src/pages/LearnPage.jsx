@@ -6,9 +6,13 @@ import LearnSidebar from '@/components/learn/LearnSidebar';
 import LessonViewer from '@/components/learn/LessonViewer';
 import AITutorPanel from '@/components/learn/AITutorPanel';
 import { CURRICULUM } from '@/components/learn/curriculumData';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { saveUserProgress } from '@/lib/supabaseDataService';
+import { getSupabase } from '@/lib/supabaseClient';
 
 export default function LearnPage() {
   const navigate = useNavigate();
+  const { user: auth, loading } = useVedicAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [aiOpen, setAiOpen] = useState(false);
   const [progressVersion, setProgressVersion] = useState(0);
@@ -19,8 +23,8 @@ export default function LearnPage() {
   const progress = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
 
   useEffect(() => {
-    if (!localStorage.getItem('vedicmind_auth')) navigate('/auth');
-  }, []);
+    if (!loading && !auth) navigate('/auth');
+  }, [loading, auth]);
 
   // Determine current lesson
   const allIds = CURRICULUM.flatMap(lv => lv.lessons.map(l => l.id));
@@ -99,6 +103,14 @@ export default function LearnPage() {
                   if (!p.studyDates) p.studyDates = [];
                   if (!p.studyDates.includes(today)) p.studyDates.push(today);
                   localStorage.setItem('vedicmind_progress', JSON.stringify(p));
+                  // Save to Supabase async
+                  (async () => {
+                    try {
+                      const supabase = await getSupabase();
+                      const { data: { session } } = await supabase.auth.getSession();
+                      if (session?.user?.id) await saveUserProgress(session.user.id, p);
+                    } catch(e) { /* silent */ }
+                  })();
                   // trigger sidebar re-render with fresh progress
                   setProgressVersion(v => v + 1);
                 }}
