@@ -1,1 +1,138 @@
-{"name":"App.jsx","path":"src/App.jsx","sha":"984ba68b4e719c960353d3c5f1d0acaf53cafcb6","size":5681,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/App.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/App.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/984ba68b4e719c960353d3c5f1d0acaf53cafcb6","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/App.jsx?token=CFODAPZXX34XUGJKOVTHQADKFSQUBAA","type":"file","content":"aW1wb3J0IHsgUXVlcnlDbGllbnRQcm92aWRlciB9IGZyb20gJ0B0YW5zdGFj\nay9yZWFjdC1xdWVyeScKaW1wb3J0IHsgcXVlcnlDbGllbnRJbnN0YW5jZSB9\nIGZyb20gJ0AvbGliL3F1ZXJ5LWNsaWVudCcKaW1wb3J0IHsgQnJvd3NlclJv\ndXRlciBhcyBSb3V0ZXIsIFJvdXRlLCBSb3V0ZXMsIHVzZUxvY2F0aW9uIH0g\nZnJvbSAncmVhY3Qtcm91dGVyLWRvbSc7CmltcG9ydCB7IFZlZGljQXV0aFBy\nb3ZpZGVyIH0gZnJvbSAnQC9saWIvVmVkaWNBdXRoQ29udGV4dCc7CmltcG9y\ndCB7IFByb2dyZXNzUHJvdmlkZXIgfSBmcm9tICdAL2xpYi9Qcm9ncmVzc0Nv\nbnRleHQnOwppbXBvcnQgeyBQcm9maWxlUHJvdmlkZXIgfSBmcm9tICdAL2xp\nYi9Qcm9maWxlQ29udGV4dCc7CmltcG9ydCBTY3JvbGxUb1RvcCBmcm9tICdA\nL2xpYi9TY3JvbGxUb1RvcCc7CmltcG9ydCB7IEFuaW1hdGVQcmVzZW5jZSwg\nbW90aW9uIH0gZnJvbSAnZnJhbWVyLW1vdGlvbic7CmltcG9ydCB7IHVzZUVm\nZmVjdCB9IGZyb20gJ3JlYWN0JzsKCmltcG9ydCBMYW5kaW5nUGFnZSBmcm9t\nICdAL3BhZ2VzL0xhbmRpbmdQYWdlJzsKaW1wb3J0IEF1dGhQYWdlIGZyb20g\nJ0AvcGFnZXMvQXV0aFBhZ2UnOwppbXBvcnQgT25ib2FyZGluZ1BhZ2UgZnJv\nbSAnQC9wYWdlcy9PbmJvYXJkaW5nUGFnZSc7CmltcG9ydCBEYXNoYm9hcmRQ\nYWdlIGZyb20gJ0AvcGFnZXMvRGFzaGJvYXJkUGFnZSc7CmltcG9ydCBMZWFy\nblBhZ2UgZnJvbSAnQC9wYWdlcy9MZWFyblBhZ2UnOwppbXBvcnQgUHJhY3Rp\nY2VQYWdlIGZyb20gJ0AvcGFnZXMvUHJhY3RpY2VQYWdlJzsKaW1wb3J0IFBy\nb2ZpbGVQYWdlIGZyb20gJ0AvcGFnZXMvUHJvZmlsZVBhZ2UnOwppbXBvcnQg\nTm90Rm91bmRQYWdlIGZyb20gJ0AvcGFnZXMvTm90Rm91bmRQYWdlJzsKaW1w\nb3J0IERlbW9QYWdlIGZyb20gJ0AvcGFnZXMvRGVtb1BhZ2UnOwppbXBvcnQg\nQ3VycmljdWx1bVBhZ2UgZnJvbSAnQC9wYWdlcy9DdXJyaWN1bHVtUGFnZSc7\nCmltcG9ydCBEYWlseVF1aXpQYWdlIGZyb20gJ0AvcGFnZXMvRGFpbHlRdWl6\nUGFnZSc7CmltcG9ydCBEYWlseVF1aXpSZXN1bHRzUGFnZSBmcm9tICdAL3Bh\nZ2VzL0RhaWx5UXVpelJlc3VsdHNQYWdlJzsKaW1wb3J0IExlYWRlcmJvYXJk\nUGFnZSBmcm9tICdAL3BhZ2VzL0xlYWRlcmJvYXJkUGFnZSc7CmltcG9ydCBB\ncHRpdHVkZVpvbmVQYWdlIGZyb20gJ0AvcGFnZXMvQXB0aXR1ZGVab25lUGFn\nZSc7CmltcG9ydCBBZG1pblBhbmVsIGZyb20gJ0AvcGFnZXMvQWRtaW5QYW5l\nbCc7CmltcG9ydCBQcmljaW5nUGFnZSBmcm9tICdAL3BhZ2VzL1ByaWNpbmdQ\nYWdlJzsKaW1wb3J0IFdlZWtseUV4YW1QYWdlIGZyb20gJ0AvcGFnZXMvV2Vl\na2x5RXhhbVBhZ2UnOwppbXBvcnQgV2Vla2x5RXhhbVJlc3VsdHNQYWdlIGZy\nb20gJ0AvcGFnZXMvV2Vla2x5RXhhbVJlc3VsdHNQYWdlJzsKaW1wb3J0IE9s\neW1waWFkUGFnZSBmcm9tICdAL3BhZ2VzL09seW1waWFkUGFnZSc7CmltcG9y\ndCBPbHltcGlhZFJlc3VsdHNQYWdlIGZyb20gJ0AvcGFnZXMvT2x5bXBpYWRS\nZXN1bHRzUGFnZSc7CmltcG9ydCBCYXR0bGVNb2RlUGFnZSBmcm9tICdAL3Bh\nZ2VzL0JhdHRsZU1vZGVQYWdlJzsKaW1wb3J0IFBheW1lbnRTdWNjZXNzUGFn\nZSBmcm9tICdAL3BhZ2VzL1BheW1lbnRTdWNjZXNzUGFnZSc7CmltcG9ydCBS\nZXZpZXdzUGFnZSBmcm9tICdAL3BhZ2VzL1Jldmlld3NQYWdlJzsKaW1wb3J0\nIFJlcG9ydENhcmRQYWdlIGZyb20gJ0AvcGFnZXMvUmVwb3J0Q2FyZFBhZ2Un\nOwppbXBvcnQgTW9iaWxlQm90dG9tTmF2IGZyb20gJ0AvY29tcG9uZW50cy9N\nb2JpbGVMYXlvdXQnOwppbXBvcnQgTW9iaWxlQXBwSGVhZGVyIGZyb20gJ0Av\nY29tcG9uZW50cy9Nb2JpbGVBcHBIZWFkZXInOwoKZnVuY3Rpb24gRGFya01v\nZGVTeW5jKCkgewogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBjb25zdCBhcHBs\neSA9IChlKSA9PiB7CiAgICAgIGlmIChlLm1hdGNoZXMpIHsKICAgICAgICBk\nb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuY2xhc3NMaXN0LmFkZCgnZGFyaycp\nOwogICAgICB9IGVsc2UgewogICAgICAgIGRvY3VtZW50LmRvY3VtZW50RWxl\nbWVudC5jbGFzc0xpc3QucmVtb3ZlKCdkYXJrJyk7CiAgICAgIH0KICAgIH07\nCiAgICBjb25zdCBtcSA9IHdpbmRvdy5tYXRjaE1lZGlhKCcocHJlZmVycy1j\nb2xvci1zY2hlbWU6IGRhcmspJyk7CiAgICBhcHBseShtcSk7CiAgICBtcS5h\nZGRFdmVudExpc3RlbmVyKCdjaGFuZ2UnLCBhcHBseSk7CiAgICByZXR1cm4g\nKCkgPT4gbXEucmVtb3ZlRXZlbnRMaXN0ZW5lcignY2hhbmdlJywgYXBwbHkp\nOwogIH0sIFtdKTsKICByZXR1cm4gbnVsbDsKfQoKLy8gVGFicyB3aG9zZSBz\ndGF0ZSBzaG91bGQgc3Vydml2ZSB3aGVuIHN3aXRjaGluZyBiZXR3ZWVuIGJv\ndHRvbS1uYXYgdGFicyBvbiBtb2JpbGUKY29uc3QgUEVSU0lTVEVOVF9UQUJT\nID0gWycvbGVhcm4nLCAnL3ByYWN0aWNlJ107CgpmdW5jdGlvbiBSb3V0ZVRy\nYW5zaXRpb24oKSB7CiAgY29uc3QgbG9jYXRpb24gPSB1c2VMb2NhdGlvbigp\nOwogIGNvbnN0IGlzUGVyc2lzdGVudFRhYiA9IFBFUlNJU1RFTlRfVEFCUy5p\nbmNsdWRlcyhsb2NhdGlvbi5wYXRobmFtZSk7CgogIHJldHVybiAoCiAgICA8\nPgogICAgICB7LyogQWx3YXlzLW1vdW50ZWQgcGVyc2lzdGVudCB0YWJzIOKA\nlCBoaWRkZW4gd2hlbiBub3QgYWN0aXZlIHRvIHByZXNlcnZlIHNjcm9sbCAr\nIHN0YXRlICovfQogICAgICB7UEVSU0lTVEVOVF9UQUJTLm1hcChwYXRoID0+\nICgKICAgICAgICA8ZGl2CiAgICAgICAgICBrZXk9e3BhdGh9CiAgICAgICAg\nICBzdHlsZT17eyBkaXNwbGF5OiBsb2NhdGlvbi5wYXRobmFtZSA9PT0gcGF0\naCA/ICdibG9jaycgOiAnbm9uZScgfX0KICAgICAgICAgIGFyaWEtaGlkZGVu\nPXtsb2NhdGlvbi5wYXRobmFtZSAhPT0gcGF0aH0KICAgICAgICA+CiAgICAg\nICAgICB7cGF0aCA9PT0gJy9sZWFybicgJiYgPExlYXJuUGFnZSAvPn0KICAg\nICAgICAgIHtwYXRoID09PSAnL3ByYWN0aWNlJyAmJiA8UHJhY3RpY2VQYWdl\nIC8+fQogICAgICAgIDwvZGl2PgogICAgICApKX0KCiAgICAgIHsvKiBBbGwg\nb3RoZXIgcm91dGVzIHdpdGggZmFkZSB0cmFuc2l0aW9uICovfQogICAgICB7\nIWlzUGVyc2lzdGVudFRhYiAmJiAoCiAgICAgICAgPEFuaW1hdGVQcmVzZW5j\nZSBtb2RlPSJ3YWl0IiBpbml0aWFsPXtmYWxzZX0+CiAgICAgICAgICA8bW90\naW9uLmRpdgogICAgICAgICAgICBrZXk9e2xvY2F0aW9uLnBhdGhuYW1lfQog\nICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDggfX0KICAg\nICAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAwIH19CiAgICAg\nICAgICAgIGV4aXQ9e3sgb3BhY2l0eTogMCwgeTogLTggfX0KICAgICAgICAg\nICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMC4xOCwgZWFzZTogJ2Vhc2VJ\nbk91dCcgfX0KICAgICAgICAgICAgc3R5bGU9e3sgd2lkdGg6ICcxMDAlJyB9\nfQogICAgICAgICAgPgogICAgICAgICAgICA8Um91dGVzIGxvY2F0aW9uPXts\nb2NhdGlvbn0+CiAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii8iIGVsZW1l\nbnQ9ezxMYW5kaW5nUGFnZSAvPn0gLz4KICAgICAgICAgICAgICA8Um91dGUg\ncGF0aD0iL2F1dGgiIGVsZW1lbnQ9ezxBdXRoUGFnZSAvPn0gLz4KICAgICAg\nICAgICAgICA8Um91dGUgcGF0aD0iL29uYm9hcmRpbmciIGVsZW1lbnQ9ezxP\nbmJvYXJkaW5nUGFnZSAvPn0gLz4KICAgICAgICAgICAgICA8Um91dGUgcGF0\naD0iL2Rhc2hib2FyZCIgZWxlbWVudD17PERhc2hib2FyZFBhZ2UgLz59IC8+\nCiAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9wcm9maWxlIiBlbGVtZW50\nPXs8UHJvZmlsZVBhZ2UgLz59IC8+CiAgICAgICAgICAgICAgPFJvdXRlIHBh\ndGg9Ii9kZW1vIiBlbGVtZW50PXs8RGVtb1BhZ2UgLz59IC8+CiAgICAgICAg\nICAgICAgPFJvdXRlIHBhdGg9Ii9jdXJyaWN1bHVtIiBlbGVtZW50PXs8Q3Vy\ncmljdWx1bVBhZ2UgLz59IC8+CiAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9\nIi9kYWlseS1xdWl6IiBlbGVtZW50PXs8RGFpbHlRdWl6UGFnZSAvPn0gLz4K\nICAgICAgICAgICAgICA8Um91dGUgcGF0aD0iL2RhaWx5LXF1aXovcmVzdWx0\ncyIgZWxlbWVudD17PERhaWx5UXVpelJlc3VsdHNQYWdlIC8+fSAvPgogICAg\nICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvbGVhZGVyYm9hcmQiIGVsZW1lbnQ9\nezxMZWFkZXJib2FyZFBhZ2UgLz59IC8+CiAgICAgICAgICAgICAgPFJvdXRl\nIHBhdGg9Ii9hcHRpdHVkZSIgZWxlbWVudD17PEFwdGl0dWRlWm9uZVBhZ2Ug\nLz59IC8+CiAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9hZG1pbi1wYW5l\nbCIgZWxlbWVudD17PEFkbWluUGFuZWwgLz59IC8+CiAgICAgICAgICAgICAg\nPFJvdXRlIHBhdGg9Ii9wcmljaW5nIiBlbGVtZW50PXs8UHJpY2luZ1BhZ2Ug\nLz59IC8+CiAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii93ZWVrbHktZXhh\nbSIgZWxlbWVudD17PFdlZWtseUV4YW1QYWdlIC8+fSAvPgogICAgICAgICAg\nICAgIDxSb3V0ZSBwYXRoPSIvd2Vla2x5LWV4YW0vcmVzdWx0cyIgZWxlbWVu\ndD17PFdlZWtseUV4YW1SZXN1bHRzUGFnZSAvPn0gLz4KICAgICAgICAgICAg\nICA8Um91dGUgcGF0aD0iL29seW1waWFkIiBlbGVtZW50PXs8T2x5bXBpYWRQ\nYWdlIC8+fSAvPgogICAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvb2x5bXBp\nYWQvcmVzdWx0cyIgZWxlbWVudD17PE9seW1waWFkUmVzdWx0c1BhZ2UgLz59\nIC8+CiAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9iYXR0bGUiIGVsZW1l\nbnQ9ezxCYXR0bGVNb2RlUGFnZSAvPn0gLz4KICAgICAgICAgICAgICA8Um91\ndGUgcGF0aD0iL3BheW1lbnQtc3VjY2VzcyIgZWxlbWVudD17PFBheW1lbnRT\ndWNjZXNzUGFnZSAvPn0gLz4KICAgICAgICAgICAgICA8Um91dGUgcGF0aD0i\nL3Jldmlld3MiIGVsZW1lbnQ9ezxSZXZpZXdzUGFnZSAvPn0gLz4KICAgICAg\nICAgICAgICA8Um91dGUgcGF0aD0iL3JlcG9ydC1jYXJkIiBlbGVtZW50PXs8\nUmVwb3J0Q2FyZFBhZ2UgLz59IC8+CiAgICAgICAgICAgICAgPFJvdXRlIHBh\ndGg9IioiIGVsZW1lbnQ9ezxOb3RGb3VuZFBhZ2UgLz59IC8+CiAgICAgICAg\nICAgIDwvUm91dGVzPgogICAgICAgICAgPC9tb3Rpb24uZGl2PgogICAgICAg\nIDwvQW5pbWF0ZVByZXNlbmNlPgogICAgICApfQogICAgPC8+CiAgKTsKfQoK\nZnVuY3Rpb24gQXBwKCkgewogIHJldHVybiAoCiAgICA8VmVkaWNBdXRoUHJv\ndmlkZXI+CiAgICAgIDxQcm9maWxlUHJvdmlkZXI+CiAgICAgICAgPFByb2dy\nZXNzUHJvdmlkZXI+CiAgICAgICAgICA8UXVlcnlDbGllbnRQcm92aWRlciBj\nbGllbnQ9e3F1ZXJ5Q2xpZW50SW5zdGFuY2V9PgogICAgICAgICAgICA8Um91\ndGVyPgogICAgICAgICAgICAgIDxEYXJrTW9kZVN5bmMgLz4KICAgICAgICAg\nICAgICA8U2Nyb2xsVG9Ub3AgLz4KICAgICAgICAgICAgICA8TW9iaWxlQXBw\nSGVhZGVyIC8+CiAgICAgICAgICAgICAgPE1vYmlsZUJvdHRvbU5hdiAvPgog\nICAgICAgICAgICAgIDxSb3V0ZVRyYW5zaXRpb24gLz4KICAgICAgICAgICAg\nPC9Sb3V0ZXI+CiAgICAgICAgICA8L1F1ZXJ5Q2xpZW50UHJvdmlkZXI+CiAg\nICAgICAgPC9Qcm9ncmVzc1Byb3ZpZGVyPgogICAgICA8L1Byb2ZpbGVQcm92\naWRlcj4KICAgIDwvVmVkaWNBdXRoUHJvdmlkZXI+CiAgKQp9CgpleHBvcnQg\nZGVmYXVsdCBBcHA=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/App.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/984ba68b4e719c960353d3c5f1d0acaf53cafcb6","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/App.jsx"}}
+import { QueryClientProvider } from '@tanstack/react-query'
+import { queryClientInstance } from '@/lib/query-client'
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { VedicAuthProvider } from '@/lib/VedicAuthContext';
+import { ProgressProvider } from '@/lib/ProgressContext';
+import { ProfileProvider } from '@/lib/ProfileContext';
+import ScrollToTop from '@/lib/ScrollToTop';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect } from 'react';
+
+import LandingPage from '@/pages/LandingPage';
+import AuthPage from '@/pages/AuthPage';
+import OnboardingPage from '@/pages/OnboardingPage';
+import DashboardPage from '@/pages/DashboardPage';
+import LearnPage from '@/pages/LearnPage';
+import PracticePage from '@/pages/PracticePage';
+import ProfilePage from '@/pages/ProfilePage';
+import NotFoundPage from '@/pages/NotFoundPage';
+import DemoPage from '@/pages/DemoPage';
+import CurriculumPage from '@/pages/CurriculumPage';
+import DailyQuizPage from '@/pages/DailyQuizPage';
+import DailyQuizResultsPage from '@/pages/DailyQuizResultsPage';
+import LeaderboardPage from '@/pages/LeaderboardPage';
+import AptitudeZonePage from '@/pages/AptitudeZonePage';
+import AdminPanel from '@/pages/AdminPanel';
+import PricingPage from '@/pages/PricingPage';
+import WeeklyExamPage from '@/pages/WeeklyExamPage';
+import WeeklyExamResultsPage from '@/pages/WeeklyExamResultsPage';
+import OlympiadPage from '@/pages/OlympiadPage';
+import OlympiadResultsPage from '@/pages/OlympiadResultsPage';
+import BattleModePage from '@/pages/BattleModePage';
+import PaymentSuccessPage from '@/pages/PaymentSuccessPage';
+import ReviewsPage from '@/pages/ReviewsPage';
+import ReportCardPage from '@/pages/ReportCardPage';
+import MobileBottomNav from '@/components/MobileLayout';
+import MobileAppHeader from '@/components/MobileAppHeader';
+
+function DarkModeSync() {
+  useEffect(() => {
+    const apply = (e) => {
+      if (e.matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    };
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    apply(mq);
+    mq.addEventListener('change', apply);
+    return () => mq.removeEventListener('change', apply);
+  }, []);
+  return null;
+}
+
+// Tabs whose state should survive when switching between bottom-nav tabs on mobile
+const PERSISTENT_TABS = ['/learn', '/practice'];
+
+function RouteTransition() {
+  const location = useLocation();
+  const isPersistentTab = PERSISTENT_TABS.includes(location.pathname);
+
+  return (
+    <>
+      {/* Always-mounted persistent tabs — hidden when not active to preserve scroll + state */}
+      {PERSISTENT_TABS.map(path => (
+        <div
+          key={path}
+          style={{ display: location.pathname === path ? 'block' : 'none' }}
+          aria-hidden={location.pathname !== path}
+        >
+          {path === '/learn' && <LearnPage />}
+          {path === '/practice' && <PracticePage />}
+        </div>
+      ))}
+
+      {/* All other routes with fade transition */}
+      {!isPersistentTab && (
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18, ease: 'easeInOut' }}
+            style={{ width: '100%' }}
+          >
+            <Routes location={location}>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/auth" element={<AuthPage />} />
+              <Route path="/onboarding" element={<OnboardingPage />} />
+              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/demo" element={<DemoPage />} />
+              <Route path="/curriculum" element={<CurriculumPage />} />
+              <Route path="/daily-quiz" element={<DailyQuizPage />} />
+              <Route path="/daily-quiz/results" element={<DailyQuizResultsPage />} />
+              <Route path="/leaderboard" element={<LeaderboardPage />} />
+              <Route path="/aptitude" element={<AptitudeZonePage />} />
+              <Route path="/admin-panel" element={<AdminPanel />} />
+              <Route path="/pricing" element={<PricingPage />} />
+              <Route path="/weekly-exam" element={<WeeklyExamPage />} />
+              <Route path="/weekly-exam/results" element={<WeeklyExamResultsPage />} />
+              <Route path="/olympiad" element={<OlympiadPage />} />
+              <Route path="/olympiad/results" element={<OlympiadResultsPage />} />
+              <Route path="/battle" element={<BattleModePage />} />
+              <Route path="/payment-success" element={<PaymentSuccessPage />} />
+              <Route path="/reviews" element={<ReviewsPage />} />
+              <Route path="/report-card" element={<ReportCardPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </motion.div>
+        </AnimatePresence>
+      )}
+    </>
+  );
+}
+
+function App() {
+  return (
+    <VedicAuthProvider>
+      <ProfileProvider>
+        <ProgressProvider>
+          <QueryClientProvider client={queryClientInstance}>
+            <Router>
+              <DarkModeSync />
+              <ScrollToTop />
+              <MobileAppHeader />
+              <MobileBottomNav />
+              <RouteTransition />
+            </Router>
+          </QueryClientProvider>
+        </ProgressProvider>
+      </ProfileProvider>
+    </VedicAuthProvider>
+  )
+}
+
+export default App
