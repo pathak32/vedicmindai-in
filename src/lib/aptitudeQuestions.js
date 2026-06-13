@@ -1,1 +1,341 @@
-{"name":"aptitudeQuestions.js","path":"src/lib/aptitudeQuestions.js","sha":"6dd899b5a067c143541cf36f3932e09b221136af","size":16714,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/aptitudeQuestions.js?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/aptitudeQuestions.js","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/6dd899b5a067c143541cf36f3932e09b221136af","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/lib/aptitudeQuestions.js?token=CFODAP6PV4Q643QWHEIHUKLKFSQ3PAA","type":"file","content":"Ly8g4pSA4pSA4pSAIENsYXNzIGdyb3VwIGhlbHBlciDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIAKCmV4cG9ydCBmdW5jdGlvbiBnZXRDbGFzc0dy\nb3VwKGNsYXNzTnVtKSB7CiAgY29uc3QgbiA9IHBhcnNlSW50KGNsYXNzTnVt\nKSB8fCA4OwogIGlmIChuIDw9IDUpICByZXR1cm4gJ1BSSU1BUlknOwogIGlm\nIChuIDw9IDgpICByZXR1cm4gJ01JRERMRSc7CiAgaWYgKG4gPD0gMTApIHJl\ndHVybiAnU0VDT05EQVJZJzsKICByZXR1cm4gJ0lOVEVSTUVESUFURSc7Cn0K\nCmV4cG9ydCBjb25zdCBDTEFTU19HUk9VUFMgPSB7CiAgUFJJTUFSWTogICAg\nICB7IGxhYmVsOiAnUHJpbWFyeSAoMeKAkzUpJywgICAgICAgY2xhc3Nlczog\nWzEsMiwzLDQsNV0sICAgICBjb2xvcjogJyMxMEI5ODEnLCBiZzogJyNEMUZB\nRTUnIH0sCiAgTUlERExFOiAgICAgICB7IGxhYmVsOiAnTWlkZGxlICg24oCT\nOCknLCAgICAgICAgIGNsYXNzZXM6IFs2LDcsOF0sICAgICAgICAgY29sb3I6\nICcjM0I4MkY2JywgYmc6ICcjREJFQUZFJyB9LAogIFNFQ09OREFSWTogICAg\neyBsYWJlbDogJ1NlY29uZGFyeSAoOeKAkzEwKScsICAgICBjbGFzc2VzOiBb\nOSwxMF0sICAgICAgICAgIGNvbG9yOiAnIzhCNUNGNicsIGJnOiAnI0VERTlG\nRScgfSwKICBJTlRFUk1FRElBVEU6IHsgbGFiZWw6ICdJbnRlcm1lZGlhdGUg\nKDEx4oCTMTIpJywgY2xhc3NlczogWzExLDEyXSwgICAgICAgICBjb2xvcjog\nJyNGNTlFMEInLCBiZzogJyNGRUYzQzcnIH0sCn07CgpleHBvcnQgY29uc3Qg\nVE9QSUNTID0gewogIFBSSU1BUlk6ICAgICAgWydBZGRpdGlvbicsICdTdWJ0\ncmFjdGlvbicsICdNdWx0aXBsaWNhdGlvbicsICdEaXZpc2lvbicsICdUYWJs\nZXMnXSwKICBNSURETEU6ICAgICAgIFsnRnJhY3Rpb25zJywgJ1BlcmNlbnRh\nZ2VzJywgJ1NxdWFyZXMgJiBDdWJlcycsICdCYXNpYyBBbGdlYnJhJywgJ0hD\nRiAmIExDTSddLAogIFNFQ09OREFSWTogICAgWydTcGVlZCBNYXRocycsICdO\ndW1iZXIgU3lzdGVtcycsICdQcm9maXQgJiBMb3NzJywgJ1RpbWUgJiBXb3Jr\nJywgJ1ZlZGljIFRyaWNrcyddLAogIElOVEVSTUVESUFURTogWydWZWRpYyBB\nbGdlYnJhJywgJ1F1YWRyYXRpYyBFcXVhdGlvbnMnLCAnTnVtYmVyIFRoZW9y\neScsICdTZXF1ZW5jZXMnLCAnTWVudGFsIENhbGN1bHVzJ10sCn07CgovLyDi\nlIDilIDilIAgUXVlc3Rpb24gQmFuayDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIAKCmNvbnN0IFFVRVNUSU9OUyA9IFsK\nCiAgLy8g4pSA4pSAIFBSSU1BUlkg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACgogIC8v\nIEFkZGl0aW9uCiAgeyBpZDogJ3AwMScsIGdyb3VwOiAnUFJJTUFSWScsIHRv\ncGljOiAnQWRkaXRpb24nLAogICAgcXVlc3Rpb246ICdXaGF0IGlzIDQ4ICsg\nMzc/JywKICAgIG9wdGlvbnM6IFsnNzUnLCc4NCcsJzg1JywnODcnXSwgY29y\ncmVjdDogMiwKICAgIHZlZGljX3N1dHJhOiAnRWthZGhpa2VuYSBQdXJ2ZW5h\nJywgZGlmZmljdWx0eTogMSwKICAgIHZlZGljX3RpcDogJ1JvdW5kIDQ4IOKG\nkiA1MCwgYWRkIDM3ID0gODcsIHN1YnRyYWN0IDIg4oaSIDg1LiBBbHdheXMg\ncm91bmQgdXAgdGhlbiBhZGp1c3QhJyB9LAoKICB7IGlkOiAncDAyJywgZ3Jv\ndXA6ICdQUklNQVJZJywgdG9waWM6ICdBZGRpdGlvbicsCiAgICBxdWVzdGlv\nbjogJ1doYXQgaXMgOTkgKyA1Nj8nLAogICAgb3B0aW9uczogWycxNTQnLCcx\nNTUnLCcxNTYnLCcxNTcnXSwgY29ycmVjdDogMSwKICAgIHZlZGljX3N1dHJh\nOiAnTmlraGlsYW0nLCBkaWZmaWN1bHR5OiAxLAogICAgdmVkaWNfdGlwOiAn\nOTkgPSAxMDAg4oiSIDEuIFNvIDEwMCArIDU2ID0gMTU2LCB0aGVuIHN1YnRy\nYWN0IDEg4oaSIDE1NS4gRmFzdCEnIH0sCgogIHsgaWQ6ICdwMDMnLCBncm91\ncDogJ1BSSU1BUlknLCB0b3BpYzogJ0FkZGl0aW9uJywKICAgIHF1ZXN0aW9u\nOiAnV2hhdCBpcyAxMjUgKyA3NT8nLAogICAgb3B0aW9uczogWycxOTAnLCcx\nOTUnLCcyMDAnLCcyMDUnXSwgY29ycmVjdDogMiwKICAgIHZlZGljX3N1dHJh\nOiAnQW51cnVweWVuYScsIGRpZmZpY3VsdHk6IDEsCiAgICB2ZWRpY190aXA6\nICcxMjUgKyA3NSA9IDEwMCArICgyNSArIDc1KSA9IDEwMCArIDEwMCA9IDIw\nMC4gR3JvdXAgdG8gbWFrZSByb3VuZCBudW1iZXJzIScgfSwKCiAgLy8gU3Vi\ndHJhY3Rpb24KICB7IGlkOiAncDA0JywgZ3JvdXA6ICdQUklNQVJZJywgdG9w\naWM6ICdTdWJ0cmFjdGlvbicsCiAgICBxdWVzdGlvbjogJ1doYXQgaXMgMTAw\nIOKIkiAzNz8nLAogICAgb3B0aW9uczogWyc1MycsJzYzJywnNzMnLCc2Nydd\nLCBjb3JyZWN0OiAxLAogICAgdmVkaWNfc3V0cmE6ICdOaWtoaWxhbSBOYXZh\ndGFzaGNhcmFtYW0gRGFzaGF0YWgnLCBkaWZmaWN1bHR5OiAxLAogICAgdmVk\naWNfdGlwOiAnIkFsbCBmcm9tIDksIGxhc3QgZnJvbSAxMCI6IDniiJIzPTYs\nIDEw4oiSNz0zIOKGkiA2My4gV29ya3MgZm9yIGFueSBzdWJ0cmFjdGlvbiBm\ncm9tIDEwMCEnIH0sCgogIHsgaWQ6ICdwMDUnLCBncm91cDogJ1BSSU1BUlkn\nLCB0b3BpYzogJ1N1YnRyYWN0aW9uJywKICAgIHF1ZXN0aW9uOiAnV2hhdCBp\ncyAxMDAwIOKIkiA0NTY/JywKICAgIG9wdGlvbnM6IFsnNDQ0JywnNTQ0Jywn\nNTU0JywnNjQ0J10sIGNvcnJlY3Q6IDEsCiAgICB2ZWRpY19zdXRyYTogJ05p\na2hpbGFtIE5hdmF0YXNoY2FyYW1hbSBEYXNoYXRhaCcsIGRpZmZpY3VsdHk6\nIDEsCiAgICB2ZWRpY190aXA6ICciQWxsIGZyb20gOSwgbGFzdCBmcm9tIDEw\nIjogOeKIkjQ9NSwgOeKIkjU9NCwgMTDiiJI2PTQg4oaSIDU0NC4nIH0sCgog\nIC8vIE11bHRpcGxpY2F0aW9uCiAgeyBpZDogJ3AwNicsIGdyb3VwOiAnUFJJ\nTUFSWScsIHRvcGljOiAnTXVsdGlwbGljYXRpb24nLAogICAgcXVlc3Rpb246\nICdXaGF0IGlzIDI1IMOXIDQ/JywKICAgIG9wdGlvbnM6IFsnOTAnLCc5NScs\nJzEwMCcsJzEwNSddLCBjb3JyZWN0OiAyLAogICAgdmVkaWNfc3V0cmE6ICdB\nbnVydXB5ZW5hJywgZGlmZmljdWx0eTogMSwKICAgIHZlZGljX3RpcDogJzI1\nIMOXIDQgPSAyNSDDlyAoMsOXMikgPSA1MCDDlyAyID0gMTAwLiBPcjogMTAw\nIMO3IDQgw5cgNCA9IDEwMCEnIH0sCgogIHsgaWQ6ICdwMDcnLCBncm91cDog\nJ1BSSU1BUlknLCB0b3BpYzogJ011bHRpcGxpY2F0aW9uJywKICAgIHF1ZXN0\naW9uOiAnV2hhdCBpcyAxNcKyPycsCiAgICBvcHRpb25zOiBbJzEyNScsJzIx\nNScsJzIyNScsJzIzNSddLCBjb3JyZWN0OiAyLAogICAgdmVkaWNfc3V0cmE6\nICdFa2FkaGlrZW5hIFB1cnZlbmEnLCBkaWZmaWN1bHR5OiAxLAogICAgdmVk\naWNfdGlwOiAnRm9yIGFueSBudW1iZXIgZW5kaW5nIGluIDU6IDHDlzI9Miwg\nYXBwZW5kIDI1IOKGkiAyMjUhJyB9LAoKICB7IGlkOiAncDA4JywgZ3JvdXA6\nICdQUklNQVJZJywgdG9waWM6ICdNdWx0aXBsaWNhdGlvbicsCiAgICBxdWVz\ndGlvbjogJ1doYXQgaXMgMTIgw5cgMTE/JywKICAgIG9wdGlvbnM6IFsnMTIy\nJywnMTMyJywnMTQyJywnMTUyJ10sIGNvcnJlY3Q6IDEsCiAgICB2ZWRpY19z\ndXRyYTogJ1VyZGh2YS1UaXJ5YWdiaHlhbScsIGRpZmZpY3VsdHk6IDEsCiAg\nICB2ZWRpY190aXA6ICdNdWx0aXBseSBieSAxMTogd3JpdGUgMSwgbWlkZGxl\nIDErMj0zLCB3cml0ZSAyIOKGkiAxMzIhJyB9LAoKICAvLyBEaXZpc2lvbgog\nIHsgaWQ6ICdwMDknLCBncm91cDogJ1BSSU1BUlknLCB0b3BpYzogJ0Rpdmlz\naW9uJywKICAgIHF1ZXN0aW9uOiAnV2hhdCBpcyA4NCDDtyA0PycsCiAgICBv\ncHRpb25zOiBbJzE5JywnMjEnLCcyMicsJzIzJ10sIGNvcnJlY3Q6IDEsCiAg\nICB2ZWRpY19zdXRyYTogJ0FudXJ1cHllbmEnLCBkaWZmaWN1bHR5OiAxLAog\nICAgdmVkaWNfdGlwOiAnSGFsdmUgdHdpY2U6IDg0w7cyPTQyLCA0MsO3Mj0y\nMS4gRGl2aWRpbmcgYnkgNCA9IGhhbHZpbmcgdHdpY2UhJyB9LAoKICB7IGlk\nOiAncDEwJywgZ3JvdXA6ICdQUklNQVJZJywgdG9waWM6ICdEaXZpc2lvbics\nCiAgICBxdWVzdGlvbjogJ1doYXQgaXMgMTI1IMO3IDU/JywKICAgIG9wdGlv\nbnM6IFsnMjAnLCcyMycsJzI1JywnMjcnXSwgY29ycmVjdDogMiwKICAgIHZl\nZGljX3N1dHJhOiAnQW51cnVweWVuYScsIGRpZmZpY3VsdHk6IDEsCiAgICB2\nZWRpY190aXA6ICdEaXZpZGluZyBieSA1ID0gbXVsdGlwbHkgYnkgMiwgdGhl\nbiBkaXZpZGUgYnkgMTA6IDEyNcOXMj0yNTAsIMO3MTA9MjUhJyB9LAoKICAv\nLyBUYWJsZXMKICB7IGlkOiAncDExJywgZ3JvdXA6ICdQUklNQVJZJywgdG9w\naWM6ICdUYWJsZXMnLAogICAgcXVlc3Rpb246ICdXaGF0IGlzIDcgw5cgOD8n\nLAogICAgb3B0aW9uczogWyc1NCcsJzU2JywnNTgnLCc2MCddLCBjb3JyZWN0\nOiAxLAogICAgdmVkaWNfc3V0cmE6ICdOaWtoaWxhbSBOYXZhdGFzaGNhcmFt\nYW0gRGFzaGF0YWgnLCBkaWZmaWN1bHR5OiAxLAogICAgdmVkaWNfdGlwOiAn\nRGVmaWNpdHMgZnJvbSAxMDogMyBhbmQgMi4gQ3Jvc3M6IDfiiJIyPTUuIFBy\nb2R1Y3Q6IDPDlzI9NiDihpIgNTYhJyB9LAoKICB7IGlkOiAncDEyJywgZ3Jv\ndXA6ICdQUklNQVJZJywgdG9waWM6ICdUYWJsZXMnLAogICAgcXVlc3Rpb246\nICdXaGF0IGlzIDkgw5cgNj8nLAogICAgb3B0aW9uczogWyc1MicsJzU0Jywn\nNTYnLCc1OCddLCBjb3JyZWN0OiAxLAogICAgdmVkaWNfc3V0cmE6ICdOaWto\naWxhbSBOYXZhdGFzaGNhcmFtYW0gRGFzaGF0YWgnLCBkaWZmaWN1bHR5OiAx\nLAogICAgdmVkaWNfdGlwOiAnRGVmaWNpdHMgZnJvbSAxMDogMSBhbmQgNC4g\nQ3Jvc3M6IDniiJI0PTUuIFByb2R1Y3Q6IDHDlzQ9NCDihpIgNTQhJyB9LAoK\nICB7IGlkOiAncDEzJywgZ3JvdXA6ICdQUklNQVJZJywgdG9waWM6ICdUYWJs\nZXMnLAogICAgcXVlc3Rpb246ICdXaGF0IGlzIDggw5cgOT8nLAogICAgb3B0\naW9uczogWyc3MCcsJzcyJywnNzQnLCc3NiddLCBjb3JyZWN0OiAxLAogICAg\ndmVkaWNfc3V0cmE6ICdOaWtoaWxhbSBOYXZhdGFzaGNhcmFtYW0gRGFzaGF0\nYWgnLCBkaWZmaWN1bHR5OiAxLAogICAgdmVkaWNfdGlwOiAnRGVmaWNpdHM6\nIDIgYW5kIDEuIENyb3NzOiA44oiSMT03LiBQcm9kdWN0OiAyw5cxPTIg4oaS\nIDcyIScgfSwKCiAgLy8g4pSA4pSAIE1JRERMRSDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIAKCiAgLy8gRnJhY3Rpb25zCiAgeyBpZDogJ20wMScsIGdyb3VwOiAn\nTUlERExFJywgdG9waWM6ICdGcmFjdGlvbnMnLAogICAgcXVlc3Rpb246ICdX\naGF0IGlzIDEvMyArIDEvND8nLAogICAgb3B0aW9uczogWycyLzcnLCc1LzEy\nJywnNy8xMicsJzMvNyddLCBjb3JyZWN0OiAyLAogICAgdmVkaWNfc3V0cmE6\nICdBbnVydXB5ZW5hJywgZGlmZmljdWx0eTogMiwKICAgIHZlZGljX3RpcDog\nJ0Nyb3NzIG11bHRpcGx5IG51bWVyYXRvcnM6IDHDlzQgKyAzw5cxID0gNy4g\nTXVsdGlwbHkgZGVub21pbmF0b3JzOiAzw5c0ID0gMTIg4oaSIDcvMTIuJyB9\nLAoKICB7IGlkOiAnbTAyJywgZ3JvdXA6ICdNSURETEUnLCB0b3BpYzogJ0Zy\nYWN0aW9ucycsCiAgICBxdWVzdGlvbjogJ1doYXQgaXMgMy80IOKIkiAxLzY/\nJywKICAgIG9wdGlvbnM6IFsnNS8xMicsJzcvMTInLCcxLzInLCcyLzMnXSwg\nY29ycmVjdDogMSwKICAgIHZlZGljX3N1dHJhOiAnQW51cnVweWVuYScsIGRp\nZmZpY3VsdHk6IDIsCiAgICB2ZWRpY190aXA6ICczw5c2IOKIkiA0w5cxID0g\nMTQuIERlbm9taW5hdG9yOiA0w5c2ID0gMjQuIOKGkiAxNC8yNCA9IDcvMTIu\nJyB9LAoKICB7IGlkOiAnbTAzJywgZ3JvdXA6ICdNSURETEUnLCB0b3BpYzog\nJ0ZyYWN0aW9ucycsCiAgICBxdWVzdGlvbjogJ1NpbXBsaWZ5OiAyLzMgw5cg\nMy80JywKICAgIG9wdGlvbnM6IFsnMS8yJywnMi8zJywnMy80JywnNS82J10s\nIGNvcnJlY3Q6IDAsCiAgICB2ZWRpY19zdXRyYTogJ1ZpbG9rYW5hbScsIGRp\nZmZpY3VsdHk6IDIsCiAgICB2ZWRpY190aXA6ICdDYW5jZWwgY29tbW9uIGZh\nY3RvcnMgZmlyc3Q6IDIvMyDDlyAzLzQgPSAyLzQgPSAxLzIuIE9ic2VydmUg\nYmVmb3JlIGNvbXB1dGluZyEnIH0sCgogIC8vIFBlcmNlbnRhZ2VzCiAgeyBp\nZDogJ20wNCcsIGdyb3VwOiAnTUlERExFJywgdG9waWM6ICdQZXJjZW50YWdl\ncycsCiAgICBxdWVzdGlvbjogJ1doYXQgaXMgMTUlIG9mIDIwMD8nLAogICAg\nb3B0aW9uczogWycyNScsJzMwJywnMzUnLCc0MCddLCBjb3JyZWN0OiAxLAog\nICAgdmVkaWNfc3V0cmE6ICdBbnVydXB5ZW5hJywgZGlmZmljdWx0eTogMiwK\nICAgIHZlZGljX3RpcDogJzEwJSA9IDIwLiA1JSA9IDEwLiAxMCsyMCA9IDMw\nLiBBbHdheXMgc3BsaXQgcGVyY2VudGFnZXMgaW50byAxMCUgY2h1bmtzIScg\nfSwKCiAgeyBpZDogJ20wNScsIGdyb3VwOiAnTUlERExFJywgdG9waWM6ICdQ\nZXJjZW50YWdlcycsCiAgICBxdWVzdGlvbjogJ0EgcHJpY2UgcmlzZXMgZnJv\nbSDigrk4MCB0byDigrkxMDAuIFdoYXQgaXMgdGhlIHBlcmNlbnRhZ2UgaW5j\ncmVhc2U/JywKICAgIG9wdGlvbnM6IFsnMjAlJywnMjUlJywnMzAlJywnMTUl\nJ10sIGNvcnJlY3Q6IDEsCiAgICB2ZWRpY19zdXRyYTogJ0FudXJ1cHllbmEn\nLCBkaWZmaWN1bHR5OiAyLAogICAgdmVkaWNfdGlwOiAnSW5jcmVhc2UgPSAy\nMC4gQmFzZSA9IDgwLiAyMC84MCA9IDEvNCA9IDI1JS4gQ29udmVydCB0byBm\ncmFjdGlvbiBmaXJzdCwgdGhlbiAlIScgfSwKCiAgLy8gU3F1YXJlcyAmIEN1\nYmVzCiAgeyBpZDogJ20wNicsIGdyb3VwOiAnTUlERExFJywgdG9waWM6ICdT\ncXVhcmVzICYgQ3ViZXMnLAogICAgcXVlc3Rpb246ICdXaGF0IGlzIDQ1wrI/\nJywKICAgIG9wdGlvbnM6IFsnMTkyNScsJzIwMDUnLCcyMDI1JywnMjEyNSdd\nLCBjb3JyZWN0OiAyLAogICAgdmVkaWNfc3V0cmE6ICdFa2FkaGlrZW5hIFB1\ncnZlbmEnLCBkaWZmaWN1bHR5OiAyLAogICAgdmVkaWNfdGlwOiAnRW5kaW5n\nIGluIDU6IDTDlzU9MjAsIGFwcGVuZCAyNSDihpIgMjAyNS4gVGFrZSBkaWdp\ndCBiZWZvcmUgNSwgbXVsdGlwbHkgYnkgbmV4dCBudW1iZXIhJyB9LAoKICB7\nIGlkOiAnbTA3JywgZ3JvdXA6ICdNSURETEUnLCB0b3BpYzogJ1NxdWFyZXMg\nJiBDdWJlcycsCiAgICBxdWVzdGlvbjogJ1doYXQgaXMgMTLCsz8nLAogICAg\nb3B0aW9uczogWycxNTI4JywnMTYyOCcsJzE3MjgnLCcxODI4J10sIGNvcnJl\nY3Q6IDIsCiAgICB2ZWRpY19zdXRyYTogJ1VyZGh2YS1UaXJ5YWdiaHlhbScs\nIGRpZmZpY3VsdHk6IDIsCiAgICB2ZWRpY190aXA6ICdQYXR0ZXJuIGHCs3wz\nYcKyYnwzYWLCsnxiwrM6IDF8NnwxMnw4IOKGkiB3aXRoIGNhcnJpZXMg4oaS\nIDE3MjguJyB9LAoKICB7IGlkOiAnbTA4JywgZ3JvdXA6ICdNSURETEUnLCB0\nb3BpYzogJ1NxdWFyZXMgJiBDdWJlcycsCiAgICBxdWVzdGlvbjogJ1doYXQg\naXMg4oiaMTc2ND8nLAogICAgb3B0aW9uczogWyc0MScsJzQyJywnNDMnLCc0\nNCddLCBjb3JyZWN0OiAxLAogICAgdmVkaWNfc3V0cmE6ICdWaWxva2FuYW0n\nLCBkaWZmaWN1bHR5OiAyLAogICAgdmVkaWNfdGlwOiAnU3BsaXQ6IDE3fDY0\nLiBGaXJzdCBkaWdpdDogNCAoNMKyPTE24omkMTcpLiBMYXN0IGRpZ2l0IDQg\n4oaSIHJvb3QgZW5kcyBpbiAyIG9yIDguIFRlc3QgNDI6IDQywrI9MTc2NCDi\nnJMnIH0sCgogIC8vIEJhc2ljIEFsZ2VicmEKICB7IGlkOiAnbTA5JywgZ3Jv\ndXA6ICdNSURETEUnLCB0b3BpYzogJ0Jhc2ljIEFsZ2VicmEnLAogICAgcXVl\nc3Rpb246ICdJZiAyeCArIDMgPSAxMSwgd2hhdCBpcyB4PycsCiAgICBvcHRp\nb25zOiBbJzMnLCc0JywnNScsJzYnXSwgY29ycmVjdDogMSwKICAgIHZlZGlj\nX3N1dHJhOiAnUGFyYXZhcnR5YSBZb2pheWV0JywgZGlmZmljdWx0eTogMiwK\nICAgIHZlZGljX3RpcDogJ1RyYW5zcG9zZTogMnggPSAxMeKIkjMgPSA4LiB4\nID0gNC4gIlBhcmF2YXJ0eWEiIG1lYW5zIHRyYW5zcG9zZSBhbmQgYXBwbHkh\nJyB9LAoKICB7IGlkOiAnbTEwJywgZ3JvdXA6ICdNSURETEUnLCB0b3BpYzog\nJ0Jhc2ljIEFsZ2VicmEnLAogICAgcXVlc3Rpb246ICdXaGF0IGlzIHRoZSB2\nYWx1ZSBvZiB4IGlmIDV4ID0gNzU/JywKICAgIG9wdGlvbnM6IFsnMTMnLCcx\nNCcsJzE1JywnMTYnXSwgY29ycmVjdDogMiwKICAgIHZlZGljX3N1dHJhOiAn\nQW51cnVweWVuYScsIGRpZmZpY3VsdHk6IDIsCiAgICB2ZWRpY190aXA6ICd4\nID0gNzXDtzUuIERpdmlkaW5nIGJ5IDUgPSDDlzIgdGhlbiDDtzEwOiA3NcOX\nMj0xNTAsIMO3MTA9MTUhJyB9LAoKICAvLyBIQ0YgJiBMQ00KICB7IGlkOiAn\nbTExJywgZ3JvdXA6ICdNSURETEUnLCB0b3BpYzogJ0hDRiAmIExDTScsCiAg\nICBxdWVzdGlvbjogJ1doYXQgaXMgdGhlIExDTSBvZiA0IGFuZCA2PycsCiAg\nICBvcHRpb25zOiBbJzgnLCcxMCcsJzEyJywnMjQnXSwgY29ycmVjdDogMiwK\nICAgIHZlZGljX3N1dHJhOiAnVmlsb2thbmFtJywgZGlmZmljdWx0eTogMiwK\nICAgIHZlZGljX3RpcDogJ09ic2VydmU6IDQ9MsKyLCA2PTLDlzMuIExDTSA9\nIDLCssOXMyA9IDEyLiBBbHdheXMgZmFjdG9yIGZpcnN0IScgfSwKCiAgeyBp\nZDogJ20xMicsIGdyb3VwOiAnTUlERExFJywgdG9waWM6ICdIQ0YgJiBMQ00n\nLAogICAgcXVlc3Rpb246ICdXaGF0IGlzIHRoZSBIQ0Ygb2YgMjQgYW5kIDM2\nPycsCiAgICBvcHRpb25zOiBbJzYnLCc4JywnMTAnLCcxMiddLCBjb3JyZWN0\nOiAzLAogICAgdmVkaWNfc3V0cmE6ICdWaWxva2FuYW0nLCBkaWZmaWN1bHR5\nOiAyLAogICAgdmVkaWNfdGlwOiAnMjQ9MsKzw5czLCAzNj0ywrLDlzPCsi4g\nSENGID0gMsKyw5czID0gMTIuIFRha2UgbG93ZXN0IHBvd2VycyBvZiBjb21t\nb24gZmFjdG9ycy4nIH0sCgogIC8vIOKUgOKUgCBTRUNPTkRBUlkg4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA\n4pSA4pSACgogIC8vIFNwZWVkIE1hdGhzCiAgeyBpZDogJ3MwMScsIGdyb3Vw\nOiAnU0VDT05EQVJZJywgdG9waWM6ICdTcGVlZCBNYXRocycsCiAgICBxdWVz\ndGlvbjogJ1doYXQgaXMgOTcgw5cgOTY/JywKICAgIG9wdGlvbnM6IFsnOTIx\nMicsJzkzMTInLCc5NDEyJywnOTUxMiddLCBjb3JyZWN0OiAxLAogICAgdmVk\naWNfc3V0cmE6ICdOaWtoaWxhbSBOYXZhdGFzaGNhcmFtYW0gRGFzaGF0YWgn\nLCBkaWZmaWN1bHR5OiAzLAogICAgdmVkaWNfdGlwOiAnRGVmaWNpdHMgZnJv\nbSAxMDA6IDMgYW5kIDQuIENyb3NzOiA5N+KIkjQ9OTMuIFByb2R1Y3Q6IDPD\nlzQ9MTIg4oaSIDkzMTIhJyB9LAoKICB7IGlkOiAnczAyJywgZ3JvdXA6ICdT\nRUNPTkRBUlknLCB0b3BpYzogJ1NwZWVkIE1hdGhzJywKICAgIHF1ZXN0aW9u\nOiAnV2hhdCBpcyA5OTggw5cgOTk3PycsCiAgICBvcHRpb25zOiBbJzk5NDAw\nNicsJzk5NTAwNicsJzk5NjAwNicsJzk5NzAwNiddLCBjb3JyZWN0OiAxLAog\nICAgdmVkaWNfc3V0cmE6ICdOaWtoaWxhbSBOYXZhdGFzaGNhcmFtYW0gRGFz\naGF0YWgnLCBkaWZmaWN1bHR5OiAzLAogICAgdmVkaWNfdGlwOiAnRGVmaWNp\ndHMgZnJvbSAxMDAwOiAyIGFuZCAzLiBDcm9zczogOTk44oiSMz05OTUuIFBy\nb2R1Y3Q6IDAwNiDihpIgOTk1MDA2IScgfSwKCiAgeyBpZDogJ3MwMycsIGdy\nb3VwOiAnU0VDT05EQVJZJywgdG9waWM6ICdTcGVlZCBNYXRocycsCiAgICBx\ndWVzdGlvbjogJ1doYXQgaXMgODXCsj8nLAogICAgb3B0aW9uczogWyc3MDI1\nJywnNzEyNScsJzcyMjUnLCc3MzI1J10sIGNvcnJlY3Q6IDIsCiAgICB2ZWRp\nY19zdXRyYTogJ0VrYWRoaWtlbmEgUHVydmVuYScsIGRpZmZpY3VsdHk6IDMs\nCiAgICB2ZWRpY190aXA6ICc4w5c5PTcyLCBhcHBlbmQgMjUg4oaSIDcyMjUu\nIFNxdWFyaW5nIG51bWJlcnMgZW5kaW5nIGluIDUgaXMgaW5zdGFudCEnIH0s\nCgogIC8vIE51bWJlciBTeXN0ZW1zCiAgeyBpZDogJ3MwNCcsIGdyb3VwOiAn\nU0VDT05EQVJZJywgdG9waWM6ICdOdW1iZXIgU3lzdGVtcycsCiAgICBxdWVz\ndGlvbjogJ1doaWNoIG9mIHRoZSBmb2xsb3dpbmcgaXMgTk9UIGEgcHJpbWUg\nbnVtYmVyPycsCiAgICBvcHRpb25zOiBbJzk3JywnOTEnLCc4OScsJzgzJ10s\nIGNvcnJlY3Q6IDEsCiAgICB2ZWRpY19zdXRyYTogJ1ZpbG9rYW5hbScsIGRp\nZmZpY3VsdHk6IDMsCiAgICB2ZWRpY190aXA6ICc5MSA9IDcgw5cgMTMuIENo\nZWNrIGRpdmlzaWJpbGl0eSBieSBwcmltZXMgdXAgdG8g4oiaOTEg4omIIDku\nNSAoaS5lLiwgMiwgMywgNSwgNykuJyB9LAoKICB7IGlkOiAnczA1JywgZ3Jv\ndXA6ICdTRUNPTkRBUlknLCB0b3BpYzogJ051bWJlciBTeXN0ZW1zJywKICAg\nIHF1ZXN0aW9uOiAnV2hhdCBpcyB0aGUgZGlnaXQgc3VtIG9mIDk5OTk5OTk/\nJywKICAgIG9wdGlvbnM6IFsnMCcsJzknLCc2MycsJzcyJ10sIGNvcnJlY3Q6\nIDEsCiAgICB2ZWRpY19zdXRyYTogJ0d1bml0YSBTYW11Y2h5YWgnLCBkaWZm\naWN1bHR5OiAzLAogICAgdmVkaWNfdGlwOiAnNyBuaW5lczogOcOXNz02MyDi\nhpIgNiszPTkuIFdoZW4gYWxsIGRpZ2l0cyBhcmUgOSwgZGlnaXQgc3VtID0g\nOSEnIH0sCgogIC8vIFByb2ZpdCAmIExvc3MKICB7IGlkOiAnczA2JywgZ3Jv\ndXA6ICdTRUNPTkRBUlknLCB0b3BpYzogJ1Byb2ZpdCAmIExvc3MnLAogICAg\ncXVlc3Rpb246ICdBbiBpdGVtIGJvdWdodCBhdCDigrk4MCBpcyBzb2xkIGF0\nIOKCuTEwMC4gRmluZCB0aGUgcHJvZml0ICUuJywKICAgIG9wdGlvbnM6IFsn\nMjAlJywnMjUlJywnMzAlJywnMTUlJ10sIGNvcnJlY3Q6IDEsCiAgICB2ZWRp\nY19zdXRyYTogJ0FudXJ1cHllbmEnLCBkaWZmaWN1bHR5OiAzLAogICAgdmVk\naWNfdGlwOiAnUHJvZml0ID0gMjAuIENQID0gODAuIFByb2ZpdCUgPSAyMC84\nMCDDlyAxMDAgPSAyNSUuIFVzZSBwcm9wb3J0aW9uYWxpdHkhJyB9LAoKICB7\nIGlkOiAnczA3JywgZ3JvdXA6ICdTRUNPTkRBUlknLCB0b3BpYzogJ1Byb2Zp\ndCAmIExvc3MnLAogICAgcXVlc3Rpb246ICdJZiBTUCA9IOKCuTY2MCBhbmQg\ncHJvZml0ID0gMTAlLCB3aGF0IGlzIHRoZSBDUD8nLAogICAgb3B0aW9uczog\nWyfigrk1ODAnLCfigrk1OTAnLCfigrk2MDAnLCfigrk2MTAnXSwgY29ycmVj\ndDogMiwKICAgIHZlZGljX3N1dHJhOiAnUGFyYXZhcnR5YSBZb2pheWV0Jywg\nZGlmZmljdWx0eTogMywKICAgIHZlZGljX3RpcDogJ0NQID0gU1Agw7cgMS4x\nID0gNjYwIMO3IDEuMSA9IDYwMC4gVHJhbnNwb3NlIHRoZSByZWxhdGlvbnNo\naXAhJyB9LAoKICAvLyBUaW1lICYgV29yawogIHsgaWQ6ICdzMDgnLCBncm91\ncDogJ1NFQ09OREFSWScsIHRvcGljOiAnVGltZSAmIFdvcmsnLAogICAgcXVl\nc3Rpb246ICdBIGFuZCBCIGNhbiBmaW5pc2ggYSBqb2IgaW4gNiBhbmQgMTIg\nZGF5cy4gVG9nZXRoZXIsIGluIGhvdyBtYW55IGRheXM/JywKICAgIG9wdGlv\nbnM6IFsnMycsJzQnLCc1JywnNiddLCBjb3JyZWN0OiAxLAogICAgdmVkaWNf\nc3V0cmE6ICdBbnVydXB5ZW5hJywgZGlmZmljdWx0eTogMywKICAgIHZlZGlj\nX3RpcDogJ0NvbWJpbmVkIHJhdGUgPSAxLzYgKyAxLzEyID0gMy8xMiA9IDEv\nNC4gVGltZSA9IDQgZGF5cy4gQWRkIHRoZSBmcmFjdGlvbnMhJyB9LAoKICB7\nIGlkOiAnczA5JywgZ3JvdXA6ICdTRUNPTkRBUlknLCB0b3BpYzogJ1RpbWUg\nJiBXb3JrJywKICAgIHF1ZXN0aW9uOiAnU3BlZWQgPSA2MCBrbS9oLCBEaXN0\nYW5jZSA9IDE1MCBrbS4gVGltZSA9ID8nLAogICAgb3B0aW9uczogWycyaCcs\nJzIuNWgnLCczaCcsJzMuNWgnXSwgY29ycmVjdDogMSwKICAgIHZlZGljX3N1\ndHJhOiAnQW51cnVweWVuYScsIGRpZmZpY3VsdHk6IDMsCiAgICB2ZWRpY190\naXA6ICdUaW1lID0gRC9TID0gMTUwLzYwID0gNS8yID0gMi41aC4gQ29udmVy\ndCB0byBmcmFjdGlvbiBmb3Igc3BlZWQhJyB9LAoKICAvLyBWZWRpYyBUcmlj\na3MKICB7IGlkOiAnczEwJywgZ3JvdXA6ICdTRUNPTkRBUlknLCB0b3BpYzog\nJ1ZlZGljIFRyaWNrcycsCiAgICBxdWVzdGlvbjogJ1doYXQgaXMgMjMgw5cg\nOTk/JywKICAgIG9wdGlvbnM6IFsnMjE3NycsJzIyNzcnLCcyMzc3JywnMjQ3\nNyddLCBjb3JyZWN0OiAxLAogICAgdmVkaWNfc3V0cmE6ICdOaWtoaWxhbScs\nIGRpZmZpY3VsdHk6IDMsCiAgICB2ZWRpY190aXA6ICcyMyDDlyAoMTAw4oiS\nMSkgPSAyMzAwIOKIkiAyMyA9IDIyNzcuIE11bHRpcGx5IGJ5IDEwMCB0aGVu\nIHN1YnRyYWN0IScgfSwKCiAgeyBpZDogJ3MxMScsIGdyb3VwOiAnU0VDT05E\nQVJZJywgdG9waWM6ICdWZWRpYyBUcmlja3MnLAogICAgcXVlc3Rpb246ICdX\naGF0IGlzIDQ3wrIgKG5lYXIgNTApPycsCiAgICBvcHRpb25zOiBbJzIxMDkn\nLCcyMjA5JywnMjMwOScsJzI0MDknXSwgY29ycmVjdDogMSwKICAgIHZlZGlj\nX3N1dHJhOiAnWWF2YWR1bmFtJywgZGlmZmljdWx0eTogMywKICAgIHZlZGlj\nX3RpcDogJ2QgPSA0N+KIkjUwID0g4oiSMy4gRmlyc3Q6IDI1KyjiiJIzKSA9\nIDIyLiBTZWNvbmQ6IDPCsiA9IDA5IOKGkiAyMjA5IScgfSwKCiAgLy8g4pSA\n4pSAIElOVEVSTUVESUFURSDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi\nlIDilIDilIDilIDilIDilIDilIAKCiAgLy8gVmVkaWMgQWxnZWJyYQogIHsg\naWQ6ICdpMDEnLCBncm91cDogJ0lOVEVSTUVESUFURScsIHRvcGljOiAnVmVk\naWMgQWxnZWJyYScsCiAgICBxdWVzdGlvbjogJ1NvbHZlOiAoeCsyKSh4KzMp\nID0gMC4gV2hhdCBhcmUgdGhlIHJvb3RzPycsCiAgICBvcHRpb25zOiBbJ3g9\nMiwzJywneD3iiJIyLOKIkjMnLCd4PTIs4oiSMycsJ3g94oiSMiwzJ10sIGNv\ncnJlY3Q6IDEsCiAgICB2ZWRpY19zdXRyYTogJ1ZpbG9rYW5hbScsIGRpZmZp\nY3VsdHk6IDQsCiAgICB2ZWRpY190aXA6ICdCeSBvYnNlcnZhdGlvbjogZmFj\ndG9ycyBhcmUgKHgrMikgYW5kICh4KzMpLiBFYWNoID0gMCDihpIgeCA9IOKI\nkjIgb3Ig4oiSMy4nIH0sCgogIHsgaWQ6ICdpMDInLCBncm91cDogJ0lOVEVS\nTUVESUFURScsIHRvcGljOiAnVmVkaWMgQWxnZWJyYScsCiAgICBxdWVzdGlv\nbjogJ0lmIHggKyAxL3ggPSAzLCB3aGF0IGlzIHjCsiArIDEveMKyPycsCiAg\nICBvcHRpb25zOiBbJzUnLCc3JywnOScsJzExJ10sIGNvcnJlY3Q6IDEsCiAg\nICB2ZWRpY19zdXRyYTogJ0FudXJ1cHllbmEnLCBkaWZmaWN1bHR5OiA0LAog\nICAgdmVkaWNfdGlwOiAnKHggKyAxL3gpwrIgPSB4wrIgKyAyICsgMS94wrIu\nIFNvIHjCsiArIDEveMKyID0gOSDiiJIgMiA9IDchJyB9LAoKICAvLyBRdWFk\ncmF0aWMgRXF1YXRpb25zCiAgeyBpZDogJ2kwMycsIGdyb3VwOiAnSU5URVJN\nRURJQVRFJywgdG9waWM6ICdRdWFkcmF0aWMgRXF1YXRpb25zJywKICAgIHF1\nZXN0aW9uOiAnUm9vdHMgb2YgeMKyIOKIkiA1eCArIDYgPSAwPycsCiAgICBv\ncHRpb25zOiBbJzIgYW5kIDQnLCcyIGFuZCAzJywnMyBhbmQgNCcsJzEgYW5k\nIDYnXSwgY29ycmVjdDogMSwKICAgIHZlZGljX3N1dHJhOiAnVmlsb2thbmFt\nJywgZGlmZmljdWx0eTogNCwKICAgIHZlZGljX3RpcDogJ0ZpbmQgdHdvIG51\nbWJlcnM6IHN1bT01LCBwcm9kdWN0PTYg4oaSIDIgYW5kIDMuIE9ic2VydmUg\ndGhlIHBhdHRlcm4gZGlyZWN0bHkhJyB9LAoKICB7IGlkOiAnaTA0JywgZ3Jv\ndXA6ICdJTlRFUk1FRElBVEUnLCB0b3BpYzogJ1F1YWRyYXRpYyBFcXVhdGlv\nbnMnLAogICAgcXVlc3Rpb246ICdEaXNjcmltaW5hbnQgb2YgeMKyIOKIkiA0\neCArIDQgPSAwIGlzPycsCiAgICBvcHRpb25zOiBbJ+KIkjQnLCcwJywnNCcs\nJzgnXSwgY29ycmVjdDogMSwKICAgIHZlZGljX3N1dHJhOiAnVmlsb2thbmFt\nJywgZGlmZmljdWx0eTogNCwKICAgIHZlZGljX3RpcDogJ0QgPSBiwrLiiJI0\nYWMgPSAxNuKIkjE2ID0gMC4gRXF1YWwgcm9vdHMhIE9ic2VydmU6IHjCsiDi\niJIgNHggKyA0ID0gKHjiiJIyKcKyLicgfSwKCiAgLy8gTnVtYmVyIFRoZW9y\neQogIHsgaWQ6ICdpMDUnLCBncm91cDogJ0lOVEVSTUVESUFURScsIHRvcGlj\nOiAnTnVtYmVyIFRoZW9yeScsCiAgICBxdWVzdGlvbjogJ1doYXQgaXMgdGhl\nIHN1bSBvZiBhbGwgZGlnaXRzIG9mIDnCueKBsD8nLAogICAgb3B0aW9uczog\nWyc5JywnMTgnLCcyNycsJzM2J10sIGNvcnJlY3Q6IDAsCiAgICB2ZWRpY19z\ndXRyYTogJ0d1bml0YSBTYW11Y2h5YWgnLCBkaWZmaWN1bHR5OiA0LAogICAg\ndmVkaWNfdGlwOiAnRGlnaXQgc3VtIG9mIGFueSBwb3dlciBvZiA5IGlzIGFs\nd2F5cyA5ISAoU2luY2UgOSDiiaEgMCBtb2QgOSknIH0sCgogIHsgaWQ6ICdp\nMDYnLCBncm91cDogJ0lOVEVSTUVESUFURScsIHRvcGljOiAnTnVtYmVyIFRo\nZW9yeScsCiAgICBxdWVzdGlvbjogJ1doYXQgaXMgMuKBtSDDlyA14oG1Pycs\nCiAgICBvcHRpb25zOiBbJzEwMDAwJywnMTAwMDAwJywnMTAwMDAwMCcsJzEw\nJ10sIGNvcnJlY3Q6IDEsCiAgICB2ZWRpY19zdXRyYTogJ0FudXJ1cHllbmEn\nLCBkaWZmaWN1bHR5OiA0LAogICAgdmVkaWNfdGlwOiAnMuKBtSDDlyA14oG1\nID0gKDLDlzUp4oG1ID0gMTDigbUgPSAxMDAwMDAuIENvbWJpbmUgYmFzZXMg\nd2l0aCBwcm9wb3J0aW9uYWxpdHkhJyB9LAoKICAvLyBTZXF1ZW5jZXMKICB7\nIGlkOiAnaTA3JywgZ3JvdXA6ICdJTlRFUk1FRElBVEUnLCB0b3BpYzogJ1Nl\ncXVlbmNlcycsCiAgICBxdWVzdGlvbjogJ0ZpbmQgdGhlIG5leHQgdGVybTog\nMiwgMywgNSwgOCwgMTMsIF9fJywKICAgIG9wdGlvbnM6IFsnMTgnLCcyMCcs\nJzIxJywnMjInXSwgY29ycmVjdDogMiwKICAgIHZlZGljX3N1dHJhOiAnVmls\nb2thbmFtJywgZGlmZmljdWx0eTogNCwKICAgIHZlZGljX3RpcDogJ0ZpYm9u\nYWNjaSEgRWFjaCB0ZXJtID0gc3VtIG9mIHByZXZpb3VzIHR3bzogOCsxMz0y\nMS4nIH0sCgogIHsgaWQ6ICdpMDgnLCBncm91cDogJ0lOVEVSTUVESUFURScs\nIHRvcGljOiAnU2VxdWVuY2VzJywKICAgIHF1ZXN0aW9uOiAnU3VtIG9mIGZp\ncnN0IDEwIG5hdHVyYWwgbnVtYmVycz8nLAogICAgb3B0aW9uczogWyc0NScs\nJzUwJywnNTUnLCc2MCddLCBjb3JyZWN0OiAyLAogICAgdmVkaWNfc3V0cmE6\nICdFa2FkaGlrZW5hIFB1cnZlbmEnLCBkaWZmaWN1bHR5OiA0LAogICAgdmVk\naWNfdGlwOiAnUyA9IG4obisxKS8yID0gMTDDlzExLzIgPSA1NS4gVmVkaWMg\nc2hvcnRjdXQ6IHBhaXIgZmlyc3QgYW5kIGxhc3Q6ICgxKzEwKcOXNT01NSEn\nIH0sCgogIC8vIE1lbnRhbCBDYWxjdWx1cwogIHsgaWQ6ICdpMDknLCBncm91\ncDogJ0lOVEVSTUVESUFURScsIHRvcGljOiAnTWVudGFsIENhbGN1bHVzJywK\nICAgIHF1ZXN0aW9uOiAnV2hhdCBpcyBkL2R4KHjCsik/JywKICAgIG9wdGlv\nbnM6IFsneCcsJzJ4JywneMKyJywnMiddLCBjb3JyZWN0OiAxLAogICAgdmVk\naWNfc3V0cmE6ICdVcmRodmEtVGlyeWFnYmh5YW0nLCBkaWZmaWN1bHR5OiA0\nLAogICAgdmVkaWNfdGlwOiAnUG93ZXIgcnVsZTogYnJpbmcgcG93ZXIgZG93\nbiwgcmVkdWNlIGJ5IDEuIHjCsiDihpIgMnguIFZlZGljIG1hdGhzIHNlZXMg\ndGhpcyBhcyBhIHBhdHRlcm4hJyB9LAoKICB7IGlkOiAnaTEwJywgZ3JvdXA6\nICdJTlRFUk1FRElBVEUnLCB0b3BpYzogJ01lbnRhbCBDYWxjdWx1cycsCiAg\nICBxdWVzdGlvbjogJ0ludGVncmFsIG9mIDJ4IGR4ID0gPycsCiAgICBvcHRp\nb25zOiBbJ3jCsicsJ3jCsiArIEMnLCcyeMKyICsgQycsJzIgKyBDJ10sIGNv\ncnJlY3Q6IDEsCiAgICB2ZWRpY19zdXRyYTogJ0FudXJ1cHllbmEnLCBkaWZm\naWN1bHR5OiA0LAogICAgdmVkaWNfdGlwOiAnUmV2ZXJzZSBwb3dlciBydWxl\nOiBpbmNyZWFzZSBwb3dlciBieSAxLCBkaXZpZGUgYnkgbmV3IHBvd2VyLiAy\neCDihpIgeMKyICsgQy4nIH0sCl07CgpleHBvcnQgZnVuY3Rpb24gZ2V0UXVl\nc3Rpb25zKGdyb3VwLCB0b3BpYyA9IG51bGwpIHsKICBsZXQgcG9vbCA9IFFV\nRVNUSU9OUy5maWx0ZXIocSA9PiBxLmdyb3VwID09PSBncm91cCk7CiAgaWYg\nKHRvcGljKSBwb29sID0gcG9vbC5maWx0ZXIocSA9PiBxLnRvcGljID09PSB0\nb3BpYyk7CiAgLy8gU2h1ZmZsZQogIHJldHVybiBbLi4ucG9vbF0uc29ydCgo\nKSA9PiBNYXRoLnJhbmRvbSgpIC0gMC41KS5zbGljZSgwLCAxMCk7Cn0KCmV4\ncG9ydCB7IFFVRVNUSU9OUyB9Ow==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/aptitudeQuestions.js?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/6dd899b5a067c143541cf36f3932e09b221136af","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/aptitudeQuestions.js"}}
+// ─── Class group helper ───────────────────────────────────────────────────────
+
+export function getClassGroup(classNum) {
+  const n = parseInt(classNum) || 8;
+  if (n <= 5)  return 'PRIMARY';
+  if (n <= 8)  return 'MIDDLE';
+  if (n <= 10) return 'SECONDARY';
+  return 'INTERMEDIATE';
+}
+
+export const CLASS_GROUPS = {
+  PRIMARY:      { label: 'Primary (1–5)',       classes: [1,2,3,4,5],     color: '#10B981', bg: '#D1FAE5' },
+  MIDDLE:       { label: 'Middle (6–8)',         classes: [6,7,8],         color: '#3B82F6', bg: '#DBEAFE' },
+  SECONDARY:    { label: 'Secondary (9–10)',     classes: [9,10],          color: '#8B5CF6', bg: '#EDE9FE' },
+  INTERMEDIATE: { label: 'Intermediate (11–12)', classes: [11,12],         color: '#F59E0B', bg: '#FEF3C7' },
+};
+
+export const TOPICS = {
+  PRIMARY:      ['Addition', 'Subtraction', 'Multiplication', 'Division', 'Tables'],
+  MIDDLE:       ['Fractions', 'Percentages', 'Squares & Cubes', 'Basic Algebra', 'HCF & LCM'],
+  SECONDARY:    ['Speed Maths', 'Number Systems', 'Profit & Loss', 'Time & Work', 'Vedic Tricks'],
+  INTERMEDIATE: ['Vedic Algebra', 'Quadratic Equations', 'Number Theory', 'Sequences', 'Mental Calculus'],
+};
+
+// ─── Question Bank ────────────────────────────────────────────────────────────
+
+const QUESTIONS = [
+
+  // ── PRIMARY ──────────────────────────────────────────────────────────────────
+
+  // Addition
+  { id: 'p01', group: 'PRIMARY', topic: 'Addition',
+    question: 'What is 48 + 37?',
+    options: ['75','84','85','87'], correct: 2,
+    vedic_sutra: 'Ekadhikena Purvena', difficulty: 1,
+    vedic_tip: 'Round 48 → 50, add 37 = 87, subtract 2 → 85. Always round up then adjust!' },
+
+  { id: 'p02', group: 'PRIMARY', topic: 'Addition',
+    question: 'What is 99 + 56?',
+    options: ['154','155','156','157'], correct: 1,
+    vedic_sutra: 'Nikhilam', difficulty: 1,
+    vedic_tip: '99 = 100 − 1. So 100 + 56 = 156, then subtract 1 → 155. Fast!' },
+
+  { id: 'p03', group: 'PRIMARY', topic: 'Addition',
+    question: 'What is 125 + 75?',
+    options: ['190','195','200','205'], correct: 2,
+    vedic_sutra: 'Anurupyena', difficulty: 1,
+    vedic_tip: '125 + 75 = 100 + (25 + 75) = 100 + 100 = 200. Group to make round numbers!' },
+
+  // Subtraction
+  { id: 'p04', group: 'PRIMARY', topic: 'Subtraction',
+    question: 'What is 100 − 37?',
+    options: ['53','63','73','67'], correct: 1,
+    vedic_sutra: 'Nikhilam Navatashcaramam Dashatah', difficulty: 1,
+    vedic_tip: '"All from 9, last from 10": 9−3=6, 10−7=3 → 63. Works for any subtraction from 100!' },
+
+  { id: 'p05', group: 'PRIMARY', topic: 'Subtraction',
+    question: 'What is 1000 − 456?',
+    options: ['444','544','554','644'], correct: 1,
+    vedic_sutra: 'Nikhilam Navatashcaramam Dashatah', difficulty: 1,
+    vedic_tip: '"All from 9, last from 10": 9−4=5, 9−5=4, 10−6=4 → 544.' },
+
+  // Multiplication
+  { id: 'p06', group: 'PRIMARY', topic: 'Multiplication',
+    question: 'What is 25 × 4?',
+    options: ['90','95','100','105'], correct: 2,
+    vedic_sutra: 'Anurupyena', difficulty: 1,
+    vedic_tip: '25 × 4 = 25 × (2×2) = 50 × 2 = 100. Or: 100 ÷ 4 × 4 = 100!' },
+
+  { id: 'p07', group: 'PRIMARY', topic: 'Multiplication',
+    question: 'What is 15²?',
+    options: ['125','215','225','235'], correct: 2,
+    vedic_sutra: 'Ekadhikena Purvena', difficulty: 1,
+    vedic_tip: 'For any number ending in 5: 1×2=2, append 25 → 225!' },
+
+  { id: 'p08', group: 'PRIMARY', topic: 'Multiplication',
+    question: 'What is 12 × 11?',
+    options: ['122','132','142','152'], correct: 1,
+    vedic_sutra: 'Urdhva-Tiryagbhyam', difficulty: 1,
+    vedic_tip: 'Multiply by 11: write 1, middle 1+2=3, write 2 → 132!' },
+
+  // Division
+  { id: 'p09', group: 'PRIMARY', topic: 'Division',
+    question: 'What is 84 ÷ 4?',
+    options: ['19','21','22','23'], correct: 1,
+    vedic_sutra: 'Anurupyena', difficulty: 1,
+    vedic_tip: 'Halve twice: 84÷2=42, 42÷2=21. Dividing by 4 = halving twice!' },
+
+  { id: 'p10', group: 'PRIMARY', topic: 'Division',
+    question: 'What is 125 ÷ 5?',
+    options: ['20','23','25','27'], correct: 2,
+    vedic_sutra: 'Anurupyena', difficulty: 1,
+    vedic_tip: 'Dividing by 5 = multiply by 2, then divide by 10: 125×2=250, ÷10=25!' },
+
+  // Tables
+  { id: 'p11', group: 'PRIMARY', topic: 'Tables',
+    question: 'What is 7 × 8?',
+    options: ['54','56','58','60'], correct: 1,
+    vedic_sutra: 'Nikhilam Navatashcaramam Dashatah', difficulty: 1,
+    vedic_tip: 'Deficits from 10: 3 and 2. Cross: 7−2=5. Product: 3×2=6 → 56!' },
+
+  { id: 'p12', group: 'PRIMARY', topic: 'Tables',
+    question: 'What is 9 × 6?',
+    options: ['52','54','56','58'], correct: 1,
+    vedic_sutra: 'Nikhilam Navatashcaramam Dashatah', difficulty: 1,
+    vedic_tip: 'Deficits from 10: 1 and 4. Cross: 9−4=5. Product: 1×4=4 → 54!' },
+
+  { id: 'p13', group: 'PRIMARY', topic: 'Tables',
+    question: 'What is 8 × 9?',
+    options: ['70','72','74','76'], correct: 1,
+    vedic_sutra: 'Nikhilam Navatashcaramam Dashatah', difficulty: 1,
+    vedic_tip: 'Deficits: 2 and 1. Cross: 8−1=7. Product: 2×1=2 → 72!' },
+
+  // ── MIDDLE ───────────────────────────────────────────────────────────────────
+
+  // Fractions
+  { id: 'm01', group: 'MIDDLE', topic: 'Fractions',
+    question: 'What is 1/3 + 1/4?',
+    options: ['2/7','5/12','7/12','3/7'], correct: 2,
+    vedic_sutra: 'Anurupyena', difficulty: 2,
+    vedic_tip: 'Cross multiply numerators: 1×4 + 3×1 = 7. Multiply denominators: 3×4 = 12 → 7/12.' },
+
+  { id: 'm02', group: 'MIDDLE', topic: 'Fractions',
+    question: 'What is 3/4 − 1/6?',
+    options: ['5/12','7/12','1/2','2/3'], correct: 1,
+    vedic_sutra: 'Anurupyena', difficulty: 2,
+    vedic_tip: '3×6 − 4×1 = 14. Denominator: 4×6 = 24. → 14/24 = 7/12.' },
+
+  { id: 'm03', group: 'MIDDLE', topic: 'Fractions',
+    question: 'Simplify: 2/3 × 3/4',
+    options: ['1/2','2/3','3/4','5/6'], correct: 0,
+    vedic_sutra: 'Vilokanam', difficulty: 2,
+    vedic_tip: 'Cancel common factors first: 2/3 × 3/4 = 2/4 = 1/2. Observe before computing!' },
+
+  // Percentages
+  { id: 'm04', group: 'MIDDLE', topic: 'Percentages',
+    question: 'What is 15% of 200?',
+    options: ['25','30','35','40'], correct: 1,
+    vedic_sutra: 'Anurupyena', difficulty: 2,
+    vedic_tip: '10% = 20. 5% = 10. 10+20 = 30. Always split percentages into 10% chunks!' },
+
+  { id: 'm05', group: 'MIDDLE', topic: 'Percentages',
+    question: 'A price rises from ₹80 to ₹100. What is the percentage increase?',
+    options: ['20%','25%','30%','15%'], correct: 1,
+    vedic_sutra: 'Anurupyena', difficulty: 2,
+    vedic_tip: 'Increase = 20. Base = 80. 20/80 = 1/4 = 25%. Convert to fraction first, then %!' },
+
+  // Squares & Cubes
+  { id: 'm06', group: 'MIDDLE', topic: 'Squares & Cubes',
+    question: 'What is 45²?',
+    options: ['1925','2005','2025','2125'], correct: 2,
+    vedic_sutra: 'Ekadhikena Purvena', difficulty: 2,
+    vedic_tip: 'Ending in 5: 4×5=20, append 25 → 2025. Take digit before 5, multiply by next number!' },
+
+  { id: 'm07', group: 'MIDDLE', topic: 'Squares & Cubes',
+    question: 'What is 12³?',
+    options: ['1528','1628','1728','1828'], correct: 2,
+    vedic_sutra: 'Urdhva-Tiryagbhyam', difficulty: 2,
+    vedic_tip: 'Pattern a³|3a²b|3ab²|b³: 1|6|12|8 → with carries → 1728.' },
+
+  { id: 'm08', group: 'MIDDLE', topic: 'Squares & Cubes',
+    question: 'What is √1764?',
+    options: ['41','42','43','44'], correct: 1,
+    vedic_sutra: 'Vilokanam', difficulty: 2,
+    vedic_tip: 'Split: 17|64. First digit: 4 (4²=16≤17). Last digit 4 → root ends in 2 or 8. Test 42: 42²=1764 ✓' },
+
+  // Basic Algebra
+  { id: 'm09', group: 'MIDDLE', topic: 'Basic Algebra',
+    question: 'If 2x + 3 = 11, what is x?',
+    options: ['3','4','5','6'], correct: 1,
+    vedic_sutra: 'Paravartya Yojayet', difficulty: 2,
+    vedic_tip: 'Transpose: 2x = 11−3 = 8. x = 4. "Paravartya" means transpose and apply!' },
+
+  { id: 'm10', group: 'MIDDLE', topic: 'Basic Algebra',
+    question: 'What is the value of x if 5x = 75?',
+    options: ['13','14','15','16'], correct: 2,
+    vedic_sutra: 'Anurupyena', difficulty: 2,
+    vedic_tip: 'x = 75÷5. Dividing by 5 = ×2 then ÷10: 75×2=150, ÷10=15!' },
+
+  // HCF & LCM
+  { id: 'm11', group: 'MIDDLE', topic: 'HCF & LCM',
+    question: 'What is the LCM of 4 and 6?',
+    options: ['8','10','12','24'], correct: 2,
+    vedic_sutra: 'Vilokanam', difficulty: 2,
+    vedic_tip: 'Observe: 4=2², 6=2×3. LCM = 2²×3 = 12. Always factor first!' },
+
+  { id: 'm12', group: 'MIDDLE', topic: 'HCF & LCM',
+    question: 'What is the HCF of 24 and 36?',
+    options: ['6','8','10','12'], correct: 3,
+    vedic_sutra: 'Vilokanam', difficulty: 2,
+    vedic_tip: '24=2³×3, 36=2²×3². HCF = 2²×3 = 12. Take lowest powers of common factors.' },
+
+  // ── SECONDARY ────────────────────────────────────────────────────────────────
+
+  // Speed Maths
+  { id: 's01', group: 'SECONDARY', topic: 'Speed Maths',
+    question: 'What is 97 × 96?',
+    options: ['9212','9312','9412','9512'], correct: 1,
+    vedic_sutra: 'Nikhilam Navatashcaramam Dashatah', difficulty: 3,
+    vedic_tip: 'Deficits from 100: 3 and 4. Cross: 97−4=93. Product: 3×4=12 → 9312!' },
+
+  { id: 's02', group: 'SECONDARY', topic: 'Speed Maths',
+    question: 'What is 998 × 997?',
+    options: ['994006','995006','996006','997006'], correct: 1,
+    vedic_sutra: 'Nikhilam Navatashcaramam Dashatah', difficulty: 3,
+    vedic_tip: 'Deficits from 1000: 2 and 3. Cross: 998−3=995. Product: 006 → 995006!' },
+
+  { id: 's03', group: 'SECONDARY', topic: 'Speed Maths',
+    question: 'What is 85²?',
+    options: ['7025','7125','7225','7325'], correct: 2,
+    vedic_sutra: 'Ekadhikena Purvena', difficulty: 3,
+    vedic_tip: '8×9=72, append 25 → 7225. Squaring numbers ending in 5 is instant!' },
+
+  // Number Systems
+  { id: 's04', group: 'SECONDARY', topic: 'Number Systems',
+    question: 'Which of the following is NOT a prime number?',
+    options: ['97','91','89','83'], correct: 1,
+    vedic_sutra: 'Vilokanam', difficulty: 3,
+    vedic_tip: '91 = 7 × 13. Check divisibility by primes up to √91 ≈ 9.5 (i.e., 2, 3, 5, 7).' },
+
+  { id: 's05', group: 'SECONDARY', topic: 'Number Systems',
+    question: 'What is the digit sum of 9999999?',
+    options: ['0','9','63','72'], correct: 1,
+    vedic_sutra: 'Gunita Samuchyah', difficulty: 3,
+    vedic_tip: '7 nines: 9×7=63 → 6+3=9. When all digits are 9, digit sum = 9!' },
+
+  // Profit & Loss
+  { id: 's06', group: 'SECONDARY', topic: 'Profit & Loss',
+    question: 'An item bought at ₹80 is sold at ₹100. Find the profit %.',
+    options: ['20%','25%','30%','15%'], correct: 1,
+    vedic_sutra: 'Anurupyena', difficulty: 3,
+    vedic_tip: 'Profit = 20. CP = 80. Profit% = 20/80 × 100 = 25%. Use proportionality!' },
+
+  { id: 's07', group: 'SECONDARY', topic: 'Profit & Loss',
+    question: 'If SP = ₹660 and profit = 10%, what is the CP?',
+    options: ['₹580','₹590','₹600','₹610'], correct: 2,
+    vedic_sutra: 'Paravartya Yojayet', difficulty: 3,
+    vedic_tip: 'CP = SP ÷ 1.1 = 660 ÷ 1.1 = 600. Transpose the relationship!' },
+
+  // Time & Work
+  { id: 's08', group: 'SECONDARY', topic: 'Time & Work',
+    question: 'A and B can finish a job in 6 and 12 days. Together, in how many days?',
+    options: ['3','4','5','6'], correct: 1,
+    vedic_sutra: 'Anurupyena', difficulty: 3,
+    vedic_tip: 'Combined rate = 1/6 + 1/12 = 3/12 = 1/4. Time = 4 days. Add the fractions!' },
+
+  { id: 's09', group: 'SECONDARY', topic: 'Time & Work',
+    question: 'Speed = 60 km/h, Distance = 150 km. Time = ?',
+    options: ['2h','2.5h','3h','3.5h'], correct: 1,
+    vedic_sutra: 'Anurupyena', difficulty: 3,
+    vedic_tip: 'Time = D/S = 150/60 = 5/2 = 2.5h. Convert to fraction for speed!' },
+
+  // Vedic Tricks
+  { id: 's10', group: 'SECONDARY', topic: 'Vedic Tricks',
+    question: 'What is 23 × 99?',
+    options: ['2177','2277','2377','2477'], correct: 1,
+    vedic_sutra: 'Nikhilam', difficulty: 3,
+    vedic_tip: '23 × (100−1) = 2300 − 23 = 2277. Multiply by 100 then subtract!' },
+
+  { id: 's11', group: 'SECONDARY', topic: 'Vedic Tricks',
+    question: 'What is 47² (near 50)?',
+    options: ['2109','2209','2309','2409'], correct: 1,
+    vedic_sutra: 'Yavadunam', difficulty: 3,
+    vedic_tip: 'd = 47−50 = −3. First: 25+(−3) = 22. Second: 3² = 09 → 2209!' },
+
+  // ── INTERMEDIATE ─────────────────────────────────────────────────────────────
+
+  // Vedic Algebra
+  { id: 'i01', group: 'INTERMEDIATE', topic: 'Vedic Algebra',
+    question: 'Solve: (x+2)(x+3) = 0. What are the roots?',
+    options: ['x=2,3','x=−2,−3','x=2,−3','x=−2,3'], correct: 1,
+    vedic_sutra: 'Vilokanam', difficulty: 4,
+    vedic_tip: 'By observation: factors are (x+2) and (x+3). Each = 0 → x = −2 or −3.' },
+
+  { id: 'i02', group: 'INTERMEDIATE', topic: 'Vedic Algebra',
+    question: 'If x + 1/x = 3, what is x² + 1/x²?',
+    options: ['5','7','9','11'], correct: 1,
+    vedic_sutra: 'Anurupyena', difficulty: 4,
+    vedic_tip: '(x + 1/x)² = x² + 2 + 1/x². So x² + 1/x² = 9 − 2 = 7!' },
+
+  // Quadratic Equations
+  { id: 'i03', group: 'INTERMEDIATE', topic: 'Quadratic Equations',
+    question: 'Roots of x² − 5x + 6 = 0?',
+    options: ['2 and 4','2 and 3','3 and 4','1 and 6'], correct: 1,
+    vedic_sutra: 'Vilokanam', difficulty: 4,
+    vedic_tip: 'Find two numbers: sum=5, product=6 → 2 and 3. Observe the pattern directly!' },
+
+  { id: 'i04', group: 'INTERMEDIATE', topic: 'Quadratic Equations',
+    question: 'Discriminant of x² − 4x + 4 = 0 is?',
+    options: ['−4','0','4','8'], correct: 1,
+    vedic_sutra: 'Vilokanam', difficulty: 4,
+    vedic_tip: 'D = b²−4ac = 16−16 = 0. Equal roots! Observe: x² − 4x + 4 = (x−2)².' },
+
+  // Number Theory
+  { id: 'i05', group: 'INTERMEDIATE', topic: 'Number Theory',
+    question: 'What is the sum of all digits of 9¹⁰?',
+    options: ['9','18','27','36'], correct: 0,
+    vedic_sutra: 'Gunita Samuchyah', difficulty: 4,
+    vedic_tip: 'Digit sum of any power of 9 is always 9! (Since 9 ≡ 0 mod 9)' },
+
+  { id: 'i06', group: 'INTERMEDIATE', topic: 'Number Theory',
+    question: 'What is 2⁵ × 5⁵?',
+    options: ['10000','100000','1000000','10'], correct: 1,
+    vedic_sutra: 'Anurupyena', difficulty: 4,
+    vedic_tip: '2⁵ × 5⁵ = (2×5)⁵ = 10⁵ = 100000. Combine bases with proportionality!' },
+
+  // Sequences
+  { id: 'i07', group: 'INTERMEDIATE', topic: 'Sequences',
+    question: 'Find the next term: 2, 3, 5, 8, 13, __',
+    options: ['18','20','21','22'], correct: 2,
+    vedic_sutra: 'Vilokanam', difficulty: 4,
+    vedic_tip: 'Fibonacci! Each term = sum of previous two: 8+13=21.' },
+
+  { id: 'i08', group: 'INTERMEDIATE', topic: 'Sequences',
+    question: 'Sum of first 10 natural numbers?',
+    options: ['45','50','55','60'], correct: 2,
+    vedic_sutra: 'Ekadhikena Purvena', difficulty: 4,
+    vedic_tip: 'S = n(n+1)/2 = 10×11/2 = 55. Vedic shortcut: pair first and last: (1+10)×5=55!' },
+
+  // Mental Calculus
+  { id: 'i09', group: 'INTERMEDIATE', topic: 'Mental Calculus',
+    question: 'What is d/dx(x²)?',
+    options: ['x','2x','x²','2'], correct: 1,
+    vedic_sutra: 'Urdhva-Tiryagbhyam', difficulty: 4,
+    vedic_tip: 'Power rule: bring power down, reduce by 1. x² → 2x. Vedic maths sees this as a pattern!' },
+
+  { id: 'i10', group: 'INTERMEDIATE', topic: 'Mental Calculus',
+    question: 'Integral of 2x dx = ?',
+    options: ['x²','x² + C','2x² + C','2 + C'], correct: 1,
+    vedic_sutra: 'Anurupyena', difficulty: 4,
+    vedic_tip: 'Reverse power rule: increase power by 1, divide by new power. 2x → x² + C.' },
+];
+
+export function getQuestions(group, topic = null) {
+  let pool = QUESTIONS.filter(q => q.group === group);
+  if (topic) pool = pool.filter(q => q.topic === topic);
+  // Shuffle
+  return [...pool].sort(() => Math.random() - 0.5).slice(0, 10);
+}
+
+export { QUESTIONS };
