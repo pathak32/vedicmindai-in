@@ -1,14 +1,1 @@
-import { cn } from "@/lib/utils"
-
-function Skeleton({
-  className,
-  ...props
-}) {
-  return (
-    (<div
-      className={cn("animate-pulse rounded-md bg-primary/10", className)}
-      {...props} />)
-  );
-}
-
-export { Skeleton }
+{"name":"skeleton.jsx","path":"src/components/ui/skeleton.jsx","sha":"9c864f3118079204967b42bd3102cbed037d42a0","size":227,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/skeleton.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/skeleton.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/9c864f3118079204967b42bd3102cbed037d42a0","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/skeleton.jsx?token=CFODAP44APMSBETYIXGAKK3KFSQ2DAA","type":"file","content":"aW1wb3J0IHsgY24gfSBmcm9tICJAL2xpYi91dGlscyIKCmZ1bmN0aW9uIFNr\nZWxldG9uKHsKICBjbGFzc05hbWUsCiAgLi4ucHJvcHMKfSkgewogIHJldHVy\nbiAoCiAgICAoPGRpdgogICAgICBjbGFzc05hbWU9e2NuKCJhbmltYXRlLXB1\nbHNlIHJvdW5kZWQtbWQgYmctcHJpbWFyeS8xMCIsIGNsYXNzTmFtZSl9CiAg\nICAgIHsuLi5wcm9wc30gLz4pCiAgKTsKfQoKZXhwb3J0IHsgU2tlbGV0b24g\nfQo=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/skeleton.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/9c864f3118079204967b42bd3102cbed037d42a0","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/skeleton.jsx"}}
