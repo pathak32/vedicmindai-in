@@ -1,1 +1,99 @@
-{"name":"AITutorPanel.jsx","path":"src/components/learn/AITutorPanel.jsx","sha":"6f3b79c57ed77a5f60d20bc966dc85cb72cf7d46","size":4111,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/learn/AITutorPanel.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/learn/AITutorPanel.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/6f3b79c57ed77a5f60d20bc966dc85cb72cf7d46","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/learn/AITutorPanel.jsx?token=CFODAP5OZFTDY2SBEKPHONDKFSQWDAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgWCB9IGZyb20g\nJ2x1Y2lkZS1yZWFjdCc7CmltcG9ydCB7IG1vdGlvbiB9IGZyb20gJ2ZyYW1l\nci1tb3Rpb24nOwoKY29uc3QgQ09NSU5HX1NPT05fTVNHID0gYPCfmoAgQUkg\nVHV0b3IgaXMgYmVpbmcgdXBncmFkZWQhCgpXZSdyZSBidWlsZGluZyBhIG1v\ncmUgcG93ZXJmdWwgQUkgVHV0b3IgZXhwZXJpZW5jZSBmb3IgeW91LiBUaGlz\nIGZlYXR1cmUgd2lsbCBiZSBsaXZlIHZlcnkgc29vbiB3aXRoOgrinIUgUmVh\nbC10aW1lIFZlZGljIE1hdGhzIGV4cGxhbmF0aW9ucwrinIUgU3RlcC1ieS1z\ndGVwIHByb2JsZW0gc29sdmluZwrinIUgUGVyc29uYWxpemVkIGxlYXJuaW5n\nIGd1aWRhbmNlCgpTdGF5IHR1bmVkISDwn5mPIOKAlCBUZWFtIFZlZGljTWlu\nZGA7CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBBSVR1dG9yUGFuZWwoeyBs\nZXNzb24sIG9uQ2xvc2UgfSkgewogIGNvbnN0IGxlc3NvblRpdGxlID0gbGVz\nc29uPy50aXRsZSB8fCAnVmVkaWMgTWF0aGVtYXRpY3MnOwoKICByZXR1cm4g\nKAogICAgPGRpdiBzdHlsZT17eyBwb3NpdGlvbjogJ2ZpeGVkJywgaW5zZXQ6\nIDAsIHpJbmRleDogMzAwIH19PgogICAgICA8ZGl2IG9uQ2xpY2s9e29uQ2xv\nc2V9IHN0eWxlPXt7IHBvc2l0aW9uOiAnYWJzb2x1dGUnLCBpbnNldDogMCwg\nYmFja2dyb3VuZDogJ3JnYmEoMCwwLDAsMC4zKScgfX0gLz4KICAgICAgPG1v\ndGlvbi5kaXYKICAgICAgICBpbml0aWFsPXt7IHg6ICcxMDAlJyB9fQogICAg\nICAgIGFuaW1hdGU9e3sgeDogMCB9fQogICAgICAgIGV4aXQ9e3sgeDogJzEw\nMCUnIH19CiAgICAgICAgdHJhbnNpdGlvbj17eyB0eXBlOiAnc3ByaW5nJywg\nZGFtcGluZzogMjUgfX0KICAgICAgICBzdHlsZT17ewogICAgICAgICAgcG9z\naXRpb246ICdhYnNvbHV0ZScsIHJpZ2h0OiAwLCB0b3A6IDAsIGJvdHRvbTog\nMCwKICAgICAgICAgIHdpZHRoOiAnMTAwJScsIG1heFdpZHRoOiAzODAsCiAg\nICAgICAgICBiYWNrZ3JvdW5kOiAnd2hpdGUnLCBkaXNwbGF5OiAnZmxleCcs\nIGZsZXhEaXJlY3Rpb246ICdjb2x1bW4nLAogICAgICAgICAgYm94U2hhZG93\nOiAnLTRweCAwIDMycHggcmdiYSgxMCwyMiw0MCwwLjEyKScsCiAgICAgICAg\nfX0KICAgICAgPgogICAgICAgIHsvKiBIZWFkZXIgKi99CiAgICAgICAgPGRp\ndiBzdHlsZT17eyBwYWRkaW5nOiAnMTZweCAyMHB4JywgYm9yZGVyQm90dG9t\nOiAnMXB4IHNvbGlkIHJnYmEoMzAsNjQsMTc1LDAuMSknLCBkaXNwbGF5OiAn\nZmxleCcsIGFsaWduSXRlbXM6ICdjZW50ZXInLCBnYXA6IDEyIH19PgogICAg\nICAgICAgPHNwYW4gc3R5bGU9e3sgZm9udFNpemU6IDI0IH19PvCfpJY8L3Nw\nYW4+CiAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZsZXg6IDEgfX0+CiAgICAg\nICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBhbGlnbkl0\nZW1zOiAnY2VudGVyJywgZ2FwOiA4IH19PgogICAgICAgICAgICAgIDxkaXYg\nc3R5bGU9e3sgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250\nV2VpZ2h0OiA3MDAsIGZvbnRTaXplOiAxNiwgY29sb3I6ICcjMEExNjI4JyB9\nfT5BSSBUdXRvcjwvZGl2PgogICAgICAgICAgICAgIDxzcGFuIHN0eWxlPXt7\nCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiAnI0Y1OUUwQicsIGNvbG9y\nOiAnd2hpdGUnLAogICAgICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiA5OSwg\ncGFkZGluZzogJzJweCA4cHgnLAogICAgICAgICAgICAgICAgZm9udEZhbWls\neTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTAsIGZvbnRXZWln\naHQ6IDcwMCwKICAgICAgICAgICAgICAgIHRleHRUcmFuc2Zvcm06ICd1cHBl\ncmNhc2UnLCBsZXR0ZXJTcGFjaW5nOiAnMC4wNWVtJywKICAgICAgICAgICAg\nICB9fT5Db21pbmcgU29vbjwvc3Bhbj4KICAgICAgICAgICAgPC9kaXY+CiAg\nICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZm9udEZhbWlseTogJ3ZhcigtLWZv\nbnQtYm9keSknLCBmb250U2l6ZTogMTMsIGNvbG9yOiAnIzRCNTU2MycsIG92\nZXJmbG93OiAnaGlkZGVuJywgdGV4dE92ZXJmbG93OiAnZWxsaXBzaXMnLCB3\naGl0ZVNwYWNlOiAnbm93cmFwJywgbWF4V2lkdGg6IDIyMCB9fT4KICAgICAg\nICAgICAgICB7bGVzc29uVGl0bGV9CiAgICAgICAgICAgIDwvZGl2PgogICAg\nICAgICAgPC9kaXY+CiAgICAgICAgICA8YnV0dG9uIG9uQ2xpY2s9e29uQ2xv\nc2V9IHN0eWxlPXt7IGJhY2tncm91bmQ6ICdub25lJywgYm9yZGVyOiAnbm9u\nZScsIGN1cnNvcjogJ3BvaW50ZXInLCBwYWRkaW5nOiA0IH19PgogICAgICAg\nICAgICA8WCBzaXplPXsyMH0gY29sb3I9IiM0QjU1NjMiIC8+CiAgICAgICAg\nICA8L2J1dHRvbj4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgey8qIE1lc3Nh\nZ2UgKi99CiAgICAgICAgPGRpdiBzdHlsZT17eyBmbGV4OiAxLCBvdmVyZmxv\nd1k6ICdhdXRvJywgcGFkZGluZzogJzE2cHggMTZweCA4cHgnLCBkaXNwbGF5\nOiAnZmxleCcsIGZsZXhEaXJlY3Rpb246ICdjb2x1bW4nLCBnYXA6IDEyIH19\nPgogICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGp1\nc3RpZnlDb250ZW50OiAnZmxleC1zdGFydCcgfX0+CiAgICAgICAgICAgIDxk\naXYgc3R5bGU9e3sKICAgICAgICAgICAgICBtYXhXaWR0aDogJzgyJScsCiAg\nICAgICAgICAgICAgYmFja2dyb3VuZDogJyNGMEY0RkYnLAogICAgICAgICAg\nICAgIGNvbG9yOiAnIzBBMTYyOCcsCiAgICAgICAgICAgICAgYm9yZGVyUmFk\naXVzOiAnMTZweCAxNnB4IDE2cHggNHB4JywKICAgICAgICAgICAgICBwYWRk\naW5nOiAnMTJweCAxNnB4JywKICAgICAgICAgICAgICBmb250RmFtaWx5OiAn\ndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxNCwgbGluZUhlaWdodDog\nMS42LAogICAgICAgICAgICAgIHdoaXRlU3BhY2U6ICdwcmUtd3JhcCcsCiAg\nICAgICAgICAgIH19PgogICAgICAgICAgICAgIHtDT01JTkdfU09PTl9NU0d9\nCiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAg\nPC9kaXY+CgogICAgICAgIHsvKiBJbnB1dCDigJQgZGlzYWJsZWQgKi99CiAg\nICAgICAgPGRpdiBzdHlsZT17eyBwYWRkaW5nOiAnMTJweCAxNnB4JywgYm9y\nZGVyVG9wOiAnMXB4IHNvbGlkIHJnYmEoMzAsNjQsMTc1LDAuMSknLCBkaXNw\nbGF5OiAnZmxleCcsIGdhcDogOCwgYWxpZ25JdGVtczogJ2ZsZXgtZW5kJyB9\nfT4KICAgICAgICAgIDx0ZXh0YXJlYQogICAgICAgICAgICBkaXNhYmxlZAog\nICAgICAgICAgICBwbGFjZWhvbGRlcj0iQXZhaWxhYmxlIHNvb24uLi4iCiAg\nICAgICAgICAgIHJvd3M9ezF9CiAgICAgICAgICAgIHN0eWxlPXt7CiAgICAg\nICAgICAgICAgZmxleDogMSwgbWluSGVpZ2h0OiA0NCwgZm9udFNpemU6IDE1\nLCBwYWRkaW5nOiAnMTBweCAxNHB4JywKICAgICAgICAgICAgICBib3JkZXI6\nICcxLjVweCBzb2xpZCByZ2JhKDMwLDY0LDE3NSwwLjEpJywgYm9yZGVyUmFk\naXVzOiAxMiwKICAgICAgICAgICAgICBmb250RmFtaWx5OiAndmFyKC0tZm9u\ndC1ib2R5KScsIHJlc2l6ZTogJ25vbmUnLCBvdXRsaW5lOiAnbm9uZScsCiAg\nICAgICAgICAgICAgbGluZUhlaWdodDogMS41LCBiYWNrZ3JvdW5kOiAnI0Yz\nRjRGNicsIGNvbG9yOiAnIzlDQTNBRicsIGN1cnNvcjogJ25vdC1hbGxvd2Vk\nJywKICAgICAgICAgICAgfX0KICAgICAgICAgIC8+CiAgICAgICAgICA8YnV0\ndG9uCiAgICAgICAgICAgIGRpc2FibGVkCiAgICAgICAgICAgIHN0eWxlPXt7\nCiAgICAgICAgICAgICAgbWluV2lkdGg6IDQ0LCBtaW5IZWlnaHQ6IDQ0LCBi\nYWNrZ3JvdW5kOiAnIzlDQTNBRicsIGNvbG9yOiAnd2hpdGUnLAogICAgICAg\nICAgICAgIGJvcmRlcjogJ25vbmUnLCBib3JkZXJSYWRpdXM6IDEwLCBjdXJz\nb3I6ICdub3QtYWxsb3dlZCcsCiAgICAgICAgICAgICAgZGlzcGxheTogJ2Zs\nZXgnLCBhbGlnbkl0ZW1zOiAnY2VudGVyJywganVzdGlmeUNvbnRlbnQ6ICdj\nZW50ZXInLAogICAgICAgICAgICAgIG9wYWNpdHk6IDAuNSwKICAgICAgICAg\nICAgfX0KICAgICAgICAgID4KICAgICAgICAgICAg4p6kCiAgICAgICAgICA8\nL2J1dHRvbj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9tb3Rpb24uZGl2Pgog\nICAgPC9kaXY+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/learn/AITutorPanel.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/6f3b79c57ed77a5f60d20bc966dc85cb72cf7d46","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/learn/AITutorPanel.jsx"}}
+import React from 'react';
+import { X } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const COMING_SOON_MSG = `🚀 AI Tutor is being upgraded!
+
+We're building a more powerful AI Tutor experience for you. This feature will be live very soon with:
+✅ Real-time Vedic Maths explanations
+✅ Step-by-step problem solving
+✅ Personalized learning guidance
+
+Stay tuned! 🙏 — Team VedicMind`;
+
+export default function AITutorPanel({ lesson, onClose }) {
+  const lessonTitle = lesson?.title || 'Vedic Mathematics';
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, zIndex: 300 }}>
+      <div onClick={onClose} style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.3)' }} />
+      <motion.div
+        initial={{ x: '100%' }}
+        animate={{ x: 0 }}
+        exit={{ x: '100%' }}
+        transition={{ type: 'spring', damping: 25 }}
+        style={{
+          position: 'absolute', right: 0, top: 0, bottom: 0,
+          width: '100%', maxWidth: 380,
+          background: 'white', display: 'flex', flexDirection: 'column',
+          boxShadow: '-4px 0 32px rgba(10,22,40,0.12)',
+        }}
+      >
+        {/* Header */}
+        <div style={{ padding: '16px 20px', borderBottom: '1px solid rgba(30,64,175,0.1)', display: 'flex', alignItems: 'center', gap: 12 }}>
+          <span style={{ fontSize: 24 }}>🤖</span>
+          <div style={{ flex: 1 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: '#0A1628' }}>AI Tutor</div>
+              <span style={{
+                background: '#F59E0B', color: 'white',
+                borderRadius: 99, padding: '2px 8px',
+                fontFamily: 'var(--font-body)', fontSize: 10, fontWeight: 700,
+                textTransform: 'uppercase', letterSpacing: '0.05em',
+              }}>Coming Soon</span>
+            </div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 220 }}>
+              {lessonTitle}
+            </div>
+          </div>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4 }}>
+            <X size={20} color="#4B5563" />
+          </button>
+        </div>
+
+        {/* Message */}
+        <div style={{ flex: 1, overflowY: 'auto', padding: '16px 16px 8px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+            <div style={{
+              maxWidth: '82%',
+              background: '#F0F4FF',
+              color: '#0A1628',
+              borderRadius: '16px 16px 16px 4px',
+              padding: '12px 16px',
+              fontFamily: 'var(--font-body)', fontSize: 14, lineHeight: 1.6,
+              whiteSpace: 'pre-wrap',
+            }}>
+              {COMING_SOON_MSG}
+            </div>
+          </div>
+        </div>
+
+        {/* Input — disabled */}
+        <div style={{ padding: '12px 16px', borderTop: '1px solid rgba(30,64,175,0.1)', display: 'flex', gap: 8, alignItems: 'flex-end' }}>
+          <textarea
+            disabled
+            placeholder="Available soon..."
+            rows={1}
+            style={{
+              flex: 1, minHeight: 44, fontSize: 15, padding: '10px 14px',
+              border: '1.5px solid rgba(30,64,175,0.1)', borderRadius: 12,
+              fontFamily: 'var(--font-body)', resize: 'none', outline: 'none',
+              lineHeight: 1.5, background: '#F3F4F6', color: '#9CA3AF', cursor: 'not-allowed',
+            }}
+          />
+          <button
+            disabled
+            style={{
+              minWidth: 44, minHeight: 44, background: '#9CA3AF', color: 'white',
+              border: 'none', borderRadius: 10, cursor: 'not-allowed',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              opacity: 0.5,
+            }}
+          >
+            ➤
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
