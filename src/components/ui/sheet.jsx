@@ -1,1 +1,109 @@
-{"name":"sheet.jsx","path":"src/components/ui/sheet.jsx","sha":"cdb27be136fb8b89bc1a4769f392d6d4cc1d1575","size":3549,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/sheet.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/sheet.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/cdb27be136fb8b89bc1a4769f392d6d4cc1d1575","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/sheet.jsx?token=CFODAP4E3QHTAFA7NUSMCLDKFSQZ7AA","type":"file","content":"InVzZSBjbGllbnQiOwppbXBvcnQgKiBhcyBSZWFjdCBmcm9tICJyZWFjdCIK\naW1wb3J0ICogYXMgU2hlZXRQcmltaXRpdmUgZnJvbSAiQHJhZGl4LXVpL3Jl\nYWN0LWRpYWxvZyIKaW1wb3J0IHsgY3ZhIH0gZnJvbSAiY2xhc3MtdmFyaWFu\nY2UtYXV0aG9yaXR5IjsKaW1wb3J0IHsgWCB9IGZyb20gImx1Y2lkZS1yZWFj\ndCIKCmltcG9ydCB7IGNuIH0gZnJvbSAiQC9saWIvdXRpbHMiCgpjb25zdCBT\naGVldCA9IFNoZWV0UHJpbWl0aXZlLlJvb3QKCmNvbnN0IFNoZWV0VHJpZ2dl\nciA9IFNoZWV0UHJpbWl0aXZlLlRyaWdnZXIKCmNvbnN0IFNoZWV0Q2xvc2Ug\nPSBTaGVldFByaW1pdGl2ZS5DbG9zZQoKY29uc3QgU2hlZXRQb3J0YWwgPSBT\naGVldFByaW1pdGl2ZS5Qb3J0YWwKCmNvbnN0IFNoZWV0T3ZlcmxheSA9IFJl\nYWN0LmZvcndhcmRSZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYp\nID0+ICgKICA8U2hlZXRQcmltaXRpdmUuT3ZlcmxheQogICAgY2xhc3NOYW1l\nPXtjbigKICAgICAgImZpeGVkIGluc2V0LTAgei01MCBiZy1ibGFjay84MCAg\nZGF0YS1bc3RhdGU9b3Blbl06YW5pbWF0ZS1pbiBkYXRhLVtzdGF0ZT1jbG9z\nZWRdOmFuaW1hdGUtb3V0IGRhdGEtW3N0YXRlPWNsb3NlZF06ZmFkZS1vdXQt\nMCBkYXRhLVtzdGF0ZT1vcGVuXTpmYWRlLWluLTAiLAogICAgICBjbGFzc05h\nbWUKICAgICl9CiAgICB7Li4ucHJvcHN9CiAgICByZWY9e3JlZn0gLz4KKSkK\nU2hlZXRPdmVybGF5LmRpc3BsYXlOYW1lID0gU2hlZXRQcmltaXRpdmUuT3Zl\ncmxheS5kaXNwbGF5TmFtZQoKY29uc3Qgc2hlZXRWYXJpYW50cyA9IGN2YSgK\nICAiZml4ZWQgei01MCBnYXAtNCBiZy1iYWNrZ3JvdW5kIHAtNiBzaGFkb3ct\nbGcgdHJhbnNpdGlvbiBlYXNlLWluLW91dCBkYXRhLVtzdGF0ZT1jbG9zZWRd\nOmR1cmF0aW9uLTMwMCBkYXRhLVtzdGF0ZT1vcGVuXTpkdXJhdGlvbi01MDAg\nZGF0YS1bc3RhdGU9b3Blbl06YW5pbWF0ZS1pbiBkYXRhLVtzdGF0ZT1jbG9z\nZWRdOmFuaW1hdGUtb3V0IiwKICB7CiAgICB2YXJpYW50czogewogICAgICBz\naWRlOiB7CiAgICAgICAgdG9wOiAiaW5zZXQteC0wIHRvcC0wIGJvcmRlci1i\nIGRhdGEtW3N0YXRlPWNsb3NlZF06c2xpZGUtb3V0LXRvLXRvcCBkYXRhLVtz\ndGF0ZT1vcGVuXTpzbGlkZS1pbi1mcm9tLXRvcCIsCiAgICAgICAgYm90dG9t\nOgogICAgICAgICAgImluc2V0LXgtMCBib3R0b20tMCBib3JkZXItdCBkYXRh\nLVtzdGF0ZT1jbG9zZWRdOnNsaWRlLW91dC10by1ib3R0b20gZGF0YS1bc3Rh\ndGU9b3Blbl06c2xpZGUtaW4tZnJvbS1ib3R0b20iLAogICAgICAgIGxlZnQ6\nICJpbnNldC15LTAgbGVmdC0wIGgtZnVsbCB3LTMvNCBib3JkZXItciBkYXRh\nLVtzdGF0ZT1jbG9zZWRdOnNsaWRlLW91dC10by1sZWZ0IGRhdGEtW3N0YXRl\nPW9wZW5dOnNsaWRlLWluLWZyb20tbGVmdCBzbTptYXgtdy1zbSIsCiAgICAg\nICAgcmlnaHQ6CiAgICAgICAgICAiaW5zZXQteS0wIHJpZ2h0LTAgaC1mdWxs\nIHctMy80IGJvcmRlci1sIGRhdGEtW3N0YXRlPWNsb3NlZF06c2xpZGUtb3V0\nLXRvLXJpZ2h0IGRhdGEtW3N0YXRlPW9wZW5dOnNsaWRlLWluLWZyb20tcmln\naHQgc206bWF4LXctc20iLAogICAgICB9LAogICAgfSwKICAgIGRlZmF1bHRW\nYXJpYW50czogewogICAgICBzaWRlOiAicmlnaHQiLAogICAgfSwKICB9CikK\nCmNvbnN0IFNoZWV0Q29udGVudCA9IFJlYWN0LmZvcndhcmRSZWYoKHsgc2lk\nZSA9ICJyaWdodCIsIGNsYXNzTmFtZSwgY2hpbGRyZW4sIC4uLnByb3BzIH0s\nIHJlZikgPT4gKAogIDxTaGVldFBvcnRhbD4KICAgIDxTaGVldE92ZXJsYXkg\nLz4KICAgIDxTaGVldFByaW1pdGl2ZS5Db250ZW50IHJlZj17cmVmfSBjbGFz\nc05hbWU9e2NuKHNoZWV0VmFyaWFudHMoeyBzaWRlIH0pLCBjbGFzc05hbWUp\nfSB7Li4ucHJvcHN9PgogICAgICA8U2hlZXRQcmltaXRpdmUuQ2xvc2UKICAg\nICAgICBjbGFzc05hbWU9ImFic29sdXRlIHJpZ2h0LTQgdG9wLTQgcm91bmRl\nZC1zbSBvcGFjaXR5LTcwIHJpbmctb2Zmc2V0LWJhY2tncm91bmQgdHJhbnNp\ndGlvbi1vcGFjaXR5IGhvdmVyOm9wYWNpdHktMTAwIGZvY3VzOm91dGxpbmUt\nbm9uZSBmb2N1czpyaW5nLTIgZm9jdXM6cmluZy1yaW5nIGZvY3VzOnJpbmct\nb2Zmc2V0LTIgZGlzYWJsZWQ6cG9pbnRlci1ldmVudHMtbm9uZSBkYXRhLVtz\ndGF0ZT1vcGVuXTpiZy1zZWNvbmRhcnkiPgogICAgICAgIDxYIGNsYXNzTmFt\nZT0iaC00IHctNCIgLz4KICAgICAgICA8c3BhbiBjbGFzc05hbWU9InNyLW9u\nbHkiPkNsb3NlPC9zcGFuPgogICAgICA8L1NoZWV0UHJpbWl0aXZlLkNsb3Nl\nPgogICAgICB7Y2hpbGRyZW59CiAgICA8L1NoZWV0UHJpbWl0aXZlLkNvbnRl\nbnQ+CiAgPC9TaGVldFBvcnRhbD4KKSkKU2hlZXRDb250ZW50LmRpc3BsYXlO\nYW1lID0gU2hlZXRQcmltaXRpdmUuQ29udGVudC5kaXNwbGF5TmFtZQoKY29u\nc3QgU2hlZXRIZWFkZXIgPSAoewogIGNsYXNzTmFtZSwKICAuLi5wcm9wcwp9\nKSA9PiAoCiAgPGRpdgogICAgY2xhc3NOYW1lPXtjbigiZmxleCBmbGV4LWNv\nbCBzcGFjZS15LTIgdGV4dC1jZW50ZXIgc206dGV4dC1sZWZ0IiwgY2xhc3NO\nYW1lKX0KICAgIHsuLi5wcm9wc30gLz4KKQpTaGVldEhlYWRlci5kaXNwbGF5\nTmFtZSA9ICJTaGVldEhlYWRlciIKCmNvbnN0IFNoZWV0Rm9vdGVyID0gKHsK\nICBjbGFzc05hbWUsCiAgLi4ucHJvcHMKfSkgPT4gKAogIDxkaXYKICAgIGNs\nYXNzTmFtZT17Y24oImZsZXggZmxleC1jb2wtcmV2ZXJzZSBzbTpmbGV4LXJv\ndyBzbTpqdXN0aWZ5LWVuZCBzbTpzcGFjZS14LTIiLCBjbGFzc05hbWUpfQog\nICAgey4uLnByb3BzfSAvPgopClNoZWV0Rm9vdGVyLmRpc3BsYXlOYW1lID0g\nIlNoZWV0Rm9vdGVyIgoKY29uc3QgU2hlZXRUaXRsZSA9IFJlYWN0LmZvcndh\ncmRSZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8\nU2hlZXRQcmltaXRpdmUuVGl0bGUKICAgIHJlZj17cmVmfQogICAgY2xhc3NO\nYW1lPXtjbigidGV4dC1sZyBmb250LXNlbWlib2xkIHRleHQtZm9yZWdyb3Vu\nZCIsIGNsYXNzTmFtZSl9CiAgICB7Li4ucHJvcHN9IC8+CikpClNoZWV0VGl0\nbGUuZGlzcGxheU5hbWUgPSBTaGVldFByaW1pdGl2ZS5UaXRsZS5kaXNwbGF5\nTmFtZQoKY29uc3QgU2hlZXREZXNjcmlwdGlvbiA9IFJlYWN0LmZvcndhcmRS\nZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8U2hl\nZXRQcmltaXRpdmUuRGVzY3JpcHRpb24KICAgIHJlZj17cmVmfQogICAgY2xh\nc3NOYW1lPXtjbigidGV4dC1zbSB0ZXh0LW11dGVkLWZvcmVncm91bmQiLCBj\nbGFzc05hbWUpfQogICAgey4uLnByb3BzfSAvPgopKQpTaGVldERlc2NyaXB0\naW9uLmRpc3BsYXlOYW1lID0gU2hlZXRQcmltaXRpdmUuRGVzY3JpcHRpb24u\nZGlzcGxheU5hbWUKCmV4cG9ydCB7CiAgU2hlZXQsCiAgU2hlZXRQb3J0YWws\nCiAgU2hlZXRPdmVybGF5LAogIFNoZWV0VHJpZ2dlciwKICBTaGVldENsb3Nl\nLAogIFNoZWV0Q29udGVudCwKICBTaGVldEhlYWRlciwKICBTaGVldEZvb3Rl\nciwKICBTaGVldFRpdGxlLAogIFNoZWV0RGVzY3JpcHRpb24sCn0K\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/sheet.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/cdb27be136fb8b89bc1a4769f392d6d4cc1d1575","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/sheet.jsx"}}
+"use client";
+import * as React from "react"
+import * as SheetPrimitive from "@radix-ui/react-dialog"
+import { cva } from "class-variance-authority";
+import { X } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+const Sheet = SheetPrimitive.Root
+
+const SheetTrigger = SheetPrimitive.Trigger
+
+const SheetClose = SheetPrimitive.Close
+
+const SheetPortal = SheetPrimitive.Portal
+
+const SheetOverlay = React.forwardRef(({ className, ...props }, ref) => (
+  <SheetPrimitive.Overlay
+    className={cn(
+      "fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      className
+    )}
+    {...props}
+    ref={ref} />
+))
+SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
+
+const sheetVariants = cva(
+  "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500 data-[state=open]:animate-in data-[state=closed]:animate-out",
+  {
+    variants: {
+      side: {
+        top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
+        bottom:
+          "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
+        left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
+        right:
+          "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+      },
+    },
+    defaultVariants: {
+      side: "right",
+    },
+  }
+)
+
+const SheetContent = React.forwardRef(({ side = "right", className, children, ...props }, ref) => (
+  <SheetPortal>
+    <SheetOverlay />
+    <SheetPrimitive.Content ref={ref} className={cn(sheetVariants({ side }), className)} {...props}>
+      <SheetPrimitive.Close
+        className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+        <X className="h-4 w-4" />
+        <span className="sr-only">Close</span>
+      </SheetPrimitive.Close>
+      {children}
+    </SheetPrimitive.Content>
+  </SheetPortal>
+))
+SheetContent.displayName = SheetPrimitive.Content.displayName
+
+const SheetHeader = ({
+  className,
+  ...props
+}) => (
+  <div
+    className={cn("flex flex-col space-y-2 text-center sm:text-left", className)}
+    {...props} />
+)
+SheetHeader.displayName = "SheetHeader"
+
+const SheetFooter = ({
+  className,
+  ...props
+}) => (
+  <div
+    className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)}
+    {...props} />
+)
+SheetFooter.displayName = "SheetFooter"
+
+const SheetTitle = React.forwardRef(({ className, ...props }, ref) => (
+  <SheetPrimitive.Title
+    ref={ref}
+    className={cn("text-lg font-semibold text-foreground", className)}
+    {...props} />
+))
+SheetTitle.displayName = SheetPrimitive.Title.displayName
+
+const SheetDescription = React.forwardRef(({ className, ...props }, ref) => (
+  <SheetPrimitive.Description
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props} />
+))
+SheetDescription.displayName = SheetPrimitive.Description.displayName
+
+export {
+  Sheet,
+  SheetPortal,
+  SheetOverlay,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
+}
