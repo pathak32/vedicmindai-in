@@ -9,8 +9,8 @@ function validateMobile(m) { return /^[6-9]\d{9}$/.test(m); }
 function validateDOB(d) { return /^\d{2}\/\d{2}\/\d{4}$/.test(d); }
 
 function generatePasswordHint(name, dob) {
-  // hint: DDMM + first 4 letters of name (e.g. 0506Hite)
-  const namePart = name.trim().split("").filter(c => /[a-zA-Z]/.test(c)).slice(0, 4).join("");
+  // hint: DDMM + first 4 UPPERCASE letters of name (e.g. 0506HITE)
+  const namePart = name.trim().split("").filter(c => /[a-zA-Z]/.test(c)).slice(0, 4).join("").toUpperCase();
   const parts = dob.split("/");
   const dd = (parts[0] || "").padStart(2, "0");
   const mm = (parts[1] || "").padStart(2, "0");
@@ -156,7 +156,7 @@ function SignUpForm({ onSwitchTab }) {
         <label style={lbl}>Password *</label>
         {hint && (
           <p style={{ fontSize:12, color:'#6B7280', margin:'0 0 4px', fontFamily:'var(--font-mono)' }}>
-            💡 Suggested: <strong>{hint}</strong> (DDMM + First 4 letters of name)
+            💡 Suggested: <strong>{hint}</strong> (DDMM + First 4 letters of name (ALL CAPS))
           </p>
         )}
         <div style={{ position:'relative' }}>
