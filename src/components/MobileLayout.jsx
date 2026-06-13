@@ -1,1 +1,112 @@
-{"name":"MobileLayout.jsx","path":"src/components/MobileLayout.jsx","sha":"ca3c488d9793d083e212b684759ad1db63cf3d53","size":3737,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/MobileLayout.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/MobileLayout.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/ca3c488d9793d083e212b684759ad1db63cf3d53","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/MobileLayout.jsx?token=CFODAPZEE4DVCVVHCUJNNQ3KFSQULAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgdXNlTG9jYXRp\nb24sIHVzZU5hdmlnYXRlIH0gZnJvbSAncmVhY3Qtcm91dGVyLWRvbSc7Cgpj\nb25zdCBUQUJTID0gWwogIHsgcGF0aDogJy9kYXNoYm9hcmQnLCBsYWJlbDog\nJ0Rhc2hib2FyZCcsIGljb246ICfwn4+gJyB9LAogIHsgcGF0aDogJy9sZWFy\nbicsICAgICBsYWJlbDogJ0xlYXJuJywgICAgICBpY29uOiAn8J+TlicgfSwK\nICB7IHBhdGg6ICcvcHJhY3RpY2UnLCAgbGFiZWw6ICdQcmFjdGljZScsICAg\naWNvbjogJ+KaoScgfSwKICB7IHBhdGg6ICcvbGVhZGVyYm9hcmQnLCBsYWJl\nbDogJ1JhbmtzJywgICAgaWNvbjogJ/Cfj4YnIH0sCl07CgpleHBvcnQgZGVm\nYXVsdCBmdW5jdGlvbiBNb2JpbGVCb3R0b21OYXYoKSB7CiAgY29uc3QgbG9j\nYXRpb24gPSB1c2VMb2NhdGlvbigpOwogIGNvbnN0IG5hdmlnYXRlID0gdXNl\nTmF2aWdhdGUoKTsKCiAgLy8gT25seSBzaG93IG9uIHRhYiBwYWdlcwogIGNv\nbnN0IHNob3dOYXYgPSBUQUJTLnNvbWUodCA9PiBsb2NhdGlvbi5wYXRobmFt\nZSA9PT0gdC5wYXRoKTsKICBpZiAoIXNob3dOYXYpIHJldHVybiBudWxsOwoK\nICByZXR1cm4gKAogICAgPD4KICAgICAgey8qIFNwYWNlciBzbyBwYWdlIGNv\nbnRlbnQgaXNuJ3QgaGlkZGVuIGJlaGluZCB0aGUgbmF2ICovfQogICAgICA8\nZGl2CiAgICAgICAgc3R5bGU9e3sgaGVpZ2h0OiAnY2FsYyg2MHB4ICsgZW52\nKHNhZmUtYXJlYS1pbnNldC1ib3R0b20sIDBweCkpJyB9fQogICAgICAgIGNs\nYXNzTmFtZT0ibW9iaWxlLWJvdHRvbS1uYXYtc3BhY2VyIgogICAgICAvPgoK\nICAgICAgPG5hdgogICAgICAgIHN0eWxlPXt7CiAgICAgICAgICBwb3NpdGlv\nbjogJ2ZpeGVkJywKICAgICAgICAgIGJvdHRvbTogMCwKICAgICAgICAgIGxl\nZnQ6IDAsCiAgICAgICAgICByaWdodDogMCwKICAgICAgICAgIHpJbmRleDog\nMTAwMCwKICAgICAgICAgIGJhY2tncm91bmQ6ICdyZ2JhKDI1NSwyNTUsMjU1\nLDAuOTgpJywKICAgICAgICAgIGJhY2tkcm9wRmlsdGVyOiAnYmx1cigxNnB4\nKScsCiAgICAgICAgICBXZWJraXRCYWNrZHJvcEZpbHRlcjogJ2JsdXIoMTZw\neCknLAogICAgICAgICAgYm9yZGVyVG9wOiAnMXB4IHNvbGlkIHJnYmEoMzAs\nNjQsMTc1LDAuMTIpJywKICAgICAgICAgIC8vIENvcnJlY3QgQW5kcm9pZCBn\nZXN0dXJlLWJhciBjbGVhcmFuY2UKICAgICAgICAgIHBhZGRpbmdCb3R0b206\nICdlbnYoc2FmZS1hcmVhLWluc2V0LWJvdHRvbSwgMHB4KScsCiAgICAgICAg\nICBib3hTaGFkb3c6ICcwIC0ycHggMTJweCByZ2JhKDEwLDIyLDQwLDAuMDgp\nJywKICAgICAgICAgIGRpc3BsYXk6ICdub25lJywgLy8gc2hvd24gdmlhIENT\nUyBtZWRpYSBxdWVyeSBiZWxvdwogICAgICAgIH19CiAgICAgICAgY2xhc3NO\nYW1lPSJtb2JpbGUtYm90dG9tLW5hdiIKICAgICAgPgogICAgICAgIDxkaXYg\nc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBoZWlnaHQ6IDYwIH19PgogICAg\nICAgICAge1RBQlMubWFwKHRhYiA9PiB7CiAgICAgICAgICAgIGNvbnN0IGFj\ndGl2ZSA9IGxvY2F0aW9uLnBhdGhuYW1lID09PSB0YWIucGF0aDsKICAgICAg\nICAgICAgcmV0dXJuICgKICAgICAgICAgICAgICA8YnV0dG9uCiAgICAgICAg\nICAgICAgICBrZXk9e3RhYi5wYXRofQogICAgICAgICAgICAgICAgb25DbGlj\naz17KCkgPT4gbmF2aWdhdGUodGFiLnBhdGgpfQogICAgICAgICAgICAgICAg\nc3R5bGU9e3sKICAgICAgICAgICAgICAgICAgZmxleDogMSwKICAgICAgICAg\nICAgICAgICAgZGlzcGxheTogJ2ZsZXgnLAogICAgICAgICAgICAgICAgICBm\nbGV4RGlyZWN0aW9uOiAnY29sdW1uJywKICAgICAgICAgICAgICAgICAgYWxp\nZ25JdGVtczogJ2NlbnRlcicsCiAgICAgICAgICAgICAgICAgIGp1c3RpZnlD\nb250ZW50OiAnY2VudGVyJywKICAgICAgICAgICAgICAgICAgZ2FwOiAyLAog\nICAgICAgICAgICAgICAgICBib3JkZXI6ICdub25lJywKICAgICAgICAgICAg\nICAgICAgYmFja2dyb3VuZDogJ25vbmUnLAogICAgICAgICAgICAgICAgICBj\ndXJzb3I6ICdwb2ludGVyJywKICAgICAgICAgICAgICAgICAgLy8gRnVsbCA2\nMHB4IGhpdCB0YXJnZXQgKGluaGVyaXRzIG5hdiBoZWlnaHQpCiAgICAgICAg\nICAgICAgICAgIG1pbkhlaWdodDogNjAsCiAgICAgICAgICAgICAgICAgIHBh\nZGRpbmc6ICc2cHggMCcsCiAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAn\ncmVsYXRpdmUnLAogICAgICAgICAgICAgICAgICB1c2VyU2VsZWN0OiAnbm9u\nZScsCiAgICAgICAgICAgICAgICAgIFdlYmtpdFRhcEhpZ2hsaWdodENvbG9y\nOiAndHJhbnNwYXJlbnQnLAogICAgICAgICAgICAgICAgICB0b3VjaEFjdGlv\nbjogJ21hbmlwdWxhdGlvbicsCiAgICAgICAgICAgICAgICB9fQogICAgICAg\nICAgICAgICAgYXJpYS1sYWJlbD17dGFiLmxhYmVsfQogICAgICAgICAgICAg\nICAgYXJpYS1jdXJyZW50PXthY3RpdmUgPyAncGFnZScgOiB1bmRlZmluZWR9\nCiAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgPHNwYW4gc3R5bGU9\ne3sgZm9udFNpemU6IDIwLCBsaW5lSGVpZ2h0OiAxIH19Pnt0YWIuaWNvbn08\nL3NwYW4+CiAgICAgICAgICAgICAgICA8c3BhbiBzdHlsZT17ewogICAgICAg\nICAgICAgICAgICBmb250U2l6ZTogMTAsCiAgICAgICAgICAgICAgICAgIGZv\nbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywKICAgICAgICAgICAgICAg\nICAgZm9udFdlaWdodDogYWN0aXZlID8gNzAwIDogNDAwLAogICAgICAgICAg\nICAgICAgICBjb2xvcjogYWN0aXZlID8gJyMzQjgyRjYnIDogJyM2QjcyODAn\nLAogICAgICAgICAgICAgICAgICBsZXR0ZXJTcGFjaW5nOiAnMC4wMmVtJywK\nICAgICAgICAgICAgICAgIH19PgogICAgICAgICAgICAgICAgICB7dGFiLmxh\nYmVsfQogICAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICAgICAg\ne2FjdGl2ZSAmJiAoCiAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sK\nICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ2Fic29sdXRlJywKICAg\nICAgICAgICAgICAgICAgICB0b3A6IDAsCiAgICAgICAgICAgICAgICAgICAg\nbGVmdDogJzUwJScsCiAgICAgICAgICAgICAgICAgICAgdHJhbnNmb3JtOiAn\ndHJhbnNsYXRlWCgtNTAlKScsCiAgICAgICAgICAgICAgICAgICAgd2lkdGg6\nIDMyLAogICAgICAgICAgICAgICAgICAgIGhlaWdodDogMywKICAgICAgICAg\nICAgICAgICAgICBib3JkZXJSYWRpdXM6ICcwIDAgNHB4IDRweCcsCiAgICAg\nICAgICAgICAgICAgICAgYmFja2dyb3VuZDogJyMzQjgyRjYnLAogICAgICAg\nICAgICAgICAgICB9fSAvPgogICAgICAgICAgICAgICAgKX0KICAgICAgICAg\nICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgKTsKICAgICAgICAgIH0pfQog\nICAgICAgIDwvZGl2PgogICAgICA8L25hdj4KCiAgICAgIDxzdHlsZT57YAog\nICAgICAgIEBtZWRpYSAobWF4LXdpZHRoOiAxMDIzcHgpIHsKICAgICAgICAg\nIC5tb2JpbGUtYm90dG9tLW5hdiB7IGRpc3BsYXk6IGJsb2NrICFpbXBvcnRh\nbnQ7IH0KICAgICAgICAgIC5tb2JpbGUtYm90dG9tLW5hdi1zcGFjZXIgeyBk\naXNwbGF5OiBibG9jayAhaW1wb3J0YW50OyB9CiAgICAgICAgfQogICAgICAg\nIEBtZWRpYSAobWluLXdpZHRoOiAxMDI0cHgpIHsKICAgICAgICAgIC5tb2Jp\nbGUtYm90dG9tLW5hdi1zcGFjZXIgeyBkaXNwbGF5OiBub25lICFpbXBvcnRh\nbnQ7IH0KICAgICAgICB9CiAgICAgIGB9PC9zdHlsZT4KICAgIDwvPgogICk7\nCn0=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/MobileLayout.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/ca3c488d9793d083e212b684759ad1db63cf3d53","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/MobileLayout.jsx"}}
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+const TABS = [
+  { path: '/dashboard', label: 'Dashboard', icon: '🏠' },
+  { path: '/learn',     label: 'Learn',      icon: '📖' },
+  { path: '/practice',  label: 'Practice',   icon: '⚡' },
+  { path: '/leaderboard', label: 'Ranks',    icon: '🏆' },
+];
+
+export default function MobileBottomNav() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Only show on tab pages
+  const showNav = TABS.some(t => location.pathname === t.path);
+  if (!showNav) return null;
+
+  return (
+    <>
+      {/* Spacer so page content isn't hidden behind the nav */}
+      <div
+        style={{ height: 'calc(60px + env(safe-area-inset-bottom, 0px))' }}
+        className="mobile-bottom-nav-spacer"
+      />
+
+      <nav
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1000,
+          background: 'rgba(255,255,255,0.98)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderTop: '1px solid rgba(30,64,175,0.12)',
+          // Correct Android gesture-bar clearance
+          paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+          boxShadow: '0 -2px 12px rgba(10,22,40,0.08)',
+          display: 'none', // shown via CSS media query below
+        }}
+        className="mobile-bottom-nav"
+      >
+        <div style={{ display: 'flex', height: 60 }}>
+          {TABS.map(tab => {
+            const active = location.pathname === tab.path;
+            return (
+              <button
+                key={tab.path}
+                onClick={() => navigate(tab.path)}
+                style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 2,
+                  border: 'none',
+                  background: 'none',
+                  cursor: 'pointer',
+                  // Full 60px hit target (inherits nav height)
+                  minHeight: 60,
+                  padding: '6px 0',
+                  position: 'relative',
+                  userSelect: 'none',
+                  WebkitTapHighlightColor: 'transparent',
+                  touchAction: 'manipulation',
+                }}
+                aria-label={tab.label}
+                aria-current={active ? 'page' : undefined}
+              >
+                <span style={{ fontSize: 20, lineHeight: 1 }}>{tab.icon}</span>
+                <span style={{
+                  fontSize: 10,
+                  fontFamily: 'var(--font-body)',
+                  fontWeight: active ? 700 : 400,
+                  color: active ? '#3B82F6' : '#6B7280',
+                  letterSpacing: '0.02em',
+                }}>
+                  {tab.label}
+                </span>
+                {active && (
+                  <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: 32,
+                    height: 3,
+                    borderRadius: '0 0 4px 4px',
+                    background: '#3B82F6',
+                  }} />
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </nav>
+
+      <style>{`
+        @media (max-width: 1023px) {
+          .mobile-bottom-nav { display: block !important; }
+          .mobile-bottom-nav-spacer { display: block !important; }
+        }
+        @media (min-width: 1024px) {
+          .mobile-bottom-nav-spacer { display: none !important; }
+        }
+      `}</style>
+    </>
+  );
+}
