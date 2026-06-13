@@ -1,1 +1,184 @@
-{"name":"AIAnalysisScreen.jsx","path":"src/components/onboarding/AIAnalysisScreen.jsx","sha":"915aa2541802365692e910b204b828cab0d29d08","size":6775,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/AIAnalysisScreen.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/AIAnalysisScreen.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/915aa2541802365692e910b204b828cab0d29d08","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/onboarding/AIAnalysisScreen.jsx?token=CFODAP5AS72M5GDSCEJKIZ3KFSQWZAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IG1vdGlvbiwgQW5pbWF0ZVByZXNlbmNlIH0gZnJv\nbSAnZnJhbWVyLW1vdGlvbic7CmltcG9ydCB7IHVzZU5hdmlnYXRlIH0gZnJv\nbSAncmVhY3Qtcm91dGVyLWRvbSc7CmltcG9ydCB7IGJhc2U0NCB9IGZyb20g\nJ0AvYXBpL2Jhc2U0NENsaWVudCc7Cgpjb25zdCBMT0FESU5HX01FU1NBR0VT\nID0gWwogICdBbmFseXppbmcgeW91ciBwcm9maWxlLi4uJywKICAnTWFwcGlu\nZyB5b3VyIGxlYXJuaW5nIHBhdGguLi4nLAogICdDYWxjdWxhdGluZyB5b3Vy\nIHN0YXJ0aW5nIGxldmVsLi4uJywKICAnQ3JhZnRpbmcgeW91ciBwZXJzb25h\nbGl6ZWQgY3VycmljdWx1bS4uLicsCl07Cgpjb25zdCBERUZBVUxUX0FOQUxZ\nU0lTID0gewogIGdyZWV0aW5nOiAiV2VsY29tZSB0byBWZWRpY01pbmQhIFdl\nJ3JlIHRocmlsbGVkIHRvIGhhdmUgeW91IG9uIHRoaXMgaW5jcmVkaWJsZSBs\nZWFybmluZyBqb3VybmV5IHRocm91Z2ggdGhlIGFuY2llbnQgYXJ0IG9mIFZl\nZGljIE1hdGhlbWF0aWNzLiIsCiAgd2h5VmVkaWNNYXRoczogIlZlZGljIE1h\ndGhlbWF0aWNzIGlzIGEgY29sbGVjdGlvbiBvZiB0ZWNobmlxdWVzIHRoYXQg\nbWFrZSBjYWxjdWxhdGlvbnMgbGlnaHRuaW5nLWZhc3QgYW5kIGludHVpdGl2\nZS4gVGhlc2UgMjUwMC15ZWFyLW9sZCBzdXRyYXMgaGF2ZSBiZWVuIHByb3Zl\nbiB0byBpbXByb3ZlIG1lbnRhbCBhZ2lsaXR5LCBib29zdCBjb25maWRlbmNl\nLCBhbmQgZHJhbWF0aWNhbGx5IHNwZWVkIHVwIGFyaXRobWV0aWMg4oCUIHNr\naWxscyB0aGF0IGhlbHAgaW4gZXZlcnkgZXhhbSBhbmQgY2FyZWVyLiIsCiAg\nc3RhcnRpbmdMZXZlbDogJ0JlZ2lubmVyJywKICBzdGFydGluZ0xldmVsUmVh\nc29uOiAnV2Ugc3RhcnQgZXZlcnlvbmUgYXQgdGhlIGZvdW5kYXRpb24gdG8g\nZW5zdXJlIHN0cm9uZyBjb25jZXB0dWFsIGNsYXJpdHkgYmVmb3JlIGFkdmFu\nY2luZy4nLAogIGVzdGltYXRlZFdlZWtzOiA4LAogIGRhaWx5TGVzc29uczog\nMiwKICB0b3BGb2N1c0FyZWFzOiBbJ0Zhc3QgTXVsdGlwbGljYXRpb24nLCAn\nTWVudGFsIEFkZGl0aW9uJywgJ1NwZWVkIERpdmlzaW9uJ10sCiAgZmlyc3RM\nZXNzb25UaXRsZTogJ0ludHJvZHVjdGlvbiB0byBWZWRpYyBNYXRocyAmIFRo\nZSAxNiBTdXRyYXMnLAogIG1vdGl2YXRpb25hbFF1b3RlOiAnIlRoZSBtaW5k\nIGlzIGV2ZXJ5dGhpbmcuIFdoYXQgeW91IHRoaW5rLCB5b3UgYmVjb21lLiIg\n4oCUIEJ1ZGRoYScsCiAgcGVyc29uYWxpemVkVGlwOiAnQ29uc2lzdGVuY3kg\nYmVhdHMgaW50ZW5zaXR5LiBFdmVuIDE1IG1pbnV0ZXMgb2YgZGFpbHkgcHJh\nY3RpY2Ugd2lsbCBjb21wb3VuZCBpbnRvIGV4dHJhb3JkaW5hcnkgc2tpbGwg\nb3ZlciB3ZWVrcy4nLAp9OwoKY29uc3QgTEVWRUxfQ09MT1JTID0gewogIEJl\nZ2lubmVyOiAnYmctZ3JlZW4tMTAwIHRleHQtZ3JlZW4tODAwJywKICBJbnRl\ncm1lZGlhdGU6ICdiZy1ibHVlLTEwMCB0ZXh0LWJsdWUtODAwJywKICBBZHZh\nbmNlZDogJ2JnLXB1cnBsZS0xMDAgdGV4dC1wdXJwbGUtODAwJywKfTsKCmV4\ncG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEFJQW5hbHlzaXNTY3JlZW4oeyBwcm9m\naWxlLCBvbkNvbXBsZXRlIH0pIHsKICBjb25zdCBbbXNnSWR4LCBzZXRNc2dJ\nZHhdID0gdXNlU3RhdGUoMCk7CiAgY29uc3QgW3Byb2dyZXNzLCBzZXRQcm9n\ncmVzc10gPSB1c2VTdGF0ZSgwKTsKICBjb25zdCBbYW5hbHlzaXMsIHNldEFu\nYWx5c2lzXSA9IHVzZVN0YXRlKG51bGwpOwogIGNvbnN0IFtsb2FkaW5nLCBz\nZXRMb2FkaW5nXSA9IHVzZVN0YXRlKHRydWUpOwogIGNvbnN0IG5hdmlnYXRl\nID0gdXNlTmF2aWdhdGUoKTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIC8v\nIEN5Y2xlIGxvYWRpbmcgbWVzc2FnZXMKICAgIGNvbnN0IG1zZ1RpbWVyID0g\nc2V0SW50ZXJ2YWwoKCkgPT4gewogICAgICBzZXRNc2dJZHgoaSA9PiBNYXRo\nLm1pbihpICsgMSwgTE9BRElOR19NRVNTQUdFUy5sZW5ndGggLSAxKSk7CiAg\nICB9LCAxNTAwKTsKCiAgICAvLyBGaWxsIHByb2dyZXNzIGJhciBvdmVyIDVz\nCiAgICBjb25zdCBwcm9ncmVzc1RpbWVyID0gc2V0SW50ZXJ2YWwoKCkgPT4g\newogICAgICBzZXRQcm9ncmVzcyhwID0+IE1hdGgubWluKHAgKyAyLCA5NSkp\nOwogICAgfSwgMTAwKTsKCiAgICBsZXQgZmluaXNoZWQgPSBmYWxzZTsKCiAg\nICBjb25zdCBtaW5EZWxheSA9IG5ldyBQcm9taXNlKHJlcyA9PiBzZXRUaW1l\nb3V0KHJlcywgMzAwMCkpOwogICAgY29uc3QgYXBpQ2FsbCA9IGJhc2U0NC5m\ndW5jdGlvbnMuaW52b2tlKCdhbmFseXplUHJvZmlsZScsIHsgcHJvZmlsZSB9\nKQogICAgICAudGhlbihyZXMgPT4gcmVzLmRhdGE/LmFuYWx5c2lzIHx8IERF\nRkFVTFRfQU5BTFlTSVMpCiAgICAgIC5jYXRjaCgoKSA9PiBERUZBVUxUX0FO\nQUxZU0lTKTsKCiAgICBQcm9taXNlLmFsbChbbWluRGVsYXksIGFwaUNhbGxd\nKS50aGVuKChbLCByZXN1bHRdKSA9PiB7CiAgICAgIGZpbmlzaGVkID0gdHJ1\nZTsKICAgICAgY2xlYXJJbnRlcnZhbChtc2dUaW1lcik7CiAgICAgIGNsZWFy\nSW50ZXJ2YWwocHJvZ3Jlc3NUaW1lcik7CiAgICAgIHNldFByb2dyZXNzKDEw\nMCk7CiAgICAgIHNldFRpbWVvdXQoKCkgPT4gewogICAgICAgIHNldEFuYWx5\nc2lzKHJlc3VsdCk7CiAgICAgICAgc2V0TG9hZGluZyhmYWxzZSk7CiAgICAg\nIH0sIDQwMCk7CiAgICB9KTsKCiAgICByZXR1cm4gKCkgPT4gewogICAgICBj\nbGVhckludGVydmFsKG1zZ1RpbWVyKTsKICAgICAgY2xlYXJJbnRlcnZhbChw\ncm9ncmVzc1RpbWVyKTsKICAgIH07CiAgfSwgW10pOwoKICBjb25zdCBoYW5k\nbGVCZWdpbiA9ICgpID0+IHsKICAgIG9uQ29tcGxldGUoYW5hbHlzaXMpOwog\nICAgbmF2aWdhdGUoJy9kYXNoYm9hcmQnKTsKICB9OwoKICBpZiAobG9hZGlu\nZykgewogICAgcmV0dXJuICgKICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXgg\nZmxleC1jb2wgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIG1pbi1oLVs2\nMHZoXSBnYXAtOCI+CiAgICAgICAgPG1vdGlvbi5kaXYKICAgICAgICAgIGFu\naW1hdGU9e3sgc2NhbGU6IFsxLCAxLjE1LCAxXSB9fQogICAgICAgICAgdHJh\nbnNpdGlvbj17eyByZXBlYXQ6IEluZmluaXR5LCBkdXJhdGlvbjogMS41IH19\nCiAgICAgICAgICBjbGFzc05hbWU9InRleHQtN3hsIHNlbGVjdC1ub25lIgog\nICAgICAgID4KICAgICAgICAgIPCfp6AKICAgICAgICA8L21vdGlvbi5kaXY+\nCgogICAgICAgIDxBbmltYXRlUHJlc2VuY2UgbW9kZT0id2FpdCI+CiAgICAg\nICAgICA8bW90aW9uLnAKICAgICAgICAgICAga2V5PXttc2dJZHh9CiAgICAg\nICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeTogMTAgfX0KICAgICAg\nICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAwIH19CiAgICAgICAg\nICAgIGV4aXQ9e3sgb3BhY2l0eTogMCwgeTogLTEwIH19CiAgICAgICAgICAg\nIGNsYXNzTmFtZT0iZm9udC1oZWFkaW5nIHRleHQteGwgZm9udC1zZW1pYm9s\nZCB0ZXh0LVsjMEExNjI4XSB0ZXh0LWNlbnRlciIKICAgICAgICAgID4KICAg\nICAgICAgICAge0xPQURJTkdfTUVTU0FHRVNbbXNnSWR4XX0KICAgICAgICAg\nIDwvbW90aW9uLnA+CiAgICAgICAgPC9BbmltYXRlUHJlc2VuY2U+CgogICAg\nICAgIDxkaXYgY2xhc3NOYW1lPSJ3LWZ1bGwgbWF4LXctc20iPgogICAgICAg\nICAgPGRpdiBjbGFzc05hbWU9ImgtMiBiZy1bI0U1RTdFQl0gcm91bmRlZC1m\ndWxsIG92ZXJmbG93LWhpZGRlbiI+CiAgICAgICAgICAgIDxtb3Rpb24uZGl2\nCiAgICAgICAgICAgICAgY2xhc3NOYW1lPSJoLWZ1bGwgYmctWyMwQTE2Mjhd\nIHJvdW5kZWQtZnVsbCIKICAgICAgICAgICAgICBzdHlsZT17eyB3aWR0aDog\nYCR7cHJvZ3Jlc3N9JWAgfX0KICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7\nIGR1cmF0aW9uOiAwLjEgfX0KICAgICAgICAgICAgLz4KICAgICAgICAgIDwv\nZGl2PgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgICk7CiAgfQoK\nICByZXR1cm4gKAogICAgPG1vdGlvbi5kaXYKICAgICAgaW5pdGlhbD17eyBv\ncGFjaXR5OiAwLCB5OiAzMCB9fQogICAgICBhbmltYXRlPXt7IG9wYWNpdHk6\nIDEsIHk6IDAgfX0KICAgICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMC41\nIH19CiAgICAgIGNsYXNzTmFtZT0ic3BhY2UteS01IHBiLTgiCiAgICA+CiAg\nICAgIDxoMiBjbGFzc05hbWU9ImZvbnQtaGVhZGluZyB0ZXh0LTN4bCBmb250\nLWJvbGQgdGV4dC1bIzBBMTYyOF0gbGVhZGluZy10aWdodCI+CiAgICAgICAg\ne2FuYWx5c2lzLmdyZWV0aW5nfQogICAgICA8L2gyPgoKICAgICAgey8qIFdo\neSBzZWN0aW9uICovfQogICAgICA8ZGl2IGNsYXNzTmFtZT0iYmctd2hpdGUg\ncm91bmRlZC0yeGwgcC02IGJvcmRlciBib3JkZXItWyNFNUU3RUJdIj4KICAg\nICAgICA8aDMgY2xhc3NOYW1lPSJmb250LWhlYWRpbmcgdGV4dC1sZyBmb250\nLWJvbGQgdGV4dC1bIzBBMTYyOF0gbWItMyI+CiAgICAgICAgICBXaHkgVmVk\naWMgTWF0aHMgaXMgUGVyZmVjdCBmb3IgWW91CiAgICAgICAgPC9oMz4KICAg\nICAgICA8cCBjbGFzc05hbWU9InRleHQtWyM0QjU1NjNdIGxlYWRpbmctcmVs\nYXhlZCB0ZXh0LXNtIj57YW5hbHlzaXMud2h5VmVkaWNNYXRoc308L3A+CiAg\nICAgIDwvZGl2PgoKICAgICAgey8qIExldmVsICsgd2Vla3MgKi99CiAgICAg\nIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGZsZXgtd3JhcCBnYXAtMyBpdGVtcy1j\nZW50ZXIiPgogICAgICAgIDxzcGFuIGNsYXNzTmFtZT17YHB4LTQgcHktMS41\nIHJvdW5kZWQtZnVsbCB0ZXh0LXNtIGZvbnQtYm9sZCAke0xFVkVMX0NPTE9S\nU1thbmFseXNpcy5zdGFydGluZ0xldmVsXSB8fCBMRVZFTF9DT0xPUlMuQmVn\naW5uZXJ9YH0+CiAgICAgICAgICB7YW5hbHlzaXMuc3RhcnRpbmdMZXZlbH0K\nICAgICAgICA8L3NwYW4+CiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0\nLXNtIHRleHQtWyM0QjU1NjNdIj57YW5hbHlzaXMuc3RhcnRpbmdMZXZlbFJl\nYXNvbn08L3NwYW4+CiAgICAgIDwvZGl2PgoKICAgICAgPGRpdiBjbGFzc05h\nbWU9InRleHQtc20gdGV4dC1bIzBBMTYyOF0gZm9udC1tZWRpdW0iPgogICAg\nICAgIPCfk4UgUmVhZHkgaW4gYXBwcm94aW1hdGVseSA8c3BhbiBjbGFzc05h\nbWU9ImZvbnQtYm9sZCI+e2FuYWx5c2lzLmVzdGltYXRlZFdlZWtzfSB3ZWVr\nczwvc3Bhbj4g4oCiIHthbmFseXNpcy5kYWlseUxlc3NvbnN9IGxlc3NvbnMv\nZGF5CiAgICAgIDwvZGl2PgoKICAgICAgey8qIEZvY3VzIGFyZWFzICovfQog\nICAgICA8ZGl2PgogICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC14cyBmb250\nLXNlbWlib2xkIHRleHQtWyM0QjU1NjNdIHVwcGVyY2FzZSB0cmFja2luZy13\naWRlciBtYi0yIj5Ub3AgRm9jdXMgQXJlYXM8L3A+CiAgICAgICAgPGRpdiBj\nbGFzc05hbWU9ImZsZXggZmxleC13cmFwIGdhcC0yIj4KICAgICAgICAgIHso\nYW5hbHlzaXMudG9wRm9jdXNBcmVhcyB8fCBbXSkubWFwKChhcmVhLCBpKSA9\nPiAoCiAgICAgICAgICAgIDxzcGFuIGtleT17aX0gY2xhc3NOYW1lPSJweC0z\nIHB5LTEuNSByb3VuZGVkLXhsIGJnLVsjMEExNjI4XSB0ZXh0LXdoaXRlIHRl\neHQteHMgZm9udC1zZW1pYm9sZCI+CiAgICAgICAgICAgICAg4pqhIHthcmVh\nfQogICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICApKX0KICAgICAgICA8\nL2Rpdj4KICAgICAgPC9kaXY+CgogICAgICB7LyogRmlyc3QgbGVzc29uICov\nfQogICAgICA8ZGl2IGNsYXNzTmFtZT0iYmctWyNGOEZBRkZdIHJvdW5kZWQt\nMnhsIHAtNSBib3JkZXIgYm9yZGVyLVsjRTVFN0VCXSI+CiAgICAgICAgPHAg\nY2xhc3NOYW1lPSJ0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgdGV4dC1bIzRCNTU2\nM10gdXBwZXJjYXNlIHRyYWNraW5nLXdpZGVyIG1iLTEiPllvdXIgRmlyc3Qg\nTGVzc29uPC9wPgogICAgICAgIDxwIGNsYXNzTmFtZT0iZm9udC1oZWFkaW5n\nIHRleHQtYmFzZSBmb250LWJvbGQgdGV4dC1bIzBBMTYyOF0iPnthbmFseXNp\ncy5maXJzdExlc3NvblRpdGxlfTwvcD4KICAgICAgPC9kaXY+CgogICAgICB7\nLyogUXVvdGUgKi99CiAgICAgIDxibG9ja3F1b3RlIGNsYXNzTmFtZT0iYm9y\nZGVyLWwtNCBib3JkZXItWyMwQTE2MjhdIGJnLVsjRjBGNEZGXSBwbC01IHBy\nLTQgcHktNCByb3VuZGVkLXItMnhsIj4KICAgICAgICA8cCBjbGFzc05hbWU9\nIml0YWxpYyB0ZXh0LVsjMEExNjI4XSB0ZXh0LXNtIGxlYWRpbmctcmVsYXhl\nZCI+e2FuYWx5c2lzLm1vdGl2YXRpb25hbFF1b3RlfTwvcD4KICAgICAgPC9i\nbG9ja3F1b3RlPgoKICAgICAgey8qIFRpcCAqL30KICAgICAgPGRpdiBjbGFz\nc05hbWU9ImJnLWJsdWUtNTAgcm91bmRlZC0yeGwgcC01IGZsZXggZ2FwLTMi\nPgogICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC14bCI+8J+SoTwvc3Bh\nbj4KICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1bIzFFNDBB\nRl0gbGVhZGluZy1yZWxheGVkIj57YW5hbHlzaXMucGVyc29uYWxpemVkVGlw\nfTwvcD4KICAgICAgPC9kaXY+CgogICAgICB7LyogQ1RBICovfQogICAgICA8\nYnV0dG9uCiAgICAgICAgb25DbGljaz17aGFuZGxlQmVnaW59CiAgICAgICAg\nY2xhc3NOYW1lPSJ3LWZ1bGwgaC0xNCByb3VuZGVkLTJ4bCBiZy1bIzBBMTYy\nOF0gdGV4dC13aGl0ZSBmb250LWhlYWRpbmcgdGV4dC1sZyBmb250LWJvbGQg\naG92ZXI6YmctWyMwRDIyNTJdIHRyYW5zaXRpb24tY29sb3JzIgogICAgICA+\nCiAgICAgICAgQmVnaW4gTXkgSm91cm5leSDihpIKICAgICAgPC9idXR0b24+\nCiAgICA8L21vdGlvbi5kaXY+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/AIAnalysisScreen.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/915aa2541802365692e910b204b828cab0d29d08","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/AIAnalysisScreen.jsx"}}
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import { base44 } from '@/api/base44Client';
+
+const LOADING_MESSAGES = [
+  'Analyzing your profile...',
+  'Mapping your learning path...',
+  'Calculating your starting level...',
+  'Crafting your personalized curriculum...',
+];
+
+const DEFAULT_ANALYSIS = {
+  greeting: "Welcome to VedicMind! We're thrilled to have you on this incredible learning journey through the ancient art of Vedic Mathematics.",
+  whyVedicMaths: "Vedic Mathematics is a collection of techniques that make calculations lightning-fast and intuitive. These 2500-year-old sutras have been proven to improve mental agility, boost confidence, and dramatically speed up arithmetic — skills that help in every exam and career.",
+  startingLevel: 'Beginner',
+  startingLevelReason: 'We start everyone at the foundation to ensure strong conceptual clarity before advancing.',
+  estimatedWeeks: 8,
+  dailyLessons: 2,
+  topFocusAreas: ['Fast Multiplication', 'Mental Addition', 'Speed Division'],
+  firstLessonTitle: 'Introduction to Vedic Maths & The 16 Sutras',
+  motivationalQuote: '"The mind is everything. What you think, you become." — Buddha',
+  personalizedTip: 'Consistency beats intensity. Even 15 minutes of daily practice will compound into extraordinary skill over weeks.',
+};
+
+const LEVEL_COLORS = {
+  Beginner: 'bg-green-100 text-green-800',
+  Intermediate: 'bg-blue-100 text-blue-800',
+  Advanced: 'bg-purple-100 text-purple-800',
+};
+
+export default function AIAnalysisScreen({ profile, onComplete }) {
+  const [msgIdx, setMsgIdx] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const [analysis, setAnalysis] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Cycle loading messages
+    const msgTimer = setInterval(() => {
+      setMsgIdx(i => Math.min(i + 1, LOADING_MESSAGES.length - 1));
+    }, 1500);
+
+    // Fill progress bar over 5s
+    const progressTimer = setInterval(() => {
+      setProgress(p => Math.min(p + 2, 95));
+    }, 100);
+
+    let finished = false;
+
+    const minDelay = new Promise(res => setTimeout(res, 3000));
+    const apiCall = base44.functions.invoke('analyzeProfile', { profile })
+      .then(res => res.data?.analysis || DEFAULT_ANALYSIS)
+      .catch(() => DEFAULT_ANALYSIS);
+
+    Promise.all([minDelay, apiCall]).then(([, result]) => {
+      finished = true;
+      clearInterval(msgTimer);
+      clearInterval(progressTimer);
+      setProgress(100);
+      setTimeout(() => {
+        setAnalysis(result);
+        setLoading(false);
+      }, 400);
+    });
+
+    return () => {
+      clearInterval(msgTimer);
+      clearInterval(progressTimer);
+    };
+  }, []);
+
+  const handleBegin = () => {
+    onComplete(analysis);
+    navigate('/dashboard');
+  };
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-8">
+        <motion.div
+          animate={{ scale: [1, 1.15, 1] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+          className="text-7xl select-none"
+        >
+          🧠
+        </motion.div>
+
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={msgIdx}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="font-heading text-xl font-semibold text-[#0A1628] text-center"
+          >
+            {LOADING_MESSAGES[msgIdx]}
+          </motion.p>
+        </AnimatePresence>
+
+        <div className="w-full max-w-sm">
+          <div className="h-2 bg-[#E5E7EB] rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-[#0A1628] rounded-full"
+              style={{ width: `${progress}%` }}
+              transition={{ duration: 0.1 }}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="space-y-5 pb-8"
+    >
+      <h2 className="font-heading text-3xl font-bold text-[#0A1628] leading-tight">
+        {analysis.greeting}
+      </h2>
+
+      {/* Why section */}
+      <div className="bg-white rounded-2xl p-6 border border-[#E5E7EB]">
+        <h3 className="font-heading text-lg font-bold text-[#0A1628] mb-3">
+          Why Vedic Maths is Perfect for You
+        </h3>
+        <p className="text-[#4B5563] leading-relaxed text-sm">{analysis.whyVedicMaths}</p>
+      </div>
+
+      {/* Level + weeks */}
+      <div className="flex flex-wrap gap-3 items-center">
+        <span className={`px-4 py-1.5 rounded-full text-sm font-bold ${LEVEL_COLORS[analysis.startingLevel] || LEVEL_COLORS.Beginner}`}>
+          {analysis.startingLevel}
+        </span>
+        <span className="text-sm text-[#4B5563]">{analysis.startingLevelReason}</span>
+      </div>
+
+      <div className="text-sm text-[#0A1628] font-medium">
+        📅 Ready in approximately <span className="font-bold">{analysis.estimatedWeeks} weeks</span> • {analysis.dailyLessons} lessons/day
+      </div>
+
+      {/* Focus areas */}
+      <div>
+        <p className="text-xs font-semibold text-[#4B5563] uppercase tracking-wider mb-2">Top Focus Areas</p>
+        <div className="flex flex-wrap gap-2">
+          {(analysis.topFocusAreas || []).map((area, i) => (
+            <span key={i} className="px-3 py-1.5 rounded-xl bg-[#0A1628] text-white text-xs font-semibold">
+              ⚡ {area}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* First lesson */}
+      <div className="bg-[#F8FAFF] rounded-2xl p-5 border border-[#E5E7EB]">
+        <p className="text-xs font-semibold text-[#4B5563] uppercase tracking-wider mb-1">Your First Lesson</p>
+        <p className="font-heading text-base font-bold text-[#0A1628]">{analysis.firstLessonTitle}</p>
+      </div>
+
+      {/* Quote */}
+      <blockquote className="border-l-4 border-[#0A1628] bg-[#F0F4FF] pl-5 pr-4 py-4 rounded-r-2xl">
+        <p className="italic text-[#0A1628] text-sm leading-relaxed">{analysis.motivationalQuote}</p>
+      </blockquote>
+
+      {/* Tip */}
+      <div className="bg-blue-50 rounded-2xl p-5 flex gap-3">
+        <span className="text-xl">💡</span>
+        <p className="text-sm text-[#1E40AF] leading-relaxed">{analysis.personalizedTip}</p>
+      </div>
+
+      {/* CTA */}
+      <button
+        onClick={handleBegin}
+        className="w-full h-14 rounded-2xl bg-[#0A1628] text-white font-heading text-lg font-bold hover:bg-[#0D2252] transition-colors"
+      >
+        Begin My Journey →
+      </button>
+    </motion.div>
+  );
+}
