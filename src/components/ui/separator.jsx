@@ -1,1 +1,23 @@
-{"name":"separator.jsx","path":"src/components/ui/separator.jsx","sha":"c40b88839ea28b3755355e6a9841301315abf908","size":600,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/separator.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/separator.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/c40b88839ea28b3755355e6a9841301315abf908","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/separator.jsx?token=CFODAPYXFBBATZ24RFOCOGTKFSQZ5AA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIFNl\ncGFyYXRvclByaW1pdGl2ZSBmcm9tICJAcmFkaXgtdWkvcmVhY3Qtc2VwYXJh\ndG9yIgoKaW1wb3J0IHsgY24gfSBmcm9tICJAL2xpYi91dGlscyIKCmNvbnN0\nIFNlcGFyYXRvciA9IFJlYWN0LmZvcndhcmRSZWYoKAogIHsgY2xhc3NOYW1l\nLCBvcmllbnRhdGlvbiA9ICJob3Jpem9udGFsIiwgZGVjb3JhdGl2ZSA9IHRy\ndWUsIC4uLnByb3BzIH0sCiAgcmVmCikgPT4gKAogIDxTZXBhcmF0b3JQcmlt\naXRpdmUuUm9vdAogICAgcmVmPXtyZWZ9CiAgICBkZWNvcmF0aXZlPXtkZWNv\ncmF0aXZlfQogICAgb3JpZW50YXRpb249e29yaWVudGF0aW9ufQogICAgY2xh\nc3NOYW1lPXtjbigKICAgICAgInNocmluay0wIGJnLWJvcmRlciIsCiAgICAg\nIG9yaWVudGF0aW9uID09PSAiaG9yaXpvbnRhbCIgPyAiaC1bMXB4XSB3LWZ1\nbGwiIDogImgtZnVsbCB3LVsxcHhdIiwKICAgICAgY2xhc3NOYW1lCiAgICAp\nfQogICAgey4uLnByb3BzfSAvPgopKQpTZXBhcmF0b3IuZGlzcGxheU5hbWUg\nPSBTZXBhcmF0b3JQcmltaXRpdmUuUm9vdC5kaXNwbGF5TmFtZQoKZXhwb3J0\nIHsgU2VwYXJhdG9yIH0K\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/separator.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/c40b88839ea28b3755355e6a9841301315abf908","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/separator.jsx"}}
+import * as React from "react"
+import * as SeparatorPrimitive from "@radix-ui/react-separator"
+
+import { cn } from "@/lib/utils"
+
+const Separator = React.forwardRef((
+  { className, orientation = "horizontal", decorative = true, ...props },
+  ref
+) => (
+  <SeparatorPrimitive.Root
+    ref={ref}
+    decorative={decorative}
+    orientation={orientation}
+    className={cn(
+      "shrink-0 bg-border",
+      orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
+      className
+    )}
+    {...props} />
+))
+Separator.displayName = SeparatorPrimitive.Root.displayName
+
+export { Separator }
