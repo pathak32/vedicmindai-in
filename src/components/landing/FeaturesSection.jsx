@@ -1,1 +1,81 @@
-{"name":"FeaturesSection.jsx","path":"src/components/landing/FeaturesSection.jsx","sha":"710b3311fe210df4cb7cdc1420957b06f924410b","size":2916,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/FeaturesSection.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/FeaturesSection.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/710b3311fe210df4cb7cdc1420957b06f924410b","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/landing/FeaturesSection.jsx?token=CFODAP4J7SNTESPYZ2QIUDTKFSQVXAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgbW90aW9uIH0g\nZnJvbSAnZnJhbWVyLW1vdGlvbic7CmltcG9ydCB7IEJyYWluLCBCb29rT3Bl\nbiwgQmFyQ2hhcnQzIH0gZnJvbSAnbHVjaWRlLXJlYWN0JzsKCmNvbnN0IGZl\nYXR1cmVzID0gWwogIHsKICAgIGljb246IEJyYWluLAogICAgdGl0bGU6ICdB\nSSBLbm93cyBZb3UnLAogICAgZGVzYzogJ1BlcnNvbmFsaXplZCBBSSBhbmFs\neXNpcyB1bmRlcnN0YW5kcyB5b3VyIGxldmVsLCBib2FyZCwgYW5kIGdvYWxz\nIHRvIGNyYWZ0IHRoZSBwZXJmZWN0IGxlYXJuaW5nIHBhdGguJywKICB9LAog\nIHsKICAgIGljb246IEJvb2tPcGVuLAogICAgdGl0bGU6ICdTdHJ1Y3R1cmVk\nIFBhdGgnLAogICAgZGVzYzogJzQgbGV2ZWxzLCA0MCBsZXNzb25zLCByZWFs\nIFZlZGljIHN1dHJhcyB3aXRoIHN0ZXAtYnktc3RlcCBleGFtcGxlcyBhbmQg\ndmlzdWFsIGJyZWFrZG93bnMuJywKICB9LAogIHsKICAgIGljb246IEJhckNo\nYXJ0MywKICAgIHRpdGxlOiAnVHJhY2sgTWFzdGVyeScsCiAgICBkZXNjOiAn\nTGl2ZSBkYXNoYm9hcmQsIFhQIHN5c3RlbSwgc3RyZWFrcywgYW5kIGFjaGll\ndmVtZW50IGJhZGdlcyB0byBrZWVwIHlvdSBtb3RpdmF0ZWQuJywKICB9LAog\nIHsKICAgIGljb246IG51bGwsCiAgICBlbW9qaTogJ/CfpYonLAogICAgdGl0\nbGU6ICdMaXZlIEJhdHRsZSBNb2RlJywKICAgIGRlc2M6ICdDaGFsbGVuZ2Ug\neW91ciBjbGFzc21hdGVzIHRvIHJlYWwtdGltZSBWZWRpYyBNYXRocyBiYXR0\nbGVzLiBGaXJzdCB0byBhbnN3ZXIgd2lucy4gUHJvdmUgd2hvXCdzIHRoZSBm\nYXN0ZXN0IGNhbGN1bGF0b3IgaW4geW91ciBjbGFzcy4nLAogICAgY29taW5n\nU29vbjogZmFsc2UsCiAgICBpc0xpdmU6IHRydWUsCiAgfSwKXTsKCmV4cG9y\ndCBkZWZhdWx0IGZ1bmN0aW9uIEZlYXR1cmVzU2VjdGlvbigpIHsKICByZXR1\ncm4gKAogICAgPHNlY3Rpb24gaWQ9ImZlYXR1cmVzIiBjbGFzc05hbWU9InB5\nLTI0IGJnLXdoaXRlIj4KICAgICAgPGRpdiBjbGFzc05hbWU9Im1heC13LTd4\nbCBteC1hdXRvIHB4LTQgc206cHgtNiBsZzpweC04Ij4KICAgICAgICA8bW90\naW9uLmRpdgogICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwLCB5OiAy\nMCB9fQogICAgICAgICAgd2hpbGVJblZpZXc9e3sgb3BhY2l0eTogMSwgeTog\nMCB9fQogICAgICAgICAgdmlld3BvcnQ9e3sgb25jZTogdHJ1ZSB9fQogICAg\nICAgICAgY2xhc3NOYW1lPSJ0ZXh0LWNlbnRlciBtYi0xNiIKICAgICAgICA+\nCiAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gZm9udC1zZW1pYm9s\nZCB0ZXh0LVsjM0I4MkY2XSB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZXIgbWIt\nMyI+V2h5IFZlZGljTWluZDwvcD4KICAgICAgICAgIDxoMiBjbGFzc05hbWU9\nImZvbnQtaGVhZGluZyB0ZXh0LTN4bCBzbTp0ZXh0LTR4bCBmb250LWJvbGQg\ndGV4dC1bIzBBMTYyOF0iPgogICAgICAgICAgICBFdmVyeXRoaW5nIHlvdSBu\nZWVkIHRvIG1hc3RlciBWZWRpYyBNYXRocwogICAgICAgICAgPC9oMj4KICAg\nICAgICA8L21vdGlvbi5kaXY+CgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJn\ncmlkIG1kOmdyaWQtY29scy0zIGdhcC04Ij4KICAgICAgICAgIHtmZWF0dXJl\ncy5tYXAoKGYsIGkpID0+ICgKICAgICAgICAgICAgPG1vdGlvbi5kaXYKICAg\nICAgICAgICAgICBrZXk9e2l9CiAgICAgICAgICAgICAgaW5pdGlhbD17eyBv\ncGFjaXR5OiAwLCB5OiAzMCB9fQogICAgICAgICAgICAgIHdoaWxlSW5WaWV3\nPXt7IG9wYWNpdHk6IDEsIHk6IDAgfX0KICAgICAgICAgICAgICB2aWV3cG9y\ndD17eyBvbmNlOiB0cnVlIH19CiAgICAgICAgICAgICAgdHJhbnNpdGlvbj17\neyBkZWxheTogaSAqIDAuMTUgfX0KICAgICAgICAgICAgICBjbGFzc05hbWU9\nImdsYXNzLWNhcmQgcC04IGhvdmVyOnNoYWRvdy1sZyB0cmFuc2l0aW9uLXNo\nYWRvdyIKICAgICAgICAgICAgPgogICAgICAgICAgICAgIDxkaXYgY2xhc3NO\nYW1lPSJ3LTE0IGgtMTQgcm91bmRlZC0yeGwgYmctWyNGMEY0RkZdIGZsZXgg\naXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIG1iLTYiPgogICAgICAgICAg\nICAgICAge2YuZW1vamkKICAgICAgICAgICAgICAgICAgPyA8c3BhbiBzdHls\nZT17eyBmb250U2l6ZTogMjggfX0+e2YuZW1vaml9PC9zcGFuPgogICAgICAg\nICAgICAgICAgICA6IDxmLmljb24gY2xhc3NOYW1lPSJ3LTcgaC03IHRleHQt\nWyMxRTQwQUZdIiAvPgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAg\nIDwvZGl2PgogICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9ImZvbnQtaGVh\nZGluZyB0ZXh0LXhsIGZvbnQtYm9sZCB0ZXh0LVsjMEExNjI4XSBtYi0zIj57\nZi50aXRsZX08L2gzPgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4\ndC1bIzRCNTU2M10gbGVhZGluZy1yZWxheGVkIj57Zi5kZXNjfTwvcD4KICAg\nICAgICAgICAgICB7Zi5pc0xpdmUgJiYgKAogICAgICAgICAgICAgICAgPHNw\nYW4gc3R5bGU9e3sKICAgICAgICAgICAgICAgICAgZGlzcGxheTogJ2lubGlu\nZS1ibG9jaycsIG1hcmdpblRvcDogOCwKICAgICAgICAgICAgICAgICAgYmFj\na2dyb3VuZDogJyMxMEI5ODEnLCBjb2xvcjogJ3doaXRlJywKICAgICAgICAg\nICAgICAgICAgYm9yZGVyUmFkaXVzOiA5OSwgcGFkZGluZzogJzNweCAxMnB4\nJywKICAgICAgICAgICAgICAgICAgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQt\nYm9keSknLCBmb250U2l6ZTogMTEsIGZvbnRXZWlnaHQ6IDYwMCwKICAgICAg\nICAgICAgICAgIH19PgogICAgICAgICAgICAgICAgICDinIUgTGl2ZQogICAg\nICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICAgICl9CiAgICAgICAg\nICAgIDwvbW90aW9uLmRpdj4KICAgICAgICAgICkpfQogICAgICAgIDwvZGl2\nPgogICAgICA8L2Rpdj4KICAgIDwvc2VjdGlvbj4KICApOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/FeaturesSection.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/710b3311fe210df4cb7cdc1420957b06f924410b","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/FeaturesSection.jsx"}}
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Brain, BookOpen, BarChart3 } from 'lucide-react';
+
+const features = [
+  {
+    icon: Brain,
+    title: 'AI Knows You',
+    desc: 'Personalized AI analysis understands your level, board, and goals to craft the perfect learning path.',
+  },
+  {
+    icon: BookOpen,
+    title: 'Structured Path',
+    desc: '4 levels, 40 lessons, real Vedic sutras with step-by-step examples and visual breakdowns.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Track Mastery',
+    desc: 'Live dashboard, XP system, streaks, and achievement badges to keep you motivated.',
+  },
+  {
+    icon: null,
+    emoji: '🥊',
+    title: 'Live Battle Mode',
+    desc: 'Challenge your classmates to real-time Vedic Maths battles. First to answer wins. Prove who\'s the fastest calculator in your class.',
+    comingSoon: false,
+    isLive: true,
+  },
+];
+
+export default function FeaturesSection() {
+  return (
+    <section id="features" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <p className="text-sm font-semibold text-[#3B82F6] uppercase tracking-wider mb-3">Why VedicMind</p>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#0A1628]">
+            Everything you need to master Vedic Maths
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {features.map((f, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="glass-card p-8 hover:shadow-lg transition-shadow"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-[#F0F4FF] flex items-center justify-center mb-6">
+                {f.emoji
+                  ? <span style={{ fontSize: 28 }}>{f.emoji}</span>
+                  : <f.icon className="w-7 h-7 text-[#1E40AF]" />
+                }
+              </div>
+              <h3 className="font-heading text-xl font-bold text-[#0A1628] mb-3">{f.title}</h3>
+              <p className="text-[#4B5563] leading-relaxed">{f.desc}</p>
+              {f.isLive && (
+                <span style={{
+                  display: 'inline-block', marginTop: 8,
+                  background: '#10B981', color: 'white',
+                  borderRadius: 99, padding: '3px 12px',
+                  fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 600,
+                }}>
+                  ✅ Live
+                </span>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
