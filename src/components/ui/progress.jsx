@@ -1,1 +1,23 @@
-{"name":"progress.jsx","path":"src/components/ui/progress.jsx","sha":"cab97c91bb57e7d114c175c05b958c031637b11b","size":667,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/progress.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/progress.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/cab97c91bb57e7d114c175c05b958c031637b11b","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/progress.jsx?token=CFODAP7QJOEVOT4GVNJ2K43KFSQZTAA","type":"file","content":"InVzZSBjbGllbnQiCgppbXBvcnQgKiBhcyBSZWFjdCBmcm9tICJyZWFjdCIK\naW1wb3J0ICogYXMgUHJvZ3Jlc3NQcmltaXRpdmUgZnJvbSAiQHJhZGl4LXVp\nL3JlYWN0LXByb2dyZXNzIgoKaW1wb3J0IHsgY24gfSBmcm9tICJAL2xpYi91\ndGlscyIKCmNvbnN0IFByb2dyZXNzID0gUmVhY3QuZm9yd2FyZFJlZigoeyBj\nbGFzc05hbWUsIHZhbHVlLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8UHJv\nZ3Jlc3NQcmltaXRpdmUuUm9vdAogICAgcmVmPXtyZWZ9CiAgICBjbGFzc05h\nbWU9e2NuKAogICAgICAicmVsYXRpdmUgaC0yIHctZnVsbCBvdmVyZmxvdy1o\naWRkZW4gcm91bmRlZC1mdWxsIGJnLXByaW1hcnkvMjAiLAogICAgICBjbGFz\nc05hbWUKICAgICl9CiAgICB7Li4ucHJvcHN9PgogICAgPFByb2dyZXNzUHJp\nbWl0aXZlLkluZGljYXRvcgogICAgICBjbGFzc05hbWU9ImgtZnVsbCB3LWZ1\nbGwgZmxleC0xIGJnLXByaW1hcnkgdHJhbnNpdGlvbi1hbGwiCiAgICAgIHN0\neWxlPXt7IHRyYW5zZm9ybTogYHRyYW5zbGF0ZVgoLSR7MTAwIC0gKHZhbHVl\nIHx8IDApfSUpYCB9fSAvPgogIDwvUHJvZ3Jlc3NQcmltaXRpdmUuUm9vdD4K\nKSkKUHJvZ3Jlc3MuZGlzcGxheU5hbWUgPSBQcm9ncmVzc1ByaW1pdGl2ZS5S\nb290LmRpc3BsYXlOYW1lCgpleHBvcnQgeyBQcm9ncmVzcyB9Cg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/progress.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/cab97c91bb57e7d114c175c05b958c031637b11b","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/progress.jsx"}}
+"use client"
+
+import * as React from "react"
+import * as ProgressPrimitive from "@radix-ui/react-progress"
+
+import { cn } from "@/lib/utils"
+
+const Progress = React.forwardRef(({ className, value, ...props }, ref) => (
+  <ProgressPrimitive.Root
+    ref={ref}
+    className={cn(
+      "relative h-2 w-full overflow-hidden rounded-full bg-primary/20",
+      className
+    )}
+    {...props}>
+    <ProgressPrimitive.Indicator
+      className="h-full w-full flex-1 bg-primary transition-all"
+      style={{ transform: `translateX(-${100 - (value || 0)}%)` }} />
+  </ProgressPrimitive.Root>
+))
+Progress.displayName = ProgressPrimitive.Root.displayName
+
+export { Progress }
