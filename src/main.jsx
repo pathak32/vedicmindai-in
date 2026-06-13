@@ -1,8 +1,1 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from '@/App.jsx'
-import '@/index.css'
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <App />
-)
+{"name":"main.jsx","path":"src/main.jsx","sha":"613b95326535a7203b21d8d2bdef491a37624ff2","size":189,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/main.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/main.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/613b95326535a7203b21d8d2bdef491a37624ff2","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/main.jsx?token=CFODAP356WF5VIPITVEU7N3KFSQ4FAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JwppbXBvcnQgUmVhY3RET00gZnJv\nbSAncmVhY3QtZG9tL2NsaWVudCcKaW1wb3J0IEFwcCBmcm9tICdAL0FwcC5q\nc3gnCmltcG9ydCAnQC9pbmRleC5jc3MnCgpSZWFjdERPTS5jcmVhdGVSb290\nKGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyb290JykpLnJlbmRlcigKICA8\nQXBwIC8+CikK\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/main.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/613b95326535a7203b21d8d2bdef491a37624ff2","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/main.jsx"}}
