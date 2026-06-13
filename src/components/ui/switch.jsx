@@ -1,1 +1,22 @@
-{"name":"switch.jsx","path":"src/components/ui/switch.jsx","sha":"5ef3287b76983539c22e5d2d3c05d6b69347beec","size":1025,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/switch.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/switch.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/5ef3287b76983539c22e5d2d3c05d6b69347beec","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/switch.jsx?token=CFODAP4AJINYLR3ZCNGXVILKFSQ2JAA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIFN3\naXRjaFByaW1pdGl2ZXMgZnJvbSAiQHJhZGl4LXVpL3JlYWN0LXN3aXRjaCIK\nCmltcG9ydCB7IGNuIH0gZnJvbSAiQC9saWIvdXRpbHMiCgpjb25zdCBTd2l0\nY2ggPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMg\nfSwgcmVmKSA9PiAoCiAgPFN3aXRjaFByaW1pdGl2ZXMuUm9vdAogICAgY2xh\nc3NOYW1lPXtjbigKICAgICAgInBlZXIgaW5saW5lLWZsZXggaC01IHctOSBz\naHJpbmstMCBjdXJzb3ItcG9pbnRlciBpdGVtcy1jZW50ZXIgcm91bmRlZC1m\ndWxsIGJvcmRlci0yIGJvcmRlci10cmFuc3BhcmVudCBzaGFkb3ctc20gdHJh\nbnNpdGlvbi1jb2xvcnMgZm9jdXMtdmlzaWJsZTpvdXRsaW5lLW5vbmUgZm9j\ndXMtdmlzaWJsZTpyaW5nLTIgZm9jdXMtdmlzaWJsZTpyaW5nLXJpbmcgZm9j\ndXMtdmlzaWJsZTpyaW5nLW9mZnNldC0yIGZvY3VzLXZpc2libGU6cmluZy1v\nZmZzZXQtYmFja2dyb3VuZCBkaXNhYmxlZDpjdXJzb3Itbm90LWFsbG93ZWQg\nZGlzYWJsZWQ6b3BhY2l0eS01MCBkYXRhLVtzdGF0ZT1jaGVja2VkXTpiZy1w\ncmltYXJ5IGRhdGEtW3N0YXRlPXVuY2hlY2tlZF06YmctaW5wdXQiLAogICAg\nICBjbGFzc05hbWUKICAgICl9CiAgICB7Li4ucHJvcHN9CiAgICByZWY9e3Jl\nZn0+CiAgICA8U3dpdGNoUHJpbWl0aXZlcy5UaHVtYgogICAgICBjbGFzc05h\nbWU9e2NuKAogICAgICAgICJwb2ludGVyLWV2ZW50cy1ub25lIGJsb2NrIGgt\nNCB3LTQgcm91bmRlZC1mdWxsIGJnLWJhY2tncm91bmQgc2hhZG93LWxnIHJp\nbmctMCB0cmFuc2l0aW9uLXRyYW5zZm9ybSBkYXRhLVtzdGF0ZT1jaGVja2Vk\nXTp0cmFuc2xhdGUteC00IGRhdGEtW3N0YXRlPXVuY2hlY2tlZF06dHJhbnNs\nYXRlLXgtMCIKICAgICAgKX0gLz4KICA8L1N3aXRjaFByaW1pdGl2ZXMuUm9v\ndD4KKSkKU3dpdGNoLmRpc3BsYXlOYW1lID0gU3dpdGNoUHJpbWl0aXZlcy5S\nb290LmRpc3BsYXlOYW1lCgpleHBvcnQgeyBTd2l0Y2ggfQo=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/switch.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/5ef3287b76983539c22e5d2d3c05d6b69347beec","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/switch.jsx"}}
+import * as React from "react"
+import * as SwitchPrimitives from "@radix-ui/react-switch"
+
+import { cn } from "@/lib/utils"
+
+const Switch = React.forwardRef(({ className, ...props }, ref) => (
+  <SwitchPrimitives.Root
+    className={cn(
+      "peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
+      className
+    )}
+    {...props}
+    ref={ref}>
+    <SwitchPrimitives.Thumb
+      className={cn(
+        "pointer-events-none block h-4 w-4 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+      )} />
+  </SwitchPrimitives.Root>
+))
+Switch.displayName = SwitchPrimitives.Root.displayName
+
+export { Switch }
