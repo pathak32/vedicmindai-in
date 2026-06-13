@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getSupabase } from '@/lib/supabaseClient';
 import { motion, AnimatePresence } from 'framer-motion';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 
@@ -93,6 +94,22 @@ function SubmitReviewForm({ onSubmit, onClose }) {
     };
     const existing = JSON.parse(localStorage.getItem('vedicmind_reviews') || '[]');
     localStorage.setItem('vedicmind_reviews', JSON.stringify([...existing, review]));
+
+    // Save to Supabase
+    (async () => {
+      try {
+        const supabase = await getSupabase();
+        const { data: { session } } = await supabase.auth.getSession();
+        await supabase.from('reviews').insert({
+          user_id: session?.user?.id || null,
+          name: review.name,
+          rating: review.stars || 5,
+          message: review.text,
+          approved: true,
+        });
+      } catch(e) { console.warn('Review Supabase save failed:', e); }
+    })();
+
     onSubmit(review);
   };
 
