@@ -1,1 +1,19 @@
-{"name":"supabaseClient.js","path":"src/lib/supabaseClient.js","sha":"9ca50e45fee082e36e9856aba229b2cb9a5321b7","size":761,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/supabaseClient.js?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/supabaseClient.js","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/9ca50e45fee082e36e9856aba229b2cb9a5321b7","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/lib/supabaseClient.js?token=CFODAP64SARHWUOQH5K5EMLKFSQ3ZAA","type":"file","content":"aW1wb3J0IHsgY3JlYXRlQ2xpZW50IH0gZnJvbSAnQHN1cGFiYXNlL3N1cGFi\nYXNlLWpzJzsKCmxldCBzdXBhYmFzZUluc3RhbmNlID0gbnVsbDsKCmV4cG9y\ndCBjb25zdCBnZXRTdXBhYmFzZSA9IGFzeW5jICgpID0+IHsKICBpZiAoc3Vw\nYWJhc2VJbnN0YW5jZSkgcmV0dXJuIHN1cGFiYXNlSW5zdGFuY2U7CiAgY29u\nc3Qgc3VwYWJhc2VVcmwgPSAnaHR0cHM6Ly94bHlmeXFqbXp3eXlvcXVydnV6\neC5zdXBhYmFzZS5jbyc7CiAgY29uc3Qgc3VwYWJhc2VBbm9uS2V5ID0gJ2V5\nSmhiR2NpT2lKSVV6STFOaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpwYzNNaU9p\nSnpkWEJoWW1GelpTSXNJbkpsWmlJNkluaHNlV1o1Y1dwdGVuZDVlVzl4ZFhK\nMmRYcDRJaXdpY205c1pTSTZJbUZ1YjI0aUxDSnBZWFFpT2pFM09EQTNNamd4\nT1RRc0ltVjRjQ0k2TWpBNU5qTXdOREU1TkgwLjRDWFUza3NmQ0dmSUE3Ny1z\nRlhlYldpLWhqRFZqQ3NULVVkck1YWUZMRU0nOwogIHN1cGFiYXNlSW5zdGFu\nY2UgPSBjcmVhdGVDbGllbnQoc3VwYWJhc2VVcmwsIHN1cGFiYXNlQW5vbktl\neSwgewogICAgYXV0aDogewogICAgICBwZXJzaXN0U2Vzc2lvbjogdHJ1ZSwK\nICAgICAgc3RvcmFnZUtleTogJ3ZlZGljbWluZC1hdXRoJywKICAgICAgc3Rv\ncmFnZTogd2luZG93LmxvY2FsU3RvcmFnZSwKICAgICAgYXV0b1JlZnJlc2hU\nb2tlbjogdHJ1ZSwKICAgICAgZGV0ZWN0U2Vzc2lvbkluVXJsOiBmYWxzZSwK\nICAgIH0KICB9KTsKICByZXR1cm4gc3VwYWJhc2VJbnN0YW5jZTsKfTs=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/supabaseClient.js?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/9ca50e45fee082e36e9856aba229b2cb9a5321b7","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/supabaseClient.js"}}
+import { createClient } from '@supabase/supabase-js';
+
+let supabaseInstance = null;
+
+export const getSupabase = async () => {
+  if (supabaseInstance) return supabaseInstance;
+  const supabaseUrl = 'https://xlyfyqjmzwyyoqurvuzx.supabase.co';
+  const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhseWZ5cWptend5eW9xdXJ2dXp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA3MjgxOTQsImV4cCI6MjA5NjMwNDE5NH0.4CXU3ksfCGfIA77-sFXebWi-hjDVjCsT-UdrMXYFLEM';
+  supabaseInstance = createClient(supabaseUrl, supabaseAnonKey, {
+    auth: {
+      persistSession: true,
+      storageKey: 'vedicmind-auth',
+      storage: window.localStorage,
+      autoRefreshToken: true,
+      detectSessionInUrl: false,
+    }
+  });
+  return supabaseInstance;
+};
