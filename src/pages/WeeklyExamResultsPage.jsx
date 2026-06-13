@@ -1,1 +1,246 @@
-{"name":"WeeklyExamResultsPage.jsx","path":"src/pages/WeeklyExamResultsPage.jsx","sha":"071d553d14cfac8d72839b1266ec4e3adef83397","size":11136,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/WeeklyExamResultsPage.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/WeeklyExamResultsPage.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/071d553d14cfac8d72839b1266ec4e3adef83397","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/pages/WeeklyExamResultsPage.jsx?token=CFODAP5VEE3IZYMAVVZ3K7TKFSQ55AA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IHVzZU5hdmlnYXRlIH0gZnJvbSAncmVhY3Qtcm91\ndGVyLWRvbSc7CmltcG9ydCBEYXNoYm9hcmROYXZiYXIgZnJvbSAnQC9jb21w\nb25lbnRzL2Rhc2hib2FyZC9EYXNoYm9hcmROYXZiYXInOwppbXBvcnQgeyBn\nZXRDbGFzc0dyb3VwTGFiZWwsIGZvcm1hdE1NU1MgfSBmcm9tICdAL2xpYi93\nZWVrbHlFeGFtRW5naW5lJzsKaW1wb3J0IHsgUVVFU1RJT05fQkFOS1MgfSBm\ncm9tICdAL2xpYi93ZWVrbHlRdWVzdGlvbkJhbmtzJzsKCmNvbnN0IGdsYXNz\nID0gewogIGJhY2tncm91bmQ6ICdyZ2JhKDI1NSwyNTUsMjU1LDAuNyknLAog\nIGJhY2tkcm9wRmlsdGVyOiAnYmx1cigyMHB4KScsCiAgV2Via2l0QmFja2Ry\nb3BGaWx0ZXI6ICdibHVyKDIwcHgpJywKICBib3JkZXI6ICcxcHggc29saWQg\ncmdiYSgzMCw2NCwxNzUsMC4xNSknLAogIGJvcmRlclJhZGl1czogMTYsCn07\nCgpmdW5jdGlvbiB1c2VDb3VudFVwKHRhcmdldCwgZHVyYXRpb24gPSAxMjAw\nKSB7CiAgY29uc3QgW3ZhbHVlLCBzZXRWYWx1ZV0gPSB1c2VTdGF0ZSgwKTsK\nICB1c2VFZmZlY3QoKCkgPT4gewogICAgY29uc3Qgc3RhcnQgPSBEYXRlLm5v\ndygpOwogICAgY29uc3QgdGljayA9ICgpID0+IHsKICAgICAgY29uc3QgZWxh\ncHNlZCA9IERhdGUubm93KCkgLSBzdGFydDsKICAgICAgY29uc3QgcHJvZ3Jl\nc3MgPSBNYXRoLm1pbihlbGFwc2VkIC8gZHVyYXRpb24sIDEpOwogICAgICBj\nb25zdCBlYXNlZCA9IDEgLSBNYXRoLnBvdygxIC0gcHJvZ3Jlc3MsIDMpOwog\nICAgICBzZXRWYWx1ZShNYXRoLmZsb29yKGVhc2VkICogdGFyZ2V0KSk7CiAg\nICAgIGlmIChwcm9ncmVzcyA8IDEpIHJlcXVlc3RBbmltYXRpb25GcmFtZSh0\naWNrKTsKICAgIH07CiAgICByZXF1ZXN0QW5pbWF0aW9uRnJhbWUodGljayk7\nCiAgfSwgW3RhcmdldCwgZHVyYXRpb25dKTsKICByZXR1cm4gdmFsdWU7Cn0K\nCmZ1bmN0aW9uIFF1ZXN0aW9uUm93KHsgcSwgYW5zLCBpbmRleCB9KSB7CiAg\nY29uc3QgW2V4cGFuZGVkLCBzZXRFeHBhbmRlZF0gPSB1c2VTdGF0ZShmYWxz\nZSk7CiAgY29uc3QgTEFCRUxTID0gWydBJywgJ0InLCAnQycsICdEJ107CiAg\nY29uc3QgaXNDb3JyZWN0ID0gYW5zPy5jb3JyZWN0OwogIGNvbnN0IHB0cyA9\nIGlzQ29ycmVjdCA/IChhbnMudGltZVRha2VuIDwgMzAgPyA2IDogNSkgOiAw\nOwoKICByZXR1cm4gKAogICAgPGRpdiBzdHlsZT17ewogICAgICBib3JkZXJM\nZWZ0OiBgM3B4IHNvbGlkICR7aXNDb3JyZWN0ID8gJyMxMEI5ODEnIDogJyNF\nRjQ0NDQnfWAsCiAgICAgIGJhY2tncm91bmQ6ICd3aGl0ZScsIGJvcmRlclJh\nZGl1czogJzAgMTJweCAxMnB4IDAnLAogICAgICBtYXJnaW5Cb3R0b206IDgs\nIG92ZXJmbG93OiAnaGlkZGVuJywKICAgIH19PgogICAgICA8YnV0dG9uCiAg\nICAgICAgb25DbGljaz17KCkgPT4gc2V0RXhwYW5kZWQocCA9PiAhcCl9CiAg\nICAgICAgc3R5bGU9e3sKICAgICAgICAgIHdpZHRoOiAnMTAwJScsIGRpc3Bs\nYXk6ICdmbGV4JywgYWxpZ25JdGVtczogJ2NlbnRlcicsCiAgICAgICAgICBn\nYXA6IDEwLCBwYWRkaW5nOiAnMTJweCAxNHB4JywgYmFja2dyb3VuZDogJ25v\nbmUnLAogICAgICAgICAgYm9yZGVyOiAnbm9uZScsIGN1cnNvcjogJ3BvaW50\nZXInLCB0ZXh0QWxpZ246ICdsZWZ0JywKICAgICAgICB9fQogICAgICA+CiAg\nICAgICAgPHNwYW4gc3R5bGU9e3sKICAgICAgICAgIGZvbnRGYW1pbHk6ICd2\nYXIoLS1mb250LW1vbm8pJywgZm9udFNpemU6IDExLCBjb2xvcjogJ3doaXRl\nJywKICAgICAgICAgIGJhY2tncm91bmQ6ICcjMEExNjI4JywgYm9yZGVyUmFk\naXVzOiA2LCBwYWRkaW5nOiAnMnB4IDdweCcsIGZsZXhTaHJpbms6IDAsCiAg\nICAgICAgfX0+UXtpbmRleCArIDF9PC9zcGFuPgogICAgICAgIDxzcGFuIHN0\neWxlPXt7IGZvbnRTaXplOiAxNCB9fT57aXNDb3JyZWN0ID8gJ+KchScgOiAn\n4p2MJ308L3NwYW4+CiAgICAgICAgPHNwYW4gc3R5bGU9e3sKICAgICAgICAg\nIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9udFNpemU6IDEz\nLCBjb2xvcjogJyMwQTE2MjgnLAogICAgICAgICAgZmxleDogMSwgb3ZlcmZs\nb3c6ICdoaWRkZW4nLCB0ZXh0T3ZlcmZsb3c6ICdlbGxpcHNpcycsIHdoaXRl\nU3BhY2U6ICdub3dyYXAnLAogICAgICAgIH19PntxLnF9PC9zcGFuPgogICAg\nICAgIDxzcGFuIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LW1v\nbm8pJywgZm9udFNpemU6IDEyLCBjb2xvcjogJyM0QjU1NjMnLCBmbGV4U2hy\naW5rOiAwIH19PgogICAgICAgICAgK3twdHN9cHRzIMK3IHthbnMgPyBhbnMu\ndGltZVRha2VuICsgJ3MnIDogJ+KAlCd9CiAgICAgICAgPC9zcGFuPgogICAg\nICA8L2J1dHRvbj4KCiAgICAgIHtleHBhbmRlZCAmJiAoCiAgICAgICAgPGRp\ndiBzdHlsZT17eyBwYWRkaW5nOiAnMCAxNHB4IDE0cHgnIH19PgogICAgICAg\nICAgPHAgc3R5bGU9e3sgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSkn\nLCBmb250U2l6ZTogMTQsIGNvbG9yOiAnIzBBMTYyOCcsIG1hcmdpbkJvdHRv\nbTogMTAgfX0+e3EucX08L3A+CiAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGRp\nc3BsYXk6ICdmbGV4JywgZmxleERpcmVjdGlvbjogJ2NvbHVtbicsIGdhcDog\nNiwgbWFyZ2luQm90dG9tOiAxMCB9fT4KICAgICAgICAgICAge3Eub3B0aW9u\ncy5tYXAoKG9wdCwgaSkgPT4gewogICAgICAgICAgICAgIGxldCBiZyA9ICd0\ncmFuc3BhcmVudCc7IGxldCBib3JkZXIgPSAnMXB4IHNvbGlkIHJnYmEoMzAs\nNjQsMTc1LDAuMTIpJzsgbGV0IGNvbG9yID0gJyM0QjU1NjMnOwogICAgICAg\nICAgICAgIGlmIChpID09PSBxLmNvcnJlY3QpIHsgYmcgPSAnI0VDRkRGNSc7\nIGJvcmRlciA9ICcxcHggc29saWQgIzEwQjk4MSc7IGNvbG9yID0gJyMwNjVG\nNDYnOyB9CiAgICAgICAgICAgICAgZWxzZSBpZiAoYW5zICYmIGkgPT09IGFu\ncy5zZWxlY3RlZE9wdGlvbiAmJiBpICE9PSBxLmNvcnJlY3QpIHsKICAgICAg\nICAgICAgICAgIGJnID0gJyNGRUYyRjInOyBib3JkZXIgPSAnMXB4IHNvbGlk\nICNFRjQ0NDQnOyBjb2xvciA9ICcjOTkxQjFCJzsKICAgICAgICAgICAgICB9\nCiAgICAgICAgICAgICAgcmV0dXJuICgKICAgICAgICAgICAgICAgIDxkaXYg\na2V5PXtpfSBzdHlsZT17eyBiYWNrZ3JvdW5kOiBiZywgYm9yZGVyLCBib3Jk\nZXJSYWRpdXM6IDgsIHBhZGRpbmc6ICc4cHggMTJweCcsIGRpc3BsYXk6ICdm\nbGV4JywgZ2FwOiA4LCBhbGlnbkl0ZW1zOiAnY2VudGVyJyB9fT4KICAgICAg\nICAgICAgICAgICAgPHNwYW4gc3R5bGU9e3sgZm9udEZhbWlseTogJ3Zhcigt\nLWZvbnQtbW9ubyknLCBmb250U2l6ZTogMTEsIGNvbG9yLCBmb250V2VpZ2h0\nOiA3MDAgfX0+e0xBQkVMU1tpXX0uPC9zcGFuPgogICAgICAgICAgICAgICAg\nICA8c3BhbiBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5\nKScsIGZvbnRTaXplOiAxMywgY29sb3IgfX0+e29wdH08L3NwYW4+CiAgICAg\nICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICApOwogICAgICAgICAg\nICB9KX0KICAgICAgICAgIDwvZGl2PgogICAgICAgICAge3EuaGludCAmJiAo\nCiAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgYmFja2dyb3VuZDogJyNGMEY0\nRkYnLCBib3JkZXJSYWRpdXM6IDgsIHBhZGRpbmc6ICc4cHggMTJweCcgfX0+\nCiAgICAgICAgICAgICAgPHNwYW4gc3R5bGU9e3sgZm9udEZhbWlseTogJ3Zh\ncigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTIsIGNvbG9yOiAnIzRCNTU2\nMycgfX0+8J+SoSB7cS5oaW50fTwvc3Bhbj4KICAgICAgICAgICAgPC9kaXY+\nCiAgICAgICAgICApfQogICAgICAgIDwvZGl2PgogICAgICApfQogICAgPC9k\naXY+CiAgKTsKfQoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gV2Vla2x5RXhh\nbVJlc3VsdHNQYWdlKCkgewogIGNvbnN0IG5hdmlnYXRlID0gdXNlTmF2aWdh\ndGUoKTsKICBjb25zdCBbc2hvd0FsbCwgc2V0U2hvd0FsbF0gPSB1c2VTdGF0\nZShmYWxzZSk7CgogIGNvbnN0IHByb2dyZXNzID0gSlNPTi5wYXJzZShsb2Nh\nbFN0b3JhZ2UuZ2V0SXRlbSgndmVkaWNtaW5kX3Byb2dyZXNzJykgfHwgJ3t9\nJyk7CiAgY29uc3QgaGlzdG9yeSA9IHByb2dyZXNzLndlZWtseUV4YW1IaXN0\nb3J5IHx8IFtdOwogIGNvbnN0IHJlc3VsdCA9IGhpc3RvcnlbaGlzdG9yeS5s\nZW5ndGggLSAxXTsKCiAgY29uc3QgYW5pbWF0ZWRTY29yZSA9IHVzZUNvdW50\nVXAocmVzdWx0Py5zY29yZSB8fCAwLCAxMjAwKTsKCiAgaWYgKCFyZXN1bHQp\nIHsKICAgIHJldHVybiAoCiAgICAgIDxkaXYgc3R5bGU9e3sgbWluSGVpZ2h0\nOiAnMTAwdmgnLCBiYWNrZ3JvdW5kOiAnI0YwRjRGRicgfX0+CiAgICAgICAg\nPERhc2hib2FyZE5hdmJhciAvPgogICAgICAgIDxkaXYgc3R5bGU9e3sgcGFk\nZGluZzogNDAsIHRleHRBbGlnbjogJ2NlbnRlcicgfX0+CiAgICAgICAgICA8\ncCBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGNv\nbG9yOiAnIzRCNTU2MycgfX0+Tm8gZXhhbSByZXN1bHRzIGZvdW5kLjwvcD4K\nICAgICAgICAgIDxidXR0b24gb25DbGljaz17KCkgPT4gbmF2aWdhdGUoJy93\nZWVrbHktZXhhbScpfSBzdHlsZT17eyBtYXJnaW5Ub3A6IDE2LCBwYWRkaW5n\nOiAnMTBweCAyNHB4JywgYmFja2dyb3VuZDogJyMwQTE2MjgnLCBjb2xvcjog\nJ3doaXRlJywgYm9yZGVyOiAnbm9uZScsIGJvcmRlclJhZGl1czogMTIsIGN1\ncnNvcjogJ3BvaW50ZXInLCBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5\nKScgfX0+CiAgICAgICAgICAgIEdvIHRvIFdlZWtseSBFeGFtCiAgICAgICAg\nICA8L2J1dHRvbj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAp\nOwogIH0KCiAgY29uc3QgeyBzY29yZSwgdG90YWxQb3NzaWJsZSwgdGltZVRh\na2VuLCBjbGFzc0dyb3VwLCBhbnN3ZXJzID0gW10sIHdlZWtJZCB9ID0gcmVz\ndWx0OwogIGNvbnN0IHF1ZXN0aW9ucyA9IFFVRVNUSU9OX0JBTktTW2NsYXNz\nR3JvdXBdIHx8IFFVRVNUSU9OX0JBTktTLm1pZGRsZTsKICBjb25zdCBjb3Jy\nZWN0Q291bnQgPSBhbnN3ZXJzLmZpbHRlcihhID0+IGE/LmNvcnJlY3QpLmxl\nbmd0aDsKICBjb25zdCBhY2N1cmFjeSA9IGFuc3dlcnMubGVuZ3RoID4gMCA/\nIE1hdGgucm91bmQoKGNvcnJlY3RDb3VudCAvIGFuc3dlcnMubGVuZ3RoKSAq\nIDEwMCkgOiAwOwogIGNvbnN0IHhwRWFybmVkID0gTWF0aC5mbG9vcihzY29y\nZSAvIDIpOwogIGNvbnN0IGdyb3VwTGFiZWwgPSBnZXRDbGFzc0dyb3VwTGFi\nZWwoY2xhc3NHcm91cCk7CgogIGxldCBwZXJmTXNnID0gJycsIHBlcmZDb2xv\nciA9ICcnOwogIGNvbnN0IHBjdCA9IChzY29yZSAvIHRvdGFsUG9zc2libGUp\nICogMTAwOwogIGlmIChwY3QgPj0gOTApIHsgcGVyZk1zZyA9ICdPdXRzdGFu\nZGluZyEg8J+MnyBUb3Agb2YgeW91ciBncm91cCEnOyBwZXJmQ29sb3IgPSAn\nIzEwQjk4MSc7IH0KICBlbHNlIGlmIChwY3QgPj0gNzApIHsgcGVyZk1zZyA9\nICdFeGNlbGxlbnQgd29yayEg8J+OryBLZWVwIGl0IHVwISc7IHBlcmZDb2xv\nciA9ICcjM0I4MkY2JzsgfQogIGVsc2UgaWYgKHBjdCA+PSA1MCkgeyBwZXJm\nTXNnID0gJ0dvb2QgZWZmb3J0ISDwn5KqIFByYWN0aWNlIG1vcmUgdGhpcyB3\nZWVrLic7IHBlcmZDb2xvciA9ICcjRjU5RTBCJzsgfQogIGVsc2UgeyBwZXJm\nTXNnID0gJ0tlZXAgZ29pbmchIPCfp64gRXZlcnkgYXR0ZW1wdCBidWlsZHMg\nc2tpbGwuJzsgcGVyZkNvbG9yID0gJyNFRjQ0NDQnOyB9CgogIGNvbnN0IHdo\nYXRzYXBwTXNnID0gZW5jb2RlVVJJQ29tcG9uZW50KAogICAgYEkgc2NvcmVk\nICR7c2NvcmV9LzEyMCBvbiBWZWRpY01pbmQncyBXZWVrbHkgVmVkaWMgTWF0\naHMgRXhhbSB0aGlzIFN1bmRheSEg8J+nrvCfj4Zcbkdyb3VwOiAke2dyb3Vw\nTGFiZWx9XG5DYW4geW91IGJlYXQgbXkgc2NvcmU/IENoYWxsZW5nZSBhY2Nl\ncHRlZD9cblRyeSBGUkVFIGF0IHZlZGljbWluZGFpLmluYAogICk7CgogIGNv\nbnN0IHZpc2libGVDb3VudCA9IHNob3dBbGwgPyBxdWVzdGlvbnMubGVuZ3Ro\nIDogNTsKCiAgcmV0dXJuICgKICAgIDxkaXYgc3R5bGU9e3sgbWluSGVpZ2h0\nOiAnMTAwdmgnLCBiYWNrZ3JvdW5kOiAnI0YwRjRGRicsIHBhZGRpbmdCb3R0\nb206IDQwIH19PgogICAgICA8RGFzaGJvYXJkTmF2YmFyIC8+CiAgICAgIDxt\nYWluIHN0eWxlPXt7IG1heFdpZHRoOiA2NDAsIG1hcmdpbjogJzAgYXV0bycs\nIHBhZGRpbmc6ICcyNHB4IDE2cHgnIH19PgoKICAgICAgICB7LyogU2NvcmUg\nSGVybyAqL30KICAgICAgICA8ZGl2IHN0eWxlPXt7IC4uLmdsYXNzLCBwYWRk\naW5nOiAnMzJweCAyNHB4JywgdGV4dEFsaWduOiAnY2VudGVyJywgbWFyZ2lu\nQm90dG9tOiAxNiB9fT4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmb250\nLWhlYWRpbmciIHN0eWxlPXt7IGZvbnRTaXplOiA1MiwgZm9udFdlaWdodDog\nNzAwLCBjb2xvcjogJyMwQTE2MjgnLCBsaW5lSGVpZ2h0OiAxIH19PgogICAg\nICAgICAgICB7YW5pbWF0ZWRTY29yZX0KICAgICAgICAgIDwvZGl2PgogICAg\nICAgICAgPHNwYW4gc3R5bGU9e3sgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQt\nYm9keSknLCBmb250U2l6ZTogMjQsIGNvbG9yOiAnIzRCNTU2MycgfX0+L3t0\nb3RhbFBvc3NpYmxlfTwvc3Bhbj4KICAgICAgICAgIDxkaXYgc3R5bGU9e3sg\nZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTEs\nIGNvbG9yOiAnIzRCNTU2MycsIHRleHRUcmFuc2Zvcm06ICd1cHBlcmNhc2Un\nLCBsZXR0ZXJTcGFjaW5nOiAnMC4wNWVtJywgbWFyZ2luVG9wOiA0LCBtYXJn\naW5Cb3R0b206IDEyIH19PgogICAgICAgICAgICBUaGlzIFdlZWsncyBTY29y\nZQogICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8c3BhbiBzdHlsZT17ewog\nICAgICAgICAgICBiYWNrZ3JvdW5kOiAnIzBBMTYyOCcsIGNvbG9yOiAnd2hp\ndGUnLCBib3JkZXJSYWRpdXM6IDk5LAogICAgICAgICAgICBmb250RmFtaWx5\nOiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxMSwgcGFkZGluZzog\nJzRweCAxMnB4JywKICAgICAgICAgIH19Pntncm91cExhYmVsfTwvc3Bhbj4K\nICAgICAgICAgIDxwIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICd2YXIoLS1mb250\nLWJvZHkpJywgZm9udFNpemU6IDE0LCBmb250V2VpZ2h0OiA1MDAsIGNvbG9y\nOiBwZXJmQ29sb3IsIG1hcmdpblRvcDogMTIsIG1hcmdpbkJvdHRvbTogNCB9\nfT4KICAgICAgICAgICAge3BlcmZNc2d9CiAgICAgICAgICA8L3A+CiAgICAg\nICAgICA8cCBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5\nKScsIGZvbnRTaXplOiAxMiwgY29sb3I6ICcjNEI1NTYzJywgbWFyZ2luOiAw\nIH19PgogICAgICAgICAgICBDb21wbGV0ZWQgaW4ge2Zvcm1hdE1NU1ModGlt\nZVRha2VuKX0KICAgICAgICAgIDwvcD4KICAgICAgICA8L2Rpdj4KCiAgICAg\nICAgey8qIFN0YXRzIFJvdyAqL30KICAgICAgICA8ZGl2IHN0eWxlPXt7IGRp\nc3BsYXk6ICdncmlkJywgZ3JpZFRlbXBsYXRlQ29sdW1uczogJzFmciAxZnIg\nMWZyJywgZ2FwOiAxMiwgbWFyZ2luQm90dG9tOiAxNiB9fT4KICAgICAgICAg\nIHtbCiAgICAgICAgICAgIHsgaWNvbjogJ+KchScsIHZhbHVlOiBgJHtjb3Jy\nZWN0Q291bnR9LzIwYCwgbGFiZWw6ICdDb3JyZWN0JyB9LAogICAgICAgICAg\nICB7IGljb246ICfwn46vJywgdmFsdWU6IGAke2FjY3VyYWN5fSVgLCBsYWJl\nbDogJ0FjY3VyYWN5JyB9LAogICAgICAgICAgICB7IGljb246ICfirZAnLCB2\nYWx1ZTogYCske3hwRWFybmVkfWAsIGxhYmVsOiAnWFAgRWFybmVkJyB9LAog\nICAgICAgICAgXS5tYXAoKHsgaWNvbiwgdmFsdWUsIGxhYmVsIH0pID0+ICgK\nICAgICAgICAgICAgPGRpdiBrZXk9e2xhYmVsfSBzdHlsZT17ewogICAgICAg\nICAgICAgIGJhY2tncm91bmQ6ICd3aGl0ZScsIGJvcmRlclJhZGl1czogMTIs\nIHBhZGRpbmc6ICcxNnB4IDhweCcsCiAgICAgICAgICAgICAgdGV4dEFsaWdu\nOiAnY2VudGVyJywgYm9yZGVyOiAnMXB4IHNvbGlkIHJnYmEoMzAsNjQsMTc1\nLDAuMDgpJywKICAgICAgICAgICAgfX0+CiAgICAgICAgICAgICAgPGRpdiBz\ndHlsZT17eyBmb250U2l6ZTogMjIsIG1hcmdpbkJvdHRvbTogNCB9fT57aWNv\nbn08L2Rpdj4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZm9udC1o\nZWFkaW5nIiBzdHlsZT17eyBmb250U2l6ZTogMjIsIGZvbnRXZWlnaHQ6IDcw\nMCwgY29sb3I6ICcjMEExNjI4JyB9fT57dmFsdWV9PC9kaXY+CiAgICAgICAg\nICAgICAgPGRpdiBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1i\nb2R5KScsIGZvbnRTaXplOiAxMSwgY29sb3I6ICcjNEI1NTYzJyB9fT57bGFi\nZWx9PC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgKSl9CiAg\nICAgICAgPC9kaXY+CgogICAgICAgIHsvKiBRdWVzdGlvbiBSZXZpZXcgKi99\nCiAgICAgICAgPGRpdiBzdHlsZT17eyBtYXJnaW5Cb3R0b206IDE2IH19Pgog\nICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9u\ndC1ib2R5KScsIGZvbnRTaXplOiAxNCwgZm9udFdlaWdodDogNzAwLCBjb2xv\ncjogJyMwQTE2MjgnLCBtYXJnaW5Cb3R0b206IDEwIH19PgogICAgICAgICAg\nICBRdWVzdGlvbiBSZXZpZXcKICAgICAgICAgIDwvZGl2PgogICAgICAgICAg\ne3F1ZXN0aW9ucy5zbGljZSgwLCB2aXNpYmxlQ291bnQpLm1hcCgocSwgaSkg\nPT4gKAogICAgICAgICAgICA8UXVlc3Rpb25Sb3cga2V5PXtpfSBxPXtxfSBh\nbnM9e2Fuc3dlcnNbaV19IGluZGV4PXtpfSAvPgogICAgICAgICAgKSl9CiAg\nICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNl\ndFNob3dBbGwocCA9PiAhcCl9CiAgICAgICAgICAgIHN0eWxlPXt7CiAgICAg\nICAgICAgICAgd2lkdGg6ICcxMDAlJywgaGVpZ2h0OiA0MCwgYmFja2dyb3Vu\nZDogJ3RyYW5zcGFyZW50JywKICAgICAgICAgICAgICBib3JkZXI6ICcxcHgg\nc29saWQgcmdiYSgzMCw2NCwxNzUsMC4xNSknLCBib3JkZXJSYWRpdXM6IDEw\nLAogICAgICAgICAgICAgIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkp\nJywgZm9udFNpemU6IDEzLCBjb2xvcjogJyMzQjgyRjYnLAogICAgICAgICAg\nICAgIGN1cnNvcjogJ3BvaW50ZXInLCBtYXJnaW5Ub3A6IDQsCiAgICAgICAg\nICAgIH19CiAgICAgICAgICA+CiAgICAgICAgICAgIHtzaG93QWxsID8gJ0hp\nZGUgQWxsIOKGkScgOiBgU2hvdyBBbGwgJHtxdWVzdGlvbnMubGVuZ3RofSBR\ndWVzdGlvbnMg4oaTYH0KICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgIDwv\nZGl2PgoKICAgICAgICB7LyogU2hhcmUgQ2FyZCAqL30KICAgICAgICA8ZGl2\nIHN0eWxlPXt7IGJhY2tncm91bmQ6ICcjMEExNjI4JywgYm9yZGVyUmFkaXVz\nOiAxNiwgcGFkZGluZzogMjAsIG1hcmdpbkJvdHRvbTogMTYsIHRleHRBbGln\nbjogJ2NlbnRlcicgfX0+CiAgICAgICAgICA8cCBzdHlsZT17eyBmb250RmFt\naWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxNCwgY29sb3I6\nICd3aGl0ZScsIG1hcmdpbjogJzAgMCA0cHgnLCBmb250V2VpZ2h0OiA2MDAg\nfX0+CiAgICAgICAgICAgIEkgc2NvcmVkIHtzY29yZX0vMTIwIG9uIFZlZGlj\nTWluZCdzIFdlZWtseSBFeGFtISDwn6euCiAgICAgICAgICA8L3A+CiAgICAg\nICAgICA8cCBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5\nKScsIGZvbnRTaXplOiAxMiwgY29sb3I6ICdyZ2JhKDI1NSwyNTUsMjU1LDAu\nNyknLCBtYXJnaW46ICcwIDAgMTZweCcgfX0+CiAgICAgICAgICAgIEdyb3Vw\nOiB7Z3JvdXBMYWJlbH0gwrcgQ2FuIHlvdSBiZWF0IG1lPyBUcnkgYXQgdmVk\naWNtaW5kYWkuaW4KICAgICAgICAgIDwvcD4KICAgICAgICAgIDxhCiAgICAg\nICAgICAgIGhyZWY9e2BodHRwczovL3dhLm1lLz90ZXh0PSR7d2hhdHNhcHBN\nc2d9YH0KICAgICAgICAgICAgdGFyZ2V0PSJfYmxhbmsiCiAgICAgICAgICAg\nIHJlbD0ibm9vcGVuZXIgbm9yZWZlcnJlciIKICAgICAgICAgICAgc3R5bGU9\ne3sKICAgICAgICAgICAgICBkaXNwbGF5OiAnaW5saW5lLWJsb2NrJywgYmFj\na2dyb3VuZDogJyMyNUQzNjYnLCBjb2xvcjogJ3doaXRlJywKICAgICAgICAg\nICAgICBib3JkZXJSYWRpdXM6IDEyLCBwYWRkaW5nOiAnMTJweCAyNHB4JywK\nICAgICAgICAgICAgICBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScs\nIGZvbnRTaXplOiAxNCwgZm9udFdlaWdodDogNjAwLAogICAgICAgICAgICAg\nIHRleHREZWNvcmF0aW9uOiAnbm9uZScsCiAgICAgICAgICAgIH19CiAgICAg\nICAgICA+CiAgICAgICAgICAgIFNoYXJlIG9uIFdoYXRzQXBwIPCfk7EKICAg\nICAgICAgIDwvYT4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgey8qIEJvdHRv\nbSBCdXR0b25zICovfQogICAgICAgIDxidXR0b24KICAgICAgICAgIG9uQ2xp\nY2s9eygpID0+IG5hdmlnYXRlKCcvZGFzaGJvYXJkJyl9CiAgICAgICAgICBz\ndHlsZT17ewogICAgICAgICAgICB3aWR0aDogJzEwMCUnLCBoZWlnaHQ6IDQ0\nLCBiYWNrZ3JvdW5kOiAnIzBBMTYyOCcsIGNvbG9yOiAnd2hpdGUnLAogICAg\nICAgICAgICBib3JkZXI6ICdub25lJywgYm9yZGVyUmFkaXVzOiAxMiwgZm9u\ndEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLAogICAgICAgICAgICBmb250\nU2l6ZTogMTQsIGZvbnRXZWlnaHQ6IDUwMCwgY3Vyc29yOiAncG9pbnRlcics\nIG1hcmdpbkJvdHRvbTogMTAsCiAgICAgICAgICB9fQogICAgICAgID5CYWNr\nIHRvIERhc2hib2FyZDwvYnV0dG9uPgogICAgICAgIDxidXR0b24KICAgICAg\nICAgIG9uQ2xpY2s9eygpID0+IG5hdmlnYXRlKCcvbGVhZGVyYm9hcmQnKX0K\nICAgICAgICAgIHN0eWxlPXt7CiAgICAgICAgICAgIHdpZHRoOiAnMTAwJScs\nIGhlaWdodDogNDQsIGJhY2tncm91bmQ6ICd0cmFuc3BhcmVudCcsCiAgICAg\nICAgICAgIGJvcmRlcjogJzEuNXB4IHNvbGlkIHJnYmEoMzAsNjQsMTc1LDAu\nMiknLCBjb2xvcjogJyMwQTE2MjgnLAogICAgICAgICAgICBib3JkZXJSYWRp\ndXM6IDEyLCBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRT\naXplOiAxNCwgY3Vyc29yOiAncG9pbnRlcicsCiAgICAgICAgICB9fQogICAg\nICAgID5WaWV3IExlYWRlcmJvYXJkIOKGkjwvYnV0dG9uPgogICAgICA8L21h\naW4+CiAgICA8L2Rpdj4KICApOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/WeeklyExamResultsPage.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/071d553d14cfac8d72839b1266ec4e3adef83397","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/WeeklyExamResultsPage.jsx"}}
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+import { getClassGroupLabel, formatMMSS } from '@/lib/weeklyExamEngine';
+import { QUESTION_BANKS } from '@/lib/weeklyQuestionBanks';
+
+const glass = {
+  background: 'rgba(255,255,255,0.7)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  border: '1px solid rgba(30,64,175,0.15)',
+  borderRadius: 16,
+};
+
+function useCountUp(target, duration = 1200) {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    const start = Date.now();
+    const tick = () => {
+      const elapsed = Date.now() - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, [target, duration]);
+  return value;
+}
+
+function QuestionRow({ q, ans, index }) {
+  const [expanded, setExpanded] = useState(false);
+  const LABELS = ['A', 'B', 'C', 'D'];
+  const isCorrect = ans?.correct;
+  const pts = isCorrect ? (ans.timeTaken < 30 ? 6 : 5) : 0;
+
+  return (
+    <div style={{
+      borderLeft: `3px solid ${isCorrect ? '#10B981' : '#EF4444'}`,
+      background: 'white', borderRadius: '0 12px 12px 0',
+      marginBottom: 8, overflow: 'hidden',
+    }}>
+      <button
+        onClick={() => setExpanded(p => !p)}
+        style={{
+          width: '100%', display: 'flex', alignItems: 'center',
+          gap: 10, padding: '12px 14px', background: 'none',
+          border: 'none', cursor: 'pointer', textAlign: 'left',
+        }}
+      >
+        <span style={{
+          fontFamily: 'var(--font-mono)', fontSize: 11, color: 'white',
+          background: '#0A1628', borderRadius: 6, padding: '2px 7px', flexShrink: 0,
+        }}>Q{index + 1}</span>
+        <span style={{ fontSize: 14 }}>{isCorrect ? '✅' : '❌'}</span>
+        <span style={{
+          fontFamily: 'var(--font-body)', fontSize: 13, color: '#0A1628',
+          flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+        }}>{q.q}</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: '#4B5563', flexShrink: 0 }}>
+          +{pts}pts · {ans ? ans.timeTaken + 's' : '—'}
+        </span>
+      </button>
+
+      {expanded && (
+        <div style={{ padding: '0 14px 14px' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#0A1628', marginBottom: 10 }}>{q.q}</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 10 }}>
+            {q.options.map((opt, i) => {
+              let bg = 'transparent'; let border = '1px solid rgba(30,64,175,0.12)'; let color = '#4B5563';
+              if (i === q.correct) { bg = '#ECFDF5'; border = '1px solid #10B981'; color = '#065F46'; }
+              else if (ans && i === ans.selectedOption && i !== q.correct) {
+                bg = '#FEF2F2'; border = '1px solid #EF4444'; color = '#991B1B';
+              }
+              return (
+                <div key={i} style={{ background: bg, border, borderRadius: 8, padding: '8px 12px', display: 'flex', gap: 8, alignItems: 'center' }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color, fontWeight: 700 }}>{LABELS[i]}.</span>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color }}>{opt}</span>
+                </div>
+              );
+            })}
+          </div>
+          {q.hint && (
+            <div style={{ background: '#F0F4FF', borderRadius: 8, padding: '8px 12px' }}>
+              <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>💡 {q.hint}</span>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function WeeklyExamResultsPage() {
+  const navigate = useNavigate();
+  const [showAll, setShowAll] = useState(false);
+
+  const progress = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+  const history = progress.weeklyExamHistory || [];
+  const result = history[history.length - 1];
+
+  const animatedScore = useCountUp(result?.score || 0, 1200);
+
+  if (!result) {
+    return (
+      <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
+        <DashboardNavbar />
+        <div style={{ padding: 40, textAlign: 'center' }}>
+          <p style={{ fontFamily: 'var(--font-body)', color: '#4B5563' }}>No exam results found.</p>
+          <button onClick={() => navigate('/weekly-exam')} style={{ marginTop: 16, padding: '10px 24px', background: '#0A1628', color: 'white', border: 'none', borderRadius: 12, cursor: 'pointer', fontFamily: 'var(--font-body)' }}>
+            Go to Weekly Exam
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const { score, totalPossible, timeTaken, classGroup, answers = [], weekId } = result;
+  const questions = QUESTION_BANKS[classGroup] || QUESTION_BANKS.middle;
+  const correctCount = answers.filter(a => a?.correct).length;
+  const accuracy = answers.length > 0 ? Math.round((correctCount / answers.length) * 100) : 0;
+  const xpEarned = Math.floor(score / 2);
+  const groupLabel = getClassGroupLabel(classGroup);
+
+  let perfMsg = '', perfColor = '';
+  const pct = (score / totalPossible) * 100;
+  if (pct >= 90) { perfMsg = 'Outstanding! 🌟 Top of your group!'; perfColor = '#10B981'; }
+  else if (pct >= 70) { perfMsg = 'Excellent work! 🎯 Keep it up!'; perfColor = '#3B82F6'; }
+  else if (pct >= 50) { perfMsg = 'Good effort! 💪 Practice more this week.'; perfColor = '#F59E0B'; }
+  else { perfMsg = 'Keep going! 🧮 Every attempt builds skill.'; perfColor = '#EF4444'; }
+
+  const whatsappMsg = encodeURIComponent(
+    `I scored ${score}/120 on VedicMind's Weekly Vedic Maths Exam this Sunday! 🧮🏆\nGroup: ${groupLabel}\nCan you beat my score? Challenge accepted?\nTry FREE at vedicmindai.in`
+  );
+
+  const visibleCount = showAll ? questions.length : 5;
+
+  return (
+    <div style={{ minHeight: '100vh', background: '#F0F4FF', paddingBottom: 40 }}>
+      <DashboardNavbar />
+      <main style={{ maxWidth: 640, margin: '0 auto', padding: '24px 16px' }}>
+
+        {/* Score Hero */}
+        <div style={{ ...glass, padding: '32px 24px', textAlign: 'center', marginBottom: 16 }}>
+          <div className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>
+            {animatedScore}
+          </div>
+          <span style={{ fontFamily: 'var(--font-body)', fontSize: 24, color: '#4B5563' }}>/{totalPossible}</span>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: 4, marginBottom: 12 }}>
+            This Week's Score
+          </div>
+          <span style={{
+            background: '#0A1628', color: 'white', borderRadius: 99,
+            fontFamily: 'var(--font-body)', fontSize: 11, padding: '4px 12px',
+          }}>{groupLabel}</span>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 500, color: perfColor, marginTop: 12, marginBottom: 4 }}>
+            {perfMsg}
+          </p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', margin: 0 }}>
+            Completed in {formatMMSS(timeTaken)}
+          </p>
+        </div>
+
+        {/* Stats Row */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 16 }}>
+          {[
+            { icon: '✅', value: `${correctCount}/20`, label: 'Correct' },
+            { icon: '🎯', value: `${accuracy}%`, label: 'Accuracy' },
+            { icon: '⭐', value: `+${xpEarned}`, label: 'XP Earned' },
+          ].map(({ icon, value, label }) => (
+            <div key={label} style={{
+              background: 'white', borderRadius: 12, padding: '16px 8px',
+              textAlign: 'center', border: '1px solid rgba(30,64,175,0.08)',
+            }}>
+              <div style={{ fontSize: 22, marginBottom: 4 }}>{icon}</div>
+              <div className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628' }}>{value}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#4B5563' }}>{label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Question Review */}
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 700, color: '#0A1628', marginBottom: 10 }}>
+            Question Review
+          </div>
+          {questions.slice(0, visibleCount).map((q, i) => (
+            <QuestionRow key={i} q={q} ans={answers[i]} index={i} />
+          ))}
+          <button
+            onClick={() => setShowAll(p => !p)}
+            style={{
+              width: '100%', height: 40, background: 'transparent',
+              border: '1px solid rgba(30,64,175,0.15)', borderRadius: 10,
+              fontFamily: 'var(--font-body)', fontSize: 13, color: '#3B82F6',
+              cursor: 'pointer', marginTop: 4,
+            }}
+          >
+            {showAll ? 'Hide All ↑' : `Show All ${questions.length} Questions ↓`}
+          </button>
+        </div>
+
+        {/* Share Card */}
+        <div style={{ background: '#0A1628', borderRadius: 16, padding: 20, marginBottom: 16, textAlign: 'center' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'white', margin: '0 0 4px', fontWeight: 600 }}>
+            I scored {score}/120 on VedicMind's Weekly Exam! 🧮
+          </p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.7)', margin: '0 0 16px' }}>
+            Group: {groupLabel} · Can you beat me? Try at vedicmindai.in
+          </p>
+          <a
+            href={`https://wa.me/?text=${whatsappMsg}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block', background: '#25D366', color: 'white',
+              borderRadius: 12, padding: '12px 24px',
+              fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600,
+              textDecoration: 'none',
+            }}
+          >
+            Share on WhatsApp 📱
+          </a>
+        </div>
+
+        {/* Bottom Buttons */}
+        <button
+          onClick={() => navigate('/dashboard')}
+          style={{
+            width: '100%', height: 44, background: '#0A1628', color: 'white',
+            border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)',
+            fontSize: 14, fontWeight: 500, cursor: 'pointer', marginBottom: 10,
+          }}
+        >Back to Dashboard</button>
+        <button
+          onClick={() => navigate('/leaderboard')}
+          style={{
+            width: '100%', height: 44, background: 'transparent',
+            border: '1.5px solid rgba(30,64,175,0.2)', color: '#0A1628',
+            borderRadius: 12, fontFamily: 'var(--font-body)', fontSize: 14, cursor: 'pointer',
+          }}
+        >View Leaderboard →</button>
+      </main>
+    </div>
+  );
+}
