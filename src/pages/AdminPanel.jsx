@@ -1,1 +1,100 @@
-{"name":"AdminPanel.jsx","path":"src/pages/AdminPanel.jsx","sha":"7a32978c117f345f34d5da70a5064b918cb10bbf","size":3964,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/AdminPanel.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/AdminPanel.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/7a32978c117f345f34d5da70a5064b918cb10bbf","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/pages/AdminPanel.jsx?token=CFODAP3GA435E2QZ4OA6EPTKFSQ4HAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IHVzZU5hdmlnYXRlIH0gZnJvbSAncmVhY3Qtcm91\ndGVyLWRvbSc7CmltcG9ydCB7IG1vdGlvbiB9IGZyb20gJ2ZyYW1lci1tb3Rp\nb24nOwppbXBvcnQgeyB1c2VWZWRpY0F1dGggfSBmcm9tICdAL2xpYi9WZWRp\nY0F1dGhDb250ZXh0JzsKaW1wb3J0IERhc2hib2FyZE5hdmJhciBmcm9tICdA\nL2NvbXBvbmVudHMvZGFzaGJvYXJkL0Rhc2hib2FyZE5hdmJhcic7CmltcG9y\ndCBBZG1pblN0dWRlbnRzIGZyb20gJ0AvY29tcG9uZW50cy9hZG1pbi9BZG1p\nblN0dWRlbnRzJzsKaW1wb3J0IEFkbWluTGVzc29ucyBmcm9tICdAL2NvbXBv\nbmVudHMvYWRtaW4vQWRtaW5MZXNzb25zJzsKaW1wb3J0IEFkbWluUXVpek1h\nbmFnZXIgZnJvbSAnQC9jb21wb25lbnRzL2FkbWluL0FkbWluUXVpek1hbmFn\nZXInOwppbXBvcnQgQWRtaW5BcHRpdHVkZU1hbmFnZXIgZnJvbSAnQC9jb21w\nb25lbnRzL2FkbWluL0FkbWluQXB0aXR1ZGVNYW5hZ2VyJzsKaW1wb3J0IEFk\nbWluQW5hbHl0aWNzIGZyb20gJ0AvY29tcG9uZW50cy9hZG1pbi9BZG1pbkFu\nYWx5dGljcyc7Cgpjb25zdCBUQUJTID0gWwogIHsgaWQ6ICdzdHVkZW50cycs\nICBsYWJlbDogJ/CfkaUgU3R1ZGVudHMnIH0sCiAgeyBpZDogJ2xlc3NvbnMn\nLCAgIGxhYmVsOiAn8J+TmiBMZXNzb25zJyB9LAogIHsgaWQ6ICdxdWl6Jywg\nICAgICBsYWJlbDogJ+KdkyBRdWl6IE1hbmFnZXInIH0sCiAgeyBpZDogJ2Fw\ndGl0dWRlJywgIGxhYmVsOiAn8J+OryBBcHRpdHVkZSBNYW5hZ2VyJyB9LAog\nIHsgaWQ6ICdhbmFseXRpY3MnLCBsYWJlbDogJ/Cfk4ogQW5hbHl0aWNzJyB9\nLApdOwoKY29uc3QgQURNSU5fRU1BSUxTID0gWyd0ZXN0MUB2ZWRpY21pbmRh\naS5pbicsICdoaXRlc2hAdmVkaWNtaW5kYWkuaW4nLCAnYWRtaW5AdmVkaWNt\naW5kYWkuaW4nLCAncGF0aGFrMzIwMzJAZ21haWwuY29tJ107CgpleHBvcnQg\nZGVmYXVsdCBmdW5jdGlvbiBBZG1pblBhbmVsKCkgewogIGNvbnN0IG5hdmln\nYXRlID0gdXNlTmF2aWdhdGUoKTsKICBjb25zdCB7IHVzZXIsIGxvYWRpbmcg\nfSA9IHVzZVZlZGljQXV0aCgpOwogIGNvbnN0IFthY3RpdmVUYWIsIHNldEFj\ndGl2ZVRhYl0gPSB1c2VTdGF0ZSgnc3R1ZGVudHMnKTsKICBjb25zdCBbcmVh\nZHksIHNldFJlYWR5XSA9IHVzZVN0YXRlKGZhbHNlKTsKCiAgdXNlRWZmZWN0\nKCgpID0+IHsKICAgIGNvbnN0IHRpbWVyID0gc2V0VGltZW91dCgoKSA9PiB7\nCiAgICAgIHNldFJlYWR5KHRydWUpOwogICAgfSwgODAwKTsKICAgIHJldHVy\nbiAoKSA9PiBjbGVhclRpbWVvdXQodGltZXIpOwogIH0sIFtdKTsKCiAgdXNl\nRWZmZWN0KCgpID0+IHsKICAgIGlmICghcmVhZHkpIHJldHVybjsKICAgIGlm\nICghdXNlcikgewogICAgICBuYXZpZ2F0ZSgnLycpOwogICAgICByZXR1cm47\nCiAgICB9CiAgICBjb25zdCBlbWFpbCA9IHVzZXIuZW1haWwgfHwgdXNlcj8u\ndXNlcl9tZXRhZGF0YT8uZW1haWwgfHwgJyc7CiAgICBpZiAoIUFETUlOX0VN\nQUlMUy5pbmNsdWRlcyhlbWFpbCkpIHsKICAgICAgbmF2aWdhdGUoJy8nKTsK\nICAgIH0KICB9LCBbcmVhZHksIHVzZXJdKTsKCiAgaWYgKCFyZWFkeSB8fCBs\nb2FkaW5nKSB7CiAgICByZXR1cm4gKAogICAgICA8ZGl2IHN0eWxlPXt7IG1p\nbkhlaWdodDogJzEwMHZoJywgYmFja2dyb3VuZDogJyNGMEY0RkYnLCBkaXNw\nbGF5OiAnZmxleCcsIGFsaWduSXRlbXM6ICdjZW50ZXInLCBqdXN0aWZ5Q29u\ndGVudDogJ2NlbnRlcicgfX0+CiAgICAgICAgPHAgc3R5bGU9e3sgZm9udEZh\nbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTYsIGNvbG9y\nOiAnIzRCNTU2MycgfX0+TG9hZGluZyBBZG1pbiBQYW5lbC4uLjwvcD4KICAg\nICAgPC9kaXY+CiAgICApOwogIH0KCiAgaWYgKCF1c2VyKSByZXR1cm4gbnVs\nbDsKCiAgY29uc3QgZW1haWwgPSB1c2VyLmVtYWlsIHx8IHVzZXI/LnVzZXJf\nbWV0YWRhdGE/LmVtYWlsIHx8ICcnOwogIGlmICghQURNSU5fRU1BSUxTLmlu\nY2x1ZGVzKGVtYWlsKSkgcmV0dXJuIG51bGw7CgogIHJldHVybiAoCiAgICA8\nZGl2IHN0eWxlPXt7IG1pbkhlaWdodDogJzEwMHZoJywgYmFja2dyb3VuZDog\nJyNGMEY0RkYnIH19PgogICAgICA8RGFzaGJvYXJkTmF2YmFyIC8+CiAgICAg\nIDxtYWluIHN0eWxlPXt7IG1heFdpZHRoOiAxMjAwLCBtYXJnaW46ICcwIGF1\ndG8nLCBwYWRkaW5nOiAnMjRweCAxNnB4IDYwcHgnIH19PgogICAgICAgIDxt\nb3Rpb24uZGl2IGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeTogMTYgfX0gYW5p\nbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAwIH19IHRyYW5zaXRpb249e3sgZHVy\nYXRpb246IDAuMyB9fT4KCiAgICAgICAgICB7LyogSGVhZGVyICovfQogICAg\nICAgICAgPGRpdiBzdHlsZT17eyBtYXJnaW5Cb3R0b206IDI0IH19PgogICAg\nICAgICAgICA8aDEgY2xhc3NOYW1lPSJmb250LWhlYWRpbmciIHN0eWxlPXt7\nIGZvbnRTaXplOiAzMiwgZm9udFdlaWdodDogNzAwLCBjb2xvcjogJyMwQTE2\nMjgnLCBtYXJnaW5Cb3R0b206IDQgfX0+CiAgICAgICAgICAgICAg8J+boe+4\njyBBZG1pbiBQYW5lbAogICAgICAgICAgICA8L2gxPgogICAgICAgICAgICA8\ncCBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZv\nbnRTaXplOiAxNSwgY29sb3I6ICcjNEI1NTYzJywgbWFyZ2luOiAwIH19Pgog\nICAgICAgICAgICAgIE1hbmFnZSBzdHVkZW50cywgbGVzc29ucywgcXVpenpl\ncywgYW5kIHZpZXcgYW5hbHl0aWNzLgogICAgICAgICAgICA8L3A+CiAgICAg\nICAgICA8L2Rpdj4KCiAgICAgICAgICB7LyogVGFiIGJhciAqL30KICAgICAg\nICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBnYXA6IDQsIGZs\nZXhXcmFwOiAnd3JhcCcsIGJhY2tncm91bmQ6ICd3aGl0ZScsIGJvcmRlclJh\nZGl1czogMTQsIHBhZGRpbmc6IDQsIGJvcmRlcjogJzFweCBzb2xpZCByZ2Jh\nKDMwLDY0LDE3NSwwLjEyKScsIG1hcmdpbkJvdHRvbTogMjQgfX0+CiAgICAg\nICAgICAgIHtUQUJTLm1hcCh0ID0+ICgKICAgICAgICAgICAgICA8YnV0dG9u\nIGtleT17dC5pZH0gb25DbGljaz17KCkgPT4gc2V0QWN0aXZlVGFiKHQuaWQp\nfSBzdHlsZT17ewogICAgICAgICAgICAgICAgcGFkZGluZzogJzhweCAxOHB4\nJywgbWluSGVpZ2h0OiA0MCwgYm9yZGVyUmFkaXVzOiAxMCwgYm9yZGVyOiAn\nbm9uZScsIGN1cnNvcjogJ3BvaW50ZXInLAogICAgICAgICAgICAgICAgZm9u\ndEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250V2VpZ2h0OiA2MDAs\nIGZvbnRTaXplOiAxNCwKICAgICAgICAgICAgICAgIGJhY2tncm91bmQ6IGFj\ndGl2ZVRhYiA9PT0gdC5pZCA/ICcjMEExNjI4JyA6ICd0cmFuc3BhcmVudCcs\nCiAgICAgICAgICAgICAgICBjb2xvcjogYWN0aXZlVGFiID09PSB0LmlkID8g\nJ3doaXRlJyA6ICcjNEI1NTYzJywKICAgICAgICAgICAgICAgIHRyYW5zaXRp\nb246ICdhbGwgMC4xNXMnLCB3aGl0ZVNwYWNlOiAnbm93cmFwJywKICAgICAg\nICAgICAgICB9fT57dC5sYWJlbH08L2J1dHRvbj4KICAgICAgICAgICAgKSl9\nCiAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICB7LyogVGFiIGNvbnRlbnQg\nKi99CiAgICAgICAgICB7YWN0aXZlVGFiID09PSAnc3R1ZGVudHMnICAmJiA8\nQWRtaW5TdHVkZW50cyAvPn0KICAgICAgICAgIHthY3RpdmVUYWIgPT09ICds\nZXNzb25zJyAgICYmIDxBZG1pbkxlc3NvbnMgLz59CiAgICAgICAgICB7YWN0\naXZlVGFiID09PSAncXVpeicgICAgICAmJiA8QWRtaW5RdWl6TWFuYWdlciAv\nPn0KICAgICAgICAgIHthY3RpdmVUYWIgPT09ICdhcHRpdHVkZScgICYmIDxB\nZG1pbkFwdGl0dWRlTWFuYWdlciAvPn0KICAgICAgICAgIHthY3RpdmVUYWIg\nPT09ICdhbmFseXRpY3MnICYmIDxBZG1pbkFuYWx5dGljcyAvPn0KCiAgICAg\nICAgPC9tb3Rpb24uZGl2PgogICAgICA8L21haW4+CiAgICA8L2Rpdj4KICAp\nOwp9Cg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/AdminPanel.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/7a32978c117f345f34d5da70a5064b918cb10bbf","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/AdminPanel.jsx"}}
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
+import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+import AdminStudents from '@/components/admin/AdminStudents';
+import AdminLessons from '@/components/admin/AdminLessons';
+import AdminQuizManager from '@/components/admin/AdminQuizManager';
+import AdminAptitudeManager from '@/components/admin/AdminAptitudeManager';
+import AdminAnalytics from '@/components/admin/AdminAnalytics';
+
+const TABS = [
+  { id: 'students',  label: '👥 Students' },
+  { id: 'lessons',   label: '📚 Lessons' },
+  { id: 'quiz',      label: '❓ Quiz Manager' },
+  { id: 'aptitude',  label: '🎯 Aptitude Manager' },
+  { id: 'analytics', label: '📊 Analytics' },
+];
+
+const ADMIN_EMAILS = ['test1@vedicmindai.in', 'hitesh@vedicmindai.in', 'admin@vedicmindai.in', 'pathak32032@gmail.com'];
+
+export default function AdminPanel() {
+  const navigate = useNavigate();
+  const { user, loading } = useVedicAuth();
+  const [activeTab, setActiveTab] = useState('students');
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setReady(true);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!ready) return;
+    if (!user) {
+      navigate('/');
+      return;
+    }
+    const email = user.email || user?.user_metadata?.email || '';
+    if (!ADMIN_EMAILS.includes(email)) {
+      navigate('/');
+    }
+  }, [ready, user]);
+
+  if (!ready || loading) {
+    return (
+      <div style={{ minHeight: '100vh', background: '#F0F4FF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: '#4B5563' }}>Loading Admin Panel...</p>
+      </div>
+    );
+  }
+
+  if (!user) return null;
+
+  const email = user.email || user?.user_metadata?.email || '';
+  if (!ADMIN_EMAILS.includes(email)) return null;
+
+  return (
+    <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
+      <DashboardNavbar />
+      <main style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 16px 60px' }}>
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+
+          {/* Header */}
+          <div style={{ marginBottom: 24 }}>
+            <h1 className="font-heading" style={{ fontSize: 32, fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>
+              🛡️ Admin Panel
+            </h1>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563', margin: 0 }}>
+              Manage students, lessons, quizzes, and view analytics.
+            </p>
+          </div>
+
+          {/* Tab bar */}
+          <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', background: 'white', borderRadius: 14, padding: 4, border: '1px solid rgba(30,64,175,0.12)', marginBottom: 24 }}>
+            {TABS.map(t => (
+              <button key={t.id} onClick={() => setActiveTab(t.id)} style={{
+                padding: '8px 18px', minHeight: 40, borderRadius: 10, border: 'none', cursor: 'pointer',
+                fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14,
+                background: activeTab === t.id ? '#0A1628' : 'transparent',
+                color: activeTab === t.id ? 'white' : '#4B5563',
+                transition: 'all 0.15s', whiteSpace: 'nowrap',
+              }}>{t.label}</button>
+            ))}
+          </div>
+
+          {/* Tab content */}
+          {activeTab === 'students'  && <AdminStudents />}
+          {activeTab === 'lessons'   && <AdminLessons />}
+          {activeTab === 'quiz'      && <AdminQuizManager />}
+          {activeTab === 'aptitude'  && <AdminAptitudeManager />}
+          {activeTab === 'analytics' && <AdminAnalytics />}
+
+        </motion.div>
+      </main>
+    </div>
+  );
+}
