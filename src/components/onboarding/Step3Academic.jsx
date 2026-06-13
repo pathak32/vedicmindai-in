@@ -1,1 +1,130 @@
-{"name":"Step3Academic.jsx","path":"src/components/onboarding/Step3Academic.jsx","sha":"ec1818493a0a3dac4acc5eb019ac60e9a1f3725f","size":4987,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/Step3Academic.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/Step3Academic.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/ec1818493a0a3dac4acc5eb019ac60e9a1f3725f","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/onboarding/Step3Academic.jsx?token=CFODAPYJS2NVC5KOSBU5R53KFSQXDAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKCmNvbnN0IENMQVNTRVMgPSBb\nCiAgJ0NsYXNzIDEnLCAnQ2xhc3MgMicsICdDbGFzcyAzJywgJ0NsYXNzIDQn\nLCAnQ2xhc3MgNScsICdDbGFzcyA2JywKICAnQ2xhc3MgNycsICdDbGFzcyA4\nJywgJ0NsYXNzIDknLCAnQ2xhc3MgMTAnLCAnQ2xhc3MgMTEnLCAnQ2xhc3Mg\nMTInLAogICdVbmRlcmdyYWR1YXRlJywgJ1Bvc3RncmFkdWF0ZScsICdXb3Jr\naW5nIFByb2Zlc3Npb25hbCcsICdPdGhlcicKXTsKY29uc3QgQk9BUkRTID0g\nWydDQlNFJywgJ0lDU0UnLCAnU3RhdGUgQm9hcmQnLCAnSUInLCAnSUdDU0Un\nLCAnTm90IEFwcGxpY2FibGUnXTsKY29uc3QgSEFSRF9UT1BJQ1MgPSBbJ0Fy\naXRobWV0aWMnLCAnQWxnZWJyYScsICdHZW9tZXRyeScsICdUcmlnb25vbWV0\ncnknLCAnTWVudGFsIE1hdGhzJywgJ05vbmUnXTsKY29uc3QgR09BTF9QSUxM\nUyA9IFsnU3BlZWQgaW4gQ2FsY3VsYXRpb25zJywgJ0NvbXBldGl0aXZlIEV4\nYW1zJywgJ0hlbHAgTXkgQ2hpbGQnLCAnUGVyc29uYWwgR3Jvd3RoJywgJ01l\nbnRhbCBGaXRuZXNzJ107Cgpjb25zdCBpbnB1dENscyA9ICJ3LWZ1bGwgaC0x\nMSBweC00IHJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1bI0QxRDVEQl0gdGV4\ndC1bIzBBMTYyOF0gdGV4dC1zbSBmb2N1czpvdXRsaW5lLW5vbmUgZm9jdXM6\ncmluZy0yIGZvY3VzOnJpbmctWyMwQTE2MjhdLzMwIGZvY3VzOmJvcmRlci1b\nIzBBMTYyOF0iOwpjb25zdCBzZWxlY3RDbHMgPSBgJHtpbnB1dENsc30gYmct\nd2hpdGUgY3Vyc29yLXBvaW50ZXJgOwoKZnVuY3Rpb24gUGlsbFRvZ2dsZSh7\nIG9wdGlvbnMsIHNlbGVjdGVkID0gW10sIG9uQ2hhbmdlLCBtYXggPSBJbmZp\nbml0eSwgc2luZ2xlID0gZmFsc2UgfSkgewogIGNvbnN0IHRvZ2dsZSA9IChv\ncHQpID0+IHsKICAgIGlmIChzaW5nbGUpIHsgb25DaGFuZ2UoW29wdF0pOyBy\nZXR1cm47IH0KICAgIGlmIChzZWxlY3RlZC5pbmNsdWRlcyhvcHQpKSB7CiAg\nICAgIG9uQ2hhbmdlKHNlbGVjdGVkLmZpbHRlcihzID0+IHMgIT09IG9wdCkp\nOwogICAgfSBlbHNlIGlmIChzZWxlY3RlZC5sZW5ndGggPCBtYXgpIHsKICAg\nICAgb25DaGFuZ2UoWy4uLnNlbGVjdGVkLCBvcHRdKTsKICAgIH0KICB9Owog\nIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBmbGV4LXdyYXAg\nZ2FwLTIiPgogICAgICB7b3B0aW9ucy5tYXAob3B0ID0+ICgKICAgICAgICA8\nYnV0dG9uCiAgICAgICAgICBrZXk9e29wdH0KICAgICAgICAgIG9uQ2xpY2s9\neygpID0+IHRvZ2dsZShvcHQpfQogICAgICAgICAgY2xhc3NOYW1lPXtgcHgt\nNCBweS0yIHJvdW5kZWQteGwgdGV4dC1zbSBmb250LW1lZGl1bSBib3JkZXIg\ndHJhbnNpdGlvbi1hbGwgJHsKICAgICAgICAgICAgc2VsZWN0ZWQuaW5jbHVk\nZXMob3B0KQogICAgICAgICAgICAgID8gJ2JnLVsjMEExNjI4XSB0ZXh0LXdo\naXRlIGJvcmRlci1bIzBBMTYyOF0nCiAgICAgICAgICAgICAgOiAnYmctd2hp\ndGUgdGV4dC1bIzBBMTYyOF0gYm9yZGVyLVsjRDFENURCXSBob3Zlcjpib3Jk\nZXItWyMwQTE2MjhdJwogICAgICAgICAgfWB9CiAgICAgICAgPgogICAgICAg\nICAge29wdH0KICAgICAgICA8L2J1dHRvbj4KICAgICAgKSl9CiAgICA8L2Rp\ndj4KICApOwp9CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBTdGVwM0FjYWRl\nbWljKHsgZGF0YSwgb25DaGFuZ2UsIHJvbGUgfSkgewogIGNvbnN0IGlzQWR1\nbHQgPSBkYXRhLmN1cnJlbnRDbGFzcyA9PT0gJ1dvcmtpbmcgUHJvZmVzc2lv\nbmFsJyB8fCBkYXRhLmN1cnJlbnRDbGFzcyA9PT0gJ090aGVyJyB8fCBwYXJz\nZUludChkYXRhLmFnZSkgPj0gMjI7CgogIHJldHVybiAoCiAgICA8ZGl2IGNs\nYXNzTmFtZT0ic3BhY2UteS02Ij4KICAgICAgPGRpdj4KICAgICAgICA8aDIg\nY2xhc3NOYW1lPSJmb250LWhlYWRpbmcgdGV4dC0zeGwgZm9udC1ib2xkIHRl\neHQtWyMwQTE2MjhdIj5UZWxsIHVzIGFib3V0IHlvdXIgc3R1ZGllczwvaDI+\nCiAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsjNEI1NTYzXSBtdC0yIj5X\nZSdsbCB0YWlsb3IgeW91ciBjdXJyaWN1bHVtIGFjY29yZGluZ2x5PC9wPgog\nICAgICA8L2Rpdj4KCiAgICAgIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15LTUi\nPgogICAgICAgIDxkaXY+CiAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPSJi\nbG9jayB0ZXh0LXNtIGZvbnQtc2VtaWJvbGQgdGV4dC1bIzBBMTYyOF0gbWIt\nMS41Ij4KICAgICAgICAgICAgQ3VycmVudCBDbGFzcyAvIExldmVsPHNwYW4g\nY2xhc3NOYW1lPSJ0ZXh0LVsjRUY0NDQ0XSBtbC0wLjUiPio8L3NwYW4+CiAg\nICAgICAgICA8L2xhYmVsPgogICAgICAgICAgPHNlbGVjdAogICAgICAgICAg\nICBjbGFzc05hbWU9e3NlbGVjdENsc30KICAgICAgICAgICAgdmFsdWU9e2Rh\ndGEuY3VycmVudENsYXNzIHx8ICcnfQogICAgICAgICAgICBvbkNoYW5nZT17\nZSA9PiBvbkNoYW5nZSh7IGN1cnJlbnRDbGFzczogZS50YXJnZXQudmFsdWUg\nfSl9CiAgICAgICAgICA+CiAgICAgICAgICAgIDxvcHRpb24gdmFsdWU9IiI+\nU2VsZWN0IGNsYXNzLi4uPC9vcHRpb24+CiAgICAgICAgICAgIHtDTEFTU0VT\nLm1hcChjID0+IDxvcHRpb24ga2V5PXtjfSB2YWx1ZT17Y30+e2N9PC9vcHRp\nb24+KX0KICAgICAgICAgIDwvc2VsZWN0PgogICAgICAgIDwvZGl2PgoKICAg\nICAgICB7IWlzQWR1bHQgJiYgKAogICAgICAgICAgPD4KICAgICAgICAgICAg\nPGRpdj4KICAgICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPSJibG9jayB0\nZXh0LXNtIGZvbnQtc2VtaWJvbGQgdGV4dC1bIzBBMTYyOF0gbWItMS41Ij5C\nb2FyZCBvZiBFZHVjYXRpb248L2xhYmVsPgogICAgICAgICAgICAgIDxzZWxl\nY3QKICAgICAgICAgICAgICAgIGNsYXNzTmFtZT17c2VsZWN0Q2xzfQogICAg\nICAgICAgICAgICAgdmFsdWU9e2RhdGEuYm9hcmQgfHwgJyd9CiAgICAgICAg\nICAgICAgICBvbkNoYW5nZT17ZSA9PiBvbkNoYW5nZSh7IGJvYXJkOiBlLnRh\ncmdldC52YWx1ZSB9KX0KICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAg\nICA8b3B0aW9uIHZhbHVlPSIiPlNlbGVjdCBib2FyZC4uLjwvb3B0aW9uPgog\nICAgICAgICAgICAgICAge0JPQVJEUy5tYXAoYiA9PiA8b3B0aW9uIGtleT17\nYn0gdmFsdWU9e2J9PntifTwvb3B0aW9uPil9CiAgICAgICAgICAgICAgPC9z\nZWxlY3Q+CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPGRpdj4K\nICAgICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPSJibG9jayB0ZXh0LXNt\nIGZvbnQtc2VtaWJvbGQgdGV4dC1bIzBBMTYyOF0gbWItMS41Ij5TY2hvb2wg\nTmFtZSA8c3BhbiBjbGFzc05hbWU9InRleHQtWyM5Q0EzQUZdIGZvbnQtbm9y\nbWFsIj4ob3B0aW9uYWwpPC9zcGFuPjwvbGFiZWw+CiAgICAgICAgICAgICAg\nPGlucHV0CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9e2lucHV0Q2xzfQog\nICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9ImUuZy4gRGVsaGkgUHVibGlj\nIFNjaG9vbCIKICAgICAgICAgICAgICAgIHZhbHVlPXtkYXRhLnNjaG9vbE5h\nbWUgfHwgJyd9CiAgICAgICAgICAgICAgICBvbkNoYW5nZT17ZSA9PiBvbkNo\nYW5nZSh7IHNjaG9vbE5hbWU6IGUudGFyZ2V0LnZhbHVlIH0pfQogICAgICAg\nICAgICAgIC8+CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPGRp\ndj4KICAgICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPSJibG9jayB0ZXh0\nLXNtIGZvbnQtc2VtaWJvbGQgdGV4dC1bIzBBMTYyOF0gbWItMiI+CiAgICAg\nICAgICAgICAgICBIYXJkZXN0IE1hdGggVG9waWNzIDxzcGFuIGNsYXNzTmFt\nZT0idGV4dC1bIzlDQTNBRl0gZm9udC1ub3JtYWwiPihwaWNrIHVwIHRvIDMp\nPC9zcGFuPgogICAgICAgICAgICAgIDwvbGFiZWw+CiAgICAgICAgICAgICAg\nPFBpbGxUb2dnbGUKICAgICAgICAgICAgICAgIG9wdGlvbnM9e0hBUkRfVE9Q\nSUNTfQogICAgICAgICAgICAgICAgc2VsZWN0ZWQ9e2RhdGEuaGFyZFRvcGlj\ncyB8fCBbXX0KICAgICAgICAgICAgICAgIG9uQ2hhbmdlPXt2YWwgPT4gb25D\naGFuZ2UoeyBoYXJkVG9waWNzOiB2YWwgfSl9CiAgICAgICAgICAgICAgICBt\nYXg9ezN9CiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgPC9kaXY+CiAg\nICAgICAgICA8Lz4KICAgICAgICApfQoKICAgICAgICB7aXNBZHVsdCAmJiAo\nCiAgICAgICAgICA8PgogICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAg\nIDxsYWJlbCBjbGFzc05hbWU9ImJsb2NrIHRleHQtc20gZm9udC1zZW1pYm9s\nZCB0ZXh0LVsjMEExNjI4XSBtYi0xLjUiPlByb2Zlc3Npb248L2xhYmVsPgog\nICAgICAgICAgICAgIDxpbnB1dAogICAgICAgICAgICAgICAgY2xhc3NOYW1l\nPXtpbnB1dENsc30KICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPSJlLmcu\nIFNvZnR3YXJlIEVuZ2luZWVyIgogICAgICAgICAgICAgICAgdmFsdWU9e2Rh\ndGEucHJvZmVzc2lvbiB8fCAnJ30KICAgICAgICAgICAgICAgIG9uQ2hhbmdl\nPXtlID0+IG9uQ2hhbmdlKHsgcHJvZmVzc2lvbjogZS50YXJnZXQudmFsdWUg\nfSl9CiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgPC9kaXY+CiAgICAg\nICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT0i\nYmxvY2sgdGV4dC1zbSBmb250LXNlbWlib2xkIHRleHQtWyMwQTE2MjhdIG1i\nLTIiPkdvYWxzIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1bIzlDQTNBRl0gZm9u\ndC1ub3JtYWwiPihtdWx0aS1zZWxlY3QpPC9zcGFuPjwvbGFiZWw+CiAgICAg\nICAgICAgICAgPFBpbGxUb2dnbGUKICAgICAgICAgICAgICAgIG9wdGlvbnM9\ne0dPQUxfUElMTFN9CiAgICAgICAgICAgICAgICBzZWxlY3RlZD17ZGF0YS5h\nZHVsdEdvYWxzIHx8IFtdfQogICAgICAgICAgICAgICAgb25DaGFuZ2U9e3Zh\nbCA9PiBvbkNoYW5nZSh7IGFkdWx0R29hbHM6IHZhbCB9KX0KICAgICAgICAg\nICAgICAvPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDwvPgogICAg\nICAgICl9CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/Step3Academic.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/ec1818493a0a3dac4acc5eb019ac60e9a1f3725f","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/Step3Academic.jsx"}}
+import React from 'react';
+
+const CLASSES = [
+  'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6',
+  'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12',
+  'Undergraduate', 'Postgraduate', 'Working Professional', 'Other'
+];
+const BOARDS = ['CBSE', 'ICSE', 'State Board', 'IB', 'IGCSE', 'Not Applicable'];
+const HARD_TOPICS = ['Arithmetic', 'Algebra', 'Geometry', 'Trigonometry', 'Mental Maths', 'None'];
+const GOAL_PILLS = ['Speed in Calculations', 'Competitive Exams', 'Help My Child', 'Personal Growth', 'Mental Fitness'];
+
+const inputCls = "w-full h-11 px-4 rounded-xl border border-[#D1D5DB] text-[#0A1628] text-sm focus:outline-none focus:ring-2 focus:ring-[#0A1628]/30 focus:border-[#0A1628]";
+const selectCls = `${inputCls} bg-white cursor-pointer`;
+
+function PillToggle({ options, selected = [], onChange, max = Infinity, single = false }) {
+  const toggle = (opt) => {
+    if (single) { onChange([opt]); return; }
+    if (selected.includes(opt)) {
+      onChange(selected.filter(s => s !== opt));
+    } else if (selected.length < max) {
+      onChange([...selected, opt]);
+    }
+  };
+  return (
+    <div className="flex flex-wrap gap-2">
+      {options.map(opt => (
+        <button
+          key={opt}
+          onClick={() => toggle(opt)}
+          className={`px-4 py-2 rounded-xl text-sm font-medium border transition-all ${
+            selected.includes(opt)
+              ? 'bg-[#0A1628] text-white border-[#0A1628]'
+              : 'bg-white text-[#0A1628] border-[#D1D5DB] hover:border-[#0A1628]'
+          }`}
+        >
+          {opt}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export default function Step3Academic({ data, onChange, role }) {
+  const isAdult = data.currentClass === 'Working Professional' || data.currentClass === 'Other' || parseInt(data.age) >= 22;
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h2 className="font-heading text-3xl font-bold text-[#0A1628]">Tell us about your studies</h2>
+        <p className="text-[#4B5563] mt-2">We'll tailor your curriculum accordingly</p>
+      </div>
+
+      <div className="space-y-5">
+        <div>
+          <label className="block text-sm font-semibold text-[#0A1628] mb-1.5">
+            Current Class / Level<span className="text-[#EF4444] ml-0.5">*</span>
+          </label>
+          <select
+            className={selectCls}
+            value={data.currentClass || ''}
+            onChange={e => onChange({ currentClass: e.target.value })}
+          >
+            <option value="">Select class...</option>
+            {CLASSES.map(c => <option key={c} value={c}>{c}</option>)}
+          </select>
+        </div>
+
+        {!isAdult && (
+          <>
+            <div>
+              <label className="block text-sm font-semibold text-[#0A1628] mb-1.5">Board of Education</label>
+              <select
+                className={selectCls}
+                value={data.board || ''}
+                onChange={e => onChange({ board: e.target.value })}
+              >
+                <option value="">Select board...</option>
+                {BOARDS.map(b => <option key={b} value={b}>{b}</option>)}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-[#0A1628] mb-1.5">School Name <span className="text-[#9CA3AF] font-normal">(optional)</span></label>
+              <input
+                className={inputCls}
+                placeholder="e.g. Delhi Public School"
+                value={data.schoolName || ''}
+                onChange={e => onChange({ schoolName: e.target.value })}
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-[#0A1628] mb-2">
+                Hardest Math Topics <span className="text-[#9CA3AF] font-normal">(pick up to 3)</span>
+              </label>
+              <PillToggle
+                options={HARD_TOPICS}
+                selected={data.hardTopics || []}
+                onChange={val => onChange({ hardTopics: val })}
+                max={3}
+              />
+            </div>
+          </>
+        )}
+
+        {isAdult && (
+          <>
+            <div>
+              <label className="block text-sm font-semibold text-[#0A1628] mb-1.5">Profession</label>
+              <input
+                className={inputCls}
+                placeholder="e.g. Software Engineer"
+                value={data.profession || ''}
+                onChange={e => onChange({ profession: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-[#0A1628] mb-2">Goals <span className="text-[#9CA3AF] font-normal">(multi-select)</span></label>
+              <PillToggle
+                options={GOAL_PILLS}
+                selected={data.adultGoals || []}
+                onChange={val => onChange({ adultGoals: val })}
+              />
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
