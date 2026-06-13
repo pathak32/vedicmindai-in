@@ -59,14 +59,29 @@ export function VedicAuthProvider({ children }) {
     const supabase = await getSupabase();
     const fakeEmail = mobileToEmail(mobile);
 
-    // 1. Create Supabase auth user
+    // 1. Create Supabase auth user (no email confirmation needed)
     const { data, error } = await supabase.auth.signUp({
       email: fakeEmail,
       password,
+      options: {
+        emailRedirectTo: undefined,
+        data: { name, mobile },
+      }
     });
     if (error) throw new Error(error.message);
 
-    const userId = data.user?.id;
+    // If user already exists, try signing in instead
+    let userId = data.user?.id;
+    
+    if (!userId) {
+      // Try sign in (user might already exist)
+      const { data: signInData, error: signInErr } = await supabase.auth.signInWithPassword({
+        email: fakeEmail, password
+      });
+      if (signInErr) throw new Error('Account creation failed. Try signing in.');
+      userId = signInData.user?.id;
+    }
+    
     if (!userId) throw new Error('User creation failed');
 
     // 2. Save profile to profiles table
@@ -98,8 +113,11 @@ export function VedicAuthProvider({ children }) {
       password,
     });
     if (error) {
-      if (error.message.includes('Invalid login')) {
-        throw new Error('Mobile number or password is incorrect');
+      if (error.message.includes('Invalid login') || error.message.includes('invalid_credentials')) {
+        throw new Error('Mobile number or password is incorrect. Please check and try again.');
+      }
+      if (error.message.includes('Email not confirmed')) {
+        throw new Error('Account not verified. Please sign up again.');
       }
       throw new Error(error.message);
     }
