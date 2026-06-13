@@ -1,1 +1,75 @@
-{"name":"PageNotFound.jsx","path":"src/lib/PageNotFound.jsx","sha":"cce903d507cd0c57e3015d63b2a198dc84fbb9ed","size":3930,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/PageNotFound.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/PageNotFound.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/cce903d507cd0c57e3015d63b2a198dc84fbb9ed","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/lib/PageNotFound.jsx?token=CFODAP6GRI6TS4YCIQQX3D3KFSQ3DAA","type":"file","content":"aW1wb3J0IHsgdXNlTG9jYXRpb24gfSBmcm9tICdyZWFjdC1yb3V0ZXItZG9t\nJzsKaW1wb3J0IHsgYmFzZTQ0IH0gZnJvbSAnQC9hcGkvYmFzZTQ0Q2xpZW50\nJzsKaW1wb3J0IHsgdXNlUXVlcnkgfSBmcm9tICdAdGFuc3RhY2svcmVhY3Qt\ncXVlcnknOwoKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFBhZ2VOb3RGb3Vu\nZCh7fSkgewogICAgY29uc3QgbG9jYXRpb24gPSB1c2VMb2NhdGlvbigpOwog\nICAgY29uc3QgcGFnZU5hbWUgPSBsb2NhdGlvbi5wYXRobmFtZS5zdWJzdHJp\nbmcoMSk7CgogICAgY29uc3QgeyBkYXRhOiBhdXRoRGF0YSwgaXNGZXRjaGVk\nIH0gPSB1c2VRdWVyeSh7CiAgICAgICAgcXVlcnlLZXk6IFsndXNlciddLAog\nICAgICAgIHF1ZXJ5Rm46IGFzeW5jICgpID0+IHsKICAgICAgICAgICAgdHJ5\nIHsKICAgICAgICAgICAgICAgIGNvbnN0IHVzZXIgPSBhd2FpdCBiYXNlNDQu\nYXV0aC5tZSgpOwogICAgICAgICAgICAgICAgcmV0dXJuIHsgdXNlciwgaXNB\ndXRoZW50aWNhdGVkOiB0cnVlIH07CiAgICAgICAgICAgIH0gY2F0Y2ggKGVy\ncm9yKSB7CiAgICAgICAgICAgICAgICByZXR1cm4geyB1c2VyOiBudWxsLCBp\nc0F1dGhlbnRpY2F0ZWQ6IGZhbHNlIH07CiAgICAgICAgICAgIH0KICAgICAg\nICB9CiAgICB9KTsKICAgIAogICAgcmV0dXJuICgKICAgICAgICA8ZGl2IGNs\nYXNzTmFtZT0ibWluLWgtc2NyZWVuIGZsZXggaXRlbXMtY2VudGVyIGp1c3Rp\nZnktY2VudGVyIHAtNiBiZy1zbGF0ZS01MCI+CiAgICAgICAgICAgIDxkaXYg\nY2xhc3NOYW1lPSJtYXgtdy1tZCB3LWZ1bGwiPgogICAgICAgICAgICAgICAg\nPGRpdiBjbGFzc05hbWU9InRleHQtY2VudGVyIHNwYWNlLXktNiI+CiAgICAg\nICAgICAgICAgICAgICAgey8qIDQwNCBFcnJvciBDb2RlICovfQogICAgICAg\nICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15LTIiPgogICAg\nICAgICAgICAgICAgICAgICAgICA8aDEgY2xhc3NOYW1lPSJ0ZXh0LTd4bCBm\nb250LWxpZ2h0IHRleHQtc2xhdGUtMzAwIj40MDQ8L2gxPgogICAgICAgICAg\nICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iaC0wLjUgdy0xNiBiZy1z\nbGF0ZS0yMDAgbXgtYXV0byI+PC9kaXY+CiAgICAgICAgICAgICAgICAgICAg\nPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAg\nICAgey8qIE1haW4gTWVzc2FnZSAqL30KICAgICAgICAgICAgICAgICAgICA8\nZGl2IGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICAgICAg\nICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC0yeGwgZm9udC1tZWRpdW0gdGV4\ndC1zbGF0ZS04MDAiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgUGFn\nZSBOb3QgRm91bmQKICAgICAgICAgICAgICAgICAgICAgICAgPC9oMj4KICAg\nICAgICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXNsYXRl\nLTYwMCBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgICAgICAgICAgICAgICAg\nICAgICAgVGhlIHBhZ2UgPHNwYW4gY2xhc3NOYW1lPSJmb250LW1lZGl1bSB0\nZXh0LXNsYXRlLTcwMCI+IntwYWdlTmFtZX0iPC9zcGFuPiBjb3VsZCBub3Qg\nYmUgZm91bmQgaW4gdGhpcyBhcHBsaWNhdGlvbi4KICAgICAgICAgICAgICAg\nICAgICAgICAgPC9wPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAg\nICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIHsvKiBBZG1p\nbiBOb3RlICovfQogICAgICAgICAgICAgICAgICAgIHtpc0ZldGNoZWQgJiYg\nYXV0aERhdGEuaXNBdXRoZW50aWNhdGVkICYmIGF1dGhEYXRhLnVzZXI/LnJv\nbGUgPT09ICdhZG1pbicgJiYgKAogICAgICAgICAgICAgICAgICAgICAgICA8\nZGl2IGNsYXNzTmFtZT0ibXQtOCBwLTQgYmctc2xhdGUtMTAwIHJvdW5kZWQt\nbGcgYm9yZGVyIGJvcmRlci1zbGF0ZS0yMDAiPgogICAgICAgICAgICAgICAg\nICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtc3RhcnQg\nc3BhY2UteC0zIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8\nZGl2IGNsYXNzTmFtZT0iZmxleC1zaHJpbmstMCB3LTUgaC01IHJvdW5kZWQt\nZnVsbCBiZy1vcmFuZ2UtMTAwIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnkt\nY2VudGVyIG10LTAuNSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg\nICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ3LTIgaC0yIHJvdW5kZWQtZnVsbCBi\nZy1vcmFuZ2UtNDAwIj48L2Rpdj4KICAgICAgICAgICAgICAgICAgICAgICAg\nICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg\nICA8ZGl2IGNsYXNzTmFtZT0idGV4dC1sZWZ0IHNwYWNlLXktMSI+CiAgICAg\nICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0i\ndGV4dC1zbSBmb250LW1lZGl1bSB0ZXh0LXNsYXRlLTcwMCI+QWRtaW4gTm90\nZTwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHAg\nY2xhc3NOYW1lPSJ0ZXh0LXNtIHRleHQtc2xhdGUtNjAwIGxlYWRpbmctcmVs\nYXhlZCI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg\nICBUaGlzIGNvdWxkIG1lYW4gdGhhdCB0aGUgQUkgaGFzbid0IGltcGxlbWVu\ndGVkIHRoaXMgcGFnZSB5ZXQuIEFzayBpdCB0byBpbXBsZW1lbnQgaXQgaW4g\ndGhlIGNoYXQuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg\nIDwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj4K\nICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAg\nICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICApfQog\nICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIHsvKiBB\nY3Rpb24gQnV0dG9uICovfQogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xh\nc3NOYW1lPSJwdC02Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPGJ1dHRv\nbiAKICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+\nIHdpbmRvdy5sb2NhdGlvbi5ocmVmID0gJy8nfSAKICAgICAgICAgICAgICAg\nICAgICAgICAgICAgIGNsYXNzTmFtZT0iaW5saW5lLWZsZXggaXRlbXMtY2Vu\ndGVyIHB4LTQgcHktMiB0ZXh0LXNtIGZvbnQtbWVkaXVtIHRleHQtc2xhdGUt\nNzAwIGJnLXdoaXRlIGJvcmRlciBib3JkZXItc2xhdGUtMjAwIHJvdW5kZWQt\nbGcgaG92ZXI6Ymctc2xhdGUtNTAgaG92ZXI6Ym9yZGVyLXNsYXRlLTMwMCB0\ncmFuc2l0aW9uLWNvbG9ycyBkdXJhdGlvbi0yMDAgZm9jdXM6b3V0bGluZS1u\nb25lIGZvY3VzOnJpbmctMiBmb2N1czpyaW5nLW9mZnNldC0yIGZvY3VzOnJp\nbmctc2xhdGUtNTAwIgogICAgICAgICAgICAgICAgICAgICAgICA+CiAgICAg\nICAgICAgICAgICAgICAgICAgICAgICA8c3ZnIGNsYXNzTmFtZT0idy00IGgt\nNCBtci0yIiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgdmll\nd0JveD0iMCAwIDI0IDI0Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAg\nICAgICA8cGF0aCBzdHJva2VMaW5lY2FwPSJyb3VuZCIgc3Ryb2tlTGluZWpv\naW49InJvdW5kIiBzdHJva2VXaWR0aD17Mn0gZD0iTTMgMTJsMi0ybTAgMGw3\nLTcgNyA3TTUgMTB2MTBhMSAxIDAgMDAxIDFoM20xMC0xMWwyIDJtLTItMnYx\nMGExIDEgMCAwMS0xIDFoLTNtLTYgMGExIDEgMCAwMDEtMXYtNGExIDEgMCAw\nMTEtMWgyYTEgMSAwIDAxMSAxdjRhMSAxIDAgMDAxIDFtLTYgMGg2IiAvPgog\nICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zdmc+CiAgICAgICAgICAg\nICAgICAgICAgICAgICAgICBHbyBIb21lCiAgICAgICAgICAgICAgICAgICAg\nICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAg\nICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAg\nIDwvZGl2PgogICAgKQp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/PageNotFound.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/cce903d507cd0c57e3015d63b2a198dc84fbb9ed","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/PageNotFound.jsx"}}
+import { useLocation } from 'react-router-dom';
+import { base44 } from '@/api/base44Client';
+import { useQuery } from '@tanstack/react-query';
+
+
+export default function PageNotFound({}) {
+    const location = useLocation();
+    const pageName = location.pathname.substring(1);
+
+    const { data: authData, isFetched } = useQuery({
+        queryKey: ['user'],
+        queryFn: async () => {
+            try {
+                const user = await base44.auth.me();
+                return { user, isAuthenticated: true };
+            } catch (error) {
+                return { user: null, isAuthenticated: false };
+            }
+        }
+    });
+    
+    return (
+        <div className="min-h-screen flex items-center justify-center p-6 bg-slate-50">
+            <div className="max-w-md w-full">
+                <div className="text-center space-y-6">
+                    {/* 404 Error Code */}
+                    <div className="space-y-2">
+                        <h1 className="text-7xl font-light text-slate-300">404</h1>
+                        <div className="h-0.5 w-16 bg-slate-200 mx-auto"></div>
+                    </div>
+                    
+                    {/* Main Message */}
+                    <div className="space-y-3">
+                        <h2 className="text-2xl font-medium text-slate-800">
+                            Page Not Found
+                        </h2>
+                        <p className="text-slate-600 leading-relaxed">
+                            The page <span className="font-medium text-slate-700">"{pageName}"</span> could not be found in this application.
+                        </p>
+                    </div>
+                    
+                    {/* Admin Note */}
+                    {isFetched && authData.isAuthenticated && authData.user?.role === 'admin' && (
+                        <div className="mt-8 p-4 bg-slate-100 rounded-lg border border-slate-200">
+                            <div className="flex items-start space-x-3">
+                                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center mt-0.5">
+                                    <div className="w-2 h-2 rounded-full bg-orange-400"></div>
+                                </div>
+                                <div className="text-left space-y-1">
+                                    <p className="text-sm font-medium text-slate-700">Admin Note</p>
+                                    <p className="text-sm text-slate-600 leading-relaxed">
+                                        This could mean that the AI hasn't implemented this page yet. Ask it to implement it in the chat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                    
+                    {/* Action Button */}
+                    <div className="pt-6">
+                        <button 
+                            onClick={() => window.location.href = '/'} 
+                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500"
+                        >
+                            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                            Go Home
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
