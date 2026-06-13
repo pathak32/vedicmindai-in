@@ -1,1 +1,110 @@
-{"name":"SelectionDrawer.jsx","path":"src/components/ui/SelectionDrawer.jsx","sha":"98170470978cb0e1c1008bc369f58892f6f043a3","size":3631,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/SelectionDrawer.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/SelectionDrawer.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/98170470978cb0e1c1008bc369f58892f6f043a3","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/SelectionDrawer.jsx?token=CFODAP5SDQ3LFWSLYXE4KA3KFSQX3AA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnOwppbXBv\ncnQgeyBEcmF3ZXIsIERyYXdlckNvbnRlbnQsIERyYXdlckhlYWRlciwgRHJh\nd2VyVGl0bGUgfSBmcm9tICdAL2NvbXBvbmVudHMvdWkvZHJhd2VyJzsKCi8q\nKgogKiBNb2JpbGUtZnJpZW5kbHkgcmVwbGFjZW1lbnQgZm9yIDxzZWxlY3Q+\nLgogKiBPbiBhbGwgc2NyZWVuIHNpemVzLCB0YXBwaW5nIG9wZW5zIGEgYm90\ndG9tLXNoZWV0IGRyYXdlciB3aXRoIHBpbGwgb3B0aW9ucy4KICoKICogUHJv\ncHM6CiAqICAgdmFsdWUgICAgICAgIOKAkyBjdXJyZW50IHZhbHVlIChzdHJp\nbmcpCiAqICAgb25DaGFuZ2UgICAgIOKAkyAodmFsdWU6IHN0cmluZykgPT4g\ndm9pZAogKiAgIG9wdGlvbnMgICAgICDigJMgc3RyaW5nW10KICogICBwbGFj\nZWhvbGRlciAg4oCTIHN0cmluZyAoc2hvd24gd2hlbiBub3RoaW5nIHNlbGVj\ndGVkKQogKiAgIGxhYmVsICAgICAgICDigJMgc3RyaW5nIChkcmF3ZXIgdGl0\nbGUpCiAqICAgZGFyayAgICAgICAgIOKAkyBib29sICAoZGFyay10aGVtZSB0\ncmlnZ2VyIGJ1dHRvbiBmb3Igb25ib2FyZGluZyBzY3JlZW5zKQogKi8KZXhw\nb3J0IGRlZmF1bHQgZnVuY3Rpb24gU2VsZWN0aW9uRHJhd2VyKHsgdmFsdWUs\nIG9uQ2hhbmdlLCBvcHRpb25zLCBwbGFjZWhvbGRlciA9ICdTZWxlY3QuLi4n\nLCBsYWJlbCwgZGFyayA9IGZhbHNlIH0pIHsKICBjb25zdCBbb3Blbiwgc2V0\nT3Blbl0gPSB1c2VTdGF0ZShmYWxzZSk7CgogIGNvbnN0IHRyaWdnZXJTdHls\nZSA9IGRhcmsgPyB7CiAgICB3aWR0aDogJzEwMCUnLAogICAgbWluSGVpZ2h0\nOiA0NCwKICAgIGJhY2tncm91bmQ6ICdyZ2JhKDI1NSwyNTUsMjU1LDAuMSkn\nLAogICAgYm9yZGVyOiAnMS41cHggc29saWQgcmdiYSgyNTUsMjU1LDI1NSww\nLjIpJywKICAgIGJvcmRlclJhZGl1czogMTAsCiAgICBjb2xvcjogdmFsdWUg\nPyAnd2hpdGUnIDogJ3JnYmEoMjU1LDI1NSwyNTUsMC40KScsCiAgICBwYWRk\naW5nOiAnMTBweCAxNHB4JywKICAgIGZvbnRTaXplOiAxNiwKICAgIGZvbnRG\nYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywKICAgIHRleHRBbGlnbjogJ2xl\nZnQnLAogICAgY3Vyc29yOiAncG9pbnRlcicsCiAgICBkaXNwbGF5OiAnZmxl\neCcsCiAgICBhbGlnbkl0ZW1zOiAnY2VudGVyJywKICAgIGp1c3RpZnlDb250\nZW50OiAnc3BhY2UtYmV0d2VlbicsCiAgfSA6IHsKICAgIHdpZHRoOiAnMTAw\nJScsCiAgICBtaW5IZWlnaHQ6IDQ0LAogICAgYmFja2dyb3VuZDogJ3doaXRl\nJywKICAgIGJvcmRlcjogJzEuNXB4IHNvbGlkIHJnYmEoMzAsNjQsMTc1LDAu\nMTUpJywKICAgIGJvcmRlclJhZGl1czogMTAsCiAgICBjb2xvcjogdmFsdWUg\nPyAnIzBBMTYyOCcgOiAnIzlDQTNBRicsCiAgICBwYWRkaW5nOiAnMTBweCAx\nNHB4JywKICAgIGZvbnRTaXplOiAxNiwKICAgIGZvbnRGYW1pbHk6ICd2YXIo\nLS1mb250LWJvZHkpJywKICAgIHRleHRBbGlnbjogJ2xlZnQnLAogICAgY3Vy\nc29yOiAncG9pbnRlcicsCiAgICBkaXNwbGF5OiAnZmxleCcsCiAgICBhbGln\nbkl0ZW1zOiAnY2VudGVyJywKICAgIGp1c3RpZnlDb250ZW50OiAnc3BhY2Ut\nYmV0d2VlbicsCiAgICBib3hTaXppbmc6ICdib3JkZXItYm94JywKICB9OwoK\nICByZXR1cm4gKAogICAgPD4KICAgICAgPGJ1dHRvbiB0eXBlPSJidXR0b24i\nIHN0eWxlPXt0cmlnZ2VyU3R5bGV9IG9uQ2xpY2s9eygpID0+IHNldE9wZW4o\ndHJ1ZSl9PgogICAgICAgIDxzcGFuPnt2YWx1ZSB8fCBwbGFjZWhvbGRlcn08\nL3NwYW4+CiAgICAgICAgPHNwYW4gc3R5bGU9e3sgZm9udFNpemU6IDEyLCBv\ncGFjaXR5OiAwLjYgfX0+4pa8PC9zcGFuPgogICAgICA8L2J1dHRvbj4KCiAg\nICAgIDxEcmF3ZXIgb3Blbj17b3Blbn0gb25PcGVuQ2hhbmdlPXtzZXRPcGVu\nfT4KICAgICAgICA8RHJhd2VyQ29udGVudD4KICAgICAgICAgIDxEcmF3ZXJI\nZWFkZXI+CiAgICAgICAgICAgIDxEcmF3ZXJUaXRsZSBzdHlsZT17eyBmb250\nRmFtaWx5OiAndmFyKC0tZm9udC1oZWFkaW5nKScsIGZvbnRTaXplOiAxOCwg\nY29sb3I6ICcjMEExNjI4JyB9fT4KICAgICAgICAgICAgICB7bGFiZWwgfHwg\ncGxhY2Vob2xkZXJ9CiAgICAgICAgICAgIDwvRHJhd2VyVGl0bGU+CiAgICAg\nICAgICA8L0RyYXdlckhlYWRlcj4KICAgICAgICAgIDxkaXYgc3R5bGU9e3sK\nICAgICAgICAgICAgcGFkZGluZzogJzAgMTZweCAxNnB4JywKICAgICAgICAg\nICAgcGFkZGluZ0JvdHRvbTogJ2NhbGMoMTZweCArIGVudihzYWZlLWFyZWEt\naW5zZXQtYm90dG9tLCAwcHgpKScsCiAgICAgICAgICAgIG1heEhlaWdodDog\nJzYwdmgnLAogICAgICAgICAgICBvdmVyZmxvd1k6ICdhdXRvJywKICAgICAg\nICAgICAgZGlzcGxheTogJ2ZsZXgnLAogICAgICAgICAgICBmbGV4RGlyZWN0\naW9uOiAnY29sdW1uJywKICAgICAgICAgICAgZ2FwOiA4LAogICAgICAgICAg\nfX0+CiAgICAgICAgICAgIHtvcHRpb25zLm1hcChvcHQgPT4gewogICAgICAg\nICAgICAgIGNvbnN0IHNlbGVjdGVkID0gdmFsdWUgPT09IG9wdDsKICAgICAg\nICAgICAgICByZXR1cm4gKAogICAgICAgICAgICAgICAgPGJ1dHRvbgogICAg\nICAgICAgICAgICAgICBrZXk9e29wdH0KICAgICAgICAgICAgICAgICAgdHlw\nZT0iYnV0dG9uIgogICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiB7\nIG9uQ2hhbmdlKG9wdCk7IHNldE9wZW4oZmFsc2UpOyB9fQogICAgICAgICAg\nICAgICAgICBzdHlsZT17ewogICAgICAgICAgICAgICAgICAgIHdpZHRoOiAn\nMTAwJScsCiAgICAgICAgICAgICAgICAgICAgbWluSGVpZ2h0OiA0OCwKICAg\nICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiBzZWxlY3RlZCA/ICcjMEEx\nNjI4JyA6ICcjRjBGNEZGJywKICAgICAgICAgICAgICAgICAgICBjb2xvcjog\nc2VsZWN0ZWQgPyAnd2hpdGUnIDogJyMwQTE2MjgnLAogICAgICAgICAgICAg\nICAgICAgIGJvcmRlcjogJ25vbmUnLAogICAgICAgICAgICAgICAgICAgIGJv\ncmRlclJhZGl1czogMTIsCiAgICAgICAgICAgICAgICAgICAgZm9udEZhbWls\neTogJ3ZhcigtLWZvbnQtYm9keSknLAogICAgICAgICAgICAgICAgICAgIGZv\nbnRTaXplOiAxNSwKICAgICAgICAgICAgICAgICAgICBmb250V2VpZ2h0OiBz\nZWxlY3RlZCA/IDcwMCA6IDQwMCwKICAgICAgICAgICAgICAgICAgICBjdXJz\nb3I6ICdwb2ludGVyJywKICAgICAgICAgICAgICAgICAgICB0ZXh0QWxpZ246\nICdsZWZ0JywKICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAnMCAxNnB4\nJywKICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiAnZmxleCcsCiAgICAg\nICAgICAgICAgICAgICAgYWxpZ25JdGVtczogJ2NlbnRlcicsCiAgICAgICAg\nICAgICAgICAgICAganVzdGlmeUNvbnRlbnQ6ICdzcGFjZS1iZXR3ZWVuJywK\nICAgICAgICAgICAgICAgICAgfX0KICAgICAgICAgICAgICAgID4KICAgICAg\nICAgICAgICAgICAgPHNwYW4+e29wdH08L3NwYW4+CiAgICAgICAgICAgICAg\nICAgIHtzZWxlY3RlZCAmJiA8c3Bhbj7inJM8L3NwYW4+fQogICAgICAgICAg\nICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgKTsKICAgICAgICAgICAg\nfSl9CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L0RyYXdlckNvbnRlbnQ+\nCiAgICAgIDwvRHJhd2VyPgogICAgPC8+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/SelectionDrawer.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/98170470978cb0e1c1008bc369f58892f6f043a3","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/SelectionDrawer.jsx"}}
+import React, { useState } from 'react';
+import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
+
+/**
+ * Mobile-friendly replacement for <select>.
+ * On all screen sizes, tapping opens a bottom-sheet drawer with pill options.
+ *
+ * Props:
+ *   value        – current value (string)
+ *   onChange     – (value: string) => void
+ *   options      – string[]
+ *   placeholder  – string (shown when nothing selected)
+ *   label        – string (drawer title)
+ *   dark         – bool  (dark-theme trigger button for onboarding screens)
+ */
+export default function SelectionDrawer({ value, onChange, options, placeholder = 'Select...', label, dark = false }) {
+  const [open, setOpen] = useState(false);
+
+  const triggerStyle = dark ? {
+    width: '100%',
+    minHeight: 44,
+    background: 'rgba(255,255,255,0.1)',
+    border: '1.5px solid rgba(255,255,255,0.2)',
+    borderRadius: 10,
+    color: value ? 'white' : 'rgba(255,255,255,0.4)',
+    padding: '10px 14px',
+    fontSize: 16,
+    fontFamily: 'var(--font-body)',
+    textAlign: 'left',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  } : {
+    width: '100%',
+    minHeight: 44,
+    background: 'white',
+    border: '1.5px solid rgba(30,64,175,0.15)',
+    borderRadius: 10,
+    color: value ? '#0A1628' : '#9CA3AF',
+    padding: '10px 14px',
+    fontSize: 16,
+    fontFamily: 'var(--font-body)',
+    textAlign: 'left',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    boxSizing: 'border-box',
+  };
+
+  return (
+    <>
+      <button type="button" style={triggerStyle} onClick={() => setOpen(true)}>
+        <span>{value || placeholder}</span>
+        <span style={{ fontSize: 12, opacity: 0.6 }}>▼</span>
+      </button>
+
+      <Drawer open={open} onOpenChange={setOpen}>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle style={{ fontFamily: 'var(--font-heading)', fontSize: 18, color: '#0A1628' }}>
+              {label || placeholder}
+            </DrawerTitle>
+          </DrawerHeader>
+          <div style={{
+            padding: '0 16px 16px',
+            paddingBottom: 'calc(16px + env(safe-area-inset-bottom, 0px))',
+            maxHeight: '60vh',
+            overflowY: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 8,
+          }}>
+            {options.map(opt => {
+              const selected = value === opt;
+              return (
+                <button
+                  key={opt}
+                  type="button"
+                  onClick={() => { onChange(opt); setOpen(false); }}
+                  style={{
+                    width: '100%',
+                    minHeight: 48,
+                    background: selected ? '#0A1628' : '#F0F4FF',
+                    color: selected ? 'white' : '#0A1628',
+                    border: 'none',
+                    borderRadius: 12,
+                    fontFamily: 'var(--font-body)',
+                    fontSize: 15,
+                    fontWeight: selected ? 700 : 400,
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    padding: '0 16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                  }}
+                >
+                  <span>{opt}</span>
+                  {selected && <span>✓</span>}
+                </button>
+              );
+            })}
+          </div>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+}
