@@ -1,1 +1,105 @@
-{"name":"VideoButton.jsx","path":"src/components/learn/VideoButton.jsx","sha":"1b59319b27fbd906e9650c49687c7c1c3639115a","size":3528,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/learn/VideoButton.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/learn/VideoButton.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/1b59319b27fbd906e9650c49687c7c1c3639115a","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/learn/VideoButton.jsx?token=CFODAPZHXCJJ3WTZWTWUJ2LKFSQWTAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tICdy\nZWFjdCc7Cgpjb25zdCBURUFDSEVSX0xBQkVMUyA9IHsKICAnRGFkaSBKaSc6\nICfwn5G1IERhZGkgSmkgc2lraGF0aSBoYWluJywKICAnSGl0YW5zaCc6ICfw\nn4+PIEhpdGFuc2ggc2lraGF0YSBoYWknLAogICdCaGF2aWthJzogJ/Cfk5og\nQmhhdmlrYSBzaWtoYXRpIGhhaW4nLAp9OwoKZnVuY3Rpb24gVmlkZW9Nb2Rh\nbCh7IHZpZGVvSWQsIG9uQ2xvc2UgfSkgewogIHVzZUVmZmVjdCgoKSA9PiB7\nCiAgICBjb25zdCBoYW5kbGVyID0gKGUpID0+IHsgaWYgKGUua2V5ID09PSAn\nRXNjYXBlJykgb25DbG9zZSgpOyB9OwogICAgd2luZG93LmFkZEV2ZW50TGlz\ndGVuZXIoJ2tleWRvd24nLCBoYW5kbGVyKTsKICAgIHJldHVybiAoKSA9PiB3\naW5kb3cucmVtb3ZlRXZlbnRMaXN0ZW5lcigna2V5ZG93bicsIGhhbmRsZXIp\nOwogIH0sIFtvbkNsb3NlXSk7CgogIHJldHVybiAoCiAgICA8ZGl2CiAgICAg\nIG9uQ2xpY2s9e29uQ2xvc2V9CiAgICAgIHN0eWxlPXt7CiAgICAgICAgcG9z\naXRpb246ICdmaXhlZCcsIGluc2V0OiAwLCB6SW5kZXg6IDk5OTksCiAgICAg\nICAgYmFja2dyb3VuZDogJ3JnYmEoMCwwLDAsMC44NSknLAogICAgICAgIGRp\nc3BsYXk6ICdmbGV4JywgYWxpZ25JdGVtczogJ2NlbnRlcicsIGp1c3RpZnlD\nb250ZW50OiAnY2VudGVyJywKICAgICAgICBwYWRkaW5nOiAnMTZweCcsCiAg\nICAgIH19CiAgICA+CiAgICAgIDxkaXYKICAgICAgICBvbkNsaWNrPXtlID0+\nIGUuc3RvcFByb3BhZ2F0aW9uKCl9CiAgICAgICAgc3R5bGU9e3sgd2lkdGg6\nICcxMDAlJywgbWF4V2lkdGg6IDgwMCwgcG9zaXRpb246ICdyZWxhdGl2ZScg\nfX0KICAgICAgPgogICAgICAgIDxidXR0b24KICAgICAgICAgIG9uQ2xpY2s9\ne29uQ2xvc2V9CiAgICAgICAgICBzdHlsZT17ewogICAgICAgICAgICBwb3Np\ndGlvbjogJ2Fic29sdXRlJywgdG9wOiAtNDAsIHJpZ2h0OiAwLAogICAgICAg\nICAgICBiYWNrZ3JvdW5kOiAncmdiYSgyNTUsMjU1LDI1NSwwLjE1KScsIGJv\ncmRlcjogJ25vbmUnLAogICAgICAgICAgICBjb2xvcjogJ3doaXRlJywgYm9y\nZGVyUmFkaXVzOiA4LCBwYWRkaW5nOiAnNnB4IDE0cHgnLAogICAgICAgICAg\nICBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAx\nNCwgY3Vyc29yOiAncG9pbnRlcicsCiAgICAgICAgICB9fQogICAgICAgID4K\nICAgICAgICAgIOKclSBDbG9zZQogICAgICAgIDwvYnV0dG9uPgogICAgICAg\nIDxkaXYgc3R5bGU9e3sKICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUn\nLCB3aWR0aDogJzEwMCUnLCBwYWRkaW5nVG9wOiAnNTYuMjUlJywKICAgICAg\nICAgIGJvcmRlclJhZGl1czogMTYsIG92ZXJmbG93OiAnaGlkZGVuJywgYmFj\na2dyb3VuZDogJyMwQTE2MjgnLAogICAgICAgIH19PgogICAgICAgICAgPGlm\ncmFtZQogICAgICAgICAgICBzcmM9e2BodHRwczovL3d3dy55b3V0dWJlLmNv\nbS9lbWJlZC8ke3ZpZGVvSWR9P2F1dG9wbGF5PTEmcmVsPTAmbW9kZXN0YnJh\nbmRpbmc9MWB9CiAgICAgICAgICAgIHRpdGxlPSJMZXNzb24gVmlkZW8iCiAg\nICAgICAgICAgIGFsbG93PSJhY2NlbGVyb21ldGVyOyBhdXRvcGxheTsgY2xp\ncGJvYXJkLXdyaXRlOyBlbmNyeXB0ZWQtbWVkaWE7IGd5cm9zY29wZTsgcGlj\ndHVyZS1pbi1waWN0dXJlOyBmdWxsc2NyZWVuIgogICAgICAgICAgICBhbGxv\nd0Z1bGxTY3JlZW4KICAgICAgICAgICAgc3R5bGU9e3sgcG9zaXRpb246ICdh\nYnNvbHV0ZScsIHRvcDogMCwgbGVmdDogMCwgd2lkdGg6ICcxMDAlJywgaGVp\nZ2h0OiAnMTAwJScsIGJvcmRlcjogJ25vbmUnIH19CiAgICAgICAgICAvPgog\nICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICk7Cn0K\nCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFZpZGVvQnV0dG9uKHsgbGVzc29u\nIH0pIHsKICBjb25zdCBbb3Blbiwgc2V0T3Blbl0gPSB1c2VTdGF0ZShmYWxz\nZSk7CiAgY29uc3QgdmlkZW9JZCA9IGxlc3Nvbi55b3V0dWJlX3ZpZGVvX2lk\nOwogIGNvbnN0IHRlYWNoZXIgPSBsZXNzb24udmlkZW9UZWFjaGVyIHx8ICdE\nYWRpIEppJzsKICBjb25zdCB0ZWFjaGVyTGFiZWwgPSBURUFDSEVSX0xBQkVM\nU1t0ZWFjaGVyXSB8fCBURUFDSEVSX0xBQkVMU1snRGFkaSBKaSddOwoKICBp\nZiAoIXZpZGVvSWQpIHJldHVybiBudWxsOwoKICByZXR1cm4gKAogICAgPD4K\nICAgICAgPGJ1dHRvbgogICAgICAgIG9uQ2xpY2s9eygpID0+IHNldE9wZW4o\ndHJ1ZSl9CiAgICAgICAgc3R5bGU9e3sKICAgICAgICAgIHdpZHRoOiAnMTAw\nJScsIGhlaWdodDogNTYsIGJvcmRlcjogJ25vbmUnLCBjdXJzb3I6ICdwb2lu\ndGVyJywKICAgICAgICAgIGJhY2tncm91bmQ6ICdsaW5lYXItZ3JhZGllbnQo\nMTM1ZGVnLCAjMEExNjI4LCAjMUU0MEFGKScsCiAgICAgICAgICBib3JkZXJS\nYWRpdXM6IDEyLCBtYXJnaW5Cb3R0b206IDIwLAogICAgICAgICAgZGlzcGxh\neTogJ2ZsZXgnLCBhbGlnbkl0ZW1zOiAnY2VudGVyJywgZ2FwOiAxNCwgcGFk\nZGluZzogJzAgMThweCcsCiAgICAgICAgICBib3hTaGFkb3c6ICcwIDRweCAx\nNnB4IHJnYmEoMzAsNjQsMTc1LDAuMjUpJywKICAgICAgICB9fQogICAgICA+\nCiAgICAgICAgPGRpdiBzdHlsZT17ewogICAgICAgICAgd2lkdGg6IDM0LCBo\nZWlnaHQ6IDM0LCBib3JkZXJSYWRpdXM6ICc1MCUnLAogICAgICAgICAgYmFj\na2dyb3VuZDogJyMzQjgyRjYnLAogICAgICAgICAgZGlzcGxheTogJ2ZsZXgn\nLCBhbGlnbkl0ZW1zOiAnY2VudGVyJywganVzdGlmeUNvbnRlbnQ6ICdjZW50\nZXInLAogICAgICAgICAgZmxleFNocmluazogMCwKICAgICAgICB9fT4KICAg\nICAgICAgIDxzcGFuIHN0eWxlPXt7IGNvbG9yOiAnd2hpdGUnLCBmb250U2l6\nZTogMTQsIG1hcmdpbkxlZnQ6IDIgfX0+4pa2PC9zcGFuPgogICAgICAgIDwv\nZGl2PgogICAgICAgIDxzcGFuIHN0eWxlPXt7CiAgICAgICAgICBmbGV4OiAx\nLCB0ZXh0QWxpZ246ICdsZWZ0JywKICAgICAgICAgIGZvbnRGYW1pbHk6ICd2\nYXIoLS1mb250LWJvZHkpJywgZm9udFNpemU6IDE1LCBmb250V2VpZ2h0OiA2\nMDAsIGNvbG9yOiAnd2hpdGUnLAogICAgICAgIH19PgogICAgICAgICAgV2F0\nY2ggTGVzc29uIFZpZGVvIOKAlCB7dGVhY2hlckxhYmVsfQogICAgICAgIDwv\nc3Bhbj4KICAgICAgICA8c3BhbiBzdHlsZT17ewogICAgICAgICAgYmFja2dy\nb3VuZDogJyNGNTlFMEInLCBjb2xvcjogJ3doaXRlJywKICAgICAgICAgIGJv\ncmRlclJhZGl1czogOTksIHBhZGRpbmc6ICczcHggMTBweCcsCiAgICAgICAg\nICBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAx\nMSwgZm9udFdlaWdodDogNzAwLAogICAgICAgICAgZmxleFNocmluazogMCwK\nICAgICAgICB9fT4KICAgICAgICAgIE5FVwogICAgICAgIDwvc3Bhbj4KICAg\nICAgPC9idXR0b24+CgogICAgICB7b3BlbiAmJiA8VmlkZW9Nb2RhbCB2aWRl\nb0lkPXt2aWRlb0lkfSBvbkNsb3NlPXsoKSA9PiBzZXRPcGVuKGZhbHNlKX0g\nLz59CiAgICA8Lz4KICApOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/learn/VideoButton.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/1b59319b27fbd906e9650c49687c7c1c3639115a","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/learn/VideoButton.jsx"}}
+import React, { useState, useEffect } from 'react';
+
+const TEACHER_LABELS = {
+  'Dadi Ji': '👵 Dadi Ji sikhati hain',
+  'Hitansh': '🏏 Hitansh sikhata hai',
+  'Bhavika': '📚 Bhavika sikhati hain',
+};
+
+function VideoModal({ videoId, onClose }) {
+  useEffect(() => {
+    const handler = (e) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [onClose]);
+
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 9999,
+        background: 'rgba(0,0,0,0.85)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        padding: '16px',
+      }}
+    >
+      <div
+        onClick={e => e.stopPropagation()}
+        style={{ width: '100%', maxWidth: 800, position: 'relative' }}
+      >
+        <button
+          onClick={onClose}
+          style={{
+            position: 'absolute', top: -40, right: 0,
+            background: 'rgba(255,255,255,0.15)', border: 'none',
+            color: 'white', borderRadius: 8, padding: '6px 14px',
+            fontFamily: 'var(--font-body)', fontSize: 14, cursor: 'pointer',
+          }}
+        >
+          ✕ Close
+        </button>
+        <div style={{
+          position: 'relative', width: '100%', paddingTop: '56.25%',
+          borderRadius: 16, overflow: 'hidden', background: '#0A1628',
+        }}>
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+            title="Lesson Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowFullScreen
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function VideoButton({ lesson }) {
+  const [open, setOpen] = useState(false);
+  const videoId = lesson.youtube_video_id;
+  const teacher = lesson.videoTeacher || 'Dadi Ji';
+  const teacherLabel = TEACHER_LABELS[teacher] || TEACHER_LABELS['Dadi Ji'];
+
+  if (!videoId) return null;
+
+  return (
+    <>
+      <button
+        onClick={() => setOpen(true)}
+        style={{
+          width: '100%', height: 56, border: 'none', cursor: 'pointer',
+          background: 'linear-gradient(135deg, #0A1628, #1E40AF)',
+          borderRadius: 12, marginBottom: 20,
+          display: 'flex', alignItems: 'center', gap: 14, padding: '0 18px',
+          boxShadow: '0 4px 16px rgba(30,64,175,0.25)',
+        }}
+      >
+        <div style={{
+          width: 34, height: 34, borderRadius: '50%',
+          background: '#3B82F6',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          flexShrink: 0,
+        }}>
+          <span style={{ color: 'white', fontSize: 14, marginLeft: 2 }}>▶</span>
+        </div>
+        <span style={{
+          flex: 1, textAlign: 'left',
+          fontFamily: 'var(--font-body)', fontSize: 15, fontWeight: 600, color: 'white',
+        }}>
+          Watch Lesson Video — {teacherLabel}
+        </span>
+        <span style={{
+          background: '#F59E0B', color: 'white',
+          borderRadius: 99, padding: '3px 10px',
+          fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 700,
+          flexShrink: 0,
+        }}>
+          NEW
+        </span>
+      </button>
+
+      {open && <VideoModal videoId={videoId} onClose={() => setOpen(false)} />}
+    </>
+  );
+}
