@@ -1,1 +1,50 @@
-{"name":"card.jsx","path":"src/components/ui/card.jsx","sha":"2985cca80f03eae3175a3ee94936204141e38b6f","size":1440,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/card.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/card.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/2985cca80f03eae3175a3ee94936204141e38b6f","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/card.jsx?token=CFODAP2EACSCSCLLKN5NZY3KFSQYNAA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCgppbXBvcnQgeyBjbiB9\nIGZyb20gIkAvbGliL3V0aWxzIgoKY29uc3QgQ2FyZCA9IFJlYWN0LmZvcndh\ncmRSZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8\nZGl2CiAgICByZWY9e3JlZn0KICAgIGNsYXNzTmFtZT17Y24oInJvdW5kZWQt\neGwgYm9yZGVyIGJnLWNhcmQgdGV4dC1jYXJkLWZvcmVncm91bmQgc2hhZG93\nIiwgY2xhc3NOYW1lKX0KICAgIHsuLi5wcm9wc30gLz4KKSkKQ2FyZC5kaXNw\nbGF5TmFtZSA9ICJDYXJkIgoKY29uc3QgQ2FyZEhlYWRlciA9IFJlYWN0LmZv\ncndhcmRSZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+ICgK\nICA8ZGl2CiAgICByZWY9e3JlZn0KICAgIGNsYXNzTmFtZT17Y24oImZsZXgg\nZmxleC1jb2wgc3BhY2UteS0xLjUgcC02IiwgY2xhc3NOYW1lKX0KICAgIHsu\nLi5wcm9wc30gLz4KKSkKQ2FyZEhlYWRlci5kaXNwbGF5TmFtZSA9ICJDYXJk\nSGVhZGVyIgoKY29uc3QgQ2FyZFRpdGxlID0gUmVhY3QuZm9yd2FyZFJlZigo\neyBjbGFzc05hbWUsIC4uLnByb3BzIH0sIHJlZikgPT4gKAogIDxkaXYKICAg\nIHJlZj17cmVmfQogICAgY2xhc3NOYW1lPXtjbigiZm9udC1zZW1pYm9sZCBs\nZWFkaW5nLW5vbmUgdHJhY2tpbmctdGlnaHQiLCBjbGFzc05hbWUpfQogICAg\ney4uLnByb3BzfSAvPgopKQpDYXJkVGl0bGUuZGlzcGxheU5hbWUgPSAiQ2Fy\nZFRpdGxlIgoKY29uc3QgQ2FyZERlc2NyaXB0aW9uID0gUmVhY3QuZm9yd2Fy\nZFJlZigoeyBjbGFzc05hbWUsIC4uLnByb3BzIH0sIHJlZikgPT4gKAogIDxk\naXYKICAgIHJlZj17cmVmfQogICAgY2xhc3NOYW1lPXtjbigidGV4dC1zbSB0\nZXh0LW11dGVkLWZvcmVncm91bmQiLCBjbGFzc05hbWUpfQogICAgey4uLnBy\nb3BzfSAvPgopKQpDYXJkRGVzY3JpcHRpb24uZGlzcGxheU5hbWUgPSAiQ2Fy\nZERlc2NyaXB0aW9uIgoKY29uc3QgQ2FyZENvbnRlbnQgPSBSZWFjdC5mb3J3\nYXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoCiAg\nPGRpdiByZWY9e3JlZn0gY2xhc3NOYW1lPXtjbigicC02IHB0LTAiLCBjbGFz\nc05hbWUpfSB7Li4ucHJvcHN9IC8+CikpCkNhcmRDb250ZW50LmRpc3BsYXlO\nYW1lID0gIkNhcmRDb250ZW50IgoKY29uc3QgQ2FyZEZvb3RlciA9IFJlYWN0\nLmZvcndhcmRSZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+\nICgKICA8ZGl2CiAgICByZWY9e3JlZn0KICAgIGNsYXNzTmFtZT17Y24oImZs\nZXggaXRlbXMtY2VudGVyIHAtNiBwdC0wIiwgY2xhc3NOYW1lKX0KICAgIHsu\nLi5wcm9wc30gLz4KKSkKQ2FyZEZvb3Rlci5kaXNwbGF5TmFtZSA9ICJDYXJk\nRm9vdGVyIgoKZXhwb3J0IHsgQ2FyZCwgQ2FyZEhlYWRlciwgQ2FyZEZvb3Rl\nciwgQ2FyZFRpdGxlLCBDYXJkRGVzY3JpcHRpb24sIENhcmRDb250ZW50IH0K\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/card.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/2985cca80f03eae3175a3ee94936204141e38b6f","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/card.jsx"}}
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+const Card = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("rounded-xl border bg-card text-card-foreground shadow", className)}
+    {...props} />
+))
+Card.displayName = "Card"
+
+const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    {...props} />
+))
+CardHeader.displayName = "CardHeader"
+
+const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("font-semibold leading-none tracking-tight", className)}
+    {...props} />
+))
+CardTitle.displayName = "CardTitle"
+
+const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props} />
+))
+CardDescription.displayName = "CardDescription"
+
+const CardContent = React.forwardRef(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+))
+CardContent.displayName = "CardContent"
+
+const CardFooter = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center p-6 pt-0", className)}
+    {...props} />
+))
+CardFooter.displayName = "CardFooter"
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
