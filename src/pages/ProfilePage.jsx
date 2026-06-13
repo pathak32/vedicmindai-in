@@ -6,6 +6,8 @@ import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import BadgeGrid from '@/components/profile/BadgeGrid';
 import EditProfileForm from '@/components/profile/EditProfileForm';
 import ResetConfirmModal from '@/components/profile/ResetConfirmModal';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { saveUserProfile, getUserProfile, getUserProgress } from '@/lib/supabaseDataService';
 
 function useCountUp(target, duration = 1200) {
   const [val, setVal] = useState(0);
@@ -46,24 +48,24 @@ export default function ProfilePage() {
   const [deleteModal, setDeleteModal] = useState(false);
   const [toast, setToast] = useState('');
 
-  const auth     = JSON.parse(localStorage.getItem('vedicmind_auth')     || '{}');
+  const { user: auth, loading, signOut } = useVedicAuth();
   const [profile,  setProfile]  = useState(JSON.parse(localStorage.getItem('vedicmind_profile')  || '{}'));
   const [progress, setProgress] = useState(JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'));
 
   useEffect(() => {
-    if (!localStorage.getItem('vedicmind_auth')) navigate('/auth');
-  }, []);
+    if (!loading && !auth) navigate('/auth');
+  }, [loading, auth]);
 
   const showToast = (msg) => {
     setToast(msg);
     setTimeout(() => setToast(''), 3000);
   };
 
-  const name = profile.name || auth.name || 'Student';
+  const name = profile.name || auth?.user_metadata?.name || 'Student';
   const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
 
-  const memberSince = auth.createdAt
-    ? new Date(auth.createdAt).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })
+  const memberSince = auth?.created_at
+    ? new Date(auth.created_at).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })
     : 'May 2025';
 
   const roleTag = profile.grade && profile.board
@@ -81,9 +83,27 @@ export default function ProfilePage() {
   const completed = progress.completedLessons || [];
   const xpVal = useCountUp(progress.totalXP || 0);
 
-  const handleSave = (updatedProfile) => {
+  // Load from Supabase on mount
+  useEffect(() => {
+    if (!auth?.id) return;
+    (async () => {
+      try {
+        const [sp, sprog] = await Promise.all([getUserProfile(auth.id), getUserProgress(auth.id)]);
+        if (sp && Object.keys(sp).length > 0) { setProfile(sp); localStorage.setItem('vedicmind_profile', JSON.stringify(sp)); }
+        if (sprog && Object.keys(sprog).length > 0) {
+          const mapped = { ...sprog, completedLessons: sprog.completed_lessons || [], lessonScores: sprog.lesson_scores || {}, totalXP: sprog.total_xp || 0 };
+          setProgress(mapped); localStorage.setItem('vedicmind_progress', JSON.stringify(mapped));
+        }
+      } catch(e) { /* silent */ }
+    })();
+  }, [auth?.id]);
+
+  const handleSave = async (updatedProfile) => {
     setProfile(updatedProfile);
     localStorage.setItem('vedicmind_profile', JSON.stringify(updatedProfile));
+    try {
+      if (auth?.id) await saveUserProfile(auth.id, { name: updatedProfile.name, goal: updatedProfile.goal, ai_analysis: updatedProfile.aiAnalysis || {} });
+    } catch(e) { /* silent */ }
     setEditOpen(false);
     showToast('Profile updated! ✅');
   };
@@ -96,15 +116,15 @@ export default function ProfilePage() {
     setTimeout(() => navigate('/dashboard'), 1200);
   };
 
-  const handleSignOut = () => {
-    localStorage.removeItem('vedicmind_auth');
+  const handleSignOut = async () => {
+    await signOut();
     localStorage.removeItem('vedicmind_profile');
     localStorage.removeItem('vedicmind_progress');
     navigate('/');
   };
 
-  const handleDeleteAccount = () => {
-    localStorage.removeItem('vedicmind_auth');
+  const handleDeleteAccount = async () => {
+    await signOut();
     localStorage.removeItem('vedicmind_profile');
     localStorage.removeItem('vedicmind_progress');
     localStorage.removeItem('vedicmind_plan');
@@ -135,7 +155,7 @@ export default function ProfilePage() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 8 }}>
                 <div>
                   <h1 className="font-heading" style={{ fontSize: 26, fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>{name}</h1>
-                  <p style={{ fontSize: 14, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 4 }}>{auth.email || '—'}</p>
+                  <p style={{ fontSize: 14, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 4 }}>{auth?.email || '—'}</p>
                   <p style={{ fontSize: 13, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 6 }}>Member since {memberSince}</p>
                   <span style={{ background: '#F0F4FF', borderRadius: 100, padding: '4px 12px', fontSize: 13, fontFamily: 'var(--font-body)', color: '#0A1628' }}>
                     {roleTag}
