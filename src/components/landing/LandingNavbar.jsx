@@ -1,1 +1,98 @@
-{"name":"LandingNavbar.jsx","path":"src/components/landing/LandingNavbar.jsx","sha":"0ee0e1340a44217dbbaf258d640c01b7acb7c6d9","size":4584,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/LandingNavbar.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/LandingNavbar.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/0ee0e1340a44217dbbaf258d640c01b7acb7c6d9","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/landing/LandingNavbar.jsx?token=CFODAPY4HM4Z2TEXFJC6XNLKFSQV7AA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tICdy\nZWFjdCc7CmltcG9ydCB7IExpbmssIHVzZU5hdmlnYXRlIH0gZnJvbSAncmVh\nY3Qtcm91dGVyLWRvbSc7CmltcG9ydCB7IE1lbnUsIFggfSBmcm9tICdsdWNp\nZGUtcmVhY3QnOwppbXBvcnQgeyBtb3Rpb24sIEFuaW1hdGVQcmVzZW5jZSB9\nIGZyb20gJ2ZyYW1lci1tb3Rpb24nOwoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rp\nb24gTGFuZGluZ05hdmJhcigpIHsKICBjb25zdCBbc2Nyb2xsZWQsIHNldFNj\ncm9sbGVkXSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBbbW9iaWxlT3Bl\nbiwgc2V0TW9iaWxlT3Blbl0gPSB1c2VTdGF0ZShmYWxzZSk7CiAgY29uc3Qg\nbmF2aWdhdGUgPSB1c2VOYXZpZ2F0ZSgpOwoKICB1c2VFZmZlY3QoKCkgPT4g\newogICAgY29uc3QgaGFuZGxlU2Nyb2xsID0gKCkgPT4gc2V0U2Nyb2xsZWQo\nd2luZG93LnNjcm9sbFkgPiAyMCk7CiAgICB3aW5kb3cuYWRkRXZlbnRMaXN0\nZW5lcignc2Nyb2xsJywgaGFuZGxlU2Nyb2xsKTsKICAgIHJldHVybiAoKSA9\nPiB3aW5kb3cucmVtb3ZlRXZlbnRMaXN0ZW5lcignc2Nyb2xsJywgaGFuZGxl\nU2Nyb2xsKTsKICB9LCBbXSk7CgogIGNvbnN0IHNjcm9sbFRvID0gKGlkKSA9\nPiB7CiAgICBzZXRNb2JpbGVPcGVuKGZhbHNlKTsKICAgIGRvY3VtZW50Lmdl\ndEVsZW1lbnRCeUlkKGlkKT8uc2Nyb2xsSW50b1ZpZXcoeyBiZWhhdmlvcjog\nJ3Ntb290aCcgfSk7CiAgfTsKCiAgcmV0dXJuICgKICAgIDw+CiAgICAgIDxu\nYXYgY2xhc3NOYW1lPXtgZml4ZWQgdG9wLTAgbGVmdC0wIHJpZ2h0LTAgei01\nMCB0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0zMDAgJHsKICAgICAgICBzY3Jv\nbGxlZCA/ICdiZy13aGl0ZS84MCBiYWNrZHJvcC1ibHVyLXhsIHNoYWRvdy1z\nbScgOiAnYmctdHJhbnNwYXJlbnQnCiAgICAgIH1gfT4KICAgICAgICA8ZGl2\nIGNsYXNzTmFtZT0ibWF4LXctN3hsIG14LWF1dG8gcHgtNCBzbTpweC02IGxn\nOnB4LTggaC0xNiBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4i\nPgogICAgICAgICAgPExpbmsgdG89Ii8iIGNsYXNzTmFtZT0iZm9udC1oZWFk\naW5nIHRleHQteGwgZm9udC1ib2xkIHRleHQtWyMwQTE2MjhdIj4KICAgICAg\nICAgICAgVmVkaWNNaW5kCiAgICAgICAgICA8L0xpbms+CgogICAgICAgICAg\nPGRpdiBjbGFzc05hbWU9ImhpZGRlbiBtZDpmbGV4IGl0ZW1zLWNlbnRlciBn\nYXAtOCI+CiAgICAgICAgICAgIDxidXR0b24gb25DbGljaz17KCkgPT4gc2Ny\nb2xsVG8oJ2ZlYXR1cmVzJyl9IGNsYXNzTmFtZT0idGV4dC1zbSBmb250LW1l\nZGl1bSB0ZXh0LVsjNEI1NTYzXSBob3Zlcjp0ZXh0LVsjMEExNjI4XSB0cmFu\nc2l0aW9uLWNvbG9ycyI+CiAgICAgICAgICAgICAgRmVhdHVyZXMKICAgICAg\nICAgICAgPC9idXR0b24+CiAgICAgICAgICAgIDxMaW5rIHRvPSIvY3Vycmlj\ndWx1bSIgY2xhc3NOYW1lPSJ0ZXh0LXNtIGZvbnQtbWVkaXVtIHRleHQtWyM0\nQjU1NjNdIGhvdmVyOnRleHQtWyMwQTE2MjhdIHRyYW5zaXRpb24tY29sb3Jz\nIj4KICAgICAgICAgICAgICBDdXJyaWN1bHVtCiAgICAgICAgICAgIDwvTGlu\naz4KICAgICAgICAgICAgPExpbmsgdG89Ii9yZXZpZXdzIiBjbGFzc05hbWU9\nInRleHQtc20gZm9udC1tZWRpdW0gdGV4dC1bIzRCNTU2M10gaG92ZXI6dGV4\ndC1bIzBBMTYyOF0gdHJhbnNpdGlvbi1jb2xvcnMiPgogICAgICAgICAgICAg\nIFJldmlld3MKICAgICAgICAgICAgPC9MaW5rPgogICAgICAgICAgICA8TGlu\nayB0bz0iL2RlbW8iIGNsYXNzTmFtZT0idGV4dC1zbSBmb250LW1lZGl1bSB0\nZXh0LVsjMEExNjI4XSBib3JkZXIgYm9yZGVyLVsjMEExNjI4XSByb3VuZGVk\nLXhsIHB4LTQgcHktMS41IGhvdmVyOmJnLVsjMEExNjI4XSBob3Zlcjp0ZXh0\nLXdoaXRlIHRyYW5zaXRpb24tY29sb3JzIiBzdHlsZT17eyBib3JkZXJXaWR0\naDogJzEuNXB4JyB9fT4KICAgICAgICAgICAgICBUcnkgRnJlZSBEZW1vCiAg\nICAgICAgICAgIDwvTGluaz4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAg\nIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMyI+CiAg\nICAgICAgICAgIDxMaW5rCiAgICAgICAgICAgICAgdG89Ii9hdXRoIgogICAg\nICAgICAgICAgIGNsYXNzTmFtZT0iaGlkZGVuIG1kOmlubGluZS1mbGV4IGl0\nZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBoLTExIHB4LTYgcm91bmRlZC14\nbCBiZy1bIzBBMTYyOF0gdGV4dC13aGl0ZSB0ZXh0LXNtIGZvbnQtc2VtaWJv\nbGQgaG92ZXI6YmctWyMwRDIyNTJdIHRyYW5zaXRpb24tY29sb3JzIgogICAg\nICAgICAgICA+CiAgICAgICAgICAgICAgU2lnbiBJbgogICAgICAgICAgICA8\nL0xpbms+CiAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICBvbkNs\naWNrPXsoKSA9PiBzZXRNb2JpbGVPcGVuKHRydWUpfQogICAgICAgICAgICAg\nIGNsYXNzTmFtZT0ibWQ6aGlkZGVuIHAtMiB0ZXh0LVsjMEExNjI4XSIKICAg\nICAgICAgICAgPgogICAgICAgICAgICAgIDxNZW51IGNsYXNzTmFtZT0idy02\nIGgtNiIgLz4KICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICA8L2Rp\ndj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9uYXY+CgogICAgICA8QW5pbWF0\nZVByZXNlbmNlPgogICAgICAgIHttb2JpbGVPcGVuICYmICgKICAgICAgICAg\nIDxtb3Rpb24uZGl2CiAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTog\nMCwgeDogJzEwMCUnIH19CiAgICAgICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0\neTogMSwgeDogMCB9fQogICAgICAgICAgICBleGl0PXt7IG9wYWNpdHk6IDAs\nIHg6ICcxMDAlJyB9fQogICAgICAgICAgICB0cmFuc2l0aW9uPXt7IHR5cGU6\nICdzcHJpbmcnLCBkYW1waW5nOiAyNSB9fQogICAgICAgICAgICBjbGFzc05h\nbWU9ImZpeGVkIGluc2V0LTAgei1bMTAwXSBiZy13aGl0ZSBmbGV4IGZsZXgt\nY29sIgogICAgICAgICAgPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0i\nZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIHB4LTQgaC0xNiI+\nCiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJmb250LWhlYWRpbmcg\ndGV4dC14bCBmb250LWJvbGQgdGV4dC1bIzBBMTYyOF0iPlZlZGljTWluZDwv\nc3Bhbj4KICAgICAgICAgICAgICA8YnV0dG9uIG9uQ2xpY2s9eygpID0+IHNl\ndE1vYmlsZU9wZW4oZmFsc2UpfSBjbGFzc05hbWU9InAtMiI+CiAgICAgICAg\nICAgICAgICA8WCBjbGFzc05hbWU9InctNiBoLTYgdGV4dC1bIzBBMTYyOF0i\nIC8+CiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgIDwvZGl2\nPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBmbGV4LWNvbCBw\neC02IHB5LTggZ2FwLTIiPgogICAgICAgICAgICAgIDxidXR0b24gb25DbGlj\naz17KCkgPT4gc2Nyb2xsVG8oJ2ZlYXR1cmVzJyl9IGNsYXNzTmFtZT0idGV4\ndC1sZWZ0IHB5LTQgdGV4dC1sZyBmb250LW1lZGl1bSB0ZXh0LVsjMEExNjI4\nXSBib3JkZXItYiBib3JkZXItWyNGMEY0RkZdIj5GZWF0dXJlczwvYnV0dG9u\nPgogICAgICAgICAgICAgIDxMaW5rIHRvPSIvY3VycmljdWx1bSIgb25DbGlj\naz17KCkgPT4gc2V0TW9iaWxlT3BlbihmYWxzZSl9IGNsYXNzTmFtZT0idGV4\ndC1sZWZ0IHB5LTQgdGV4dC1sZyBmb250LW1lZGl1bSB0ZXh0LVsjMEExNjI4\nXSBib3JkZXItYiBib3JkZXItWyNGMEY0RkZdIiBzdHlsZT17eyB0ZXh0RGVj\nb3JhdGlvbjogJ25vbmUnIH19PkN1cnJpY3VsdW08L0xpbms+CiAgICAgICAg\nICAgICAgPExpbmsgdG89Ii9yZXZpZXdzIiBvbkNsaWNrPXsoKSA9PiBzZXRN\nb2JpbGVPcGVuKGZhbHNlKX0gY2xhc3NOYW1lPSJ0ZXh0LWxlZnQgcHktNCB0\nZXh0LWxnIGZvbnQtbWVkaXVtIHRleHQtWyMwQTE2MjhdIGJvcmRlci1iIGJv\ncmRlci1bI0YwRjRGRl0iIHN0eWxlPXt7IHRleHREZWNvcmF0aW9uOiAnbm9u\nZScgfX0+UmV2aWV3czwvTGluaz4KICAgICAgICAgICAgICA8TGluayB0bz0i\nL2RlbW8iIG9uQ2xpY2s9eygpID0+IHNldE1vYmlsZU9wZW4oZmFsc2UpfSBj\nbGFzc05hbWU9InRleHQtbGVmdCBweS00IHRleHQtbGcgZm9udC1tZWRpdW0g\ndGV4dC1bIzNCODJGNl0gYm9yZGVyLWIgYm9yZGVyLVsjRjBGNEZGXSIgc3R5\nbGU9e3sgdGV4dERlY29yYXRpb246ICdub25lJyB9fT5UcnkgRnJlZSBEZW1v\nPC9MaW5rPgogICAgICAgICAgICAgIDxMaW5rCiAgICAgICAgICAgICAgICB0\nbz0iL2F1dGgiCiAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRN\nb2JpbGVPcGVuKGZhbHNlKX0KICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0i\nbXQtNiBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBoLTE0IHJv\ndW5kZWQteGwgYmctWyMwQTE2MjhdIHRleHQtd2hpdGUgdGV4dC1iYXNlIGZv\nbnQtc2VtaWJvbGQiCiAgICAgICAgICAgICAgICBzdHlsZT17eyB0ZXh0RGVj\nb3JhdGlvbjogJ25vbmUnIH19CiAgICAgICAgICAgICAgPgogICAgICAgICAg\nICAgICAgU2lnbiBJbgogICAgICAgICAgICAgIDwvTGluaz4KICAgICAgICAg\nICAgPC9kaXY+CiAgICAgICAgICA8L21vdGlvbi5kaXY+CiAgICAgICAgKX0K\nICAgICAgPC9BbmltYXRlUHJlc2VuY2U+CiAgICA8Lz4KICApOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/LandingNavbar.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/0ee0e1340a44217dbbaf258d640c01b7acb7c6d9","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/LandingNavbar.jsx"}}
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+export default function LandingNavbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollTo = (id) => {
+    setMobileOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-white/80 backdrop-blur-xl shadow-sm' : 'bg-transparent'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <Link to="/" className="font-heading text-xl font-bold text-[#0A1628]">
+            VedicMind
+          </Link>
+
+          <div className="hidden md:flex items-center gap-8">
+            <button onClick={() => scrollTo('features')} className="text-sm font-medium text-[#4B5563] hover:text-[#0A1628] transition-colors">
+              Features
+            </button>
+            <Link to="/curriculum" className="text-sm font-medium text-[#4B5563] hover:text-[#0A1628] transition-colors">
+              Curriculum
+            </Link>
+            <Link to="/reviews" className="text-sm font-medium text-[#4B5563] hover:text-[#0A1628] transition-colors">
+              Reviews
+            </Link>
+            <Link to="/demo" className="text-sm font-medium text-[#0A1628] border border-[#0A1628] rounded-xl px-4 py-1.5 hover:bg-[#0A1628] hover:text-white transition-colors" style={{ borderWidth: '1.5px' }}>
+              Try Free Demo
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <Link
+              to="/auth"
+              className="hidden md:inline-flex items-center justify-center h-11 px-6 rounded-xl bg-[#0A1628] text-white text-sm font-semibold hover:bg-[#0D2252] transition-colors"
+            >
+              Sign In
+            </Link>
+            <button
+              onClick={() => setMobileOpen(true)}
+              className="md:hidden p-2 text-[#0A1628]"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25 }}
+            className="fixed inset-0 z-[100] bg-white flex flex-col"
+          >
+            <div className="flex items-center justify-between px-4 h-16">
+              <span className="font-heading text-xl font-bold text-[#0A1628]">VedicMind</span>
+              <button onClick={() => setMobileOpen(false)} className="p-2">
+                <X className="w-6 h-6 text-[#0A1628]" />
+              </button>
+            </div>
+            <div className="flex flex-col px-6 py-8 gap-2">
+              <button onClick={() => scrollTo('features')} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]">Features</button>
+              <Link to="/curriculum" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>Curriculum</Link>
+              <Link to="/reviews" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>Reviews</Link>
+              <Link to="/demo" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#3B82F6] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>Try Free Demo</Link>
+              <Link
+                to="/auth"
+                onClick={() => setMobileOpen(false)}
+                className="mt-6 flex items-center justify-center h-14 rounded-xl bg-[#0A1628] text-white text-base font-semibold"
+                style={{ textDecoration: 'none' }}
+              >
+                Sign In
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
