@@ -1,1 +1,60 @@
-{"name":"MobileAppHeader.jsx","path":"src/components/MobileAppHeader.jsx","sha":"c6a54b351d4dfb7d08327e2fc2ae3ddc9b48fe5b","size":1858,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/MobileAppHeader.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/MobileAppHeader.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/c6a54b351d4dfb7d08327e2fc2ae3ddc9b48fe5b","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/MobileAppHeader.jsx?token=CFODAP7VDNTW23MKKGS3NE3KFSQUJAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgdXNlTG9jYXRp\nb24sIHVzZU5hdmlnYXRlIH0gZnJvbSAncmVhY3Qtcm91dGVyLWRvbSc7Cmlt\ncG9ydCB7IENoZXZyb25MZWZ0IH0gZnJvbSAnbHVjaWRlLXJlYWN0JzsKCi8v\nIFJvdXRlcyB0aGF0IGRvbid0IG5lZWQgYSBiYWNrIGJ1dHRvbgpjb25zdCBS\nT09UX1JPVVRFUyA9IFsnLycsICcvZGFzaGJvYXJkJywgJy9sZWFybicsICcv\ncHJhY3RpY2UnXTsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIE1vYmlsZUFw\ncEhlYWRlcigpIHsKICBjb25zdCBsb2NhdGlvbiA9IHVzZUxvY2F0aW9uKCk7\nCiAgY29uc3QgbmF2aWdhdGUgPSB1c2VOYXZpZ2F0ZSgpOwoKICBpZiAoUk9P\nVF9ST1VURVMuaW5jbHVkZXMobG9jYXRpb24ucGF0aG5hbWUpKSByZXR1cm4g\nbnVsbDsKCiAgcmV0dXJuICgKICAgIDw+CiAgICAgIDxkaXYgY2xhc3NOYW1l\nPSJtb2JpbGUtYXBwLWhlYWRlciBzYWZlLXRvcCIgc3R5bGU9e3sKICAgICAg\nICBkaXNwbGF5OiAnbm9uZScsIC8vIHNob3duIHZpYSBDU1Mgb24gbW9iaWxl\nCiAgICAgICAgcG9zaXRpb246ICdzdGlja3knLAogICAgICAgIHRvcDogMCwK\nICAgICAgICB6SW5kZXg6IDYwLAogICAgICAgIGJhY2tncm91bmQ6ICdyZ2Jh\nKDI1NSwyNTUsMjU1LDAuOTcpJywKICAgICAgICBiYWNrZHJvcEZpbHRlcjog\nJ2JsdXIoMTJweCknLAogICAgICAgIFdlYmtpdEJhY2tkcm9wRmlsdGVyOiAn\nYmx1cigxMnB4KScsCiAgICAgICAgYm9yZGVyQm90dG9tOiAnMXB4IHNvbGlk\nIHJnYmEoMzAsNjQsMTc1LDAuMSknLAogICAgICAgIHBhZGRpbmdUb3A6ICdl\nbnYoc2FmZS1hcmVhLWluc2V0LXRvcCwgMHB4KScsCiAgICAgIH19PgogICAg\nICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBhbGlnbkl0ZW1z\nOiAnY2VudGVyJywgaGVpZ2h0OiA0OCwgcGFkZGluZzogJzAgOHB4JyB9fT4K\nICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgb25DbGljaz17KCkgPT4g\nbmF2aWdhdGUoLTEpfQogICAgICAgICAgICBzdHlsZT17ewogICAgICAgICAg\nICAgIGJhY2tncm91bmQ6ICdub25lJywKICAgICAgICAgICAgICBib3JkZXI6\nICdub25lJywKICAgICAgICAgICAgICBjdXJzb3I6ICdwb2ludGVyJywKICAg\nICAgICAgICAgICBkaXNwbGF5OiAnZmxleCcsCiAgICAgICAgICAgICAgYWxp\nZ25JdGVtczogJ2NlbnRlcicsCiAgICAgICAgICAgICAgZ2FwOiA0LAogICAg\nICAgICAgICAgIHBhZGRpbmc6ICc4cHggMTJweCcsCiAgICAgICAgICAgICAg\nYm9yZGVyUmFkaXVzOiA4LAogICAgICAgICAgICAgIGZvbnRGYW1pbHk6ICd2\nYXIoLS1mb250LWJvZHkpJywKICAgICAgICAgICAgICBmb250U2l6ZTogMTUs\nCiAgICAgICAgICAgICAgY29sb3I6ICcjMEExNjI4JywKICAgICAgICAgICAg\nICBmb250V2VpZ2h0OiA1MDAsCiAgICAgICAgICAgICAgbWluSGVpZ2h0OiA0\nNCwKICAgICAgICAgICAgICB1c2VyU2VsZWN0OiAnbm9uZScsCiAgICAgICAg\nICAgICAgV2Via2l0VGFwSGlnaGxpZ2h0Q29sb3I6ICd0cmFuc3BhcmVudCcs\nCiAgICAgICAgICAgIH19CiAgICAgICAgICA+CiAgICAgICAgICAgIDxDaGV2\ncm9uTGVmdCBzaXplPXsyMH0gc3Ryb2tlV2lkdGg9ezIuNX0gc3R5bGU9e3sg\nZmxleFNocmluazogMCB9fSAvPgogICAgICAgICAgICBCYWNrCiAgICAgICAg\nICA8L2J1dHRvbj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAg\nIDxzdHlsZT57YAogICAgICAgIEBtZWRpYSAobWF4LXdpZHRoOiA2NDBweCkg\newogICAgICAgICAgLm1vYmlsZS1hcHAtaGVhZGVyIHsgZGlzcGxheTogYmxv\nY2sgIWltcG9ydGFudDsgfQogICAgICAgIH0KICAgICAgYH08L3N0eWxlPgog\nICAgPC8+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/MobileAppHeader.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/c6a54b351d4dfb7d08327e2fc2ae3ddc9b48fe5b","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/MobileAppHeader.jsx"}}
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { ChevronLeft } from 'lucide-react';
+
+// Routes that don't need a back button
+const ROOT_ROUTES = ['/', '/dashboard', '/learn', '/practice'];
+
+export default function MobileAppHeader() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  if (ROOT_ROUTES.includes(location.pathname)) return null;
+
+  return (
+    <>
+      <div className="mobile-app-header safe-top" style={{
+        display: 'none', // shown via CSS on mobile
+        position: 'sticky',
+        top: 0,
+        zIndex: 60,
+        background: 'rgba(255,255,255,0.97)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(30,64,175,0.1)',
+        paddingTop: 'env(safe-area-inset-top, 0px)',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', height: 48, padding: '0 8px' }}>
+          <button
+            onClick={() => navigate(-1)}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 4,
+              padding: '8px 12px',
+              borderRadius: 8,
+              fontFamily: 'var(--font-body)',
+              fontSize: 15,
+              color: '#0A1628',
+              fontWeight: 500,
+              minHeight: 44,
+              userSelect: 'none',
+              WebkitTapHighlightColor: 'transparent',
+            }}
+          >
+            <ChevronLeft size={20} strokeWidth={2.5} style={{ flexShrink: 0 }} />
+            Back
+          </button>
+        </div>
+      </div>
+      <style>{`
+        @media (max-width: 640px) {
+          .mobile-app-header { display: block !important; }
+        }
+      `}</style>
+    </>
+  );
+}
