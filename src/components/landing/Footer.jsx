@@ -1,1 +1,27 @@
-{"name":"Footer.jsx","path":"src/components/landing/Footer.jsx","sha":"7a2f581a1031aad56e5f3dcd879e584ca56d08c1","size":1324,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/Footer.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/Footer.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/7a2f581a1031aad56e5f3dcd879e584ca56d08c1","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/landing/Footer.jsx?token=CFODAP7WMWJZADOJI4EOSLLKFSQVZAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKCmV4cG9ydCBkZWZhdWx0IGZ1\nbmN0aW9uIEZvb3RlcigpIHsKICByZXR1cm4gKAogICAgPGZvb3RlciBjbGFz\nc05hbWU9ImJnLVsjMEExNjI4XSBweS0xMiI+CiAgICAgIDxkaXYgY2xhc3NO\nYW1lPSJtYXgtdy03eGwgbXgtYXV0byBweC00IHNtOnB4LTYgbGc6cHgtOCI+\nCiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggZmxleC1jb2wgbWQ6Zmxl\neC1yb3cgaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiBnYXAtNiI+CiAg\nICAgICAgICA8ZGl2PgogICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9ImZv\nbnQtaGVhZGluZyB0ZXh0LXhsIGZvbnQtYm9sZCB0ZXh0LXdoaXRlIj5WZWRp\nY01pbmTihKI8L3NwYW4+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4\ndC1ibHVlLTMwMCB0ZXh0LXNtIG10LTEiPkFuY2llbnQgV2lzZG9tLiBJbmZp\nbml0ZSBTcGVlZC48L3A+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxk\naXYgY2xhc3NOYW1lPSJmbGV4IGdhcC02IHRleHQtc20gdGV4dC1ibHVlLTMw\nMCI+CiAgICAgICAgICAgIDxhIGhyZWY9IiMiIGNsYXNzTmFtZT0iaG92ZXI6\ndGV4dC13aGl0ZSB0cmFuc2l0aW9uLWNvbG9ycyI+UHJpdmFjeTwvYT4KICAg\nICAgICAgICAgPGEgaHJlZj0iIyIgY2xhc3NOYW1lPSJob3Zlcjp0ZXh0LXdo\naXRlIHRyYW5zaXRpb24tY29sb3JzIj5UZXJtczwvYT4KICAgICAgICAgICAg\nPGEgaHJlZj0iIyIgY2xhc3NOYW1lPSJob3Zlcjp0ZXh0LXdoaXRlIHRyYW5z\naXRpb24tY29sb3JzIj5Db250YWN0PC9hPgogICAgICAgICAgPC9kaXY+CiAg\nICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gdGV4dC1ibHVlLTQwMCI+\nwqkge25ldyBEYXRlKCkuZ2V0RnVsbFllYXIoKX0gVmVkaWNNaW5k4oSiLiBB\nbGwgcmlnaHRzIHJlc2VydmVkLjwvcD4KICAgICAgICA8L2Rpdj4KICAgICAg\nICA8ZGl2IHN0eWxlPXt7IGJvcmRlclRvcDogJzFweCBzb2xpZCByZ2JhKDI1\nNSwyNTUsMjU1LDAuMDgpJywgbWFyZ2luVG9wOiAyNCwgcGFkZGluZ1RvcDog\nMTYsIHRleHRBbGlnbjogJ2NlbnRlcicgfX0+CiAgICAgICAgICA8cCBzdHls\nZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXpl\nOiAxMiwgY29sb3I6ICdyZ2JhKDI1NSwyNTUsMjU1LDAuNSknLCBtYXJnaW46\nIDAgfX0+CiAgICAgICAgICAgIMKpIDIwMjYgVmVkaWNNaW5k4oSiIHwgdmVk\naWNtaW5kYWkuaW4gfCBBbmNpZW50IFdpc2RvbS4gSW5maW5pdGUgU3BlZWQu\nCiAgICAgICAgICA8L3A+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2Pgog\nICAgPC9mb290ZXI+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/landing/Footer.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/7a2f581a1031aad56e5f3dcd879e584ca56d08c1","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/landing/Footer.jsx"}}
+import React from 'react';
+
+export default function Footer() {
+  return (
+    <footer className="bg-[#0A1628] py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <span className="font-heading text-xl font-bold text-white">VedicMind™</span>
+            <p className="text-blue-300 text-sm mt-1">Ancient Wisdom. Infinite Speed.</p>
+          </div>
+          <div className="flex gap-6 text-sm text-blue-300">
+            <a href="#" className="hover:text-white transition-colors">Privacy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <a href="#" className="hover:text-white transition-colors">Contact</a>
+          </div>
+          <p className="text-sm text-blue-400">© {new Date().getFullYear()} VedicMind™. All rights reserved.</p>
+        </div>
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: 24, paddingTop: 16, textAlign: 'center' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.5)', margin: 0 }}>
+            © 2026 VedicMind™ | vedicmindai.in | Ancient Wisdom. Infinite Speed.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
