@@ -1,1 +1,9 @@
-{"name":"utils.js","path":"src/lib/utils.js","sha":"a2b6729dd3aa0866a931ae95f3e103bb4551b2d9","size":190,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/utils.js?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/utils.js","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/a2b6729dd3aa0866a931ae95f3e103bb4551b2d9","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/lib/utils.js?token=CFODAP2ZGKMIOARKAW4CWJ3KFSQ37AA","type":"file","content":"aW1wb3J0IHsgY2xzeCB9IGZyb20gImNsc3giCmltcG9ydCB7IHR3TWVyZ2Ug\nfSBmcm9tICJ0YWlsd2luZC1tZXJnZSIKCmV4cG9ydCBmdW5jdGlvbiBjbigu\nLi5pbnB1dHMpIHsKICByZXR1cm4gdHdNZXJnZShjbHN4KGlucHV0cykpCn0g\nCgoKZXhwb3J0IGNvbnN0IGlzSWZyYW1lID0gd2luZG93LnNlbGYgIT09IHdp\nbmRvdy50b3A7Cg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/utils.js?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/a2b6729dd3aa0866a931ae95f3e103bb4551b2d9","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/utils.js"}}
+import { clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs))
+} 
+
+
+export const isIframe = window.self !== window.top;
