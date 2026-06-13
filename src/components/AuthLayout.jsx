@@ -1,1 +1,23 @@
-{"name":"AuthLayout.jsx","path":"src/components/AuthLayout.jsx","sha":"93f70ef0423a0cfc0e548452574a59cdcdabec3a","size":955,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/AuthLayout.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/AuthLayout.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/93f70ef0423a0cfc0e548452574a59cdcdabec3a","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/AuthLayout.jsx?token=CFODAP6WZOBRS4TGRJ37DHLKFSQUFAA","type":"file","content":"aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKCmV4cG9ydCBkZWZhdWx0IGZ1\nbmN0aW9uIEF1dGhMYXlvdXQoeyBpY29uOiBJY29uLCB0aXRsZSwgc3VidGl0\nbGUsIGZvb3RlciwgY2hpbGRyZW4gfSkgewogIHJldHVybiAoCiAgICA8ZGl2\nIGNsYXNzTmFtZT0ibWluLWgtc2NyZWVuIGZsZXggaXRlbXMtY2VudGVyIGp1\nc3RpZnktY2VudGVyIGJnLWJhY2tncm91bmQgcHgtNCI+CiAgICAgIDxkaXYg\nY2xhc3NOYW1lPSJ3LWZ1bGwgbWF4LXctbWQiPgogICAgICAgIDxkaXYgY2xh\nc3NOYW1lPSJ0ZXh0LWNlbnRlciBtYi0xMCI+CiAgICAgICAgICA8ZGl2IGNs\nYXNzTmFtZT0iaW5saW5lLWZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2Vu\ndGVyIHctMTQgaC0xNCByb3VuZGVkLTJ4bCBiZy1wcmltYXJ5IG1iLTQiPgog\nICAgICAgICAgICA8SWNvbiBjbGFzc05hbWU9InctNyBoLTcgdGV4dC1wcmlt\nYXJ5LWZvcmVncm91bmQiIGFyaWEtaGlkZGVuPSJ0cnVlIiAvPgogICAgICAg\nICAgPC9kaXY+CiAgICAgICAgICA8aDEgY2xhc3NOYW1lPSJ0ZXh0LTN4bCBm\nb250LWJvbGQgdHJhY2tpbmctdGlnaHQgdGV4dC1mb3JlZ3JvdW5kIj57dGl0\nbGV9PC9oMT4KICAgICAgICAgIHtzdWJ0aXRsZSAmJiA8cCBjbGFzc05hbWU9\nInRleHQtbXV0ZWQtZm9yZWdyb3VuZCBtdC0yIj57c3VidGl0bGV9PC9wPn0K\nICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iYmctY2Fy\nZCByb3VuZGVkLTJ4bCBzaGFkb3ctc20gYm9yZGVyIGJvcmRlci1ib3JkZXIg\ncC04Ij4KICAgICAgICAgIHtjaGlsZHJlbn0KICAgICAgICA8L2Rpdj4KICAg\nICAgICB7Zm9vdGVyICYmICgKICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4\ndC1jZW50ZXIgdGV4dC1zbSB0ZXh0LW11dGVkLWZvcmVncm91bmQgbXQtNiI+\ne2Zvb3Rlcn08L3A+CiAgICAgICAgKX0KICAgICAgPC9kaXY+CiAgICA8L2Rp\ndj4KICApOwp9Cg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/AuthLayout.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/93f70ef0423a0cfc0e548452574a59cdcdabec3a","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/AuthLayout.jsx"}}
+import React from "react";
+
+export default function AuthLayout({ icon: Icon, title, subtitle, footer, children }) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background px-4">
+      <div className="w-full max-w-md">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary mb-4">
+            <Icon className="w-7 h-7 text-primary-foreground" aria-hidden="true" />
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">{title}</h1>
+          {subtitle && <p className="text-muted-foreground mt-2">{subtitle}</p>}
+        </div>
+        <div className="bg-card rounded-2xl shadow-sm border border-border p-8">
+          {children}
+        </div>
+        {footer && (
+          <p className="text-center text-sm text-muted-foreground mt-6">{footer}</p>
+        )}
+      </div>
+    </div>
+  );
+}
