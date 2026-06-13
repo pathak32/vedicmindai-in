@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import usePullToRefresh from '@/hooks/usePullToRefresh';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import TrialBanner from '@/components/dashboard/TrialBanner';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { getUserProfile, getUserProgress } from '@/lib/supabaseDataService';
 import { getDailyQuizStatus, getTodayString } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@/lib/leaderboardEngine';
 
@@ -12,7 +14,7 @@ import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@
 function greeting(auth, profile) {
   const h = new Date().getHours();
   const tod = h >= 5 && h < 12 ? 'morning' : h >= 12 && h < 17 ? 'afternoon' : 'evening';
-  const displayName = profile.name || auth.name || '';
+  const displayName = profile.name || auth?.user_metadata?.name || '';
   if (!displayName) return `Good ${tod}! 👋`;
   const firstName = displayName.split(' ')[0];
   return `Good ${tod}, ${firstName}! 👋`;
@@ -500,17 +502,64 @@ function LeaderboardPreviewCard({ profile, progress }) {
 function DashboardPage() {
   const navigate = useNavigate();
 
-  const auth = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth')) || {}; } catch(e) { return {}; } })();
-  const profile = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile')) || {}; } catch(e) { return {}; } })();
-  const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress')) || {}; } catch(e) { return {}; } })();
+  const { user: auth, loading } = useVedicAuth();
+  const ADMIN_EMAILS = ['test1@vedicmindai.in', 'pathak32032@gmail.com'];
+  const isAdmin = ADMIN_EMAILS.includes(auth?.email);
 
-  const hasActivePlan = profile?.subscriptionStatus === 'active' || profile?.paymentStatus === 'completed';
-  const signupDate = new Date(auth?.createdAt || Date.now());
+  // Supabase data state
+  const [profile, setProfile] = useState(() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile')) || {}; } catch(e) { return {}; } });
+  const [progress, setProgress] = useState(() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress')) || {}; } catch(e) { return {}; } });
+  const [dataLoading, setDataLoading] = useState(true);
+
+  const hasActivePlan = profile?.subscriptionStatus === 'active' || profile?.subscription_status === 'active' || profile?.paymentStatus === 'completed' || profile?.payment_status === 'completed';
+  const signupDate = new Date(auth?.created_at || Date.now());
   const daysSinceSignup = Math.floor((Date.now() - signupDate) / (1000 * 60 * 60 * 24));
 
+  // Give auth state time to settle before redirecting
   useEffect(() => {
-    if (!localStorage.getItem('vedicmind_auth')) navigate('/auth');
-  }, []);
+    if (loading) return; // Still loading — wait
+    if (auth) return;    // Logged in — stay
+    // Not logged in — but wait a moment to let onAuthStateChange fire
+    const timer = setTimeout(() => {
+      // Double-check auth state hasn't changed
+      if (!auth) navigate('/auth');
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [loading, auth]);
+
+  // Load data from Supabase
+  useEffect(() => {
+    if (!auth?.id) return;
+    (async () => {
+      try {
+        const [supaProfile, supaProgress] = await Promise.all([
+          getUserProfile(auth.id),
+          getUserProgress(auth.id),
+        ]);
+        if (supaProfile && Object.keys(supaProfile).length > 0) {
+          setProfile(supaProfile);
+          localStorage.setItem('vedicmind_profile', JSON.stringify(supaProfile));
+        }
+        if (supaProgress && Object.keys(supaProgress).length > 0) {
+          // Map Supabase column names to app's expected keys
+          const mappedProgress = {
+            ...supaProgress,
+            completedLessons: supaProgress.completed_lessons || [],
+            lessonScores: supaProgress.lesson_scores || {},
+            totalXP: supaProgress.total_xp || 0,
+            currentLevel: supaProgress.current_level || 1,
+            dailyQuizStreak: supaProgress.daily_quiz_streak || 0,
+          };
+          setProgress(mappedProgress);
+          localStorage.setItem('vedicmind_progress', JSON.stringify(mappedProgress));
+        }
+      } catch (e) {
+        console.error('Dashboard data load error:', e);
+      } finally {
+        setDataLoading(false);
+      }
+    })();
+  }, [auth?.id]);
 
   const { pulling, pullDistance } = usePullToRefresh(() => window.location.reload());
 
@@ -602,6 +651,18 @@ function DashboardPage() {
             <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>{levelName}</span>
           </div>
         </div>
+
+        {/* ── ADMIN PANEL BUTTON ── */}
+        {isAdmin && (
+          <div style={{ marginBottom: 24 }}>
+            <button onClick={() => navigate('/admin-panel')} style={{
+              width: '100%', minHeight: 48, background: '#7C3AED',
+              color: 'white', border: 'none', borderRadius: 12,
+              fontSize: 16, fontWeight: 600, cursor: 'pointer',
+              fontFamily: 'var(--font-body)',
+            }}>🛡️ Admin Panel →</button>
+          </div>
+        )}
 
         {/* ── LEADERBOARD PREVIEW CARD ── */}
         <LeaderboardPreviewCard profile={profile} progress={progress} />
