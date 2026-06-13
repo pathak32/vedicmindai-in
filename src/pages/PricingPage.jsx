@@ -1,1 +1,329 @@
-{"name":"PricingPage.jsx","path":"src/pages/PricingPage.jsx","sha":"03dc5d0c0cc7cd33264458f9c9ddee96bc942325","size":13486,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/PricingPage.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/PricingPage.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/03dc5d0c0cc7cd33264458f9c9ddee96bc942325","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/pages/PricingPage.jsx?token=CFODAPYMSBU4THBPSF7TTOTKFSQ5PAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnOwppbXBv\ncnQgeyB1c2VOYXZpZ2F0ZSB9IGZyb20gJ3JlYWN0LXJvdXRlci1kb20nOwpp\nbXBvcnQgRGFzaGJvYXJkTmF2YmFyIGZyb20gJ0AvY29tcG9uZW50cy9kYXNo\nYm9hcmQvRGFzaGJvYXJkTmF2YmFyJzsKCmNvbnN0IGdsYXNzID0gewogIGJh\nY2tncm91bmQ6ICdyZ2JhKDI1NSwyNTUsMjU1LDAuNyknLAogIGJhY2tkcm9w\nRmlsdGVyOiAnYmx1cigyMHB4KScsCiAgV2Via2l0QmFja2Ryb3BGaWx0ZXI6\nICdibHVyKDIwcHgpJywKICBib3JkZXI6ICcxcHggc29saWQgcmdiYSgzMCw2\nNCwxNzUsMC4xNSknLAogIGJveFNoYWRvdzogJzAgOHB4IDMycHggcmdiYSgx\nMCwyMiw0MCwwLjA4KScsCiAgYm9yZGVyUmFkaXVzOiAxNiwKICBwYWRkaW5n\nOiAnMjhweCAyNHB4JywKfTsKCmNvbnN0IFBMQU5TID0gWwogIHsKICAgIGlk\nOiAnZnJlZScsCiAgICBuYW1lOiAnRnJlZScsCiAgICBiYWRnZTogJ0ZyZWUg\nZm9yZXZlcicsCiAgICBiYWRnZUJnOiAnI0YwRjRGRicsCiAgICBiYWRnZUNv\nbG9yOiAnIzFFNDBBRicsCiAgICBtb250aGx5UHJpY2U6ICfigrkwJywKICAg\nIG1vbnRobHlTdHJpa2U6IG51bGwsCiAgICBhbm51YWxQcmljZTogJ+KCuTAn\nLAogICAgYW5udWFsU3RyaWtlOiBudWxsLAogICAgYW5udWFsU3ViOiAnQWx3\nYXlzIGZyZWUnLAogICAgZGlzY291bnQ6IG51bGwsCiAgICBoaWdobGlnaHQ6\nIGZhbHNlLAogICAgYnRuTGFiZWw6ICdHZXQgU3RhcnRlZCBGcmVlJywKICAg\nIGJ0bkJnOiAnIzRCNTU2MycsCiAgICBzdWJ0ZXh0OiBudWxsLAogICAgZmVh\ndHVyZXM6IFsKICAgICAgeyB0ZXh0OiAnTGVzc29uIDEg4oCUIEludHJvZHVj\ndGlvbiB0byBWZWRpYyBNYXRocyAoQmVnaW5uZXIpJywgaW5jbHVkZWQ6IHRy\ndWUgfSwKICAgICAgeyB0ZXh0OiAnRGFpbHkgUXVpeiBldmVyeSBkYXknLCBp\nbmNsdWRlZDogdHJ1ZSB9LAogICAgICB7IHRleHQ6ICdWaWV3LW9ubHkgTGVh\nZGVyYm9hcmQnLCBpbmNsdWRlZDogdHJ1ZSB9LAogICAgICB7IHRleHQ6ICdB\ncHRpdHVkZTogNSBxdWVzdGlvbnMvbW9udGgnLCBpbmNsdWRlZDogdHJ1ZSB9\nLAogICAgICB7IHRleHQ6ICdBbGwgNDAgbGVzc29ucycsIGluY2x1ZGVkOiBm\nYWxzZSB9LAogICAgICB7IHRleHQ6ICdBSSBUdXRvcicsIGluY2x1ZGVkOiBm\nYWxzZSB9LAogICAgICB7IHRleHQ6ICdXZWVrbHkgRXhhbScsIGluY2x1ZGVk\nOiBmYWxzZSB9LAogICAgICB7IHRleHQ6ICdCYXR0bGUgTW9kZSBwYXJ0aWNp\ncGF0aW9uJywgaW5jbHVkZWQ6IGZhbHNlIH0sCiAgICBdLAogIH0sCiAgewog\nICAgaWQ6ICdiYXNpYycsCiAgICBuYW1lOiAnQmFzaWMnLAogICAgYmFkZ2U6\nICc4MCUgb2ZmIGxhdW5jaCBwcmljZScsCiAgICBiYWRnZUJnOiAnI0VDRkRG\nNScsCiAgICBiYWRnZUNvbG9yOiAnIzA2NUY0NicsCiAgICBtb250aGx5UHJp\nY2U6ICfigrkyOTknLAogICAgbW9udGhseVN0cmlrZTogJ+KCuTEsNTAwJywK\nICAgIGFubnVhbFByaWNlOiAn4oK5Miw5OTAnLAogICAgYW5udWFsU3RyaWtl\nOiAn4oK5MTgsMDAwJywKICAgIGFubnVhbFN1YjogJz0g4oK5MjQ5L21vbnRo\nIMK3IDIgbW9udGhzIEZSRUUnLAogICAgZGlzY291bnQ6ICc4MCUgb2ZmJywK\nICAgIG1vbnRobHlQYWlzZTogMjk5MDAsCiAgICBhbm51YWxQYWlzZTogMjk5\nMDAwLAogICAgaGlnaGxpZ2h0OiBmYWxzZSwKICAgIGJ0bkxhYmVsOiAnU3Rh\ncnQgQmFzaWMnLAogICAgYnRuQmc6ICcjMEExNjI4JywKICAgIHN1YnRleHQ6\nIG51bGwsCiAgICBmZWF0dXJlczogWwogICAgICB7IHRleHQ6ICdBbGwgNDAg\nbGVzc29ucycsIGluY2x1ZGVkOiB0cnVlIH0sCiAgICAgIHsgdGV4dDogJ0Rh\naWx5IFF1aXogZXZlcnkgZGF5JywgaW5jbHVkZWQ6IHRydWUgfSwKICAgICAg\neyB0ZXh0OiAnQUkgVHV0b3IgKDIwIG1zZ3MvZGF5KScsIGluY2x1ZGVkOiB0\ncnVlIH0sCiAgICAgIHsgdGV4dDogJ0NsYXNzIExlYWRlcmJvYXJkJywgaW5j\nbHVkZWQ6IHRydWUgfSwKICAgICAgeyB0ZXh0OiAnQmF0dGxlIE1vZGUnLCBp\nbmNsdWRlZDogdHJ1ZSB9LAogICAgICB7IHRleHQ6ICdPbHltcGlhZCAo4oK5\nMTkvZW50cnkpJywgaW5jbHVkZWQ6IHRydWUgfSwKICAgICAgeyB0ZXh0OiAn\nQXB0aXR1ZGUgTW9kdWxlIChQcm8gb25seSknLCBpbmNsdWRlZDogZmFsc2Ug\nfSwKICAgICAgeyB0ZXh0OiAnSGluZGkvTXVsdGlsaW5ndWFsIChQcm8gb25s\neSknLCBpbmNsdWRlZDogZmFsc2UgfSwKICAgICAgeyB0ZXh0OiAnR2xvYmFs\nIExlYWRlcmJvYXJkIChQcm8gb25seSknLCBpbmNsdWRlZDogZmFsc2UgfSwK\nICAgIF0sCiAgfSwKICB7CiAgICBpZDogJ3BybycsCiAgICBuYW1lOiAnUHJv\nJywKICAgIGJhZGdlOiAnODAlIG9mZiBsYXVuY2ggcHJpY2UnLAogICAgYmFk\nZ2VCZzogJyNFQ0ZERjUnLAogICAgYmFkZ2VDb2xvcjogJyMwNjVGNDYnLAog\nICAgbW9udGhseVByaWNlOiAn4oK5NTk5JywKICAgIG1vbnRobHlTdHJpa2U6\nICfigrkzLDAwMCcsCiAgICBhbm51YWxQcmljZTogJ+KCuTUsOTkwJywKICAg\nIGFubnVhbFN0cmlrZTogJ+KCuTM2LDAwMCcsCiAgICBhbm51YWxTdWI6ICc9\nIOKCuTQ5OS9tb250aCDCtyAyIG1vbnRocyBGUkVFJywKICAgIGRpc2NvdW50\nOiAnODAlIG9mZicsCiAgICBtb250aGx5UGFpc2U6IDU5OTAwLAogICAgYW5u\ndWFsUGFpc2U6IDU5OTAwMCwKICAgIGhpZ2hsaWdodDogdHJ1ZSwKICAgIGJ0\nbkxhYmVsOiAnU3RhcnQgUHJvJywKICAgIGJ0bkJnOiAnIzNCODJGNicsCiAg\nICBzdWJ0ZXh0OiBudWxsLAogICAgZmVhdHVyZXM6IFsKICAgICAgeyB0ZXh0\nOiAnRXZlcnl0aGluZyBpbiBCYXNpYycsIGluY2x1ZGVkOiB0cnVlIH0sCiAg\nICAgIHsgdGV4dDogJ1VubGltaXRlZCBBSSBUdXRvcicsIGluY2x1ZGVkOiB0\ncnVlIH0sCiAgICAgIHsgdGV4dDogJ0FwdGl0dWRlIE1vZHVsZSAodW5saW1p\ndGVkKScsIGluY2x1ZGVkOiB0cnVlIH0sCiAgICAgIHsgdGV4dDogJ0NsYXNz\nICsgU2Nob29sICsgR2xvYmFsIExlYWRlcmJvYXJkJywgaW5jbHVkZWQ6IHRy\ndWUgfSwKICAgICAgeyB0ZXh0OiAnV2Vla2x5IFJlcG9ydCBDYXJkJywgaW5j\nbHVkZWQ6IHRydWUgfSwKICAgICAgeyB0ZXh0OiAnTXVsdGlsaW5ndWFsIChI\naW5kaSwgVGFtaWwsIE1hcmF0aGkpJywgaW5jbHVkZWQ6IHRydWUgfSwKICAg\nICAgeyB0ZXh0OiAnUHJpb3JpdHkgU3VwcG9ydCcsIGluY2x1ZGVkOiB0cnVl\nIH0sCiAgICBdLAogIH0sCiAgewogICAgaWQ6ICdmYW1pbHknLAogICAgbmFt\nZTogJ0ZhbWlseScsCiAgICBiYWRnZTogJzgyJSBvZmYgbGF1bmNoIHByaWNl\nJywKICAgIGJhZGdlQmc6ICcjRUNGREY1JywKICAgIGJhZGdlQ29sb3I6ICcj\nMDY1RjQ2JywKICAgIG1vbnRobHlQcmljZTogJ+KCuTg5OScsCiAgICBtb250\naGx5U3RyaWtlOiAn4oK5NSwwMDAnLAogICAgYW5udWFsUHJpY2U6ICfigrk4\nLDk5MCcsCiAgICBhbm51YWxTdHJpa2U6ICfigrk2MCwwMDAnLAogICAgYW5u\ndWFsU3ViOiAnPSDigrk3NDkvbW9udGggwrcgMiBtb250aHMgRlJFRScsCiAg\nICBkaXNjb3VudDogJzgyJSBvZmYnLAogICAgbW9udGhseVBhaXNlOiA4OTkw\nMCwKICAgIGFubnVhbFBhaXNlOiA4OTkwMDAsCiAgICBoaWdobGlnaHQ6IGZh\nbHNlLAogICAgYnRuTGFiZWw6ICdTdGFydCBGYW1pbHkgUGxhbicsCiAgICBi\ndG5CZzogJyMwQTE2MjgnLAogICAgc3VidGV4dDogJ0ZvciB1cCB0byAzIGZh\nbWlseSBtZW1iZXJzJywKICAgIGZlYXR1cmVzOiBbCiAgICAgIHsgdGV4dDog\nJ1BybyBwbGFuIGZvciAzIG1lbWJlcnMnLCBpbmNsdWRlZDogdHJ1ZSB9LAog\nICAgICB7IHRleHQ6ICdQYXJlbnQgZGFzaGJvYXJkJywgaW5jbHVkZWQ6IHRy\ndWUgfSwKICAgICAgeyB0ZXh0OiAnSW5kaXZpZHVhbCBwcm9ncmVzcyBwZXIg\nY2hpbGQnLCBpbmNsdWRlZDogdHJ1ZSB9LAogICAgICB7IHRleHQ6ICdPbmUg\nc3Vic2NyaXB0aW9uLCB3aG9sZSBmYW1pbHknLCBpbmNsdWRlZDogdHJ1ZSB9\nLAogICAgXSwKICB9LApdOwoKY29uc3QgUExBTl9ESVNQTEFZX05BTUVTID0g\newogIGJhc2ljOiAnQmFzaWMnLCBwcm86ICdQcm8nLCBmYW1pbHk6ICdGYW1p\nbHknLAogIGJhc2ljX2FubnVhbDogJ0Jhc2ljIChBbm51YWwpJywgcHJvX2Fu\nbnVhbDogJ1BybyAoQW5udWFsKScsIGZhbWlseV9hbm51YWw6ICdGYW1pbHkg\nKEFubnVhbCknLAp9OwoKZnVuY3Rpb24gUGxhbkNhcmQoeyBwbGFuLCBpc0Fu\nbnVhbCwgb25QYXksIGlzQ3VycmVudCwgaXNGcmVlIH0pIHsKICByZXR1cm4g\nKAogICAgPGRpdiBzdHlsZT17eyBwb3NpdGlvbjogJ3JlbGF0aXZlJywgZmxl\neDogJzEgMSAyNDBweCcsIG1heFdpZHRoOiAzMjAgfX0+CiAgICAgIHtwbGFu\nLmhpZ2hsaWdodCAmJiAhaXNDdXJyZW50ICYmICgKICAgICAgICA8ZGl2IHN0\neWxlPXt7CiAgICAgICAgICBwb3NpdGlvbjogJ2Fic29sdXRlJywgdG9wOiAt\nMTYsIGxlZnQ6ICc1MCUnLCB0cmFuc2Zvcm06ICd0cmFuc2xhdGVYKC01MCUp\nJywKICAgICAgICAgIGJhY2tncm91bmQ6ICcjM0I4MkY2JywgY29sb3I6ICd3\naGl0ZScsIGJvcmRlclJhZGl1czogOTksIHBhZGRpbmc6ICc0cHggMTRweCcs\nCiAgICAgICAgICBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZv\nbnRTaXplOiAxMSwgZm9udFdlaWdodDogNjAwLCB3aGl0ZVNwYWNlOiAnbm93\ncmFwJywgekluZGV4OiAyLAogICAgICAgIH19Pk1vc3QgUG9wdWxhcjwvZGl2\nPgogICAgICApfQogICAgICB7aXNDdXJyZW50ICYmICgKICAgICAgICA8ZGl2\nIHN0eWxlPXt7CiAgICAgICAgICBwb3NpdGlvbjogJ2Fic29sdXRlJywgdG9w\nOiAtMTYsIGxlZnQ6ICc1MCUnLCB0cmFuc2Zvcm06ICd0cmFuc2xhdGVYKC01\nMCUpJywKICAgICAgICAgIGJhY2tncm91bmQ6ICcjMTBCOTgxJywgY29sb3I6\nICd3aGl0ZScsIGJvcmRlclJhZGl1czogOTksIHBhZGRpbmc6ICc0cHggMTRw\neCcsCiAgICAgICAgICBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScs\nIGZvbnRTaXplOiAxMSwgZm9udFdlaWdodDogNjAwLCB3aGl0ZVNwYWNlOiAn\nbm93cmFwJywgekluZGV4OiAyLAogICAgICAgIH19PllvdXIgUGxhbiDinJM8\nL2Rpdj4KICAgICAgKX0KCiAgICAgIDxkaXYgc3R5bGU9e3sKICAgICAgICAu\nLi5nbGFzcywKICAgICAgICBib3JkZXI6IGlzQ3VycmVudCA/ICcycHggc29s\naWQgIzEwQjk4MScgOiBwbGFuLmhpZ2hsaWdodCA/ICcycHggc29saWQgIzNC\nODJGNicgOiAnMXB4IHNvbGlkIHJnYmEoMzAsNjQsMTc1LDAuMTUpJywKICAg\nICAgICBkaXNwbGF5OiAnZmxleCcsIGZsZXhEaXJlY3Rpb246ICdjb2x1bW4n\nLCBoZWlnaHQ6ICcxMDAlJywKICAgICAgfX0+CiAgICAgICAgey8qIFBsYW4g\nbmFtZSArIGJhZGdlICovfQogICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxh\neTogJ2ZsZXgnLCBqdXN0aWZ5Q29udGVudDogJ3NwYWNlLWJldHdlZW4nLCBh\nbGlnbkl0ZW1zOiAnY2VudGVyJywgbWFyZ2luQm90dG9tOiAxMiwgZmxleFdy\nYXA6ICd3cmFwJywgZ2FwOiA2IH19PgogICAgICAgICAgPGRpdiBzdHlsZT17\neyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAx\nNCwgY29sb3I6ICcjNEI1NTYzJywgdGV4dFRyYW5zZm9ybTogJ3VwcGVyY2Fz\nZScsIGxldHRlclNwYWNpbmc6ICcwLjA4ZW0nLCBmb250V2VpZ2h0OiA2MDAg\nfX0+CiAgICAgICAgICAgIHtwbGFuLm5hbWV9CiAgICAgICAgICA8L2Rpdj4K\nICAgICAgICAgIHtwbGFuLmJhZGdlICYmICgKICAgICAgICAgICAgPHNwYW4g\nc3R5bGU9e3sgYmFja2dyb3VuZDogcGxhbi5iYWRnZUJnLCBjb2xvcjogcGxh\nbi5iYWRnZUNvbG9yLCBib3JkZXJSYWRpdXM6IDk5LCBwYWRkaW5nOiAnMnB4\nIDEwcHgnLCBmb250U2l6ZTogMTAsIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250\nLWJvZHkpJywgZm9udFdlaWdodDogNzAwIH19PgogICAgICAgICAgICAgIHtw\nbGFuLmJhZGdlfQogICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICApfQog\nICAgICAgIDwvZGl2PgoKICAgICAgICB7LyogUHJpY2UgKi99CiAgICAgICAg\ne2lzQW5udWFsID8gKAogICAgICAgICAgPGRpdiBzdHlsZT17eyBtYXJnaW5C\nb3R0b206IDQgfX0+CiAgICAgICAgICAgIHtwbGFuLmFubnVhbFN0cmlrZSAm\nJiAoCiAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250RmFtaWx5OiAn\ndmFyKC0tZm9udC1ib2R5KScsIGZvbnRTaXplOiAxMywgY29sb3I6ICcjOUNB\nM0FGJywgdGV4dERlY29yYXRpb246ICdsaW5lLXRocm91Z2gnIH19PntwbGFu\nLmFubnVhbFN0cmlrZX0veWVhcjwvZGl2PgogICAgICAgICAgICApfQogICAg\nICAgICAgICA8c3BhbiBjbGFzc05hbWU9ImZvbnQtaGVhZGluZyIgc3R5bGU9\ne3sgZm9udFNpemU6IDMyLCBmb250V2VpZ2h0OiA3MDAsIGNvbG9yOiAnIzBB\nMTYyOCcgfX0+e3BsYW4uYW5udWFsUHJpY2V9PC9zcGFuPgogICAgICAgICAg\nICA8c3BhbiBzdHlsZT17eyBmb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5\nKScsIGZvbnRTaXplOiAxNCwgY29sb3I6ICcjNEI1NTYzJyB9fT4veWVhcjwv\nc3Bhbj4KICAgICAgICAgICAge3BsYW4uYW5udWFsU3ViICYmICgKICAgICAg\nICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRGYW1pbHk6ICd2YXIoLS1mb250\nLWJvZHkpJywgZm9udFNpemU6IDEyLCBjb2xvcjogJyMxMEI5ODEnLCBmb250\nV2VpZ2h0OiA2MDAsIG1hcmdpblRvcDogNCB9fT57cGxhbi5hbm51YWxTdWJ9\nPC9kaXY+CiAgICAgICAgICAgICl9CiAgICAgICAgICA8L2Rpdj4KICAgICAg\nICApIDogKAogICAgICAgICAgPGRpdiBzdHlsZT17eyBtYXJnaW5Cb3R0b206\nIDQgfX0+CiAgICAgICAgICAgIHtwbGFuLm1vbnRobHlTdHJpa2UgJiYgKAog\nICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZm9udEZhbWlseTogJ3Zhcigt\nLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTMsIGNvbG9yOiAnIzlDQTNBRics\nIHRleHREZWNvcmF0aW9uOiAnbGluZS10aHJvdWdoJyB9fT57cGxhbi5tb250\naGx5U3RyaWtlfS9tb250aDwvZGl2PgogICAgICAgICAgICApfQogICAgICAg\nICAgICA8c3BhbiBjbGFzc05hbWU9ImZvbnQtaGVhZGluZyIgc3R5bGU9e3sg\nZm9udFNpemU6IDQwLCBmb250V2VpZ2h0OiA3MDAsIGNvbG9yOiAnIzBBMTYy\nOCcgfX0+e3BsYW4ubW9udGhseVByaWNlfTwvc3Bhbj4KICAgICAgICAgICAg\nPHNwYW4gc3R5bGU9e3sgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSkn\nLCBmb250U2l6ZTogMTQsIGNvbG9yOiAnIzRCNTU2MycgfX0+L21vbnRoPC9z\ncGFuPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgKX0KCiAgICAgICAge3Bs\nYW4uc3VidGV4dCAmJiAoCiAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRG\nYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9udFNpemU6IDEzLCBjb2xv\ncjogJyM2QjcyODAnLCBtYXJnaW5Cb3R0b206IDggfX0+e3BsYW4uc3VidGV4\ndH08L2Rpdj4KICAgICAgICApfQoKICAgICAgICA8ZGl2IHN0eWxlPXt7IGhl\naWdodDogMSwgYmFja2dyb3VuZDogJ3JnYmEoMzAsNjQsMTc1LDAuMDgpJywg\nbWFyZ2luOiAnMTZweCAwJyB9fSAvPgoKICAgICAgICA8ZGl2IHN0eWxlPXt7\nIGZsZXg6IDEsIG1hcmdpbkJvdHRvbTogMjQgfX0+CiAgICAgICAgICB7cGxh\nbi5mZWF0dXJlcy5tYXAoKGYsIGkpID0+ICgKICAgICAgICAgICAgPGRpdiBr\nZXk9e2l9IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JywgYWxpZ25JdGVtczog\nJ2ZsZXgtc3RhcnQnLCBnYXA6IDEwLCBtYXJnaW5Cb3R0b206IDEwIH19Pgog\nICAgICAgICAgICAgIDxzcGFuIHN0eWxlPXt7IGZvbnRTaXplOiAxNCwgZmxl\neFNocmluazogMCwgbWFyZ2luVG9wOiAxIH19PntmLmluY2x1ZGVkID8gJ+Kc\nhScgOiAn4p2MJ308L3NwYW4+CiAgICAgICAgICAgICAgPHNwYW4gc3R5bGU9\ne3sgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTog\nMTQsIGxpbmVIZWlnaHQ6IDEuNCwgY29sb3I6IGYuaW5jbHVkZWQgPyAnIzBB\nMTYyOCcgOiAnIzlDQTNBRicgfX0+CiAgICAgICAgICAgICAgICB7Zi50ZXh0\nfQogICAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgICAgPC9kaXY+CiAg\nICAgICAgICApKX0KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPGJ1dHRvbgog\nICAgICAgICAgb25DbGljaz17KCkgPT4gIWlzQ3VycmVudCAmJiAhaXNGcmVl\nICYmIG9uUGF5KCl9CiAgICAgICAgICBkaXNhYmxlZD17aXNDdXJyZW50fQog\nICAgICAgICAgc3R5bGU9e3sKICAgICAgICAgICAgd2lkdGg6ICcxMDAlJywg\naGVpZ2h0OiA0OCwgYm9yZGVyOiAnbm9uZScsIGJvcmRlclJhZGl1czogMTIs\nCiAgICAgICAgICAgIGJhY2tncm91bmQ6IGlzQ3VycmVudCA/ICcjMTBCOTgx\nJyA6IHBsYW4uYnRuQmcsCiAgICAgICAgICAgIGNvbG9yOiAnd2hpdGUnLCBm\nb250RmFtaWx5OiAndmFyKC0tZm9udC1ib2R5KScsCiAgICAgICAgICAgIGZv\nbnRTaXplOiAxNSwgZm9udFdlaWdodDogNTAwLCBjdXJzb3I6IGlzQ3VycmVu\ndCA/ICdub3QtYWxsb3dlZCcgOiAncG9pbnRlcicsCiAgICAgICAgICAgIHRy\nYW5zaXRpb246ICdvcGFjaXR5IDAuMTVzJywKICAgICAgICAgIH19CiAgICAg\nICAgICBvbk1vdXNlRW50ZXI9e2UgPT4geyBpZiAoIWlzQ3VycmVudCkgZS5j\ndXJyZW50VGFyZ2V0LnN0eWxlLm9wYWNpdHkgPSAnMC44OCc7IH19CiAgICAg\nICAgICBvbk1vdXNlTGVhdmU9e2UgPT4geyBlLmN1cnJlbnRUYXJnZXQuc3R5\nbGUub3BhY2l0eSA9ICcxJzsgfX0KICAgICAgICA+CiAgICAgICAgICB7aXND\ndXJyZW50ID8gJ0N1cnJlbnQgUGxhbiDinJMnIDogcGxhbi5idG5MYWJlbH0K\nICAgICAgICA8L2J1dHRvbj4KICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KICAp\nOwp9CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBQcmljaW5nUGFnZSgpIHsK\nICBjb25zdCBbaXNBbm51YWwsIHNldElzQW5udWFsXSA9IHVzZVN0YXRlKGZh\nbHNlKTsKICBjb25zdCBuYXZpZ2F0ZSA9IHVzZU5hdmlnYXRlKCk7CgogIGNv\nbnN0IHBsYW4gPSBKU09OLnBhcnNlKGxvY2FsU3RvcmFnZS5nZXRJdGVtKCd2\nZWRpY21pbmRfcGxhbicpIHx8ICd7fScpOwogIGNvbnN0IGlzUGFpZCA9IFsn\nYmFzaWMnLCAncHJvJywgJ2ZhbWlseScsICdiYXNpY19hbm51YWwnLCAncHJv\nX2FubnVhbCcsICdmYW1pbHlfYW5udWFsJ10uaW5jbHVkZXMocGxhbi5wbGFu\nU3RhdHVzKTsKICBjb25zdCBjdXJyZW50UGxhbk5hbWUgPSBQTEFOX0RJU1BM\nQVlfTkFNRVNbcGxhbi5wbGFuU3RhdHVzXSB8fCAnJzsKCiAgZnVuY3Rpb24g\naXNDdXJyZW50UGxhbihwbGFuTmFtZSkgewogICAgaWYgKCFpc1BhaWQpIHJl\ndHVybiBmYWxzZTsKICAgIHJldHVybiBwbGFuLnBsYW5TdGF0dXMgPT09IHBs\nYW5OYW1lLnRvTG93ZXJDYXNlKCkgfHwgcGxhbi5wbGFuU3RhdHVzID09PSBw\nbGFuTmFtZS50b0xvd2VyQ2FzZSgpICsgJ19hbm51YWwnOwogIH0KCiAgZnVu\nY3Rpb24gaW5pdGlhdGVQYXltZW50KCkgewogICAgd2luZG93Lm9wZW4oJ2h0\ndHBzOi8vcnpwLmlvL3J6cC92UkQ4UjJsdycsICdfYmxhbmsnKTsKICB9Cgog\nIHJldHVybiAoCiAgICA8ZGl2IHN0eWxlPXt7IG1pbkhlaWdodDogJzEwMHZo\nJywgYmFja2dyb3VuZDogJyNGMEY0RkYnIH19PgogICAgICA8RGFzaGJvYXJk\nTmF2YmFyIC8+CiAgICAgIDxtYWluIHN0eWxlPXt7IG1heFdpZHRoOiAxMjAw\nLCBtYXJnaW46ICcwIGF1dG8nLCBwYWRkaW5nOiAnNDhweCAxNnB4IDgwcHgn\nIH19PgoKICAgICAgICB7aXNQYWlkICYmICgKICAgICAgICAgIDxkaXYgc3R5\nbGU9e3sgYmFja2dyb3VuZDogJyNFQ0ZERjUnLCBib3JkZXI6ICcxcHggc29s\naWQgI0E3RjNEMCcsIGJvcmRlclJhZGl1czogMTIsIHBhZGRpbmc6ICcxNnB4\nIDIwcHgnLCBtYXJnaW5Cb3R0b206IDI0IH19PgogICAgICAgICAgICA8ZGl2\nIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9u\ndFNpemU6IDE0LCBjb2xvcjogJyMwNjVGNDYnLCBmb250V2VpZ2h0OiA1MDAg\nfX0+CiAgICAgICAgICAgICAg4pyFIFlvdSBhcmUgY3VycmVudGx5IG9uIHRo\nZSB7Y3VycmVudFBsYW5OYW1lfSBQbGFuCiAgICAgICAgICAgIDwvZGl2Pgog\nICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRGYW1pbHk6ICd2YXIoLS1m\nb250LWJvZHkpJywgZm9udFNpemU6IDEyLCBjb2xvcjogJyMwNjVGNDYnLCBt\nYXJnaW5Ub3A6IDIgfX0+CiAgICAgICAgICAgICAgWW91ciBwbGFuIGlzIGFj\ndGl2ZS4gWW91IGNhbiB1cGdyYWRlIGFueXRpbWUuCiAgICAgICAgICAgIDwv\nZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgKX0KCiAgICAgICAgPGRp\ndiBzdHlsZT17eyB0ZXh0QWxpZ246ICdjZW50ZXInLCBtYXJnaW5Cb3R0b206\nIDQwIH19PgogICAgICAgICAgPGgxIGNsYXNzTmFtZT0iZm9udC1oZWFkaW5n\nIiBzdHlsZT17eyBmb250U2l6ZTogJ2NsYW1wKDI2cHgsNXZ3LDM2cHgpJywg\nZm9udFdlaWdodDogNzAwLCBjb2xvcjogJyMwQTE2MjgnLCBtYXJnaW5Cb3R0\nb206IDEwIH19PgogICAgICAgICAgICBDaG9vc2UgWW91ciBQbGFuCiAgICAg\nICAgICA8L2gxPgogICAgICAgICAgPHAgc3R5bGU9e3sgZm9udEZhbWlseTog\nJ3ZhcigtLWZvbnQtYm9keSknLCBmb250U2l6ZTogMTYsIGNvbG9yOiAnIzRC\nNTU2MycsIG1hcmdpbjogMCB9fT4KICAgICAgICAgICAgU3RhcnQgZnJlZS4g\nVXBncmFkZSB3aGVuIHlvdSdyZSByZWFkeS4KICAgICAgICAgIDwvcD4KICAg\nICAgICA8L2Rpdj4KCiAgICAgICAgey8qIEJpbGxpbmcgdG9nZ2xlICovfQog\nICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBqdXN0aWZ5\nQ29udGVudDogJ2NlbnRlcicsIG1hcmdpbkJvdHRvbTogNDggfX0+CiAgICAg\nICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdpbmxpbmUtZmxleCcsIGJv\ncmRlcjogJzFweCBzb2xpZCByZ2JhKDMwLDY0LDE3NSwwLjE1KScsIGJvcmRl\nclJhZGl1czogOTksIHBhZGRpbmc6IDQsIGJhY2tncm91bmQ6ICdyZ2JhKDI1\nNSwyNTUsMjU1LDAuNiknIH19PgogICAgICAgICAgICB7W3sgbGFiZWw6ICdN\nb250aGx5JywgdmFsdWU6IGZhbHNlIH0sIHsgbGFiZWw6ICdBbm51YWwgwrcg\nQmVzdCBWYWx1ZScsIHZhbHVlOiB0cnVlIH1dLm1hcChvcHQgPT4gKAogICAg\nICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICAgIGtleT17U3RyaW5n\nKG9wdC52YWx1ZSl9CiAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBz\nZXRJc0FubnVhbChvcHQudmFsdWUpfQogICAgICAgICAgICAgICAgc3R5bGU9\ne3sKICAgICAgICAgICAgICAgICAgcGFkZGluZzogJzhweCAyMHB4JywgYm9y\nZGVyUmFkaXVzOiA5OSwgYm9yZGVyOiAnbm9uZScsIGN1cnNvcjogJ3BvaW50\nZXInLAogICAgICAgICAgICAgICAgICBmb250RmFtaWx5OiAndmFyKC0tZm9u\ndC1ib2R5KScsIGZvbnRTaXplOiAxNCwgZm9udFdlaWdodDogNTAwLAogICAg\nICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiBpc0FubnVhbCA9PT0gb3B0LnZh\nbHVlID8gJyMwQTE2MjgnIDogJ3RyYW5zcGFyZW50JywKICAgICAgICAgICAg\nICAgICAgY29sb3I6IGlzQW5udWFsID09PSBvcHQudmFsdWUgPyAnd2hpdGUn\nIDogJyM0QjU1NjMnLAogICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uOiAn\nYWxsIDAuMnMnLCB3aGl0ZVNwYWNlOiAnbm93cmFwJywKICAgICAgICAgICAg\nICAgIH19CiAgICAgICAgICAgICAgPntvcHQubGFiZWx9PC9idXR0b24+CiAg\nICAgICAgICAgICkpfQogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+\nCgogICAgICAgIHsvKiBQbGFuIGNhcmRzICovfQogICAgICAgIDxkaXYgc3R5\nbGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBnYXA6IDIwLCBhbGlnbkl0ZW1zOiAn\nc3RyZXRjaCcsIGp1c3RpZnlDb250ZW50OiAnY2VudGVyJywgZmxleFdyYXA6\nICd3cmFwJyB9fT4KICAgICAgICAgIHtQTEFOUy5tYXAocCA9PiAoCiAgICAg\nICAgICAgIDxQbGFuQ2FyZAogICAgICAgICAgICAgIGtleT17cC5pZH0KICAg\nICAgICAgICAgICBwbGFuPXtwfQogICAgICAgICAgICAgIGlzQW5udWFsPXtp\nc0FubnVhbH0KICAgICAgICAgICAgICBvblBheT17aW5pdGlhdGVQYXltZW50\nfQogICAgICAgICAgICAgIGlzQ3VycmVudD17aXNDdXJyZW50UGxhbihwLm5h\nbWUpfQogICAgICAgICAgICAgIGlzRnJlZT17cC5pZCA9PT0gJ2ZyZWUnfQog\nICAgICAgICAgICAvPgogICAgICAgICAgKSl9CiAgICAgICAgPC9kaXY+Cgog\nICAgICAgIHsvKiBWYWx1ZSBjb21wYXJpc29uIGZvb3RlciAqL30KICAgICAg\nICA8ZGl2IHN0eWxlPXt7IGJhY2tncm91bmQ6ICdyZ2JhKDI1NSwyNTUsMjU1\nLDAuNiknLCBib3JkZXI6ICcxcHggc29saWQgcmdiYSgzMCw2NCwxNzUsMC4x\nMiknLCBib3JkZXJSYWRpdXM6IDE2LCBwYWRkaW5nOiAnMjRweCAyOHB4Jywg\nbWFyZ2luVG9wOiA0MCwgdGV4dEFsaWduOiAnY2VudGVyJyB9fT4KICAgICAg\nICAgIDxwIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkp\nJywgZm9udFNpemU6IDE1LCBjb2xvcjogJyMwQTE2MjgnLCBmb250V2VpZ2h0\nOiA1MDAsIG1hcmdpbkJvdHRvbTogNiB9fT4KICAgICAgICAgICAgQ2FuY2Vs\nIGFueXRpbWUuIE5vIGhpZGRlbiBjaGFyZ2VzLgogICAgICAgICAgPC9wPgog\nICAgICAgICAgPHAgc3R5bGU9e3sgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQt\nYm9keSknLCBmb250U2l6ZTogMTQsIGNvbG9yOiAnIzRCNTU2MycsIG1hcmdp\nbjogMCB9fT4KICAgICAgICAgICAgT2ZmbGluZSBWZWRpYyBNYXRocyBjb3Vy\nc2VzIGNoYXJnZSDigrkzMCwwMDDigJPigrk0MCwwMDAuIFZlZGljTWluZCBn\naXZlcyB5b3UgbW9yZSwgZm9yIGxlc3MuCiAgICAgICAgICA8L3A+CiAgICAg\nICAgPC9kaXY+CgogICAgICAgIHsvKiBUcnVzdCBzaWduYWxzICovfQogICAg\nICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBqdXN0aWZ5Q29u\ndGVudDogJ2NlbnRlcicsIGFsaWduSXRlbXM6ICdjZW50ZXInLCBmbGV4V3Jh\ncDogJ3dyYXAnLCBnYXA6ICcxNnB4IDMycHgnLCBtYXJnaW5Ub3A6IDMyIH19\nPgogICAgICAgICAge1sKICAgICAgICAgICAgeyBpY29uOiAn8J+UkicsIHRl\neHQ6ICdTZWN1cmUgUGF5bWVudCB2aWEgUmF6b3JwYXknIH0sCiAgICAgICAg\nICAgIHsgaWNvbjogJ+KGqe+4jycsIHRleHQ6ICdDYW5jZWwgYW55dGltZScg\nfSwKICAgICAgICAgICAgeyBpY29uOiAn8J+HrvCfh7MnLCB0ZXh0OiAnTWFk\nZSBpbiBJbmRpYScgfSwKICAgICAgICAgIF0ubWFwKGl0ZW0gPT4gKAogICAg\nICAgICAgICA8ZGl2IGtleT17aXRlbS50ZXh0fSBzdHlsZT17eyBkaXNwbGF5\nOiAnZmxleCcsIGFsaWduSXRlbXM6ICdjZW50ZXInLCBnYXA6IDYgfX0+CiAg\nICAgICAgICAgICAgPHNwYW4gc3R5bGU9e3sgZm9udFNpemU6IDE2IH19Pntp\ndGVtLmljb259PC9zcGFuPgogICAgICAgICAgICAgIDxzcGFuIHN0eWxlPXt7\nIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJywgZm9udFNpemU6IDEy\nLCBjb2xvcjogJyM0QjU1NjMnIH19PntpdGVtLnRleHR9PC9zcGFuPgogICAg\nICAgICAgICA8L2Rpdj4KICAgICAgICAgICkpfQogICAgICAgIDwvZGl2PgoK\nICAgICAgPC9tYWluPgogICAgPC9kaXY+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/PricingPage.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/03dc5d0c0cc7cd33264458f9c9ddee96bc942325","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/PricingPage.jsx"}}
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+
+const glass = {
+  background: 'rgba(255,255,255,0.7)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  border: '1px solid rgba(30,64,175,0.15)',
+  boxShadow: '0 8px 32px rgba(10,22,40,0.08)',
+  borderRadius: 16,
+  padding: '28px 24px',
+};
+
+const PLANS = [
+  {
+    id: 'free',
+    name: 'Free',
+    badge: 'Free forever',
+    badgeBg: '#F0F4FF',
+    badgeColor: '#1E40AF',
+    monthlyPrice: '₹0',
+    monthlyStrike: null,
+    annualPrice: '₹0',
+    annualStrike: null,
+    annualSub: 'Always free',
+    discount: null,
+    highlight: false,
+    btnLabel: 'Get Started Free',
+    btnBg: '#4B5563',
+    subtext: null,
+    features: [
+      { text: 'Lesson 1 — Introduction to Vedic Maths (Beginner)', included: true },
+      { text: 'Daily Quiz every day', included: true },
+      { text: 'View-only Leaderboard', included: true },
+      { text: 'Aptitude: 5 questions/month', included: true },
+      { text: 'All 40 lessons', included: false },
+      { text: 'AI Tutor', included: false },
+      { text: 'Weekly Exam', included: false },
+      { text: 'Battle Mode participation', included: false },
+    ],
+  },
+  {
+    id: 'basic',
+    name: 'Basic',
+    badge: '80% off launch price',
+    badgeBg: '#ECFDF5',
+    badgeColor: '#065F46',
+    monthlyPrice: '₹299',
+    monthlyStrike: '₹1,500',
+    annualPrice: '₹2,990',
+    annualStrike: '₹18,000',
+    annualSub: '= ₹249/month · 2 months FREE',
+    discount: '80% off',
+    monthlyPaise: 29900,
+    annualPaise: 299000,
+    highlight: false,
+    btnLabel: 'Start Basic',
+    btnBg: '#0A1628',
+    subtext: null,
+    features: [
+      { text: 'All 40 lessons', included: true },
+      { text: 'Daily Quiz every day', included: true },
+      { text: 'AI Tutor (20 msgs/day)', included: true },
+      { text: 'Class Leaderboard', included: true },
+      { text: 'Battle Mode', included: true },
+      { text: 'Olympiad (₹19/entry)', included: true },
+      { text: 'Aptitude Module (Pro only)', included: false },
+      { text: 'Hindi/Multilingual (Pro only)', included: false },
+      { text: 'Global Leaderboard (Pro only)', included: false },
+    ],
+  },
+  {
+    id: 'pro',
+    name: 'Pro',
+    badge: '80% off launch price',
+    badgeBg: '#ECFDF5',
+    badgeColor: '#065F46',
+    monthlyPrice: '₹599',
+    monthlyStrike: '₹3,000',
+    annualPrice: '₹5,990',
+    annualStrike: '₹36,000',
+    annualSub: '= ₹499/month · 2 months FREE',
+    discount: '80% off',
+    monthlyPaise: 59900,
+    annualPaise: 599000,
+    highlight: true,
+    btnLabel: 'Start Pro',
+    btnBg: '#3B82F6',
+    subtext: null,
+    features: [
+      { text: 'Everything in Basic', included: true },
+      { text: 'Unlimited AI Tutor', included: true },
+      { text: 'Aptitude Module (unlimited)', included: true },
+      { text: 'Class + School + Global Leaderboard', included: true },
+      { text: 'Weekly Report Card', included: true },
+      { text: 'Multilingual (Hindi, Tamil, Marathi)', included: true },
+      { text: 'Priority Support', included: true },
+    ],
+  },
+  {
+    id: 'family',
+    name: 'Family',
+    badge: '82% off launch price',
+    badgeBg: '#ECFDF5',
+    badgeColor: '#065F46',
+    monthlyPrice: '₹899',
+    monthlyStrike: '₹5,000',
+    annualPrice: '₹8,990',
+    annualStrike: '₹60,000',
+    annualSub: '= ₹749/month · 2 months FREE',
+    discount: '82% off',
+    monthlyPaise: 89900,
+    annualPaise: 899000,
+    highlight: false,
+    btnLabel: 'Start Family Plan',
+    btnBg: '#0A1628',
+    subtext: 'For up to 3 family members',
+    features: [
+      { text: 'Pro plan for 3 members', included: true },
+      { text: 'Parent dashboard', included: true },
+      { text: 'Individual progress per child', included: true },
+      { text: 'One subscription, whole family', included: true },
+    ],
+  },
+];
+
+const PLAN_DISPLAY_NAMES = {
+  basic: 'Basic', pro: 'Pro', family: 'Family',
+  basic_annual: 'Basic (Annual)', pro_annual: 'Pro (Annual)', family_annual: 'Family (Annual)',
+};
+
+function PlanCard({ plan, isAnnual, onPay, isCurrent, isFree }) {
+  return (
+    <div style={{ position: 'relative', flex: '1 1 240px', maxWidth: 320 }}>
+      {plan.highlight && !isCurrent && (
+        <div style={{
+          position: 'absolute', top: -16, left: '50%', transform: 'translateX(-50%)',
+          background: '#3B82F6', color: 'white', borderRadius: 99, padding: '4px 14px',
+          fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 600, whiteSpace: 'nowrap', zIndex: 2,
+        }}>Most Popular</div>
+      )}
+      {isCurrent && (
+        <div style={{
+          position: 'absolute', top: -16, left: '50%', transform: 'translateX(-50%)',
+          background: '#10B981', color: 'white', borderRadius: 99, padding: '4px 14px',
+          fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 600, whiteSpace: 'nowrap', zIndex: 2,
+        }}>Your Plan ✓</div>
+      )}
+
+      <div style={{
+        ...glass,
+        border: isCurrent ? '2px solid #10B981' : plan.highlight ? '2px solid #3B82F6' : '1px solid rgba(30,64,175,0.15)',
+        display: 'flex', flexDirection: 'column', height: '100%',
+      }}>
+        {/* Plan name + badge */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 6 }}>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+            {plan.name}
+          </div>
+          {plan.badge && (
+            <span style={{ background: plan.badgeBg, color: plan.badgeColor, borderRadius: 99, padding: '2px 10px', fontSize: 10, fontFamily: 'var(--font-body)', fontWeight: 700 }}>
+              {plan.badge}
+            </span>
+          )}
+        </div>
+
+        {/* Price */}
+        {isAnnual ? (
+          <div style={{ marginBottom: 4 }}>
+            {plan.annualStrike && (
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#9CA3AF', textDecoration: 'line-through' }}>{plan.annualStrike}/year</div>
+            )}
+            <span className="font-heading" style={{ fontSize: 32, fontWeight: 700, color: '#0A1628' }}>{plan.annualPrice}</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>/year</span>
+            {plan.annualSub && (
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#10B981', fontWeight: 600, marginTop: 4 }}>{plan.annualSub}</div>
+            )}
+          </div>
+        ) : (
+          <div style={{ marginBottom: 4 }}>
+            {plan.monthlyStrike && (
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#9CA3AF', textDecoration: 'line-through' }}>{plan.monthlyStrike}/month</div>
+            )}
+            <span className="font-heading" style={{ fontSize: 40, fontWeight: 700, color: '#0A1628' }}>{plan.monthlyPrice}</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>/month</span>
+          </div>
+        )}
+
+        {plan.subtext && (
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#6B7280', marginBottom: 8 }}>{plan.subtext}</div>
+        )}
+
+        <div style={{ height: 1, background: 'rgba(30,64,175,0.08)', margin: '16px 0' }} />
+
+        <div style={{ flex: 1, marginBottom: 24 }}>
+          {plan.features.map((f, i) => (
+            <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 10 }}>
+              <span style={{ fontSize: 14, flexShrink: 0, marginTop: 1 }}>{f.included ? '✅' : '❌'}</span>
+              <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, lineHeight: 1.4, color: f.included ? '#0A1628' : '#9CA3AF' }}>
+                {f.text}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <button
+          onClick={() => !isCurrent && !isFree && onPay()}
+          disabled={isCurrent}
+          style={{
+            width: '100%', height: 48, border: 'none', borderRadius: 12,
+            background: isCurrent ? '#10B981' : plan.btnBg,
+            color: 'white', fontFamily: 'var(--font-body)',
+            fontSize: 15, fontWeight: 500, cursor: isCurrent ? 'not-allowed' : 'pointer',
+            transition: 'opacity 0.15s',
+          }}
+          onMouseEnter={e => { if (!isCurrent) e.currentTarget.style.opacity = '0.88'; }}
+          onMouseLeave={e => { e.currentTarget.style.opacity = '1'; }}
+        >
+          {isCurrent ? 'Current Plan ✓' : plan.btnLabel}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default function PricingPage() {
+  const [isAnnual, setIsAnnual] = useState(false);
+  const navigate = useNavigate();
+
+  const plan = JSON.parse(localStorage.getItem('vedicmind_plan') || '{}');
+  const isPaid = ['basic', 'pro', 'family', 'basic_annual', 'pro_annual', 'family_annual'].includes(plan.planStatus);
+  const currentPlanName = PLAN_DISPLAY_NAMES[plan.planStatus] || '';
+
+  function isCurrentPlan(planName) {
+    if (!isPaid) return false;
+    return plan.planStatus === planName.toLowerCase() || plan.planStatus === planName.toLowerCase() + '_annual';
+  }
+
+  function initiatePayment() {
+    window.open('https://rzp.io/rzp/vRD8R2lw', '_blank');
+  }
+
+  return (
+    <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
+      <DashboardNavbar />
+      <main style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 16px 80px' }}>
+
+        {isPaid && (
+          <div style={{ background: '#ECFDF5', border: '1px solid #A7F3D0', borderRadius: 12, padding: '16px 20px', marginBottom: 24 }}>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#065F46', fontWeight: 500 }}>
+              ✅ You are currently on the {currentPlanName} Plan
+            </div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#065F46', marginTop: 2 }}>
+              Your plan is active. You can upgrade anytime.
+            </div>
+          </div>
+        )}
+
+        <div style={{ textAlign: 'center', marginBottom: 40 }}>
+          <h1 className="font-heading" style={{ fontSize: 'clamp(26px,5vw,36px)', fontWeight: 700, color: '#0A1628', marginBottom: 10 }}>
+            Choose Your Plan
+          </h1>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: '#4B5563', margin: 0 }}>
+            Start free. Upgrade when you're ready.
+          </p>
+        </div>
+
+        {/* Billing toggle */}
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 48 }}>
+          <div style={{ display: 'inline-flex', border: '1px solid rgba(30,64,175,0.15)', borderRadius: 99, padding: 4, background: 'rgba(255,255,255,0.6)' }}>
+            {[{ label: 'Monthly', value: false }, { label: 'Annual · Best Value', value: true }].map(opt => (
+              <button
+                key={String(opt.value)}
+                onClick={() => setIsAnnual(opt.value)}
+                style={{
+                  padding: '8px 20px', borderRadius: 99, border: 'none', cursor: 'pointer',
+                  fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 500,
+                  background: isAnnual === opt.value ? '#0A1628' : 'transparent',
+                  color: isAnnual === opt.value ? 'white' : '#4B5563',
+                  transition: 'all 0.2s', whiteSpace: 'nowrap',
+                }}
+              >{opt.label}</button>
+            ))}
+          </div>
+        </div>
+
+        {/* Plan cards */}
+        <div style={{ display: 'flex', gap: 20, alignItems: 'stretch', justifyContent: 'center', flexWrap: 'wrap' }}>
+          {PLANS.map(p => (
+            <PlanCard
+              key={p.id}
+              plan={p}
+              isAnnual={isAnnual}
+              onPay={initiatePayment}
+              isCurrent={isCurrentPlan(p.name)}
+              isFree={p.id === 'free'}
+            />
+          ))}
+        </div>
+
+        {/* Value comparison footer */}
+        <div style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(30,64,175,0.12)', borderRadius: 16, padding: '24px 28px', marginTop: 40, textAlign: 'center' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#0A1628', fontWeight: 500, marginBottom: 6 }}>
+            Cancel anytime. No hidden charges.
+          </p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563', margin: 0 }}>
+            Offline Vedic Maths courses charge ₹30,000–₹40,000. VedicMind gives you more, for less.
+          </p>
+        </div>
+
+        {/* Trust signals */}
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '16px 32px', marginTop: 32 }}>
+          {[
+            { icon: '🔒', text: 'Secure Payment via Razorpay' },
+            { icon: '↩️', text: 'Cancel anytime' },
+            { icon: '🇮🇳', text: 'Made in India' },
+          ].map(item => (
+            <div key={item.text} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontSize: 16 }}>{item.icon}</span>
+              <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>{item.text}</span>
+            </div>
+          ))}
+        </div>
+
+      </main>
+    </div>
+  );
+}
