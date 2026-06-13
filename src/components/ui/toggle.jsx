@@ -1,1 +1,38 @@
-{"name":"toggle.jsx","path":"src/components/ui/toggle.jsx","sha":"49d072c2bc04281405a6c1c613ec4ed222e42bf3","size":1310,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/toggle.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/toggle.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/49d072c2bc04281405a6c1c613ec4ed222e42bf3","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/toggle.jsx?token=CFODAP34SAMROFMBWNJX72TKFSQ2VAA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIFRv\nZ2dsZVByaW1pdGl2ZSBmcm9tICJAcmFkaXgtdWkvcmVhY3QtdG9nZ2xlIgpp\nbXBvcnQgeyBjdmEgfSBmcm9tICJjbGFzcy12YXJpYW5jZS1hdXRob3JpdHki\nOwoKaW1wb3J0IHsgY24gfSBmcm9tICJAL2xpYi91dGlscyIKCmNvbnN0IHRv\nZ2dsZVZhcmlhbnRzID0gY3ZhKAogICJpbmxpbmUtZmxleCBpdGVtcy1jZW50\nZXIganVzdGlmeS1jZW50ZXIgZ2FwLTIgcm91bmRlZC1tZCB0ZXh0LXNtIGZv\nbnQtbWVkaXVtIHRyYW5zaXRpb24tY29sb3JzIGhvdmVyOmJnLW11dGVkIGhv\ndmVyOnRleHQtbXV0ZWQtZm9yZWdyb3VuZCBmb2N1cy12aXNpYmxlOm91dGxp\nbmUtbm9uZSBmb2N1cy12aXNpYmxlOnJpbmctMSBmb2N1cy12aXNpYmxlOnJp\nbmctcmluZyBkaXNhYmxlZDpwb2ludGVyLWV2ZW50cy1ub25lIGRpc2FibGVk\nOm9wYWNpdHktNTAgZGF0YS1bc3RhdGU9b25dOmJnLWFjY2VudCBkYXRhLVtz\ndGF0ZT1vbl06dGV4dC1hY2NlbnQtZm9yZWdyb3VuZCBbJl9zdmddOnBvaW50\nZXItZXZlbnRzLW5vbmUgWyZfc3ZnXTpzaXplLTQgWyZfc3ZnXTpzaHJpbmst\nMCIsCiAgewogICAgdmFyaWFudHM6IHsKICAgICAgdmFyaWFudDogewogICAg\nICAgIGRlZmF1bHQ6ICJiZy10cmFuc3BhcmVudCIsCiAgICAgICAgb3V0bGlu\nZToKICAgICAgICAgICJib3JkZXIgYm9yZGVyLWlucHV0IGJnLXRyYW5zcGFy\nZW50IHNoYWRvdy1zbSBob3ZlcjpiZy1hY2NlbnQgaG92ZXI6dGV4dC1hY2Nl\nbnQtZm9yZWdyb3VuZCIsCiAgICAgIH0sCiAgICAgIHNpemU6IHsKICAgICAg\nICBkZWZhdWx0OiAiaC05IHB4LTIgbWluLXctOSIsCiAgICAgICAgc206ICJo\nLTggcHgtMS41IG1pbi13LTgiLAogICAgICAgIGxnOiAiaC0xMCBweC0yLjUg\nbWluLXctMTAiLAogICAgICB9LAogICAgfSwKICAgIGRlZmF1bHRWYXJpYW50\nczogewogICAgICB2YXJpYW50OiAiZGVmYXVsdCIsCiAgICAgIHNpemU6ICJk\nZWZhdWx0IiwKICAgIH0sCiAgfQopCgpjb25zdCBUb2dnbGUgPSBSZWFjdC5m\nb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgdmFyaWFudCwgc2l6ZSwgLi4ucHJv\ncHMgfSwgcmVmKSA9PiAoCiAgPFRvZ2dsZVByaW1pdGl2ZS5Sb290CiAgICBy\nZWY9e3JlZn0KICAgIGNsYXNzTmFtZT17Y24odG9nZ2xlVmFyaWFudHMoeyB2\nYXJpYW50LCBzaXplLCBjbGFzc05hbWUgfSkpfQogICAgey4uLnByb3BzfSAv\nPgopKQoKVG9nZ2xlLmRpc3BsYXlOYW1lID0gVG9nZ2xlUHJpbWl0aXZlLlJv\nb3QuZGlzcGxheU5hbWUKCmV4cG9ydCB7IFRvZ2dsZSwgdG9nZ2xlVmFyaWFu\ndHMgfQo=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/toggle.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/49d072c2bc04281405a6c1c613ec4ed222e42bf3","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/toggle.jsx"}}
+import * as React from "react"
+import * as TogglePrimitive from "@radix-ui/react-toggle"
+import { cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils"
+
+const toggleVariants = cva(
+  "inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  {
+    variants: {
+      variant: {
+        default: "bg-transparent",
+        outline:
+          "border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
+      },
+      size: {
+        default: "h-9 px-2 min-w-9",
+        sm: "h-8 px-1.5 min-w-8",
+        lg: "h-10 px-2.5 min-w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+
+const Toggle = React.forwardRef(({ className, variant, size, ...props }, ref) => (
+  <TogglePrimitive.Root
+    ref={ref}
+    className={cn(toggleVariants({ variant, size, className }))}
+    {...props} />
+))
+
+Toggle.displayName = TogglePrimitive.Root.displayName
+
+export { Toggle, toggleVariants }
