@@ -1,16 +1,1 @@
-import * as React from "react"
-import * as LabelPrimitive from "@radix-ui/react-label"
-import { cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils"
-
-const labelVariants = cva(
-  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-)
-
-const Label = React.forwardRef(({ className, ...props }, ref) => (
-  <LabelPrimitive.Root ref={ref} className={cn(labelVariants(), className)} {...props} />
-))
-Label.displayName = LabelPrimitive.Root.displayName
-
-export { Label }
+{"name":"label.jsx","path":"src/components/ui/label.jsx","sha":"a1f40999c1466ed84fdd2ad1a8944781f516c9ba","size":525,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/label.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/label.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/a1f40999c1466ed84fdd2ad1a8944781f516c9ba","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/label.jsx?token=CFODAP7KKS2AWIUI6KTNCQLKFSQZLAA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIExh\nYmVsUHJpbWl0aXZlIGZyb20gIkByYWRpeC11aS9yZWFjdC1sYWJlbCIKaW1w\nb3J0IHsgY3ZhIH0gZnJvbSAiY2xhc3MtdmFyaWFuY2UtYXV0aG9yaXR5IjsK\nCmltcG9ydCB7IGNuIH0gZnJvbSAiQC9saWIvdXRpbHMiCgpjb25zdCBsYWJl\nbFZhcmlhbnRzID0gY3ZhKAogICJ0ZXh0LXNtIGZvbnQtbWVkaXVtIGxlYWRp\nbmctbm9uZSBwZWVyLWRpc2FibGVkOmN1cnNvci1ub3QtYWxsb3dlZCBwZWVy\nLWRpc2FibGVkOm9wYWNpdHktNzAiCikKCmNvbnN0IExhYmVsID0gUmVhY3Qu\nZm9yd2FyZFJlZigoeyBjbGFzc05hbWUsIC4uLnByb3BzIH0sIHJlZikgPT4g\nKAogIDxMYWJlbFByaW1pdGl2ZS5Sb290IHJlZj17cmVmfSBjbGFzc05hbWU9\ne2NuKGxhYmVsVmFyaWFudHMoKSwgY2xhc3NOYW1lKX0gey4uLnByb3BzfSAv\nPgopKQpMYWJlbC5kaXNwbGF5TmFtZSA9IExhYmVsUHJpbWl0aXZlLlJvb3Qu\nZGlzcGxheU5hbWUKCmV4cG9ydCB7IExhYmVsIH0K\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/label.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/a1f40999c1466ed84fdd2ad1a8944781f516c9ba","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/label.jsx"}}
