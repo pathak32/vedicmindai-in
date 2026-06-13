@@ -1,1 +1,180 @@
-{"name":"Step3Preferences.jsx","path":"src/components/onboarding/Step3Preferences.jsx","sha":"ea5631c70f1b3efc53711dcfe1fa348b48ea0c40","size":6531,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/Step3Preferences.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/Step3Preferences.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/ea5631c70f1b3efc53711dcfe1fa348b48ea0c40","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/onboarding/Step3Preferences.jsx?token=CFODAP3PPOCYMEWCIXZWURTKFSQXFAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnOwoKY29u\nc3QgVElNRV9PUFRJT05TID0gWwogIHsgdmFsdWU6ICcxMC0xNSBtaW4nLCBl\nbW9qaTogJ+KPse+4jycsIHRpdGxlOiAnMTDigJMxNSBtaW4nLCBzdWI6ICdD\nYXN1YWwgbGVhcm5lcicgfSwKICB7IHZhbHVlOiAnMjAtMzAgbWluJywgZW1v\namk6ICfij7AnLCB0aXRsZTogJzIw4oCTMzAgbWluJywgc3ViOiAnU2VyaW91\ncyBsZWFybmVyJyB9LAogIHsgdmFsdWU6ICc0NS02MCBtaW4nLCBlbW9qaTog\nJ/CflKUnLCB0aXRsZTogJzQ14oCTNjAgbWluJywgc3ViOiAnRGVkaWNhdGVk\nJyB9LAogIHsgdmFsdWU6ICcxKyBob3VycycsICBlbW9qaTogJ+KaoScsIHRp\ndGxlOiAnMSsgaG91cnMnLCAgc3ViOiAnSW50ZW5zaXZlJyB9LApdOwoKY29u\nc3QgU1RZTEVfT1BUSU9OUyA9IFsKICB7IHZhbHVlOiAnVmlzdWFsJywgICAg\nICAgICBlbW9qaTogJ/CfkYHvuI8nLCB0aXRsZTogJ1Zpc3VhbCcsICAgICAg\nICAgc3ViOiAnRGlhZ3JhbXMgYW5kIHBhdHRlcm5zJyB9LAogIHsgdmFsdWU6\nICdTdGVwLWJ5LVN0ZXAnLCAgIGVtb2ppOiAn8J+TlicsIHRpdGxlOiAnU3Rl\ncC1ieS1TdGVwJywgICBzdWI6ICdEZXRhaWxlZCBleHBsYW5hdGlvbnMnIH0s\nCiAgeyB2YWx1ZTogJ1ByYWN0aWNlLUZpcnN0JywgZW1vamk6ICfwn46vJywg\ndGl0bGU6ICdQcmFjdGljZS1GaXJzdCcsIHN1YjogJ0xlYXJuIGJ5IGRvaW5n\nJyB9LApdOwoKY29uc3QgTEFOR1VBR0VTID0gWydFbmdsaXNoJywgJ+CkueCk\nv+CkguCkpuClgCcsICfgrqTgrq7grr/grrTgr40nLCAn4KSu4KSw4KS+4KSg\n4KWAJ107Cgpjb25zdCBjYXJkQmFzZSA9IHsKICBiYWNrZ3JvdW5kOiAncmdi\nYSgyNTUsMjU1LDI1NSwwLjA2KScsCiAgYm9yZGVyOiAnMS41cHggc29saWQg\ncmdiYSgyNTUsMjU1LDI1NSwwLjE1KScsCiAgYm9yZGVyUmFkaXVzOiAxNCwK\nICBwYWRkaW5nOiAxNiwKICBjdXJzb3I6ICdwb2ludGVyJywKICBtaW5IZWln\naHQ6IDgwLAogIGRpc3BsYXk6ICdmbGV4JywKICBhbGlnbkl0ZW1zOiAnY2Vu\ndGVyJywKICBnYXA6IDE0LAogIHRleHRBbGlnbjogJ2xlZnQnLAogIHRyYW5z\naXRpb246ICdhbGwgMC4ycycsCiAgd2lkdGg6ICcxMDAlJywKfTsKCmNvbnN0\nIGNhcmRTZWxlY3RlZCA9IHsKICBiYWNrZ3JvdW5kOiAncmdiYSg1OSwxMzAs\nMjQ2LDAuMiknLAogIGJvcmRlcjogJzJweCBzb2xpZCAjM0I4MkY2JywKICBi\nb3hTaGFkb3c6ICcwIDAgMCAzcHggcmdiYSg1OSwxMzAsMjQ2LDAuMTUpJywK\nfTsKCmNvbnN0IHNlY3Rpb25MYWJlbCA9IHsKICBmb250U2l6ZTogMTQsCiAg\nY29sb3I6ICdyZ2JhKDI1NSwyNTUsMjU1LDAuNyknLAogIG1hcmdpbkJvdHRv\nbTogMTIsCiAgZGlzcGxheTogJ2Jsb2NrJywKICBmb250RmFtaWx5OiAndmFy\nKC0tZm9udC1ib2R5KScsCn07CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBT\ndGVwM1ByZWZlcmVuY2VzKHsgZGF0YSwgb25VcGRhdGUsIG9uTmV4dCwgb25C\nYWNrIH0pIHsKICBjb25zdCBbZXJyb3JzLCBzZXRFcnJvcnNdID0gdXNlU3Rh\ndGUoe30pOwogIGNvbnN0IHsgdGltZUNvbW1pdG1lbnQsIGxlYXJuaW5nU3R5\nbGUsIGxhbmd1YWdlIH0gPSBkYXRhOwoKICBjb25zdCBoYW5kbGVOZXh0ID0g\nKCkgPT4gewogICAgY29uc3QgZSA9IHt9OwogICAgaWYgKCF0aW1lQ29tbWl0\nbWVudCkgZS50aW1lID0gJ1BsZWFzZSBzZWxlY3QgeW91ciBkYWlseSB0aW1l\nIGNvbW1pdG1lbnQuJzsKICAgIGlmICghbGVhcm5pbmdTdHlsZSkgZS5zdHls\nZSA9ICdQbGVhc2Ugc2VsZWN0IHlvdXIgbGVhcm5pbmcgc3R5bGUuJzsKICAg\nIHNldEVycm9ycyhlKTsKICAgIGlmIChPYmplY3Qua2V5cyhlKS5sZW5ndGgg\nPT09IDApIG9uTmV4dCgpOwogIH07CgogIHJldHVybiAoCiAgICA8ZGl2Pgog\nICAgICA8aDIgY2xhc3NOYW1lPSJmb250LWhlYWRpbmcgbWItMSIgc3R5bGU9\ne3sgZm9udFNpemU6IDI2LCBmb250V2VpZ2h0OiA3MDAsIGNvbG9yOiAnd2hp\ndGUnIH19PgogICAgICAgIEhvdyBkbyB5b3UgbGVhcm4gYmVzdD8KICAgICAg\nPC9oMj4KICAgICAgPHAgc3R5bGU9e3sgZm9udFNpemU6IDE0LCBjb2xvcjog\nJ3JnYmEoMjU1LDI1NSwyNTUsMC43KScsIG1hcmdpbkJvdHRvbTogMjggfX0+\nCiAgICAgICAgVGhpcyBoZWxwcyB1cyB0dW5lIHlvdXIgbGVzc29uIHBhY2lu\nZyBhbmQgc3R5bGUuCiAgICAgIDwvcD4KCiAgICAgIHsvKiBEYWlseSBUaW1l\nICovfQogICAgICA8c3BhbiBzdHlsZT17c2VjdGlvbkxhYmVsfT5Ib3cgbXVj\naCB0aW1lIGNhbiB5b3UgZ2l2ZSBkYWlseT88L3NwYW4+CiAgICAgIDxkaXYg\nY2xhc3NOYW1lPSJwcmVmLWdyaWQtMiIgc3R5bGU9e3sgZGlzcGxheTogJ2dy\naWQnLCBncmlkVGVtcGxhdGVDb2x1bW5zOiAncmVwZWF0KDIsIDFmciknLCBn\nYXA6IDEwLCBtYXJnaW5Cb3R0b206IGVycm9ycy50aW1lID8gNCA6IDI0IH19\nPgogICAgICAgIHtUSU1FX09QVElPTlMubWFwKG9wdCA9PiB7CiAgICAgICAg\nICBjb25zdCBzZWwgPSB0aW1lQ29tbWl0bWVudCA9PT0gb3B0LnZhbHVlOwog\nICAgICAgICAgcmV0dXJuICgKICAgICAgICAgICAgPGJ1dHRvbiBrZXk9e29w\ndC52YWx1ZX0gb25DbGljaz17KCkgPT4gb25VcGRhdGUoeyB0aW1lQ29tbWl0\nbWVudDogb3B0LnZhbHVlIH0pfQogICAgICAgICAgICAgIHN0eWxlPXt7IC4u\nLmNhcmRCYXNlLCAuLi4oc2VsID8gY2FyZFNlbGVjdGVkIDoge30pIH19Pgog\nICAgICAgICAgICAgIDxzcGFuIHN0eWxlPXt7IGZvbnRTaXplOiAyNiwgZmxl\neFNocmluazogMCB9fT57b3B0LmVtb2ppfTwvc3Bhbj4KICAgICAgICAgICAg\nICA8ZGl2PgogICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250V2Vp\nZ2h0OiA2MDAsIGZvbnRTaXplOiAxNSwgY29sb3I6ICd3aGl0ZScsIGZvbnRG\nYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJyB9fT57b3B0LnRpdGxlfTwvZGl2\nPgogICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250U2l6ZTogMTIs\nIGNvbG9yOiAncmdiYSgyNTUsMjU1LDI1NSwwLjYpJywgbWFyZ2luVG9wOiAy\nIH19PntvcHQuc3VifTwvZGl2PgogICAgICAgICAgICAgIDwvZGl2PgogICAg\nICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICk7CiAgICAgICAgfSl9CiAg\nICAgIDwvZGl2PgogICAgICB7ZXJyb3JzLnRpbWUgJiYgPHAgc3R5bGU9e3sg\nY29sb3I6ICcjRUY0NDQ0JywgZm9udFNpemU6IDEyLCBtYXJnaW5Cb3R0b206\nIDE2IH19PntlcnJvcnMudGltZX08L3A+fQoKICAgICAgey8qIExlYXJuaW5n\nIFN0eWxlICovfQogICAgICA8c3BhbiBzdHlsZT17eyAuLi5zZWN0aW9uTGFi\nZWwsIG1hcmdpblRvcDogMjQgfX0+WW91ciBsZWFybmluZyBzdHlsZTo8L3Nw\nYW4+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJwcmVmLWdyaWQtMyIgc3R5bGU9\ne3sgZGlzcGxheTogJ2dyaWQnLCBncmlkVGVtcGxhdGVDb2x1bW5zOiAncmVw\nZWF0KDMsIDFmciknLCBnYXA6IDEwLCBtYXJnaW5Cb3R0b206IGVycm9ycy5z\ndHlsZSA/IDQgOiAyNCB9fT4KICAgICAgICB7U1RZTEVfT1BUSU9OUy5tYXAo\nb3B0ID0+IHsKICAgICAgICAgIGNvbnN0IHNlbCA9IGxlYXJuaW5nU3R5bGUg\nPT09IG9wdC52YWx1ZTsKICAgICAgICAgIHJldHVybiAoCiAgICAgICAgICAg\nIDxidXR0b24ga2V5PXtvcHQudmFsdWV9IG9uQ2xpY2s9eygpID0+IG9uVXBk\nYXRlKHsgbGVhcm5pbmdTdHlsZTogb3B0LnZhbHVlIH0pfQogICAgICAgICAg\nICAgIHN0eWxlPXt7IC4uLmNhcmRCYXNlLCAuLi4oc2VsID8gY2FyZFNlbGVj\ndGVkIDoge30pLCBmbGV4RGlyZWN0aW9uOiAnY29sdW1uJywgZ2FwOiA4LCBt\naW5IZWlnaHQ6IDkwLCBhbGlnbkl0ZW1zOiAnZmxleC1zdGFydCcsIHBhZGRp\nbmc6ICcxNHB4IDE2cHgnIH19PgogICAgICAgICAgICAgIDxzcGFuIHN0eWxl\nPXt7IGZvbnRTaXplOiAyNCB9fT57b3B0LmVtb2ppfTwvc3Bhbj4KICAgICAg\nICAgICAgICA8ZGl2PgogICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBm\nb250V2VpZ2h0OiA2MDAsIGZvbnRTaXplOiAxNCwgY29sb3I6ICd3aGl0ZScs\nIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJvZHkpJyB9fT57b3B0LnRpdGxl\nfTwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250U2l6\nZTogMTEsIGNvbG9yOiAncmdiYSgyNTUsMjU1LDI1NSwwLjYpJywgbWFyZ2lu\nVG9wOiAyIH19PntvcHQuc3VifTwvZGl2PgogICAgICAgICAgICAgIDwvZGl2\nPgogICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICk7CiAgICAgICAg\nfSl9CiAgICAgIDwvZGl2PgogICAgICB7ZXJyb3JzLnN0eWxlICYmIDxwIHN0\neWxlPXt7IGNvbG9yOiAnI0VGNDQ0NCcsIGZvbnRTaXplOiAxMiwgbWFyZ2lu\nQm90dG9tOiAxNiB9fT57ZXJyb3JzLnN0eWxlfTwvcD59CgogICAgICB7Lyog\nTGFuZ3VhZ2UgKi99CiAgICAgIDxzcGFuIHN0eWxlPXt7IC4uLnNlY3Rpb25M\nYWJlbCwgbWFyZ2luVG9wOiAyNCB9fT5QcmVmZXJyZWQgbGFuZ3VhZ2U6PC9z\ncGFuPgogICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JywgZmxl\neFdyYXA6ICd3cmFwJywgZ2FwOiAxMCwgbWFyZ2luQm90dG9tOiAzMiB9fT4K\nICAgICAgICB7TEFOR1VBR0VTLm1hcChsYW5nID0+IHsKICAgICAgICAgIGNv\nbnN0IHNlbCA9IChsYW5ndWFnZSB8fCAnRW5nbGlzaCcpID09PSBsYW5nOwog\nICAgICAgICAgcmV0dXJuICgKICAgICAgICAgICAgPGJ1dHRvbgogICAgICAg\nICAgICAgIGtleT17bGFuZ30KICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9\nPiBvblVwZGF0ZSh7IGxhbmd1YWdlOiBsYW5nIH0pfQogICAgICAgICAgICAg\nIHN0eWxlPXt7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiBzZWwgPyAn\nIzNCODJGNicgOiAncmdiYSgyNTUsMjU1LDI1NSwwLjA2KScsCiAgICAgICAg\nICAgICAgICBib3JkZXI6IGAxLjVweCBzb2xpZCAke3NlbCA/ICcjM0I4MkY2\nJyA6ICdyZ2JhKDI1NSwyNTUsMjU1LDAuMiknfWAsCiAgICAgICAgICAgICAg\nICBib3JkZXJSYWRpdXM6IDEwMCwKICAgICAgICAgICAgICAgIHBhZGRpbmc6\nICcxMHB4IDIwcHgnLAogICAgICAgICAgICAgICAgbWluSGVpZ2h0OiA0NCwK\nICAgICAgICAgICAgICAgIGNvbG9yOiAnd2hpdGUnLAogICAgICAgICAgICAg\nICAgZm9udFNpemU6IDE1LAogICAgICAgICAgICAgICAgY3Vyc29yOiAncG9p\nbnRlcicsCiAgICAgICAgICAgICAgICB0cmFuc2l0aW9uOiAnYWxsIDAuMThz\nJywKICAgICAgICAgICAgICAgIGZvbnRGYW1pbHk6ICd2YXIoLS1mb250LWJv\nZHkpJywKICAgICAgICAgICAgICB9fQogICAgICAgICAgICA+CiAgICAgICAg\nICAgICAge2xhbmd9CiAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAg\nKTsKICAgICAgICB9KX0KICAgICAgPC9kaXY+CgogICAgICB7LyogQnV0dG9u\ncyAqL30KICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGdh\ncDogMTIgfX0+CiAgICAgICAgPGJ1dHRvbgogICAgICAgICAgb25DbGljaz17\nb25CYWNrfQogICAgICAgICAgc3R5bGU9e3sKICAgICAgICAgICAgZmxleDog\nMSwKICAgICAgICAgICAgbWluSGVpZ2h0OiA0NCwKICAgICAgICAgICAgYmFj\na2dyb3VuZDogJ3RyYW5zcGFyZW50JywKICAgICAgICAgICAgYm9yZGVyOiAn\nMS41cHggc29saWQgcmdiYSgyNTUsMjU1LDI1NSwwLjMpJywKICAgICAgICAg\nICAgYm9yZGVyUmFkaXVzOiAxMiwKICAgICAgICAgICAgY29sb3I6ICd3aGl0\nZScsCiAgICAgICAgICAgIGZvbnRTaXplOiAxNSwKICAgICAgICAgICAgZm9u\ndFdlaWdodDogNjAwLAogICAgICAgICAgICBjdXJzb3I6ICdwb2ludGVyJywK\nICAgICAgICAgICAgZm9udEZhbWlseTogJ3ZhcigtLWZvbnQtYm9keSknLAog\nICAgICAgICAgfX0KICAgICAgICA+CiAgICAgICAgICDihpAgQmFjawogICAg\nICAgIDwvYnV0dG9uPgogICAgICAgIDxidXR0b24KICAgICAgICAgIG9uQ2xp\nY2s9e2hhbmRsZU5leHR9CiAgICAgICAgICBzdHlsZT17ewogICAgICAgICAg\nICBmbGV4OiAyLAogICAgICAgICAgICBtaW5IZWlnaHQ6IDQ0LAogICAgICAg\nICAgICBiYWNrZ3JvdW5kOiAnIzNCODJGNicsCiAgICAgICAgICAgIGJvcmRl\ncjogJ25vbmUnLAogICAgICAgICAgICBib3JkZXJSYWRpdXM6IDEyLAogICAg\nICAgICAgICBjb2xvcjogJ3doaXRlJywKICAgICAgICAgICAgZm9udFNpemU6\nIDE1LAogICAgICAgICAgICBmb250V2VpZ2h0OiA2MDAsCiAgICAgICAgICAg\nIGN1cnNvcjogJ3BvaW50ZXInLAogICAgICAgICAgICBmb250RmFtaWx5OiAn\ndmFyKC0tZm9udC1ib2R5KScsCiAgICAgICAgICB9fQogICAgICAgID4KICAg\nICAgICAgIE5leHQg4oaSCiAgICAgICAgPC9idXR0b24+CiAgICAgIDwvZGl2\nPgoKICAgICAgPHN0eWxlPntgCiAgICAgICAgQG1lZGlhIChtYXgtd2lkdGg6\nIDQ4MHB4KSB7CiAgICAgICAgICAucHJlZi1ncmlkLTIgeyBncmlkLXRlbXBs\nYXRlLWNvbHVtbnM6IDFmciAhaW1wb3J0YW50OyB9CiAgICAgICAgICAucHJl\nZi1ncmlkLTMgeyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IDFmciAhaW1wb3J0\nYW50OyB9CiAgICAgICAgfQogICAgICBgfTwvc3R5bGU+CiAgICA8L2Rpdj4K\nICApOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/onboarding/Step3Preferences.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/ea5631c70f1b3efc53711dcfe1fa348b48ea0c40","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/onboarding/Step3Preferences.jsx"}}
+import React, { useState } from 'react';
+
+const TIME_OPTIONS = [
+  { value: '10-15 min', emoji: '⏱️', title: '10–15 min', sub: 'Casual learner' },
+  { value: '20-30 min', emoji: '⏰', title: '20–30 min', sub: 'Serious learner' },
+  { value: '45-60 min', emoji: '🔥', title: '45–60 min', sub: 'Dedicated' },
+  { value: '1+ hours',  emoji: '⚡', title: '1+ hours',  sub: 'Intensive' },
+];
+
+const STYLE_OPTIONS = [
+  { value: 'Visual',         emoji: '👁️', title: 'Visual',         sub: 'Diagrams and patterns' },
+  { value: 'Step-by-Step',   emoji: '📖', title: 'Step-by-Step',   sub: 'Detailed explanations' },
+  { value: 'Practice-First', emoji: '🎯', title: 'Practice-First', sub: 'Learn by doing' },
+];
+
+const LANGUAGES = ['English', 'हिंदी', 'தமிழ்', 'मराठी'];
+
+const cardBase = {
+  background: 'rgba(255,255,255,0.06)',
+  border: '1.5px solid rgba(255,255,255,0.15)',
+  borderRadius: 14,
+  padding: 16,
+  cursor: 'pointer',
+  minHeight: 80,
+  display: 'flex',
+  alignItems: 'center',
+  gap: 14,
+  textAlign: 'left',
+  transition: 'all 0.2s',
+  width: '100%',
+};
+
+const cardSelected = {
+  background: 'rgba(59,130,246,0.2)',
+  border: '2px solid #3B82F6',
+  boxShadow: '0 0 0 3px rgba(59,130,246,0.15)',
+};
+
+const sectionLabel = {
+  fontSize: 14,
+  color: 'rgba(255,255,255,0.7)',
+  marginBottom: 12,
+  display: 'block',
+  fontFamily: 'var(--font-body)',
+};
+
+export default function Step3Preferences({ data, onUpdate, onNext, onBack }) {
+  const [errors, setErrors] = useState({});
+  const { timeCommitment, learningStyle, language } = data;
+
+  const handleNext = () => {
+    const e = {};
+    if (!timeCommitment) e.time = 'Please select your daily time commitment.';
+    if (!learningStyle) e.style = 'Please select your learning style.';
+    setErrors(e);
+    if (Object.keys(e).length === 0) onNext();
+  };
+
+  return (
+    <div>
+      <h2 className="font-heading mb-1" style={{ fontSize: 26, fontWeight: 700, color: 'white' }}>
+        How do you learn best?
+      </h2>
+      <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', marginBottom: 28 }}>
+        This helps us tune your lesson pacing and style.
+      </p>
+
+      {/* Daily Time */}
+      <span style={sectionLabel}>How much time can you give daily?</span>
+      <div className="pref-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, marginBottom: errors.time ? 4 : 24 }}>
+        {TIME_OPTIONS.map(opt => {
+          const sel = timeCommitment === opt.value;
+          return (
+            <button key={opt.value} onClick={() => onUpdate({ timeCommitment: opt.value })}
+              style={{ ...cardBase, ...(sel ? cardSelected : {}) }}>
+              <span style={{ fontSize: 26, flexShrink: 0 }}>{opt.emoji}</span>
+              <div>
+                <div style={{ fontWeight: 600, fontSize: 15, color: 'white', fontFamily: 'var(--font-body)' }}>{opt.title}</div>
+                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>{opt.sub}</div>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+      {errors.time && <p style={{ color: '#EF4444', fontSize: 12, marginBottom: 16 }}>{errors.time}</p>}
+
+      {/* Learning Style */}
+      <span style={{ ...sectionLabel, marginTop: 24 }}>Your learning style:</span>
+      <div className="pref-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: errors.style ? 4 : 24 }}>
+        {STYLE_OPTIONS.map(opt => {
+          const sel = learningStyle === opt.value;
+          return (
+            <button key={opt.value} onClick={() => onUpdate({ learningStyle: opt.value })}
+              style={{ ...cardBase, ...(sel ? cardSelected : {}), flexDirection: 'column', gap: 8, minHeight: 90, alignItems: 'flex-start', padding: '14px 16px' }}>
+              <span style={{ fontSize: 24 }}>{opt.emoji}</span>
+              <div>
+                <div style={{ fontWeight: 600, fontSize: 14, color: 'white', fontFamily: 'var(--font-body)' }}>{opt.title}</div>
+                <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>{opt.sub}</div>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+      {errors.style && <p style={{ color: '#EF4444', fontSize: 12, marginBottom: 16 }}>{errors.style}</p>}
+
+      {/* Language */}
+      <span style={{ ...sectionLabel, marginTop: 24 }}>Preferred language:</span>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 32 }}>
+        {LANGUAGES.map(lang => {
+          const sel = (language || 'English') === lang;
+          return (
+            <button
+              key={lang}
+              onClick={() => onUpdate({ language: lang })}
+              style={{
+                background: sel ? '#3B82F6' : 'rgba(255,255,255,0.06)',
+                border: `1.5px solid ${sel ? '#3B82F6' : 'rgba(255,255,255,0.2)'}`,
+                borderRadius: 100,
+                padding: '10px 20px',
+                minHeight: 44,
+                color: 'white',
+                fontSize: 15,
+                cursor: 'pointer',
+                transition: 'all 0.18s',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              {lang}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Buttons */}
+      <div style={{ display: 'flex', gap: 12 }}>
+        <button
+          onClick={onBack}
+          style={{
+            flex: 1,
+            minHeight: 44,
+            background: 'transparent',
+            border: '1.5px solid rgba(255,255,255,0.3)',
+            borderRadius: 12,
+            color: 'white',
+            fontSize: 15,
+            fontWeight: 600,
+            cursor: 'pointer',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
+          ← Back
+        </button>
+        <button
+          onClick={handleNext}
+          style={{
+            flex: 2,
+            minHeight: 44,
+            background: '#3B82F6',
+            border: 'none',
+            borderRadius: 12,
+            color: 'white',
+            fontSize: 15,
+            fontWeight: 600,
+            cursor: 'pointer',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
+          Next →
+        </button>
+      </div>
+
+      <style>{`
+        @media (max-width: 480px) {
+          .pref-grid-2 { grid-template-columns: 1fr !important; }
+          .pref-grid-3 { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </div>
+  );
+}
