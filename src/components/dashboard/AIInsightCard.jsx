@@ -1,1 +1,42 @@
-{"name":"AIInsightCard.jsx","path":"src/components/dashboard/AIInsightCard.jsx","sha":"1a6ffecc4214e305b55e5dc721d88f2f06c4b303","size":1720,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/AIInsightCard.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/AIInsightCard.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/1a6ffecc4214e305b55e5dc721d88f2f06c4b303","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/dashboard/AIInsightCard.jsx?token=CFODAP2YKC4V7Z5AJGWCK3TKFSQU7AA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnOwppbXBv\ncnQgeyBtb3Rpb24gfSBmcm9tICdmcmFtZXItbW90aW9uJzsKaW1wb3J0IHsg\nUmVmcmVzaEN3IH0gZnJvbSAnbHVjaWRlLXJlYWN0JzsKCmNvbnN0IFRJUFMg\nPSBbCiAgJ1ByYWN0aWNlIGVhY2ggVmVkaWMgc3V0cmEgZm9yIDUgbWludXRl\ncyBkYWlseSBiZWZvcmUgbW92aW5nIG9uIOKAlCByZXBldGl0aW9uIGJ1aWxk\ncyBzcGVlZC4nLAogICdUZWFjaCB3aGF0IHlvdSBsZWFybiB0byBzb21lb25l\nIGVsc2UuIEV4cGxhaW5pbmcgVmVkaWMgdHJpY2tzIGNlbWVudHMgeW91ciBv\nd24gdW5kZXJzdGFuZGluZy4nLAogICdTdGFydCB3aXRoIG51bWJlcnMgY2xv\nc2UgdG8gYSBiYXNlICgxMCwgMTAwLCAxMDAwKSB3aGVuIHByYWN0aWNpbmcg\nTmlraGlsYW0g4oCUIGl0IGJ1aWxkcyBpbnR1aXRpb24gZmFzdC4nLAogICdE\nb25cJ3QgcnVzaCBwYXN0IHRoZSBiYXNpY3MuIEEgc3Ryb25nIGZvdW5kYXRp\nb24gaW4gRWthZGhpa2VuYSB3aWxsIHVubG9jayAzeCBmYXN0ZXIgbGVhcm5p\nbmcgbGF0ZXIuJywKICAnVHJhY2sgeW91ciBkYWlseSBwcmFjdGljZSBzdHJl\nYWtzIOKAlCBldmVuIDEwIG1pbnV0ZXMgYSBkYXkgYmVhdHMgMi1ob3VyIHdl\nZWtlbmQgc2Vzc2lvbnMuJywKXTsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9u\nIEFJSW5zaWdodENhcmQoeyBwcm9maWxlIH0pIHsKICBjb25zdCBbdGlwSWR4\nLCBzZXRUaXBJZHhdID0gdXNlU3RhdGUoMCk7CgogIGNvbnN0IHRpcCA9IHBy\nb2ZpbGU/LnBlcnNvbmFsaXplZFRpcCB8fCBUSVBTW3RpcElkeCAlIFRJUFMu\nbGVuZ3RoXTsKCiAgcmV0dXJuICgKICAgIDxtb3Rpb24uZGl2CiAgICAgIGlu\naXRpYWw9e3sgb3BhY2l0eTogMCwgeDogMjAgfX0KICAgICAgYW5pbWF0ZT17\neyBvcGFjaXR5OiAxLCB4OiAwIH19CiAgICAgIHRyYW5zaXRpb249e3sgZGVs\nYXk6IDAuMiB9fQogICAgICBjbGFzc05hbWU9InJvdW5kZWQtWzIwcHhdIHAt\nNiBib3JkZXIgYm9yZGVyLVsjREJFQUZFXSIKICAgICAgc3R5bGU9e3sgYmFj\na2dyb3VuZDogJyNGMEY0RkYnIH19CiAgICA+CiAgICAgIDxkaXYgY2xhc3NO\nYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gbWItMyI+\nCiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdh\ncC0yIj4KICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1sZyI+8J+S\noTwvc3Bhbj4KICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC14cyBm\nb250LXNlbWlib2xkIHRleHQtWyMxRTQwQUZdIHVwcGVyY2FzZSB0cmFja2lu\nZy13aWRlciI+WW91ciBBSSBJbnNpZ2h0PC9zcGFuPgogICAgICAgIDwvZGl2\nPgogICAgICAgIDxidXR0b24KICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNl\ndFRpcElkeChpID0+IGkgKyAxKX0KICAgICAgICAgIGNsYXNzTmFtZT0icC0x\nLjUgcm91bmRlZC1sZyBob3ZlcjpiZy1bI0RCRUFGRV0gdHJhbnNpdGlvbi1j\nb2xvcnMiCiAgICAgICAgICB0aXRsZT0iUmVmcmVzaCB0aXAiCiAgICAgICAg\nPgogICAgICAgICAgPFJlZnJlc2hDdyBjbGFzc05hbWU9InctMy41IGgtMy41\nIHRleHQtWyMzQjgyRjZdIiAvPgogICAgICAgIDwvYnV0dG9uPgogICAgICA8\nL2Rpdj4KICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXNtIHRleHQtWyMxRTQw\nQUZdIGxlYWRpbmctcmVsYXhlZCI+e3RpcH08L3A+CiAgICA8L21vdGlvbi5k\naXY+CiAgKTsKfQ==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/dashboard/AIInsightCard.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/1a6ffecc4214e305b55e5dc721d88f2f06c4b303","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/dashboard/AIInsightCard.jsx"}}
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { RefreshCw } from 'lucide-react';
+
+const TIPS = [
+  'Practice each Vedic sutra for 5 minutes daily before moving on — repetition builds speed.',
+  'Teach what you learn to someone else. Explaining Vedic tricks cements your own understanding.',
+  'Start with numbers close to a base (10, 100, 1000) when practicing Nikhilam — it builds intuition fast.',
+  'Don\'t rush past the basics. A strong foundation in Ekadhikena will unlock 3x faster learning later.',
+  'Track your daily practice streaks — even 10 minutes a day beats 2-hour weekend sessions.',
+];
+
+export default function AIInsightCard({ profile }) {
+  const [tipIdx, setTipIdx] = useState(0);
+
+  const tip = profile?.personalizedTip || TIPS[tipIdx % TIPS.length];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.2 }}
+      className="rounded-[20px] p-6 border border-[#DBEAFE]"
+      style={{ background: '#F0F4FF' }}
+    >
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-2">
+          <span className="text-lg">💡</span>
+          <span className="text-xs font-semibold text-[#1E40AF] uppercase tracking-wider">Your AI Insight</span>
+        </div>
+        <button
+          onClick={() => setTipIdx(i => i + 1)}
+          className="p-1.5 rounded-lg hover:bg-[#DBEAFE] transition-colors"
+          title="Refresh tip"
+        >
+          <RefreshCw className="w-3.5 h-3.5 text-[#3B82F6]" />
+        </button>
+      </div>
+      <p className="text-sm text-[#1E40AF] leading-relaxed">{tip}</p>
+    </motion.div>
+  );
+}
