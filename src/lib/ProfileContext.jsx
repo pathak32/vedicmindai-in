@@ -1,1 +1,53 @@
-{"name":"ProfileContext.jsx","path":"src/lib/ProfileContext.jsx","sha":"fadc93bb216cfa3c82a3775f396c5f64dcbaee10","size":1939,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/ProfileContext.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/ProfileContext.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/fadc93bb216cfa3c82a3775f396c5f64dcbaee10","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/lib/ProfileContext.jsx?token=CFODAPYT5VOPKP4VCENBQ2TKFSQ3FAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IGNyZWF0ZUNvbnRleHQsIHVzZUNvbnRleHQsIHVz\nZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tICdyZWFjdCc7CmltcG9ydCB7IGdl\ndFN1cGFiYXNlIH0gZnJvbSAnLi9zdXBhYmFzZUNsaWVudCc7CmltcG9ydCB7\nIGdldFVzZXJQcm9maWxlLCBzYXZlVXNlclByb2ZpbGUgfSBmcm9tICcuL3N1\ncGFiYXNlRGF0YVNlcnZpY2UnOwoKY29uc3QgUHJvZmlsZUNvbnRleHQgPSBj\ncmVhdGVDb250ZXh0KG51bGwpOwpjb25zdCBTVE9SQUdFX0tFWSA9ICd2ZWRp\nY21pbmRfcHJvZmlsZSc7Cgpjb25zdCBkZWZhdWx0UHJvZmlsZSA9IHsKICBy\nb2xlOiAnJywgbmFtZTogJycsIGFnZTogJycsIGdlbmRlcjogJycsIGdyYWRl\nOiAnJywKICBib2FyZDogJycsIGdvYWw6ICcnLCB0aW1lQ29tbWl0bWVudDog\nJycsIGxlYXJuaW5nU3R5bGU6ICcnLCBhaUFuYWx5c2lzOiAnJywKfTsKCmV4\ncG9ydCBmdW5jdGlvbiBQcm9maWxlUHJvdmlkZXIoeyBjaGlsZHJlbiB9KSB7\nCiAgY29uc3QgW3Byb2ZpbGUsIHNldFByb2ZpbGVdID0gdXNlU3RhdGUoKCkg\nPT4gewogICAgdHJ5IHsgcmV0dXJuIEpTT04ucGFyc2UobG9jYWxTdG9yYWdl\nLmdldEl0ZW0oU1RPUkFHRV9LRVkpKSB8fCBkZWZhdWx0UHJvZmlsZTsgfSBj\nYXRjaCB7IHJldHVybiBkZWZhdWx0UHJvZmlsZTsgfQogIH0pOwoKICAvLyBT\neW5jIHRvIGxvY2FsU3RvcmFnZSArIFN1cGFiYXNlIG9uIGNoYW5nZQogIHVz\nZUVmZmVjdCgoKSA9PiB7CiAgICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbShTVE9S\nQUdFX0tFWSwgSlNPTi5zdHJpbmdpZnkocHJvZmlsZSkpOwogICAgLy8gU2F2\nZSB0byBTdXBhYmFzZSBhc3luYyAobm9uLWJsb2NraW5nKQogICAgKGFzeW5j\nICgpID0+IHsKICAgICAgdHJ5IHsKICAgICAgICBjb25zdCBzdXBhYmFzZSA9\nIGF3YWl0IGdldFN1cGFiYXNlKCk7CiAgICAgICAgY29uc3QgeyBkYXRhOiB7\nIHNlc3Npb24gfSB9ID0gYXdhaXQgc3VwYWJhc2UuYXV0aC5nZXRTZXNzaW9u\nKCk7CiAgICAgICAgaWYgKHNlc3Npb24/LnVzZXI/LmlkKSB7CiAgICAgICAg\nICBhd2FpdCBzYXZlVXNlclByb2ZpbGUoc2Vzc2lvbi51c2VyLmlkLCB7CiAg\nICAgICAgICAgIG5hbWU6IHByb2ZpbGUubmFtZSwKICAgICAgICAgICAgZ29h\nbDogcHJvZmlsZS5nb2FsLAogICAgICAgICAgICBjbGFzc19ncm91cDogcHJv\nZmlsZS5jbGFzc0dyb3VwIHx8ICdjbGFzc19hJywKICAgICAgICAgICAgc3Vi\nc2NyaXB0aW9uX3N0YXR1czogcHJvZmlsZS5zdWJzY3JpcHRpb25TdGF0dXMg\nfHwgJ3RyaWFsJywKICAgICAgICAgICAgcGF5bWVudF9zdGF0dXM6IHByb2Zp\nbGUucGF5bWVudFN0YXR1cywKICAgICAgICAgICAgYWlfYW5hbHlzaXM6IHBy\nb2ZpbGUuYWlBbmFseXNpcyA/ICh0eXBlb2YgcHJvZmlsZS5haUFuYWx5c2lz\nID09PSAnc3RyaW5nJyA/IHsgbm90ZTogcHJvZmlsZS5haUFuYWx5c2lzIH0g\nOiBwcm9maWxlLmFpQW5hbHlzaXMpIDoge30sCiAgICAgICAgICB9KTsKICAg\nICAgICB9CiAgICAgIH0gY2F0Y2ggKGUpIHsgLyogc2lsZW50IGZhaWwgKi8g\nfQogICAgfSkoKTsKICB9LCBbcHJvZmlsZV0pOwoKICBjb25zdCB1cGRhdGVQ\ncm9maWxlID0gKGRhdGEpID0+IHNldFByb2ZpbGUocHJldiA9PiAoeyAuLi5w\ncmV2LCAuLi5kYXRhIH0pKTsKCiAgcmV0dXJuICgKICAgIDxQcm9maWxlQ29u\ndGV4dC5Qcm92aWRlciB2YWx1ZT17eyBwcm9maWxlLCB1cGRhdGVQcm9maWxl\nIH19PgogICAgICB7Y2hpbGRyZW59CiAgICA8L1Byb2ZpbGVDb250ZXh0LlBy\nb3ZpZGVyPgogICk7Cn0KCmV4cG9ydCBmdW5jdGlvbiB1c2VQcm9maWxlKCkg\newogIGNvbnN0IGN0eCA9IHVzZUNvbnRleHQoUHJvZmlsZUNvbnRleHQpOwog\nIGlmICghY3R4KSB0aHJvdyBuZXcgRXJyb3IoJ3VzZVByb2ZpbGUgbXVzdCBi\nZSB1c2VkIHdpdGhpbiBQcm9maWxlUHJvdmlkZXInKTsKICByZXR1cm4gY3R4\nOwp9Cg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/ProfileContext.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/fadc93bb216cfa3c82a3775f396c5f64dcbaee10","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/ProfileContext.jsx"}}
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { getSupabase } from './supabaseClient';
+import { getUserProfile, saveUserProfile } from './supabaseDataService';
+
+const ProfileContext = createContext(null);
+const STORAGE_KEY = 'vedicmind_profile';
+
+const defaultProfile = {
+  role: '', name: '', age: '', gender: '', grade: '',
+  board: '', goal: '', timeCommitment: '', learningStyle: '', aiAnalysis: '',
+};
+
+export function ProfileProvider({ children }) {
+  const [profile, setProfile] = useState(() => {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || defaultProfile; } catch { return defaultProfile; }
+  });
+
+  // Sync to localStorage + Supabase on change
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(profile));
+    // Save to Supabase async (non-blocking)
+    (async () => {
+      try {
+        const supabase = await getSupabase();
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session?.user?.id) {
+          await saveUserProfile(session.user.id, {
+            name: profile.name,
+            goal: profile.goal,
+            class_group: profile.classGroup || 'class_a',
+            subscription_status: profile.subscriptionStatus || 'trial',
+            payment_status: profile.paymentStatus,
+            ai_analysis: profile.aiAnalysis ? (typeof profile.aiAnalysis === 'string' ? { note: profile.aiAnalysis } : profile.aiAnalysis) : {},
+          });
+        }
+      } catch (e) { /* silent fail */ }
+    })();
+  }, [profile]);
+
+  const updateProfile = (data) => setProfile(prev => ({ ...prev, ...data }));
+
+  return (
+    <ProfileContext.Provider value={{ profile, updateProfile }}>
+      {children}
+    </ProfileContext.Provider>
+  );
+}
+
+export function useProfile() {
+  const ctx = useContext(ProfileContext);
+  if (!ctx) throw new Error('useProfile must be used within ProfileProvider');
+  return ctx;
+}
