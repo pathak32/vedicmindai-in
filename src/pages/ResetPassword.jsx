@@ -1,1 +1,114 @@
-{"name":"ResetPassword.jsx","path":"src/pages/ResetPassword.jsx","sha":"74e386d1d708aac176963b65f93a56e1ce1e2604","size":3729,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/ResetPassword.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/ResetPassword.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/74e386d1d708aac176963b65f93a56e1ce1e2604","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/pages/ResetPassword.jsx?token=CFODAP7M4HL55ULFWM56XBLKFSQ5XAA","type":"file","content":"aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAicmVhY3QiOwppbXBv\ncnQgeyBMaW5rLCB1c2VTZWFyY2hQYXJhbXMgfSBmcm9tICJyZWFjdC1yb3V0\nZXItZG9tIjsKaW1wb3J0IHsgYmFzZTQ0IH0gZnJvbSAiQC9hcGkvYmFzZTQ0\nQ2xpZW50IjsKaW1wb3J0IHsgQnV0dG9uIH0gZnJvbSAiQC9jb21wb25lbnRz\nL3VpL2J1dHRvbiI7CmltcG9ydCB7IElucHV0IH0gZnJvbSAiQC9jb21wb25l\nbnRzL3VpL2lucHV0IjsKaW1wb3J0IHsgTGFiZWwgfSBmcm9tICJAL2NvbXBv\nbmVudHMvdWkvbGFiZWwiOwppbXBvcnQgeyBMb2NrLCBMb2FkZXIyLCBBbGVy\ndFRyaWFuZ2xlIH0gZnJvbSAibHVjaWRlLXJlYWN0IjsKaW1wb3J0IEF1dGhM\nYXlvdXQgZnJvbSAiQC9jb21wb25lbnRzL0F1dGhMYXlvdXQiOwoKZXhwb3J0\nIGRlZmF1bHQgZnVuY3Rpb24gUmVzZXRQYXNzd29yZCgpIHsKICBjb25zdCBb\nc2VhcmNoUGFyYW1zXSA9IHVzZVNlYXJjaFBhcmFtcygpOwogIGNvbnN0IHJl\nc2V0VG9rZW4gPSBzZWFyY2hQYXJhbXMuZ2V0KCJ0b2tlbiIpOwoKICBjb25z\ndCBbbmV3UGFzc3dvcmQsIHNldE5ld1Bhc3N3b3JkXSA9IHVzZVN0YXRlKCIi\nKTsKICBjb25zdCBbY29uZmlybVBhc3N3b3JkLCBzZXRDb25maXJtUGFzc3dv\ncmRdID0gdXNlU3RhdGUoIiIpOwogIGNvbnN0IFtlcnJvciwgc2V0RXJyb3Jd\nID0gdXNlU3RhdGUoIiIpOwogIGNvbnN0IFtsb2FkaW5nLCBzZXRMb2FkaW5n\nXSA9IHVzZVN0YXRlKGZhbHNlKTsKCiAgY29uc3QgaGFuZGxlU3VibWl0ID0g\nYXN5bmMgKGUpID0+IHsKICAgIGUucHJldmVudERlZmF1bHQoKTsKICAgIHNl\ndEVycm9yKCIiKTsKICAgIGlmIChuZXdQYXNzd29yZCAhPT0gY29uZmlybVBh\nc3N3b3JkKSB7CiAgICAgIHNldEVycm9yKCJQYXNzd29yZHMgZG8gbm90IG1h\ndGNoIik7CiAgICAgIHJldHVybjsKICAgIH0KICAgIHNldExvYWRpbmcodHJ1\nZSk7CiAgICB0cnkgewogICAgICBhd2FpdCBiYXNlNDQuYXV0aC5yZXNldFBh\nc3N3b3JkKHsgcmVzZXRUb2tlbiwgbmV3UGFzc3dvcmQgfSk7CiAgICAgIHdp\nbmRvdy5sb2NhdGlvbi5ocmVmID0gIi9sb2dpbiI7CiAgICB9IGNhdGNoIChl\ncnIpIHsKICAgICAgc2V0RXJyb3IoZXJyLm1lc3NhZ2UgfHwgIkZhaWxlZCB0\nbyByZXNldCBwYXNzd29yZCIpOwogICAgfSBmaW5hbGx5IHsKICAgICAgc2V0\nTG9hZGluZyhmYWxzZSk7CiAgICB9CiAgfTsKCiAgaWYgKCFyZXNldFRva2Vu\nKSB7CiAgICByZXR1cm4gKAogICAgICA8QXV0aExheW91dAogICAgICAgIGlj\nb249e0FsZXJ0VHJpYW5nbGV9CiAgICAgICAgdGl0bGU9IkludmFsaWQgcmVz\nZXQgbGluayIKICAgICAgICBzdWJ0aXRsZT0iVGhpcyBwYXNzd29yZCByZXNl\ndCBsaW5rIGlzIG1pc3Npbmcgb3IgaW52YWxpZCIKICAgICAgICBmb290ZXI9\newogICAgICAgICAgPExpbmsgdG89Ii9mb3Jnb3QtcGFzc3dvcmQiIGNsYXNz\nTmFtZT0idGV4dC1wcmltYXJ5IGZvbnQtbWVkaXVtIGhvdmVyOnVuZGVybGlu\nZSI+CiAgICAgICAgICAgIFJlcXVlc3QgYSBuZXcgbGluawogICAgICAgICAg\nPC9MaW5rPgogICAgICAgIH0KICAgICAgPgogICAgICAgIDxwIGNsYXNzTmFt\nZT0idGV4dC1zbSB0ZXh0LWZvcmVncm91bmQgdGV4dC1jZW50ZXIiPgogICAg\nICAgICAgVGhlIGxpbmsgeW91IHVzZWQgYXBwZWFycyB0byBiZSBpbmNvbXBs\nZXRlLiBQbGVhc2UgcmVxdWVzdCBhIG5ldyBwYXNzd29yZCByZXNldCBlbWFp\nbC4KICAgICAgICA8L3A+CiAgICAgIDwvQXV0aExheW91dD4KICAgICk7CiAg\nfQoKICByZXR1cm4gKAogICAgPEF1dGhMYXlvdXQKICAgICAgaWNvbj17TG9j\na30KICAgICAgdGl0bGU9Ik5ldyBwYXNzd29yZCIKICAgICAgc3VidGl0bGU9\nIkVudGVyIHlvdXIgbmV3IHBhc3N3b3JkIGJlbG93IgogICAgPgogICAgICB7\nZXJyb3IgJiYgKAogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtYi00IHAtMyBy\nb3VuZGVkLWxnIGJnLWRlc3RydWN0aXZlLzEwIHRleHQtZGVzdHJ1Y3RpdmUg\ndGV4dC1zbSI+CiAgICAgICAgICB7ZXJyb3J9CiAgICAgICAgPC9kaXY+CiAg\nICAgICl9CiAgICAgIDxmb3JtIG9uU3VibWl0PXtoYW5kbGVTdWJtaXR9IGNs\nYXNzTmFtZT0ic3BhY2UteS00Ij4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0i\nc3BhY2UteS0yIj4KICAgICAgICAgIDxMYWJlbCBodG1sRm9yPSJwYXNzd29y\nZCI+TmV3IFBhc3N3b3JkPC9MYWJlbD4KICAgICAgICAgIDxkaXYgY2xhc3NO\nYW1lPSJyZWxhdGl2ZSI+CiAgICAgICAgICAgIDxMb2NrIGNsYXNzTmFtZT0i\nYWJzb2x1dGUgbGVmdC0zIHRvcC0xLzIgLXRyYW5zbGF0ZS15LTEvMiB3LTQg\naC00IHRleHQtbXV0ZWQtZm9yZWdyb3VuZCIgYXJpYS1oaWRkZW49InRydWUi\nIC8+CiAgICAgICAgICAgIDxJbnB1dAogICAgICAgICAgICAgIGlkPSJwYXNz\nd29yZCIKICAgICAgICAgICAgICB0eXBlPSJwYXNzd29yZCIKICAgICAgICAg\nICAgICBhdXRvQ29tcGxldGU9Im5ldy1wYXNzd29yZCIKICAgICAgICAgICAg\nICBhdXRvRm9jdXMKICAgICAgICAgICAgICBwbGFjZWhvbGRlcj0i4oCi4oCi\n4oCi4oCi4oCi4oCi4oCi4oCiIgogICAgICAgICAgICAgIHZhbHVlPXtuZXdQ\nYXNzd29yZH0KICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldE5l\nd1Bhc3N3b3JkKGUudGFyZ2V0LnZhbHVlKX0KICAgICAgICAgICAgICBjbGFz\nc05hbWU9InBsLTEwIGgtMTIiCiAgICAgICAgICAgICAgcmVxdWlyZWQKICAg\nICAgICAgICAgLz4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2Pgog\nICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15LTIiPgogICAgICAgICAg\nPExhYmVsIGh0bWxGb3I9ImNvbmZpcm0iPkNvbmZpcm0gUGFzc3dvcmQ8L0xh\nYmVsPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InJlbGF0aXZlIj4KICAg\nICAgICAgICAgPExvY2sgY2xhc3NOYW1lPSJhYnNvbHV0ZSBsZWZ0LTMgdG9w\nLTEvMiAtdHJhbnNsYXRlLXktMS8yIHctNCBoLTQgdGV4dC1tdXRlZC1mb3Jl\nZ3JvdW5kIiBhcmlhLWhpZGRlbj0idHJ1ZSIgLz4KICAgICAgICAgICAgPElu\ncHV0CiAgICAgICAgICAgICAgaWQ9ImNvbmZpcm0iCiAgICAgICAgICAgICAg\ndHlwZT0icGFzc3dvcmQiCiAgICAgICAgICAgICAgYXV0b0NvbXBsZXRlPSJu\nZXctcGFzc3dvcmQiCiAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9IuKAouKA\nouKAouKAouKAouKAouKAouKAoiIKICAgICAgICAgICAgICB2YWx1ZT17Y29u\nZmlybVBhc3N3b3JkfQogICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4g\nc2V0Q29uZmlybVBhc3N3b3JkKGUudGFyZ2V0LnZhbHVlKX0KICAgICAgICAg\nICAgICBjbGFzc05hbWU9InBsLTEwIGgtMTIiCiAgICAgICAgICAgICAgcmVx\ndWlyZWQKICAgICAgICAgICAgLz4KICAgICAgICAgIDwvZGl2PgogICAgICAg\nIDwvZGl2PgogICAgICAgIDxCdXR0b24gdHlwZT0ic3VibWl0IiBjbGFzc05h\nbWU9InctZnVsbCBoLTEyIGZvbnQtbWVkaXVtIiBkaXNhYmxlZD17bG9hZGlu\nZ30+CiAgICAgICAgICB7bG9hZGluZyA/ICgKICAgICAgICAgICAgPD4KICAg\nICAgICAgICAgICA8TG9hZGVyMiBjbGFzc05hbWU9InctNCBoLTQgbXItMiBh\nbmltYXRlLXNwaW4iIC8+CiAgICAgICAgICAgICAgUmVzZXR0aW5nLi4uCiAg\nICAgICAgICAgIDwvPgogICAgICAgICAgKSA6ICgKICAgICAgICAgICAgIlJl\nc2V0IHBhc3N3b3JkIgogICAgICAgICAgKX0KICAgICAgICA8L0J1dHRvbj4K\nICAgICAgPC9mb3JtPgogICAgPC9BdXRoTGF5b3V0PgogICk7Cn0K\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/pages/ResetPassword.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/74e386d1d708aac176963b65f93a56e1ce1e2604","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/pages/ResetPassword.jsx"}}
+import React, { useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { base44 } from "@/api/base44Client";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Lock, Loader2, AlertTriangle } from "lucide-react";
+import AuthLayout from "@/components/AuthLayout";
+
+export default function ResetPassword() {
+  const [searchParams] = useSearchParams();
+  const resetToken = searchParams.get("token");
+
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    if (newPassword !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+    setLoading(true);
+    try {
+      await base44.auth.resetPassword({ resetToken, newPassword });
+      window.location.href = "/login";
+    } catch (err) {
+      setError(err.message || "Failed to reset password");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (!resetToken) {
+    return (
+      <AuthLayout
+        icon={AlertTriangle}
+        title="Invalid reset link"
+        subtitle="This password reset link is missing or invalid"
+        footer={
+          <Link to="/forgot-password" className="text-primary font-medium hover:underline">
+            Request a new link
+          </Link>
+        }
+      >
+        <p className="text-sm text-foreground text-center">
+          The link you used appears to be incomplete. Please request a new password reset email.
+        </p>
+      </AuthLayout>
+    );
+  }
+
+  return (
+    <AuthLayout
+      icon={Lock}
+      title="New password"
+      subtitle="Enter your new password below"
+    >
+      {error && (
+        <div className="mb-4 p-3 rounded-lg bg-destructive/10 text-destructive text-sm">
+          {error}
+        </div>
+      )}
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="password">New Password</Label>
+          <div className="relative">
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
+            <Input
+              id="password"
+              type="password"
+              autoComplete="new-password"
+              autoFocus
+              placeholder="••••••••"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              className="pl-10 h-12"
+              required
+            />
+          </div>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="confirm">Confirm Password</Label>
+          <div className="relative">
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
+            <Input
+              id="confirm"
+              type="password"
+              autoComplete="new-password"
+              placeholder="••••••••"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="pl-10 h-12"
+              required
+            />
+          </div>
+        </div>
+        <Button type="submit" className="w-full h-12 font-medium" disabled={loading}>
+          {loading ? (
+            <>
+              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              Resetting...
+            </>
+          ) : (
+            "Reset password"
+          )}
+        </Button>
+      </form>
+    </AuthLayout>
+  );
+}
