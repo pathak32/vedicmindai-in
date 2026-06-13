@@ -1,1 +1,56 @@
-{"name":"trialEngine.js","path":"src/lib/trialEngine.js","sha":"d5a7e410b51a2d50b5595732b8d17c10557b9782","size":2087,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/trialEngine.js?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/trialEngine.js","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/d5a7e410b51a2d50b5595732b8d17c10557b9782","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/lib/trialEngine.js?token=CFODAP5U6RGVRELU7AXXMFLKFSQ35AA","type":"file","content":"Ly8g4pSA4pSA4pSAIFRyaWFsIC8gUGxhbiBoZWxwZXJzIOKUgOKUgOKUgOKU\ngOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU\ngOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU\ngOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU\ngOKUgOKUgOKUgOKUgAoKZXhwb3J0IGZ1bmN0aW9uIGdldFRyaWFsU3RhdHVz\nKCkgewogIC8vIENoZWNrIHZlZGljbWluZF9wbGFuIGZvciBwYWlkIHBsYW4K\nICBjb25zdCBwbGFuID0gSlNPTi5wYXJzZShsb2NhbFN0b3JhZ2UuZ2V0SXRl\nbSgndmVkaWNtaW5kX3BsYW4nKSB8fCAne30nKTsKICBpZiAocGxhbi5wbGFu\nU3RhdHVzICYmIHBsYW4ucGxhblN0YXR1cyAhPT0gJ3RyaWFsJyAmJiBwbGFu\nLnBsYW5TdGF0dXMgIT09ICdmcmVlJykgcmV0dXJuICdwYWlkJzsKICBpZiAo\nbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3ZlZGljbWluZF9zdWJzY3JpcHRpb24n\nKSA9PT0gJ2FjdGl2ZScpIHJldHVybiAncGFpZCc7CgogIC8vIERldGVybWlu\nZSBpZiB0cmlhbCBpcyBhY3RpdmUgb3IgZXhwaXJlZAogIGlmICghcGxhbi50\ncmlhbEVuZERhdGUpIHJldHVybiAndHJpYWwnOwogIGNvbnN0IG5vdyA9IG5l\ndyBEYXRlKCk7CiAgY29uc3QgZW5kID0gbmV3IERhdGUocGxhbi50cmlhbEVu\nZERhdGUpOwogIHJldHVybiBub3cgPiBlbmQgPyAnZXhwaXJlZCcgOiAndHJp\nYWwnOwp9CgpleHBvcnQgZnVuY3Rpb24gZ2V0RGF5c1JlbWFpbmluZygpIHsK\nICBjb25zdCBwbGFuID0gSlNPTi5wYXJzZShsb2NhbFN0b3JhZ2UuZ2V0SXRl\nbSgndmVkaWNtaW5kX3BsYW4nKSB8fCAne30nKTsKICBpZiAoIXBsYW4udHJp\nYWxFbmREYXRlKSByZXR1cm4gNzsKICBjb25zdCBub3cgPSBuZXcgRGF0ZSgp\nOwogIGNvbnN0IGVuZCA9IG5ldyBEYXRlKHBsYW4udHJpYWxFbmREYXRlKTsK\nICBjb25zdCBkaWZmID0gZW5kIC0gbm93OwogIHJldHVybiBNYXRoLm1heCgw\nLCBNYXRoLmNlaWwoZGlmZiAvICgxMDAwICogNjAgKiA2MCAqIDI0KSkpOwp9\nCgpleHBvcnQgZnVuY3Rpb24gZ2V0Q3VycmVudFBsYW4oKSB7CiAgY29uc3Qg\ncGxhbiA9IEpTT04ucGFyc2UobG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3ZlZGlj\nbWluZF9wbGFuJykgfHwgJ3t9Jyk7CiAgcmV0dXJuIHBsYW4ucGxhblN0YXR1\ncyB8fCAndHJpYWwnOwp9CgpleHBvcnQgZnVuY3Rpb24gZ2V0VHJpYWxFbmRE\nYXRlKCkgewogIGNvbnN0IHBsYW4gPSBKU09OLnBhcnNlKGxvY2FsU3RvcmFn\nZS5nZXRJdGVtKCd2ZWRpY21pbmRfcGxhbicpIHx8ICd7fScpOwogIGlmICgh\ncGxhbi50cmlhbEVuZERhdGUpIHJldHVybiBudWxsOwogIHJldHVybiBuZXcg\nRGF0ZShwbGFuLnRyaWFsRW5kRGF0ZSk7Cn0KCmV4cG9ydCBmdW5jdGlvbiBp\nbml0VHJpYWwoKSB7CiAgY29uc3QgdHJpYWxEYXRhID0gewogICAgdHJpYWxT\ndGFydERhdGU6IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSwKICAgIHRyaWFs\nRW5kRGF0ZTogbmV3IERhdGUoRGF0ZS5ub3coKSArIDcgKiAyNCAqIDYwICog\nNjAgKiAxMDAwKS50b0lTT1N0cmluZygpLAogICAgcGxhblN0YXR1czogJ3Ry\naWFsJywKICAgIHBsYW5BY3RpdmF0ZWREYXRlOiBudWxsLAogICAgcmF6b3Jw\nYXlQYXltZW50SWQ6IG51bGwsCiAgfTsKICBsb2NhbFN0b3JhZ2Uuc2V0SXRl\nbSgndmVkaWNtaW5kX3BsYW4nLCBKU09OLnN0cmluZ2lmeSh0cmlhbERhdGEp\nKTsKfQoKLyoqCiAqIFJldHVybnMgdHJ1ZSBpZiBhIGxlc3NvbiBpcyBhY2Nl\nc3NpYmxlIGdpdmVuIHRoZSBjdXJyZW50IHRyaWFsIHN0YXR1cy4KICogTGV2\nZWwgMSAobDFfeHgpIGlzIGFsd2F5cyBmcmVlLiBMZXZlbHMgMuKAkzQgYXJl\nIGxvY2tlZCBvbiBleHBpcmVkLgogKi8KZXhwb3J0IGZ1bmN0aW9uIGlzTGVz\nc29uQWNjZXNzaWJsZShsZXNzb25JZCkgewogIGNvbnN0IHN0YXR1cyA9IGdl\ndFRyaWFsU3RhdHVzKCk7CiAgaWYgKHN0YXR1cyA9PT0gJ3RyaWFsJyB8fCBz\ndGF0dXMgPT09ICdwYWlkJykgcmV0dXJuIHRydWU7CiAgLy8gZXhwaXJlZCDi\nhpIgb25seSBsZXZlbCAxIGlzIGZyZWUKICByZXR1cm4gbGVzc29uSWQuc3Rh\ncnRzV2l0aCgnbDFfJyk7Cn0=\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/trialEngine.js?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/d5a7e410b51a2d50b5595732b8d17c10557b9782","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/trialEngine.js"}}
+// ─── Trial / Plan helpers ─────────────────────────────────────────────────────
+
+export function getTrialStatus() {
+  // Check vedicmind_plan for paid plan
+  const plan = JSON.parse(localStorage.getItem('vedicmind_plan') || '{}');
+  if (plan.planStatus && plan.planStatus !== 'trial' && plan.planStatus !== 'free') return 'paid';
+  if (localStorage.getItem('vedicmind_subscription') === 'active') return 'paid';
+
+  // Determine if trial is active or expired
+  if (!plan.trialEndDate) return 'trial';
+  const now = new Date();
+  const end = new Date(plan.trialEndDate);
+  return now > end ? 'expired' : 'trial';
+}
+
+export function getDaysRemaining() {
+  const plan = JSON.parse(localStorage.getItem('vedicmind_plan') || '{}');
+  if (!plan.trialEndDate) return 7;
+  const now = new Date();
+  const end = new Date(plan.trialEndDate);
+  const diff = end - now;
+  return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+}
+
+export function getCurrentPlan() {
+  const plan = JSON.parse(localStorage.getItem('vedicmind_plan') || '{}');
+  return plan.planStatus || 'trial';
+}
+
+export function getTrialEndDate() {
+  const plan = JSON.parse(localStorage.getItem('vedicmind_plan') || '{}');
+  if (!plan.trialEndDate) return null;
+  return new Date(plan.trialEndDate);
+}
+
+export function initTrial() {
+  const trialData = {
+    trialStartDate: new Date().toISOString(),
+    trialEndDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
+    planStatus: 'trial',
+    planActivatedDate: null,
+    razorpayPaymentId: null,
+  };
+  localStorage.setItem('vedicmind_plan', JSON.stringify(trialData));
+}
+
+/**
+ * Returns true if a lesson is accessible given the current trial status.
+ * Level 1 (l1_xx) is always free. Levels 2–4 are locked on expired.
+ */
+export function isLessonAccessible(lessonId) {
+  const status = getTrialStatus();
+  if (status === 'trial' || status === 'paid') return true;
+  // expired → only level 1 is free
+  return lessonId.startsWith('l1_');
+}
