@@ -1,95 +1,104 @@
-import React, { useMemo } from 'react';
-import { generateLeaderboard, getTopN } from '@/lib/leaderboardEngine';
+import React, { useState, useEffect } from 'react';
+import { getSupabase } from '@/lib/supabaseClient';
 
-const glass = {
-  background: 'rgba(255,255,255,0.85)',
-  border: '1px solid rgba(30,64,175,0.12)',
-  borderRadius: 16,
-  boxShadow: '0 4px 20px rgba(10,22,40,0.06)',
-};
-
-function todayString() {
-  const d = new Date();
-  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-}
+const card = { background:'rgba(255,255,255,0.9)', border:'1px solid rgba(30,64,175,0.1)', borderRadius:14, padding:20, boxShadow:'0 2px 12px rgba(0,0,0,0.05)', marginBottom:16 };
 
 export default function AdminAnalytics() {
-  const profile  = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile')) || {}; } catch { return {}; } })();
-  const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress')) || {}; } catch { return {}; } })();
+  const [stats, setStats] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [quizResults, setQuizResults] = useState([]);
 
-  const globalBoard = useMemo(() => generateLeaderboard(profile, progress, 'global'), []);
-  const top10 = getTopN(globalBoard, 10);
+  useEffect(() => { loadData(); }, []);
 
-  const totalStudents = globalBoard.length;
-  const today = todayString();
-  const quizAttemptsToday = (() => {
+  async function loadData() {
+    setLoading(true);
     try {
-      const history = progress.dailyQuizHistory || [];
-      return history.filter(h => h.date === today).length;
-    } catch { return 0; }
-  })();
+      const sb = await getSupabase();
 
-  const totalXP = globalBoard.reduce((s, e) => s + e.score, 0);
-  const avgStreak = Math.round(globalBoard.reduce((s, e) => s + (e.streak || 0), 0) / (globalBoard.length || 1));
+      const [usersRes, progressRes, quizRes] = await Promise.all([
+        sb.from('profiles').select('id, plan, created_at, xp', { count:'exact' }),
+        sb.from('progress').select('lesson_id, completed, user_id'),
+        sb.from('quiz_results').select('score, user_id, created_at').order('created_at', { ascending:false }).limit(50),
+      ]);
 
-  const completedLessons = (progress.completedLessons || []).length;
-  const aptitudeAttempts = (progress.aptitudeHistory || []).length;
+      const users = usersRes.data || [];
+      const progress = progressRes.data || [];
+      const quiz = quizRes.data || [];
 
-  const STATS = [
-    { label: '👥 Total Students', value: totalStudents, sub: 'on platform' },
-    { label: '📅 Quiz Attempts Today', value: quizAttemptsToday, sub: 'daily quiz' },
-    { label: '⭐ Total XP (All Users)', value: totalXP.toLocaleString(), sub: 'experience points' },
-    { label: '🔥 Avg Streak', value: `${avgStreak}d`, sub: 'across all users' },
-    { label: '📚 Your Lessons Done', value: completedLessons, sub: 'of 40 total' },
-    { label: '🎯 Aptitude Attempts', value: aptitudeAttempts, sub: 'total quizzes' },
+      const totalXP = users.reduce((a,u)=>a+(u.xp||0), 0);
+      const completedLessons = progress.filter(p=>p.completed).length;
+      const avgScore = quiz.length > 0 ? Math.round(quiz.reduce((a,q)=>a+(q.score||0),0)/quiz.length) : 0;
+
+      setStats({
+        totalUsers: users.length,
+        proUsers: users.filter(u=>u.plan==='pro').length,
+        basicUsers: users.filter(u=>u.plan==='basic').length,
+        totalXP,
+        completedLessons,
+        avgQuizScore: avgScore,
+        totalQuizAttempts: quiz.length,
+        newToday: users.filter(u => {
+          const d = new Date(u.created_at);
+          const today = new Date();
+          return d.toDateString() === today.toDateString();
+        }).length,
+      });
+      setQuizResults(quiz.slice(0,10));
+    } catch(e) {
+      console.error('AdminAnalytics:', e);
+    } finally { setLoading(false); }
+  }
+
+  if (loading) return <p style={{ color:'#6B7280', textAlign:'center', padding:60 }}>Loading analytics from Supabase...</p>;
+  if (!stats) return <p style={{ color:'#E11D48', textAlign:'center', padding:60 }}>Failed to load analytics</p>;
+
+  const metrics = [
+    { label:'👥 Total Users', value: stats.totalUsers, color:'#1e40af' },
+    { label:'🆕 Joined Today', value: stats.newToday, color:'#059669' },
+    { label:'⭐ Pro Subscribers', value: stats.proUsers, color:'#7C3AED' },
+    { label:'📚 Basic Subscribers', value: stats.basicUsers, color:'#D97706' },
+    { label:'⚡ Total XP Earned', value: stats.totalXP.toLocaleString(), color:'#DC2626' },
+    { label:'📖 Lessons Completed', value: stats.completedLessons, color:'#0891B2' },
+    { label:'🧠 Quiz Attempts', value: stats.totalQuizAttempts, color:'#7C3AED' },
+    { label:'📊 Avg Quiz Score', value: `${stats.avgQuizScore}%`, color:'#059669' },
   ];
-
-  const medals = ['🥇', '🥈', '🥉'];
 
   return (
     <div>
-      {/* Stats grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12, marginBottom: 24 }}>
-        {STATS.map((s, i) => (
-          <div key={i} style={{ ...glass, padding: 20 }}>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginBottom: 6 }}>{s.label}</div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#0A1628', lineHeight: 1, marginBottom: 4 }}>{s.value}</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF' }}>{s.sub}</div>
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:12, marginBottom:20 }}>
+        {metrics.map((m,i) => (
+          <div key={i} style={card}>
+            <div style={{ fontSize:12, color:'#6B7280', marginBottom:4 }}>{m.label}</div>
+            <div style={{ fontSize:26, fontWeight:700, color: m.color }}>{m.value}</div>
           </div>
         ))}
       </div>
 
-      {/* Top 10 Leaderboard */}
-      <div style={{ ...glass, overflow: 'hidden' }}>
-        <div style={{ padding: '16px 20px', borderBottom: '1px solid rgba(30,64,175,0.08)' }}>
-          <h3 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: '#0A1628', margin: 0 }}>🏆 Top 10 — Global Leaderboard</h3>
+      <div style={card}>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:14 }}>
+          <h3 style={{ fontSize:16, fontWeight:600, margin:0 }}>Recent Quiz Attempts</h3>
+          <button onClick={loadData} style={{ padding:'5px 12px', borderRadius:8, background:'#1e40af', color:'#fff', border:'none', cursor:'pointer', fontSize:12 }}>Refresh</button>
         </div>
-        {top10.map((entry, i) => (
-          <div key={entry.id} style={{
-            display: 'flex', alignItems: 'center', gap: 12, padding: '12px 20px',
-            borderBottom: i < top10.length - 1 ? '1px solid rgba(30,64,175,0.06)' : 'none',
-            background: entry.isCurrentUser ? 'rgba(59,130,246,0.04)' : 'transparent',
-          }}>
-            <span style={{ minWidth: 28, fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 15, color: i < 3 ? '#0A1628' : '#9CA3AF' }}>
-              {i < 3 ? medals[i] : `#${i + 1}`}
-            </span>
-            <div style={{
-              width: 36, height: 36, borderRadius: '50%', background: entry.isCurrentUser ? '#0A1628' : '#F0F4FF',
-              display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-              fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 13,
-              color: entry.isCurrentUser ? 'white' : '#0A1628',
-            }}>{entry.name.charAt(0)}</div>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628' }}>
-                {entry.isAnonymous ? 'Anonymous 🎭' : entry.name}
-                {entry.isCurrentUser && <span style={{ marginLeft: 6, color: '#3B82F6' }}>(You)</span>}
-              </div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF' }}>{entry.grade} · 🔥{entry.streak} streak</div>
-            </div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 16, color: '#F59E0B', flexShrink: 0 }}>{entry.score} pts</div>
-          </div>
-        ))}
-        {top10.length === 0 && <div style={{ padding: 40, textAlign: 'center', color: '#9CA3AF', fontFamily: 'var(--font-body)' }}>No data yet.</div>}
+        {quizResults.length === 0 ? <p style={{ color:'#6B7280' }}>No quiz data yet</p> : (
+          <table style={{ width:'100%', borderCollapse:'collapse', fontSize:13 }}>
+            <thead>
+              <tr style={{ background:'#F9FAFB' }}>
+                {['User ID','Score','Date'].map(h=>(
+                  <th key={h} style={{ padding:'8px 12px', textAlign:'left', fontWeight:600, color:'#374151', borderBottom:'1px solid #E5E7EB' }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {quizResults.map((q,i)=>(
+                <tr key={i} style={{ background:i%2===0?'#fff':'#F9FAFB' }}>
+                  <td style={{ padding:'8px 12px', borderBottom:'1px solid #F3F4F6', fontFamily:'monospace', fontSize:11, color:'#6B7280' }}>{q.user_id?.slice(0,8)}...</td>
+                  <td style={{ padding:'8px 12px', borderBottom:'1px solid #F3F4F6', fontWeight:700, color: q.score>=80?'#059669':q.score>=50?'#D97706':'#DC2626' }}>{q.score}%</td>
+                  <td style={{ padding:'8px 12px', borderBottom:'1px solid #F3F4F6', color:'#6B7280' }}>{new Date(q.created_at).toLocaleDateString('en-IN')}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );
