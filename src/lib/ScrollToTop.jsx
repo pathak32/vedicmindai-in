@@ -1,10 +1,1 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-
-export default function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-}
+{"name":"ScrollToTop.jsx","path":"src/lib/ScrollToTop.jsx","sha":"712f9eb5f41e9294f2024eea978ab35d45a9496c","size":243,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/ScrollToTop.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/ScrollToTop.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/712f9eb5f41e9294f2024eea978ab35d45a9496c","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/lib/ScrollToTop.jsx?token=CFODAPYZVENNOG3LTERQYYLKFSQ3JAA","type":"file","content":"aW1wb3J0IHsgdXNlRWZmZWN0IH0gZnJvbSAncmVhY3QnOwppbXBvcnQgeyB1\nc2VMb2NhdGlvbiB9IGZyb20gJ3JlYWN0LXJvdXRlci1kb20nOwoKZXhwb3J0\nIGRlZmF1bHQgZnVuY3Rpb24gU2Nyb2xsVG9Ub3AoKSB7CiAgY29uc3QgeyBw\nYXRobmFtZSB9ID0gdXNlTG9jYXRpb24oKTsKICB1c2VFZmZlY3QoKCkgPT4g\newogICAgd2luZG93LnNjcm9sbFRvKDAsIDApOwogIH0sIFtwYXRobmFtZV0p\nOwogIHJldHVybiBudWxsOwp9\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/lib/ScrollToTop.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/712f9eb5f41e9294f2024eea978ab35d45a9496c","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/lib/ScrollToTop.jsx"}}
