@@ -1,1 +1,116 @@
-{"name":"command.jsx","path":"src/components/ui/command.jsx","sha":"f2d7522c280fc359befbabaa9ff260c0eef41d35","size":3897,"url":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/command.jsx?ref=main","html_url":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/command.jsx","git_url":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/f2d7522c280fc359befbabaa9ff260c0eef41d35","download_url":"https://raw.githubusercontent.com/pathak32/vedicmind-ai/main/src/components/ui/command.jsx?token=CFODAP7XZXRYQRGCZUVETG3KFSQYZAA","type":"file","content":"aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCB7IENvbW1h\nbmQgYXMgQ29tbWFuZFByaW1pdGl2ZSB9IGZyb20gImNtZGsiCmltcG9ydCB7\nIFNlYXJjaCB9IGZyb20gImx1Y2lkZS1yZWFjdCIKCmltcG9ydCB7IGNuIH0g\nZnJvbSAiQC9saWIvdXRpbHMiCmltcG9ydCB7IERpYWxvZywgRGlhbG9nQ29u\ndGVudCB9IGZyb20gIkAvY29tcG9uZW50cy91aS9kaWFsb2ciCgpjb25zdCBD\nb21tYW5kID0gUmVhY3QuZm9yd2FyZFJlZigoeyBjbGFzc05hbWUsIC4uLnBy\nb3BzIH0sIHJlZikgPT4gKAogIDxDb21tYW5kUHJpbWl0aXZlCiAgICByZWY9\ne3JlZn0KICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICJmbGV4IGgtZnVsbCB3\nLWZ1bGwgZmxleC1jb2wgb3ZlcmZsb3ctaGlkZGVuIHJvdW5kZWQtbWQgYmct\ncG9wb3ZlciB0ZXh0LXBvcG92ZXItZm9yZWdyb3VuZCIsCiAgICAgIGNsYXNz\nTmFtZQogICAgKX0KICAgIHsuLi5wcm9wc30gLz4KKSkKQ29tbWFuZC5kaXNw\nbGF5TmFtZSA9IENvbW1hbmRQcmltaXRpdmUuZGlzcGxheU5hbWUKCmNvbnN0\nIENvbW1hbmREaWFsb2cgPSAoewogIGNoaWxkcmVuLAogIC4uLnByb3BzCn0p\nID0+IHsKICByZXR1cm4gKAogICAgKDxEaWFsb2cgey4uLnByb3BzfT4KICAg\nICAgPERpYWxvZ0NvbnRlbnQgY2xhc3NOYW1lPSJvdmVyZmxvdy1oaWRkZW4g\ncC0wIj4KICAgICAgICA8Q29tbWFuZAogICAgICAgICAgY2xhc3NOYW1lPSJb\nJl9bY21kay1ncm91cC1oZWFkaW5nXV06cHgtMiBbJl9bY21kay1ncm91cC1o\nZWFkaW5nXV06Zm9udC1tZWRpdW0gWyZfW2NtZGstZ3JvdXAtaGVhZGluZ11d\nOnRleHQtbXV0ZWQtZm9yZWdyb3VuZCBbJl9bY21kay1ncm91cF06bm90KFto\naWRkZW5dKV9+W2NtZGstZ3JvdXBdXTpwdC0wIFsmX1tjbWRrLWdyb3VwXV06\ncHgtMiBbJl9bY21kay1pbnB1dC13cmFwcGVyXV9zdmddOmgtNSBbJl9bY21k\nay1pbnB1dC13cmFwcGVyXV9zdmddOnctNSBbJl9bY21kay1pbnB1dF1dOmgt\nMTIgWyZfW2NtZGstaXRlbV1dOnB4LTIgWyZfW2NtZGstaXRlbV1dOnB5LTMg\nWyZfW2NtZGstaXRlbV1fc3ZnXTpoLTUgWyZfW2NtZGstaXRlbV1fc3ZnXTp3\nLTUiPgogICAgICAgICAge2NoaWxkcmVufQogICAgICAgIDwvQ29tbWFuZD4K\nICAgICAgPC9EaWFsb2dDb250ZW50PgogICAgPC9EaWFsb2c+KQogICk7Cn0K\nCmNvbnN0IENvbW1hbmRJbnB1dCA9IFJlYWN0LmZvcndhcmRSZWYoKHsgY2xh\nc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8ZGl2IGNsYXNzTmFt\nZT0iZmxleCBpdGVtcy1jZW50ZXIgYm9yZGVyLWIgcHgtMyIgY21kay1pbnB1\ndC13cmFwcGVyPSIiPgogICAgPFNlYXJjaCBjbGFzc05hbWU9Im1yLTIgaC00\nIHctNCBzaHJpbmstMCBvcGFjaXR5LTUwIiAvPgogICAgPENvbW1hbmRQcmlt\naXRpdmUuSW5wdXQKICAgICAgcmVmPXtyZWZ9CiAgICAgIGNsYXNzTmFtZT17\nY24oCiAgICAgICAgImZsZXggaC0xMCB3LWZ1bGwgcm91bmRlZC1tZCBiZy10\ncmFuc3BhcmVudCBweS0zIHRleHQtc20gb3V0bGluZS1ub25lIHBsYWNlaG9s\nZGVyOnRleHQtbXV0ZWQtZm9yZWdyb3VuZCBkaXNhYmxlZDpjdXJzb3Itbm90\nLWFsbG93ZWQgZGlzYWJsZWQ6b3BhY2l0eS01MCIsCiAgICAgICAgY2xhc3NO\nYW1lCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30gLz4KICA8L2Rpdj4KKSkK\nCkNvbW1hbmRJbnB1dC5kaXNwbGF5TmFtZSA9IENvbW1hbmRQcmltaXRpdmUu\nSW5wdXQuZGlzcGxheU5hbWUKCmNvbnN0IENvbW1hbmRMaXN0ID0gUmVhY3Qu\nZm9yd2FyZFJlZigoeyBjbGFzc05hbWUsIC4uLnByb3BzIH0sIHJlZikgPT4g\nKAogIDxDb21tYW5kUHJpbWl0aXZlLkxpc3QKICAgIHJlZj17cmVmfQogICAg\nY2xhc3NOYW1lPXtjbigibWF4LWgtWzMwMHB4XSBvdmVyZmxvdy15LWF1dG8g\nb3ZlcmZsb3cteC1oaWRkZW4iLCBjbGFzc05hbWUpfQogICAgey4uLnByb3Bz\nfSAvPgopKQoKQ29tbWFuZExpc3QuZGlzcGxheU5hbWUgPSBDb21tYW5kUHJp\nbWl0aXZlLkxpc3QuZGlzcGxheU5hbWUKCmNvbnN0IENvbW1hbmRFbXB0eSA9\nIFJlYWN0LmZvcndhcmRSZWYoKHByb3BzLCByZWYpID0+ICgKICA8Q29tbWFu\nZFByaW1pdGl2ZS5FbXB0eSByZWY9e3JlZn0gY2xhc3NOYW1lPSJweS02IHRl\neHQtY2VudGVyIHRleHQtc20iIHsuLi5wcm9wc30gLz4KKSkKCkNvbW1hbmRF\nbXB0eS5kaXNwbGF5TmFtZSA9IENvbW1hbmRQcmltaXRpdmUuRW1wdHkuZGlz\ncGxheU5hbWUKCmNvbnN0IENvbW1hbmRHcm91cCA9IFJlYWN0LmZvcndhcmRS\nZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8Q29t\nbWFuZFByaW1pdGl2ZS5Hcm91cAogICAgcmVmPXtyZWZ9CiAgICBjbGFzc05h\nbWU9e2NuKAogICAgICAib3ZlcmZsb3ctaGlkZGVuIHAtMSB0ZXh0LWZvcmVn\ncm91bmQgWyZfW2NtZGstZ3JvdXAtaGVhZGluZ11dOnB4LTIgWyZfW2NtZGst\nZ3JvdXAtaGVhZGluZ11dOnB5LTEuNSBbJl9bY21kay1ncm91cC1oZWFkaW5n\nXV06dGV4dC14cyBbJl9bY21kay1ncm91cC1oZWFkaW5nXV06Zm9udC1tZWRp\ndW0gWyZfW2NtZGstZ3JvdXAtaGVhZGluZ11dOnRleHQtbXV0ZWQtZm9yZWdy\nb3VuZCIsCiAgICAgIGNsYXNzTmFtZQogICAgKX0KICAgIHsuLi5wcm9wc30g\nLz4KKSkKCkNvbW1hbmRHcm91cC5kaXNwbGF5TmFtZSA9IENvbW1hbmRQcmlt\naXRpdmUuR3JvdXAuZGlzcGxheU5hbWUKCmNvbnN0IENvbW1hbmRTZXBhcmF0\nb3IgPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMg\nfSwgcmVmKSA9PiAoCiAgPENvbW1hbmRQcmltaXRpdmUuU2VwYXJhdG9yIHJl\nZj17cmVmfSBjbGFzc05hbWU9e2NuKCItbXgtMSBoLXB4IGJnLWJvcmRlciIs\nIGNsYXNzTmFtZSl9IHsuLi5wcm9wc30gLz4KKSkKQ29tbWFuZFNlcGFyYXRv\nci5kaXNwbGF5TmFtZSA9IENvbW1hbmRQcmltaXRpdmUuU2VwYXJhdG9yLmRp\nc3BsYXlOYW1lCgpjb25zdCBDb21tYW5kSXRlbSA9IFJlYWN0LmZvcndhcmRS\nZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+ICgKICA8Q29t\nbWFuZFByaW1pdGl2ZS5JdGVtCiAgICByZWY9e3JlZn0KICAgIGNsYXNzTmFt\nZT17Y24oCiAgICAgICJyZWxhdGl2ZSBmbGV4IGN1cnNvci1kZWZhdWx0IGdh\ncC0yIHNlbGVjdC1ub25lIGl0ZW1zLWNlbnRlciByb3VuZGVkLXNtIHB4LTIg\ncHktMS41IHRleHQtc20gb3V0bGluZS1ub25lIGRhdGEtW2Rpc2FibGVkPXRy\ndWVdOnBvaW50ZXItZXZlbnRzLW5vbmUgZGF0YS1bc2VsZWN0ZWQ9dHJ1ZV06\nYmctYWNjZW50IGRhdGEtW3NlbGVjdGVkPXRydWVdOnRleHQtYWNjZW50LWZv\ncmVncm91bmQgZGF0YS1bZGlzYWJsZWQ9dHJ1ZV06b3BhY2l0eS01MCBbJl9z\ndmddOnBvaW50ZXItZXZlbnRzLW5vbmUgWyZfc3ZnXTpzaXplLTQgWyZfc3Zn\nXTpzaHJpbmstMCIsCiAgICAgIGNsYXNzTmFtZQogICAgKX0KICAgIHsuLi5w\ncm9wc30gLz4KKSkKCkNvbW1hbmRJdGVtLmRpc3BsYXlOYW1lID0gQ29tbWFu\nZFByaW1pdGl2ZS5JdGVtLmRpc3BsYXlOYW1lCgpjb25zdCBDb21tYW5kU2hv\ncnRjdXQgPSAoewogIGNsYXNzTmFtZSwKICAuLi5wcm9wcwp9KSA9PiB7CiAg\ncmV0dXJuICgKICAgICg8c3BhbgogICAgICBjbGFzc05hbWU9e2NuKCJtbC1h\ndXRvIHRleHQteHMgdHJhY2tpbmctd2lkZXN0IHRleHQtbXV0ZWQtZm9yZWdy\nb3VuZCIsIGNsYXNzTmFtZSl9CiAgICAgIHsuLi5wcm9wc30gLz4pCiAgKTsK\nfQpDb21tYW5kU2hvcnRjdXQuZGlzcGxheU5hbWUgPSAiQ29tbWFuZFNob3J0\nY3V0IgoKZXhwb3J0IHsKICBDb21tYW5kLAogIENvbW1hbmREaWFsb2csCiAg\nQ29tbWFuZElucHV0LAogIENvbW1hbmRMaXN0LAogIENvbW1hbmRFbXB0eSwK\nICBDb21tYW5kR3JvdXAsCiAgQ29tbWFuZEl0ZW0sCiAgQ29tbWFuZFNob3J0\nY3V0LAogIENvbW1hbmRTZXBhcmF0b3IsCn0K\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/pathak32/vedicmind-ai/contents/src/components/ui/command.jsx?ref=main","git":"https://api.github.com/repos/pathak32/vedicmind-ai/git/blobs/f2d7522c280fc359befbabaa9ff260c0eef41d35","html":"https://github.com/pathak32/vedicmind-ai/blob/main/src/components/ui/command.jsx"}}
+import * as React from "react"
+import { Command as CommandPrimitive } from "cmdk"
+import { Search } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
+
+const Command = React.forwardRef(({ className, ...props }, ref) => (
+  <CommandPrimitive
+    ref={ref}
+    className={cn(
+      "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
+      className
+    )}
+    {...props} />
+))
+Command.displayName = CommandPrimitive.displayName
+
+const CommandDialog = ({
+  children,
+  ...props
+}) => {
+  return (
+    (<Dialog {...props}>
+      <DialogContent className="overflow-hidden p-0">
+        <Command
+          className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+          {children}
+        </Command>
+      </DialogContent>
+    </Dialog>)
+  );
+}
+
+const CommandInput = React.forwardRef(({ className, ...props }, ref) => (
+  <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
+    <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+    <CommandPrimitive.Input
+      ref={ref}
+      className={cn(
+        "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+        className
+      )}
+      {...props} />
+  </div>
+))
+
+CommandInput.displayName = CommandPrimitive.Input.displayName
+
+const CommandList = React.forwardRef(({ className, ...props }, ref) => (
+  <CommandPrimitive.List
+    ref={ref}
+    className={cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className)}
+    {...props} />
+))
+
+CommandList.displayName = CommandPrimitive.List.displayName
+
+const CommandEmpty = React.forwardRef((props, ref) => (
+  <CommandPrimitive.Empty ref={ref} className="py-6 text-center text-sm" {...props} />
+))
+
+CommandEmpty.displayName = CommandPrimitive.Empty.displayName
+
+const CommandGroup = React.forwardRef(({ className, ...props }, ref) => (
+  <CommandPrimitive.Group
+    ref={ref}
+    className={cn(
+      "overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
+      className
+    )}
+    {...props} />
+))
+
+CommandGroup.displayName = CommandPrimitive.Group.displayName
+
+const CommandSeparator = React.forwardRef(({ className, ...props }, ref) => (
+  <CommandPrimitive.Separator ref={ref} className={cn("-mx-1 h-px bg-border", className)} {...props} />
+))
+CommandSeparator.displayName = CommandPrimitive.Separator.displayName
+
+const CommandItem = React.forwardRef(({ className, ...props }, ref) => (
+  <CommandPrimitive.Item
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default gap-2 select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+      className
+    )}
+    {...props} />
+))
+
+CommandItem.displayName = CommandPrimitive.Item.displayName
+
+const CommandShortcut = ({
+  className,
+  ...props
+}) => {
+  return (
+    (<span
+      className={cn("ml-auto text-xs tracking-widest text-muted-foreground", className)}
+      {...props} />)
+  );
+}
+CommandShortcut.displayName = "CommandShortcut"
+
+export {
+  Command,
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandShortcut,
+  CommandSeparator,
+}
