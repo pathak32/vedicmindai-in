@@ -7,6 +7,9 @@ import {
   getTodayString,
   getTodayQuizResult,
 } from '@/lib/dailyQuizEngine';
+import { saveDailyQuizResult, saveUserProgress } from '@/lib/supabaseDataService';
+import { getSupabase } from '@/lib/supabaseClient';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -393,6 +396,20 @@ function saveQuizResult(answers, totalScore) {
   }
 
   localStorage.setItem('vedicmind_progress', JSON.stringify(progress));
+
+  // Also save to Supabase (async, non-blocking)
+  (async () => {
+    try {
+      const supabase = await getSupabase();
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user?.id) {
+        await saveDailyQuizResult(session.user.id, {
+          score: totalScore, totalPossible: 110, answers: answers, timeTaken: 0,
+        });
+        await saveUserProgress(session.user.id, progress);
+      }
+    } catch (e) { console.warn('Supabase quiz save failed (non-critical):', e); }
+  })();
 
   // Update independent quiz streak
   updateQuizStreak();
