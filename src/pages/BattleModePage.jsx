@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { useNavigate } from 'react-router-dom';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 
 export default function BattleModePage() {
   const navigate = useNavigate();
+  const { user, loading } = useVedicAuth();
   const auth = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth') || '{}'); } catch { return {}; } })();
   const firstName = (auth.name || 'You').split(' ')[0];
   const initial = firstName.charAt(0).toUpperCase();
