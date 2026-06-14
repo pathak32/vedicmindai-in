@@ -1,0 +1,60 @@
+{
+  "packageId": "in.vedicmindai.app",
+  "host": "vedicmindai.in",
+  "name": "VedicMindAI",
+  "launcherName": "VedicMind",
+  "display": "standalone",
+  "themeColor": "#0A1628",
+  "navigationColor": "#0A1628",
+  "navigationColorDark": "#0A1628",
+  "navigationDividerColor": "#0A1628",
+  "backgroundColor": "#0A1628",
+  "startUrl": "/dashboard",
+  "iconUrl": "https://vedicmindai.in/icons/icon-512.png",
+  "maskableIconUrl": "https://vedicmindai.in/icons/icon-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "enableNotifications": false,
+  "shortcuts": [
+    {
+      "name": "Daily Quiz",
+      "shortName": "Quiz",
+      "url": "/daily-quiz",
+      "icons": [
+        {
+          "src": "https://vedicmindai.in/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Learn",
+      "shortName": "Learn",
+      "url": "/learn",
+      "icons": [
+        {
+          "src": "https://vedicmindai.in/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://vedicmindai.in/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {
+    "locationDelegation": {
+      "enabled": false
+    },
+    "playBilling": {
+      "enabled": false
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSideNavigation": false,
+  "orientation": "portrait",
+  "fingerprints": []
+}
