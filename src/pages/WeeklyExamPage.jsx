@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import {
   getWeekId, getWeeklyExamStatus, getDaysUntilSunday,
@@ -216,6 +217,7 @@ function UpcomingState({ classGroup, setClassGroup, status, weeklyHistory }) {
 
 function CompletedState({ result, classGroup }) {
   const navigate = useNavigate();
+  const { user, loading } = useVedicAuth();
   const daysLeft = getDaysUntilSunday();
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
@@ -278,6 +280,7 @@ function CompletedState({ result, classGroup }) {
 
 function ExamInterface({ classGroup }) {
   const navigate = useNavigate();
+  const { user, loading } = useVedicAuth();
   const weekId = getWeekId();
   const seed = getSeedFromWeekAndGroup(weekId, classGroup);
   const questions = seededShuffle(QUESTION_BANKS[classGroup] || QUESTION_BANKS.middle, seed);
@@ -612,12 +615,13 @@ function ExamInterface({ classGroup }) {
 
 export default function WeeklyExamPage() {
   const navigate = useNavigate();
+  const { user, loading } = useVedicAuth();
   const profile = JSON.parse(localStorage.getItem('vedicmind_profile') || '{}');
   const [classGroup, setClassGroup] = useState(getClassGroup(profile.grade));
   const [status, setStatus] = useState(getWeeklyExamStatus());
 
   useEffect(() => {
-    if (!localStorage.getItem('vedicmind_auth')) navigate('/auth');
+    if (!loading && !user) { navigate('/auth'); return; }
   }, []);
 
   // Re-check status every 30s
