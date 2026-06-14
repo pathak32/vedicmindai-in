@@ -53,7 +53,7 @@ export default function ProfilePage() {
   const [progress, setProgress] = useState(JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'));
 
   useEffect(() => {
-    if (!loading && !auth) navigate('/auth');
+    if (!loading && !user) { navigate('/auth'); return; }
   }, [loading, auth]);
 
   const showToast = (msg) => {
