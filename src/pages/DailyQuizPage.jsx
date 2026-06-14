@@ -438,12 +438,13 @@ class QuizErrorBoundary extends React.Component {
 
 function DailyQuizPageInner() {
   const navigate = useNavigate();
+  const { user, loading } = useVedicAuth();
   const [screen, setScreen] = useState('loading'); // loading | waiting | countdown | quiz | done
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    const auth = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth')); } catch { return null; } })();
-    if (!loading && !user) { navigate('/auth'); return; }
+    if (loading) return;
+    if (!user) { navigate('/auth'); return; }
 
     const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'); } catch { return {}; } })();
     const status = getDailyQuizStatus(progress);
