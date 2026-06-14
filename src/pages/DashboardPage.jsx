@@ -877,6 +877,13 @@ function DashboardPage() {
           </div>
         </div>
 
+
+      {/* ── Referral & Star Student Offer ── */}
+      <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 16px 80px' }}>
+        <RupeeOneOffer quizStreak={profile?.daily_quiz_streak || profile?.dailyQuizStreak || 0} />
+        <ReferralCard />
+      </div>
+
       </main>
     </div>
   );
