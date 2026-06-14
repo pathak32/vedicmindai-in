@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { getClassGroup, CLASS_GROUPS, TOPICS, getQuestions } from '@/lib/aptitudeQuestions';
@@ -459,6 +460,7 @@ function ResultsScreen({ score, questions, sutras, group, onRetry, onHome }) {
 
 export default function AptitudeZonePage() {
   const navigate = useNavigate();
+  const { user, loading } = useVedicAuth();
 
   const auth = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth')); } catch { return null; } })();
   const profile = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile') || '{}'); } catch { return {}; } })();
@@ -470,7 +472,7 @@ export default function AptitudeZonePage() {
   const [results, setResults] = useState(null);
 
   useEffect(() => {
-    if (!auth) navigate('/auth');
+    if (!loading && !user) { navigate('/auth'); return; }
   }, []);
 
   const handleClassSelect = (cls) => {
