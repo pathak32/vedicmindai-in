@@ -49,7 +49,7 @@ export async function saveUserProgress(userId, progress) {
   const { error } = await supabase
     .from('progress')
     .upsert({
-      id: userId,
+      user_id: userId,
       completed_lessons: progress.completedLessons || progress.completed_lessons || [],
       lesson_scores: progress.lessonScores || progress.lesson_scores || {},
       total_xp: progress.totalXP ?? progress.total_xp ?? 0,
