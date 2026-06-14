@@ -198,6 +198,14 @@ function QuizScreen({ questions, onComplete }) {
     setSelected(idx);
     setAnswered(true);
     if (isCorrect) setTotalScore(s => s + pts);
+    // Voice explanation on wrong answer
+    if (!isCorrect && q.options && q.correctIndex !== undefined) {
+      const correctAns = q.options[q.correctIndex];
+      const sutra = q.sutra || 'Vedic Mathematics';
+      const exp = q.explanation || '';
+      const msg = `Wrong. As per ${sutra}, the correct answer is ${correctAns}. ${exp}`;
+      speakExplanation(msg, 'en-US');
+    }
     answersRef.current.push({ questionId: q.id, selectedIndex: idx, correct: isCorrect, timeMs: Math.round(elapsed), pts });
     nextRef.current = setTimeout(advance, 800);
   }
