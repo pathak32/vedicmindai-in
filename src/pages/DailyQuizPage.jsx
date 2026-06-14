@@ -10,6 +10,7 @@ import {
 import { saveDailyQuizResult, saveUserProgress } from '@/lib/supabaseDataService';
 import { getSupabase } from '@/lib/supabaseClient';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { speakExplanation, buildExplanation } from '@/lib/voiceExplanation';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
