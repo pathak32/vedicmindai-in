@@ -443,7 +443,7 @@ function DailyQuizPageInner() {
 
   useEffect(() => {
     const auth = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth')); } catch { return null; } })();
-    if (!auth) { navigate('/auth'); return; }
+    if (!loading && !user) { navigate('/auth'); return; }
 
     const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'); } catch { return {}; } })();
     const status = getDailyQuizStatus(progress);
