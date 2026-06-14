@@ -1,1 +1,44 @@
-{"name":"VedicMind","short_name":"VedicMind","description":"AI-powered Vedic Mathematics learning app","start_url":"/","display":"standalone","background_color":"#0A1628","theme_color":"#0A1628","orientation":"portrait","id":"in.vedicmindai.app","icons":[{"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png"},{"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png"}]}
+{
+  "name": "VedicMindAI \u2014 Vedic Mathematics",
+  "short_name": "VedicMind",
+  "description": "AI-powered Vedic Mathematics learning app. Learn ancient tricks to calculate 10x faster. Daily Quiz, Weekly Exam, Olympiad & more.",
+  "start_url": "/dashboard",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0A1628",
+  "theme_color": "#0A1628",
+  "orientation": "portrait",
+  "id": "in.vedicmindai.app",
+  "lang": "en-IN",
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Daily Quiz",
+      "url": "/daily-quiz",
+      "description": "Take today's quiz"
+    },
+    {
+      "name": "Learn",
+      "url": "/learn",
+      "description": "Browse lessons"
+    }
+  ]
+}
