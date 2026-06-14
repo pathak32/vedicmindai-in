@@ -130,7 +130,8 @@ function App() {
               <DarkModeSync />
               <ScrollToTop />
               <Routes>
-                  <Route path="*" element={
+                <Route path="/admin-panel" element={<AdminPanel />} />
+                <Route path="*" element={
                   <>
                     <MobileAppHeader />
                     <MobileBottomNav />
