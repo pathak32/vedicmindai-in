@@ -198,16 +198,36 @@ function QuizScreen({ questions, onComplete }) {
     setSelected(idx);
     setAnswered(true);
     if (isCorrect) setTotalScore(s => s + pts);
-    // Voice explanation on wrong answer
+    answersRef.current.push({ questionId: q.id, selectedIndex: idx, correct: isCorrect, timeMs: Math.round(elapsed), pts });
+
     if (!isCorrect && q.options && q.correctIndex !== undefined) {
+      // Speak explanation on wrong answer — wait for it to finish before advancing
       const correctAns = q.options[q.correctIndex];
       const sutra = q.sutra || 'Vedic Mathematics';
       const exp = q.explanation || '';
-      const msg = `Wrong. As per ${sutra}, the correct answer is ${correctAns}. ${exp}`;
-      speakExplanation(msg, 'en-US');
+      const msg = `Wrong! As per ${sutra} sutra, the correct answer is ${correctAns}. ${exp}`;
+
+      // Cancel any ongoing speech
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(msg);
+      utter.lang = 'en-US';
+      utter.rate = 0.85;
+      utter.pitch = 1;
+      utter.volume = 1;
+      // Advance ONLY after speech ends
+      utter.onend = () => {
+        nextRef.current = setTimeout(advance, 400);
+      };
+      // Fallback — if speech fails or takes too long (max 8 seconds)
+      nextRef.current = setTimeout(() => {
+        window.speechSynthesis.cancel();
+        advance();
+      }, 8000);
+      window.speechSynthesis.speak(utter);
+    } else {
+      // Correct answer — advance after short delay
+      nextRef.current = setTimeout(advance, 800);
     }
-    answersRef.current.push({ questionId: q.id, selectedIndex: idx, correct: isCorrect, timeMs: Math.round(elapsed), pts });
-    nextRef.current = setTimeout(advance, 800);
   }
 
   function advance() {
