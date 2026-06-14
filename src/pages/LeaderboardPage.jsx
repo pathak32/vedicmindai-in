@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { motion } from 'framer-motion';
 import usePullToRefresh from '@/hooks/usePullToRefresh';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
@@ -43,12 +44,13 @@ function Toggle({ value, onChange }) {
 
 export default function LeaderboardPage() {
   const navigate = useNavigate();
+  const { user, loading } = useVedicAuth();
 
 const auth     = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth')) || JSON.parse(localStorage.getItem('vedicmind-auth'))?.user || null; } catch { return null; } })();  const profile  = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile')) || {}; } catch { return {}; } })();
   const [progress, setProgress] = useState(() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress')) || {}; } catch { return {}; } });
 
   React.useEffect(() => {
-    if (!auth) navigate('/auth');
+    if (!loading && !user) { navigate('/auth'); return; }
   }, []);
 
   const classBoard  = useMemo(() => generateLeaderboard(profile, progress, 'class'),  []);
