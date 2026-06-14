@@ -23,7 +23,7 @@ export default function LearnPage() {
   const progress = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
 
   useEffect(() => {
-    if (!loading && !auth) navigate('/auth');
+    if (!loading && !user) { navigate('/auth'); return; }
   }, [loading, auth]);
 
   // Determine current lesson
