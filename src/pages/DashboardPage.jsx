@@ -522,7 +522,7 @@ function DashboardPage() {
     // Not logged in — but wait a moment to let onAuthStateChange fire
     const timer = setTimeout(() => {
       // Double-check auth state hasn't changed
-      if (!auth) navigate('/auth');
+      if (!loading && !user) { navigate('/auth'); return; }
     }, 1500);
     return () => clearTimeout(timer);
   }, [loading, auth]);
