@@ -5,6 +5,8 @@ import usePullToRefresh from '@/hooks/usePullToRefresh';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import TrialBanner from '@/components/dashboard/TrialBanner';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
+import ReferralCard from '@/components/ReferralCard';
+import RupeeOneOffer from '@/components/RupeeOneOffer';
 import { getUserProfile, getUserProgress } from '@/lib/supabaseDataService';
 import { getDailyQuizStatus, getTodayString } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@/lib/leaderboardEngine';
