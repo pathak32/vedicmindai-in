@@ -45,7 +45,7 @@ export function VedicAuthProvider({ children }) {
         .from('profiles')
         .select('*')
         .eq('id', userId)
-        .single();
+        .maybeSingle();
       setProfile(data);
     } catch (_) {}
   };
@@ -87,7 +87,8 @@ export function VedicAuthProvider({ children }) {
     // 2. Save profile to profiles table
     const { error: profileErr } = await supabase.from('profiles').upsert({
       id: userId,
-      name,
+      full_name: name,
+      name: name,
       mobile,
       dob,
       email: email || null,
@@ -95,10 +96,12 @@ export function VedicAuthProvider({ children }) {
       password_hint: passwordHint,
       security_question: securityQuestion,
       security_answer: securityAnswer,
+      plan: 'trial',
       subscription_status: 'trial',
       trial_start_date: new Date().toISOString(),
+      trial_end_date: new Date(Date.now() + 7*24*60*60*1000).toISOString(),
       created_at: new Date().toISOString(),
-    });
+    }, { onConflict: 'id', ignoreDuplicates: false });
     if (profileErr) console.error('Profile save error:', profileErr.message);
 
     return data;
