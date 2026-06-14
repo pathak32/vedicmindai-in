@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { motion } from 'framer-motion';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import ModeSelector from '@/components/practice/ModeSelector';
@@ -9,11 +10,12 @@ import ChallengeMode from '@/components/practice/ChallengeMode';
 
 export default function PracticePage() {
   const navigate = useNavigate();
+  const { user, loading } = useVedicAuth();
   const [mode, setMode] = useState(null); // null | 'speed' | 'topic' | 'challenge'
   const [selectedTopic, setSelectedTopic] = useState('ekadhikena');
 
   useEffect(() => {
-    if (!localStorage.getItem('vedicmind_auth')) navigate('/auth');
+    if (!loading && !user) { navigate('/auth'); return; }
   }, []);
 
   return (
