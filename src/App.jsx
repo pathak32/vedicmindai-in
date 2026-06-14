@@ -99,7 +99,6 @@ function RouteTransition() {
               <Route path="/daily-quiz/results" element={<DailyQuizResultsPage />} />
               <Route path="/leaderboard" element={<LeaderboardPage />} />
               <Route path="/aptitude" element={<AptitudeZonePage />} />
-              <Route path="/admin-panel" element={<AdminPanel />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/weekly-exam" element={<WeeklyExamPage />} />
               <Route path="/weekly-exam/results" element={<WeeklyExamResultsPage />} />
@@ -130,9 +129,15 @@ function App() {
             <Router>
               <DarkModeSync />
               <ScrollToTop />
-              <MobileAppHeader />
-              <MobileBottomNav />
-              <RouteTransition />
+              <Routes>
+                  <Route path="*" element={
+                  <>
+                    <MobileAppHeader />
+                    <MobileBottomNav />
+                    <RouteTransition />
+                  </>
+                } />
+              </Routes>
             </Router>
           </QueryClientProvider>
         </ProgressProvider>
