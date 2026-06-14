@@ -462,7 +462,7 @@ function DailyQuizPageInner() {
     const qs = getDailyQuestions(profile.grade);
     setQuestions(qs);
     setScreen('countdown');
-  }, []);
+  }, [loading, user]);
 
   function handleQuizComplete(answers, totalScore) {
     saveQuizResult(answers, totalScore);
