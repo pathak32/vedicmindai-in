@@ -20,22 +20,28 @@ function useCountUp(target, duration = 1200) {
   return value;
 }
 
-function getGreeting() {
+function getGreeting(t) {
   const h = new Date().getHours();
-  if (h >= 5 && h < 12) return 'Good morning';
-  if (h >= 12 && h < 18) return 'Good afternoon';
-  return 'Good evening';
+  if (h >= 5 && h < 12) return t('goodMorning');
+  if (h >= 12 && h < 18) return t('goodAfternoon');
+  return t('goodEvening');
 }
 
-const LEVEL_INFO = {
-  1: { label: 'Beginner', emoji: '🌱' },
-  2: { label: 'Intermediate', emoji: '📈' },
-  3: { label: 'Advanced', emoji: '🔥' },
-  4: { label: 'Master', emoji: '👑' },
+const LEVEL_INFO_STATIC = {
+  1: { emoji: '🌱' },
+  2: { emoji: '📈' },
+  3: { emoji: '🔥' },
+  4: { emoji: '👑' },
 };
 
 export default function WelcomeHero({ user, progress }) {
   const { t } = useLanguage();
+  const LEVEL_INFO = {
+    1: { label: t('beginner'), emoji: '🌱' },
+    2: { label: t('intermediate'), emoji: '📈' },
+    3: { label: t('advanced'), emoji: '🔥' },
+    4: { label: t('master'), emoji: '👑' },
+  };
   const lessonsCount = useCountUp(progress.completedLessons?.length || 0);
   const streakCount = useCountUp(progress.streak || 0);
   const xpCount = useCountUp(progress.totalXP || 0);
@@ -57,7 +63,7 @@ export default function WelcomeHero({ user, progress }) {
       <div className="flex items-start justify-between flex-wrap gap-3 mb-6">
         <div>
           <h1 className="font-heading text-2xl sm:text-3xl font-bold">
-            {getGreeting()}, {name}! 🌟
+            {getGreeting(t)}, {name}! 🌟
           </h1>
           <p className="text-blue-200 text-sm mt-1">Day {daysSince} of your Vedic Maths journey</p>
         </div>

@@ -5,10 +5,10 @@ import { isLevelUnlocked } from '@/utils/helpers';
 import { useLanguage } from '@/lib/LanguageContext';
 
 const LEVELS = [
-  { num: 1, emoji: '🌱', label: 'Beginner', total: 10, prefix: 'l1_' },
-  { num: 2, emoji: '📈', label: 'Intermediate', total: 12, prefix: 'l2_' },
-  { num: 3, emoji: '🔥', label: 'Advanced', total: 10, prefix: 'l3_' },
-  { num: 4, emoji: '👑', label: 'Master', total: 8, prefix: 'l4_' },
+  { num: 1, emoji: '🌱', label: t('beginner'), total: 10, prefix: 'l1_' },
+  { num: 2, emoji: '📈', label: t('intermediate'), total: 12, prefix: 'l2_' },
+  { num: 3, emoji: '🔥', label: t('advanced'), total: 10, prefix: 'l3_' },
+  { num: 4, emoji: '👑', label: t('master'), total: 8, prefix: 'l4_' },
 ];
 
 export default function LevelCards({

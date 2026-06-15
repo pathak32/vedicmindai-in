@@ -100,12 +100,10 @@ export default function AITutorPanel({ lesson, onClose }) {
         content: m.content,
       }));
 
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      const response = await fetch('/api/ai-tutor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
-          max_tokens: 1000,
           system: buildSystemPrompt(lesson, language),
           messages: history,
         }),
