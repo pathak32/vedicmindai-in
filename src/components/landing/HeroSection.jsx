@@ -38,15 +38,13 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-[56px] font-bold text-white leading-tight">
-              Ancient Wisdom.{' '}
-              <span className="text-[#3B82F6]">Modern Speed.</span>{' '}
-              Vedic Mathematics Reimagined.
+              {t('heroHeading')}
             </h1>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(15px,2.5vw,18px)', color: '#CBD5E1', marginTop: 12, lineHeight: 1.6, maxWidth: 560 }}>
-              Join 1,000+ students calculating 10× faster with ancient Vedic techniques — no abacus, no calculator needed.
+              {t('heroSubtitle')}
             </p>
             <p className="mt-6 text-lg sm:text-xl text-blue-200 font-body leading-relaxed max-w-lg">
-              Master calculation techniques that make your brain 10x faster — personalized by AI for your exact learning level.
+              {t('heroDesc')}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
