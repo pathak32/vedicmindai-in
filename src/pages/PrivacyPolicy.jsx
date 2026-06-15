@@ -6,6 +6,8 @@ export default function PrivacyPolicy() {
       <div style={{ background: '#FFF7ED', border: '1px solid #FED7AA', borderRadius: 8, padding: '12px 16px', marginBottom: 24 }}>
         <p style={{ margin: 0, fontSize: 13, color: '#92400E', fontWeight: 500 }}>
           ™ VedicMindAI™ is a registered trademark applicant. Unauthorized use of this name or logo is prohibited.
+          <br/><strong>Application Nos: 7785746 (Class 9) | 7785747 (Class 41) | 7785748 (Class 42)</strong>
+          <br/>Filed: 11 June 2026 | Proprietor: Hitesh Pathak, Lucknow
         </p>
       </div>
 

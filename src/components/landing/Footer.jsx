@@ -18,7 +18,7 @@ export default function Footer() {
           </div>
           <p className="text-sm text-blue-400">© {new Date().getFullYear()} VedicMindAI™. All rights reserved.</p>
           <p className="text-xs text-blue-500 mt-1">
-            VedicMindAI™ is a trademark application pending registration under Classes 9, 41 &amp; 42 with the Government of India.
+            VedicMindAI™ — Trademark application pending | Classes 9, 41 &amp; 42 | App. Nos. 7785746, 7785747, 7785748 | Govt. of India
           </p>
         </div>
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: 24, paddingTop: 16, textAlign: 'center' }}>
