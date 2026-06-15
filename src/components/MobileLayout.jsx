@@ -2,15 +2,14 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/lib/LanguageContext';
 
-const TABS = [
-  { path: '/dashboard', label: 'Dashboard', icon: '🏠' },
-  { path: '/learn',     label: 'Learn',      icon: '📖' },
-  { path: '/practice',  label: 'Practice',   icon: '⚡' },
-  { path: '/leaderboard', label: 'Ranks',    icon: '🏆' },
-];
-
 export default function MobileBottomNav() {
   const { t } = useLanguage();
+  const TABS = [
+    { path: '/dashboard',   label: t('home'),        icon: '🏠' },
+    { path: '/learn',       label: t('learn'),       icon: '📖' },
+    { path: '/practice',    label: t('practice'),    icon: '⚡' },
+    { path: '/leaderboard', label: t('leaderboard'), icon: '🏆' },
+  ];
   const location = useLocation();
   const navigate = useNavigate();
 

@@ -234,7 +234,7 @@ function DailyQuizCard() {
               {headerIcons[state]}
             </span>
             <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              {'Daily Quiz'}
+              {t('dailyQuizTitle')}
             </span>
           </div>
           <span style={{
@@ -840,7 +840,7 @@ function DashboardPage() {
         {/* ── SHARE YOUR STORY BANNER ── */}
         <div style={{ ...glass, padding: 20, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
           <div>
-            <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, color: '#0A1628', marginBottom: 2 }}>💬 Share Your VedicMind Story</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, color: '#0A1628', marginBottom: 2 }}>💬 Share Your VedicMindAI™ Story</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563' }}>Help other students and parents by sharing your experience</div>
           </div>
           <button
