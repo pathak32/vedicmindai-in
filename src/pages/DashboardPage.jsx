@@ -48,7 +48,7 @@ const LESSON_META = {
   l1_05: { title: 'Vertically & Crosswise Method',     desc: 'Two-digit multiplication using the cross-multiplication sutra.' },
 };
 
-const LEVEL_NAMES = { 1: 'Beginner', 2: 'Intermediate', 3: 'Advanced', 4: 'Master' };
+const getLevelName = (level, t) => ({ 1: 'Beginner', 2: 'Intermediate', 3: 'Advanced', 4: 'Master' })[level] || 'Level ' + level;
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -81,7 +81,7 @@ class DashboardErrorBoundary extends React.Component {
             onClick={() => window.location.reload()}
             style={{ marginTop: 16, padding: '10px 24px', background: '#0A1628', color: 'white', borderRadius: 12, border: 'none', cursor: 'pointer' }}
           >
-            {t('refresh')}
+            {'Refresh'}
           </button>
         </div>
       );
@@ -111,7 +111,7 @@ function ProgressRing({ pct }) {
         {Math.round(pct)}%
       </text>
       <text x={cx} y={cy + 18} textAnchor="middle" fontSize={13} fontFamily="var(--font-body)" fill="#4B5563">
-        {t('complete')}
+        {'Complete'}
       </text>
     </svg>
   );
@@ -234,7 +234,7 @@ function DailyQuizCard() {
               {headerIcons[state]}
             </span>
             <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              {t('quiz')}
+              {'Daily Quiz'}
             </span>
           </div>
           <span style={{
@@ -395,7 +395,7 @@ function LeaderboardPreviewCard({ profile, progress }) {
           {/* Left */}
           <div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 2 }}>
-              {t('yourRank')}
+              {'Your Rank'}
             </div>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 32, fontWeight: 700, color: 'white', lineHeight: 1 }}>
               #{userEntry.rank}
@@ -426,7 +426,7 @@ function LeaderboardPreviewCard({ profile, progress }) {
       {/* Top 3 List */}
       <div style={{ marginTop: 16 }}>
         <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
-          {t('topStudents')}
+          {'Top Students'}
         </div>
         {top3.map((entry, index) => (
           <div key={entry.id} style={{
@@ -530,7 +530,7 @@ function DashboardPage() {
     // Not logged in — but wait a moment to let onAuthStateChange fire
     const timer = setTimeout(() => {
       // Double-check auth state hasn't changed
-      if (!loading && !user) { navigate('/auth'); return; }
+      if (!loading && !auth) { navigate('/auth'); return; }
     }, 1500);
     return () => clearTimeout(timer);
   }, [loading, auth]);
@@ -577,7 +577,7 @@ function DashboardPage() {
   const streak     = progress.streak ?? 0;
   const badges     = Array.isArray(progress.badges) ? progress.badges : [];
   const aiAnalysis = profile.aiAnalysis || {};
-  const levelName  = LEVEL_NAMES[progress.currentLevel ?? 1];
+  const levelName  = getLevelName(progress.currentLevel ?? 1, t);
 
   const overallPct = Math.round((completed.length / 40) * 100);
 
@@ -635,15 +635,15 @@ function DashboardPage() {
           {/* 1. Total XP */}
           <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#FEF3C7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>⭐</div>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{t('totalXP')}</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{'Total XP'}</span>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 32, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>{totalXP}</span>
           </div>
           {/* 2. Day Streak */}
           <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#FEF3C7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🔥</div>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{t('streakDays')}</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{'Day Streak'}</span>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 32, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>{streak}</span>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>days in a row</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>{'Day Streak'}</span>
           </div>
           {/* 3. Lessons Completed */}
           <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -692,7 +692,7 @@ function DashboardPage() {
 
           {/* Next Lesson */}
           <div className="md:w-2/5" style={{ ...glass, padding: 24 }}>
-            <h2 className="font-heading" style={{ fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>{t('continueLesson')}</h2>
+            <h2 className="font-heading" style={{ fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>{'Continue Learning'}</h2>
             <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 18, color: '#0A1628', marginBottom: 8 }}>
               {nextMeta.title}
             </div>
@@ -721,7 +721,7 @@ function DashboardPage() {
             </Link>
             {(progress.currentLevel ?? 1) === 1 && completed.length < 10 && (
               <p style={{ fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)', marginTop: 12, textAlign: 'center' }}>
-                🔒 Next level unlocks after completing Level 1 assessment
+                {'Complete previous level'}
               </p>
             )}
           </div>
