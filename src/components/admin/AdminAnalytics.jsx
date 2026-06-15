@@ -13,6 +13,7 @@ export default function AdminAnalytics() {
   useEffect(() => { loadData(); }, []);
 
   async function loadData() {
+  const { t } = useLanguage();
     setLoading(true);
     try {
       const sb = await getSupabase();

@@ -28,6 +28,7 @@ const GROUPS = ['junior', 'middle', 'senior', 'higher', 'open'];
 
 function UpcomingState({
   classGroup, setClassGroup, status, weeklyHistory }) {
+  const { t } = useLanguage();
   const isWaiting = status === 'today_waiting';
   const [seconds, setSeconds] = useState(
     isWaiting ? getSecondsUntil10AM() : getSecondsUntilSunday10AM()
@@ -281,6 +282,7 @@ function CompletedState({ result, classGroup }) {
 // ─── Exam Interface (Live State) ──────────────────────────────────────────────
 
 function ExamInterface({ classGroup }) {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const { user, loading } = useVedicAuth();
   const weekId = getWeekId();

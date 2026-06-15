@@ -268,6 +268,7 @@ function ShareModal({ score, onClose }) {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function DailyQuizResultsPage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const midnight = useMidnightCountdown();
 

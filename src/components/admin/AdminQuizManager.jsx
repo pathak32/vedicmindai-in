@@ -20,6 +20,7 @@ export default function AdminQuizManager() {
   useEffect(() => { loadQuestions(); }, []);
 
   async function loadQuestions() {
+  const { t } = useLanguage();
     setLoading(true);
     try {
       const sb = await getSupabase();
@@ -34,6 +35,7 @@ export default function AdminQuizManager() {
   }
 
   async function generateQuestions() {
+  const { t } = useLanguage();
     setGenerating(true);
     setGenResult('🤖 Generating questions via AI...');
     try {

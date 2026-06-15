@@ -30,6 +30,7 @@ function loadQuestions() {
 }
 
 export default function AdminAptitudeManager() {
+  const { t } = useLanguage();
   const [questions, setQuestions] = useState(loadQuestions);
   const [activeGroup, setActiveGroup] = useState('PRIMARY');
   const [editing, setEditing] = useState(null);

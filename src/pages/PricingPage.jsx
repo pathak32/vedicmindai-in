@@ -133,6 +133,7 @@ const PLAN_DISPLAY_NAMES = {
 
 function PlanCard({
   plan, isAnnual, onPay, isCurrent, isFree }) {
+  const { t } = useLanguage();
   return (
     <div style={{ position: 'relative', flex: '1 1 240px', maxWidth: 320 }}>
       {plan.highlight && !isCurrent && (

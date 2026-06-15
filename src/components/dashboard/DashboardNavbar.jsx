@@ -191,6 +191,7 @@ function RankBadge({ rank }) {
 }
 
 export default function DashboardNavbar() {
+  const { t } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);

@@ -93,6 +93,7 @@ class DashboardErrorBoundary extends React.Component {
 // ─── sub-components ─────────────────────────────────────────────────────────
 
 function ProgressRing({ pct }) {
+  const { t } = useLanguage();
   const r = 80, cx = 100, cy = 100, sw = 14;
   const circ = 2 * Math.PI * r;
   const offset = circ - (pct / 100) * circ;
@@ -152,6 +153,7 @@ function getMinutesUntil8AM() {
 }
 
 function DailyQuizCard() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
   const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'); } catch { return {}; } })();
@@ -346,6 +348,7 @@ function DailyQuizCard() {
 // ─── Leaderboard Preview Card ─────────────────────────────────────────────────
 
 function LeaderboardPreviewCard({ profile, progress }) {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const classBoard = generateLeaderboard(profile, progress, 'class');
   const userEntry = getUserEntry(classBoard);
@@ -504,6 +507,7 @@ function LeaderboardPreviewCard({ profile, progress }) {
 // ─── main page ───────────────────────────────────────────────────────────────
 
 function DashboardPage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
   const { user: auth, loading } = useVedicAuth();

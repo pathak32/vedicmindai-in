@@ -48,6 +48,7 @@ function getMessage(score) {
 }
 
 export default function OlympiadResultsPage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const progress = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
   const history = progress.olympiadHistory || [];

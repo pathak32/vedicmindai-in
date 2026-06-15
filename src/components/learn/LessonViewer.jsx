@@ -99,6 +99,7 @@ function Toast({ message, visible }) {
 // ─── Main LessonViewer ────────────────────────────────────────────────────────
 
 export default function LessonViewer({ lesson, progress, onLessonComplete, allLessonIds, onNavigateToLesson }) {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('concept');
   const [conceptDone, setConceptDone] = useState(false);
   const [practiceDone, setPracticeDone] = useState(false);

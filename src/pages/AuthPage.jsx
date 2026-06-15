@@ -20,6 +20,7 @@ function generatePasswordHint(name, dob) {
 
 // ─── Sign Up Form ────────────────────────────────────────────────────────────
 function SignUpForm({ onSwitchTab }) {
+  const { t } = useLanguage();
   const { signUpWithPassword } = useVedicAuth();
   const navigate = useNavigate();
   const [name, setName]       = useState('');
@@ -206,6 +207,7 @@ function SignUpForm({ onSwitchTab }) {
 
 // ─── Sign In Form ────────────────────────────────────────────────────────────
 function SignInForm({ onSwitchTab }) {
+  const { t } = useLanguage();
   const { signInWithPassword } = useVedicAuth();
   const navigate = useNavigate();
   const [mobile, setMobile]   = useState('');

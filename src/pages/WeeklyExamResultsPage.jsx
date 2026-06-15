@@ -94,6 +94,7 @@ function QuestionRow({ q, ans, index }) {
 }
 
 export default function WeeklyExamResultsPage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [showAll, setShowAll] = useState(false);
 

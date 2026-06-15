@@ -383,6 +383,7 @@ function QuizScreen({ questions, group, onComplete }) {
 // ─── Results Screen ───────────────────────────────────────────────────────────
 
 function ResultsScreen({ score, questions, sutras, group, onRetry, onHome }) {
+  const { t } = useLanguage();
   const meta = CLASS_GROUPS[group];
   const total = questions.length;
   const maxScore = total * 4;

@@ -35,6 +35,7 @@ const LEVEL_INFO = {
 };
 
 export default function WelcomeHero({ user, progress }) {
+  const { t } = useLanguage();
   const lessonsCount = useCountUp(progress.completedLessons?.length || 0);
   const streakCount = useCountUp(progress.streak || 0);
   const xpCount = useCountUp(progress.totalXP || 0);

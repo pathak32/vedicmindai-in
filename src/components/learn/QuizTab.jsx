@@ -318,6 +318,7 @@ function OptionButton({ label, idx, selected, correct, revealed, onClick }) {
 // ─── Master Celebration ───────────────────────────────────────────────────────
 
 function MasterCelebration({ totalXP, badgeCount, xpEarned, correct, total, shareText, onComplete, fireConfetti, glass }) {
+  const { t } = useLanguage();
   useEffect(() => {
     fireConfetti();
   }, []);

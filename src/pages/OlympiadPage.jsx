@@ -581,6 +581,7 @@ function ExamInterface({ level, questions }) {
 // ─── Completed View ───────────────────────────────────────────────────────────
 
 function CompletedView() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const progress = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
   const history = progress.olympiadHistory || [];

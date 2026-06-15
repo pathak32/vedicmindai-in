@@ -43,6 +43,7 @@ const INITIAL_PROGRESS = {
 };
 
 export default function ProfilePage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [editOpen, setEditOpen] = useState(false);
   const [dangerOpen, setDangerOpen] = useState(false);
