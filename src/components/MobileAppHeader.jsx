@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
+import { LanguageToggle } from '@/components/LanguageToggle';
 
-// Routes that don't need a back button
 const ROOT_ROUTES = ['/', '/dashboard', '/learn', '/practice'];
 
 export default function MobileAppHeader() {
@@ -14,7 +14,7 @@ export default function MobileAppHeader() {
   return (
     <>
       <div className="mobile-app-header safe-top" style={{
-        display: 'none', // shown via CSS on mobile
+        display: 'none',
         position: 'sticky',
         top: 0,
         zIndex: 60,
@@ -24,7 +24,7 @@ export default function MobileAppHeader() {
         borderBottom: '1px solid rgba(30,64,175,0.1)',
         paddingTop: 'env(safe-area-inset-top, 0px)',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', height: 48, padding: '0 8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 48, padding: '0 8px' }}>
           <button
             onClick={() => navigate(-1)}
             style={{
@@ -48,6 +48,7 @@ export default function MobileAppHeader() {
             <ChevronLeft size={20} strokeWidth={2.5} style={{ flexShrink: 0 }} />
             Back
           </button>
+          <LanguageToggle size="sm" />
         </div>
       </div>
       <style>{`
