@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { generateQuestion, generateMixed, saveProgress } from './questionGenerator';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const TOTAL_SECS = 120;
 const glass = {
@@ -12,7 +13,8 @@ const glass = {
   borderRadius: 20,
 };
 
-function XPToast({ text, isPos }) {
+function XPToast({
+  text, isPos }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -29,7 +31,8 @@ function XPToast({ text, isPos }) {
   );
 }
 
-export default function SpeedDrill({ onExit }) {
+export default function SpeedDrill({onExit }) {
+  const { t } = useLanguage();
   const [timeLeft, setTimeLeft] = useState(TOTAL_SECS);
   const [running, setRunning] = useState(true);
   const [question, setQuestion] = useState(() => generateMixed());
@@ -95,7 +98,7 @@ export default function SpeedDrill({ onExit }) {
         <div style={{ fontSize: 56, marginBottom: 16 }}>⚡</div>
         <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: '#0A1628', marginBottom: 24 }}>Drill Complete!</h2>
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 56, fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>{accuracy}%</div>
-        <div style={{ fontSize: 14, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 24 }}>Accuracy</div>
+        <div style={{ fontSize: 14, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 24 }}>{t('accuracy')}</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 24 }}>
           {[['Answered', correct + wrong], ['Correct', correct], ['Wrong', wrong]].map(([l, v]) => (
             <div key={l} style={{ background: '#F0F4FF', borderRadius: 12, padding: '12px 8px' }}>
@@ -107,7 +110,7 @@ export default function SpeedDrill({ onExit }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
           <div style={{ background: '#FEF3C7', borderRadius: 12, padding: '12px' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: '#92400E' }}>+{xpEarned} XP</div>
-            <div style={{ fontSize: 12, color: '#92400E', fontFamily: 'var(--font-body)' }}>XP Earned</div>
+            <div style={{ fontSize: 12, color: '#92400E', fontFamily: 'var(--font-body)' }}>{t('xpEarned')}</div>
           </div>
           <div style={{ background: '#DBEAFE', borderRadius: 12, padding: '12px' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: '#1E40AF' }}>{bestStreak}🔥</div>
@@ -117,7 +120,7 @@ export default function SpeedDrill({ onExit }) {
         <div style={{ display: 'flex', gap: 12 }}>
           <button onClick={() => { setTimeLeft(TOTAL_SECS); setCorrect(0); setWrong(0); setQCount(1); setStreak(0); setBestStreak(0); setDone(false); setRunning(true); setQuestion(generateMixed()); }}
             style={{ flex: 1, minHeight: 48, background: '#0A1628', color: 'white', border: 'none', borderRadius: 12, fontSize: 15, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}>
-            Try Again
+            {t('retry')}
           </button>
           <button onClick={onExit}
             style={{ flex: 1, minHeight: 48, background: 'transparent', color: '#0A1628', border: '1.5px solid rgba(30,64,175,0.2)', borderRadius: 12, fontSize: 15, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}>

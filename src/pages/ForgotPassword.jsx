@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const lbl = { display:'block', fontSize:13, fontWeight:600, color:'#374151', marginBottom:4 };
 const Err = ({ children }) => <p style={{ color:'#EF4444', fontSize:12, margin:'3px 0 0' }}>{children}</p>;
@@ -14,6 +15,7 @@ const inp = (err) => ({
 });
 
 export default function ForgotPassword() {
+  const { t } = useLanguage();
   const { getPasswordHint, verifySecurityAnswer } = useVedicAuth();
   const navigate = useNavigate();
 
@@ -70,7 +72,7 @@ export default function ForgotPassword() {
         </button>
 
         <h2 style={{ fontFamily:'var(--font-heading)', fontSize:24, fontWeight:700, color:'#0A1628', marginBottom:6 }}>
-          Forgot Password?
+          {t('forgotPassword')}
         </h2>
         <p style={{ fontSize:13, color:'#6B7280', marginBottom:24 }}>
           No worries — we'll help you recover it without OTP.

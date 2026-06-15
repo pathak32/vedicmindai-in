@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '@/lib/LanguageContext';
 // base44 removed
 
 const LOADING_MESSAGES = [
@@ -29,7 +30,8 @@ const LEVEL_COLORS = {
   Advanced: 'bg-purple-100 text-purple-800',
 };
 
-export default function AIAnalysisScreen({ profile, onComplete }) {
+export default function AIAnalysisScreen({
+  profile, onComplete }) {
   const [msgIdx, setMsgIdx] = useState(0);
   const [progress, setProgress] = useState(0);
   const [analysis, setAnalysis] = useState(null);

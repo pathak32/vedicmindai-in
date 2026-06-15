@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { useLanguage } from '@/lib/LanguageContext';
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
 function validateMobile(m) { return /^[6-9]\d{9}$/.test(m); }
@@ -271,7 +272,7 @@ function SignInForm({ onSwitchTab }) {
       <div style={{ textAlign:'right' }}>
         <button type="button" onClick={() => navigate('/forgot-password')}
           style={{ background:'none', border:'none', cursor:'pointer', fontSize:13, color:'#3B82F6', fontWeight:600 }}>
-          Forgot Password?
+          {t('forgotPassword')}
         </button>
       </div>
 
@@ -289,6 +290,7 @@ const Err = ({ children }) => <p style={{ color:'#EF4444', fontSize:12, margin:'
 
 // ─── Main AuthPage ───────────────────────────────────────────────────────────
 export default function AuthPage() {
+  const { t } = useLanguage();
   const [tab, setTab] = useState('signin');
   const { user, loading } = useVedicAuth();
   const navigate = useNavigate();
@@ -359,8 +361,8 @@ export default function AuthPage() {
           <div className="glass-card auth-card" style={{ padding:'28px 24px' }}>
             {/* Tabs */}
             <div style={{ display:'flex', background:'#F0F4FF', borderRadius:12, padding:4, marginBottom:24 }}>
-              <button type="button" style={tabBtn('signin')} onClick={() => setTab('signin')}>Sign In</button>
-              <button type="button" style={tabBtn('signup')} onClick={() => setTab('signup')}>Sign Up</button>
+              <button type="button" style={tabBtn('signin')} onClick={() => setTab('signin')}>{t('signIn')}</button>
+              <button type="button" style={tabBtn('signup')} onClick={() => setTab('signup')}>{t('signUp')}</button>
             </div>
 
             {tab === 'signin'

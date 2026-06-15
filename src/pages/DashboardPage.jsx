@@ -10,10 +10,12 @@ import RupeeOneOffer from '@/components/RupeeOneOffer';
 import { getUserProfile, getUserProgress } from '@/lib/supabaseDataService';
 import { getDailyQuizStatus, getTodayString } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@/lib/leaderboardEngine';
+import { useLanguage } from '@/lib/LanguageContext';
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
 function greeting(auth, profile) {
+  const { t } = useLanguage();
   const h = new Date().getHours();
   const tod = h >= 5 && h < 12 ? 'morning' : h >= 12 && h < 17 ? 'afternoon' : 'evening';
   const displayName = profile.name || auth?.user_metadata?.name || '';
@@ -79,7 +81,7 @@ class DashboardErrorBoundary extends React.Component {
             onClick={() => window.location.reload()}
             style={{ marginTop: 16, padding: '10px 24px', background: '#0A1628', color: 'white', borderRadius: 12, border: 'none', cursor: 'pointer' }}
           >
-            Refresh
+            {t('refresh')}
           </button>
         </div>
       );
@@ -108,7 +110,7 @@ function ProgressRing({ pct }) {
         {Math.round(pct)}%
       </text>
       <text x={cx} y={cy + 18} textAnchor="middle" fontSize={13} fontFamily="var(--font-body)" fill="#4B5563">
-        Complete
+        {t('complete')}
       </text>
     </svg>
   );
@@ -230,7 +232,7 @@ function DailyQuizCard() {
               {headerIcons[state]}
             </span>
             <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              Daily Quiz
+              {t('quiz')}
             </span>
           </div>
           <span style={{
@@ -390,7 +392,7 @@ function LeaderboardPreviewCard({ profile, progress }) {
           {/* Left */}
           <div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 2 }}>
-              Your Rank
+              {t('yourRank')}
             </div>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 32, fontWeight: 700, color: 'white', lineHeight: 1 }}>
               #{userEntry.rank}
@@ -421,7 +423,7 @@ function LeaderboardPreviewCard({ profile, progress }) {
       {/* Top 3 List */}
       <div style={{ marginTop: 16 }}>
         <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
-          Top Students
+          {t('topStudents')}
         </div>
         {top3.map((entry, index) => (
           <div key={entry.id} style={{
@@ -629,13 +631,13 @@ function DashboardPage() {
           {/* 1. Total XP */}
           <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#FEF3C7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>⭐</div>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>Total XP</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{t('totalXP')}</span>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 32, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>{totalXP}</span>
           </div>
           {/* 2. Day Streak */}
           <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#FEF3C7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🔥</div>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>Day Streak</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{t('streakDays')}</span>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 32, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>{streak}</span>
             <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>days in a row</span>
           </div>
@@ -686,7 +688,7 @@ function DashboardPage() {
 
           {/* Next Lesson */}
           <div className="md:w-2/5" style={{ ...glass, padding: 24 }}>
-            <h2 className="font-heading" style={{ fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>Continue Learning</h2>
+            <h2 className="font-heading" style={{ fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>{t('continueLesson')}</h2>
             <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 18, color: '#0A1628', marginBottom: 8 }}>
               {nextMeta.title}
             </div>

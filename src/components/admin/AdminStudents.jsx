@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getSupabase } from '@/lib/supabaseClient';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const card = { background: 'rgba(255,255,255,0.9)', border: '1px solid rgba(30,64,175,0.1)', borderRadius: 14, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.05)' };
 const tag = (color) => ({ display:'inline-block', padding:'2px 10px', borderRadius:20, fontSize:12, fontWeight:600, background: color==='pro'?'#EEF2FF':color==='basic'?'#ECFDF5':'#F3F4F6', color: color==='pro'?'#4338CA':color==='basic'?'#059669':'#6B7280' });
 
 export default function AdminStudents() {
+  const { t } = useLanguage();
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
@@ -55,7 +57,7 @@ export default function AdminStudents() {
           <h3 style={{ fontSize:16, fontWeight:600, margin:0 }}>All Users</h3>
           <div style={{ display:'flex', gap:8 }}>
             <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search name / mobile..." style={{ padding:'6px 12px', borderRadius:8, border:'1px solid #E5E7EB', fontSize:13, width:220 }}/>
-            <button onClick={loadUsers} style={{ padding:'6px 14px', borderRadius:8, background:'#1e40af', color:'#fff', border:'none', cursor:'pointer', fontSize:13 }}>Refresh</button>
+            <button onClick={loadUsers} style={{ padding:'6px 14px', borderRadius:8, background:'#1e40af', color:'#fff', border:'none', cursor:'pointer', fontSize:13 }}>{t('refresh')}</button>
           </div>
         </div>
 

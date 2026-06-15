@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 // base44 removed
+import { useLanguage } from '@/lib/LanguageContext';
 import {
   getOlympiadLevel,
   getOlympiadLevelLabel,
@@ -17,6 +18,7 @@ import {
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 function getTodayStr() {
+  const { t } = useLanguage();
   const now = new Date();
   return (
     now.getFullYear() +
@@ -612,7 +614,7 @@ function CompletedView() {
             color: 'white', fontFamily: 'var(--font-body)', fontSize: 14, cursor: 'pointer',
           }}
         >
-          Back to Dashboard
+          {t('backToDashboard')}
         </button>
       </div>
     </div>

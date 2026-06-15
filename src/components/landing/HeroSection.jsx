@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const tricks = [
   { calc: '98 × 97 = 9506', label: 'Nikhilam Method — 3 seconds' },
@@ -10,6 +11,7 @@ const tricks = [
 ];
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   const [currentTrick, setCurrentTrick] = useState(0);
 
   useEffect(() => {
@@ -51,14 +53,14 @@ export default function HeroSection() {
                 to="/auth"
                 className="inline-flex items-center gap-2 h-12 px-7 rounded-xl bg-[#3B82F6] text-white font-semibold hover:bg-[#2563EB] transition-colors"
               >
-                Start Learning Free
+                {t('startLearningFree')}
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <button
                 onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-flex items-center gap-2 h-12 px-7 rounded-xl border-[1.5px] border-white/30 text-white font-semibold hover:bg-white/10 transition-colors"
               >
-                See How It Works
+                {t('seeHowItWorks')}
               </button>
             </div>
 

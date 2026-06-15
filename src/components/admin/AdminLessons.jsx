@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CURRICULUM } from '@/components/learn/curriculumData';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const glass = {
   background: 'rgba(255,255,255,0.85)',
@@ -20,6 +21,7 @@ function flattenLessons() {
 }
 
 export default function AdminLessons() {
+  const { t } = useLanguage();
   const [lessons, setLessons] = useState(flattenLessons);
   const [editing, setEditing] = useState(null); // lesson id or 'new'
   const [form, setForm] = useState({});
@@ -72,8 +74,8 @@ export default function AdminLessons() {
           <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', display: 'block', marginBottom: 4 }}>XP Reward</label>
           <input type="number" style={{ ...INPUT_STYLE, width: 120 }} value={form.xp || 50} onChange={e => setForm(f => ({ ...f, xp: parseInt(e.target.value) }))} />
           <div style={{ display: 'flex', gap: 10, marginTop: 4 }}>
-            <button onClick={save} style={{ minHeight: 40, padding: '0 24px', background: '#10B981', color: 'white', border: 'none', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>Save</button>
-            <button onClick={() => setEditing(null)} style={{ minHeight: 40, padding: '0 20px', background: 'transparent', border: '1.5px solid #D1D5DB', color: '#4B5563', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>Cancel</button>
+            <button onClick={save} style={{ minHeight: 40, padding: '0 24px', background: '#10B981', color: 'white', border: 'none', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>{t('save')}</button>
+            <button onClick={() => setEditing(null)} style={{ minHeight: 40, padding: '0 20px', background: 'transparent', border: '1.5px solid #D1D5DB', color: '#4B5563', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>{t('cancel')}</button>
           </div>
         </div>
       )}

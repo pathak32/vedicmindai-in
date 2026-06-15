@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { getTodayString, getDailyQuestions } from '@/lib/dailyQuizEngine';
+import { useLanguage } from '@/lib/LanguageContext';
 
 // ─── Countdown to midnight ────────────────────────────────────────────────────
 
 function useMidnightCountdown() {
+  const { t } = useLanguage();
   const [display, setDisplay] = useState('');
   useEffect(() => {
     const update = () => {
@@ -423,7 +425,7 @@ export default function DailyQuizResultsPage() {
           <div className="rp-hero-text" style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
             {/* Large score */}
             <div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 2 }}>Score</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 2 }}>{t('score')}</div>
               <span className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>
                 {animatedScore}
               </span>
@@ -439,7 +441,7 @@ export default function DailyQuizResultsPage() {
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: '#10B981' }}>{correctCount}/5</span>
               </div>
               <div>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 2 }}>Accuracy</div>
+                <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 2 }}>{t('accuracy')}</div>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: '#3B82F6' }}>{pct}%</span>
               </div>
             </div>

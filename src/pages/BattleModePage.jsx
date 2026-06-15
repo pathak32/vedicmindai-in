@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { useNavigate } from 'react-router-dom';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function BattleModePage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const { user, loading } = useVedicAuth();
   const auth = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth') || '{}'); } catch { return {}; } })();
@@ -65,7 +67,7 @@ export default function BattleModePage() {
           </span>
 
           <h1 className="font-heading battle-heading" style={{ fontSize: 40, fontWeight: 700, color: 'white', marginTop: 16, marginBottom: 0 }}>
-            Live Battle Mode
+            {t('liveBattleMode')}
           </h1>
 
           <p className="battle-subheading" style={{ fontFamily: 'var(--font-body)', fontSize: 18, color: 'rgba(255,255,255,0.7)', maxWidth: 480, margin: '12px auto 0', lineHeight: 1.6 }}>

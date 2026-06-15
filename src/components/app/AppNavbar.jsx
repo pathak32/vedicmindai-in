@@ -4,6 +4,7 @@ import { Menu, X, Zap, ChevronDown, User, LogOut } from 'lucide-react';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { useProgress } from '@/lib/ProgressContext';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const navLinks = [
   { label: 'Dashboard', path: '/dashboard' },
@@ -12,6 +13,7 @@ const navLinks = [
 ];
 
 export default function AppNavbar() {
+  const { t } = useLanguage();
   const { user, signOut } = useVedicAuth();
   const { progress } = useProgress();
   const location = useLocation();
@@ -88,7 +90,7 @@ export default function AppNavbar() {
                       onClick={() => setDropdownOpen(false)}
                       className="flex items-center gap-2 px-3 py-2.5 text-sm text-[#0A1628] rounded-lg hover:bg-[#F0F4FF] transition-colors"
                     >
-                      <User className="w-4 h-4" /> Profile
+                      <User className="w-4 h-4" /> {t('profile')}
                     </Link>
                     <button
                       onClick={handleSignOut}
@@ -142,7 +144,7 @@ export default function AppNavbar() {
                 onClick={() => setMobileOpen(false)}
                 className="py-4 text-lg font-medium border-b border-[#F0F4FF] text-[#4B5563]"
               >
-                Profile
+                {t('profile')}
               </Link>
               <button
                 onClick={() => { setMobileOpen(false); handleSignOut(); }}

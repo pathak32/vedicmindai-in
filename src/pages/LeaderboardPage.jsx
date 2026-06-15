@@ -4,6 +4,7 @@ import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { motion } from 'framer-motion';
 import usePullToRefresh from '@/hooks/usePullToRefresh';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+import { useLanguage } from '@/lib/LanguageContext';
 import {
   generateLeaderboard, getUserEntry, getTopN,
   getUserPercentile, filterByPeriod,
@@ -23,7 +24,8 @@ const scoreColors  = { 0: '#F59E0B', 1: '#6B7280', 2: '#D97706' };
 const baseHeights  = { 0: 100, 1: 70, 2: 50 };
 const medals = ['🥇', '🥈', '🥉'];
 
-function Toggle({ value, onChange }) {
+function Toggle({
+  value, onChange }) {
   return (
     <div
       onClick={() => onChange(!value)}
@@ -43,6 +45,7 @@ function Toggle({ value, onChange }) {
 }
 
 export default function LeaderboardPage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const { user, loading } = useVedicAuth();
 
@@ -150,7 +153,7 @@ const auth     = (() => { try { return JSON.parse(localStorage.getItem('vedicmin
             {userEntry && (
               <div className="lb-rank-card" style={{ ...glass, padding: '12px 20px', textAlign: 'center', minWidth: 140 }}>
                 <div>
-                  <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 2 }}>Your Rank</div>
+                  <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 2 }}>{t('yourRank')}</div>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>#{userEntry.rank}</div>
                   <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#4B5563', marginTop: 2 }}>of {activeBoard.length} students</div>
                   <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#10B981', marginTop: 4 }}>↑{userEntry.movementAmount}</div>

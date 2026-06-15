@@ -9,8 +9,10 @@ import { CURRICULUM } from '@/components/learn/curriculumData';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { saveUserProgress } from '@/lib/supabaseDataService';
 import { getSupabase } from '@/lib/supabaseClient';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function LearnPage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const { user: auth, loading } = useVedicAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -134,7 +136,7 @@ export default function LearnPage() {
           display: 'flex', alignItems: 'center', gap: 8,
         }}
       >
-        <Menu size={16} /> Curriculum
+        <Menu size={16} /> {t('curriculum')}
       </button>
 
       {/* AI Tutor button */}

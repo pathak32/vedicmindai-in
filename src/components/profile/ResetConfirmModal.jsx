@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/LanguageContext';
 
-export default function ResetConfirmModal({ onConfirm, onCancel }) {
+export default function ResetConfirmModal({onConfirm, onCancel }) {
+  const { t } = useLanguage();
   return (
     <div style={{ position: 'fixed', inset: 0, zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16 }}>
       <div onClick={onCancel} style={{ position: 'absolute', inset: 0, background: 'rgba(10,22,40,0.5)' }} />
@@ -30,7 +32,7 @@ export default function ResetConfirmModal({ onConfirm, onCancel }) {
             onClick={onCancel}
             style={{ minHeight: 44, padding: '0 24px', background: 'transparent', color: '#0A1628', border: '1.5px solid rgba(30,64,175,0.2)', borderRadius: 12, fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
           >
-            Cancel
+            {t('cancel')}
           </button>
         </div>
       </motion.div>

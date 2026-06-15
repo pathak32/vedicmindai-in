@@ -1,6 +1,7 @@
 import React from 'react';
 import { X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const COMING_SOON_MSG = `🚀 AI Tutor is being upgraded!
 
@@ -11,7 +12,8 @@ We're building a more powerful AI Tutor experience for you. This feature will be
 
 Stay tuned! 🙏 — Team VedicMind`;
 
-export default function AITutorPanel({ lesson, onClose }) {
+export default function AITutorPanel({lesson, onClose }) {
+  const { t } = useLanguage();
   const lessonTitle = lesson?.title || 'Vedic Mathematics';
 
   return (
@@ -34,13 +36,13 @@ export default function AITutorPanel({ lesson, onClose }) {
           <span style={{ fontSize: 24 }}>🤖</span>
           <div style={{ flex: 1 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: '#0A1628' }}>AI Tutor</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: '#0A1628' }}>{t('aiTutor')}</div>
               <span style={{
                 background: '#F59E0B', color: 'white',
                 borderRadius: 99, padding: '2px 8px',
                 fontFamily: 'var(--font-body)', fontSize: 10, fontWeight: 700,
                 textTransform: 'uppercase', letterSpacing: '0.05em',
-              }}>Coming Soon</span>
+              }}>{t('comingSoon')}</span>
             </div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 220 }}>
               {lessonTitle}

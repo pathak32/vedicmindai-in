@@ -8,8 +8,10 @@ import EditProfileForm from '@/components/profile/EditProfileForm';
 import ResetConfirmModal from '@/components/profile/ResetConfirmModal';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { saveUserProfile, getUserProfile, getUserProgress } from '@/lib/supabaseDataService';
+import { useLanguage } from '@/lib/LanguageContext';
 
 function useCountUp(target, duration = 1200) {
+  const { t } = useLanguage();
   const [val, setVal] = useState(0);
   useEffect(() => {
     let start = null;
@@ -417,7 +419,7 @@ export default function ProfilePage() {
                 onClick={() => setDeleteModal(false)}
                 style={{ minHeight: 44, padding: '0 24px', background: 'transparent', color: '#0A1628', border: '1.5px solid rgba(30,64,175,0.2)', borderRadius: 12, fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
               >
-                Cancel
+                {t('cancel')}
               </button>
             </div>
           </motion.div>

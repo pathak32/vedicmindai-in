@@ -12,6 +12,7 @@ import {
 import { getSupabase } from '@/lib/supabaseClient';
 import { saveUserProgress } from '@/lib/supabaseDataService';
 import { QUESTION_BANKS } from '@/lib/weeklyQuestionBanks';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -25,7 +26,8 @@ const GROUPS = ['junior', 'middle', 'senior', 'higher', 'open'];
 
 // ─── Upcoming / Today Waiting State ──────────────────────────────────────────
 
-function UpcomingState({ classGroup, setClassGroup, status, weeklyHistory }) {
+function UpcomingState({
+  classGroup, setClassGroup, status, weeklyHistory }) {
   const isWaiting = status === 'today_waiting';
   const [seconds, setSeconds] = useState(
     isWaiting ? getSecondsUntil10AM() : getSecondsUntilSunday10AM()
@@ -415,7 +417,7 @@ function ExamInterface({ classGroup }) {
         justifyContent: 'space-between', padding: '0 16px',
       }}>
         <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628' }}>
-          Weekly Exam
+          {t('weeklyExam')}
         </span>
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#4B5563' }}>
           Q{current + 1} / 20
@@ -614,6 +616,7 @@ function ExamInterface({ classGroup }) {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function WeeklyExamPage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const { user, loading } = useVedicAuth();
   const profile = JSON.parse(localStorage.getItem('vedicmind_profile') || '{}');

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const rows = [
   { feature: 'Structured 40-Lesson Curriculum', us: '✅', them: '❌', usSub: null },

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SelectionDrawer from '@/components/ui/SelectionDrawer';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const GENDERS = ['Male', 'Female', 'Prefer not to say'];
 const LANGUAGES = ['English', 'हिंदी', 'தமிழ்', 'मराठी'];
@@ -26,7 +27,8 @@ const inputStyle = {
 
 const labelStyle = { fontSize: 13, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 6, display: 'block' };
 
-function PillGroup({ options, value, onChange }) {
+function PillGroup({
+  options, value, onChange }) {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
       {options.map(o => (
@@ -50,7 +52,8 @@ function PillGroup({ options, value, onChange }) {
   );
 }
 
-export default function EditProfileForm({ profile, onSave, onCancel }) {
+export default function EditProfileForm({profile, onSave, onCancel }) {
+  const { t } = useLanguage();
   const [form, setForm] = useState({
     name: profile.name || '',
     age: profile.age || '',
@@ -82,11 +85,11 @@ export default function EditProfileForm({ profile, onSave, onCancel }) {
 
   return (
     <div style={{ ...glass, padding: 24 }}>
-      <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>Edit Profile</h3>
+      <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>{t('editProfile')}</h3>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 16 }}>
         <div>
-          <label style={labelStyle}>Full Name</label>
+          <label style={labelStyle}>{t('fullName')}</label>
           <input value={form.name} onChange={e => set('name', e.target.value)} style={inputStyle} />
           {errors.name && <p style={{ color: '#EF4444', fontSize: 12, marginTop: 4 }}>{errors.name}</p>}
         </div>
@@ -162,7 +165,7 @@ export default function EditProfileForm({ profile, onSave, onCancel }) {
           onClick={onCancel}
           style={{ minHeight: 44, padding: '0 20px', background: 'transparent', color: '#0A1628', border: '1.5px solid rgba(30,64,175,0.2)', borderRadius: 12, fontSize: 15, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
         >
-          Cancel
+          {t('cancel')}
         </button>
       </div>
     </div>

@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { isLessonAccessible } from '@/lib/trialEngine';
 import { isLessonFreeAccess } from '@/lib/planEngine';
 import LessonLockOverlay from './LessonLockOverlay';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -20,7 +21,8 @@ const glass = {
 
 // ─── Flow Progress Indicator ──────────────────────────────────────────────────
 
-function FlowIndicator({ conceptDone, practiceDone, quizDone, activeTab }) {
+function FlowIndicator({
+  conceptDone, practiceDone, quizDone, activeTab }) {
   const steps = [
     { key: 'concept',  label: 'Concept',  done: conceptDone },
     { key: 'practice', label: 'Practice', done: practiceDone },

@@ -4,6 +4,7 @@ import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { getClassGroup, CLASS_GROUPS, TOPICS, getQuestions } from '@/lib/aptitudeQuestions';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const TIMER_SEC = 90;
 const glass = {
@@ -18,6 +19,7 @@ const glass = {
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function saveAptitudeScore(group, score, sutras) {
+  const { t } = useLanguage();
   const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'); } catch { return {}; } })();
   if (!progress.aptitudeHistory) progress.aptitudeHistory = [];
   progress.aptitudeHistory.push({ date: new Date().toISOString(), group, score, sutras });
@@ -394,18 +396,18 @@ function ResultsScreen({ score, questions, sutras, group, onRetry, onHome }) {
       <div style={{ ...glass, padding: 32, textAlign: 'center', marginBottom: 20 }}>
         <div style={{ fontSize: 52, marginBottom: 8 }}>{accuracy >= 70 ? '🎉' : accuracy >= 40 ? '📚' : '💪'}</div>
         <h2 className="font-heading" style={{ fontSize: 26, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>
-          Quiz Complete!
+          {t('quizComplete')}
         </h2>
 
         <div style={{ display: 'flex', justifyContent: 'center', gap: 32, marginBottom: 20 }}>
           <div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', marginBottom: 4, textTransform: 'uppercase' }}>Score</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', marginBottom: 4, textTransform: 'uppercase' }}>{t('score')}</div>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 40, fontWeight: 800, color: '#0A1628', lineHeight: 1 }}>{score}</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#9CA3AF' }}>/ {maxScore}</div>
           </div>
           <div style={{ width: 1, background: 'rgba(30,64,175,0.1)' }} />
           <div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', marginBottom: 4, textTransform: 'uppercase' }}>Accuracy</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', marginBottom: 4, textTransform: 'uppercase' }}>{t('accuracy')}</div>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 40, fontWeight: 800, color: accuracy >= 70 ? '#10B981' : '#F59E0B', lineHeight: 1 }}>{accuracy}%</div>
           </div>
         </div>

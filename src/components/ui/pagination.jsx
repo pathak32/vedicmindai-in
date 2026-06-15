@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button";
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Pagination = ({
   className,
@@ -69,7 +70,7 @@ const PaginationNext = ({
     size="default"
     className={cn("gap-1 pr-2.5", className)}
     {...props}>
-    <span>Next</span>
+    <span>{t('next')}</span>
     <ChevronRight className="h-4 w-4" />
   </PaginationLink>
 )

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getTrialStatus, getDaysRemaining, getTrialEndDate } from '@/lib/trialEngine';
 import { getUserPlan } from '@/lib/planEngine';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const PLAN_LABELS = {
   basic: 'Basic',
@@ -10,6 +11,7 @@ const PLAN_LABELS = {
 };
 
 export default function TrialBanner() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [dismissed, setDismissed] = React.useState(false);
   if (dismissed) return null;

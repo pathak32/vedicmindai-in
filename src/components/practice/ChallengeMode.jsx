@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { generateMixed, saveProgress } from './questionGenerator';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const TOTAL_Q = 15;
 const glass = {
@@ -12,7 +13,8 @@ const glass = {
   borderRadius: 20,
 };
 
-export default function ChallengeMode({ onExit }) {
+export default function ChallengeMode({onExit }) {
+  const { t } = useLanguage();
   const questions = useMemo(() => Array.from({ length: TOTAL_Q }, () => generateMixed()), []);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState(null);
@@ -63,7 +65,7 @@ export default function ChallengeMode({ onExit }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 24 }}>
           <div style={{ background: '#FEF3C7', borderRadius: 12, padding: '16px' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#92400E' }}>+{xp}</div>
-            <div style={{ fontSize: 12, color: '#92400E', fontFamily: 'var(--font-body)' }}>Total XP</div>
+            <div style={{ fontSize: 12, color: '#92400E', fontFamily: 'var(--font-body)' }}>{t('totalXP')}</div>
           </div>
           <div style={{ background: '#D1FAE5', borderRadius: 12, padding: '16px' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#065F46' }}>{correctCount}</div>

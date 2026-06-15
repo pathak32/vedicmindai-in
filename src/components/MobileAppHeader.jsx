@@ -2,10 +2,12 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import { LanguageToggle } from '@/components/LanguageToggle';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const ROOT_ROUTES = ['/', '/dashboard', '/learn', '/practice'];
 
 export default function MobileAppHeader() {
+  const { t } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -46,7 +48,7 @@ export default function MobileAppHeader() {
             }}
           >
             <ChevronLeft size={20} strokeWidth={2.5} style={{ flexShrink: 0 }} />
-            Back
+            {t('back')}
           </button>
           <LanguageToggle size="sm" />
         </div>

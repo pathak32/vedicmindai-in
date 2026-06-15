@@ -6,6 +6,8 @@ import { hasCompletedTodayQuiz } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry } from '@/lib/leaderboardEngine';
 import { getWeeklyExamStatus } from '@/lib/weeklyExamEngine';
 import { getOlympiadStatus } from '@/lib/olympiadEngine';
+import { useLanguage } from '@/lib/LanguageContext';
+import { LanguageToggle } from '@/components/LanguageToggle';
 
 const REGULAR_LINKS = [
   { label: 'Dashboard', path: '/dashboard' },
@@ -20,7 +22,8 @@ const AFTER_QUIZ_LINKS = [
   { label: 'Profile',     path: '/profile' },
 ];
 
-function AdminNavLink({ mobile, onClick }) {
+function AdminNavLink({
+  mobile, onClick }) {
   const { user } = useVedicAuth();
   if (!user || user.user_metadata?.role !== 'admin') return null;
   const active = window.location.pathname === '/admin';
@@ -317,6 +320,8 @@ export default function DashboardNavbar() {
 
             <AdminNavLink />
 
+            <LanguageToggle size="sm" />
+
             <button onClick={handleSignOut} style={{
               marginLeft: 8, padding: '6px 16px', borderRadius: 8, fontSize: 14,
               fontWeight: 500, color: '#EF4444', background: 'transparent',
@@ -383,6 +388,10 @@ export default function DashboardNavbar() {
           }}>
             Sign Out
           </button>
+          {/* Language Toggle in mobile menu */}
+          <div style={{ padding: '16px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+            <LanguageToggle size="md" />
+          </div>
         </div>
       )}
     </>

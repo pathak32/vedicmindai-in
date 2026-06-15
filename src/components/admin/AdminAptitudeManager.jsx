@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { QUESTIONS as DEFAULT_QUESTIONS, CLASS_GROUPS } from '@/lib/aptitudeQuestions';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const glass = {
   background: 'rgba(255,255,255,0.85)',
@@ -20,6 +21,7 @@ const GROUPS = ['PRIMARY', 'MIDDLE', 'SECONDARY', 'INTERMEDIATE'];
 const BLANK_FORM = { question: '', options: ['', '', '', ''], correct: 0, group: 'PRIMARY', topic: '', vedic_sutra: '', vedic_tip: '' };
 
 function loadQuestions() {
+  const { t } = useLanguage();
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) return JSON.parse(saved);
@@ -131,8 +133,8 @@ export default function AdminAptitudeManager() {
           <textarea style={{ ...INPUT_STYLE, height: 72, resize: 'vertical' }} value={form.vedic_tip || ''} onChange={e => setForm(f => ({ ...f, vedic_tip: e.target.value }))} placeholder="Explain the Vedic shortcut..." />
 
           <div style={{ display: 'flex', gap: 10, marginTop: 4 }}>
-            <button onClick={save} style={{ minHeight: 40, padding: '0 24px', background: '#10B981', color: 'white', border: 'none', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>Save</button>
-            <button onClick={() => setEditing(null)} style={{ minHeight: 40, padding: '0 20px', background: 'transparent', border: '1.5px solid #D1D5DB', color: '#4B5563', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>Cancel</button>
+            <button onClick={save} style={{ minHeight: 40, padding: '0 24px', background: '#10B981', color: 'white', border: 'none', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>{t('save')}</button>
+            <button onClick={() => setEditing(null)} style={{ minHeight: 40, padding: '0 20px', background: 'transparent', border: '1.5px solid #D1D5DB', color: '#4B5563', borderRadius: 10, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}>{t('cancel')}</button>
           </div>
         </div>
       )}

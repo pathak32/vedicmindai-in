@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
+import { useLanguage } from '@/lib/LanguageContext';
 
 // ─── Per-lesson quiz question banks ──────────────────────────────────────────
 
@@ -350,12 +351,12 @@ function MasterCelebration({ totalXP, badgeCount, xpEarned, correct, total, shar
           <div style={{ width: 1, background: 'rgba(255,255,255,0.2)', alignSelf: 'stretch' }} />
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 800, color: '#34D399' }}>+{xpEarned}</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.7)' }}>XP Earned</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.7)' }}>{t('xpEarned')}</div>
           </div>
           <div style={{ width: 1, background: 'rgba(255,255,255,0.2)', alignSelf: 'stretch' }} />
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 800, color: '#93C5FD' }}>{totalXP}</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.7)' }}>Total XP</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.7)' }}>{t('totalXP')}</div>
           </div>
           <div style={{ width: 1, background: 'rgba(255,255,255,0.2)', alignSelf: 'stretch' }} />
           <div style={{ textAlign: 'center' }}>
@@ -413,7 +414,8 @@ function MasterCelebration({ totalXP, badgeCount, xpEarned, correct, total, shar
 
 // ─── Main QuizTab ─────────────────────────────────────────────────────────────
 
-export default function QuizTab({ lesson, glass, onComplete, onNextLesson, allLessonIds }) {
+export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLessonIds }) {
+  const { t } = useLanguage();
   const questions = getQuestions(lesson.id);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState(null);
@@ -503,7 +505,7 @@ export default function QuizTab({ lesson, glass, onComplete, onNextLesson, allLe
         <style>{`@media(max-width:360px){.quiz-btn-row{flex-direction:column!important;}}`}</style>
         <div style={{ fontSize: 40, marginBottom: 8 }}>🎉</div>
         <h2 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>
-          Lesson Complete!
+          {t('lessonComplete')}
         </h2>
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>
           {correct}/{questions.length} correct · {pct}%

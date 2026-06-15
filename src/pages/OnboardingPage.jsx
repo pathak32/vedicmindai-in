@@ -10,6 +10,7 @@ import Step3Preferences from '@/components/onboarding/Step3Preferences';
 import Step4Goals from '@/components/onboarding/Step4Goals';
 import LoadingScreen from '@/components/onboarding/LoadingScreen';
 import ResultsCard from '@/components/onboarding/ResultsCard';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const STEP_NAMES = ['Who Are You?', 'About You', 'Learning Preferences', 'Your Goals'];
 const STEP_FILLS = ['25%', '50%', '75%', '100%'];
@@ -23,6 +24,7 @@ const slideVariants = {
 };
 
 export default function OnboardingPage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1); // 1 = forward, -1 = back

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const PLAN_FEATURES = {
   basic: ['All 40 lessons', 'Daily Quiz', 'AI Tutor'],
@@ -20,6 +21,7 @@ const PLAN_DISPLAY = {
 };
 
 export default function PaymentSuccessPage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const autoRedirected = useRef(false);
 

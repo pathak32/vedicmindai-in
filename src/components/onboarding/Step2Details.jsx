@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SelectionDrawer from '@/components/ui/SelectionDrawer';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const selectStyle = {
   background: 'rgba(255,255,255,0.1)',
@@ -27,7 +28,8 @@ const labelStyle = {
 
 const fieldWrap = { marginBottom: 20 };
 
-function Field({ label, error, children }) {
+function Field({
+  label, error, children }) {
   return (
     <div style={fieldWrap}>
       <label style={labelStyle}>{label}</label>
@@ -57,7 +59,8 @@ const STAGES = ['Just Starting', '6+ Months to Exam', '3 Months to Exam', 'Final
 const PURPOSES = ['Career Growth', 'Personal Interest', 'Help my Children', 'Mental Agility', 'Other'];
 const GENDERS = ['Male', 'Female', 'Prefer not to say'];
 
-export default function Step2Details({ data, onUpdate, onNext, onBack }) {
+export default function Step2Details({data, onUpdate, onNext, onBack }) {
+  const { t } = useLanguage();
   const [errors, setErrors] = useState({});
   const { role, grade, board, exam, examStage, purpose, age, gender } = data;
 
@@ -95,7 +98,7 @@ export default function Step2Details({ data, onUpdate, onNext, onBack }) {
   return (
     <div>
       <h2 className="font-heading mb-1" style={{ fontSize: 26, fontWeight: 700, color: 'white' }}>
-        Tell us about yourself
+        {t('step1Title')}
       </h2>
       <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', marginBottom: 28 }}>
         We'll customize your curriculum based on this.

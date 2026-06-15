@@ -11,6 +11,7 @@ import { saveDailyQuizResult, saveUserProgress } from '@/lib/supabaseDataService
 import { getSupabase } from '@/lib/supabaseClient';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { speakExplanation, buildExplanation } from '@/lib/voiceExplanation';
+import { useLanguage } from '@/lib/LanguageContext';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -19,6 +20,7 @@ const TIMER_TOTAL = 30;
 const LETTERS = ['A', 'B', 'C', 'D'];
 
 function calcPoints(timeUsedMs) {
+  const { t } = useLanguage();
   const secs = timeUsedMs / 1000;
   if (secs < 10) return 20;
   if (secs < 20) return 15;
@@ -455,7 +457,7 @@ class QuizErrorBoundary extends React.Component {
         <div style={{ ...BG, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 16, padding: 40, textAlign: 'center' }}>
           <span style={{ fontSize: 48 }}>⚠️</span>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'white' }}>Something went wrong. Please refresh.</p>
-          <button onClick={() => window.location.reload()} style={{ minHeight: 48, padding: '0 32px', background: '#3B82F6', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>Refresh</button>
+          <button onClick={() => window.location.reload()} style={{ minHeight: 48, padding: '0 32px', background: '#3B82F6', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>{t('refresh')}</button>
         </div>
       );
     }

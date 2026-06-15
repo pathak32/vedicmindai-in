@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getSupabase } from '@/lib/supabaseClient';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const card = { background:'rgba(255,255,255,0.9)', border:'1px solid rgba(30,64,175,0.1)', borderRadius:14, padding:20, boxShadow:'0 2px 12px rgba(0,0,0,0.05)', marginBottom:16 };
 
 export default function AdminAnalytics() {
+  const { t } = useLanguage();
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [quizResults, setQuizResults] = useState([]);
@@ -77,7 +79,7 @@ export default function AdminAnalytics() {
       <div style={card}>
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:14 }}>
           <h3 style={{ fontSize:16, fontWeight:600, margin:0 }}>Recent Quiz Attempts</h3>
-          <button onClick={loadData} style={{ padding:'5px 12px', borderRadius:8, background:'#1e40af', color:'#fff', border:'none', cursor:'pointer', fontSize:12 }}>Refresh</button>
+          <button onClick={loadData} style={{ padding:'5px 12px', borderRadius:8, background:'#1e40af', color:'#fff', border:'none', cursor:'pointer', fontSize:12 }}>{t('refresh')}</button>
         </div>
         {quizResults.length === 0 ? <p style={{ color:'#6B7280' }}>No quiz data yet</p> : (
           <table style={{ width:'100%', borderCollapse:'collapse', fontSize:13 }}>

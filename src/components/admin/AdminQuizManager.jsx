@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getSupabase } from '@/lib/supabaseClient';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const card = { background:'rgba(255,255,255,0.9)', border:'1px solid rgba(30,64,175,0.1)', borderRadius:14, padding:20, boxShadow:'0 2px 12px rgba(0,0,0,0.05)', marginBottom:16 };
 const btn = (color='#1e40af') => ({ padding:'8px 18px', borderRadius:9, background:color, color:'#fff', border:'none', cursor:'pointer', fontSize:13, fontWeight:600 });
@@ -8,6 +9,7 @@ const DIFFICULTIES = [1,2,3,4,5];
 const SUTRAS = ['Ekadhikena Purvena','Nikhilam Navatashcaramam Dashatah','Anurupyena','Paravartya Yojayet','Shunyam Saamyasamuccaye','Anurupye Shunyamanyat','Sankalana-Vyavakalanabhyam','Puranapuranabhyam','Chalana-Kalanabhyam','Yavadunam','Vyashtisamanstih','Shesanyankena Charamena','Sopaantyadvayamantyam','Ekanyunena Purvena','Gunitasamuchyah','Gunakasamuchyah'];
 
 export default function AdminQuizManager() {
+  const { t } = useLanguage();
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
@@ -124,7 +126,7 @@ export default function AdminQuizManager() {
               {DIFFICULTIES.map(d=><option key={d} value={d}>Level {d}</option>)}
             </select>
             <button onClick={applyFilter} style={btn()}>Apply</button>
-            <button onClick={loadQuestions} style={btn('#059669')}>Refresh</button>
+            <button onClick={loadQuestions} style={btn('#059669')}>{t('refresh')}</button>
           </div>
         </div>
 

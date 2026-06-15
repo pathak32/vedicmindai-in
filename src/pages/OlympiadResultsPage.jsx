@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { getOlympiadLevelLabel } from '@/lib/olympiadEngine';
+import { useLanguage } from '@/lib/LanguageContext';
 
 function useCountUp(target, duration = 1500) {
+  const { t } = useLanguage();
   const [val, setVal] = useState(0);
   useEffect(() => {
     if (!target) return;
@@ -210,7 +212,7 @@ export default function OlympiadResultsPage() {
             color: 'white', fontFamily: 'var(--font-body)', fontSize: 14, cursor: 'pointer',
           }}
         >
-          Back to Dashboard
+          {t('backToDashboard')}
         </button>
       </div>
     </div>

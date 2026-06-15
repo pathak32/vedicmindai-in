@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const TABS = [
   { path: '/dashboard', label: 'Dashboard', icon: '🏠' },
@@ -9,6 +10,7 @@ const TABS = [
 ];
 
 export default function MobileBottomNav() {
+  const { t } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
 

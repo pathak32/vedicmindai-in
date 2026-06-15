@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getSupabase } from '@/lib/supabaseClient';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const mobileToEmail = (mobile) => {
   const digits = mobile.replace(/\D/g, '');
@@ -8,6 +9,7 @@ const mobileToEmail = (mobile) => {
 };
 
 export default function ForgotPasswordPage() {
+  const { t } = useLanguage();
   const [mobile, setMobile] = useState('');
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
@@ -46,14 +48,14 @@ export default function ForgotPasswordPage() {
 
         {!sent ? (
           <>
-            <h2 className="text-2xl font-bold text-center text-slate-800 mb-1">Forgot Password?</h2>
+            <h2 className="text-2xl font-bold text-center text-slate-800 mb-1">{t('forgotPassword')}</h2>
             <p className="text-center text-slate-500 text-sm mb-6">
               Enter your registered mobile number. We'll send a reset link to your linked email.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">Mobile Number</label>
+                <label className="block text-sm font-medium text-slate-700 mb-1">{t('mobileNumber')}</label>
                 <div className="flex items-center border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
                   <span className="px-3 py-3 text-slate-500 text-sm border-r border-slate-200 bg-slate-100">+91</span>
                   <input

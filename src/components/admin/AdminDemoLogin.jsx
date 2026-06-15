@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getSupabase } from '@/lib/supabaseClient';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const SUPA_URL = 'https://xlyfyqjmzwyyoqurvuzx.supabase.co';
 const SERVICE_KEY = import.meta.env.VITE_SUPABASE_SERVICE_KEY || '';
@@ -13,6 +14,7 @@ function randEmail(school) {
 }
 
 export default function AdminDemoLogin() {
+  const { t } = useLanguage();
   const [form, setForm] = useState({ school: '', city: '', days: 7, contact: '' });
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -148,7 +150,7 @@ Login at: vedicmindai.in`);
         <div style={card}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
             <h3 style={{ fontSize: 16, fontWeight: 600, margin: 0 }}>All Demo Logins ({list.length})</h3>
-            <button onClick={loadList} style={btn()}>Refresh</button>
+            <button onClick={loadList} style={btn()}>{t('refresh')}</button>
           </div>
           {list.length === 0 ? <p style={{ color: '#6B7280' }}>No demo logins yet.</p> : (
             <div style={{ overflowX: 'auto' }}>

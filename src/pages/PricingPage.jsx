@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -130,7 +131,8 @@ const PLAN_DISPLAY_NAMES = {
   basic_annual: 'Basic (Annual)', pro_annual: 'Pro (Annual)', family_annual: 'Family (Annual)',
 };
 
-function PlanCard({ plan, isAnnual, onPay, isCurrent, isFree }) {
+function PlanCard({
+  plan, isAnnual, onPay, isCurrent, isFree }) {
   return (
     <div style={{ position: 'relative', flex: '1 1 240px', maxWidth: 320 }}>
       {plan.highlight && !isCurrent && (
@@ -138,7 +140,7 @@ function PlanCard({ plan, isAnnual, onPay, isCurrent, isFree }) {
           position: 'absolute', top: -16, left: '50%', transform: 'translateX(-50%)',
           background: '#3B82F6', color: 'white', borderRadius: 99, padding: '4px 14px',
           fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 600, whiteSpace: 'nowrap', zIndex: 2,
-        }}>Most Popular</div>
+        }}>{t('mostPopular')}</div>
       )}
       {isCurrent && (
         <div style={{
@@ -172,7 +174,7 @@ function PlanCard({ plan, isAnnual, onPay, isCurrent, isFree }) {
               <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#9CA3AF', textDecoration: 'line-through' }}>{plan.annualStrike}/year</div>
             )}
             <span className="font-heading" style={{ fontSize: 32, fontWeight: 700, color: '#0A1628' }}>{plan.annualPrice}</span>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>/year</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>{t('perYear')}</span>
             {plan.annualSub && (
               <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#10B981', fontWeight: 600, marginTop: 4 }}>{plan.annualSub}</div>
             )}
@@ -183,7 +185,7 @@ function PlanCard({ plan, isAnnual, onPay, isCurrent, isFree }) {
               <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#9CA3AF', textDecoration: 'line-through' }}>{plan.monthlyStrike}/month</div>
             )}
             <span className="font-heading" style={{ fontSize: 40, fontWeight: 700, color: '#0A1628' }}>{plan.monthlyPrice}</span>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>/month</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>{t('perMonth')}</span>
           </div>
         )}
 
@@ -225,6 +227,7 @@ function PlanCard({ plan, isAnnual, onPay, isCurrent, isFree }) {
 }
 
 export default function PricingPage() {
+  const { t } = useLanguage();
   const [isAnnual, setIsAnnual] = useState(false);
   const navigate = useNavigate();
 

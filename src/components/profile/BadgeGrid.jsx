@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const ALL_BADGES = [
   { id: 'first_lesson',     emoji: '🥇', name: 'First Lesson',         condition: 'Complete your first lesson' },
@@ -23,7 +24,8 @@ const ALL_BADGES = [
   { id: 'top_10_class',     emoji: '🏅', name: 'Top 10',                condition: 'Coming in Phase 2' },
 ];
 
-export default function BadgeGrid({ badges }) {
+export default function BadgeGrid({
+  badges }) {
   const [tooltip, setTooltip] = useState(null);
 
   return (

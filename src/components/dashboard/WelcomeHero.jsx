@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/LanguageContext';
 
 function useCountUp(target, duration = 1200) {
+  const { t } = useLanguage();
   const [value, setValue] = useState(0);
   useEffect(() => {
     if (target === 0) return;

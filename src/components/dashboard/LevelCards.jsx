@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { isLevelUnlocked } from '@/utils/helpers';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const LEVELS = [
   { num: 1, emoji: '🌱', label: 'Beginner', total: 10, prefix: 'l1_' },
@@ -10,7 +11,8 @@ const LEVELS = [
   { num: 4, emoji: '👑', label: 'Master', total: 8, prefix: 'l4_' },
 ];
 
-export default function LevelCards({ progress }) {
+export default function LevelCards({
+  progress }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

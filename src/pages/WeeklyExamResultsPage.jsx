@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { getClassGroupLabel, formatMMSS } from '@/lib/weeklyExamEngine';
 import { QUESTION_BANKS } from '@/lib/weeklyQuestionBanks';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -13,6 +14,7 @@ const glass = {
 };
 
 function useCountUp(target, duration = 1200) {
+  const { t } = useLanguage();
   const [value, setValue] = useState(0);
   useEffect(() => {
     const start = Date.now();
@@ -231,7 +233,7 @@ export default function WeeklyExamResultsPage() {
             border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)',
             fontSize: 14, fontWeight: 500, cursor: 'pointer', marginBottom: 10,
           }}
-        >Back to Dashboard</button>
+        >{t('backToDashboard')}</button>
         <button
           onClick={() => navigate('/leaderboard')}
           style={{

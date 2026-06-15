@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const LEVELS_CONFIG = [
   { emoji: '🌱', label: 'Beginner', total: 10, ids: Array.from({ length: 10 }, (_, i) => `l1_${i + 1}`) },
@@ -10,7 +11,8 @@ const LEVELS_CONFIG = [
 
 const TOTAL = 40;
 
-function CircularRing({ percent }) {
+function CircularRing({
+  percent }) {
   const [animPct, setAnimPct] = useState(0);
   const size = 160;
   const r = 68;
@@ -57,7 +59,8 @@ function CircularRing({ percent }) {
   );
 }
 
-export default function OverallProgress({ progress }) {
+export default function OverallProgress({progress }) {
+  const { t } = useLanguage();
   const completed = progress.completedLessons?.length || 0;
   const percent = Math.round((completed / TOTAL) * 100);
 
@@ -69,7 +72,7 @@ export default function OverallProgress({ progress }) {
       className="bg-white rounded-[20px] p-6 border border-[#F0F4FF]"
       style={{ boxShadow: '0 4px 24px rgba(10,22,40,0.06)' }}
     >
-      <h2 className="font-heading text-lg font-bold text-[#0A1628] mb-5">Overall Progress</h2>
+      <h2 className="font-heading text-lg font-bold text-[#0A1628] mb-5">{t('overallProgress')}</h2>
       <div className="flex flex-col sm:flex-row items-center gap-6">
         <div className="flex flex-col items-center">
           <CircularRing percent={percent} />
