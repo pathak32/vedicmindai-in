@@ -7,7 +7,7 @@ import { ProfileProvider } from '@/lib/ProfileContext';
 import ScrollToTop from '@/lib/ScrollToTop';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from 'react';
-
+import { LanguageProvider } from "@/lib/LanguageContext";
 import LandingPage from '@/pages/LandingPage';
 import AuthPage from '@/pages/AuthPage';
 import OnboardingPage from '@/pages/OnboardingPage';
@@ -56,7 +56,6 @@ function DarkModeSync() {
   return null;
 }
 
-// Tabs whose state should survive when switching between bottom-nav tabs on mobile
 const PERSISTENT_TABS = ['/learn', '/practice'];
 
 function RouteTransition() {
@@ -65,7 +64,6 @@ function RouteTransition() {
 
   return (
     <>
-      {/* Always-mounted persistent tabs — hidden when not active to preserve scroll + state */}
       {PERSISTENT_TABS.map(path => (
         <div
           key={path}
@@ -77,7 +75,6 @@ function RouteTransition() {
         </div>
       ))}
 
-      {/* All other routes with fade transition */}
       {!isPersistentTab && (
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
@@ -124,28 +121,30 @@ function RouteTransition() {
 
 function App() {
   return (
-    <VedicAuthProvider>
-      <ProfileProvider>
-        <ProgressProvider>
-          <QueryClientProvider client={queryClientInstance}>
-            <Router>
-              <DarkModeSync />
-              <ScrollToTop />
-              <Routes>
-                <Route path="/admin-panel" element={<AdminPanel />} />
-                <Route path="*" element={
-                  <>
-                    <MobileAppHeader />
-                    <MobileBottomNav />
-                    <RouteTransition />
-                  </>
-                } />
-              </Routes>
-            </Router>
-          </QueryClientProvider>
-        </ProgressProvider>
-      </ProfileProvider>
-    </VedicAuthProvider>
+    <LanguageProvider>
+      <VedicAuthProvider>
+        <ProfileProvider>
+          <ProgressProvider>
+            <QueryClientProvider client={queryClientInstance}>
+              <Router>
+                <DarkModeSync />
+                <ScrollToTop />
+                <Routes>
+                  <Route path="/admin-panel" element={<AdminPanel />} />
+                  <Route path="*" element={
+                    <>
+                      <MobileAppHeader />
+                      <MobileBottomNav />
+                      <RouteTransition />
+                    </>
+                  } />
+                </Routes>
+              </Router>
+            </QueryClientProvider>
+          </ProgressProvider>
+        </ProfileProvider>
+      </VedicAuthProvider>
+    </LanguageProvider>
   )
 }
 
