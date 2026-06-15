@@ -3,10 +3,16 @@ import React from 'react';
 export default function PrivacyPolicy() {
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '40px 24px', fontFamily: 'DM Sans, sans-serif', color: '#0A1628' }}>
+      <div style={{ background: '#FFF7ED', border: '1px solid #FED7AA', borderRadius: 8, padding: '12px 16px', marginBottom: 24 }}>
+        <p style={{ margin: 0, fontSize: 13, color: '#92400E', fontWeight: 500 }}>
+          ™ VedicMindAI™ is a registered trademark applicant. Unauthorized use of this name or logo is prohibited.
+        </p>
+      </div>
+
       <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: 32, marginBottom: 8 }}>Privacy Policy</h1>
       <p style={{ color: '#4B5563', marginBottom: 32 }}>Last updated: June 9, 2026</p>
       <h2>1. Introduction</h2>
-      <p>VedicMind operates the VedicMind application and website at vedicmindai.in. This Privacy Policy explains how we collect, use, and protect your information.</p>
+      <p>VedicMindAI™ operates the VedicMindAI™ application and website at vedicmindai.in. This Privacy Policy explains how we collect, use, and protect your information.</p>
       <h2>2. Information We Collect</h2>
       <ul>
         <li><strong>Account Information:</strong> Name, email address, date of birth</li>
@@ -24,7 +30,7 @@ export default function PrivacyPolicy() {
       <h2>4. Data Storage</h2>
       <p>Your data is stored securely on Supabase servers in Mumbai, India. All transmission is encrypted using SSL/TLS.</p>
       <h2>5. Children's Privacy</h2>
-      <p>VedicMind is designed for students including children. Parents may contact us to review or delete their child's data.</p>
+      <p>VedicMindAI™ is designed for students including children. Parents may contact us to review or delete their child's data.</p>
       <h2>6. Data Sharing</h2>
       <p>We do not sell your personal information. We share data only with Razorpay (payments) and Anthropic Claude API (AI tutoring), or when required by law.</p>
       <h2>7. Leaderboard Privacy</h2>

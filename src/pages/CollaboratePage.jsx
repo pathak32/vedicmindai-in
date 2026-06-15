@@ -43,7 +43,7 @@ export default function CollaboratePage() {
       <div style={{ background: 'white', borderRadius: 20, padding: 40, maxWidth: 480, width: '100%', textAlign: 'center', boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }}>
         <div style={{ fontSize: 60, marginBottom: 16 }}>🤝</div>
         <h2 style={{ fontSize: 24, fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>Request Received!</h2>
-        <p style={{ color: '#6B7280', marginBottom: 24 }}>Thank you for your interest in collaborating with VedicMindAI. Our team will contact you within 24 hours.</p>
+        <p style={{ color: '#6B7280', marginBottom: 24 }}>Thank you for your interest in collaborating with VedicMindAI™. Our team will contact you within 24 hours.</p>
         <Link to="/" style={{ background: '#1E40AF', color: 'white', padding: '12px 28px', borderRadius: 10, textDecoration: 'none', fontWeight: 700, fontSize: 14 }}>← Back to Home</Link>
       </div>
     </div>
@@ -54,7 +54,7 @@ export default function CollaboratePage() {
       {/* Hero */}
       <div style={{ background: 'linear-gradient(135deg, #0A1628, #1E40AF)', padding: '48px 24px 40px', textAlign: 'center', color: 'white' }}>
         <div style={{ fontSize: 48, marginBottom: 12 }}>🤝</div>
-        <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 8 }}>Collaborate with VedicMindAI</h1>
+        <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 8 }}>Collaborate with VedicMindAI™</h1>
         <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.8)', maxWidth: 560, margin: '0 auto' }}>
           Join India's fastest-growing Vedic Mathematics platform. Schools, coaching institutes, and businesses — let's grow together.
         </p>

@@ -69,7 +69,7 @@ function SignUpForm({ onSwitchTab }) {
         whatsapp: sameNum ? `+91${mobile}` : `+91${whatsapp}`,
         passwordHint: hint,
       });
-      toast.success('Account created! Welcome to VedicMindAI 🎉');
+      toast.success('Account created! Welcome to VedicMindAI™ 🎉');
       navigate('/dashboard');
     } catch (err) {
       toast.error(err.message || 'Sign up failed. Try again.');

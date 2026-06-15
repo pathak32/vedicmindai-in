@@ -253,7 +253,7 @@ export default function DashboardNavbar() {
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 16px', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
           <Link to="/dashboard" style={{ textDecoration: 'none' }}>
-            <span className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628' }}>🧮 VedicMind</span>
+            <span className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628' }}>🧮 VedicMindAI™</span>
           </Link>
 
           {/* Desktop links */}

@@ -29,7 +29,7 @@ export default function LandingNavbar() {
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link to="/" className="font-heading text-xl font-bold text-[#0A1628]">
-            VedicMind
+            VedicMindAI™
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -75,7 +75,7 @@ export default function LandingNavbar() {
             className="fixed inset-0 z-[100] bg-white flex flex-col"
           >
             <div className="flex items-center justify-between px-4 h-16">
-              <span className="font-heading text-xl font-bold text-[#0A1628]">VedicMind</span>
+              <span className="font-heading text-xl font-bold text-[#0A1628]">VedicMindAI™</span>
               <button onClick={() => setMobileOpen(false)} className="p-2">
                 <X className="w-6 h-6 text-[#0A1628]" />
               </button>
