@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  getDailyQuestions,
   getDailyQuizStatus,
   getTodayString,
   getTodayQuizResult,
@@ -488,11 +487,18 @@ function DailyQuizPageInner() {
       setScreen('waiting');
       return;
     }
-    // pending — load questions and show countdown
-    const profile = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile') || '{}'); } catch { return {}; } })();
-    const qs = getDailyQuestions(profile.grade);
-    setQuestions(qs);
-    setScreen('countdown');
+    (async () => {
+      try {
+        const res = await fetch(`/api/get-daily-quiz?user_id=${user.id}`);
+        if (!res.ok) throw new Error('Failed to load quiz questions');
+        const data = await res.json();
+        setQuestions(data.questions || []);
+        setScreen('countdown');
+      } catch (e) {
+        console.error('Daily quiz load failed:', e);
+        setScreen('error');
+      }
+    })();
   }, [loading, user]);
 
   function handleQuizComplete(answers, totalScore) {
@@ -502,6 +508,17 @@ function DailyQuizPageInner() {
 
   if (screen === 'loading') return <div style={{ ...BG, minHeight: '100vh' }} />;
   if (screen === 'waiting') return <WaitingScreen />;
+  if (screen === 'error') return (
+    <div style={{ ...BG, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 16, padding: 40, textAlign: 'center', minHeight: '100vh' }}>
+      <span style={{ fontSize: 48 }}>⚠️</span>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'white' }}>
+        Could not load today's quiz. Please check your connection and try again.
+      </p>
+      <button onClick={() => window.location.reload()} style={{ minHeight: 48, padding: '0 32px', background: '#3B82F6', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>
+        Retry
+      </button>
+    </div>
+  );
   if (screen === 'countdown') return <CountdownIntro onDone={() => setScreen('quiz')} />;
   if (screen === 'quiz') return <QuizScreen questions={questions} onComplete={handleQuizComplete} />;
   return null;
