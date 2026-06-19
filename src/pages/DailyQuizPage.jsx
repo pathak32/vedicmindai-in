@@ -19,7 +19,6 @@ const TIMER_TOTAL = 30;
 const LETTERS = ['A', 'B', 'C', 'D'];
 
 function calcPoints(timeUsedMs) {
-  const { t } = useLanguage();
   const secs = timeUsedMs / 1000;
   if (secs < 10) return 20;
   if (secs < 20) return 15;
