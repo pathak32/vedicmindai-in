@@ -241,14 +241,38 @@ export default function PricingPage() {
     return plan.planStatus === planName.toLowerCase() || plan.planStatus === planName.toLowerCase() + '_annual';
   }
 
+  // ⚠️ TEMPORARY PLACEHOLDER — replace with a FRESH (unpaid) Razorpay Payment
+  // Link before sharing with testers/users. The old link (vRD8R2lw) was
+  // already paid once and now permanently shows a "Payment Successful"
+  // receipt to every visitor — Razorpay Payment Links hold paid-state per
+  // link, they don't reset per visitor. Generate a new link per plan at
+  // https://razorpay.com/payment-link and paste it below.
+  const RAZORPAY_PAYMENT_LINK = 'https://rzp.io/rzp/REPLACE_WITH_NEW_LINK';
+
   function initiatePayment() {
-    window.open('https://rzp.io/rzp/vRD8R2lw', '_blank');
+    // Same-tab navigation (not a new tab) so the browser/app back button
+    // correctly returns the user to this Pricing page instead of leaving
+    // them stranded on Razorpay's hosted page with no way back.
+    window.location.href = RAZORPAY_PAYMENT_LINK;
   }
 
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
       <DashboardNavbar />
       <main style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 16px 80px' }}>
+
+        <button
+          onClick={() => navigate('/dashboard')}
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            background: 'none', border: 'none', cursor: 'pointer',
+            color: '#1E40AF', fontFamily: 'var(--font-body)',
+            fontSize: 14, fontWeight: 500, padding: '8px 0',
+            marginBottom: 16, minHeight: 44,
+          }}
+        >
+          ← Back to Dashboard
+        </button>
 
         {isPaid && (
           <div style={{ background: '#ECFDF5', border: '1px solid #A7F3D0', borderRadius: 12, padding: '16px 20px', marginBottom: 24 }}>
