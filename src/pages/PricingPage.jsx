@@ -247,7 +247,7 @@ export default function PricingPage() {
   // receipt to every visitor — Razorpay Payment Links hold paid-state per
   // link, they don't reset per visitor. Generate a new link per plan at
   // https://razorpay.com/payment-link and paste it below.
-  const RAZORPAY_PAYMENT_LINK = 'https://rzp.io/rzp/REPLACE_WITH_NEW_LINK';
+  const RAZORPAY_PAYMENT_LINK = 'https://rzp.io/rzp/qVsieSF';
 
   function initiatePayment() {
     // Same-tab navigation (not a new tab) so the browser/app back button
