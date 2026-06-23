@@ -13,12 +13,12 @@ const REGULAR_LINKS = [
   { label: 'Dashboard', path: '/dashboard' },
   { label: 'Learn',     path: '/learn' },
 ];
+// Only the highest-traffic items stay in the main bar. Everything else
+// (Weekly Exam, Olympiad, Battle, Aptitude, Reviews) moved to MORE_LINKS
+// below, accessed via the "More" dropdown on desktop.
 const AFTER_QUIZ_LINKS = [
   { label: 'Practice',    path: '/practice' },
-  { label: '⚔️ Battle',  path: '/battle', badge: 'NEW' },
-  { label: 'Aptitude',    path: '/aptitude' },
   { label: 'Leaderboard', path: '/leaderboard' },
-  { label: 'Reviews',     path: '/reviews' },
   { label: 'Profile',     path: '/profile' },
 ];
 
@@ -190,6 +190,77 @@ function RankBadge({ rank }) {
   );
 }
 
+// Secondary links live under a "More" dropdown on desktop so the main bar
+// doesn't get cramped (was 11 items in a single row). Mobile menu still
+// lists everything flat — vertical scroll has no crowding problem there.
+const MORE_LINKS = [
+  { label: 'Weekly Exam', path: '/weekly-exam' },
+  { label: 'Olympiad 🏅', path: '/olympiad' },
+  { label: '⚔️ Battle',  path: '/battle', badge: 'NEW' },
+  { label: 'Aptitude',    path: '/aptitude' },
+  { label: 'Reviews',     path: '/reviews' },
+];
+
+function MoreDropdown({ weeklyLive, olympiadLive }) {
+  const location = useLocation();
+  const [open, setOpen] = useState(false);
+  const anyActive = MORE_LINKS.some(l => location.pathname === l.path);
+  const anyLive = weeklyLive || olympiadLive;
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e) => { if (!e.target.closest('.more-dropdown')) setOpen(false); };
+    document.addEventListener('click', handler);
+    return () => document.removeEventListener('click', handler);
+  }, [open]);
+
+  return (
+    <div className="more-dropdown" style={{ position: 'relative' }}>
+      <button onClick={() => setOpen(p => !p)} style={{
+        padding: '6px 14px', borderRadius: 8, fontSize: 14, fontWeight: 500, minHeight: 44,
+        display: 'flex', alignItems: 'center', gap: 5, cursor: 'pointer', border: 'none',
+        background: open ? '#F0F4FF' : 'transparent',
+        color: anyActive ? '#3B82F6' : '#4B5563',
+        fontFamily: 'var(--font-body)', transition: 'background 0.15s',
+      }}>
+        {anyLive && (
+          <span style={{ width: 7, height: 7, borderRadius: '50%', background: weeklyLive ? '#EF4444' : '#F59E0B', flexShrink: 0, animation: 'quizPulse 1.5s ease-in-out infinite' }} />
+        )}
+        More
+        <span style={{ fontSize: 10, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.15s' }}>▾</span>
+      </button>
+      {open && (
+        <div style={{
+          position: 'absolute', top: '110%', right: 0, minWidth: 180,
+          background: 'white', borderRadius: 12, border: '1px solid rgba(30,64,175,0.12)',
+          boxShadow: '0 8px 24px rgba(10,22,40,0.12)', padding: 6, zIndex: 60,
+        }}>
+          {MORE_LINKS.map(link => {
+            const active = location.pathname === link.path;
+            const isLive = (link.path === '/weekly-exam' && weeklyLive) || (link.path === '/olympiad' && olympiadLive);
+            return (
+              <Link key={link.path} to={link.path} onClick={() => setOpen(false)} style={{
+                display: 'flex', alignItems: 'center', gap: 6, padding: '9px 12px', borderRadius: 8,
+                fontSize: 14, fontWeight: 500, textDecoration: 'none', fontFamily: 'var(--font-body)',
+                color: active ? '#3B82F6' : '#374151',
+                background: active ? '#F0F4FF' : 'transparent',
+              }}>
+                {isLive && (
+                  <span style={{ width: 7, height: 7, borderRadius: '50%', background: link.path === '/weekly-exam' ? '#EF4444' : '#F59E0B', flexShrink: 0 }} />
+                )}
+                {link.label}
+                {link.badge && (
+                  <span style={{ marginLeft: 'auto', background: '#F59E0B', color: 'white', borderRadius: 99, padding: '1px 6px', fontSize: 9, fontWeight: 700 }}>{link.badge}</span>
+                )}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function DashboardNavbar() {
   const { t } = useLanguage();
   const location = useLocation();
@@ -274,23 +345,11 @@ export default function DashboardNavbar() {
               );
             })}
 
-            {/* Daily Quiz special link */}
+            {/* Daily Quiz special link — kept inline, it's the highest-engagement feature */}
             <QuizNavLink
               active={location.pathname === '/daily-quiz'}
               completed={completed}
               isAvailable={isAvailable}
-            />
-
-            {/* Weekly Exam link */}
-            <WeeklyExamNavLink
-              active={location.pathname === '/weekly-exam'}
-              weeklyLive={weeklyLive}
-            />
-
-            {/* Olympiad link */}
-            <OlympiadNavLink
-              active={location.pathname === '/olympiad'}
-              olympiadLive={olympiadLive}
             />
 
             {AFTER_QUIZ_LINKS.map(link => {
@@ -305,19 +364,12 @@ export default function DashboardNavbar() {
                   fontFamily: 'var(--font-body)', transition: 'color 0.15s',
                 }}>
                   {link.label}
-                  {link.badge && (
-                    <span style={{
-                      marginLeft: 4,
-                      background: '#F59E0B', color: 'white',
-                      borderRadius: 99, padding: '1px 6px',
-                      fontFamily: 'var(--font-body)', fontSize: 9, fontWeight: 700,
-                      lineHeight: 1.4,
-                    }}>{link.badge}</span>
-                  )}
                   {link.path === '/leaderboard' && <RankBadge rank={lbRank} />}
                 </Link>
               );
             })}
+
+            <MoreDropdown weeklyLive={weeklyLive} olympiadLive={olympiadLive} />
 
             <AdminNavLink />
 
@@ -351,7 +403,12 @@ export default function DashboardNavbar() {
             { label: 'Daily Quiz', path: '/daily-quiz' },
             { label: 'Weekly Exam', path: '/weekly-exam' },
             { label: 'Olympiad 🏅', path: '/olympiad' },
-            ...AFTER_QUIZ_LINKS,
+            { label: 'Practice', path: '/practice' },
+            { label: '⚔️ Battle', path: '/battle', badge: 'NEW' },
+            { label: 'Aptitude', path: '/aptitude' },
+            { label: 'Leaderboard', path: '/leaderboard' },
+            { label: 'Reviews', path: '/reviews' },
+            { label: 'Profile', path: '/profile' },
           ].map(link => {
             const active = location.pathname === link.path;
             return (
