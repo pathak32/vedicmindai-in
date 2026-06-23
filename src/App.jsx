@@ -32,7 +32,7 @@ import BattleModePage from '@/pages/BattleModePage';
 import PaymentSuccessPage from '@/pages/PaymentSuccessPage';
 import ReviewsPage from '@/pages/ReviewsPage';
 import ReportCardPage from '@/pages/ReportCardPage';
-import ForgotPasswordPage from '@/pages/ForgotPasswordPage';
+import ForgotPassword from '@/pages/ForgotPassword';
 import TermsPage from '@/pages/TermsPage';
 import CollaboratePage from '@/pages/CollaboratePage';
 import ResetPasswordPage from '@/pages/ResetPasswordPage';
@@ -106,7 +106,7 @@ function RouteTransition() {
               <Route path="/payment-success" element={<PaymentSuccessPage />} />
               <Route path="/reviews" element={<ReviewsPage />} />
               <Route path="/report-card" element={<ReportCardPage />} />
-              <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/collaborate" element={<CollaboratePage />} />
               <Route path="/reset-password" element={<ResetPasswordPage />} />
