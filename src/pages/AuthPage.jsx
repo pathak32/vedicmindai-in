@@ -23,6 +23,7 @@ function SignUpForm({ onSwitchTab }) {
   const { t } = useLanguage();
   const { signUpWithPassword } = useVedicAuth();
   const navigate = useNavigate();
+  const [step, setStep]       = useState(1); // 1 = essentials, 2 = recovery info
   const [name, setName]       = useState('');
   const [mobile, setMobile]   = useState('');
   const [dob, setDob]         = useState('');
@@ -36,24 +37,37 @@ function SignUpForm({ onSwitchTab }) {
   const [errors, setErrors]   = useState({});
   const [loading, setLoading] = useState(false);
 
-  // Auto-fill password hint
+  // Auto-fill password hint (needs name + dob, so only kicks in once Step 2 is reached)
   const hint = name && dob && validateDOB(dob) ? generatePasswordHint(name, dob) : '';
   useEffect(() => { if (hint && !password) setPassword(hint); }, [hint]);
 
-  const validate = () => {
+  const validateStep1 = () => {
     const e = {};
-    if (!name.trim())           e.name   = 'Name required';
-    if (!validateMobile(mobile))e.mobile = 'Valid 10-digit number required';
-    if (!validateDOB(dob))      e.dob    = 'Format: DD/MM/YYYY';
+    if (!name.trim())            e.name   = 'Name required';
+    if (!validateMobile(mobile)) e.mobile = 'Valid 10-digit number required';
     if (!password || password.length < 8) e.password = 'Min 8 characters';
+    return e;
+  };
+
+  const validateStep2 = () => {
+    const e = {};
+    if (!validateDOB(dob))      e.dob    = 'Format: DD/MM/YYYY';
     if (!secQ.trim())           e.secQ   = 'Security question required';
     if (!secA.trim())           e.secA   = 'Security answer required';
     if (!sameNum && !validateMobile(whatsapp)) e.whatsapp = 'Valid WhatsApp number required';
     return e;
   };
 
+  const handleContinue = () => {
+    const e = validateStep1();
+    setErrors(e);
+    if (Object.keys(e).length) return;
+    setErrors({});
+    setStep(2);
+  };
+
   const handleSignUp = async () => {
-    const e = validate();
+    const e = validateStep2();
     setErrors(e);
     if (Object.keys(e).length) return;
     setLoading(true);
@@ -85,29 +99,77 @@ function SignUpForm({ onSwitchTab }) {
     color: '#0A1628', background: 'white', boxSizing: 'border-box',
   });
 
+  // ─── Step indicator (2 dots) — tells the user there's just one more short step
+  const StepDots = () => (
+    <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:18 }}>
+      <div style={{ display:'flex', alignItems:'center', gap:6, flex:1 }}>
+        <div style={{ width:24, height:24, borderRadius:'50%', background:'#0A1628', color:'white', fontSize:12, fontWeight:700, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>1</div>
+        <span style={{ fontSize:12, fontWeight:600, color:'#0A1628' }}>Your basics</span>
+      </div>
+      <div style={{ flex:1, height:2, background: step >= 2 ? '#0A1628' : 'rgba(30,64,175,0.15)', borderRadius:1 }} />
+      <div style={{ display:'flex', alignItems:'center', gap:6, flex:1 }}>
+        <div style={{ width:24, height:24, borderRadius:'50%', background: step >= 2 ? '#0A1628' : 'rgba(30,64,175,0.15)', color: step >= 2 ? 'white' : '#9CA3AF', fontSize:12, fontWeight:700, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>2</div>
+        <span style={{ fontSize:12, fontWeight:600, color: step >= 2 ? '#0A1628' : '#9CA3AF' }}>Account recovery</span>
+      </div>
+    </div>
+  );
+
+  if (step === 1) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <StepDots />
+
+        {/* Name */}
+        <div>
+          <label style={lbl}>Full Name *</label>
+          <input value={name} onChange={e => setName(e.target.value)}
+            placeholder="Hitesh Pathak" style={inp(errors.name)} autoFocus />
+          {errors.name && <Err>{errors.name}</Err>}
+        </div>
+
+        {/* Mobile */}
+        <div>
+          <label style={lbl}>Mobile Number *</label>
+          <div style={{ display:'flex', border:`1.5px solid ${errors.mobile?'#EF4444':'rgba(30,64,175,0.2)'}`, borderRadius:12, overflow:'hidden', height:44, background:'white' }}>
+            <span style={{ padding:'0 10px 0 14px', fontSize:14, color:'#4B5563', borderRight:'1px solid rgba(30,64,175,0.15)', lineHeight:'44px', flexShrink:0 }}>+91</span>
+            <input type="tel" inputMode="numeric" value={mobile}
+              onChange={e => setMobile(e.target.value.replace(/\D/g,'').slice(0,10))}
+              placeholder="10-digit number"
+              style={{ flex:1, padding:'0 12px', border:'none', outline:'none', fontSize:15, color:'#0A1628', background:'transparent' }} />
+          </div>
+          {errors.mobile && <Err>{errors.mobile}</Err>}
+        </div>
+
+        {/* Password */}
+        <div>
+          <label style={lbl}>Password *</label>
+          <div style={{ position:'relative' }}>
+            <input type={showPass?'text':'password'} value={password}
+              onChange={e => setPassword(e.target.value)}
+              placeholder="Min 8 characters"
+              style={{ ...inp(errors.password), paddingRight:44 }} />
+            <button type="button" onClick={() => setShowPass(!showPass)}
+              style={{ position:'absolute', right:12, top:'50%', transform:'translateY(-50%)', background:'none', border:'none', cursor:'pointer', fontSize:16, color:'#6B7280' }}>
+              {showPass ? '🙈' : '👁'}
+            </button>
+          </div>
+          {errors.password && <Err>{errors.password}</Err>}
+        </div>
+
+        <button type="button" onClick={handleContinue}
+          style={{ width:'100%', height:46, background:'#0A1628', color:'white', border:'none', borderRadius:12, fontSize:15, fontWeight:700, cursor:'pointer', marginTop:4 }}>
+          Continue →
+        </button>
+        <p style={{ textAlign:'center', fontSize:12, color:'#9CA3AF', margin:0 }}>
+          One more short step — just account recovery info
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-
-      {/* Name */}
-      <div>
-        <label style={lbl}>Full Name *</label>
-        <input value={name} onChange={e => setName(e.target.value)}
-          placeholder="Hitesh Pathak" style={inp(errors.name)} />
-        {errors.name && <Err>{errors.name}</Err>}
-      </div>
-
-      {/* Mobile */}
-      <div>
-        <label style={lbl}>Mobile Number *</label>
-        <div style={{ display:'flex', border:`1.5px solid ${errors.mobile?'#EF4444':'rgba(30,64,175,0.2)'}`, borderRadius:12, overflow:'hidden', height:44, background:'white' }}>
-          <span style={{ padding:'0 10px 0 14px', fontSize:14, color:'#4B5563', borderRight:'1px solid rgba(30,64,175,0.15)', lineHeight:'44px', flexShrink:0 }}>+91</span>
-          <input type="tel" inputMode="numeric" value={mobile}
-            onChange={e => setMobile(e.target.value.replace(/\D/g,'').slice(0,10))}
-            placeholder="10-digit number"
-            style={{ flex:1, padding:'0 12px', border:'none', outline:'none', fontSize:15, color:'#0A1628', background:'transparent' }} />
-        </div>
-        {errors.mobile && <Err>{errors.mobile}</Err>}
-      </div>
+      <StepDots />
 
       {/* WhatsApp same? */}
       <div style={{ display:'flex', alignItems:'center', gap:8 }}>
@@ -142,7 +204,7 @@ function SignUpForm({ onSwitchTab }) {
             else if (raw.length > 2) v = raw.slice(0,2) + '/' + raw.slice(2);
             setDob(v);
           }}
-          placeholder="15/06/1985" style={inp(errors.dob)} maxLength={10} />
+          placeholder="15/06/1985" style={inp(errors.dob)} maxLength={10} autoFocus />
         {errors.dob && <Err>{errors.dob}</Err>}
       </div>
 
@@ -151,27 +213,6 @@ function SignUpForm({ onSwitchTab }) {
         <label style={lbl}>Email <span style={{ color:'#9CA3AF', fontSize:12 }}>(optional — for password recovery)</span></label>
         <input type="email" value={email} onChange={e => setEmail(e.target.value)}
           placeholder="you@email.com" style={inp(false)} />
-      </div>
-
-      {/* Password */}
-      <div>
-        <label style={lbl}>Password *</label>
-        {hint && (
-          <p style={{ fontSize:12, color:'#6B7280', margin:'0 0 4px', fontFamily:'var(--font-mono)' }}>
-            💡 Suggested: <strong>{hint}</strong> (DDMM + First 4 letters of name (ALL CAPS))
-          </p>
-        )}
-        <div style={{ position:'relative' }}>
-          <input type={showPass?'text':'password'} value={password}
-            onChange={e => setPassword(e.target.value)}
-            placeholder="Min 8 characters"
-            style={{ ...inp(errors.password), paddingRight:44 }} />
-          <button type="button" onClick={() => setShowPass(!showPass)}
-            style={{ position:'absolute', right:12, top:'50%', transform:'translateY(-50%)', background:'none', border:'none', cursor:'pointer', fontSize:16, color:'#6B7280' }}>
-            {showPass ? '🙈' : '👁'}
-          </button>
-        </div>
-        {errors.password && <Err>{errors.password}</Err>}
       </div>
 
       {/* Security Question */}
@@ -197,10 +238,16 @@ function SignUpForm({ onSwitchTab }) {
         {errors.secA && <Err>{errors.secA}</Err>}
       </div>
 
-      <button type="button" onClick={handleSignUp} disabled={loading}
-        style={{ width:'100%', height:46, background: loading?'#6B7280':'#0A1628', color:'white', border:'none', borderRadius:12, fontSize:15, fontWeight:700, cursor: loading?'not-allowed':'pointer', marginTop:4 }}>
-        {loading ? 'Creating Account…' : 'Create Account →'}
-      </button>
+      <div style={{ display:'flex', gap:10, marginTop:4 }}>
+        <button type="button" onClick={() => setStep(1)}
+          style={{ height:46, padding:'0 18px', background:'white', color:'#0A1628', border:'1.5px solid rgba(30,64,175,0.2)', borderRadius:12, fontSize:15, fontWeight:600, cursor:'pointer' }}>
+          ← Back
+        </button>
+        <button type="button" onClick={handleSignUp} disabled={loading}
+          style={{ flex:1, height:46, background: loading?'#6B7280':'#0A1628', color:'white', border:'none', borderRadius:12, fontSize:15, fontWeight:700, cursor: loading?'not-allowed':'pointer' }}>
+          {loading ? 'Creating Account…' : 'Create Account →'}
+        </button>
+      </div>
     </div>
   );
 }
