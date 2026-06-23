@@ -85,24 +85,36 @@ export function VedicAuthProvider({ children }) {
     if (!userId) throw new Error('User creation failed');
 
     // 2. Save profile to profiles table
+    // NOTE: trial_start_date does not exist as a column on profiles (only
+    // trial_end_date does) — using it here silently failed every signup's
+    // profile save, leaving an auth user with no matching profile row.
     const { error: profileErr } = await supabase.from('profiles').upsert({
       id: userId,
       full_name: name,
       name: name,
       mobile,
       dob,
+      date_of_birth: dob,
       email: email || null,
       whatsapp,
       password_hint: passwordHint,
       security_question: securityQuestion,
       security_answer: securityAnswer,
       plan: 'trial',
+      plan_type: 'trial',
       subscription_status: 'trial',
-      trial_start_date: new Date().toISOString(),
       trial_end_date: new Date(Date.now() + 7*24*60*60*1000).toISOString(),
       created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
     }, { onConflict: 'id', ignoreDuplicates: false });
-    if (profileErr) console.error('Profile save error:', profileErr.message);
+
+    // Surface the failure instead of silently swallowing it — without this,
+    // the user gets a "successful" signup with no profile row, and later
+    // can't sign in, recover their password, or be found by mobile number.
+    if (profileErr) {
+      console.error('Profile save error:', profileErr.message);
+      throw new Error('Account created but profile setup failed. Please contact support — do not try signing up again with this number.');
+    }
 
     return data;
   };
