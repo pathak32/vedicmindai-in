@@ -198,6 +198,7 @@ const MORE_LINKS = [
   { label: 'Olympiad 🏅', path: '/olympiad' },
   { label: '⚔️ Battle',  path: '/battle', badge: 'NEW' },
   { label: 'Aptitude',    path: '/aptitude' },
+  { label: '📝 Screenless Teaching', path: '/screenless' },
   { label: 'Reviews',     path: '/reviews' },
 ];
 
@@ -407,6 +408,7 @@ export default function DashboardNavbar() {
             { label: '⚔️ Battle', path: '/battle', badge: 'NEW' },
             { label: 'Aptitude', path: '/aptitude' },
             { label: 'Leaderboard', path: '/leaderboard' },
+            { label: '📝 Screenless Teaching', path: '/screenless' },
             { label: 'Reviews', path: '/reviews' },
             { label: 'Profile', path: '/profile' },
           ].map(link => {
