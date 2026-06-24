@@ -31,6 +31,7 @@ import OlympiadResultsPage from '@/pages/OlympiadResultsPage';
 import BattleModePage from '@/pages/BattleModePage';
 import PaymentSuccessPage from '@/pages/PaymentSuccessPage';
 import ReviewsPage from '@/pages/ReviewsPage';
+import ScreenlessLearningPage from '@/pages/ScreenlessLearningPage';
 import ReportCardPage from '@/pages/ReportCardPage';
 import ForgotPassword from '@/pages/ForgotPassword';
 import TermsPage from '@/pages/TermsPage';
@@ -105,6 +106,7 @@ function RouteTransition() {
               <Route path="/battle" element={<BattleModePage />} />
               <Route path="/payment-success" element={<PaymentSuccessPage />} />
               <Route path="/reviews" element={<ReviewsPage />} />
+              <Route path="/screenless" element={<ScreenlessLearningPage />} />
               <Route path="/report-card" element={<ReportCardPage />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/terms" element={<TermsPage />} />
