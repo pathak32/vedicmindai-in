@@ -425,6 +425,7 @@ function MasterCelebration({ totalXP, badgeCount, xpEarned, correct, total, shar
 
 export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLessonIds }) {
   const { t, language } = useLanguage();
+  const questions = getQuestions(lesson.id);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState(null);
   const [revealed, setRevealed] = useState(false);
