@@ -1,71 +1,80 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/lib/LanguageContext';
+
+// Resolves a field that may be a plain string (older English-only practice
+// sets) or a { en, hi } bilingual object (new sets). Falls back to English.
+function tr(field, language) {
+  if (field == null) return field;
+  if (typeof field === 'string') return field;
+  return field[language] ?? field.en ?? '';
+}
 
 // ─── Per-lesson MCQ practice problems ────────────────────────────────────────
 
 const LESSON_PROBLEMS = {
   l1_01: [
-    { q: 'Calculate 35² using Ekadhikena Purvena', options: ['1025','1125','1225','1325'], correct: 2, exp: '3×4=12, append 25 → 1225' },
-    { q: 'Calculate 75²', options: ['5425','5525','5625','5725'], correct: 2, exp: '7×8=56, append 25 → 5625' },
-    { q: 'Calculate 65²', options: ['4025','4125','4225','4325'], correct: 2, exp: '6×7=42, append 25 → 4225' },
-    { q: 'Calculate 45²', options: ['1825','1925','2025','2125'], correct: 2, exp: '4×5=20, append 25 → 2025' },
-    { q: 'Calculate 55²', options: ['2925','3025','3125','3225'], correct: 1, exp: '5×6=30, append 25 → 3025' },
+    { q: { en: 'Calculate 35² using Ekadhikena Purvena', hi: 'एकाधिकेन पूर्वेण का उपयोग करके 35² निकालें' }, options: ['1025','1125','1225','1325'], correct: 2, exp: { en: '3×4=12, append 25 → 1225', hi: '3×4=12, 25 जोड़ें → 1225' } },
+    { q: { en: 'Calculate 75²', hi: '75² निकालें' }, options: ['5425','5525','5625','5725'], correct: 2, exp: { en: '7×8=56, append 25 → 5625', hi: '7×8=56, 25 जोड़ें → 5625' } },
+    { q: { en: 'Calculate 65²', hi: '65² निकालें' }, options: ['4025','4125','4225','4325'], correct: 2, exp: { en: '6×7=42, append 25 → 4225', hi: '6×7=42, 25 जोड़ें → 4225' } },
+    { q: { en: 'Calculate 45²', hi: '45² निकालें' }, options: ['1825','1925','2025','2125'], correct: 2, exp: { en: '4×5=20, append 25 → 2025', hi: '4×5=20, 25 जोड़ें → 2025' } },
+    { q: { en: 'Calculate 55²', hi: '55² निकालें' }, options: ['2925','3025','3125','3225'], correct: 1, exp: { en: '5×6=30, append 25 → 3025', hi: '5×6=30, 25 जोड़ें → 3025' } },
   ],
   l1_02: [
-    { q: 'Calculate 25²', options: ['425','525','625','725'], correct: 2, exp: '2×3=6, append 25 → 625' },
-    { q: 'Calculate 85²', options: ['7025','7125','7225','7325'], correct: 2, exp: '8×9=72, append 25 → 7225' },
-    { q: 'Calculate 95²', options: ['9025','9125','9225','9325'], correct: 0, exp: '9×10=90, append 25 → 9025' },
-    { q: 'Calculate 15²', options: ['125','225','325','425'], correct: 1, exp: '1×2=2, append 25 → 225' },
-    { q: 'Calculate 105² (hint: 10×11=110, append 25)', options: ['10925','11025','11125','11225'], correct: 1, exp: '10×11=110, append 25 → 11025' },
+    { q: { en: 'Calculate 25²', hi: '25² निकालें' }, options: ['425','525','625','725'], correct: 2, exp: { en: '2×3=6, append 25 → 625', hi: '2×3=6, 25 जोड़ें → 625' } },
+    { q: { en: 'Calculate 85²', hi: '85² निकालें' }, options: ['7025','7125','7225','7325'], correct: 2, exp: { en: '8×9=72, append 25 → 7225', hi: '8×9=72, 25 जोड़ें → 7225' } },
+    { q: { en: 'Calculate 95²', hi: '95² निकालें' }, options: ['9025','9125','9225','9325'], correct: 0, exp: { en: '9×10=90, append 25 → 9025', hi: '9×10=90, 25 जोड़ें → 9025' } },
+    { q: { en: 'Calculate 15²', hi: '15² निकालें' }, options: ['125','225','325','425'], correct: 1, exp: { en: '1×2=2, append 25 → 225', hi: '1×2=2, 25 जोड़ें → 225' } },
+    { q: { en: 'Calculate 105² (hint: 10×11=110, append 25)', hi: '105² निकालें (संकेत: 10×11=110, 25 जोड़ें)' }, options: ['10925','11025','11125','11225'], correct: 1, exp: { en: '10×11=110, append 25 → 11025', hi: '10×11=110, 25 जोड़ें → 11025' } },
   ],
   l1_03: [
-    { q: 'Calculate 8 × 7 using Nikhilam (base 10)', options: ['54','56','58','52'], correct: 1, exp: 'Deficits 2,3. Cross: 8−3=5. Product: 2×3=6 → 56' },
-    { q: 'Calculate 9 × 6 using Nikhilam', options: ['52','54','56','48'], correct: 1, exp: 'Deficits 1,4. Cross: 9−4=5. Product: 1×4=4 → 54' },
-    { q: 'Calculate 7 × 8 using Nikhilam', options: ['54','56','58','52'], correct: 1, exp: 'Deficits 3,2. Cross: 7−2=5. Product: 3×2=6 → 56' },
-    { q: 'Calculate 9 × 7 using Nikhilam', options: ['59','63','61','65'], correct: 1, exp: 'Deficits 1,3. Cross: 9−3=6. Product: 1×3=3 → 63' },
-    { q: 'Calculate 6 × 8 using Nikhilam', options: ['46','48','50','44'], correct: 1, exp: 'Deficits 4,2. Cross: 6−2=4. Product: 4×2=8 → 48' },
+    { q: { en: 'Calculate 8 × 7 using Nikhilam (base 10)', hi: 'निखिलम् (आधार 10) से 8 × 7 निकालें' }, options: ['54','56','58','52'], correct: 1, exp: { en: 'Deficits 2,3. Cross: 8−3=5. Product: 2×3=6 → 56', hi: 'कमियाँ 2,3। तिरछा: 8−3=5। गुणनफल: 2×3=6 → 56' } },
+    { q: { en: 'Calculate 9 × 6 using Nikhilam', hi: 'निखिलम् से 9 × 6 निकालें' }, options: ['52','54','56','48'], correct: 1, exp: { en: 'Deficits 1,4. Cross: 9−4=5. Product: 1×4=4 → 54', hi: 'कमियाँ 1,4। तिरछा: 9−4=5। गुणनफल: 1×4=4 → 54' } },
+    { q: { en: 'Calculate 7 × 8 using Nikhilam', hi: 'निखिलम् से 7 × 8 निकालें' }, options: ['54','56','58','52'], correct: 1, exp: { en: 'Deficits 3,2. Cross: 7−2=5. Product: 3×2=6 → 56', hi: 'कमियाँ 3,2। तिरछा: 7−2=5। गुणनफल: 3×2=6 → 56' } },
+    { q: { en: 'Calculate 9 × 7 using Nikhilam', hi: 'निखिलम् से 9 × 7 निकालें' }, options: ['59','63','61','65'], correct: 1, exp: { en: 'Deficits 1,3. Cross: 9−3=6. Product: 1×3=3 → 63', hi: 'कमियाँ 1,3। तिरछा: 9−3=6। गुणनफल: 1×3=3 → 63' } },
+    { q: { en: 'Calculate 6 × 8 using Nikhilam', hi: 'निखिलम् से 6 × 8 निकालें' }, options: ['46','48','50','44'], correct: 1, exp: { en: 'Deficits 4,2. Cross: 6−2=4. Product: 4×2=8 → 48', hi: 'कमियाँ 4,2। तिरछा: 6−2=4। गुणनफल: 4×2=8 → 48' } },
   ],
   l1_04: [
-    { q: 'Calculate 97 × 96 using Nikhilam (base 100)', options: ['9212','9312','9412','9112'], correct: 1, exp: 'Deficits 3,4. Cross: 97−4=93. Product: 3×4=12 → 9312' },
-    { q: 'Calculate 98 × 97', options: ['9406','9506','9606','9306'], correct: 1, exp: 'Deficits 2,3. Cross: 98−3=95. Product: 2×3=06 → 9506' },
-    { q: 'Calculate 99 × 96', options: ['9404','9504','9604','9304'], correct: 1, exp: 'Deficits 1,4. Cross: 99−4=95. Product: 1×4=04 → 9504' },
-    { q: 'Calculate 95 × 94', options: ['8730','8830','8930','8630'], correct: 2, exp: 'Deficits 5,6. Cross: 95−6=89. Product: 5×6=30 → 8930' },
-    { q: 'What is the RIGHT part digit count when using base 100?', options: ['1 digit','2 digits','3 digits','4 digits'], correct: 1, exp: 'For base 100, the right part must always be 2 digits (pad with 0 if needed).' },
+    { q: { en: 'Calculate 97 × 96 using Nikhilam (base 100)', hi: 'निखिलम् (आधार 100) से 97 × 96 निकालें' }, options: ['9212','9312','9412','9112'], correct: 1, exp: { en: 'Deficits 3,4. Cross: 97−4=93. Product: 3×4=12 → 9312', hi: 'कमियाँ 3,4। तिरछा: 97−4=93। गुणनफल: 3×4=12 → 9312' } },
+    { q: { en: 'Calculate 98 × 97', hi: '98 × 97 निकालें' }, options: ['9406','9506','9606','9306'], correct: 1, exp: { en: 'Deficits 2,3. Cross: 98−3=95. Product: 2×3=06 → 9506', hi: 'कमियाँ 2,3। तिरछा: 98−3=95। गुणनफल: 2×3=06 → 9506' } },
+    { q: { en: 'Calculate 99 × 96', hi: '99 × 96 निकालें' }, options: ['9404','9504','9604','9304'], correct: 1, exp: { en: 'Deficits 1,4. Cross: 99−4=95. Product: 1×4=04 → 9504', hi: 'कमियाँ 1,4। तिरछा: 99−4=95। गुणनफल: 1×4=04 → 9504' } },
+    { q: { en: 'Calculate 95 × 94', hi: '95 × 94 निकालें' }, options: ['8730','8830','8930','8630'], correct: 2, exp: { en: 'Deficits 5,6. Cross: 95−6=89. Product: 5×6=30 → 8930', hi: 'कमियाँ 5,6। तिरछा: 95−6=89। गुणनफल: 5×6=30 → 8930' } },
+    { q: { en: 'What is the RIGHT part digit count when using base 100?', hi: 'आधार 100 में दायें भाग के अंकों की संख्या क्या है?' }, options: ['1 digit','2 digits','3 digits','4 digits'], correct: 1, exp: { en: 'For base 100, the right part must always be 2 digits (pad with 0 if needed).', hi: 'आधार 100 के लिए, दायां भाग हमेशा 2 अंकों का होना चाहिए (आवश्यकता हो तो 0 लगाएं)।' } },
   ],
   l1_05: [
-    { q: 'Calculate 998 × 997 using Nikhilam (base 1000)', options: ['994006','995006','996006','993006'], correct: 1, exp: 'Deficits 2,3. Cross: 998−3=995. Product: 2×3=006 → 995006' },
-    { q: 'Calculate 999 × 998', options: ['996002','997002','998002','995002'], correct: 1, exp: 'Deficits 1,2. Cross: 999−2=997. Product: 1×2=002 → 997002' },
-    { q: 'Calculate 996 × 994', options: ['988024','989024','990024','991024'], correct: 2, exp: 'Deficits 4,6. Cross: 996−6=990. Product: 4×6=024 → 990024' },
-    { q: 'What is the RIGHT part digit count when using base 1000?', options: ['1 digit','2 digits','3 digits','4 digits'], correct: 2, exp: 'For base 1000, the right part must always be 3 digits.' },
-    { q: 'Calculate 997 × 995', options: ['991015','992015','993015','994015'], correct: 1, exp: 'Deficits 3,5. Cross: 997−5=992. Product: 3×5=015 → 992015' },
+    { q: { en: 'Calculate 998 × 997 using Nikhilam (base 1000)', hi: 'निखिलम् (आधार 1000) से 998 × 997 निकालें' }, options: ['994006','995006','996006','993006'], correct: 1, exp: { en: 'Deficits 2,3. Cross: 998−3=995. Product: 2×3=006 → 995006', hi: 'कमियाँ 2,3। तिरछा: 998−3=995। गुणनफल: 2×3=006 → 995006' } },
+    { q: { en: 'Calculate 999 × 998', hi: '999 × 998 निकालें' }, options: ['996002','997002','998002','995002'], correct: 1, exp: { en: 'Deficits 1,2. Cross: 999−2=997. Product: 1×2=002 → 997002', hi: 'कमियाँ 1,2। तिरछा: 999−2=997। गुणनफल: 1×2=002 → 997002' } },
+    { q: { en: 'Calculate 996 × 994', hi: '996 × 994 निकालें' }, options: ['988024','989024','990024','991024'], correct: 2, exp: { en: 'Deficits 4,6. Cross: 996−6=990. Product: 4×6=024 → 990024', hi: 'कमियाँ 4,6। तिरछा: 996−6=990। गुणनफल: 4×6=024 → 990024' } },
+    { q: { en: 'What is the RIGHT part digit count when using base 1000?', hi: 'आधार 1000 में दायें भाग के अंकों की संख्या क्या है?' }, options: ['1 digit','2 digits','3 digits','4 digits'], correct: 2, exp: { en: 'For base 1000, the right part must always be 3 digits.', hi: 'आधार 1000 के लिए, दायां भाग हमेशा 3 अंकों का होना चाहिए।' } },
+    { q: { en: 'Calculate 997 × 995', hi: '997 × 995 निकालें' }, options: ['991015','992015','993015','994015'], correct: 1, exp: { en: 'Deficits 3,5. Cross: 997−5=992. Product: 3×5=015 → 992015', hi: 'कमियाँ 3,5। तिरछा: 997−5=992। गुणनफल: 3×5=015 → 992015' } },
   ],
   l1_06: [
-    { q: 'What is the digit sum of 4567?', options: ['4','6','8','22'], correct: 0, exp: '4+5+6+7=22 → 2+2=4' },
-    { q: 'What is the digit sum of 9999?', options: ['0','9','36','18'], correct: 1, exp: '9+9+9+9=36 → 3+6=9' },
-    { q: 'Verify: 37 × 23 = 851. Is it correct? (DS check)', options: ['Yes, correct','No, wrong'], correct: 0, exp: 'DS(37)=10→1, DS(23)=5, 1×5=5. DS(851)=14→5 ✓ Likely correct.' },
-    { q: 'What is the digit sum of 999?', options: ['0','9','27','18'], correct: 1, exp: '9+9+9=27 → 2+7=9' },
-    { q: 'Digit sum of 12345?', options: ['3','6','15','5'], correct: 2, exp: '1+2+3+4+5=15. (Stop here since 15 is 2 digits but accepted; or 1+5=6)' },
+    { q: { en: 'What is the digit sum of 4567?', hi: '4567 का अंक योग क्या है?' }, options: ['4','6','8','22'], correct: 0, exp: { en: '4+5+6+7=22 → 2+2=4', hi: '4+5+6+7=22 → 2+2=4' } },
+    { q: { en: 'What is the digit sum of 9999?', hi: '9999 का अंक योग क्या है?' }, options: ['0','9','36','18'], correct: 1, exp: { en: '9+9+9+9=36 → 3+6=9', hi: '9+9+9+9=36 → 3+6=9' } },
+    { q: { en: 'Verify: 37 × 23 = 851. Is it correct? (DS check)', hi: 'जांचें: 37 × 23 = 851. क्या यह सही है? (अंक योग जांच)' }, options: ['Yes, correct','No, wrong'], correct: 0, exp: { en: 'DS(37)=10→1, DS(23)=5, 1×5=5. DS(851)=14→5 ✓ Likely correct.', hi: 'DS(37)=10→1, DS(23)=5, 1×5=5. DS(851)=14→5 ✓ संभवतः सही।' } },
+    { q: { en: 'What is the digit sum of 999?', hi: '999 का अंक योग क्या है?' }, options: ['0','9','27','18'], correct: 1, exp: { en: '9+9+9=27 → 2+7=9', hi: '9+9+9=27 → 2+7=9' } },
+    { q: { en: 'Digit sum of 12345?', hi: '12345 का अंक योग?' }, options: ['3','6','15','5'], correct: 2, exp: { en: '1+2+3+4+5=15. (Stop here since 15 is 2 digits but accepted; or 1+5=6)', hi: '1+2+3+4+5=15. (15 दो अंकों का है पर स्वीकार्य; या 1+5=6)' } },
   ],
   l1_07: [
-    { q: 'Calculate 12 × 13 using Urdhva method', options: ['146','156','166','136'], correct: 1, exp: 'Right: 2×3=6. Cross: 1×3+2×1=5. Left: 1×1=1 → 156' },
-    { q: 'Calculate 23 × 32', options: ['726','736','746','756'], correct: 1, exp: 'Right: 3×2=6. Cross: 2×2+3×3=13→3 carry 1. Left: 2×3=6+1=7 → 736' },
-    { q: 'Calculate 11 × 14', options: ['144','154','164','134'], correct: 1, exp: 'Right: 1×4=4. Cross: 1×4+1×1=5. Left: 1×1=1 → 154' },
-    { q: 'Calculate 21 × 13', options: ['263','273','283','253'], correct: 1, exp: 'Right: 1×3=3. Cross: 2×3+1×1=7. Left: 2×1=2 → 273' },
-    { q: 'Calculate 34 × 12', options: ['398','408','418','388'], correct: 1, exp: 'Right: 4×2=8. Cross: 3×2+4×1=10→0 carry 1. Left: 3×1=3+1=4 → 408' },
+    { q: { en: 'Calculate 12 × 13 using Urdhva method', hi: 'ऊर्ध्व विधि से 12 × 13 निकालें' }, options: ['146','156','166','136'], correct: 1, exp: { en: 'Right: 2×3=6. Cross: 1×3+2×1=5. Left: 1×1=1 → 156', hi: 'दायां: 2×3=6। तिरछा: 1×3+2×1=5। बायां: 1×1=1 → 156' } },
+    { q: { en: 'Calculate 23 × 32', hi: '23 × 32 निकालें' }, options: ['726','736','746','756'], correct: 1, exp: { en: 'Right: 3×2=6. Cross: 2×2+3×3=13→3 carry 1. Left: 2×3=6+1=7 → 736', hi: 'दायां: 3×2=6। तिरछा: 2×2+3×3=13→3 कैरी 1। बायां: 2×3=6+1=7 → 736' } },
+    { q: { en: 'Calculate 11 × 14', hi: '11 × 14 निकालें' }, options: ['144','154','164','134'], correct: 1, exp: { en: 'Right: 1×4=4. Cross: 1×4+1×1=5. Left: 1×1=1 → 154', hi: 'दायां: 1×4=4। तिरछा: 1×4+1×1=5। बायां: 1×1=1 → 154' } },
+    { q: { en: 'Calculate 21 × 13', hi: '21 × 13 निकालें' }, options: ['263','273','283','253'], correct: 1, exp: { en: 'Right: 1×3=3. Cross: 2×3+1×1=7. Left: 2×1=2 → 273', hi: 'दायां: 1×3=3। तिरछा: 2×3+1×1=7। बायां: 2×1=2 → 273' } },
+    { q: { en: 'Calculate 34 × 12', hi: '34 × 12 निकालें' }, options: ['398','408','418','388'], correct: 1, exp: { en: 'Right: 4×2=8. Cross: 3×2+4×1=10→0 carry 1. Left: 3×1=3+1=4 → 408', hi: 'दायां: 4×2=8। तिरछा: 3×2+4×1=10→0 कैरी 1। बायां: 3×1=3+1=4 → 408' } },
   ],
   l1_08: [
-    { q: 'Calculate 23 × 11', options: ['243','253','263','233'], correct: 1, exp: 'First: 2. Middle: 2+3=5. Last: 3 → 253' },
-    { q: 'Calculate 67 × 11', options: ['727','737','747','717'], correct: 1, exp: '6+7=13 → write 3 carry 1. First 6+1=7. Last 7 → 737' },
-    { q: 'Calculate 45 × 11', options: ['485','495','505','475'], correct: 1, exp: 'First: 4. Middle: 4+5=9. Last: 5 → 495' },
-    { q: 'Calculate 88 × 11', options: ['948','958','968','938'], correct: 2, exp: '8+8=16 → write 6 carry 1. First 8+1=9. Last 8 → 968' },
-    { q: 'Calculate 34 × 12', options: ['398','408','418','388'], correct: 1, exp: '34×10=340, 34×2=68, 340+68=408' },
+    { q: { en: 'Calculate 23 × 11', hi: '23 × 11 निकालें' }, options: ['243','253','263','233'], correct: 1, exp: { en: 'First: 2. Middle: 2+3=5. Last: 3 → 253', hi: 'पहला: 2। मध्य: 2+3=5। अंतिम: 3 → 253' } },
+    { q: { en: 'Calculate 67 × 11', hi: '67 × 11 निकालें' }, options: ['727','737','747','717'], correct: 1, exp: { en: '6+7=13 → write 3 carry 1. First 6+1=7. Last 7 → 737', hi: '6+7=13 → 3 लिखें कैरी 1। पहला 6+1=7। अंतिम 7 → 737' } },
+    { q: { en: 'Calculate 45 × 11', hi: '45 × 11 निकालें' }, options: ['485','495','505','475'], correct: 1, exp: { en: 'First: 4. Middle: 4+5=9. Last: 5 → 495', hi: 'पहला: 4। मध्य: 4+5=9। अंतिम: 5 → 495' } },
+    { q: { en: 'Calculate 88 × 11', hi: '88 × 11 निकालें' }, options: ['948','958','968','938'], correct: 2, exp: { en: '8+8=16 → write 6 carry 1. First 8+1=9. Last 8 → 968', hi: '8+8=16 → 6 लिखें कैरी 1। पहला 8+1=9। अंतिम 8 → 968' } },
+    { q: { en: 'Calculate 34 × 12', hi: '34 × 12 निकालें' }, options: ['398','408','418','388'], correct: 1, exp: { en: '34×10=340, 34×2=68, 340+68=408', hi: '34×10=340, 34×2=68, 340+68=408' } },
   ],
   l1_09: [
-    { q: 'Calculate 7 × 9 using the Vedic shortcut', options: ['61','63','65','67'], correct: 1, exp: 'First: 7−1=6. Second: 10−7=3 → 63' },
-    { q: 'Calculate 23 × 9', options: ['197','207','217','187'], correct: 1, exp: '23×10=230. 230−23=207' },
-    { q: 'Calculate 45 × 99', options: ['4355','4455','4555','4255'], correct: 1, exp: '45×100=4500. 4500−45=4455' },
-    { q: 'Calculate 12 × 999', options: ['11888','11988','12088','11788'], correct: 1, exp: '12×1000=12000. 12000−12=11988' },
-    { q: 'Calculate 8 × 9', options: ['70','72','74','68'], correct: 1, exp: 'First: 8−1=7. Second: 10−8=2 → 72' },
+    { q: { en: 'Calculate 7 × 9 using the Vedic shortcut', hi: 'वैदिक शॉर्टकट से 7 × 9 निकालें' }, options: ['61','63','65','67'], correct: 1, exp: { en: 'First: 7−1=6. Second: 10−7=3 → 63', hi: 'पहला: 7−1=6। दूसरा: 10−7=3 → 63' } },
+    { q: { en: 'Calculate 23 × 9', hi: '23 × 9 निकालें' }, options: ['197','207','217','187'], correct: 1, exp: { en: '23×10=230. 230−23=207', hi: '23×10=230. 230−23=207' } },
+    { q: { en: 'Calculate 45 × 99', hi: '45 × 99 निकालें' }, options: ['4355','4455','4555','4255'], correct: 1, exp: { en: '45×100=4500. 4500−45=4455', hi: '45×100=4500. 4500−45=4455' } },
+    { q: { en: 'Calculate 12 × 999', hi: '12 × 999 निकालें' }, options: ['11888','11988','12088','11788'], correct: 1, exp: { en: '12×1000=12000. 12000−12=11988', hi: '12×1000=12000. 12000−12=11988' } },
+    { q: { en: 'Calculate 8 × 9', hi: '8 × 9 निकालें' }, options: ['70','72','74','68'], correct: 1, exp: { en: 'First: 8−1=7. Second: 10−8=2 → 72', hi: 'पहला: 8−1=7। दूसरा: 10−8=2 → 72' } },
   ],
   l2_01: [
     { q: 'Divide 121 ÷ 11 using Paravartya', options: ['9','10','11','12'], correct: 2, exp: 'Transposed digit: −1. 121÷11=11' },
@@ -308,6 +317,7 @@ function OptionBtn({ label, idx, selected, correct, revealed, onClick }) {
 // ─── MCQ Problem Card ─────────────────────────────────────────────────────────
 
 function MCQCard({ problem, idx, glass, onCorrect }) {
+  const { language } = useLanguage();
   const [selected, setSelected] = useState(null);
   const [revealed, setRevealed] = useState(false);
 
@@ -322,7 +332,7 @@ function MCQCard({ problem, idx, glass, onCorrect }) {
   return (
     <div style={{ ...glass, padding: 20, marginBottom: 16 }}>
       <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: '#0A1628', marginBottom: 16, lineHeight: 1.45 }}>
-        Q{idx + 1}. {problem.q}
+        Q{idx + 1}. {tr(problem.q, language)}
       </div>
 
       {problem.options.map((opt, i) => (
@@ -350,10 +360,10 @@ function MCQCard({ problem, idx, glass, onCorrect }) {
           }}
         >
           {selected === problem.correct
-            ? <span style={{ color: '#10B981', fontWeight: 600 }}>✅ Correct! +10 XP &nbsp;</span>
-            : <span style={{ color: '#EF4444', fontWeight: 600 }}>❌ Not quite. &nbsp;</span>
+            ? <span style={{ color: '#10B981', fontWeight: 600 }}>✅ {language === 'hi' ? 'सही!' : 'Correct!'} +10 XP &nbsp;</span>
+            : <span style={{ color: '#EF4444', fontWeight: 600 }}>❌ {language === 'hi' ? 'सही नहीं।' : 'Not quite.'} &nbsp;</span>
           }
-          {problem.exp && <span>💡 {problem.exp}</span>}
+          {problem.exp && <span>💡 {tr(problem.exp, language)}</span>}
         </motion.div>
       )}
     </div>

@@ -1,47 +1,62 @@
 import React, { useState, useEffect } from 'react';
 import { L4_05_CONTENT, L4_06_CONTENT, L4_07_CONTENT, L4_08_CONTENT } from './ConceptTabLevel4B.jsx';
 import VideoButton from './VideoButton';
+import { useLanguage } from '@/lib/LanguageContext';
 
 // ── Shared helpers ────────────────────────────────────────────────────────────
 
+// Resolves a field that may be either a plain string (older, English-only
+// lessons — left untouched) or a { en, hi, ... } bilingual object (new
+// lessons). Always falls back to English if the active language is missing,
+// so a partially-translated lesson never renders blank text.
+function tr(field, language) {
+  if (field == null) return field;
+  if (typeof field === 'string') return field; // legacy plain-string usage
+  return field[language] ?? field.en ?? '';
+}
+
 function SutraBox({ sutra, meaning }) {
+  const { language } = useLanguage();
   return (
     <div style={{
       background: 'linear-gradient(135deg, #0A1628, #1E40AF)',
       borderRadius: 12, padding: '16px 20px', marginBottom: 24,
     }}>
       <div style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 15, color: '#93C5FD', marginBottom: 4 }}>{sutra}</div>
-      <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.8)', fontStyle: 'italic' }}>"{meaning}"</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.8)', fontStyle: 'italic' }}>"{tr(meaning, language)}"</div>
     </div>
   );
 }
 
 function StepBox({ number, text, example }) {
+  const { language } = useLanguage();
+  const stepLabel = language === 'hi' ? 'चरण' : 'Step';
   return (
     <div style={{
       background: '#F0F4FF', borderLeft: '4px solid #3B82F6',
       borderRadius: '0 8px 8px 0', padding: '12px 16px', marginBottom: 10,
     }}>
       <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#0A1628' }}>
-        <span style={{ fontWeight: 700, marginRight: 8 }}>Step {number}:</span>{text}
+        <span style={{ fontWeight: 700, marginRight: 8 }}>{stepLabel} {number}:</span>{tr(text, language)}
       </div>
       {example && (
-        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#1E40AF', marginTop: 6 }}>{example}</div>
+        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#1E40AF', marginTop: 6 }}>{tr(example, language)}</div>
       )}
     </div>
   );
 }
 
 function ExampleCard({ title, lines, result }) {
+  const { language } = useLanguage();
   return (
     <div style={{ background: '#F0F4FF', border: '1px solid rgba(30,64,175,0.12)', borderRadius: 12, padding: '16px 20px', marginBottom: 12 }}>
-      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: '#0A1628', marginBottom: 8 }}>{title}</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: '#0A1628', marginBottom: 8 }}>{tr(title, language)}</div>
       {lines.map((l, i) => (
-        <div key={i} style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#4B5563', marginBottom: 4 }}>{l}</div>
+        <div key={i} style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#4B5563', marginBottom: 4 }}>{tr(l, language)}</div>
       ))}
       {result && (
         <div style={{ marginTop: 10, background: '#DBEAFE', borderRadius: 8, padding: '8px 14px', display: 'inline-block' }}>
-          <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 15, color: '#0A1628' }}>{result}</span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 15, color: '#0A1628' }}>{tr(result, language)}</span>
         </div>
       )}
     </div>
@@ -49,59 +64,102 @@ function ExampleCard({ title, lines, result }) {
 }
 
 function SectionTitle({ children }) {
+  const { language } = useLanguage();
   return (
     <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 700, color: '#0A1628', marginBottom: 14, marginTop: 24 }}>
-      {children}
+      {tr(children, language)}
     </h3>
   );
 }
 
 // ── L1_01 ─────────────────────────────────────────────────────────────────────
 
-const L1_01_CONTENT = (
-  <>
-    <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 12 }}>
-      What is Vedic Mathematics?
-    </h3>
-    <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563', lineHeight: 1.7, marginBottom: 24 }}>
-      Vedic Mathematics is a collection of 16 Sutras (formulae) and 13 Sub-Sutras rediscovered by Swami Bharati Krishna Tirthaji from ancient Vedic texts. These techniques simplify arithmetic, algebra, geometry, calculus and more.
-    </p>
-    <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>
-      The 16 Sutras at a Glance
-    </h3>
-    <div style={{ display: 'grid', gap: 12, marginBottom: 28 }}>
-      {[
-        { name: 'Ekadhikena Purvena', meaning: 'By one more than the previous one', use: 'Squaring numbers ending in 5' },
-        { name: 'Nikhilam', meaning: 'All from 9 and the last from 10', use: 'Multiplication near bases (10, 100, 1000)' },
-        { name: 'Urdhva-Tiryagbhyam', meaning: 'Vertically and crosswise', use: 'General multiplication' },
-      ].map((s) => (
-        <div key={s.name} style={{ background: '#F0F4FF', border: '1px solid rgba(30,64,175,0.15)', borderRadius: 12, padding: '16px 20px' }}>
-          <div style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 15, color: '#1E40AF', marginBottom: 4 }}>{s.name}</div>
-          <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', fontStyle: 'italic', marginBottom: 6 }}>"{s.meaning}"</div>
-          <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#0A1628' }}>Used for: {s.use}</div>
-        </div>
-      ))}
-    </div>
-    <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>
-      Example — 25² using Ekadhikena Purvena
-    </h3>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
-      {[
-        'The number ends in 5, so we use Ekadhikena Purvena',
-        "Take the digit before 5: that's 2",
-        'Multiply by one more: 2 × 3 = 6',
-        'Append 25: Answer = 625',
-      ].map((step, i) => (
-        <div key={i} style={{ background: '#F0F4FF', borderLeft: '4px solid #3B82F6', borderRadius: '0 8px 8px 0', padding: '12px 16px', fontFamily: 'var(--font-body)', fontSize: 14, color: '#0A1628' }}>
-          <span style={{ fontWeight: 700, marginRight: 8 }}>Step {i + 1}:</span>{step}
-        </div>
-      ))}
-    </div>
-    <div style={{ textAlign: 'center', background: '#DBEAFE', borderRadius: 12, padding: '20px 24px' }}>
-      <span style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 700, color: '#0A1628' }}>25² = 625 ✓</span>
-    </div>
-  </>
-);
+// L1_01 — bilingual data. Structure: every text field is { en, hi } so a
+// future database migration is just "one row per key", not a rewrite.
+// To add a 3rd language later: add a `ta:` (or `gu:`) key next to `hi:` here
+// — no other code changes needed, t() below already falls back to `en`.
+const L1_01_DATA = {
+  heading1: { en: 'What is Vedic Mathematics?', hi: 'वैदिक गणित क्या है?' },
+  intro: {
+    en: 'Vedic Mathematics is a collection of 16 Sutras (formulae) and 13 Sub-Sutras rediscovered by Swami Bharati Krishna Tirthaji from ancient Vedic texts. These techniques simplify arithmetic, algebra, geometry, calculus and more.',
+    hi: 'वैदिक गणित 16 सूत्रों (फॉर्मूलों) और 13 उप-सूत्रों का संग्रह है, जिन्हें स्वामी भारती कृष्ण तीर्थजी ने प्राचीन वैदिक ग्रंथों से पुनः खोजा। ये तकनीकें अंकगणित, बीजगणित, ज्यामिति, कैलकुलस और अन्य विषयों को सरल बनाती हैं।',
+  },
+  heading2: { en: 'The 16 Sutras at a Glance', hi: '16 सूत्र एक नज़र में' },
+  sutras: [
+    {
+      name: 'Ekadhikena Purvena',
+      meaning: { en: 'By one more than the previous one', hi: 'पिछले से एक अधिक' },
+      use: { en: 'Squaring numbers ending in 5', hi: '5 पर समाप्त होने वाली संख्याओं का वर्ग' },
+    },
+    {
+      name: 'Nikhilam',
+      meaning: { en: 'All from 9 and the last from 10', hi: 'सब 9 से और अंतिम 10 से' },
+      use: { en: 'Multiplication near bases (10, 100, 1000)', hi: 'आधार के निकट गुणन (10, 100, 1000)' },
+    },
+    {
+      name: 'Urdhva-Tiryagbhyam',
+      meaning: { en: 'Vertically and crosswise', hi: 'ऊर्ध्वाधर और तिरछा' },
+      use: { en: 'General multiplication', hi: 'सामान्य गुणन' },
+    },
+  ],
+  heading3: { en: 'Example — 25² using Ekadhikena Purvena', hi: 'उदाहरण — एकाधिकेन पूर्वेण से 25²' },
+  usedFor: { en: 'Used for', hi: 'उपयोग' },
+  steps: [
+    { en: 'The number ends in 5, so we use Ekadhikena Purvena', hi: 'संख्या 5 पर समाप्त होती है, इसलिए हम एकाधिकेन पूर्वेण का उपयोग करते हैं' },
+    { en: "Take the digit before 5: that's 2", hi: '5 से पहले के अंक को लें: वह है 2' },
+    { en: 'Multiply by one more: 2 × 3 = 6', hi: 'एक अधिक से गुणा करें: 2 × 3 = 6' },
+    { en: 'Append 25: Answer = 625', hi: '25 जोड़ें: उत्तर = 625' },
+  ],
+  stepLabel: { en: 'Step', hi: 'चरण' },
+  resultLine: { en: '25² = 625 ✓', hi: '25² = 625 ✓' }, // numbers/symbols never translate
+};
+
+// Generic bilingual renderer for L1_01 — reads current language via
+// useLanguage(), falls back to English if a Hindi string is ever missing
+// (e.g. partially-translated future lesson), so nothing breaks mid-rollout.
+function L1_01_Renderer() {
+  const { language } = useLanguage();
+  const tr = (field) => field?.[language] || field?.en || '';
+  const d = L1_01_DATA;
+
+  return (
+    <>
+      <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 12 }}>
+        {tr(d.heading1)}
+      </h3>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563', lineHeight: 1.7, marginBottom: 24 }}>
+        {tr(d.intro)}
+      </p>
+      <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>
+        {tr(d.heading2)}
+      </h3>
+      <div style={{ display: 'grid', gap: 12, marginBottom: 28 }}>
+        {d.sutras.map((s) => (
+          <div key={s.name} style={{ background: '#F0F4FF', border: '1px solid rgba(30,64,175,0.15)', borderRadius: 12, padding: '16px 20px' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 15, color: '#1E40AF', marginBottom: 4 }}>{s.name}</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', fontStyle: 'italic', marginBottom: 6 }}>"{tr(s.meaning)}"</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#0A1628' }}>{tr(d.usedFor)}: {tr(s.use)}</div>
+          </div>
+        ))}
+      </div>
+      <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>
+        {tr(d.heading3)}
+      </h3>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
+        {d.steps.map((step, i) => (
+          <div key={i} style={{ background: '#F0F4FF', borderLeft: '4px solid #3B82F6', borderRadius: '0 8px 8px 0', padding: '12px 16px', fontFamily: 'var(--font-body)', fontSize: 14, color: '#0A1628' }}>
+            <span style={{ fontWeight: 700, marginRight: 8 }}>{tr(d.stepLabel)} {i + 1}:</span>{tr(step)}
+          </div>
+        ))}
+      </div>
+      <div style={{ textAlign: 'center', background: '#DBEAFE', borderRadius: 12, padding: '20px 24px' }}>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 700, color: '#0A1628' }}>{tr(d.resultLine)}</span>
+      </div>
+    </>
+  );
+}
+
+const L1_01_CONTENT = <L1_01_Renderer />;
 
 // ── L1_02 ─────────────────────────────────────────────────────────────────────
 
@@ -109,157 +167,285 @@ const L1_02_CONTENT = (
   <>
     <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
       <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Ekadhikena Purvena</div>
-      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>By one more than the previous one</div>
+      <L1_02_MeaningLine />
     </div>
 
-    <SectionTitle>The Technique</SectionTitle>
-    <StepBox number={1} text="Identify the digit BEFORE the 5" example="For 35² → the digit before 5 is 3" />
-    <StepBox number={2} text="Multiply that digit by ONE MORE than itself" example="3 × (3+1) = 3 × 4 = 12" />
-    <StepBox number={3} text="Write the result, then append 25" example="12 → append 25 → Answer: 1225" />
+    <SectionTitle>{{ en: 'The Technique', hi: 'तकनीक' }}</SectionTitle>
+    <StepBox number={1}
+      text={{ en: 'Identify the digit BEFORE the 5', hi: '5 से पहले वाला अंक पहचानें' }}
+      example={{ en: 'For 35² → the digit before 5 is 3', hi: '35² के लिए → 5 से पहले का अंक 3 है' }} />
+    <StepBox number={2}
+      text={{ en: 'Multiply that digit by ONE MORE than itself', hi: 'उस अंक को अपने से एक अधिक से गुणा करें' }}
+      example="3 × (3+1) = 3 × 4 = 12" />
+    <StepBox number={3}
+      text={{ en: 'Write the result, then append 25', hi: 'परिणाम लिखें, फिर 25 जोड़ें' }}
+      example={{ en: '12 → append 25 → Answer: 1225', hi: '12 → 25 जोड़ें → उत्तर: 1225' }} />
 
-    <SectionTitle>Worked Examples</SectionTitle>
+    <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
 
-    <ExampleCard title="Example 1 — 35²" lines={['3 × 4 = 12', 'Append 25 → 1225']} result="35² = 1225 ✓" />
-    <ExampleCard title="Example 2 — 75²" lines={['7 × 8 = 56', 'Append 25 → 5625']} result="75² = 5625 ✓" />
-    <ExampleCard title="Example 3 — 95²" lines={['9 × 10 = 90', 'Append 25 → 9025']} result="95² = 9025 ✓" />
+    <ExampleCard title={{ en: 'Example 1 — 35²', hi: 'उदाहरण 1 — 35²' }} lines={['3 × 4 = 12', { en: 'Append 25 → 1225', hi: '25 जोड़ें → 1225' }]} result="35² = 1225 ✓" />
+    <ExampleCard title={{ en: 'Example 2 — 75²', hi: 'उदाहरण 2 — 75²' }} lines={['7 × 8 = 56', { en: 'Append 25 → 5625', hi: '25 जोड़ें → 5625' }]} result="75² = 5625 ✓" />
+    <ExampleCard title={{ en: 'Example 3 — 95²', hi: 'उदाहरण 3 — 95²' }} lines={['9 × 10 = 90', { en: 'Append 25 → 9025', hi: '25 जोड़ें → 9025' }]} result="95² = 9025 ✓" />
 
     <div style={{ background: '#F0F4FF', borderRadius: 12, padding: 16, marginTop: 8 }}>
+      <L1_02_WhyNote />
+    </div>
+  </>
+);
+
+function L1_02_MeaningLine() {
+  const { language } = useLanguage();
+  return (
+    <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>
+      {language === 'hi' ? 'पिछले से एक अधिक' : 'By one more than the previous one'}
+    </div>
+  );
+}
+
+function L1_02_WhyNote() {
+  const { language } = useLanguage();
+  if (language === 'hi') {
+    return (
+      <>
+        <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: '#0A1628', marginBottom: 6 }}>💡 यह क्यों काम करता है?</div>
+        <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', lineHeight: 1.7 }}>
+          5 पर समाप्त होने वाली कोई भी संख्या (10n+5) के रूप में लिखी जा सकती है।<br />
+          (10n+5)² = 100n(n+1) + 25.<br />
+          n×(n+1) वाला भाग प्रीफ़िक्स देता है, और 25 हमेशा सफ़िक्स होता है।
+        </div>
+      </>
+    );
+  }
+  return (
+    <>
       <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: '#0A1628', marginBottom: 6 }}>💡 Why does this work?</div>
       <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', lineHeight: 1.7 }}>
         Any number ending in 5 can be written as (10n+5).<br />
         (10n+5)² = 100n(n+1) + 25.<br />
         The n×(n+1) part gives the prefix, and 25 is always the suffix.
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+}
 
 // ── L1_03 ─────────────────────────────────────────────────────────────────────
 
 const L1_03_CONTENT = (
   <>
-    <SutraBox sutra="Nikhilam Navatashcaramam Dashatah" meaning="All from 9 and the last from 10" />
+    <SutraBox sutra="Nikhilam Navatashcaramam Dashatah" meaning={{ en: 'All from 9 and the last from 10', hi: 'सब 9 से और अंतिम 10 से' }} />
 
-    <SectionTitle>The Technique — Near Base 10</SectionTitle>
-    <StepBox number={1} text="Find the deficit of each number from the base (10)" example="8 → deficit = 10−8 = 2  |  7 → deficit = 10−7 = 3" />
-    <StepBox number={2} text="Cross subtract: take either number minus the other's deficit" example="8 − 3 = 5  (or 7 − 2 = 5, both give same answer!) → LEFT part" />
-    <StepBox number={3} text="Multiply the two deficits" example="2 × 3 = 6 → RIGHT part (single digit since base is 10)" />
-    <StepBox number={4} text="Combine: LEFT part | RIGHT part" example="5 | 6 → Answer: 56" />
+    <SectionTitle>{{ en: 'The Technique — Near Base 10', hi: 'तकनीक — आधार 10 के निकट' }}</SectionTitle>
+    <StepBox number={1}
+      text={{ en: 'Find the deficit of each number from the base (10)', hi: 'प्रत्येक संख्या की आधार (10) से कमी ज्ञात करें' }}
+      example="8 → deficit = 10−8 = 2  |  7 → deficit = 10−7 = 3" />
+    <StepBox number={2}
+      text={{ en: "Cross subtract: take either number minus the other's deficit", hi: 'तिरछा घटाव: किसी एक संख्या से दूसरे की कमी घटाएं' }}
+      example={{ en: '8 − 3 = 5  (or 7 − 2 = 5, both give same answer!) → LEFT part', hi: '8 − 3 = 5  (या 7 − 2 = 5, दोनों का उत्तर समान!) → बायां भाग' }} />
+    <StepBox number={3}
+      text={{ en: 'Multiply the two deficits', hi: 'दोनों कमियों को गुणा करें' }}
+      example={{ en: '2 × 3 = 6 → RIGHT part (single digit since base is 10)', hi: '2 × 3 = 6 → दायां भाग (आधार 10 होने से एक अंक)' }} />
+    <StepBox number={4}
+      text={{ en: 'Combine: LEFT part | RIGHT part', hi: 'जोड़ें: बायां भाग | दायां भाग' }}
+      example={{ en: '5 | 6 → Answer: 56', hi: '5 | 6 → उत्तर: 56' }} />
 
-    <SectionTitle>Worked Examples</SectionTitle>
+    <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title="Example 1 — 8 × 7"
-      lines={['Deficits: 2 and 3', 'Cross: 8 − 3 = 5', 'Product: 2 × 3 = 6']}
+      title={{ en: 'Example 1 — 8 × 7', hi: 'उदाहरण 1 — 8 × 7' }}
+      lines={[
+        { en: 'Deficits: 2 and 3', hi: 'कमियाँ: 2 और 3' },
+        { en: 'Cross: 8 − 3 = 5', hi: 'तिरछा: 8 − 3 = 5' },
+        { en: 'Product: 2 × 3 = 6', hi: 'गुणनफल: 2 × 3 = 6' },
+      ]}
       result="8 × 7 = 56 ✓"
     />
     <ExampleCard
-      title="Example 2 — 9 × 6"
-      lines={['Deficits: 1 and 4', 'Cross: 9 − 4 = 5', 'Product: 1 × 4 = 4']}
+      title={{ en: 'Example 2 — 9 × 6', hi: 'उदाहरण 2 — 9 × 6' }}
+      lines={[
+        { en: 'Deficits: 1 and 4', hi: 'कमियाँ: 1 और 4' },
+        { en: 'Cross: 9 − 4 = 5', hi: 'तिरछा: 9 − 4 = 5' },
+        { en: 'Product: 1 × 4 = 4', hi: 'गुणनफल: 1 × 4 = 4' },
+      ]}
       result="9 × 6 = 54 ✓"
     />
     <ExampleCard
-      title="Example 3 — 7 × 6"
-      lines={['Deficits: 3 and 4', 'Cross: 7 − 4 = 3', 'Product: 3 × 4 = 12 → carry 1 → left = 3+1 = 4, right = 2']}
+      title={{ en: 'Example 3 — 7 × 6', hi: 'उदाहरण 3 — 7 × 6' }}
+      lines={[
+        { en: 'Deficits: 3 and 4', hi: 'कमियाँ: 3 और 4' },
+        { en: 'Cross: 7 − 4 = 3', hi: 'तिरछा: 7 − 4 = 3' },
+        { en: 'Product: 3 × 4 = 12 → carry 1 → left = 3+1 = 4, right = 2', hi: 'गुणनफल: 3 × 4 = 12 → 1 आगे ले जाएं → बायां = 3+1 = 4, दायां = 2' },
+      ]}
       result="7 × 6 = 42 ✓"
     />
     <div style={{ background: '#FEF3C7', borderLeft: '4px solid #F59E0B', borderRadius: '0 8px 8px 0', padding: '12px 16px' }}>
-      <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0 }}>
-        ⚠️ When the product of deficits is 2 digits, carry the tens digit!
-      </p>
+      <L1_03_Warning />
     </div>
   </>
 );
+
+function L1_03_Warning() {
+  const { language } = useLanguage();
+  return (
+    <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0 }}>
+      {language === 'hi'
+        ? '⚠️ जब कमियों का गुणनफल 2 अंकों का हो, तो दहाई का अंक आगे ले जाएं!'
+        : '⚠️ When the product of deficits is 2 digits, carry the tens digit!'}
+    </p>
+  );
+}
 
 // ── L1_04 ─────────────────────────────────────────────────────────────────────
 
 const L1_04_CONTENT = (
   <>
-    <SutraBox sutra="Nikhilam Navatashcaramam Dashatah" meaning="All from 9 and the last from 10" />
+    <SutraBox sutra="Nikhilam Navatashcaramam Dashatah" meaning={{ en: 'All from 9 and the last from 10', hi: 'सब 9 से और अंतिम 10 से' }} />
 
-    <SectionTitle>The Technique — Near Base 100</SectionTitle>
-    <StepBox number={1} text="Find the deficit of each number from 100" example="97 → deficit = 100−97 = 3  |  96 → deficit = 100−96 = 4" />
-    <StepBox number={2} text="Cross subtract (either way gives same result)" example="97 − 4 = 93 → LEFT part" />
-    <StepBox number={3} text="Multiply the deficits" example="3 × 4 = 12 → RIGHT part (must be 2 digits)" />
-    <StepBox number={4} text="Combine LEFT | RIGHT" example="93 | 12 → Answer: 9312" />
+    <SectionTitle>{{ en: 'The Technique — Near Base 100', hi: 'तकनीक — आधार 100 के निकट' }}</SectionTitle>
+    <StepBox number={1}
+      text={{ en: 'Find the deficit of each number from 100', hi: 'प्रत्येक संख्या की 100 से कमी ज्ञात करें' }}
+      example="97 → deficit = 100−97 = 3  |  96 → deficit = 100−96 = 4" />
+    <StepBox number={2}
+      text={{ en: 'Cross subtract (either way gives same result)', hi: 'तिरछा घटाव (किसी भी तरह से समान परिणाम)' }}
+      example={{ en: '97 − 4 = 93 → LEFT part', hi: '97 − 4 = 93 → बायां भाग' }} />
+    <StepBox number={3}
+      text={{ en: 'Multiply the deficits', hi: 'कमियों को गुणा करें' }}
+      example={{ en: '3 × 4 = 12 → RIGHT part (must be 2 digits)', hi: '3 × 4 = 12 → दायां भाग (2 अंकों का होना चाहिए)' }} />
+    <StepBox number={4}
+      text={{ en: 'Combine LEFT | RIGHT', hi: 'बायां | दायां जोड़ें' }}
+      example={{ en: '93 | 12 → Answer: 9312', hi: '93 | 12 → उत्तर: 9312' }} />
 
     <div style={{ background: '#FEF3C7', borderLeft: '4px solid #F59E0B', borderRadius: '0 8px 8px 0', padding: '14px 16px', marginBottom: 20 }}>
-      <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
-        ⚠️ <strong>The RIGHT part must always have 2 digits</strong> (since base = 100).<br />
-        If product of deficits &lt; 10, pad with a zero! Example: 3 × 2 = 6 → write as <strong>06</strong>.
-      </p>
+      <L1_04_Warning />
     </div>
 
-    <SectionTitle>Worked Examples</SectionTitle>
+    <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title="Example 1 — 97 × 96"
-      lines={['Deficits: 3, 4', 'Cross: 97 − 4 = 93', 'Product: 3 × 4 = 12']}
+      title={{ en: 'Example 1 — 97 × 96', hi: 'उदाहरण 1 — 97 × 96' }}
+      lines={[{ en: 'Deficits: 3, 4', hi: 'कमियाँ: 3, 4' }, { en: 'Cross: 97 − 4 = 93', hi: 'तिरछा: 97 − 4 = 93' }, { en: 'Product: 3 × 4 = 12', hi: 'गुणनफल: 3 × 4 = 12' }]}
       result="97 × 96 = 9312 ✓"
     />
     <ExampleCard
-      title="Example 2 — 98 × 97"
-      lines={['Deficits: 2, 3', 'Cross: 98 − 3 = 95', 'Product: 2 × 3 = 06 (pad zero!)']}
+      title={{ en: 'Example 2 — 98 × 97', hi: 'उदाहरण 2 — 98 × 97' }}
+      lines={[{ en: 'Deficits: 2, 3', hi: 'कमियाँ: 2, 3' }, { en: 'Cross: 98 − 3 = 95', hi: 'तिरछा: 98 − 3 = 95' }, { en: 'Product: 2 × 3 = 06 (pad zero!)', hi: 'गुणनफल: 2 × 3 = 06 (शून्य लगाएं!)' }]}
       result="98 × 97 = 9506 ✓"
     />
     <ExampleCard
-      title="Example 3 — 95 × 94"
-      lines={['Deficits: 5, 6', 'Cross: 95 − 6 = 89', 'Product: 5 × 6 = 30']}
+      title={{ en: 'Example 3 — 95 × 94', hi: 'उदाहरण 3 — 95 × 94' }}
+      lines={[{ en: 'Deficits: 5, 6', hi: 'कमियाँ: 5, 6' }, { en: 'Cross: 95 − 6 = 89', hi: 'तिरछा: 95 − 6 = 89' }, { en: 'Product: 5 × 6 = 30', hi: 'गुणनफल: 5 × 6 = 30' }]}
       result="95 × 94 = 8930 ✓"
     />
   </>
 );
 
+function L1_04_Warning() {
+  const { language } = useLanguage();
+  if (language === 'hi') {
+    return (
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
+        ⚠️ <strong>दायां भाग हमेशा 2 अंकों का होना चाहिए</strong> (क्योंकि आधार = 100)।<br />
+        यदि कमियों का गुणनफल 10 से कम है, तो शून्य लगाएं! उदाहरण: 3 × 2 = 6 → लिखें <strong>06</strong>.
+      </p>
+    );
+  }
+  return (
+    <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
+      ⚠️ <strong>The RIGHT part must always have 2 digits</strong> (since base = 100).<br />
+      If product of deficits &lt; 10, pad with a zero! Example: 3 × 2 = 6 → write as <strong>06</strong>.
+    </p>
+  );
+}
+
 // ── L1_05 ─────────────────────────────────────────────────────────────────────
 
 const L1_05_CONTENT = (
   <>
-    <SutraBox sutra="Nikhilam Navatashcaramam Dashatah" meaning="All from 9 and the last from 10" />
+    <SutraBox sutra="Nikhilam Navatashcaramam Dashatah" meaning={{ en: 'All from 9 and the last from 10', hi: 'सब 9 से और अंतिम 10 से' }} />
 
-    <SectionTitle>The Technique — Near Base 1000</SectionTitle>
-    <StepBox number={1} text="Find the deficit of each number from 1000" example="998 → deficit = 2  |  997 → deficit = 3" />
-    <StepBox number={2} text="Cross subtract" example="998 − 3 = 995 → LEFT part" />
-    <StepBox number={3} text="Multiply the deficits — RIGHT part must be 3 digits" example="2 × 3 = 6 → write as 006" />
-    <StepBox number={4} text="Combine LEFT | RIGHT" example="995 | 006 → Answer: 995006" />
+    <SectionTitle>{{ en: 'The Technique — Near Base 1000', hi: 'तकनीक — आधार 1000 के निकट' }}</SectionTitle>
+    <StepBox number={1}
+      text={{ en: 'Find the deficit of each number from 1000', hi: 'प्रत्येक संख्या की 1000 से कमी ज्ञात करें' }}
+      example="998 → deficit = 2  |  997 → deficit = 3" />
+    <StepBox number={2}
+      text={{ en: 'Cross subtract', hi: 'तिरछा घटाव' }}
+      example={{ en: '998 − 3 = 995 → LEFT part', hi: '998 − 3 = 995 → बायां भाग' }} />
+    <StepBox number={3}
+      text={{ en: 'Multiply the deficits — RIGHT part must be 3 digits', hi: 'कमियों को गुणा करें — दायां भाग 3 अंकों का होना चाहिए' }}
+      example={{ en: '2 × 3 = 6 → write as 006', hi: '2 × 3 = 6 → 006 लिखें' }} />
+    <StepBox number={4}
+      text={{ en: 'Combine LEFT | RIGHT', hi: 'बायां | दायां जोड़ें' }}
+      example={{ en: '995 | 006 → Answer: 995006', hi: '995 | 006 → उत्तर: 995006' }} />
 
     <div style={{ background: '#FEF3C7', borderLeft: '4px solid #F59E0B', borderRadius: '0 8px 8px 0', padding: '14px 16px', marginBottom: 20 }}>
-      <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
-        ⚠️ <strong>The RIGHT part must always have 3 digits!</strong><br />
-        Pad with zeros: 6 → 006 · 24 → 024 · 100+ carries over to left part.
-      </p>
+      <L1_05_Warning />
     </div>
 
-    <SectionTitle>Worked Examples</SectionTitle>
+    <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title="Example 1 — 998 × 997"
-      lines={['Deficits: 2, 3', 'Cross: 998 − 3 = 995', 'Product: 2 × 3 = 6 → 006']}
+      title={{ en: 'Example 1 — 998 × 997', hi: 'उदाहरण 1 — 998 × 997' }}
+      lines={[{ en: 'Deficits: 2, 3', hi: 'कमियाँ: 2, 3' }, { en: 'Cross: 998 − 3 = 995', hi: 'तिरछा: 998 − 3 = 995' }, { en: 'Product: 2 × 3 = 6 → 006', hi: 'गुणनफल: 2 × 3 = 6 → 006' }]}
       result="998 × 997 = 995006 ✓"
     />
     <ExampleCard
-      title="Example 2 — 996 × 994"
-      lines={['Deficits: 4, 6', 'Cross: 996 − 6 = 990', 'Product: 4 × 6 = 24 → 024']}
+      title={{ en: 'Example 2 — 996 × 994', hi: 'उदाहरण 2 — 996 × 994' }}
+      lines={[{ en: 'Deficits: 4, 6', hi: 'कमियाँ: 4, 6' }, { en: 'Cross: 996 − 6 = 990', hi: 'तिरछा: 996 − 6 = 990' }, { en: 'Product: 4 × 6 = 24 → 024', hi: 'गुणनफल: 4 × 6 = 24 → 024' }]}
       result="996 × 994 = 990024 ✓"
     />
     <ExampleCard
-      title="Example 3 — 999 × 998"
-      lines={['Deficits: 1, 2', 'Cross: 999 − 2 = 997', 'Product: 1 × 2 = 2 → 002']}
+      title={{ en: 'Example 3 — 999 × 998', hi: 'उदाहरण 3 — 999 × 998' }}
+      lines={[{ en: 'Deficits: 1, 2', hi: 'कमियाँ: 1, 2' }, { en: 'Cross: 999 − 2 = 997', hi: 'तिरछा: 999 − 2 = 997' }, { en: 'Product: 1 × 2 = 2 → 002', hi: 'गुणनफल: 1 × 2 = 2 → 002' }]}
       result="999 × 998 = 997002 ✓"
     />
 
-    <SectionTitle>Comparison Across All Bases</SectionTitle>
+    <SectionTitle>{{ en: 'Comparison Across All Bases', hi: 'सभी आधारों की तुलना' }}</SectionTitle>
+    <L1_05_ComparisonTable />
+  </>
+);
+
+function L1_05_Warning() {
+  const { language } = useLanguage();
+  if (language === 'hi') {
+    return (
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
+        ⚠️ <strong>दायां भाग हमेशा 3 अंकों का होना चाहिए!</strong><br />
+        शून्य लगाएं: 6 → 006 · 24 → 024 · 100+ बायें भाग में जुड़ जाता है।
+      </p>
+    );
+  }
+  return (
+    <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
+      ⚠️ <strong>The RIGHT part must always have 3 digits!</strong><br />
+      Pad with zeros: 6 → 006 · 24 → 024 · 100+ carries over to left part.
+    </p>
+  );
+}
+
+function L1_05_ComparisonTable() {
+  const { language } = useLanguage();
+  const headers = language === 'hi'
+    ? ['आधार', 'कमी अंक', 'दायां भाग अंक', 'उदाहरण']
+    : ['Base', 'Deficit digits', 'Right part digits', 'Example'];
+  const rows = language === 'hi'
+    ? [
+        { base: '10', def: '1 अंक', right: '1 अंक', ex: '8×7 = 56' },
+        { base: '100', def: '2 अंक', right: '2 अंक', ex: '97×96 = 9312' },
+        { base: '1000', def: '3 अंक', right: '3 अंक', ex: '998×997 = 995006' },
+      ]
+    : [
+        { base: '10', def: '1 digit', right: '1 digit', ex: '8×7 = 56' },
+        { base: '100', def: '2 digits', right: '2 digits', ex: '97×96 = 9312' },
+        { base: '1000', def: '3 digits', right: '3 digits', ex: '998×997 = 995006' },
+      ];
+  return (
     <div style={{ background: 'white', border: '1px solid rgba(30,64,175,0.12)', borderRadius: 12, padding: 16, overflowX: 'auto' }}>
       <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-body)', fontSize: 13 }}>
         <thead>
           <tr style={{ background: '#F0F4FF' }}>
-            {['Base', 'Deficit digits', 'Right part digits', 'Example'].map(h => (
+            {headers.map(h => (
               <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 600, color: '#0A1628', whiteSpace: 'nowrap' }}>{h}</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {[
-            { base: '10', def: '1 digit', right: '1 digit', ex: '8×7 = 56' },
-            { base: '100', def: '2 digits', right: '2 digits', ex: '97×96 = 9312' },
-            { base: '1000', def: '3 digits', right: '3 digits', ex: '998×997 = 995006' },
-          ].map((r, i) => (
+          {rows.map((r, i) => (
             <tr key={r.base} style={{ borderTop: '1px solid rgba(30,64,175,0.08)', background: i % 2 ? 'rgba(30,64,175,0.02)' : 'white' }}>
               <td style={{ padding: '10px 12px', fontFamily: 'var(--font-mono)', fontWeight: 700, color: '#1E40AF' }}>{r.base}</td>
               <td style={{ padding: '10px 12px', color: '#4B5563' }}>{r.def}</td>
@@ -270,165 +456,233 @@ const L1_05_CONTENT = (
         </tbody>
       </table>
     </div>
-  </>
-);
+  );
+}
 
 // ── L1_06 ─────────────────────────────────────────────────────────────────────
 
 const L1_06_CONTENT = (
   <>
-    <SutraBox sutra="Ekadhikena Purvena" meaning="By one more than the previous one" />
+    <SutraBox sutra="Ekadhikena Purvena" meaning={{ en: 'By one more than the previous one', hi: 'पिछले से एक अधिक' }} />
 
-    <SectionTitle>The Digit Sum Technique</SectionTitle>
-    <StepBox number={1} text="Add all digits of a number together" example="4567 → 4+5+6+7 = 22 → 2+2 = 4  (keep adding until single digit)" />
-    <StepBox number={2} text='If you get 9, the digit sum is 9 (not 0)' />
-    <StepBox number={3} text="Use digit sums to CHECK multiplication" example="23 × 14 = 322 → DS(23)=5, DS(14)=5, 5×5=25→7. DS(322)=7 ✓" />
+    <SectionTitle>{{ en: 'The Digit Sum Technique', hi: 'अंक योग तकनीक' }}</SectionTitle>
+    <StepBox number={1}
+      text={{ en: 'Add all digits of a number together', hi: 'किसी संख्या के सभी अंकों को जोड़ें' }}
+      example={{ en: '4567 → 4+5+6+7 = 22 → 2+2 = 4  (keep adding until single digit)', hi: '4567 → 4+5+6+7 = 22 → 2+2 = 4  (एक अंक तक जोड़ते रहें)' }} />
+    <StepBox number={2} text={{ en: 'If you get 9, the digit sum is 9 (not 0)', hi: 'यदि उत्तर 9 आए, तो अंक योग 9 है (0 नहीं)' }} />
+    <StepBox number={3}
+      text={{ en: 'Use digit sums to CHECK multiplication', hi: 'गुणन की जांच के लिए अंक योग का उपयोग करें' }}
+      example="23 × 14 = 322 → DS(23)=5, DS(14)=5, 5×5=25→7. DS(322)=7 ✓" />
 
-    <SectionTitle>Worked Examples</SectionTitle>
+    <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title="Example 1 — Digit sum of 9999"
+      title={{ en: 'Example 1 — Digit sum of 9999', hi: 'उदाहरण 1 — 9999 का अंक योग' }}
       lines={['9+9+9+9 = 36 → 3+6 = 9']}
-      result="Digit sum = 9"
+      result={{ en: 'Digit sum = 9', hi: 'अंक योग = 9' }}
     />
     <ExampleCard
-      title="Example 2 — Verify 37 × 23 = 851"
+      title={{ en: 'Example 2 — Verify 37 × 23 = 851', hi: 'उदाहरण 2 — 37 × 23 = 851 की जांच करें' }}
       lines={['DS(37) = 10 → 1', 'DS(23) = 5', '1 × 5 = 5', 'DS(851) = 14 → 5 ✓']}
-      result="37 × 23 = 851 ✓ Correct!"
+      result={{ en: '37 × 23 = 851 ✓ Correct!', hi: '37 × 23 = 851 ✓ सही!' }}
     />
     <ExampleCard
-      title="Example 3 — Spot the error: 47 × 32 = 1513"
-      lines={['DS(47) = 11 → 2', 'DS(32) = 5', '2 × 5 = 10 → 1', 'DS(1513) = 10 → 1 ✓ (digit sums match!)']}
+      title={{ en: 'Example 3 — Spot the error: 47 × 32 = 1513', hi: 'उदाहरण 3 — त्रुटि पहचानें: 47 × 32 = 1513' }}
+      lines={['DS(47) = 11 → 2', 'DS(32) = 5', '2 × 5 = 10 → 1', { en: 'DS(1513) = 10 → 1 ✓ (digit sums match!)', hi: 'DS(1513) = 10 → 1 ✓ (अंक योग मिलते हैं!)' }]}
     />
     <div style={{ background: '#FEF3C7', border: '1px solid #F59E0B', borderRadius: 12, padding: '14px 18px' }}>
-      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
-        ⚠️ <strong>Important:</strong> The digit sum check catches most errors but not all. Always double-check answers that seem too clean.
-        (Actual answer: 47 × 32 = 1504, not 1513.)
-      </p>
+      <L1_06_Warning />
     </div>
   </>
 );
+
+function L1_06_Warning() {
+  const { language } = useLanguage();
+  if (language === 'hi') {
+    return (
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
+        ⚠️ <strong>महत्वपूर्ण:</strong> अंक योग जांच अधिकतर त्रुटियां पकड़ती है, लेकिन सभी नहीं। हमेशा उन उत्तरों को दोबारा जांचें जो बहुत साफ लगते हों।
+        (वास्तविक उत्तर: 47 × 32 = 1504, 1513 नहीं।)
+      </p>
+    );
+  }
+  return (
+    <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
+      ⚠️ <strong>Important:</strong> The digit sum check catches most errors but not all. Always double-check answers that seem too clean.
+      (Actual answer: 47 × 32 = 1504, not 1513.)
+    </p>
+  );
+}
 
 // ── L1_07 ─────────────────────────────────────────────────────────────────────
 
 const L1_07_CONTENT = (
   <>
-    <SutraBox sutra="Urdhva-Tiryagbhyam" meaning="Vertically and Crosswise" />
+    <SutraBox sutra="Urdhva-Tiryagbhyam" meaning={{ en: 'Vertically and Crosswise', hi: 'ऊर्ध्वाधर और तिरछा' }} />
 
-    <SectionTitle>The Method for AB × CD</SectionTitle>
-    <StepBox number={1} text="Rightmost — Multiply last digits: B × D" example="This gives the UNITS digit (carry if ≥ 10)" />
-    <StepBox number={2} text="Cross — Multiply and add: A×D + B×C, add any carry" example="This gives the TENS digit" />
-    <StepBox number={3} text="Leftmost — Multiply first digits: A × C, add any carry" example="This gives the HUNDREDS digit" />
+    <SectionTitle>{{ en: 'The Method for AB × CD', hi: 'AB × CD के लिए विधि' }}</SectionTitle>
+    <StepBox number={1}
+      text={{ en: 'Rightmost — Multiply last digits: B × D', hi: 'सबसे दायें — अंतिम अंक गुणा करें: B × D' }}
+      example={{ en: 'This gives the UNITS digit (carry if ≥ 10)', hi: 'यह इकाई अंक देता है (≥ 10 हो तो आगे ले जाएं)' }} />
+    <StepBox number={2}
+      text={{ en: 'Cross — Multiply and add: A×D + B×C, add any carry', hi: 'तिरछा — गुणा और जोड़ें: A×D + B×C, साथ में कोई कैरी' }}
+      example={{ en: 'This gives the TENS digit', hi: 'यह दहाई अंक देता है' }} />
+    <StepBox number={3}
+      text={{ en: 'Leftmost — Multiply first digits: A × C, add any carry', hi: 'सबसे बायें — पहले अंक गुणा करें: A × C, साथ में कोई कैरी' }}
+      example={{ en: 'This gives the HUNDREDS digit', hi: 'यह सैंकड़ा अंक देता है' }} />
 
     {/* Visual diagram */}
     <div style={{ background: '#F0F4FF', borderRadius: 12, padding: 16, marginBottom: 20, fontFamily: 'var(--font-mono)', fontSize: 14, color: '#1E40AF', lineHeight: 2 }}>
       <div>{'  A  B'}</div>
       <div>{'× C  D'}</div>
-      <div style={{ borderTop: '1px solid #93C5FD', paddingTop: 8, marginTop: 4 }}>{'Step 1:  B×D   ↕  (units)'}</div>
-      <div>{'Step 2:  A×D ✕ B×C  (tens)'}</div>
-      <div>{'Step 3:  A×C   ↕  (hundreds)'}</div>
+      <L1_07_Diagram />
     </div>
 
-    <SectionTitle>Worked Examples</SectionTitle>
+    <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title="Example 1 — 12 × 13"
-      lines={['Step 1: 2×3 = 6 (units)', 'Step 2: 1×3 + 2×1 = 3+2 = 5 (tens)', 'Step 3: 1×1 = 1 (hundreds)']}
+      title={{ en: 'Example 1 — 12 × 13', hi: 'उदाहरण 1 — 12 × 13' }}
+      lines={[
+        { en: 'Step 1: 2×3 = 6 (units)', hi: 'चरण 1: 2×3 = 6 (इकाई)' },
+        { en: 'Step 2: 1×3 + 2×1 = 3+2 = 5 (tens)', hi: 'चरण 2: 1×3 + 2×1 = 3+2 = 5 (दहाई)' },
+        { en: 'Step 3: 1×1 = 1 (hundreds)', hi: 'चरण 3: 1×1 = 1 (सैंकड़ा)' },
+      ]}
       result="12 × 13 = 156 ✓"
     />
     <ExampleCard
-      title="Example 2 — 23 × 32"
-      lines={['Step 1: 3×2 = 6', 'Step 2: 2×2 + 3×3 = 4+9 = 13 → write 3, carry 1', 'Step 3: 2×3 = 6 + carry 1 = 7']}
+      title={{ en: 'Example 2 — 23 × 32', hi: 'उदाहरण 2 — 23 × 32' }}
+      lines={[
+        { en: 'Step 1: 3×2 = 6', hi: 'चरण 1: 3×2 = 6' },
+        { en: 'Step 2: 2×2 + 3×3 = 4+9 = 13 → write 3, carry 1', hi: 'चरण 2: 2×2 + 3×3 = 4+9 = 13 → 3 लिखें, 1 आगे ले जाएं' },
+        { en: 'Step 3: 2×3 = 6 + carry 1 = 7', hi: 'चरण 3: 2×3 = 6 + कैरी 1 = 7' },
+      ]}
       result="23 × 32 = 736 ✓"
     />
     <ExampleCard
-      title="Example 3 — 47 × 63"
-      lines={['Step 1: 7×3 = 21 → write 1, carry 2', 'Step 2: 4×3 + 7×6 = 12+42 = 54 + carry 2 = 56 → write 6, carry 5', 'Step 3: 4×6 = 24 + carry 5 = 29']}
+      title={{ en: 'Example 3 — 47 × 63', hi: 'उदाहरण 3 — 47 × 63' }}
+      lines={[
+        { en: 'Step 1: 7×3 = 21 → write 1, carry 2', hi: 'चरण 1: 7×3 = 21 → 1 लिखें, 2 आगे ले जाएं' },
+        { en: 'Step 2: 4×3 + 7×6 = 12+42 = 54 + carry 2 = 56 → write 6, carry 5', hi: 'चरण 2: 4×3 + 7×6 = 12+42 = 54 + कैरी 2 = 56 → 6 लिखें, 5 आगे ले जाएं' },
+        { en: 'Step 3: 4×6 = 24 + carry 5 = 29', hi: 'चरण 3: 4×6 = 24 + कैरी 5 = 29' },
+      ]}
       result="47 × 63 = 2961 ✓"
     />
   </>
 );
 
+function L1_07_Diagram() {
+  const { language } = useLanguage();
+  if (language === 'hi') {
+    return (
+      <>
+        <div style={{ borderTop: '1px solid #93C5FD', paddingTop: 8, marginTop: 4 }}>{'चरण 1:  B×D   ↕  (इकाई)'}</div>
+        <div>{'चरण 2:  A×D ✕ B×C  (दहाई)'}</div>
+        <div>{'चरण 3:  A×C   ↕  (सैंकड़ा)'}</div>
+      </>
+    );
+  }
+  return (
+    <>
+      <div style={{ borderTop: '1px solid #93C5FD', paddingTop: 8, marginTop: 4 }}>{'Step 1:  B×D   ↕  (units)'}</div>
+      <div>{'Step 2:  A×D ✕ B×C  (tens)'}</div>
+      <div>{'Step 3:  A×C   ↕  (hundreds)'}</div>
+    </>
+  );
+}
+
 // ── L1_08 ─────────────────────────────────────────────────────────────────────
 
 const L1_08_CONTENT = (
   <>
-    <SutraBox sutra="Urdhva-Tiryagbhyam" meaning="Vertically and Crosswise" />
+    <SutraBox sutra="Urdhva-Tiryagbhyam" meaning={{ en: 'Vertically and Crosswise', hi: 'ऊर्ध्वाधर और तिरछा' }} />
 
-    <SectionTitle>Multiply by 11 — The Magic Rule</SectionTitle>
-    <StepBox number={1} text="Write the FIRST digit of the number" />
-    <StepBox number={2} text="Write the SUM of each adjacent pair of digits (carry if sum ≥ 10)" />
-    <StepBox number={3} text="Write the LAST digit of the number" />
+    <SectionTitle>{{ en: 'Multiply by 11 — The Magic Rule', hi: '11 से गुणा करें — जादुई नियम' }}</SectionTitle>
+    <StepBox number={1} text={{ en: 'Write the FIRST digit of the number', hi: 'संख्या का पहला अंक लिखें' }} />
+    <StepBox number={2} text={{ en: 'Write the SUM of each adjacent pair of digits (carry if sum ≥ 10)', hi: 'प्रत्येक सटे हुए अंकों के जोड़ को लिखें (योग ≥ 10 हो तो आगे ले जाएं)' }} />
+    <StepBox number={3} text={{ en: 'Write the LAST digit of the number', hi: 'संख्या का अंतिम अंक लिखें' }} />
 
-    <SectionTitle>Examples × 11</SectionTitle>
+    <SectionTitle>{{ en: 'Examples × 11', hi: 'उदाहरण × 11' }}</SectionTitle>
     <ExampleCard
-      title="Example 1 — 23 × 11"
-      lines={['First: 2', 'Middle: 2+3 = 5', 'Last: 3']}
+      title={{ en: 'Example 1 — 23 × 11', hi: 'उदाहरण 1 — 23 × 11' }}
+      lines={[{ en: 'First: 2', hi: 'पहला: 2' }, { en: 'Middle: 2+3 = 5', hi: 'मध्य: 2+3 = 5' }, { en: 'Last: 3', hi: 'अंतिम: 3' }]}
       result="23 × 11 = 253 ✓"
     />
     <ExampleCard
-      title="Example 2 — 67 × 11"
-      lines={['First: 6', 'Middle: 6+7 = 13 → write 3, carry 1 → first digit becomes 6+1=7', 'Last: 7']}
+      title={{ en: 'Example 2 — 67 × 11', hi: 'उदाहरण 2 — 67 × 11' }}
+      lines={[
+        { en: 'First: 6', hi: 'पहला: 6' },
+        { en: 'Middle: 6+7 = 13 → write 3, carry 1 → first digit becomes 6+1=7', hi: 'मध्य: 6+7 = 13 → 3 लिखें, 1 आगे ले जाएं → पहला अंक 6+1=7 बनता है' },
+        { en: 'Last: 7', hi: 'अंतिम: 7' },
+      ]}
       result="67 × 11 = 737 ✓"
     />
     <ExampleCard
-      title="Example 3 — 346 × 11"
-      lines={['First: 3', '3+4 = 7', '4+6 = 10 → write 0, carry 1 → previous 7 becomes 8', 'Last: 6']}
+      title={{ en: 'Example 3 — 346 × 11', hi: 'उदाहरण 3 — 346 × 11' }}
+      lines={[
+        { en: 'First: 3', hi: 'पहला: 3' },
+        '3+4 = 7',
+        { en: '4+6 = 10 → write 0, carry 1 → previous 7 becomes 8', hi: '4+6 = 10 → 0 लिखें, 1 आगे ले जाएं → पिछला 7, 8 बनता है' },
+        { en: 'Last: 6', hi: 'अंतिम: 6' },
+      ]}
       result="346 × 11 = 3806 ✓"
     />
 
-    <SectionTitle>Multiply by 12</SectionTitle>
+    <SectionTitle>{{ en: 'Multiply by 12', hi: '12 से गुणा करें' }}</SectionTitle>
     <div style={{ background: '#F0F4FF', border: '1px solid rgba(30,64,175,0.12)', borderRadius: 12, padding: '16px 20px', marginBottom: 12 }}>
+      <L1_08_Rule12 />
+    </div>
+  </>
+);
+
+function L1_08_Rule12() {
+  const { language } = useLanguage();
+  return (
+    <>
       <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#0A1628', marginBottom: 8 }}>
-        <strong>Rule:</strong> Multiplying by 12 = multiply by 10, then add double the number.
+        <strong>{language === 'hi' ? 'नियम:' : 'Rule:'}</strong>{' '}
+        {language === 'hi'
+          ? '12 से गुणा = 10 से गुणा, फिर संख्या का दोगुना जोड़ें।'
+          : 'Multiplying by 12 = multiply by 10, then add double the number.'}
       </p>
       <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#1E40AF' }}>
         34 × 12 = (34 × 10) + (34 × 2) = 340 + 68 = 408
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+}
 
 // ── L1_09 ─────────────────────────────────────────────────────────────────────
 
 const L1_09_CONTENT = (
   <>
-    <SutraBox sutra="Nikhilam Navatashcaramam Dashatah" meaning="All from 9 and the last from 10" />
+    <SutraBox sutra="Nikhilam Navatashcaramam Dashatah" meaning={{ en: 'All from 9 and the last from 10', hi: 'सब 9 से और अंतिम 10 से' }} />
 
-    <SectionTitle>Multiply by 9</SectionTitle>
+    <SectionTitle>{{ en: 'Multiply by 9', hi: '9 से गुणा करें' }}</SectionTitle>
     <div style={{ background: '#F0F4FF', border: '1px solid rgba(30,64,175,0.12)', borderRadius: 12, padding: '16px 20px', marginBottom: 16 }}>
-      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#0A1628', marginBottom: 6 }}>
-        <strong>Rule:</strong> n × 9 = n × (10−1) = n×10 − n
-      </p>
-      <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginBottom: 0 }}>
-        For single digits: n×9 gives first digit = (n−1), second digit = (10−n)
-      </p>
-      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#1E40AF', marginTop: 8 }}>
-        7×9: first = 7−1 = 6, second = 10−7 = 3 → 63
-      </div>
+      <L1_09_Rule />
     </div>
 
-    <SectionTitle>Worked Examples</SectionTitle>
+    <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title="Example 1 — 7 × 9"
-      lines={['First digit = 7−1 = 6', 'Second digit = 10−7 = 3']}
+      title={{ en: 'Example 1 — 7 × 9', hi: 'उदाहरण 1 — 7 × 9' }}
+      lines={[{ en: 'First digit = 7−1 = 6', hi: 'पहला अंक = 7−1 = 6' }, { en: 'Second digit = 10−7 = 3', hi: 'दूसरा अंक = 10−7 = 3' }]}
       result="7 × 9 = 63 ✓"
     />
     <ExampleCard
-      title="Example 2 — 23 × 9"
+      title={{ en: 'Example 2 — 23 × 9', hi: 'उदाहरण 2 — 23 × 9' }}
       lines={['23 × 10 = 230', '230 − 23 = 207']}
       result="23 × 9 = 207 ✓"
     />
     <ExampleCard
-      title="Example 3 — 45 × 99"
+      title={{ en: 'Example 3 — 45 × 99', hi: 'उदाहरण 3 — 45 × 99' }}
       lines={['45 × 100 = 4500', '4500 − 45 = 4455']}
       result="45 × 99 = 4455 ✓"
     />
     <ExampleCard
-      title="Example 4 — 12 × 999"
+      title={{ en: 'Example 4 — 12 × 999', hi: 'उदाहरण 4 — 12 × 999' }}
       lines={['12 × 1000 = 12000', '12000 − 12 = 11988']}
       result="12 × 999 = 11988 ✓"
     />
 
-    <SectionTitle>The Pattern</SectionTitle>
+    <SectionTitle>{{ en: 'The Pattern', hi: 'पैटर्न' }}</SectionTitle>
     <div style={{ display: 'grid', gap: 8 }}>
       {[
         { mul: '×9',    rule: 'n×10 − n' },
@@ -442,15 +696,75 @@ const L1_09_CONTENT = (
         </div>
       ))}
     </div>
-    <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginTop: 12, fontStyle: 'italic' }}>
-      Pattern: always one power of 10 higher, then subtract n!
-    </p>
+    <L1_09_PatternNote />
   </>
 );
+
+function L1_09_Rule() {
+  const { language } = useLanguage();
+  if (language === 'hi') {
+    return (
+      <>
+        <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#0A1628', marginBottom: 6 }}>
+          <strong>नियम:</strong> n × 9 = n × (10−1) = n×10 − n
+        </p>
+        <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginBottom: 0 }}>
+          एक अंक की संख्याओं के लिए: n×9 का पहला अंक = (n−1), दूसरा अंक = (10−n)
+        </p>
+        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#1E40AF', marginTop: 8 }}>
+          7×9: पहला = 7−1 = 6, दूसरा = 10−7 = 3 → 63
+        </div>
+      </>
+    );
+  }
+  return (
+    <>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#0A1628', marginBottom: 6 }}>
+        <strong>Rule:</strong> n × 9 = n × (10−1) = n×10 − n
+      </p>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginBottom: 0 }}>
+        For single digits: n×9 gives first digit = (n−1), second digit = (10−n)
+      </p>
+      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#1E40AF', marginTop: 8 }}>
+        7×9: first = 7−1 = 6, second = 10−7 = 3 → 63
+      </div>
+    </>
+  );
+}
+
+function L1_09_PatternNote() {
+  const { language } = useLanguage();
+  return (
+    <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginTop: 12, fontStyle: 'italic' }}>
+      {language === 'hi'
+        ? 'पैटर्न: हमेशा 10 की एक घात ऊंची, फिर n घटाएं!'
+        : 'Pattern: always one power of 10 higher, then subtract n!'}
+    </p>
+  );
+}
 
 // ── L1_10 ─────────────────────────────────────────────────────────────────────
 
 function L1_10_CONTENT({ onSwitchTab }) {
+  const { language } = useLanguage();
+  const hi = language === 'hi';
+
+  const checklistItems = hi
+    ? ['✓ एकाधिकेन पूर्वेण (5 पर वर्ग)', '✓ निखिलम् (आधार के निकट गुणन)', '✓ ऊर्ध्व-तिर्यग्भ्याम् (2-अंक गुणन)', '✓ 11, 9, 99 से गुणा']
+    : ['✓ Ekadhikena Purvena (squaring in 5s)', '✓ Nikhilam (near base multiplication)', '✓ Urdhva-Tiryagbhyam (2-digit multiplication)', '✓ Multiplication by 11, 9, 99'];
+
+  const rulesItems = hi
+    ? ['• 5 प्रश्न, बहुविकल्पीय', '• Level 2 अनलॉक करने के लिए 60% या अधिक स्कोर करें', '• आप जितनी बार चाहें दोबारा प्रयास कर सकते हैं', '• आपका सर्वश्रेष्ठ स्कोर सहेजा जाता है']
+    : ['• 5 questions, multiple choice', '• Score 60% or above to unlock Level 2', '• You can retake as many times as needed', '• Your best score is saved'];
+
+  const revisionItems = [
+    { title: hi ? '5² नियम' : 'n5² rule', rule: 'n×(n+1) | 25' },
+    { title: hi ? '×10 आधार' : '×10 base', rule: hi ? 'कमी×कमी=दायां\nतिरछा=बायां' : 'def×def=right\ncross=left' },
+    { title: hi ? '×100 आधार' : '×100 base', rule: hi ? 'वही,\nदायां=2 अंक' : 'same,\nright=2 digits' },
+    { title: hi ? '×11 नियम' : '×11 rule', rule: hi ? 'पहला | जोड़ | अंतिम' : 'first | sums | last' },
+    { title: hi ? '×9 नियम' : '×9 rule', rule: 'n×10 − n' },
+  ];
+
   return (
     <>
       {/* Assessment Info Card */}
@@ -459,20 +773,15 @@ function L1_10_CONTENT({ onSwitchTab }) {
         borderRadius: 16, padding: 28, marginBottom: 24,
       }}>
         <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: 'white', marginBottom: 6 }}>
-          🏆 Level 1 Assessment
+          🏆 {hi ? 'Level 1 मूल्यांकन' : 'Level 1 Assessment'}
         </h2>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'rgba(255,255,255,0.8)', marginBottom: 20 }}>
-          Test your Beginner Vedic Maths mastery
+          {hi ? 'अपनी Beginner वैदिक गणित निपुणता का परीक्षण करें' : 'Test your Beginner Vedic Maths mastery'}
         </p>
 
         {/* 2×2 grid */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
-          {[
-            '✓ Ekadhikena Purvena (squaring in 5s)',
-            '✓ Nikhilam (near base multiplication)',
-            '✓ Urdhva-Tiryagbhyam (2-digit multiplication)',
-            '✓ Multiplication by 11, 9, 99',
-          ].map(t => (
+          {checklistItems.map(t => (
             <div key={t} style={{ background: 'rgba(255,255,255,0.1)', borderRadius: 10, padding: 12, fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.9)' }}>
               {t}
             </div>
@@ -481,12 +790,7 @@ function L1_10_CONTENT({ onSwitchTab }) {
 
         {/* Rules box */}
         <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 12, padding: 16, marginBottom: 20 }}>
-          {[
-            '• 5 questions, multiple choice',
-            '• Score 60% or above to unlock Level 2',
-            '• You can retake as many times as needed',
-            '• Your best score is saved',
-          ].map(r => (
+          {rulesItems.map(r => (
             <p key={r} style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.8)', margin: '5px 0' }}>{r}</p>
           ))}
         </div>
@@ -499,23 +803,17 @@ function L1_10_CONTENT({ onSwitchTab }) {
             fontWeight: 700, fontSize: 16, cursor: 'pointer',
           }}
         >
-          Take the Assessment →
+          {hi ? 'मूल्यांकन शुरू करें →' : 'Take the Assessment →'}
         </button>
       </div>
 
       {/* Quick Revision */}
       <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 14 }}>
-        Quick Revision
+        {hi ? 'त्वरित पुनरावृत्ति' : 'Quick Revision'}
       </h3>
       <style>{`@media(max-width:640px){.rev-row{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;}}`}</style>
       <div className="rev-row" style={{ display: 'flex', gap: 10, marginBottom: 4 }}>
-        {[
-          { title: 'n5² rule',   rule: 'n×(n+1) | 25' },
-          { title: '×10 base',   rule: 'def×def=right\ncross=left' },
-          { title: '×100 base',  rule: 'same,\nright=2 digits' },
-          { title: '×11 rule',   rule: 'first | sums | last' },
-          { title: '×9 rule',    rule: 'n×10 − n' },
-        ].map(b => (
+        {revisionItems.map(b => (
           <div key={b.title} style={{
             background: '#F0F4FF', borderRadius: 12, padding: 14, textAlign: 'center',
             minWidth: 140, flexShrink: 0,

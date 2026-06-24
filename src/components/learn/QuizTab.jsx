@@ -3,71 +3,79 @@ import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { useLanguage } from '@/lib/LanguageContext';
 
+// Resolves a field that may be a plain string (older English-only question
+// banks) or a { en, hi } bilingual object (new banks). Falls back to English.
+function tr(field, language) {
+  if (field == null) return field;
+  if (typeof field === 'string') return field;
+  return field[language] ?? field.en ?? '';
+}
+
 // ─── Per-lesson quiz question banks ──────────────────────────────────────────
 
 const LESSON_QUESTIONS = {
   l1_01: [
-    { q: "What does 'Ekadhikena Purvena' mean?", options: ['All from 9 and last from 10','By one more than the previous one','Vertically and crosswise','Transpose and apply'], correct: 1 },
-    { q: 'Using Ekadhikena Purvena, what is 45²?', options: ['1925','2005','2025','2125'], correct: 2 },
-    { q: 'What is 85²?', options: ['7225','7025','7625','6825'], correct: 0 },
-    { q: 'Which sutra is used for multiplication near bases like 100?', options: ['Urdhva-Tiryagbhyam','Ekadhikena Purvena','Nikhilam Navatashcaramam Dashatah','Paravartya Yojayet'], correct: 2 },
-    { q: 'What is 95²?', options: ['8025','9025','8225','9225'], correct: 1 },
+    { q: { en: "What does 'Ekadhikena Purvena' mean?", hi: "'एकाधिकेन पूर्वेण' का अर्थ क्या है?" }, options: ['All from 9 and last from 10','By one more than the previous one','Vertically and crosswise','Transpose and apply'], correct: 1 },
+    { q: { en: 'Using Ekadhikena Purvena, what is 45²?', hi: 'एकाधिकेन पूर्वेण का उपयोग करके 45² क्या है?' }, options: ['1925','2005','2025','2125'], correct: 2 },
+    { q: { en: 'What is 85²?', hi: '85² क्या है?' }, options: ['7225','7025','7625','6825'], correct: 0 },
+    { q: { en: 'Which sutra is used for multiplication near bases like 100?', hi: '100 जैसे आधारों के निकट गुणन के लिए कौन सा सूत्र उपयोग होता है?' }, options: ['Urdhva-Tiryagbhyam','Ekadhikena Purvena','Nikhilam Navatashcaramam Dashatah','Paravartya Yojayet'], correct: 2 },
+    { q: { en: 'What is 95²?', hi: '95² क्या है?' }, options: ['8025','9025','8225','9225'], correct: 1 },
   ],
   l1_02: [
-    { q: 'What is the result of applying Ekadhikena Purvena to 55²?', options: ['3000','3025','3125','2925'], correct: 1 },
-    { q: 'What is 75²?', options: ['5425','5525','5625','5725'], correct: 2 },
-    { q: 'What is 25²?', options: ['425','525','625','725'], correct: 2 },
-    { q: 'To square a number ending in 5, you append ___ after the prefix.', options: ['05','25','50','52'], correct: 1 },
-    { q: 'What is 15²?', options: ['125','225','325','425'], correct: 1 },
+    { q: { en: 'What is the result of applying Ekadhikena Purvena to 55²?', hi: '55² पर एकाधिकेन पूर्वेण लागू करने का परिणाम क्या है?' }, options: ['3000','3025','3125','2925'], correct: 1 },
+    { q: { en: 'What is 75²?', hi: '75² क्या है?' }, options: ['5425','5525','5625','5725'], correct: 2 },
+    { q: { en: 'What is 25²?', hi: '25² क्या है?' }, options: ['425','525','625','725'], correct: 2 },
+    { q: { en: 'To square a number ending in 5, you append ___ after the prefix.', hi: '5 पर समाप्त संख्या का वर्ग करने के लिए, प्रीफ़िक्स के बाद ___ जोड़ें।' }, options: ['05','25','50','52'], correct: 1 },
+    { q: { en: 'What is 15²?', hi: '15² क्या है?' }, options: ['125','225','325','425'], correct: 1 },
   ],
   l1_03: [
-    { q: 'Nikhilam works best for numbers near which bases?', options: ['Powers of 2','Powers of 10','Prime numbers','Fibonacci numbers'], correct: 1 },
-    { q: 'Calculate 8 × 7 using Nikhilam', options: ['54','56','58','52'], correct: 1 },
-    { q: 'What are the "deficits" for 9 and 6?', options: ['1 and 4','2 and 3','1 and 3','2 and 4'], correct: 0 },
-    { q: 'In Nikhilam, the cross subtraction and digit product give?', options: ['Both parts of the answer','Only the quotient','Only the remainder','The exponent'], correct: 0 },
-    { q: 'Calculate 9 × 7', options: ['61','63','65','67'], correct: 1 },
+    { q: { en: 'Nikhilam works best for numbers near which bases?', hi: 'निखिलम् किन आधारों के निकट संख्याओं के लिए सबसे अच्छा काम करता है?' }, options: ['Powers of 2','Powers of 10','Prime numbers','Fibonacci numbers'], correct: 1 },
+    { q: { en: 'Calculate 8 × 7 using Nikhilam', hi: 'निखिलम् से 8 × 7 निकालें' }, options: ['54','56','58','52'], correct: 1 },
+    { q: { en: 'What are the "deficits" for 9 and 6?', hi: '9 और 6 की "कमियाँ" क्या हैं?' }, options: ['1 and 4','2 and 3','1 and 3','2 and 4'], correct: 0 },
+    { q: { en: 'In Nikhilam, the cross subtraction and digit product give?', hi: 'निखिलम् में, तिरछा घटाव और अंक गुणनफल क्या देते हैं?' }, options: ['Both parts of the answer','Only the quotient','Only the remainder','The exponent'], correct: 0 },
+    { q: { en: 'Calculate 9 × 7', hi: '9 × 7 निकालें' }, options: ['61','63','65','67'], correct: 1 },
   ],
   l1_04: [
-    { q: 'For base 100 Nikhilam, the right part must have how many digits?', options: ['1','2','3','4'], correct: 1 },
-    { q: 'Calculate 97 × 96', options: ['9212','9312','9412','9112'], correct: 1 },
-    { q: 'What are the deficits for 98 and 95?', options: ['2 and 4','2 and 5','3 and 4','3 and 5'], correct: 1 },
-    { q: 'Calculate 95 × 94', options: ['8730','8830','8930','8630'], correct: 2 },
-    { q: 'If the product of deficits is 6, you write it as ___ in the right part (base 100)', options: ['6','06','006','60'], correct: 1 },
+    { q: { en: 'For base 100 Nikhilam, the right part must have how many digits?', hi: 'आधार 100 निखिलम् में, दायें भाग में कितने अंक होने चाहिए?' }, options: ['1','2','3','4'], correct: 1 },
+    { q: { en: 'Calculate 97 × 96', hi: '97 × 96 निकालें' }, options: ['9212','9312','9412','9112'], correct: 1 },
+    { q: { en: 'What are the deficits for 98 and 95?', hi: '98 और 95 की कमियाँ क्या हैं?' }, options: ['2 and 4','2 and 5','3 and 4','3 and 5'], correct: 1 },
+    { q: { en: 'Calculate 95 × 94', hi: '95 × 94 निकालें' }, options: ['8730','8830','8930','8630'], correct: 2 },
+    { q: { en: 'If the product of deficits is 6, you write it as ___ in the right part (base 100)', hi: 'यदि कमियों का गुणनफल 6 है, तो दायें भाग में इसे ___ लिखें (आधार 100)' }, options: ['6','06','006','60'], correct: 1 },
   ],
   l1_05: [
-    { q: 'For base 1000 Nikhilam, the right part must have how many digits?', options: ['1','2','3','4'], correct: 2 },
-    { q: 'Calculate 998 × 997', options: ['994006','995006','996006','993006'], correct: 1 },
-    { q: 'Calculate 999 × 998', options: ['996002','997002','998002','995002'], correct: 1 },
-    { q: 'The deficits for 996 and 994 are?', options: ['4 and 6','3 and 7','5 and 5','6 and 4'], correct: 0 },
-    { q: 'Calculate 997 × 995', options: ['991015','992015','993015','994015'], correct: 1 },
+    { q: { en: 'For base 1000 Nikhilam, the right part must have how many digits?', hi: 'आधार 1000 निखिलम् में, दायें भाग में कितने अंक होने चाहिए?' }, options: ['1','2','3','4'], correct: 2 },
+    { q: { en: 'Calculate 998 × 997', hi: '998 × 997 निकालें' }, options: ['994006','995006','996006','993006'], correct: 1 },
+    { q: { en: 'Calculate 999 × 998', hi: '999 × 998 निकालें' }, options: ['996002','997002','998002','995002'], correct: 1 },
+    { q: { en: 'The deficits for 996 and 994 are?', hi: '996 और 994 की कमियाँ हैं?' }, options: ['4 and 6','3 and 7','5 and 5','6 and 4'], correct: 0 },
+    { q: { en: 'Calculate 997 × 995', hi: '997 × 995 निकालें' }, options: ['991015','992015','993015','994015'], correct: 1 },
   ],
   l1_06: [
-    { q: 'The digit sum of 9999 is?', options: ['0','9','36','27'], correct: 1 },
-    { q: 'Digit sum verification is called which Vedic principle?', options: ['Nikhilam','Gunita Samuchyah','Anurupyena','Vilokanam'], correct: 1 },
-    { q: 'What digit sum check applies to multiplication a × b = c?', options: ['DS(a)+DS(b)=DS(c)','DS(a)×DS(b)=DS(c)','DS(a)−DS(b)=DS(c)','DS(a)÷DS(b)=DS(c)'], correct: 1 },
-    { q: 'The digit sum of 18 is?', options: ['9','8','7','6'], correct: 0 },
-    { q: 'This technique catches approximately what % of errors?', options: ['~50%','~70%','~89%','~100%'], correct: 2 },
+    { q: { en: 'The digit sum of 9999 is?', hi: '9999 का अंक योग है?' }, options: ['0','9','36','27'], correct: 1 },
+    { q: { en: 'Digit sum verification is called which Vedic principle?', hi: 'अंक योग सत्यापन किस वैदिक सिद्धांत को कहते हैं?' }, options: ['Nikhilam','Gunita Samuchyah','Anurupyena','Vilokanam'], correct: 1 },
+    { q: { en: 'What digit sum check applies to multiplication a × b = c?', hi: 'गुणन a × b = c पर कौन सी अंक योग जांच लागू होती है?' }, options: ['DS(a)+DS(b)=DS(c)','DS(a)×DS(b)=DS(c)','DS(a)−DS(b)=DS(c)','DS(a)÷DS(b)=DS(c)'], correct: 1 },
+    { q: { en: 'The digit sum of 18 is?', hi: '18 का अंक योग है?' }, options: ['9','8','7','6'], correct: 0 },
+    { q: { en: 'This technique catches approximately what % of errors?', hi: 'यह तकनीक लगभग कितने % त्रुटियां पकड़ती है?' }, options: ['~50%','~70%','~89%','~100%'], correct: 2 },
   ],
   l1_07: [
-    { q: 'Urdhva-Tiryagbhyam means?', options: ['All from 9','Vertically and crosswise','By one more','Proportionality'], correct: 1 },
-    { q: 'Calculate 12 × 13 using Urdhva', options: ['146','156','166','136'], correct: 1 },
-    { q: 'In AB × CD, the middle step computes?', options: ['A×C','B×D','A×D + B×C','A×B × C×D'], correct: 2 },
-    { q: 'Calculate 23 × 32', options: ['726','736','746','756'], correct: 1 },
-    { q: 'Calculate 47 × 63', options: ['2851','2951','2961','3061'], correct: 2 },
+    { q: { en: 'Urdhva-Tiryagbhyam means?', hi: 'ऊर्ध्व-तिर्यग्भ्याम् का अर्थ है?' }, options: ['All from 9','Vertically and crosswise','By one more','Proportionality'], correct: 1 },
+    { q: { en: 'Calculate 12 × 13 using Urdhva', hi: 'ऊर्ध्व विधि से 12 × 13 निकालें' }, options: ['146','156','166','136'], correct: 1 },
+    { q: { en: 'In AB × CD, the middle step computes?', hi: 'AB × CD में, मध्य चरण क्या गणना करता है?' }, options: ['A×C','B×D','A×D + B×C','A×B × C×D'], correct: 2 },
+    { q: { en: 'Calculate 23 × 32', hi: '23 × 32 निकालें' }, options: ['726','736','746','756'], correct: 1 },
+    { q: { en: 'Calculate 47 × 63', hi: '47 × 63 निकालें' }, options: ['2851','2951','2961','3061'], correct: 2 },
   ],
   l1_08: [
-    { q: 'Calculate 23 × 11', options: ['243','253','263','233'], correct: 1 },
-    { q: 'The rule for multiplying a 2-digit number AB by 11 is?', options: ['A | A+B | B','A+B | A | B','B | A+B | A','A | B | A+B'], correct: 0 },
-    { q: 'Calculate 67 × 11', options: ['727','737','747','717'], correct: 1 },
-    { q: 'Calculate 88 × 11', options: ['948','958','968','978'], correct: 2 },
-    { q: 'Calculate 34 × 12', options: ['398','408','418','428'], correct: 1 },
+    { q: { en: 'Calculate 23 × 11', hi: '23 × 11 निकालें' }, options: ['243','253','263','233'], correct: 1 },
+    { q: { en: 'The rule for multiplying a 2-digit number AB by 11 is?', hi: '2-अंकीय संख्या AB को 11 से गुणा करने का नियम है?' }, options: ['A | A+B | B','A+B | A | B','B | A+B | A','A | B | A+B'], correct: 0 },
+    { q: { en: 'Calculate 67 × 11', hi: '67 × 11 निकालें' }, options: ['727','737','747','717'], correct: 1 },
+    { q: { en: 'Calculate 88 × 11', hi: '88 × 11 निकालें' }, options: ['948','958','968','978'], correct: 2 },
+    { q: { en: 'Calculate 34 × 12', hi: '34 × 12 निकालें' }, options: ['398','408','418','428'], correct: 1 },
   ],
   l1_09: [
-    { q: 'The shortcut for n × 9 is?', options: ['n × 8 + n','n × 10 − n','n × 10 + n','n × 8 − n'], correct: 1 },
-    { q: 'Calculate 7 × 9', options: ['61','63','65','67'], correct: 1 },
-    { q: 'Calculate 23 × 9', options: ['197','207','217','187'], correct: 1 },
-    { q: 'Calculate 45 × 99', options: ['4355','4455','4555','4255'], correct: 1 },
-    { q: 'To multiply by 999, the shortcut is n × 1000 − n. What is 12 × 999?', options: ['11888','11988','12088','11788'], correct: 1 },
+    { q: { en: 'The shortcut for n × 9 is?', hi: 'n × 9 का शॉर्टकट है?' }, options: ['n × 8 + n','n × 10 − n','n × 10 + n','n × 8 − n'], correct: 1 },
+    { q: { en: 'Calculate 7 × 9', hi: '7 × 9 निकालें' }, options: ['61','63','65','67'], correct: 1 },
+    { q: { en: 'Calculate 23 × 9', hi: '23 × 9 निकालें' }, options: ['197','207','217','187'], correct: 1 },
+    { q: { en: 'Calculate 45 × 99', hi: '45 × 99 निकालें' }, options: ['4355','4455','4555','4255'], correct: 1 },
+    { q: { en: 'To multiply by 999, the shortcut is n × 1000 − n. What is 12 × 999?', hi: '999 से गुणा करने का शॉर्टकट है n × 1000 − n. 12 × 999 क्या है?' }, options: ['11888','11988','12088','11788'], correct: 1 },
   ],
   l2_01: [
     { q: 'Paravartya Yojayet means?', options: ['Vertically and crosswise','Transpose and apply','All from 9','Mere observation'], correct: 1 },
@@ -262,11 +270,11 @@ const LESSON_QUESTIONS = {
     { q: 'The Vedic digit sum verification catches what approximate % of errors?', options: ['50%','70%','89%','99%'], correct: 2 },
   ],
   l1_10: [
-    { q: 'To pass the Level 1 assessment, you need at least?', options: ['40%','50%','60%','80%'], correct: 2 },
-    { q: 'Which sutra means "By one more than the previous one"?', options: ['Nikhilam','Ekadhikena Purvena','Urdhva-Tiryagbhyam','Anurupyena'], correct: 1 },
-    { q: 'What is 85²?', options: ['7025','7125','7225','7325'], correct: 2 },
-    { q: 'Calculate 8 × 9 using Nikhilam', options: ['70','72','74','76'], correct: 1 },
-    { q: 'Calculate 67 × 11 using the Vedic method', options: ['727','737','747','717'], correct: 1 },
+    { q: { en: 'To pass the Level 1 assessment, you need at least?', hi: 'Level 1 मूल्यांकन पास करने के लिए कम से कम कितना चाहिए?' }, options: ['40%','50%','60%','80%'], correct: 2 },
+    { q: { en: 'Which sutra means "By one more than the previous one"?', hi: 'कौन सा सूत्र "पिछले से एक अधिक" का अर्थ रखता है?' }, options: ['Nikhilam','Ekadhikena Purvena','Urdhva-Tiryagbhyam','Anurupyena'], correct: 1 },
+    { q: { en: 'What is 85²?', hi: '85² क्या है?' }, options: ['7025','7125','7225','7325'], correct: 2 },
+    { q: { en: 'Calculate 8 × 9 using Nikhilam', hi: 'निखिलम् से 8 × 9 निकालें' }, options: ['70','72','74','76'], correct: 1 },
+    { q: { en: 'Calculate 67 × 11 using the Vedic method', hi: 'वैदिक विधि से 67 × 11 निकालें' }, options: ['727','737','747','717'], correct: 1 },
   ],
 };
 
@@ -416,8 +424,7 @@ function MasterCelebration({ totalXP, badgeCount, xpEarned, correct, total, shar
 // ─── Main QuizTab ─────────────────────────────────────────────────────────────
 
 export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLessonIds }) {
-  const { t } = useLanguage();
-  const questions = getQuestions(lesson.id);
+  const { t, language } = useLanguage();
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState(null);
   const [revealed, setRevealed] = useState(false);
@@ -571,7 +578,7 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
 
         {/* Question */}
         <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 17, color: '#0A1628', marginBottom: 20, lineHeight: 1.5 }}>
-          {q.q}
+          {tr(q.q, language)}
         </div>
 
         {/* Options */}
