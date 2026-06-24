@@ -6,7 +6,7 @@ import QuizTab from './QuizTab';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { isLessonAccessible } from '@/lib/trialEngine';
-import { isLessonFreeAccess } from '@/lib/planEngine';
+import { isLessonFreeAccess, isQuizFreeAccess } from '@/lib/planEngine';
 import LessonLockOverlay from './LessonLockOverlay';
 import { useLanguage } from '@/lib/LanguageContext';
 
@@ -161,6 +161,10 @@ export default function LessonViewer({ lesson, progress, onLessonComplete, allLe
   const tabLabels = { concept: 'Concept', practice: 'Practice', quiz: 'Quiz' };
 
   const lessonLocked = !isLessonAccessible(lesson.id) || !isLessonFreeAccess(lesson.id);
+  // Separate from lessonLocked: a lesson can be fully readable (free tier,
+  // l1_01-l1_05) while its Quiz tab specifically stays locked — the
+  // "curiosity gap" conversion mechanism decided 24-Jun-2026.
+  const quizLocked = !lessonLocked && !isQuizFreeAccess(lesson.id);
 
   return (
     <div style={{ position: 'relative' }}>
@@ -239,17 +243,26 @@ export default function LessonViewer({ lesson, progress, onLessonComplete, allLe
         />
       )}
       {activeTab === 'quiz' && (
-        <QuizTab
-          lesson={lesson}
-          glass={glass}
-          progress={progress}
-          allLessonIds={allLessonIds}
-          onComplete={(score, xpEarned) => {
-            setQuizDone(true);
-            onLessonComplete(lesson.id, xpEarned, score);
-          }}
-          onNextLesson={(lessonId, xpEarned, score) => handleNextLesson(lessonId, xpEarned, score)}
-        />
+        <div style={{ position: 'relative' }}>
+          {quizLocked && (
+            <LessonLockOverlay
+              icon="🧠"
+              title="Quiz Locked on Free Plan"
+              message="You can read every concept and try practice questions for free. Upgrading lets you take the scored quiz and verify what you've learned."
+            />
+          )}
+          <QuizTab
+            lesson={lesson}
+            glass={glass}
+            progress={progress}
+            allLessonIds={allLessonIds}
+            onComplete={(score, xpEarned) => {
+              setQuizDone(true);
+              onLessonComplete(lesson.id, xpEarned, score);
+            }}
+            onNextLesson={(lessonId, xpEarned, score) => handleNextLesson(lessonId, xpEarned, score)}
+          />
+        </div>
       )}
       <Toast message={toast} visible={toastVisible} />
     </div>

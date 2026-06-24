@@ -1,6 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function LessonLockOverlay() {
+export default function LessonLockOverlay({
+  title = 'Upgrade to Continue',
+  message = 'This lesson is part of the paid plan. Upgrade to unlock all 40 lessons.',
+  icon = '🔒',
+}) {
+  const navigate = useNavigate();
   return (
     <div style={{
       position: 'absolute',
@@ -18,15 +24,15 @@ export default function LessonLockOverlay() {
       textAlign: 'center',
       padding: '32px 24px',
     }}>
-      <div style={{ fontSize: 32, marginBottom: 16 }}>🔒</div>
+      <div style={{ fontSize: 32, marginBottom: 16 }}>{icon}</div>
       <h2 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>
-        Upgrade to Continue
+        {title}
       </h2>
       <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563', maxWidth: 300, lineHeight: 1.6, marginBottom: 20 }}>
-        This lesson is part of the paid plan. Upgrade to unlock all 40 lessons.
+        {message}
       </p>
       <button
-        onClick={() => window.open('https://rzp.io/rzp/vRD8R2lw', '_blank')}
+        onClick={() => navigate('/pricing')}
         style={{
           background: '#0A1628',
           color: 'white',

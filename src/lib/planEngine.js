@@ -18,11 +18,26 @@ export function hasPlan(minPlan) {
 }
 
 // ─── Free plan lesson gating ──────────────────────────────────────────────────
-// Free users can only access l1_01
+// Free users get Concept + Practice access for l1_01 through l1_05 (5 lessons)
+// — enough to genuinely learn the techniques. Quizzes stay locked for free
+// users on ALL lessons (see isQuizFreeAccess below) — this is the deliberate
+// "curiosity gap" conversion mechanism: you can learn it, but you can't verify
+// you've mastered it without upgrading. Decided 24-Jun-2026.
+const FREE_LESSON_IDS = ['l1_01', 'l1_02', 'l1_03', 'l1_04', 'l1_05'];
+
 export function isLessonFreeAccess(lessonId) {
   const plan = getUserPlan();
-  if (plan === 'free') return lessonId === 'l1_01';
+  if (plan === 'free') return FREE_LESSON_IDS.includes(lessonId);
   return true; // basic+ gets all lessons
+}
+
+// Quiz access is gated separately from lesson content. Free users can read
+// concepts and try practice questions (untimed, no XP-gating consequence),
+// but cannot take the scored Quiz tab on any lesson — that requires upgrading.
+export function isQuizFreeAccess(lessonId) {
+  const plan = getUserPlan();
+  if (plan === 'free') return false;
+  return true;
 }
 
 // ─── Aptitude gating ──────────────────────────────────────────────────────────
