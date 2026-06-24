@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, ChevronDown, ChevronRight } from 'lucide-react';
 import { CURRICULUM } from './curriculumData';
 import { isLessonAccessible } from '@/lib/trialEngine';
+import { isLessonFreeAccess, getUserPlan } from '@/lib/planEngine';
 
 function isLevelLocked(level, scores) {
   if (!level.lockKey) return false;
@@ -15,6 +16,15 @@ function isLessonUnlocked(lessonId, completed, scores) {
   // level lock check
   const level = CURRICULUM.find(lv => lv.lessons.some(l => l.id === lessonId));
   if (level && isLevelLocked(level, scores)) return false;
+  // Free-PLAN users get l1_01-l1_05 unlocked by plan alone, bypassing the
+  // sequential chain below — checked against getUserPlan() directly (not
+  // isLessonFreeAccess alone) because that function returns true for every
+  // lesson on paid plans, which would have wrongly bypassed sequential
+  // unlock for paid users too. Without this exception, locking the Quiz on
+  // free lessons would mean 'completed' never gets set for them (quiz pass
+  // is what marks a lesson complete), permanently blocking every subsequent
+  // free lesson from ever unlocking. Decided 24-Jun-2026.
+  if (getUserPlan() === 'free' && isLessonFreeAccess(lessonId)) return true;
   // sequential unlock: can access if previous is completed or already done self
   return completed?.includes(allIds[idx - 1]) || completed?.includes(lessonId);
 }
