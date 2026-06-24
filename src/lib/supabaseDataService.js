@@ -59,7 +59,7 @@ export async function saveUserProgress(userId, progress) {
       daily_quiz_streak: progress.dailyQuizStreak ?? progress.daily_quiz_streak ?? 0,
       last_activity_date: new Date().toISOString().split('T')[0],
       updated_at: new Date().toISOString(),
-    });
+    }, { onConflict: 'user_id' });
   if (error) console.error('saveUserProgress:', error);
   return !error;
 }
