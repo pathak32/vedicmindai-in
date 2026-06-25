@@ -19,7 +19,11 @@ export default function AdminAnalytics() {
 
       const [usersRes, progressRes, quizRes] = await Promise.all([
         sb.from('profiles').select('id, plan, created_at, xp', { count:'exact' }),
-        sb.from('progress').select('lesson_id, completed, user_id'),
+        // progress has ONE row per user; completed_lessons is a JSON array
+        // of lesson IDs on that row -- there's no per-lesson 'completed'
+        // boolean column. The old select('lesson_id, completed, user_id')
+        // asked for columns that don't exist and silently 400'd every load.
+        sb.from('progress').select('completed_lessons, user_id'),
         sb.from('quiz_results').select('score, user_id, created_at').order('created_at', { ascending:false }).limit(50),
       ]);
 
@@ -28,7 +32,7 @@ export default function AdminAnalytics() {
       const quiz = quizRes.data || [];
 
       const totalXP = users.reduce((a,u)=>a+(u.xp||0), 0);
-      const completedLessons = progress.filter(p=>p.completed).length;
+      const completedLessons = progress.reduce((a,p)=>a+((p.completed_lessons||[]).length), 0);
       const avgScore = quiz.length > 0 ? Math.round(quiz.reduce((a,q)=>a+(q.score||0),0)/quiz.length) : 0;
 
       setStats({

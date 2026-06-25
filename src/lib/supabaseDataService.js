@@ -8,8 +8,8 @@ export async function getUserProfile(userId) {
     .from('users')
     .select('*')
     .eq('id', userId)
-    .single();
-  if (error && error.code !== 'PGRST116') console.error('getUserProfile:', error);
+    .maybeSingle();
+  if (error) console.error('getUserProfile:', error);
   return data || {};
 }
 
@@ -55,8 +55,8 @@ export async function getUserProgress(userId) {
     .from('progress')
     .select('*')
     .eq('user_id', userId)
-    .single();
-  if (error && error.code !== 'PGRST116') console.error('getUserProgress:', error);
+    .maybeSingle();
+  if (error) console.error('getUserProgress:', error);
   return data || {
     completed_lessons: [],
     lesson_scores: {},
@@ -156,8 +156,8 @@ export async function getTodayQuizResult(userId) {
     .select('*')
     .eq('user_id', userId)
     .eq('quiz_date', today)
-    .single();
-  if (error && error.code !== 'PGRST116') console.error('getTodayQuizResult:', error);
+    .maybeSingle();
+  if (error) console.error('getTodayQuizResult:', error);
   return data || null;
 }
 
