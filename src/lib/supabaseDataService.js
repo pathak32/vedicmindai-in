@@ -45,10 +45,16 @@ export async function saveUserProfile(userId, profile) {
 
 export async function getUserProgress(userId) {
   const supabase = await getSupabase();
+  // progress.id is the table's own primary key (unrelated to any user) —
+  // progress.user_id is the actual foreign key to the logged-in user, and
+  // it's UNIQUE (one progress row per user). Filtering on .eq('id', userId)
+  // here was matching the wrong column entirely; it returned no row for
+  // any real user and silently fell through to the all-zero default below
+  // every single time, on every dashboard load, app-wide.
   const { data, error } = await supabase
     .from('progress')
     .select('*')
-    .eq('id', userId)
+    .eq('user_id', userId)
     .single();
   if (error && error.code !== 'PGRST116') console.error('getUserProgress:', error);
   return data || {
