@@ -22,7 +22,6 @@ export default function AdminDemoLogin() {
   const [tab, setTab] = useState('create'); // create | list
 
   async function createDemo() {
-  const { t } = useLanguage();
     if (!form.school) { alert('Enter school name'); return; }
     setLoading(true);
     setResult(null);
@@ -73,7 +72,6 @@ export default function AdminDemoLogin() {
   }
 
   async function loadList() {
-  const { t } = useLanguage();
     const sb = await getSupabase();
     const { data } = await sb.from('demo_logins').select('*').order('created_at', { ascending: false }).limit(20);
     setList(data || []);

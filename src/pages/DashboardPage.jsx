@@ -15,7 +15,6 @@ import { useLanguage } from '@/lib/LanguageContext';
 // ─── helpers ────────────────────────────────────────────────────────────────
 
 function greeting(auth, profile) {
-  const { t } = useLanguage();
   const h = new Date().getHours();
   const tod = h >= 5 && h < 12 ? 'morning' : h >= 12 && h < 17 ? 'afternoon' : 'evening';
   const displayName = profile.name || auth?.user_metadata?.name || '';

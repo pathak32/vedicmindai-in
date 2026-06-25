@@ -19,7 +19,6 @@ const glass = {
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function saveAptitudeScore(group, score, sutras) {
-  const { t } = useLanguage();
   const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'); } catch { return {}; } })();
   if (!progress.aptitudeHistory) progress.aptitudeHistory = [];
   progress.aptitudeHistory.push({ date: new Date().toISOString(), group, score, sutras });

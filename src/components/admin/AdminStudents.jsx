@@ -14,7 +14,6 @@ export default function AdminStudents() {
   useEffect(() => { loadUsers(); }, []);
 
   async function loadUsers() {
-  const { t } = useLanguage();
     setLoading(true);
     try {
       const sb = await getSupabase();

@@ -18,7 +18,6 @@ import {
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 function getTodayStr() {
-  const { t } = useLanguage();
   const now = new Date();
   return (
     now.getFullYear() +

@@ -21,7 +21,6 @@ const GROUPS = ['PRIMARY', 'MIDDLE', 'SECONDARY', 'INTERMEDIATE'];
 const BLANK_FORM = { question: '', options: ['', '', '', ''], correct: 0, group: 'PRIMARY', topic: '', vedic_sutra: '', vedic_tip: '' };
 
 function loadQuestions() {
-  const { t } = useLanguage();
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) return JSON.parse(saved);
