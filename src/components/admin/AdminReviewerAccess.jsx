@@ -64,14 +64,12 @@ export default function AdminReviewerAccess() {
       }
       if (!userId) throw new Error('Account creation failed — no user ID returned.');
 
-      // signUp() automatically authenticates this browser AS the new user
-      // the moment it succeeds. Sign back out immediately — the Admin Panel
-      // should never be left logged in as someone else's account, and the
-      // remaining writes below should run as anon (matching the RLS
-      // policies set up for this table), not as the user we just created.
-      await sb.auth.signOut();
-
-      // 2. Write profile with permanent full access, no expiry
+      // 2. Write profile with permanent full access, no expiry.
+      // IMPORTANT: this must run BEFORE signing out — profiles' own RLS
+      // policy ("Users can insert own profile") requires auth.uid() = id,
+      // which only holds while still authenticated as the user signUp()
+      // just created. Signing out first makes auth.uid() NULL and this
+      // insert silently fails its row-level check every time.
       const { error: profileErr } = await sb.from('profiles').upsert({
         id: userId,
         full_name: form.name,
@@ -84,7 +82,17 @@ export default function AdminReviewerAccess() {
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
       }, { onConflict: 'id' });
-      if (profileErr) throw new Error('Profile setup failed: ' + profileErr.message);
+      if (profileErr) {
+        await sb.auth.signOut().catch(() => {});
+        throw new Error('Profile setup failed: ' + profileErr.message);
+      }
+
+      // signUp() automatically authenticated this browser AS the new user.
+      // Now that the profile write (which needed that session) is done,
+      // sign back out — the Admin Panel should never stay logged in as
+      // someone else's account, and the remaining write below runs as
+      // anon, matching the RLS policy set up for reviewer_accounts.
+      await sb.auth.signOut();
 
       // 3. Track separately from demo_logins. Account already works at this
       // point (auth user + profile are real) — a failure here only means
