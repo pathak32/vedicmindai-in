@@ -97,6 +97,33 @@ export async function getDailyQuizHistory(userId) {
   return data || [];
 }
 
+// For the Reviewer Activity view in Admin Panel — every general quiz
+// attempt (Tier/lesson quizzes, not the daily quiz) by a specific user.
+export async function getQuizResultsByUser(userId) {
+  const supabase = await getSupabase();
+  const { data, error } = await supabase
+    .from('quiz_results')
+    .select('*')
+    .eq('user_id', userId)
+    .order('created_at', { ascending: false })
+    .limit(50);
+  if (error) console.error('getQuizResultsByUser:', error);
+  return data || [];
+}
+
+// For the Reviewer Activity view — weekly exam attempts by a specific user.
+export async function getWeeklyExamResultsByUser(userId) {
+  const supabase = await getSupabase();
+  const { data, error } = await supabase
+    .from('weekly_exam_results')
+    .select('*')
+    .eq('user_id', userId)
+    .order('created_at', { ascending: false })
+    .limit(20);
+  if (error) console.error('getWeeklyExamResultsByUser:', error);
+  return data || [];
+}
+
 export async function saveDailyQuizResult(userId, result) {
   const supabase = await getSupabase();
   const today = new Date().toISOString().split('T')[0];
