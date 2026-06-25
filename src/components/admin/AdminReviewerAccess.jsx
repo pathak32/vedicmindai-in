@@ -32,6 +32,11 @@ export default function AdminReviewerAccess() {
   const [loading, setLoading] = useState(false);
   const [list, setList] = useState([]);
   const [tab, setTab] = useState('create');
+  // When createReviewer() finds an existing account on that mobile number,
+  // this holds what we found so the admin can see who it is and confirm
+  // before we touch their data — never upgrade silently.
+  const [existingAccount, setExistingAccount] = useState(null);
+  const [upgrading, setUpgrading] = useState(false);
 
   async function createReviewer() {
     setError('');
@@ -55,12 +60,25 @@ export default function AdminReviewerAccess() {
       let userId = signUpData?.user?.id;
 
       if (signUpErr) {
-        // If the number's already registered, surface that clearly rather
-        // than silently trying to sign in as them (would log the admin
-        // session in as that user, inside the PIN-gated panel — avoid it).
-        throw new Error(signUpErr.message.includes('already registered')
-          ? 'This mobile number already has an account. Use "Upgrade Existing" instead, or pick a different number.'
-          : signUpErr.message);
+        if (signUpErr.message.includes('already registered')) {
+          // Look up who this actually is so the admin can see exactly what
+          // they're about to change before confirming anything — never
+          // upgrade someone's existing plan/data silently.
+          const { data: existing } = await sb
+            .from('profiles')
+            .select('id, name, full_name, plan, subscription_status, mobile')
+            .eq('mobile', `+91${form.mobile.trim()}`)
+            .maybeSingle();
+          setExistingAccount({
+            ...(existing || {}),
+            mobileEntered: form.mobile.trim(),
+            requestedName: form.name,
+            requestedNotes: form.notes,
+          });
+          setLoading(false);
+          return;
+        }
+        throw new Error(signUpErr.message);
       }
       if (!userId) throw new Error('Account creation failed — no user ID returned.');
 
@@ -120,6 +138,51 @@ export default function AdminReviewerAccess() {
     setLoading(false);
   }
 
+  // Upgrades an account that already existed (found via the lookup in
+  // createReviewer above) to full reviewer-style access — WITHOUT ever
+  // touching their password or auth identity. Only the plan/profile fields
+  // change. The admin has already seen who this is and confirmed via the
+  // UI before this runs.
+  async function upgradeExisting() {
+    if (!existingAccount?.id) { setError('No existing account ID to upgrade.'); return; }
+    setUpgrading(true);
+    setError('');
+    try {
+      const sb = await getSupabase();
+      const { error: profileErr } = await sb.from('profiles').update({
+        plan: 'family',
+        plan_type: 'family',
+        subscription_status: 'active',
+        trial_end_date: null,
+        updated_at: new Date().toISOString(),
+      }).eq('id', existingAccount.id);
+      if (profileErr) throw new Error('Upgrade failed: ' + profileErr.message);
+
+      const { error: trackErr } = await sb.from('reviewer_accounts').upsert({
+        user_id: existingAccount.id,
+        name: existingAccount.requestedName || existingAccount.name || existingAccount.full_name,
+        mobile: existingAccount.mobile || `+91${existingAccount.mobileEntered}`,
+        password_plain: '(existing password unchanged — ask user or use Forgot Password)',
+        notes: existingAccount.requestedNotes,
+        created_at: new Date().toISOString(),
+        is_active: true,
+      });
+
+      setResult({
+        name: existingAccount.requestedName || existingAccount.name || existingAccount.full_name,
+        mobile: existingAccount.mobileEntered,
+        password: null,
+        upgraded: true,
+        trackingWarning: trackErr ? trackErr.message : null,
+      });
+      setExistingAccount(null);
+      setForm({ name: '', mobile: '', password: '', notes: '' });
+    } catch (e) {
+      setError(e.message);
+    }
+    setUpgrading(false);
+  }
+
   async function loadList() {
     const sb = await getSupabase();
     const { data, error } = await sb.from('reviewer_accounts').select('*').order('created_at', { ascending: false }).limit(50);
@@ -177,12 +240,42 @@ export default function AdminReviewerAccess() {
             </div>
           )}
 
+          {existingAccount && (
+            <div style={{ marginTop: 14, background: '#FFFBEB', border: '1px solid #FCD34D', borderRadius: 12, padding: 16 }}>
+              <p style={{ fontWeight: 700, color: '#92400E', marginBottom: 8 }}>
+                📱 This mobile number already has an account
+              </p>
+              <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.8, marginBottom: 12 }}>
+                <div><strong>Existing name:</strong> {existingAccount.name || existingAccount.full_name || '(none on file)'}</div>
+                <div><strong>Current plan:</strong> {existingAccount.plan || 'free'} ({existingAccount.subscription_status || 'unknown status'})</div>
+                <div><strong>Mobile:</strong> {existingAccount.mobile || `+91${existingAccount.mobileEntered}`}</div>
+              </div>
+              <p style={{ fontSize: 12, color: '#92400E', marginBottom: 12 }}>
+                Their password stays exactly as it is — this only changes their plan to full (Family) access. Confirm this is the right person before upgrading.
+              </p>
+              <div style={{ display: 'flex', gap: 8 }}>
+                <button onClick={upgradeExisting} disabled={upgrading} style={btn(upgrading ? '#9CA3AF' : '#D97706')}>
+                  {upgrading ? '⏳ Upgrading...' : '✅ Yes, upgrade this account to full access'}
+                </button>
+                <button onClick={() => setExistingAccount(null)} style={{ ...btn('#6B7280') }}>
+                  Cancel
+                </button>
+              </div>
+            </div>
+          )}
+
           {result && (
             <div style={{ marginTop: 16, background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: 12, padding: 16 }}>
-              <p style={{ fontWeight: 700, color: '#166534', marginBottom: 8 }}>✅ Reviewer Account Created for {result.name}!</p>
+              <p style={{ fontWeight: 700, color: '#166534', marginBottom: 8 }}>
+                ✅ {result.upgraded ? `Existing account upgraded for ${result.name}!` : `Reviewer Account Created for ${result.name}!`}
+              </p>
               <div style={{ fontFamily: 'monospace', fontSize: 13, lineHeight: 2 }}>
                 <div>📱 Mobile: <strong>+91{result.mobile}</strong></div>
-                <div>🔑 Password: <strong>{result.password}</strong></div>
+                {result.upgraded ? (
+                  <div>🔑 Password: <strong>unchanged — they keep using their existing password</strong></div>
+                ) : (
+                  <div>🔑 Password: <strong>{result.password}</strong></div>
+                )}
                 <div>♾️ Access: <strong>Full (Family plan) — no expiry</strong></div>
               </div>
               {result.trackingWarning && (
@@ -193,7 +286,7 @@ export default function AdminReviewerAccess() {
               <button onClick={() => {
                 navigator.clipboard.writeText(`VedicMindAI Reviewer Login
 Mobile: +91${result.mobile}
-Password: ${result.password}
+Password: ${result.upgraded ? '(use your existing password)' : result.password}
 Login at: vedicmindai.in`);
                 alert('Copied to clipboard!');
               }} style={{ ...btn('#1e40af'), marginTop: 10, fontSize: 12 }}>
