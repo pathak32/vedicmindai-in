@@ -64,6 +64,13 @@ export default function AdminReviewerAccess() {
       }
       if (!userId) throw new Error('Account creation failed — no user ID returned.');
 
+      // signUp() automatically authenticates this browser AS the new user
+      // the moment it succeeds. Sign back out immediately — the Admin Panel
+      // should never be left logged in as someone else's account, and the
+      // remaining writes below should run as anon (matching the RLS
+      // policies set up for this table), not as the user we just created.
+      await sb.auth.signOut();
+
       // 2. Write profile with permanent full access, no expiry
       const { error: profileErr } = await sb.from('profiles').upsert({
         id: userId,
