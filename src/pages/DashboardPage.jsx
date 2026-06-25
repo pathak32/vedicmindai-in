@@ -7,7 +7,7 @@ import TrialBanner from '@/components/dashboard/TrialBanner';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import ReferralCard from '@/components/ReferralCard';
 import RupeeOneOffer from '@/components/RupeeOneOffer';
-import { getUserProfile, getUserProgress } from '@/lib/supabaseDataService';
+import { getUserProfile, getUserProgress, getPlanProfile } from '@/lib/supabaseDataService';
 import { getDailyQuizStatus, getTodayString } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@/lib/leaderboardEngine';
 import { useLanguage } from '@/lib/LanguageContext';
@@ -540,9 +540,10 @@ function DashboardPage() {
     if (!auth?.id) return;
     (async () => {
       try {
-        const [supaProfile, supaProgress] = await Promise.all([
+        const [supaProfile, supaProgress, planProfile] = await Promise.all([
           getUserProfile(auth.id),
           getUserProgress(auth.id),
+          getPlanProfile(auth.id),
         ]);
         if (supaProfile && Object.keys(supaProfile).length > 0) {
           setProfile(supaProfile);
@@ -557,6 +558,11 @@ function DashboardPage() {
             totalXP: supaProgress.total_xp || 0,
             currentLevel: supaProgress.current_level || 1,
             dailyQuizStreak: supaProgress.daily_quiz_streak || 0,
+            // Real plan status from the profiles table, not a local-only
+            // value. Falls back to whatever was already cached locally if
+            // the profiles row has no plan set, rather than silently
+            // downgrading someone back to 'free'.
+            plan: planProfile?.plan || supaProgress.plan || JSON.parse(localStorage.getItem('vedicmind_progress') || '{}').plan || 'free',
           };
           setProgress(mappedProgress);
           localStorage.setItem('vedicmind_progress', JSON.stringify(mappedProgress));

@@ -6,6 +6,7 @@ import AdminLessons from '@/components/admin/AdminLessons';
 import AdminQuizManager from '@/components/admin/AdminQuizManager';
 import AdminAptitudeManager from '@/components/admin/AdminAptitudeManager';
 import AdminDemoLogin from '@/components/admin/AdminDemoLogin';
+import AdminReviewerAccess from '@/components/admin/AdminReviewerAccess';
 import AdminAnalytics from '@/components/admin/AdminAnalytics';
 
 const ADMIN_KEY = 'VM@Admin2026';
@@ -19,6 +20,7 @@ const TABS = [
   { id: 'lessons',   label: '📚 Lessons'   },
   { id: 'aptitude',  label: '🎯 Aptitude'  },
   { id: 'demo',      label: '🏫 Demo Logins' },
+  { id: 'reviewer',  label: '🧑‍🏫 Reviewer Access' },
 ];
 
 // ─── PIN Screen ──────────────────────────────────────────────────────────────
@@ -141,6 +143,7 @@ function AdminDashboard({ onLock }) {
             {activeTab === 'lessons'   && <AdminLessons />}
             {activeTab === 'aptitude'  && <AdminAptitudeManager />}
           {activeTab === 'demo'      && <AdminDemoLogin />}
+          {activeTab === 'reviewer'  && <AdminReviewerAccess />}
           </motion.div>
         </AnimatePresence>
       </main>

@@ -13,6 +13,25 @@ export async function getUserProfile(userId) {
   return data || {};
 }
 
+// Fetches plan/subscription_status from the `profiles` table — the table
+// VedicAuthContext actually writes to on signup, payment activation, and
+// admin-granted access. This is separate from `users` (read by
+// getUserProfile above) and is the real source of truth for plan gating.
+// Added 25-Jun-2026: planEngine.js's getUserPlan() reads progress.plan from
+// localStorage only, and nothing was syncing it from here — meaning plan
+// upgrades only ever "stuck" if set on the exact device that made the
+// Razorpay payment. This closes that gap.
+export async function getPlanProfile(userId) {
+  const supabase = await getSupabase();
+  const { data, error } = await supabase
+    .from('profiles')
+    .select('plan, subscription_status, trial_end_date')
+    .eq('id', userId)
+    .maybeSingle();
+  if (error) console.error('getPlanProfile:', error);
+  return data || null;
+}
+
 export async function saveUserProfile(userId, profile) {
   const supabase = await getSupabase();
   const { error } = await supabase
