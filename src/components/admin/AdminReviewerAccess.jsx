@@ -79,8 +79,10 @@ export default function AdminReviewerAccess() {
       }, { onConflict: 'id' });
       if (profileErr) throw new Error('Profile setup failed: ' + profileErr.message);
 
-      // 3. Track separately from demo_logins
-      await sb.from('reviewer_accounts').upsert({
+      // 3. Track separately from demo_logins. Account already works at this
+      // point (auth user + profile are real) — a failure here only means
+      // it won't show in the "View All" list, so warn rather than throw.
+      const { error: trackErr } = await sb.from('reviewer_accounts').upsert({
         user_id: userId,
         name: form.name,
         mobile: `+91${form.mobile.trim()}`,
@@ -90,7 +92,12 @@ export default function AdminReviewerAccess() {
         is_active: true,
       });
 
-      setResult({ name: form.name, mobile: form.mobile, password: form.password });
+      setResult({
+        name: form.name,
+        mobile: form.mobile,
+        password: form.password,
+        trackingWarning: trackErr ? trackErr.message : null,
+      });
       setForm({ name: '', mobile: '', password: '', notes: '' });
     } catch (e) {
       setError(e.message);
@@ -163,6 +170,11 @@ export default function AdminReviewerAccess() {
                 <div>🔑 Password: <strong>{result.password}</strong></div>
                 <div>♾️ Access: <strong>Full (Family plan) — no expiry</strong></div>
               </div>
+              {result.trackingWarning && (
+                <div style={{ marginTop: 10, background: '#FEF3C7', border: '1px solid #FCD34D', borderRadius: 8, padding: 10, color: '#92400E', fontSize: 12 }}>
+                  ⚠️ Account works fine, but couldn't save to your tracking list: {result.trackingWarning}. Save these details somewhere yourself for now.
+                </div>
+              )}
               <button onClick={() => {
                 navigator.clipboard.writeText(`VedicMindAI Reviewer Login
 Mobile: +91${result.mobile}
