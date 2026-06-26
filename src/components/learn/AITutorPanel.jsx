@@ -3,6 +3,7 @@ import { X, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { findFaqMatch } from '@/utils/faqMatcher';
 
 // ─── Hindi/English Auto-Detect System Prompt ──────────────────────────────────
 function buildSystemPrompt(lesson, language) {
@@ -91,6 +92,18 @@ export default function AITutorPanel({ lesson, onClose }) {
     setMessages(prev => [...prev, userMsg]);
     setInput('');
     setLoading(true);
+
+    // Check FAQ first -- this is FREE and INSTANT, no API call.
+    const faqResult = findFaqMatch(text);
+    if (faqResult) {
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: faqResult.entry.answer,
+        fromFaq: true,
+      }]);
+      setLoading(false);
+      return;
+    }
 
     try {
       const history = [...messages, userMsg].map(m => ({
