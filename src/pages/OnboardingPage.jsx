@@ -122,41 +122,10 @@ export default function OnboardingPage() {
   const callClaudeAPI = async (data) => {
     const auth = JSON.parse(localStorage.getItem('vedicmind_auth') || '{}');
     console.log('Sending profile to Claude API:', JSON.stringify(data));
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch('/api/personalize-onboarding', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true',
-        'x-api-key': import.meta.env.VITE_ANTHROPIC_API_KEY || '',
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: 'You are VedicMind AI, a world-class Vedic Mathematics educationist with 20+ years experience teaching students across India. You help personalize learning journeys for students.',
-        messages: [
-          {
-            role: 'user',
-            content: `Analyze this student profile and respond with ONLY a raw JSON object. 
-No markdown, no code blocks, no backticks, no explanation before or after. 
-Start your response with { and end with }.
-
-Student Profile:
-- Name: ${data.name || auth.name}
-- Role: ${data.role}
-- Grade: ${data.grade || 'N/A'}
-- Board: ${data.board || 'N/A'}
-- Age: ${data.age}
-- Goals: ${(data.goals || []).join(', ')}
-- Time commitment: ${data.timeCommitment}
-- Learning style: ${data.learningStyle}
-- Biggest challenge: ${data.biggestChallenge}
-
-Respond with exactly this JSON structure:
-{"greeting":"2 sentences welcoming ${data.name || auth.name} by name, referencing their ${data.grade || 'learning'} goals","whyVedicMaths":"3-4 sentences specific to their profile","startingLevel":"Beginner","startingLevelReason":"1 sentence","estimatedWeeks":8,"dailyLessons":2,"topFocusAreas":["area1","area2","area3"],"firstLessonTitle":"Introduction to Vedic Mathematics","motivationalQuote":"inspiring quote","personalizedTip":"one specific tip for their exact profile"}`,
-          },
-        ],
-      }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data, authName: auth.name }),
     });
     const result = await response.json();
     console.log('Claude API raw response:', result);
