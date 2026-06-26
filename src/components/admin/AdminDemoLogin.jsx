@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { getSupabase } from '@/lib/supabaseClient';
 import { useLanguage } from '@/lib/LanguageContext';
 
-const SUPA_URL = 'https://xlyfyqjmzwyyoqurvuzx.supabase.co';
-const SERVICE_KEY = import.meta.env.VITE_SUPABASE_SERVICE_KEY || '';
 
 function randPass() {
   return 'Demo@' + Math.random().toString(36).slice(2,8).toUpperCase();
@@ -26,46 +24,31 @@ export default function AdminDemoLogin() {
     setLoading(true);
     setResult(null);
     try {
-      const sb = await getSupabase();
       const email = randEmail(form.school);
       const password = randPass();
-      const expiresAt = new Date(Date.now() + form.days * 86400000).toISOString();
 
-      // Create auth user via Supabase signUp
-      const { data: authData, error: authErr } = await sb.auth.admin
-        ? await sb.auth.admin.createUser({ email, password, email_confirm: true })
-        : await sb.auth.signUp({ email, password });
-
-      if (authErr) throw authErr;
-
-      const userId = authData?.user?.id || authData?.id;
-
-      // Save demo login record
-      await sb.from('demo_logins').upsert({
-        user_id: userId,
-        email,
-        password_plain: password,
-        school_name: form.school,
-        city: form.city,
-        contact: form.contact,
-        expires_at: expiresAt,
-        days: form.days,
-        created_at: new Date().toISOString(),
-        is_active: true,
+      const response = await fetch('/api/admin-create-demo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          password,
+          school: form.school,
+          city: form.city,
+          contact: form.contact,
+          days: form.days,
+        }),
       });
 
-      // Set trial in profiles
-      await sb.from('profiles').upsert({
-        id: userId,
-        full_name: `Demo — ${form.school}`,
-        plan: 'demo',
-        trial_end_date: expiresAt,
-        subscription_status: 'demo',
-      }, { onConflict: 'id' });
+      const data = await response.json();
 
-      setResult({ email, password, expiresAt, school: form.school });
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to create demo login');
+      }
+
+      setResult(data);
       setForm({ school: '', city: '', days: 7, contact: '' });
-    } catch(e) {
+    } catch (e) {
       alert('Error: ' + e.message);
     }
     setLoading(false);
