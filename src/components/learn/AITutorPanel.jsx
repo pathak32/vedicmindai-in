@@ -3,7 +3,6 @@ import { X, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
-import { canUseAI, getRemainingMessages, incrementAIUsage } from '@/lib/aiLimits';
 
 // ─── Hindi/English Auto-Detect System Prompt ──────────────────────────────────
 function buildSystemPrompt(lesson, language) {
@@ -77,8 +76,8 @@ export default function AITutorPanel({ lesson, onClose }) {
 
   const userId = user?.id || 'guest';
   const plan = profile?.plan || profile?.subscription_status || 'trial';
-  const remaining = getRemainingMessages(userId, plan);
-  const limitReached = !canUseAI(userId, plan);
+  const [remaining, setRemaining] = useState(null);
+  const [limitReached, setLimitReached] = useState(false);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -92,29 +91,48 @@ export default function AITutorPanel({ lesson, onClose }) {
     setMessages(prev => [...prev, userMsg]);
     setInput('');
     setLoading(true);
-    incrementAIUsage(userId);
 
     try {
       const history = [...messages, userMsg].map(m => ({
         role: m.role,
         content: m.content,
       }));
-
       const response = await fetch('/api/ai-tutor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           system: buildSystemPrompt(lesson, language),
           messages: history,
+          userId,
+          plan,
         }),
       });
 
       const data = await response.json();
+
+      if (response.status === 429) {
+        setLimitReached(true);
+        setRemaining(0);
+        setMessages(prev => [...prev, {
+          role: 'assistant',
+          content: language === 'hi'
+            ? `⚠️ आज की ${data.limit} सवालों की सीमा खत्म हो गई। कल फिर से आएं, या upgrade करें।`
+            : data.message || 'Daily limit reached. Come back tomorrow, or upgrade for more.',
+        }]);
+        setLoading(false);
+        return;
+      }
+
       const reply = data.content?.[0]?.text || (language === 'hi'
         ? 'माफ़ करें, कुछ गलत हो गया। फिर से कोशिश करें।'
         : 'Sorry, something went wrong. Please try again.');
 
       setMessages(prev => [...prev, { role: 'assistant', content: reply }]);
+
+      if (data._usage) {
+        setRemaining(data._usage.remaining);
+        setLimitReached(data._usage.remaining <= 0);
+      }
     } catch {
       setMessages(prev => [...prev, {
         role: 'assistant',
@@ -169,10 +187,12 @@ export default function AITutorPanel({ lesson, onClose }) {
             </div>
           </div>
           {/* Remaining messages badge */}
-          <div style={{ fontSize: 11, color: remaining <= 3 ? '#DC2626' : '#6B7280', fontFamily: 'var(--font-body)', textAlign: 'right', marginRight: 4 }}>
-            <div style={{ fontWeight: 600 }}>{remaining}</div>
-            <div>{language === 'hi' ? 'बचे' : 'left'}</div>
-          </div>
+          {remaining !== null && (
+            <div style={{ fontSize: 11, color: remaining <= 0 ? '#DC2626' : '#6B7280', fontFamily: 'var(--font-body)', textAlign: 'right', marginRight: 4 }}>
+              <div style={{ fontWeight: 600 }}>{remaining}</div>
+              <div>{language === 'hi' ? 'बचे' : 'left'}</div>
+            </div>
+          )}
           <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4 }}>
             <X size={20} color="#4B5563" />
           </button>
