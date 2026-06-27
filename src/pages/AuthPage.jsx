@@ -4,9 +4,13 @@ import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { useLanguage } from '@/lib/LanguageContext';
+import { validateMobileForCountry, validateCustomCountryCode, resolveCountryInfo, DEFAULT_COUNTRY } from '@/lib/countryCodes';
+import MobileNumberInput from '@/components/MobileNumberInput';
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
-function validateMobile(m) { return /^[6-9]\d{9}$/.test(m); }
+function validateMobile(m, countryCode) {
+  return validateMobileForCountry(m, countryCode || DEFAULT_COUNTRY.code);
+}
 function validateDOB(d) { return /^\d{2}\/\d{2}\/\d{4}$/.test(d); }
 
 function generatePasswordHint(name, dob) {
@@ -26,6 +30,10 @@ function SignUpForm({ onSwitchTab }) {
   const [step, setStep]       = useState(1); // 1 = essentials, 2 = recovery info
   const [name, setName]       = useState('');
   const [mobile, setMobile]   = useState('');
+  const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY.code);
+  const [customCountryCode, setCustomCountryCode] = useState("");
+  const [whatsappCountryCode, setWhatsappCountryCode] = useState(DEFAULT_COUNTRY.code);
+  const [whatsappCustomCountryCode, setWhatsappCustomCountryCode] = useState("");
   const [dob, setDob]         = useState('');
   const [email, setEmail]     = useState('');
   const [password, setPassword] = useState('');
@@ -44,7 +52,8 @@ function SignUpForm({ onSwitchTab }) {
   const validateStep1 = () => {
     const e = {};
     if (!name.trim())            e.name   = 'Name required';
-    if (!validateMobile(mobile)) e.mobile = 'Valid 10-digit number required';
+    if (!validateMobile(mobile, countryCode)) e.mobile = 'Please enter a valid mobile number for the selected country';
+    if (countryCode === 'OTHER' && !validateCustomCountryCode(customCountryCode)) e.mobile = 'Please enter a valid country code, e.g. +33';
     if (!password || password.length < 8) e.password = 'Min 8 characters';
     return e;
   };
@@ -54,7 +63,8 @@ function SignUpForm({ onSwitchTab }) {
     if (!validateDOB(dob))      e.dob    = 'Format: DD/MM/YYYY';
     if (!secQ.trim())           e.secQ   = 'Security question required';
     if (!secA.trim())           e.secA   = 'Security answer required';
-    if (!sameNum && !validateMobile(whatsapp)) e.whatsapp = 'Valid WhatsApp number required';
+    if (!sameNum && !validateMobile(whatsapp, whatsappCountryCode)) e.whatsapp = 'Please enter a valid WhatsApp number for the selected country';
+    if (!sameNum && whatsappCountryCode === 'OTHER' && !validateCustomCountryCode(whatsappCustomCountryCode)) e.whatsapp = 'Please enter a valid country code, e.g. +33';
     return e;
   };
 
@@ -72,15 +82,21 @@ function SignUpForm({ onSwitchTab }) {
     if (Object.keys(e).length) return;
     setLoading(true);
     try {
+      const mobileCountryInfo = resolveCountryInfo(countryCode, customCountryCode);
+      const whatsappCountryInfo = sameNum
+        ? mobileCountryInfo
+        : resolveCountryInfo(whatsappCountryCode, whatsappCustomCountryCode);
       await signUpWithPassword({
         name: name.trim(),
-        mobile: `+91${mobile}`,
+        mobile: `${mobileCountryInfo.code}${mobile}`,
+        countryCode: mobileCountryInfo.code,
+        countryName: mobileCountryInfo.name,
         dob,
         email: email.trim() || null,
         password,
         securityQuestion: secQ.trim(),
         securityAnswer: secA.trim().toLowerCase(),
-        whatsapp: sameNum ? `+91${mobile}` : `+91${whatsapp}`,
+        whatsapp: sameNum ? `${mobileCountryInfo.code}${mobile}` : `${whatsappCountryInfo.code}${whatsapp}`,
         passwordHint: hint,
       });
       toast.success('Account created! Welcome to VedicMindAI™ 🎉');
@@ -130,13 +146,16 @@ function SignUpForm({ onSwitchTab }) {
         {/* Mobile */}
         <div>
           <label style={lbl}>Mobile Number *</label>
-          <div style={{ display:'flex', border:`1.5px solid ${errors.mobile?'#EF4444':'rgba(30,64,175,0.2)'}`, borderRadius:12, overflow:'hidden', height:44, background:'white' }}>
-            <span style={{ padding:'0 10px 0 14px', fontSize:14, color:'#4B5563', borderRight:'1px solid rgba(30,64,175,0.15)', lineHeight:'44px', flexShrink:0 }}>+91</span>
-            <input type="tel" inputMode="numeric" value={mobile}
-              onChange={e => setMobile(e.target.value.replace(/\D/g,'').slice(0,10))}
-              placeholder="10-digit number"
-              style={{ flex:1, padding:'0 12px', border:'none', outline:'none', fontSize:15, color:'#0A1628', background:'transparent' }} />
-          </div>
+          <MobileNumberInput
+            countryCode={countryCode}
+            onCountryCodeChange={setCountryCode}
+            customCountryCode={customCountryCode}
+            onCustomCountryCodeChange={setCustomCountryCode}
+            mobile={mobile}
+            onMobileChange={setMobile}
+            placeholder="Mobile number"
+            hasError={!!errors.mobile}
+          />
           {errors.mobile && <Err>{errors.mobile}</Err>}
         </div>
 
@@ -182,17 +201,19 @@ function SignUpForm({ onSwitchTab }) {
       {!sameNum && (
         <div>
           <label style={lbl}>WhatsApp Number *</label>
-          <div style={{ display:'flex', border:`1.5px solid ${errors.whatsapp?'#EF4444':'rgba(30,64,175,0.2)'}`, borderRadius:12, overflow:'hidden', height:44, background:'white' }}>
-            <span style={{ padding:'0 10px 0 14px', fontSize:14, color:'#4B5563', borderRight:'1px solid rgba(30,64,175,0.15)', lineHeight:'44px', flexShrink:0 }}>+91</span>
-            <input type="tel" inputMode="numeric" value={whatsapp}
-              onChange={e => setWhatsapp(e.target.value.replace(/\D/g,'').slice(0,10))}
-              placeholder="WhatsApp number"
-              style={{ flex:1, padding:'0 12px', border:'none', outline:'none', fontSize:15, color:'#0A1628', background:'transparent' }} />
-          </div>
+          <MobileNumberInput
+            countryCode={whatsappCountryCode}
+            onCountryCodeChange={setWhatsappCountryCode}
+            customCountryCode={whatsappCustomCountryCode}
+            onCustomCountryCodeChange={setWhatsappCustomCountryCode}
+            mobile={whatsapp}
+            onMobileChange={setWhatsapp}
+            placeholder="WhatsApp number"
+            hasError={!!errors.whatsapp}
+          />
           {errors.whatsapp && <Err>{errors.whatsapp}</Err>}
         </div>
       )}
-
       {/* DOB */}
       <div>
         <label style={lbl}>Date of Birth * (DD/MM/YYYY)</label>
@@ -258,20 +279,23 @@ function SignInForm({ onSwitchTab }) {
   const { signInWithPassword } = useVedicAuth();
   const navigate = useNavigate();
   const [mobile, setMobile]   = useState('');
+  const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY.code);
+  const [customCountryCode, setCustomCountryCode] = useState('');
   const [password, setPassword] = useState('');
   const [showPass, setShowPass] = useState(false);
   const [errors, setErrors]   = useState({});
   const [loading, setLoading] = useState(false);
-
   const handleSignIn = async () => {
     const e = {};
-    if (!validateMobile(mobile)) e.mobile = 'Valid 10-digit number required';
+    if (!validateMobile(mobile, countryCode)) e.mobile = 'Please enter a valid mobile number for the selected country';
+    if (countryCode === 'OTHER' && !validateCustomCountryCode(customCountryCode)) e.mobile = 'Please enter a valid country code, e.g. +33';
     if (!password)               e.password = 'Password required';
     setErrors(e);
     if (Object.keys(e).length) return;
     setLoading(true);
     try {
-      await signInWithPassword({ mobile: `+91${mobile}`, password });
+      const countryInfo = resolveCountryInfo(countryCode, customCountryCode);
+      await signInWithPassword({ mobile: `${countryInfo.code}${mobile}`, password });
       toast.success('Welcome back! 🎉');
       navigate('/dashboard');
     } catch (err) {
@@ -280,29 +304,28 @@ function SignInForm({ onSwitchTab }) {
       setLoading(false);
     }
   };
-
   const inp = (err) => ({
     height:44, width:'100%', padding:'0 14px', borderRadius:12,
     border:`1.5px solid ${err?'#EF4444':'rgba(30,64,175,0.2)'}`,
     fontSize:15, outline:'none', fontFamily:'var(--font-body)',
     color:'#0A1628', background:'white', boxSizing:'border-box',
   });
-
   return (
     <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
-
       <div>
         <label style={lbl}>Mobile Number *</label>
-        <div style={{ display:'flex', border:`1.5px solid ${errors.mobile?'#EF4444':'rgba(30,64,175,0.2)'}`, borderRadius:12, overflow:'hidden', height:44, background:'white' }}>
-          <span style={{ padding:'0 10px 0 14px', fontSize:14, color:'#4B5563', borderRight:'1px solid rgba(30,64,175,0.15)', lineHeight:'44px', flexShrink:0 }}>+91</span>
-          <input type="tel" inputMode="numeric" value={mobile}
-            onChange={e => setMobile(e.target.value.replace(/\D/g,'').slice(0,10))}
-            placeholder="10-digit number"
-            style={{ flex:1, padding:'0 12px', border:'none', outline:'none', fontSize:15, color:'#0A1628', background:'transparent' }} />
-        </div>
+        <MobileNumberInput
+          countryCode={countryCode}
+          onCountryCodeChange={setCountryCode}
+          customCountryCode={customCountryCode}
+          onCustomCountryCodeChange={setCustomCountryCode}
+          mobile={mobile}
+          onMobileChange={setMobile}
+          placeholder="Mobile number"
+          hasError={!!errors.mobile}
+        />
         {errors.mobile && <Err>{errors.mobile}</Err>}
       </div>
-
       <div>
         <label style={lbl}>Password *</label>
         <div style={{ position:'relative' }}>
@@ -317,14 +340,12 @@ function SignInForm({ onSwitchTab }) {
         </div>
         {errors.password && <Err>{errors.password}</Err>}
       </div>
-
       <div style={{ textAlign:'right' }}>
         <button type="button" onClick={() => navigate('/forgot-password')}
           style={{ background:'none', border:'none', cursor:'pointer', fontSize:13, color:'#3B82F6', fontWeight:600 }}>
           {t('forgotPassword')}
         </button>
       </div>
-
       <button type="button" onClick={handleSignIn} disabled={loading}
         style={{ width:'100%', height:46, background: loading?'#6B7280':'#0A1628', color:'white', border:'none', borderRadius:12, fontSize:15, fontWeight:700, cursor: loading?'not-allowed':'pointer' }}>
         {loading ? 'Signing In…' : 'Sign In →'}
@@ -332,7 +353,6 @@ function SignInForm({ onSwitchTab }) {
     </div>
   );
 }
-
 // ─── Shared styles ───────────────────────────────────────────────────────────
 const lbl = { display:'block', fontSize:13, fontWeight:600, color:'#374151', marginBottom:4 };
 const Err = ({ children }) => <p style={{ color:'#EF4444', fontSize:12, margin:'3px 0 0' }}>{children}</p>;

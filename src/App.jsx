@@ -8,6 +8,7 @@ import ScrollToTop from '@/lib/ScrollToTop';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { LanguageProvider } from "@/lib/LanguageContext";
+import { Toaster } from "sonner";
 import LandingPage from '@/pages/LandingPage';
 import AuthPage from '@/pages/AuthPage';
 import OnboardingPage from '@/pages/OnboardingPage';
@@ -124,6 +125,7 @@ function RouteTransition() {
 function App() {
   return (
     <LanguageProvider>
+      <Toaster position="top-right" richColors closeButton />
       <VedicAuthProvider>
         <ProfileProvider>
           <ProgressProvider>

@@ -52,7 +52,7 @@ export function VedicAuthProvider({ children }) {
 
   // ── Sign Up ────────────────────────────────────────────────────────────────
   const signUpWithPassword = async ({
-    name, mobile, dob, email, password,
+    name, mobile, countryCode, countryName, dob, email, password,
     securityQuestion, securityAnswer,
     whatsapp, passwordHint,
   }) => {
@@ -93,6 +93,8 @@ export function VedicAuthProvider({ children }) {
       full_name: name,
       name: name,
       mobile,
+      country_code: countryCode,
+      country_name: countryName,
       dob,
       date_of_birth: dob,
       email: email || null,
@@ -148,24 +150,23 @@ export function VedicAuthProvider({ children }) {
   };
 
   // ── Forgot Password — get hint ─────────────────────────────────────────────
-  const getPasswordHint = async (mobile) => {
+  const getPasswordHint = async (mobile, countryCode = '+91') => {
     const supabase = await getSupabase();
     const { data, error } = await supabase
       .from('profiles')
       .select('password_hint, security_question, name')
-      .eq('mobile', `+91${mobile}`)
+      .eq('mobile', `${countryCode}${mobile}`)
       .single();
     if (error || !data) throw new Error('Mobile number not registered');
     return data;
   };
-
   // ── Forgot Password — verify security answer ───────────────────────────────
-  const verifySecurityAnswer = async (mobile, answer) => {
+  const verifySecurityAnswer = async (mobile, answer, countryCode = '+91') => {
     const supabase = await getSupabase();
     const { data, error } = await supabase
       .from('profiles')
       .select('security_answer, password_hint')
-      .eq('mobile', `+91${mobile}`)
+      .eq('mobile', `${countryCode}${mobile}`)
       .single();
     if (error || !data) throw new Error('Account not found');
     if (data.security_answer !== answer.trim().toLowerCase()) {
@@ -173,18 +174,17 @@ export function VedicAuthProvider({ children }) {
     }
     return data.password_hint;
   };
-
   // ── Reset Password ─────────────────────────────────────────────────────────
-  const resetPassword = async (mobile, newPassword) => {
+  const resetPassword = async (mobile, newPassword, countryCode = '+91') => {
     const supabase = await getSupabase();
-    const fakeEmail = mobileToEmail(`+91${mobile}`);
+    const fakeEmail = mobileToEmail(`${countryCode}${mobile}`);
     // Sign in via admin is not possible from client — use update after re-auth
     // Instead we use password reset via email (fakeEmail)
     const { error } = await supabase.auth.updateUser({ password: newPassword });
     if (error) throw new Error(error.message);
     // Update hint too
     const parts = newPassword.match(/^([A-Z]{1,2})(\d{2})@(\d{4})$/);
-    await supabase.from('profiles').update({ password_hint: newPassword }).eq('mobile', `+91${mobile}`);
+    await supabase.from('profiles').update({ password_hint: newPassword }).eq('mobile', `${countryCode}${mobile}`);
   };
 
   return (

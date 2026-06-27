@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { useLanguage } from '@/lib/LanguageContext';
+import { validateMobileForCountry, validateCustomCountryCode, resolveCountryInfo, DEFAULT_COUNTRY } from '@/lib/countryCodes';
+import MobileNumberInput from '@/components/MobileNumberInput';
 
 const lbl = { display:'block', fontSize:13, fontWeight:600, color:'#374151', marginBottom:4 };
 const Err = ({ children }) => <p style={{ color:'#EF4444', fontSize:12, margin:'3px 0 0' }}>{children}</p>;
@@ -21,6 +23,8 @@ export default function ForgotPassword() {
 
   const [step, setStep]     = useState(1); // 1=mobile, 2=hint+question, 3=answer
   const [mobile, setMobile] = useState('');
+  const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY.code);
+  const [customCountryCode, setCustomCountryCode] = useState('');
   const [hint, setHint]     = useState('');
   const [secQ, setSecQ]     = useState('');
   const [answer, setAnswer] = useState('');
@@ -30,11 +34,13 @@ export default function ForgotPassword() {
 
   // Step 1 — enter mobile
   const handleGetHint = async () => {
-    if (!/^[6-9]\d{9}$/.test(mobile)) { setError('Enter valid 10-digit number'); return; }
+    if (!validateMobileForCountry(mobile, countryCode)) { setError('Please enter a valid mobile number for the selected country'); return; }
+    if (countryCode === 'OTHER' && !validateCustomCountryCode(customCountryCode)) { setError('Please enter a valid country code, e.g. +33'); return; }
     setError('');
     setLoading(true);
     try {
-      const data = await getPasswordHint(mobile);
+      const info = resolveCountryInfo(countryCode, customCountryCode);
+      const data = await getPasswordHint(mobile, info.code);
       setHint(data.password_hint);
       setSecQ(data.security_question);
       setStep(2);
@@ -50,7 +56,8 @@ export default function ForgotPassword() {
     setError('');
     setLoading(true);
     try {
-      const fullHint = await verifySecurityAnswer(mobile, answer);
+      const info = resolveCountryInfo(countryCode, customCountryCode);
+      const fullHint = await verifySecurityAnswer(mobile, answer, info.code);
       setRevealedHint(fullHint);
       setStep(4);
     } catch (e) {
@@ -83,13 +90,16 @@ export default function ForgotPassword() {
           <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
             <div>
               <label style={lbl}>Registered Mobile Number</label>
-              <div style={{ display:'flex', border:`1.5px solid ${error?'#EF4444':'rgba(30,64,175,0.2)'}`, borderRadius:12, overflow:'hidden', height:44, background:'white' }}>
-                <span style={{ padding:'0 10px 0 14px', fontSize:14, color:'#4B5563', borderRight:'1px solid rgba(30,64,175,0.15)', lineHeight:'44px', flexShrink:0 }}>+91</span>
-                <input type="tel" inputMode="numeric" value={mobile}
-                  onChange={e => setMobile(e.target.value.replace(/\D/g,'').slice(0,10))}
-                  placeholder="10-digit number"
-                  style={{ flex:1, padding:'0 12px', border:'none', outline:'none', fontSize:15, color:'#0A1628', background:'transparent' }} />
-              </div>
+              <MobileNumberInput
+                countryCode={countryCode}
+                onCountryCodeChange={setCountryCode}
+                customCountryCode={customCountryCode}
+                onCustomCountryCodeChange={setCustomCountryCode}
+                mobile={mobile}
+                onMobileChange={setMobile}
+                placeholder="Mobile number"
+                hasError={!!error}
+              />
               {error && <Err>{error}</Err>}
             </div>
             <button onClick={handleGetHint} disabled={loading}
