@@ -21,10 +21,6 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Missing required field: userId' });
     }
 
-    // Verified against information_schema.columns on 29-Jun-2026 — these are
-    // the actual app tables (excluding Supabase's own auth.* internals like
-    // sessions, identities, refresh_tokens, etc., which auth.admin.deleteUser()
-    // below already cleans up on its own).
     const tablesAndColumns = [
       { table: 'progress', column: 'user_id' },
       { table: 'quiz_results', column: 'user_id' },
@@ -51,12 +47,23 @@ export default async function handler(req, res) {
       }
     }
 
+    // Finally remove the actual auth user. This must happen last —
+    // once this succeeds, the user can no longer log in even if some
+    // related-table cleanup above had issues.
     const { error: authErr } = await supabase.auth.admin.deleteUser(userId);
     if (authErr) {
-      return res.status(500).json({
-        error: `Failed to delete auth user: ${authErr.message}`,
-        tableErrors,
-      });
+      // "User not found" means the auth record was already gone (e.g. an
+      // orphaned profile row left over from an earlier manual deletion).
+      // That's not a failure from this endpoint's point of view — the table
+      // rows above have already been cleaned up, and there's no auth user
+      // left to remove. Only treat other auth errors as real failures.
+      const isAlreadyGone = /not found/i.test(authErr.message || '');
+      if (!isAlreadyGone) {
+        return res.status(500).json({
+          error: `Failed to delete auth user: ${authErr.message}`,
+          tableErrors,
+        });
+      }
     }
 
     return res.status(200).json({
