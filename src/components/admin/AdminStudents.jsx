@@ -10,6 +10,7 @@ export default function AdminStudents() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
+  const [deletingId, setDeletingId] = useState(null);
 
   useEffect(() => { loadUsers(); }, []);
 
@@ -27,6 +28,34 @@ export default function AdminStudents() {
       console.error('AdminStudents:', e);
       setUsers([]);
     } finally { setLoading(false); }
+  }
+
+  async function handleDelete(u) {
+    const confirmed = window.confirm(
+      `Delete "${u.full_name || u.mobile || u.id}" permanently?\n\nThis removes the account and all their progress/quiz data from Supabase. This cannot be undone.`
+    );
+    if (!confirmed) return;
+
+    setDeletingId(u.id);
+    try {
+      const res = await fetch('/api/admin-delete-user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: u.id }),
+      });
+      const result = await res.json();
+      if (!res.ok) throw new Error(result.error || 'Delete failed');
+
+      if (result.tableErrors && result.tableErrors.length) {
+        console.warn('Some related rows may not have been cleaned up:', result.tableErrors);
+      }
+      setUsers(prev => prev.filter(x => x.id !== u.id));
+    } catch (e) {
+      console.error('Delete user failed:', e);
+      alert(`Could not delete user: ${e.message}`);
+    } finally {
+      setDeletingId(null);
+    }
   }
 
   const filtered = users.filter(u => {
@@ -67,7 +96,7 @@ export default function AdminStudents() {
             <table style={{ width:'100%', borderCollapse:'collapse', fontSize:13 }}>
               <thead>
                 <tr style={{ background:'#F9FAFB' }}>
-                  {['Name','Mobile','Plan','XP','Lessons','Joined'].map(h => (
+                  {['Name','Mobile','Plan','XP','Lessons','Joined',''].map(h => (
                     <th key={h} style={{ padding:'10px 14px', textAlign:'left', fontWeight:600, color:'#374151', borderBottom:'1px solid #E5E7EB' }}>{h}</th>
                   ))}
                 </tr>
@@ -81,6 +110,23 @@ export default function AdminStudents() {
                     <td style={{ padding:'10px 14px', borderBottom:'1px solid #F3F4F6', fontWeight:600, color:'#7C3AED' }}>{u.xp||0}</td>
                     <td style={{ padding:'10px 14px', borderBottom:'1px solid #F3F4F6' }}>{u.lessons_completed||0}/40</td>
                     <td style={{ padding:'10px 14px', borderBottom:'1px solid #F3F4F6', color:'#6B7280' }}>{u.created_at ? new Date(u.created_at).toLocaleDateString('en-IN') : '—'}</td>
+                    <td style={{ padding:'10px 14px', borderBottom:'1px solid #F3F4F6', textAlign:'center' }}>
+                      <button
+                        onClick={() => handleDelete(u)}
+                        disabled={deletingId === u.id}
+                        title="Delete this user permanently"
+                        style={{
+                          border:'none',
+                          background:'transparent',
+                          cursor: deletingId === u.id ? 'default' : 'pointer',
+                          fontSize:15,
+                          opacity: deletingId === u.id ? 0.4 : 1,
+                          padding:4,
+                        }}
+                      >
+                        {deletingId === u.id ? '⏳' : '🗑️'}
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
