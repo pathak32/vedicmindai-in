@@ -30,3 +30,5 @@ dist-ssr
 .env
 .vite
 *.bak
+FETCH_HEAD
+/main

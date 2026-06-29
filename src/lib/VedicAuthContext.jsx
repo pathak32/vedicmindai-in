@@ -120,7 +120,6 @@ export function VedicAuthProvider({ children }) {
 
     // Attribute this signup to an affiliate, if a referral code was
     // provided. Fails silently (never blocks signup) if the code is
-    console.log('DEBUG referralCode value:', JSON.stringify(referralCode));
     // invalid, mistyped, or belongs to an inactive affiliate.
     if (referralCode && referralCode.trim()) {
       const { error: referralErr } = await supabase.rpc('attribute_referral_signup', {
