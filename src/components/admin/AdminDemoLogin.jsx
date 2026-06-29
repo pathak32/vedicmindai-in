@@ -55,9 +55,15 @@ export default function AdminDemoLogin() {
   }
 
   async function loadList() {
-    const sb = await getSupabase();
-    const { data } = await sb.from('demo_logins').select('*').order('created_at', { ascending: false }).limit(20);
-    setList(data || []);
+    try {
+      const res = await fetch('/api/admin-list-demo-logins');
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to load demo logins');
+      setList(data.demoLogins || []);
+    } catch (e) {
+      console.error('loadList:', e);
+      setList([]);
+    }
   }
 
   const card = { background: 'rgba(255,255,255,0.9)', border: '1px solid rgba(30,64,175,0.1)', borderRadius: 14, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.05)', marginBottom: 16 };
