@@ -36,6 +36,7 @@ function SignUpForm({ onSwitchTab }) {
   const [whatsappCustomCountryCode, setWhatsappCustomCountryCode] = useState("");
   const [dob, setDob]         = useState('');
   const [email, setEmail]     = useState('');
+  const [referralCode, setReferralCode] = useState('');
   const [password, setPassword] = useState('');
   const [secQ, setSecQ]       = useState('');
   const [secA, setSecA]       = useState('');
@@ -93,6 +94,7 @@ function SignUpForm({ onSwitchTab }) {
         countryName: mobileCountryInfo.name,
         dob,
         email: email.trim() || null,
+        referralCode: referralCode.trim() || null,
         password,
         securityQuestion: secQ.trim(),
         securityAnswer: secA.trim().toLowerCase(),
@@ -234,6 +236,12 @@ function SignUpForm({ onSwitchTab }) {
         <label style={lbl}>Email <span style={{ color:'#9CA3AF', fontSize:12 }}>(optional — for password recovery)</span></label>
         <input type="email" value={email} onChange={e => setEmail(e.target.value)}
           placeholder="you@email.com" style={inp(false)} />
+      </div>
+      {/* Referral Code (optional) */}
+      <div>
+        <label style={lbl}>Referral Code <span style={{ color:'#9CA3AF', fontSize:12 }}>(optional)</span></label>
+        <input type="text" value={referralCode} onChange={e => setReferralCode(e.target.value)}
+          placeholder="Enter code if you have one" style={inp(false)} />
       </div>
 
       {/* Security Question */}

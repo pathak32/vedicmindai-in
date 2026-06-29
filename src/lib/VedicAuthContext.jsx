@@ -52,7 +52,7 @@ export function VedicAuthProvider({ children }) {
 
   // ── Sign Up ────────────────────────────────────────────────────────────────
   const signUpWithPassword = async ({
-    name, mobile, countryCode, countryName, dob, email, password,
+    name, mobile, countryCode, countryName, dob, email, password, referralCode,
     securityQuestion, securityAnswer,
     whatsapp, passwordHint,
   }) => {
@@ -118,9 +118,22 @@ export function VedicAuthProvider({ children }) {
       throw new Error('Account created but profile setup failed. Please contact support — do not try signing up again with this number.');
     }
 
+    // Attribute this signup to an affiliate, if a referral code was
+    // provided. Fails silently (never blocks signup) if the code is
+    console.log('DEBUG referralCode value:', JSON.stringify(referralCode));
+    // invalid, mistyped, or belongs to an inactive affiliate.
+    if (referralCode && referralCode.trim()) {
+      const { error: referralErr } = await supabase.rpc('attribute_referral_signup', {
+        p_subscriber_id: userId,
+        p_referral_code: referralCode.trim(),
+      });
+      if (referralErr) {
+        console.error('Referral attribution error (non-blocking):', referralErr.message);
+      }
+    }
+
     return data;
   };
-
   // ── Sign In ────────────────────────────────────────────────────────────────
   const signInWithPassword = async ({ mobile, password }) => {
     const supabase = await getSupabase();
