@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
+import { Capacitor } from '@capacitor/core';
+import { Browser } from '@capacitor/browser';
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -249,11 +251,21 @@ export default function PricingPage() {
   // https://razorpay.com/payment-link and paste it below.
   const RAZORPAY_PAYMENT_LINK = 'https://rzp.io/rzp/qVsieSF';
 
-  function initiatePayment() {
-    // Same-tab navigation (not a new tab) so the browser/app back button
-    // correctly returns the user to this Pricing page instead of leaving
-    // them stranded on Razorpay's hosted page with no way back.
-    window.location.href = RAZORPAY_PAYMENT_LINK;
+  async function initiatePayment() {
+    if (Capacitor.isNativePlatform()) {
+      // Inside the Play Store app (Capacitor WebView): Razorpay's own "X"
+      // closes the entire app instead of going back, because the checkout
+      // page replaces the WebView's only window. Opening it via the
+      // Browser plugin instead shows it as an in-app overlay with its own
+      // native close control that reliably returns to the app regardless
+      // of what Razorpay's page does internally.
+      await Browser.open({ url: RAZORPAY_PAYMENT_LINK });
+    } else {
+      // Plain web (vedicmindai.in in a normal browser tab): same-tab
+      // navigation works fine — the browser's own back button and
+      // Razorpay's "X" both correctly return to this page.
+      window.location.href = RAZORPAY_PAYMENT_LINK;
+    }
   }
 
   return (
