@@ -230,11 +230,42 @@ function L1_02_WhyNote() {
 
 // ── L1_03 ─────────────────────────────────────────────────────────────────────
 
+function L1_03_RunningExampleNote() {
+  const { language } = useLanguage();
+  return (
+    <div style={{
+      background: '#FEF3C7', border: '1px solid #FCD34D', borderRadius: 10,
+      padding: '10px 16px', marginBottom: 16, fontFamily: 'var(--font-body)',
+      fontSize: 13, color: '#92400E', fontWeight: 600,
+    }}>
+      {language === 'hi'
+        ? '👇 आइए इन 4 चरणों में 8 × 7 को हल करते हैं (हर चरण नीचे इसी उदाहरण को आगे बढ़ाता है):'
+        : "👇 Let's solve 8 × 7 together using these 4 steps (each step below continues this same example):"}
+    </div>
+  );
+}
+
+function L1_03_RunningExampleResult() {
+  const { language } = useLanguage();
+  return (
+    <div style={{
+      background: '#ECFDF5', border: '1px solid #A7F3D0', borderRadius: 10,
+      padding: '10px 16px', marginTop: 4, marginBottom: 20, fontFamily: 'var(--font-body)',
+      fontSize: 13, color: '#065F46', fontWeight: 600,
+    }}>
+      {language === 'hi'
+        ? '✅ तो 8 × 7 = 56 — ऊपर के सभी 4 चरण इसी एक उदाहरण के हैं।'
+        : "✅ So 8 × 7 = 56 — all 4 steps above were for this one example."}
+    </div>
+  );
+}
+
 const L1_03_CONTENT = (
   <>
     <SutraBox sutra="Nikhilam Navatashcaramam Dashatah" meaning={{ en: 'All from 9 and the last from 10', hi: 'सब 9 से और अंतिम 10 से' }} />
 
     <SectionTitle>{{ en: 'The Technique — Near Base 10', hi: 'तकनीक — आधार 10 के निकट' }}</SectionTitle>
+    <L1_03_RunningExampleNote />
     <StepBox number={1}
       text={{ en: 'Find the deficit of each number from the base (10)', hi: 'प्रत्येक संख्या की आधार (10) से कमी ज्ञात करें' }}
       example="8 → deficit = 10−8 = 2  |  7 → deficit = 10−7 = 3" />
@@ -247,6 +278,7 @@ const L1_03_CONTENT = (
     <StepBox number={4}
       text={{ en: 'Combine: LEFT part | RIGHT part', hi: 'जोड़ें: बायां भाग | दायां भाग' }}
       example={{ en: '5 | 6 → Answer: 56', hi: '5 | 6 → उत्तर: 56' }} />
+    <L1_03_RunningExampleResult />
 
     <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
