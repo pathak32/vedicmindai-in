@@ -501,7 +501,7 @@ const L1_06_CONTENT = (
     <StepBox number={1}
       text={{ en: 'Add all digits of a number together', hi: 'किसी संख्या के सभी अंकों को जोड़ें' }}
       example={{ en: '4567 → 4+5+6+7 = 22 → 2+2 = 4  (keep adding until single digit)', hi: '4567 → 4+5+6+7 = 22 → 2+2 = 4  (एक अंक तक जोड़ते रहें)' }} />
-    <StepBox number={2} text={{ en: 'If you get 9, the digit sum is 9 (not 0)', hi: 'यदि उत्तर 9 आए, तो अंक योग 9 है (0 नहीं)' }} />
+    <StepBox number={2} text={{ en: 'By convention, if you get 9, treat the digit sum as 0', hi: 'परंपरा अनुसार, यदि उत्तर 9 आए, तो अंक योग को 0 मानें' }} />
     <StepBox number={3}
       text={{ en: 'Use digit sums to CHECK multiplication', hi: 'गुणन की जांच के लिए अंक योग का उपयोग करें' }}
       example="23 × 14 = 322 → DS(23)=5, DS(14)=5, 5×5=25→7. DS(322)=7 ✓" />
@@ -509,8 +509,8 @@ const L1_06_CONTENT = (
     <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
       title={{ en: 'Example 1: Digit sum of 9999', hi: 'उदाहरण 1: 9999 का अंक योग' }}
-      lines={['9+9+9+9 = 36 → 3+6 = 9']}
-      result={{ en: 'Digit sum = 9', hi: 'अंक योग = 9' }}
+      lines={['9+9+9+9 = 36 → 3+6 = 9 → by convention, treat as 0']}
+      result={{ en: 'Digit sum = 0 (since 9999 is divisible by 9)', hi: 'अंक योग = 0 (क्योंकि 9999, 9 से विभाज्य है)' }}
     />
     <ExampleCard
       title={{ en: 'Example 2: Verify 37 × 23 = 851', hi: 'उदाहरण 2: 37 × 23 = 851 की जांच करें' }}
