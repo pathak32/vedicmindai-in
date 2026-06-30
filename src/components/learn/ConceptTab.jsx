@@ -183,9 +183,9 @@ const L1_02_CONTENT = (
 
     <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
 
-    <ExampleCard title={{ en: 'Example 1 — 35²', hi: 'उदाहरण 1 — 35²' }} lines={['3 × 4 = 12', { en: 'Append 25 → 1225', hi: '25 जोड़ें → 1225' }]} result="35² = 1225 ✓" />
-    <ExampleCard title={{ en: 'Example 2 — 75²', hi: 'उदाहरण 2 — 75²' }} lines={['7 × 8 = 56', { en: 'Append 25 → 5625', hi: '25 जोड़ें → 5625' }]} result="75² = 5625 ✓" />
-    <ExampleCard title={{ en: 'Example 3 — 95²', hi: 'उदाहरण 3 — 95²' }} lines={['9 × 10 = 90', { en: 'Append 25 → 9025', hi: '25 जोड़ें → 9025' }]} result="95² = 9025 ✓" />
+    <ExampleCard title={{ en: 'Example 1: 35²', hi: 'उदाहरण 1: 35²' }} lines={['3 × 4 = 12', { en: 'Append 25 → 1225', hi: '25 जोड़ें → 1225' }]} result="35² = 1225 ✓" />
+    <ExampleCard title={{ en: 'Example 2: 75²', hi: 'उदाहरण 2: 75²' }} lines={['7 × 8 = 56', { en: 'Append 25 → 5625', hi: '25 जोड़ें → 5625' }]} result="75² = 5625 ✓" />
+    <ExampleCard title={{ en: 'Example 3: 95²', hi: 'उदाहरण 3: 95²' }} lines={['9 × 10 = 90', { en: 'Append 25 → 9025', hi: '25 जोड़ें → 9025' }]} result="95² = 9025 ✓" />
 
     <div style={{ background: '#F0F4FF', borderRadius: 12, padding: 16, marginTop: 8 }}>
       <L1_02_WhyNote />
@@ -282,7 +282,7 @@ const L1_03_CONTENT = (
 
     <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title={{ en: 'Example 1 — 8 × 7', hi: 'उदाहरण 1 — 8 × 7' }}
+      title={{ en: 'Example 1: 8 × 7', hi: 'उदाहरण 1: 8 × 7' }}
       lines={[
         { en: 'Deficits: 2 and 3', hi: 'कमियाँ: 2 और 3' },
         { en: 'Cross: 8 − 3 = 5', hi: 'तिरछा: 8 − 3 = 5' },
@@ -291,7 +291,7 @@ const L1_03_CONTENT = (
       result="8 × 7 = 56 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 2 — 9 × 6', hi: 'उदाहरण 2 — 9 × 6' }}
+      title={{ en: 'Example 2: 9 × 6', hi: 'उदाहरण 2: 9 × 6' }}
       lines={[
         { en: 'Deficits: 1 and 4', hi: 'कमियाँ: 1 और 4' },
         { en: 'Cross: 9 − 4 = 5', hi: 'तिरछा: 9 − 4 = 5' },
@@ -300,7 +300,7 @@ const L1_03_CONTENT = (
       result="9 × 6 = 54 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 3 — 7 × 6', hi: 'उदाहरण 3 — 7 × 6' }}
+      title={{ en: 'Example 3: 7 × 6', hi: 'उदाहरण 3: 7 × 6' }}
       lines={[
         { en: 'Deficits: 3 and 4', hi: 'कमियाँ: 3 और 4' },
         { en: 'Cross: 7 − 4 = 3', hi: 'तिरछा: 7 − 4 = 3' },
@@ -351,17 +351,17 @@ const L1_04_CONTENT = (
 
     <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title={{ en: 'Example 1 — 97 × 96', hi: 'उदाहरण 1 — 97 × 96' }}
+      title={{ en: 'Example 1: 97 × 96', hi: 'उदाहरण 1: 97 × 96' }}
       lines={[{ en: 'Deficits: 3, 4', hi: 'कमियाँ: 3, 4' }, { en: 'Cross: 97 − 4 = 93', hi: 'तिरछा: 97 − 4 = 93' }, { en: 'Product: 3 × 4 = 12', hi: 'गुणनफल: 3 × 4 = 12' }]}
       result="97 × 96 = 9312 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 2 — 98 × 97', hi: 'उदाहरण 2 — 98 × 97' }}
+      title={{ en: 'Example 2: 98 × 97', hi: 'उदाहरण 2: 98 × 97' }}
       lines={[{ en: 'Deficits: 2, 3', hi: 'कमियाँ: 2, 3' }, { en: 'Cross: 98 − 3 = 95', hi: 'तिरछा: 98 − 3 = 95' }, { en: 'Product: 2 × 3 = 06 (pad zero!)', hi: 'गुणनफल: 2 × 3 = 06 (शून्य लगाएं!)' }]}
       result="98 × 97 = 9506 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 3 — 95 × 94', hi: 'उदाहरण 3 — 95 × 94' }}
+      title={{ en: 'Example 3: 95 × 94', hi: 'उदाहरण 3: 95 × 94' }}
       lines={[{ en: 'Deficits: 5, 6', hi: 'कमियाँ: 5, 6' }, { en: 'Cross: 95 − 6 = 89', hi: 'तिरछा: 95 − 6 = 89' }, { en: 'Product: 5 × 6 = 30', hi: 'गुणनफल: 5 × 6 = 30' }]}
       result="95 × 94 = 8930 ✓"
     />
@@ -412,17 +412,17 @@ const L1_05_CONTENT = (
 
     <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title={{ en: 'Example 1 — 998 × 997', hi: 'उदाहरण 1 — 998 × 997' }}
+      title={{ en: 'Example 1: 998 × 997', hi: 'उदाहरण 1: 998 × 997' }}
       lines={[{ en: 'Deficits: 2, 3', hi: 'कमियाँ: 2, 3' }, { en: 'Cross: 998 − 3 = 995', hi: 'तिरछा: 998 − 3 = 995' }, { en: 'Product: 2 × 3 = 6 → 006', hi: 'गुणनफल: 2 × 3 = 6 → 006' }]}
       result="998 × 997 = 995006 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 2 — 996 × 994', hi: 'उदाहरण 2 — 996 × 994' }}
+      title={{ en: 'Example 2: 996 × 994', hi: 'उदाहरण 2: 996 × 994' }}
       lines={[{ en: 'Deficits: 4, 6', hi: 'कमियाँ: 4, 6' }, { en: 'Cross: 996 − 6 = 990', hi: 'तिरछा: 996 − 6 = 990' }, { en: 'Product: 4 × 6 = 24 → 024', hi: 'गुणनफल: 4 × 6 = 24 → 024' }]}
       result="996 × 994 = 990024 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 3 — 999 × 998', hi: 'उदाहरण 3 — 999 × 998' }}
+      title={{ en: 'Example 3: 999 × 998', hi: 'उदाहरण 3: 999 × 998' }}
       lines={[{ en: 'Deficits: 1, 2', hi: 'कमियाँ: 1, 2' }, { en: 'Cross: 999 − 2 = 997', hi: 'तिरछा: 999 − 2 = 997' }, { en: 'Product: 1 × 2 = 2 → 002', hi: 'गुणनफल: 1 × 2 = 2 → 002' }]}
       result="999 × 998 = 997002 ✓"
     />
@@ -508,17 +508,17 @@ const L1_06_CONTENT = (
 
     <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title={{ en: 'Example 1 — Digit sum of 9999', hi: 'उदाहरण 1 — 9999 का अंक योग' }}
+      title={{ en: 'Example 1: Digit sum of 9999', hi: 'उदाहरण 1: 9999 का अंक योग' }}
       lines={['9+9+9+9 = 36 → 3+6 = 9']}
       result={{ en: 'Digit sum = 9', hi: 'अंक योग = 9' }}
     />
     <ExampleCard
-      title={{ en: 'Example 2 — Verify 37 × 23 = 851', hi: 'उदाहरण 2 — 37 × 23 = 851 की जांच करें' }}
+      title={{ en: 'Example 2: Verify 37 × 23 = 851', hi: 'उदाहरण 2: 37 × 23 = 851 की जांच करें' }}
       lines={['DS(37) = 10 → 1', 'DS(23) = 5', '1 × 5 = 5', 'DS(851) = 14 → 5 ✓']}
       result={{ en: '37 × 23 = 851 ✓ Correct!', hi: '37 × 23 = 851 ✓ सही!' }}
     />
     <ExampleCard
-      title={{ en: 'Example 3 — Spot the error: 47 × 32 = 1513', hi: 'उदाहरण 3 — त्रुटि पहचानें: 47 × 32 = 1513' }}
+      title={{ en: 'Example 3: Spot the error: 47 × 32 = 1513', hi: 'उदाहरण 3: त्रुटि पहचानें: 47 × 32 = 1513' }}
       lines={['DS(47) = 11 → 2', 'DS(32) = 5', '2 × 5 = 10 → 1', { en: 'DS(1513) = 10 → 1 ✓ (digit sums match!)', hi: 'DS(1513) = 10 → 1 ✓ (अंक योग मिलते हैं!)' }]}
     />
     <div style={{ background: '#FEF3C7', border: '1px solid #F59E0B', borderRadius: 12, padding: '14px 18px' }}>
@@ -571,7 +571,7 @@ const L1_07_CONTENT = (
 
     <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title={{ en: 'Example 1 — 12 × 13', hi: 'उदाहरण 1 — 12 × 13' }}
+      title={{ en: 'Example 1: 12 × 13', hi: 'उदाहरण 1: 12 × 13' }}
       lines={[
         { en: 'Step 1: 2×3 = 6 (units)', hi: 'चरण 1: 2×3 = 6 (इकाई)' },
         { en: 'Step 2: 1×3 + 2×1 = 3+2 = 5 (tens)', hi: 'चरण 2: 1×3 + 2×1 = 3+2 = 5 (दहाई)' },
@@ -580,7 +580,7 @@ const L1_07_CONTENT = (
       result="12 × 13 = 156 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 2 — 23 × 32', hi: 'उदाहरण 2 — 23 × 32' }}
+      title={{ en: 'Example 2: 23 × 32', hi: 'उदाहरण 2: 23 × 32' }}
       lines={[
         { en: 'Step 1: 3×2 = 6', hi: 'चरण 1: 3×2 = 6' },
         { en: 'Step 2: 2×2 + 3×3 = 4+9 = 13 → write 3, carry 1', hi: 'चरण 2: 2×2 + 3×3 = 4+9 = 13 → 3 लिखें, 1 आगे ले जाएं' },
@@ -589,7 +589,7 @@ const L1_07_CONTENT = (
       result="23 × 32 = 736 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 3 — 47 × 63', hi: 'उदाहरण 3 — 47 × 63' }}
+      title={{ en: 'Example 3: 47 × 63', hi: 'उदाहरण 3: 47 × 63' }}
       lines={[
         { en: 'Step 1: 7×3 = 21 → write 1, carry 2', hi: 'चरण 1: 7×3 = 21 → 1 लिखें, 2 आगे ले जाएं' },
         { en: 'Step 2: 4×3 + 7×6 = 12+42 = 54 + carry 2 = 56 → write 6, carry 5', hi: 'चरण 2: 4×3 + 7×6 = 12+42 = 54 + कैरी 2 = 56 → 6 लिखें, 5 आगे ले जाएं' },
@@ -633,12 +633,12 @@ const L1_08_CONTENT = (
 
     <SectionTitle>{{ en: 'Examples × 11', hi: 'उदाहरण × 11' }}</SectionTitle>
     <ExampleCard
-      title={{ en: 'Example 1 — 23 × 11', hi: 'उदाहरण 1 — 23 × 11' }}
+      title={{ en: 'Example 1: 23 × 11', hi: 'उदाहरण 1: 23 × 11' }}
       lines={[{ en: 'First: 2', hi: 'पहला: 2' }, { en: 'Middle: 2+3 = 5', hi: 'मध्य: 2+3 = 5' }, { en: 'Last: 3', hi: 'अंतिम: 3' }]}
       result="23 × 11 = 253 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 2 — 67 × 11', hi: 'उदाहरण 2 — 67 × 11' }}
+      title={{ en: 'Example 2: 67 × 11', hi: 'उदाहरण 2: 67 × 11' }}
       lines={[
         { en: 'First: 6', hi: 'पहला: 6' },
         { en: 'Middle: 6+7 = 13 → write 3, carry 1 → first digit becomes 6+1=7', hi: 'मध्य: 6+7 = 13 → 3 लिखें, 1 आगे ले जाएं → पहला अंक 6+1=7 बनता है' },
@@ -647,7 +647,7 @@ const L1_08_CONTENT = (
       result="67 × 11 = 737 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 3 — 346 × 11', hi: 'उदाहरण 3 — 346 × 11' }}
+      title={{ en: 'Example 3: 346 × 11', hi: 'उदाहरण 3: 346 × 11' }}
       lines={[
         { en: 'First: 3', hi: 'पहला: 3' },
         '3+4 = 7',
@@ -694,22 +694,22 @@ const L1_09_CONTENT = (
 
     <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
-      title={{ en: 'Example 1 — 7 × 9', hi: 'उदाहरण 1 — 7 × 9' }}
+      title={{ en: 'Example 1: 7 × 9', hi: 'उदाहरण 1: 7 × 9' }}
       lines={[{ en: 'First digit = 7−1 = 6', hi: 'पहला अंक = 7−1 = 6' }, { en: 'Second digit = 10−7 = 3', hi: 'दूसरा अंक = 10−7 = 3' }]}
       result="7 × 9 = 63 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 2 — 23 × 9', hi: 'उदाहरण 2 — 23 × 9' }}
+      title={{ en: 'Example 2: 23 × 9', hi: 'उदाहरण 2: 23 × 9' }}
       lines={['23 × 10 = 230', '230 − 23 = 207']}
       result="23 × 9 = 207 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 3 — 45 × 99', hi: 'उदाहरण 3 — 45 × 99' }}
+      title={{ en: 'Example 3: 45 × 99', hi: 'उदाहरण 3: 45 × 99' }}
       lines={['45 × 100 = 4500', '4500 − 45 = 4455']}
       result="45 × 99 = 4455 ✓"
     />
     <ExampleCard
-      title={{ en: 'Example 4 — 12 × 999', hi: 'उदाहरण 4 — 12 × 999' }}
+      title={{ en: 'Example 4: 12 × 999', hi: 'उदाहरण 4: 12 × 999' }}
       lines={['12 × 1000 = 12000', '12000 − 12 = 11988']}
       result="12 × 999 = 11988 ✓"
     />
