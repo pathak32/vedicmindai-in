@@ -6,7 +6,7 @@ export default function RupeeOneOffer({ quizStreak = 0 }) {
   const [dismissed, setDismissed] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const RAZORPAY_KEY = 'rzp_live_qPmcpAFZ0WxauJ';
+  const RAZORPAY_KEY = 'rzp_live_T7T0dODtgqw5G2';
   const eligible = quizStreak >= 7;
 
   useEffect(() => {
