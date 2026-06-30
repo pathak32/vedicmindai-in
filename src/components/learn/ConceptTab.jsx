@@ -606,7 +606,7 @@ function L1_07_Diagram() {
     return (
       <>
         <div style={{ borderTop: '1px solid #93C5FD', paddingTop: 8, marginTop: 4 }}>{'चरण 1:  B×D   ↕  (इकाई)'}</div>
-        <div>{'चरण 2:  A×D ✕ B×C  (दहाई)'}</div>
+        <div>{'चरण 2:  A×D + B×C  (दहाई)'}</div>
         <div>{'चरण 3:  A×C   ↕  (सैंकड़ा)'}</div>
       </>
     );
@@ -614,7 +614,7 @@ function L1_07_Diagram() {
   return (
     <>
       <div style={{ borderTop: '1px solid #93C5FD', paddingTop: 8, marginTop: 4 }}>{'Step 1:  B×D   ↕  (units)'}</div>
-      <div>{'Step 2:  A×D ✕ B×C  (tens)'}</div>
+      <div>{'Step 2:  A×D + B×C  (tens)'}</div>
       <div>{'Step 3:  A×C   ↕  (hundreds)'}</div>
     </>
   );
