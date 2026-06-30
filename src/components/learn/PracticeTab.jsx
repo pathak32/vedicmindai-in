@@ -53,7 +53,7 @@ const LESSON_PROBLEMS = {
     { q: { en: 'What is the digit sum of 9999?', hi: '9999 का अंक योग क्या है?' }, options: ['0','9','36','18'], correct: 0, exp: { en: '9+9+9+9=36 → 3+6=9 → by convention, treat as 0', hi: '9+9+9+9=36 → 3+6=9 → परंपरा अनुसार, 0 मानें' } },
     { q: { en: 'Verify: 37 × 23 = 851. Is it correct? (DS check)', hi: 'जांचें: 37 × 23 = 851. क्या यह सही है? (अंक योग जांच)' }, options: ['Yes, correct','No, wrong'], correct: 0, exp: { en: 'DS(37)=10→1, DS(23)=5, 1×5=5. DS(851)=14→5 ✓ Likely correct.', hi: 'DS(37)=10→1, DS(23)=5, 1×5=5. DS(851)=14→5 ✓ संभवतः सही।' } },
     { q: { en: 'What is the digit sum of 999?', hi: '999 का अंक योग क्या है?' }, options: ['0','9','27','18'], correct: 0, exp: { en: '9+9+9=27 → 2+7=9 → by convention, treat as 0', hi: '9+9+9=27 → 2+7=9 → परंपरा अनुसार, 0 मानें' } },
-    { q: { en: 'Digit sum of 12345?', hi: '12345 का अंक योग?' }, options: ['3','6','15','5'], correct: 2, exp: { en: '1+2+3+4+5=15. (Stop here since 15 is 2 digits but accepted; or 1+5=6)', hi: '1+2+3+4+5=15. (15 दो अंकों का है पर स्वीकार्य; या 1+5=6)' } },
+    { q: { en: 'Digit sum of 12345?', hi: '12345 का अंक योग?' }, options: ['3','6','15','5'], correct: 1, exp: { en: '1+2+3+4+5=15 → 1+5=6 (keep reducing to a single digit)', hi: '1+2+3+4+5=15 → 1+5=6 (एक अंक तक घटाते रहें)' } },
   ],
   l1_07: [
     { q: { en: 'Calculate 12 × 13 using Urdhva method', hi: 'ऊर्ध्व विधि से 12 × 13 निकालें' }, options: ['146','156','166','136'], correct: 1, exp: { en: 'Right: 2×3=6. Cross: 1×3+2×1=5. Left: 1×1=1 → 156', hi: 'दायां: 2×3=6। तिरछा: 1×3+2×1=5। बायां: 1×1=1 → 156' } },
