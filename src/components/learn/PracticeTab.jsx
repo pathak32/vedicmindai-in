@@ -50,9 +50,9 @@ const LESSON_PROBLEMS = {
   ],
   l1_06: [
     { q: { en: 'What is the digit sum of 4567?', hi: '4567 का अंक योग क्या है?' }, options: ['4','6','8','22'], correct: 0, exp: { en: '4+5+6+7=22 → 2+2=4', hi: '4+5+6+7=22 → 2+2=4' } },
-    { q: { en: 'What is the digit sum of 9999?', hi: '9999 का अंक योग क्या है?' }, options: ['0','9','36','18'], correct: 1, exp: { en: '9+9+9+9=36 → 3+6=9', hi: '9+9+9+9=36 → 3+6=9' } },
+    { q: { en: 'What is the digit sum of 9999?', hi: '9999 का अंक योग क्या है?' }, options: ['0','9','36','18'], correct: 0, exp: { en: '9+9+9+9=36 → 3+6=9 → by convention, treat as 0', hi: '9+9+9+9=36 → 3+6=9 → परंपरा अनुसार, 0 मानें' } },
     { q: { en: 'Verify: 37 × 23 = 851. Is it correct? (DS check)', hi: 'जांचें: 37 × 23 = 851. क्या यह सही है? (अंक योग जांच)' }, options: ['Yes, correct','No, wrong'], correct: 0, exp: { en: 'DS(37)=10→1, DS(23)=5, 1×5=5. DS(851)=14→5 ✓ Likely correct.', hi: 'DS(37)=10→1, DS(23)=5, 1×5=5. DS(851)=14→5 ✓ संभवतः सही।' } },
-    { q: { en: 'What is the digit sum of 999?', hi: '999 का अंक योग क्या है?' }, options: ['0','9','27','18'], correct: 1, exp: { en: '9+9+9=27 → 2+7=9', hi: '9+9+9=27 → 2+7=9' } },
+    { q: { en: 'What is the digit sum of 999?', hi: '999 का अंक योग क्या है?' }, options: ['0','9','27','18'], correct: 0, exp: { en: '9+9+9=27 → 2+7=9 → by convention, treat as 0', hi: '9+9+9=27 → 2+7=9 → परंपरा अनुसार, 0 मानें' } },
     { q: { en: 'Digit sum of 12345?', hi: '12345 का अंक योग?' }, options: ['3','6','15','5'], correct: 2, exp: { en: '1+2+3+4+5=15. (Stop here since 15 is 2 digits but accepted; or 1+5=6)', hi: '1+2+3+4+5=15. (15 दो अंकों का है पर स्वीकार्य; या 1+5=6)' } },
   ],
   l1_07: [
@@ -121,7 +121,7 @@ const LESSON_PROBLEMS = {
   l2_07: [
     { q: 'Verify 236 × 47 = 11092 using digit sums', options: ['Correct ✓','Wrong ✗'], correct: 0, exp: 'DS(236)=2, DS(47)=2. 2×2=4. DS(11092)=13→4 ✓' },
     { q: 'Verify 158 × 43 = 6784 using digit sums', options: ['Correct ✓','Wrong ✗'], correct: 1, exp: 'DS(158)=5, DS(43)=7. 5×7=35→8. DS(6784)=25→7. 8≠7 → WRONG! Correct answer is 6794.' },
-    { q: 'What is the digit sum of 987?', options: ['6','15','24','9'], correct: 3, exp: '9+8+7=24 → 2+4=6 → wait: actually 6. Let me recalc: 9+8+7=24→2+4=6. Answer: 6' },
+    { q: 'What is the digit sum of 987?', options: ['6','15','24','9'], correct: 0, exp: '9+8+7=24 → 2+4=6' },
     { q: 'Digit sum verification catches what percentage of errors?', options: ['~50%','~70%','~89%','~99%'], correct: 2, exp: 'The digit sum method catches approximately 89% of calculation errors.' },
     { q: 'For addition, what does digit sum rule check?', options: ['DS(a) × DS(b) = DS(a×b)','DS(a) + DS(b) = DS(a+b)','DS(a) - DS(b) = DS(a-b)','None of these'], correct: 1, exp: 'For addition: DS(a) + DS(b) should equal DS(a+b). For multiplication: DS(a) × DS(b) = DS(a×b).' },
   ],

@@ -220,9 +220,9 @@ const QUESTIONS = [
 
   { id: 's05', group: 'SECONDARY', topic: 'Number Systems',
     question: 'What is the digit sum of 9999999?',
-    options: ['0','9','63','72'], correct: 1,
+    options: ['0','9','63','72'], correct: 0,
     vedic_sutra: 'Gunita Samuchyah', difficulty: 3,
-    vedic_tip: '7 nines: 9×7=63 → 6+3=9. When all digits are 9, digit sum = 9!' },
+    vedic_tip: '7 nines: 9×7=63 → 6+3=9 → by convention, treat as 0. When all digits are 9, digit sum = 0!' },
 
   // Profit & Loss
   { id: 's06', group: 'SECONDARY', topic: 'Profit & Loss',

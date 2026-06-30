@@ -50,7 +50,7 @@ const LESSON_QUESTIONS = {
     { q: { en: 'Calculate 997 × 995', hi: '997 × 995 निकालें' }, options: ['991015','992015','993015','994015'], correct: 1 },
   ],
   l1_06: [
-    { q: { en: 'The digit sum of 9999 is?', hi: '9999 का अंक योग है?' }, options: ['0','9','36','27'], correct: 1 },
+    { q: { en: 'The digit sum of 9999 is?', hi: '9999 का अंक योग है?' }, options: ['0','9','36','27'], correct: 0 },
     { q: { en: 'Digit sum verification is called which Vedic principle?', hi: 'अंक योग सत्यापन किस वैदिक सिद्धांत को कहते हैं?' }, options: ['Nikhilam','Gunita Samuchyah','Anurupyena','Vilokanam'], correct: 1 },
     { q: { en: 'What digit sum check applies to multiplication a × b = c?', hi: 'गुणन a × b = c पर कौन सी अंक योग जांच लागू होती है?' }, options: ['DS(a)+DS(b)=DS(c)','DS(a)×DS(b)=DS(c)','DS(a)−DS(b)=DS(c)','DS(a)÷DS(b)=DS(c)'], correct: 1 },
     { q: { en: 'The digit sum of 18 is?', hi: '18 का अंक योग है?' }, options: ['9','8','7','6'], correct: 0 },
@@ -123,7 +123,7 @@ const LESSON_QUESTIONS = {
     { q: 'Gunita Samuchyah is used for?', options: ['Multiplication','Division','Verification of calculations','Squaring numbers'], correct: 2 },
     { q: 'Verify 236 × 47 = 11092. Is it correct?', options: ['Yes ✓','No ✗'], correct: 0 },
     { q: 'Verify 158 × 43 = 6784. Is it correct?', options: ['Yes ✓','No ✗'], correct: 1 },
-    { q: 'The digit sum of 999 is?', options: ['0','9','18','27'], correct: 1 },
+    { q: 'The digit sum of 999 is?', options: ['0','9','18','27'], correct: 0 },
     { q: 'Digit sum check catches about ___ of errors', options: ['50%','70%','89%','100%'], correct: 2 },
   ],
   l2_08: [
