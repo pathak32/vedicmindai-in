@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getSupabase } from '@/lib/supabaseClient';
 import { useLanguage } from '@/lib/LanguageContext';
+import { CURRICULUM } from '@/components/learn/curriculumData';
 
 const card = { background:'rgba(255,255,255,0.9)', border:'1px solid rgba(30,64,175,0.1)', borderRadius:14, padding:20, boxShadow:'0 2px 12px rgba(0,0,0,0.05)', marginBottom:16 };
 const btn = (color='#1e40af') => ({ padding:'8px 18px', borderRadius:9, background:color, color:'#fff', border:'none', cursor:'pointer', fontSize:13, fontWeight:600 });
@@ -8,14 +9,26 @@ const EXAM_TYPES = ['daily','weekly','olympiad','jee','neet','ssc','upsc','gener
 const DIFFICULTIES = [1,2,3,4,5];
 const SUTRAS = ['Ekadhikena Purvena','Nikhilam Navatashcaramam Dashatah','Anurupyena','Paravartya Yojayet','Shunyam Saamyasamuccaye','Anurupye Shunyamanyat','Sankalana-Vyavakalanabhyam','Puranapuranabhyam','Chalana-Kalanabhyam','Yavadunam','Vyashtisamanstih','Shesanyankena Charamena','Sopaantyadvayamantyam','Ekanyunena Purvena','Gunitasamuchyah','Gunakasamuchyah'];
 
+// quiz_questions (the live-serving table) uses easy/medium/hard, not the 1-5 scale.
+function bandForDifficulty(d) {
+  return d <= 2 ? 'easy' : d <= 3 ? 'medium' : 'hard';
+}
+
+function flattenLessonsForPicker() {
+  return CURRICULUM.flatMap(level => level.lessons.map(l => ({ id: l.id, label: `${l.id} — ${l.title || l.name || ''}`.trim() })));
+}
+
+const LESSON_OPTIONS = flattenLessonsForPicker();
+
 export default function AdminQuizManager() {
   const { t } = useLanguage();
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
   const [filter, setFilter] = useState({ exam_type:'all', difficulty:'all' });
-  const [genConfig, setGenConfig] = useState({ sutra: SUTRAS[0], difficulty:3, exam_type:'daily', count:10 });
+  const [genConfig, setGenConfig] = useState({ sutra: SUTRAS[0], difficulty:3, exam_type:'daily', count:10, lesson_id: LESSON_OPTIONS[0]?.id || '' });
   const [genResult, setGenResult] = useState('');
+  const [promoting, setPromoting] = useState({});
 
   useEffect(() => { loadQuestions(); }, []);
 
@@ -52,6 +65,7 @@ export default function AdminQuizManager() {
         difficulty: genConfig.difficulty,
         exam_type: genConfig.exam_type,
         topic: genConfig.sutra,
+        lesson_id: genConfig.lesson_id,
         is_active: true,
       }));
       const { error } = await sb.from('questions').insert(rows);
@@ -70,6 +84,40 @@ export default function AdminQuizManager() {
     loadQuestions();
   }
 
+  // Push a reviewed question from the staging `questions` table into the
+  // live-serving `quiz_questions` table. Maps the 1-5 difficulty scale to
+  // quiz_questions' easy/medium/hard band, and marks it approved + daily.
+  async function promoteQuestion(q) {
+    setPromoting(p => ({ ...p, [q.id]: true }));
+    try {
+      const sb = await getSupabase();
+      const lessonId = q.lesson_id || genConfig.lesson_id;
+      if (!lessonId) throw new Error('No lesson selected for this question — cannot promote without a lesson_id.');
+
+      const { error } = await sb.from('quiz_questions').insert({
+        lesson_id: lessonId,
+        question_text: q.question_text,
+        option_a: q.option_a,
+        option_b: q.option_b,
+        option_c: q.option_c,
+        option_d: q.option_d,
+        correct_answer: q.correct_answer,
+        explanation: q.explanation,
+        difficulty: bandForDifficulty(q.difficulty),
+        quiz_type: 'daily',
+        status: 'approved',
+        source: 'ai_generated',
+        used_count: 0,
+      });
+      if (error) throw error;
+      setGenResult(`✅ Promoted "${q.question_text.slice(0, 40)}..." to the live quiz.`);
+    } catch (e) {
+      setGenResult(`❌ Promote failed: ${e.message}`);
+    } finally {
+      setPromoting(p => ({ ...p, [q.id]: false }));
+    }
+  }
+
   async function applyFilter() {
     await loadQuestions();
   }
@@ -81,6 +129,12 @@ export default function AdminQuizManager() {
         <h3 style={{ fontSize:16, fontWeight:600, marginBottom:4 }}>🤖 AI Question Generator</h3>
         <p style={{ fontSize:12, color:'#6B7280', marginBottom:16 }}>Select sutra, difficulty and exam type — AI will generate ready-to-use questions instantly.</p>
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:12, marginBottom:14 }}>
+          <div>
+            <label style={{ fontSize:12, color:'#6B7280', display:'block', marginBottom:4 }}>Lesson</label>
+            <select value={genConfig.lesson_id} onChange={e=>setGenConfig(p=>({...p,lesson_id:e.target.value}))} style={{ width:'100%', padding:'7px 10px', borderRadius:8, border:'1px solid #E5E7EB', fontSize:12 }}>
+              {LESSON_OPTIONS.map(l=><option key={l.id} value={l.id}>{l.label}</option>)}
+            </select>
+          </div>
           <div>
             <label style={{ fontSize:12, color:'#6B7280', display:'block', marginBottom:4 }}>Sutra</label>
             <select value={genConfig.sutra} onChange={e=>setGenConfig(p=>({...p,sutra:e.target.value}))} style={{ width:'100%', padding:'7px 10px', borderRadius:8, border:'1px solid #E5E7EB', fontSize:12 }}>
@@ -148,6 +202,7 @@ export default function AdminQuizManager() {
                       <span style={{ background:'#EEF2FF', color:'#4338CA', fontSize:11, padding:'2px 8px', borderRadius:20, fontWeight:600 }}>{q.exam_type?.toUpperCase()}</span>
                       <span style={{ background:'#FEF3C7', color:'#92400E', fontSize:11, padding:'2px 8px', borderRadius:20, fontWeight:600 }}>L{q.difficulty}</span>
                       <span style={{ background:'#F0FDF4', color:'#166534', fontSize:11, padding:'2px 8px', borderRadius:20 }}>{q.sutra}</span>
+                      {q.lesson_id && <span style={{ background:'#EFF6FF', color:'#1D4ED8', fontSize:11, padding:'2px 8px', borderRadius:20, fontWeight:600 }}>{q.lesson_id}</span>}
                     </div>
                     <p style={{ fontSize:13, fontWeight:600, margin:'0 0 8px', color:'#0A1628' }}>{q.question_text}</p>
                     <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:4, fontSize:12 }}>
@@ -160,6 +215,9 @@ export default function AdminQuizManager() {
                     {q.explanation && <p style={{ fontSize:11, color:'#6B7280', marginTop:8, fontStyle:'italic' }}>💡 {q.explanation}</p>}
                   </div>
                   <button onClick={()=>deleteQuestion(q.id)} style={{ padding:'4px 10px', borderRadius:6, background:'#FEE2E2', color:'#DC2626', border:'none', cursor:'pointer', fontSize:12, flexShrink:0 }}>🗑️</button>
+                  <button onClick={()=>promoteQuestion(q)} disabled={promoting[q.id]} style={{ padding:'4px 10px', borderRadius:6, background: promoting[q.id] ? '#D1D5DB' : '#DCFCE7', color:'#166534', border:'none', cursor:'pointer', fontSize:12, flexShrink:0, fontWeight:600, marginLeft:6 }}>
+                    {promoting[q.id] ? '⏳' : '✅ Promote to Live Quiz'}
+                  </button>
                 </div>
               </div>
             ))}

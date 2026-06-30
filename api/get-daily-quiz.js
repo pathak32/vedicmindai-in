@@ -183,6 +183,7 @@ export default async function handler(req, res) {
         correctIndex,
         difficulty: q.difficulty,
         lessonId: q.lesson_id,
+        explanation: q.explanation || null,
       };
     });
 

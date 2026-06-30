@@ -10,6 +10,8 @@ export default async function handler(req, res) {
 
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
+  const difficultyBand = difficulty<=2 ? 'easy' : difficulty<=3 ? 'medium' : 'hard';
+
   const prompt = `Generate ${count} multiple-choice Vedic Mathematics questions for the sutra "${sutra}".
 Difficulty level: ${difficulty}/5 (${difficulty<=2?'Easy':difficulty<=3?'Medium':difficulty<=4?'Hard':'Expert'}).
 Exam type: ${exam_type.toUpperCase()}.
@@ -22,7 +24,12 @@ Rules:
 - Each question must have exactly 4 options (a,b,c,d)
 - correct_answer must be exactly one of: "a","b","c", or "d"
 - Explanation must show the Vedic method step by step
-- Difficulty ${difficulty}: ${difficulty<=2?'simple 2-digit numbers':difficulty<=3?'3-digit numbers':difficulty<=4?'4-digit and complex':'multi-step expert problems'}`;
+- Difficulty ${difficulty}: ${difficulty<=2?'simple 2-digit numbers':difficulty<=3?'3-digit numbers':difficulty<=4?'4-digit and complex':'multi-step expert problems'}
+
+VedicMind house convention for DIGIT SUM questions (apply this strictly if the question involves a digit sum, "casting out 9s", or digit sum verification):
+- A digit sum is reduced repeatedly to a single digit (e.g. 4567 -> 4+5+6+7=22 -> 2+2=4).
+- IMPORTANT: whenever the reduced digit sum would be 9, the correct answer is "0", not "9". Always offer "0" as one of the four options in that case, and never offer "9" as the correct answer for a digit-sum question.
+- This 9->0 rule applies ONLY to digit-sum questions. Do not apply it to any other type of question.`;
 
   try {
     const message = await client.messages.create({
