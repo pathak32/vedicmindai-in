@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -229,7 +230,9 @@ function PlanCard({
 
 export default function PricingPage() {
   const { t } = useLanguage();
+  const { user } = useVedicAuth();
   const [isAnnual, setIsAnnual] = useState(false);
+  const [paymentLoading, setPaymentLoading] = useState(false);
   const navigate = useNavigate();
 
   const plan = JSON.parse(localStorage.getItem('vedicmind_plan') || '{}');
@@ -241,51 +244,88 @@ export default function PricingPage() {
     return plan.planStatus === planName.toLowerCase() || plan.planStatus === planName.toLowerCase() + '_annual';
   }
 
-  // Real Razorpay Checkout SDK — opens an in-app payment modal with the
-  // correct amount per plan (not a static shared link). This fixes the
-  // earlier static-link approach where every plan opened the same fixed
-  // ₹299 link regardless of which plan (Basic/Pro/Family) was clicked, and
-  // where a paid link would permanently show "Already Paid" to the next
-  // visitor. Same RAZORPAY_KEY already used successfully in RupeeOneOffer.jsx.
+  // Real Razorpay Checkout SDK driven by a server-created order — this is
+  // the secure flow: the amount is decided server-side in
+  // /api/create-razorpay-order (never trusted from the browser), and the
+  // payment is cryptographically verified server-side in
+  // /api/verify-razorpay-payment before Supabase is updated. Replaces the
+  // earlier client-only flow where the amount and "success" state were
+  // both just trusted from the browser with no server confirmation.
   const RAZORPAY_KEY = 'rzp_live_qPmcpAFZ0WxauJ';
 
-  function initiatePayment(planObj) {
-    const planId = isAnnual ? `${planObj.id}_annual` : planObj.id;
-    const amountInPaise = isAnnual ? planObj.annualPaise : planObj.monthlyPaise;
-    const planLabel = isAnnual ? `${planObj.name} (Annual)` : planObj.name;
-
+  async function initiatePayment(planObj) {
+    if (!user?.id) {
+      alert('Please sign in again before subscribing.');
+      navigate('/auth');
+      return;
+    }
     if (!window.Razorpay) {
-      // SDK script (checkout.razorpay.com/v1/checkout.js) failed to load —
-      // most likely a network/ad-blocker issue. Fail loudly rather than
-      // silently doing nothing.
       alert('Payment system is still loading. Please wait a moment and try again.');
       return;
     }
 
-    const options = {
-      key: RAZORPAY_KEY,
-      amount: amountInPaise,
-      currency: 'INR',
-      name: 'VedicMindAI',
-      description: `${planLabel} Plan Subscription`,
-      image: 'https://vedicmindai.in/logo.png',
-      theme: { color: '#1E40AF' },
-      handler: function (response) {
-        // Same-tab navigation to the existing PaymentSuccessPage, which
-        // already handles saving plan status to localStorage and showing
-        // the unlocked-features confirmation screen.
-        window.location.href = `/payment-success?plan=${planId}&razorpay_payment_id=${response.razorpay_payment_id}`;
-      },
-      modal: {
-        ondismiss: function () {
-          // User closed the Razorpay modal without paying — no action
-          // needed, they simply stay on the Pricing page.
-        },
-      },
-    };
+    const planId = isAnnual ? `${planObj.id}_annual` : planObj.id;
+    const planLabel = isAnnual ? `${planObj.name} (Annual)` : planObj.name;
 
-    const rzp = new window.Razorpay(options);
-    rzp.open();
+    setPaymentLoading(true);
+    try {
+      // Step 1 — server creates the order with the correct amount
+      const orderRes = await fetch('/api/create-razorpay-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan: planId, userId: user.id }),
+      });
+      const orderData = await orderRes.json();
+      if (!orderRes.ok) throw new Error(orderData.error || 'Could not start payment. Please try again.');
+
+      // Step 2 — open Checkout against that specific order
+      const options = {
+        key: RAZORPAY_KEY,
+        amount: orderData.amount,
+        currency: orderData.currency,
+        order_id: orderData.orderId,
+        name: 'VedicMindAI',
+        description: `${planLabel} Plan Subscription`,
+        image: 'https://vedicmindai.in/logo.png',
+        theme: { color: '#1E40AF' },
+        handler: async function (response) {
+          // Step 3 — server verifies the signature and activates the plan
+          try {
+            const verifyRes = await fetch('/api/verify-razorpay-payment', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+                plan: planId,
+                userId: user.id,
+              }),
+            });
+            const verifyData = await verifyRes.json();
+            if (!verifyRes.ok) throw new Error(verifyData.error || 'Payment verification failed.');
+
+            // Step 4 — only navigate to success after server confirms
+            window.location.href = `/payment-success?plan=${planId}&razorpay_payment_id=${response.razorpay_payment_id}`;
+          } catch (err) {
+            alert(`Payment succeeded but activation failed: ${err.message}\n\nPlease contact support with payment ID: ${response.razorpay_payment_id}`);
+          }
+        },
+        modal: {
+          ondismiss: function () {
+            // User closed the Razorpay modal without paying — no action
+            // needed, they simply stay on the Pricing page.
+          },
+        },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (err) {
+      alert(err.message || 'Could not start payment. Please try again.');
+    } finally {
+      setPaymentLoading(false);
+    }
   }
 
   return (
