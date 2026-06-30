@@ -94,17 +94,17 @@ export const L4_05_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 15 August 1947"
+      title="Example 1: 15 August 1947"
       lines={['d=15, m(Aug)=3, y=47, ⌊47÷4⌋=11, c(1900s)=0', 'Total: 15+3+47+11+0 = 76', '76 mod 7 = 6 = Saturday']}
       result="15 Aug 1947 = Saturday ✓"
     />
     <ExampleCard
-      title="Example 2 — 1 January 2000 (leap year Jan)"
+      title="Example 2: 1 January 2000 (leap year Jan)"
       lines={['d=1, m(Jan leap)=1−1=0, y=00, ⌊0÷4⌋=0, c(2000s)=6', 'Total: 1+0+0+0+6 = 7', '7 mod 7 = 0 = Saturday']}
       result="1 Jan 2000 = Saturday ✓"
     />
     <ExampleCard
-      title="Example 3 — 4 July 1776 (1700s)"
+      title="Example 3: 4 July 1776 (1700s)"
       lines={['d=4, m(Jul)=0, y=76, ⌊76÷4⌋=19, c(1700s)=4', 'Total: 4+0+76+19+4 = 103', '103 mod 7 = 5 = Thursday']}
       result="4 Jul 1776 = Thursday ✓"
     />
@@ -135,17 +135,17 @@ export const L4_06_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — √2 to 4 decimal places"
+      title="Example 1: √2 to 4 decimal places"
       lines={['Step 1: 1² ≤ 2 → digit = 1, remainder = 1', 'Bring 00 → 100. Divisor prefix = 2. (24)×4=96 → digit 4, rem 4', 'Bring 00 → 400. Prefix = 28. (281)×1=281 → digit 1, rem 119', 'Bring 00 → 11900. Prefix = 282. (2824)×4=11296 → digit 4, rem 604']}
       result="√2 ≈ 1.4142 ✓"
     />
     <ExampleCard
-      title="Example 2 — √5 to 3 decimal places"
+      title="Example 2: √5 to 3 decimal places"
       lines={['2² = 4 ≤ 5 → digit 2, remainder 1', 'Bring 00 → 100. Prefix 4. (42)×2=84 → digit 2, rem 16', 'Bring 00 → 1600. Prefix 44. (442)×2=884 → digit 2, rem 132', 'Bring 00 → 13200. Prefix 444. (4472)×2=8944... → digit 2']}
       result="√5 ≈ 2.236 ✓"
     />
     <ExampleCard
-      title="Example 3 — √17"
+      title="Example 3: √17"
       lines={['4² = 16 ≤ 17 → digit 4, remainder 1', 'Bring 00 → 100. Prefix 8. (81)×1=81 → digit 1, rem 19', 'Bring 00 → 1900. Prefix 82. (822)×2=1644 → digit 2, rem 256']}
       result="√17 ≈ 4.12... ✓"
     />
