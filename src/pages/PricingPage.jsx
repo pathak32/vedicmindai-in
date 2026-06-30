@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
-import { Capacitor } from '@capacitor/core';
-import { Browser } from '@capacitor/browser';
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -243,29 +241,51 @@ export default function PricingPage() {
     return plan.planStatus === planName.toLowerCase() || plan.planStatus === planName.toLowerCase() + '_annual';
   }
 
-  // ⚠️ TEMPORARY PLACEHOLDER — replace with a FRESH (unpaid) Razorpay Payment
-  // Link before sharing with testers/users. The old link (vRD8R2lw) was
-  // already paid once and now permanently shows a "Payment Successful"
-  // receipt to every visitor — Razorpay Payment Links hold paid-state per
-  // link, they don't reset per visitor. Generate a new link per plan at
-  // https://razorpay.com/payment-link and paste it below.
-  const RAZORPAY_PAYMENT_LINK = 'https://rzp.io/rzp/qVsieSF';
+  // Real Razorpay Checkout SDK — opens an in-app payment modal with the
+  // correct amount per plan (not a static shared link). This fixes the
+  // earlier static-link approach where every plan opened the same fixed
+  // ₹299 link regardless of which plan (Basic/Pro/Family) was clicked, and
+  // where a paid link would permanently show "Already Paid" to the next
+  // visitor. Same RAZORPAY_KEY already used successfully in RupeeOneOffer.jsx.
+  const RAZORPAY_KEY = 'rzp_live_qPmcpAFZ0WxauJ';
 
-  async function initiatePayment() {
-    if (Capacitor.isNativePlatform()) {
-      // Inside the Play Store app (Capacitor WebView): Razorpay's own "X"
-      // closes the entire app instead of going back, because the checkout
-      // page replaces the WebView's only window. Opening it via the
-      // Browser plugin instead shows it as an in-app overlay with its own
-      // native close control that reliably returns to the app regardless
-      // of what Razorpay's page does internally.
-      await Browser.open({ url: RAZORPAY_PAYMENT_LINK });
-    } else {
-      // Plain web (vedicmindai.in in a normal browser tab): same-tab
-      // navigation works fine — the browser's own back button and
-      // Razorpay's "X" both correctly return to this page.
-      window.location.href = RAZORPAY_PAYMENT_LINK;
+  function initiatePayment(planObj) {
+    const planId = isAnnual ? `${planObj.id}_annual` : planObj.id;
+    const amountInPaise = isAnnual ? planObj.annualPaise : planObj.monthlyPaise;
+    const planLabel = isAnnual ? `${planObj.name} (Annual)` : planObj.name;
+
+    if (!window.Razorpay) {
+      // SDK script (checkout.razorpay.com/v1/checkout.js) failed to load —
+      // most likely a network/ad-blocker issue. Fail loudly rather than
+      // silently doing nothing.
+      alert('Payment system is still loading. Please wait a moment and try again.');
+      return;
     }
+
+    const options = {
+      key: RAZORPAY_KEY,
+      amount: amountInPaise,
+      currency: 'INR',
+      name: 'VedicMindAI',
+      description: `${planLabel} Plan Subscription`,
+      image: 'https://vedicmindai.in/logo.png',
+      theme: { color: '#1E40AF' },
+      handler: function (response) {
+        // Same-tab navigation to the existing PaymentSuccessPage, which
+        // already handles saving plan status to localStorage and showing
+        // the unlocked-features confirmation screen.
+        window.location.href = `/payment-success?plan=${planId}&razorpay_payment_id=${response.razorpay_payment_id}`;
+      },
+      modal: {
+        ondismiss: function () {
+          // User closed the Razorpay modal without paying — no action
+          // needed, they simply stay on the Pricing page.
+        },
+      },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   }
 
   return (
@@ -332,7 +352,7 @@ export default function PricingPage() {
               key={p.id}
               plan={p}
               isAnnual={isAnnual}
-              onPay={initiatePayment}
+              onPay={() => initiatePayment(p)}
               isCurrent={isCurrentPlan(p.name)}
               isFree={p.id === 'free'}
             />
