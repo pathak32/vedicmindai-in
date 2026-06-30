@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { getTodayString, getDailyQuestions } from '@/lib/dailyQuizEngine';
+import { getTodayString } from '@/lib/dailyQuizEngine';
 import { useLanguage } from '@/lib/LanguageContext';
 
 // ─── Countdown to midnight ────────────────────────────────────────────────────
@@ -298,9 +298,9 @@ export default function DailyQuizResultsPage() {
     }
   }
 
-  // Re-generate today's questions to get text/explanation (deterministic, same seed)
-  const profile = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile') || '{}'); } catch { return {}; } })();
-  const questions = getDailyQuestions(profile.grade);
+  // Use the ACTUAL questions served during this quiz (saved at completion
+  // time), keyed by question id — not a regenerated/unrelated set.
+  const questionsById = result?.questions || {};
 
   const score = result?.score || 0;
   const maxScore = result?.maxScore || 110;
@@ -510,7 +510,7 @@ export default function DailyQuizResultsPage() {
               key={i}
               index={i}
               answer={answer}
-              question={questions[i] || null}
+              question={questionsById[answer.questionId] || null}
               expanded={!!expandedRows[i]}
               onToggle={() => toggleRow(i)}
             />

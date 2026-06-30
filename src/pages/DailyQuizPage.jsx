@@ -393,7 +393,7 @@ function updateQuizStreak() {
   checkQuizStreakBadges(newStreak);
 }
 
-function saveQuizResult(answers, totalScore) {
+function saveQuizResult(answers, totalScore, questions) {
   const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'); } catch { return {}; } })();
   const today = getTodayString_local();
 
@@ -401,11 +401,18 @@ function saveQuizResult(answers, totalScore) {
   if (!progress.dailyQuizHistory) progress.dailyQuizHistory = [];
   if (progress.dailyQuizHistory.some(h => h.date === today)) return;
 
+  // Save the ACTUAL questions that were served for this quiz, so the
+  // results page can show the real question text/explanation/correct
+  // answer instead of regenerating an unrelated set.
+  const questionsById = {};
+  (questions || []).forEach(q => { questionsById[q.id] = q; });
+
   progress.dailyQuizHistory.push({
     date: today,
     score: totalScore,
     maxScore: 110,
     answers: answers,
+    questions: questionsById,
     completedAt: Date.now(),
   });
 
@@ -501,7 +508,7 @@ function DailyQuizPageInner() {
   }, [loading, user]);
 
   function handleQuizComplete(answers, totalScore) {
-    saveQuizResult(answers, totalScore);
+    saveQuizResult(answers, totalScore, questions);
     navigate('/daily-quiz/results', { replace: true });
   }
 
