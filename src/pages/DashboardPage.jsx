@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import WelcomeModal, { hasSeenWelcome, markWelcomeSeen } from '@/components/dashboard/WelcomeModal';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import usePullToRefresh from '@/hooks/usePullToRefresh';
@@ -517,6 +518,7 @@ function DashboardPage() {
   const [profile, setProfile] = useState(() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile')) || {}; } catch(e) { return {}; } });
   const [progress, setProgress] = useState(() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress')) || {}; } catch(e) { return {}; } });
   const [dataLoading, setDataLoading] = useState(true);
+  const [showWelcome, setShowWelcome] = useState(false);
 
   const hasActivePlan = profile?.subscriptionStatus === 'active' || profile?.subscription_status === 'active' || profile?.paymentStatus === 'completed' || profile?.payment_status === 'completed';
   const signupDate = new Date(auth?.created_at || Date.now());
@@ -570,6 +572,8 @@ function DashboardPage() {
         console.error('Dashboard data load error:', e);
       } finally {
         setDataLoading(false);
+        // Show welcome modal once for new users — only after data is ready
+        if (!hasSeenWelcome()) setShowWelcome(true);
       }
     })();
   }, [auth?.id]);
@@ -602,6 +606,15 @@ function DashboardPage() {
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF', paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
       <DashboardNavbar />
+
+      {/* First-time welcome onboarding modal */}
+      {showWelcome && (
+        <WelcomeModal
+          profile={profile}
+          progress={progress}
+          onClose={() => setShowWelcome(false)}
+        />
+      )}
 
       {pulling && (
         <div style={{ textAlign: 'center', padding: '8px 0', fontSize: 13, color: '#3B82F6', fontFamily: 'var(--font-body)', transform: `translateY(${pullDistance * 0.4}px)`, transition: 'transform 0.1s' }}>

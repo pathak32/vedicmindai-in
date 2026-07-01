@@ -20,9 +20,9 @@ const PLAN_DISPLAY = {
   family_annual: 'Family (Annual)',
 };
 
-// Grade → PDF URL mapping. Only Class 6-10 have PDFs ready for July 2026.
-// Class 3-5 will be added next month once content is authored.
-const CURRENT_MONTH = 'July 2026';
+// Grade → PDF URL mapping. Only Class 6-10 have PDFs ready.
+// Class 3-5 will be added soon — "Coming Soon" message shown in the meantime.
+const BONUS_LABEL = 'Vol. 1 — Starter Pack';
 function getScreenlessPDF(grade) {
   const g = parseInt(grade, 10);
   if (g >= 6 && g <= 10) {
@@ -58,7 +58,7 @@ function ScreenlessBonus({ grade }) {
             Surprise Bonus — Free This Month!
           </div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#B45309' }}>
-            Your {CURRENT_MONTH} Screenless Learning Pack
+            Your {BONUS_LABEL} Screenless Learning Pack
           </div>
         </div>
       </div>
@@ -96,7 +96,7 @@ function ScreenlessBonus({ grade }) {
       )}
 
       <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#B45309', marginTop: 10 }}>
-        Free for {CURRENT_MONTH} only · Next month's pack available to purchase on the website
+        Exclusive subscriber bonus · Next month's pack available to purchase on the website
       </div>
     </div>
   );
