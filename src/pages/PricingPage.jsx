@@ -56,6 +56,8 @@ const PLANS = [
     discount: '80% off',
     monthlyPaise: 29900,
     annualPaise: 299000,
+    usdMonthly: '$6',
+    usdMonthlyStrike: '$19',
     highlight: false,
     btnLabel: 'Start Basic',
     btnBg: '#0A1628',
@@ -86,6 +88,8 @@ const PLANS = [
     discount: '80% off',
     monthlyPaise: 59900,
     annualPaise: 599000,
+    usdMonthly: '$10',
+    usdMonthlyStrike: '$29',
     highlight: true,
     btnLabel: 'Start Pro',
     btnBg: '#3B82F6',
@@ -114,6 +118,8 @@ const PLANS = [
     discount: '82% off',
     monthlyPaise: 89900,
     annualPaise: 899000,
+    usdMonthly: '$15',
+    usdMonthlyStrike: '$39',
     highlight: false,
     btnLabel: 'Start Family Plan',
     btnBg: '#0A1628',
@@ -188,6 +194,13 @@ function PlanCard({
             )}
             <span className="font-heading" style={{ fontSize: 40, fontWeight: 700, color: '#0A1628' }}>{plan.monthlyPrice}</span>
             <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>{t('perMonth')}</span>
+            {plan.usdMonthly && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 5 }}>
+                <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', textDecoration: 'line-through' }}>{plan.usdMonthlyStrike}/mo</span>
+                <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#059669', fontWeight: 700 }}>{plan.usdMonthly}/mo</span>
+                <span style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#6B7280' }}>for intl. cards</span>
+              </div>
+            )}
           </div>
         )}
 
@@ -382,6 +395,31 @@ export default function PricingPage() {
                 }}
               >{opt.label}</button>
             ))}
+          </div>
+        </div>
+
+        {/* International early adopter banner */}
+        <div style={{
+          background: 'linear-gradient(135deg, #0A1628 0%, #1E40AF 100%)',
+          borderRadius: 14, padding: '14px 20px', marginBottom: 24,
+          display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap',
+        }}>
+          <span style={{ fontSize: 24 }}>🌍</span>
+          <div style={{ flex: 1, minWidth: 200 }}>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 700, color: '#FFFFFF', marginBottom: 2 }}>
+              Launch Offer — First 100 International Subscribers Per Country
+            </div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#93C5FD', lineHeight: 1.5 }}>
+              Lock in today's price forever. Early adopters get exclusive bonuses &amp; special practice content coming soon.
+              International cards accepted · Billed in INR · Your bank converts automatically.
+            </div>
+          </div>
+          <div style={{
+            background: '#FBBF24', color: '#0A1628', borderRadius: 99,
+            padding: '4px 14px', fontSize: 11, fontWeight: 700,
+            fontFamily: 'var(--font-body)', whiteSpace: 'nowrap',
+          }}>
+            🔒 Early Adopter Price
           </div>
         </div>
 
