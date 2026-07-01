@@ -54,7 +54,7 @@ export function VedicAuthProvider({ children }) {
   const signUpWithPassword = async ({
     name, mobile, countryCode, countryName, dob, email, password, referralCode,
     securityQuestion, securityAnswer,
-    whatsapp, passwordHint,
+    whatsapp, passwordHint, userType, grade,
   }) => {
     const supabase = await getSupabase();
     const fakeEmail = mobileToEmail(mobile);
@@ -102,6 +102,8 @@ export function VedicAuthProvider({ children }) {
       password_hint: passwordHint,
       security_question: securityQuestion,
       security_answer: securityAnswer,
+      user_type: userType || null,
+      grade: grade || null,
       plan: 'trial',
       plan_type: 'trial',
       subscription_status: 'trial',

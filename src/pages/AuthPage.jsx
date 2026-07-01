@@ -43,6 +43,9 @@ function SignUpForm({ onSwitchTab }) {
   const [whatsapp, setWhatsapp] = useState('');
   const [sameNum, setSameNum] = useState(true);
   const [showPass, setShowPass] = useState(false);
+  const [userType, setUserType] = useState(''); // 'student' or 'parent'
+  const [grade, setGrade] = useState('');
+  const [customGrade, setCustomGrade] = useState('');
   const [errors, setErrors]   = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -52,7 +55,10 @@ function SignUpForm({ onSwitchTab }) {
 
   const validateStep1 = () => {
     const e = {};
-    if (!name.trim())            e.name   = 'Name required';
+    if (!name.trim())            e.name     = 'Name required';
+    if (!userType)               e.userType = 'Please select Student or Parent';
+    if (!grade)                  e.grade    = userType === 'parent' ? "Child's class required" : 'Your class required';
+    if (grade === 'other' && !customGrade.trim()) e.grade = 'Please specify the class';
     if (!validateMobile(mobile, countryCode)) e.mobile = 'Please enter a valid mobile number for the selected country';
     if (countryCode === 'OTHER' && !validateCustomCountryCode(customCountryCode)) e.mobile = 'Please enter a valid country code, e.g. +33';
     if (!password || password.length < 8) e.password = 'Min 8 characters';
@@ -100,6 +106,8 @@ function SignUpForm({ onSwitchTab }) {
         securityAnswer: secA.trim().toLowerCase(),
         whatsapp: sameNum ? `${mobileCountryInfo.code}${mobile}` : `${whatsappCountryInfo.code}${whatsapp}`,
         passwordHint: hint,
+        userType,
+        grade: grade === 'other' ? customGrade.trim() : grade,
       });
       toast.success('Account created! Welcome to VedicMindAI™ 🎉');
       navigate('/dashboard');
@@ -144,6 +152,65 @@ function SignUpForm({ onSwitchTab }) {
             placeholder="Hitesh Pathak" style={inp(errors.name)} autoFocus />
           {errors.name && <Err>{errors.name}</Err>}
         </div>
+
+        {/* Student or Parent */}
+        <div>
+          <label style={lbl}>I am a *</label>
+          <div style={{ display:'flex', gap:10 }}>
+            {['student','parent'].map(type => (
+              <button key={type} type="button"
+                onClick={() => { setUserType(type); setGrade(''); }}
+                style={{
+                  flex:1, height:44, borderRadius:12, border: userType===type ? '2px solid #0A1628' : '1.5px solid rgba(30,64,175,0.2)',
+                  background: userType===type ? '#0A1628' : 'white',
+                  color: userType===type ? 'white' : '#4B5563',
+                  fontFamily:'var(--font-body)', fontSize:14, fontWeight:600, cursor:'pointer',
+                }}>
+                {type === 'student' ? '🎓 Student' : '👨‍👩‍👧 Parent'}
+              </button>
+            ))}
+          </div>
+          {errors.userType && <Err>{errors.userType}</Err>}
+        </div>
+
+        {/* Grade — shown only after user type is selected */}
+        {userType && (
+          <div>
+            <label style={lbl}>
+              {userType === 'parent' ? "Child's Class *" : 'Your Class *'}
+            </label>
+            <select value={grade} onChange={e => { setGrade(e.target.value); setCustomGrade(''); }}
+              style={{ ...inp(errors.grade), appearance:'none', cursor:'pointer' }}>
+              <option value="">-- Select Class --</option>
+              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>── Early Years ──</option>
+              <option value="Nursery">Nursery / LKG / UKG</option>
+              <option value="1">Class 1</option>
+              <option value="2">Class 2</option>
+              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>── Primary (App Supported) ──</option>
+              {['3','4','5','6','7','8','9','10'].map(g => (
+                <option key={g} value={g}>Class {g}</option>
+              ))}
+              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>── Senior Secondary ──</option>
+              <option value="11">Class 11</option>
+              <option value="12">Class 12</option>
+              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>── Competitive Prep ──</option>
+              <option value="JEE">JEE Preparation</option>
+              <option value="NEET">NEET Preparation</option>
+              <option value="SSC">SSC / Government Exams</option>
+              <option value="other">Other (specify below)</option>
+            </select>
+            {grade === 'other' && (
+              <input
+                value={customGrade}
+                onChange={e => setCustomGrade(e.target.value)}
+                placeholder="e.g. Adult learner, A-Levels, Class 13..."
+                style={{ ...inp(false), marginTop: 8 }}
+                autoFocus
+              />
+            )}
+            {errors.grade && <Err>{errors.grade}</Err>}
+          </div>
+        )}
 
         {/* Mobile */}
         <div>

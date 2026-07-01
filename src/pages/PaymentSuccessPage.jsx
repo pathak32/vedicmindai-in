@@ -20,6 +20,88 @@ const PLAN_DISPLAY = {
   family_annual: 'Family (Annual)',
 };
 
+// Grade → PDF URL mapping. Only Class 6-10 have PDFs ready for July 2026.
+// Class 3-5 will be added next month once content is authored.
+const CURRENT_MONTH = 'July 2026';
+function getScreenlessPDF(grade) {
+  const g = parseInt(grade, 10);
+  if (g >= 6 && g <= 10) {
+    return {
+      url: `/screenless/VedicMind_Screenless_Class${g}_June2026.pdf`,
+      label: `Class ${g} — Vedic Maths & Aptitude`,
+      available: true,
+    };
+  }
+  if (g >= 3 && g <= 5) {
+    return { available: false, label: `Class ${g}` };
+  }
+  return null;
+}
+
+function ScreenlessBonus({ grade }) {
+  const pdf = getScreenlessPDF(grade);
+  if (!pdf) return null;
+
+  return (
+    <div style={{
+      margin: '24px 0 0',
+      background: 'linear-gradient(135deg, #FEF9C3 0%, #FEF3C7 100%)',
+      border: '2px solid #FBBF24',
+      borderRadius: 16,
+      padding: '20px 18px',
+      textAlign: 'left',
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+        <span style={{ fontSize: 28 }}>🎁</span>
+        <div>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 700, color: '#92400E' }}>
+            Surprise Bonus — Free This Month!
+          </div>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#B45309' }}>
+            Your {CURRENT_MONTH} Screenless Learning Pack
+          </div>
+        </div>
+      </div>
+
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#78350F', marginBottom: 14, lineHeight: 1.5 }}>
+        {pdf.available
+          ? `Your exclusive ${pdf.label} printable practice pack — Vedic Maths sutras, reasoning & aptitude questions, no screen needed. Print it out and practise anywhere!`
+          : `Your Class ${parseInt(grade,10)} bonus pack is being prepared and will be ready next month. We'll notify you when it's available!`
+        }
+      </div>
+
+      {pdf.available ? (
+        <a
+          href={pdf.url}
+          download
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            background: '#0A1628', color: 'white',
+            padding: '10px 20px', borderRadius: 10,
+            fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 700,
+            textDecoration: 'none',
+          }}
+        >
+          ⬇️ Download Your Free Pack
+        </a>
+      ) : (
+        <div style={{
+          display: 'inline-flex', alignItems: 'center', gap: 8,
+          background: '#D1D5DB', color: '#6B7280',
+          padding: '10px 20px', borderRadius: 10,
+          fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600,
+        }}>
+          🔔 Coming Next Month
+        </div>
+      )}
+
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#B45309', marginTop: 10 }}>
+        Free for {CURRENT_MONTH} only · Next month's pack available to purchase on the website
+      </div>
+    </div>
+  );
+}
+
 export default function PaymentSuccessPage() {
   const { t } = useLanguage();
   const navigate = useNavigate();
@@ -34,6 +116,10 @@ export default function PaymentSuccessPage() {
   const planStatus = urlPlan || plan.planStatus || 'basic';
   const planName = PLAN_DISPLAY[planStatus] || planStatus;
   const features = PLAN_FEATURES[planStatus] || PLAN_FEATURES['basic'];
+
+  // Get grade from profile for the screenless bonus
+  const profile = JSON.parse(localStorage.getItem('vedicmind_profile') || '{}');
+  const grade = profile.grade || null;
 
   // On mount: activate plan and set up auto-redirect
   useEffect(() => {
@@ -135,6 +221,9 @@ export default function PaymentSuccessPage() {
             Payment ID: {plan.razorpayPaymentId}
           </p>
         )}
+
+        {/* Screenless Learning Bonus */}
+        {grade && <ScreenlessBonus grade={grade} />}
 
         {/* CTA */}
         <button
