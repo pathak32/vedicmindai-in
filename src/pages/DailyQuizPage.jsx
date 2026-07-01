@@ -100,6 +100,39 @@ function WaitingScreen() {
         }}>
           ← Back to Dashboard
         </button>
+
+        {/* Aptitude Daily Quiz teaser */}
+        <div style={{
+          marginTop: 20, background: 'rgba(59,130,246,0.12)',
+          border: '1px solid rgba(59,130,246,0.3)',
+          borderRadius: 14, padding: '16px 18px', textAlign: 'left',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+            <span style={{ fontSize: 22 }}>🧠</span>
+            <div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 700, color: 'white' }}>
+                Aptitude Daily Quiz — Coming Soon
+              </div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(255,255,255,0.5)' }}>
+                A second daily quiz for Reasoning & Aptitude
+              </div>
+            </div>
+            <span style={{ marginLeft: 'auto', background: '#3B82F6', color: 'white', fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 99, whiteSpace: 'nowrap' }}>
+              🔜 Soon
+            </span>
+          </div>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.6)', margin: '0 0 12px', lineHeight: 1.5 }}>
+            Two separate daily streaks — one for Vedic Maths, one for Aptitude. Double the practice, double the growth.
+          </p>
+          <button onClick={() => navigate('/aptitude')} style={{
+            width: '100%', height: 38, background: 'rgba(59,130,246,0.25)',
+            border: '1px solid rgba(59,130,246,0.4)', borderRadius: 8,
+            color: '#93C5FD', fontFamily: 'var(--font-body)', fontSize: 13,
+            fontWeight: 600, cursor: 'pointer',
+          }}>
+            Try Aptitude Zone Now →
+          </button>
+        </div>
       </motion.div>
     </div>
   );

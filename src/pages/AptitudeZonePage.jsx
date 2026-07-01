@@ -4,6 +4,7 @@ import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { getClassGroup, CLASS_GROUPS, TOPICS, getQuestions } from '@/lib/aptitudeQuestions';
+import { getTopicInfo } from '@/lib/aptitudeTopicInfo';
 import { useLanguage } from '@/lib/LanguageContext';
 
 const TIMER_SEC = 90;
@@ -120,6 +121,11 @@ function TopicSelector({ classNum, onStart, onChangeClass }) {
   const meta = CLASS_GROUPS[group];
   const topics = TOPICS[group];
   const [selectedTopic, setSelectedTopic] = useState(null);
+  const [expandedTopic, setExpandedTopic] = useState(null);
+
+  function toggleExpand(topic) {
+    setExpandedTopic(prev => prev === topic ? null : topic);
+  }
 
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
@@ -161,21 +167,87 @@ function TopicSelector({ classNum, onStart, onChangeClass }) {
           </div>
         </button>
 
-        {topics.map(topic => (
-          <button
-            key={topic}
-            onClick={() => setSelectedTopic(topic)}
-            style={{
-              minHeight: 52, padding: '0 20px', borderRadius: 12,
-              border: selectedTopic === topic ? `2px solid ${meta.color}` : '1px solid rgba(30,64,175,0.15)',
-              background: selectedTopic === topic ? meta.bg : 'white',
-              display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer',
-            }}
-          >
-            <span style={{ fontSize: 18 }}>📚</span>
-            <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, color: '#0A1628' }}>{topic}</div>
-          </button>
-        ))}
+        {topics.map(topic => {
+          const info = getTopicInfo(topic);
+          const isSelected = selectedTopic === topic;
+          const isExpanded = expandedTopic === topic;
+
+          return (
+            <div key={topic} style={{
+              borderRadius: 12,
+              border: isSelected ? `2px solid ${meta.color}` : '1px solid rgba(30,64,175,0.15)',
+              background: isSelected ? meta.bg : 'white',
+              overflow: 'hidden',
+              transition: 'border 0.15s',
+            }}>
+              {/* Topic header row */}
+              <div style={{ display: 'flex', alignItems: 'center', padding: '12px 16px', gap: 12 }}>
+                <button
+                  onClick={() => setSelectedTopic(topic)}
+                  style={{ flex: 1, background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12, textAlign: 'left', padding: 0 }}
+                >
+                  <span style={{ fontSize: 22, flexShrink: 0 }}>{info.emoji}</span>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, color: '#0A1628' }}>{topic}</div>
+                    {info.tags.length > 0 && (
+                      <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', marginTop: 3 }}>
+                        {info.tags.map(tag => (
+                          <span key={tag} style={{ fontFamily: 'var(--font-body)', fontSize: 10, color: meta.color, background: meta.bg, padding: '1px 7px', borderRadius: 99, fontWeight: 600 }}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </button>
+                {/* Expand/collapse info button */}
+                <button
+                  onClick={() => toggleExpand(topic)}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 16, color: '#9CA3AF', padding: '4px 6px', flexShrink: 0 }}
+                  title="See chapter details"
+                >
+                  {isExpanded ? '▲' : 'ℹ️'}
+                </button>
+              </div>
+
+              {/* Expandable detail panel */}
+              {isExpanded && (
+                <div style={{ padding: '0 16px 16px', borderTop: '1px solid rgba(30,64,175,0.08)' }}>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', lineHeight: 1.6, margin: '12px 0 10px' }}>
+                    {info.description}
+                  </p>
+                  {info.example && (
+                    <div style={{ background: '#F0F4FF', borderRadius: 10, padding: '12px 14px' }}>
+                      <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 700, color: '#1E40AF', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                        Example
+                      </div>
+                      <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', marginBottom: 6 }}>
+                        Q: {info.example.q}
+                      </div>
+                      <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', lineHeight: 1.5, marginBottom: 6 }}>
+                        {info.example.steps}
+                      </div>
+                      <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 700, color: '#059669' }}>
+                        ✓ Answer: {info.example.answer}
+                      </div>
+                    </div>
+                  )}
+                  <button
+                    onClick={() => { setSelectedTopic(topic); setExpandedTopic(null); }}
+                    style={{
+                      marginTop: 12, width: '100%', height: 38,
+                      background: meta.color, color: 'white', border: 'none',
+                      borderRadius: 8, fontFamily: 'var(--font-body)', fontSize: 13,
+                      fontWeight: 700, cursor: 'pointer',
+                    }}
+                  >
+                    Select This Topic →
+                  </button>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       {selectedTopic && (
