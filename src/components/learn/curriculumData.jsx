@@ -11,7 +11,7 @@ export const CURRICULUM = [
       { id: 'l1_04', title: 'Nikhilam — Multiplication Near 100',                   xp: 70,  isAssessment: false, youtube_video_id: 'zLbqBL5faWs', videoTeacher: 'Hitansh' },
       { id: 'l1_05', title: 'Nikhilam — Multiplication Near 1000',                  xp: 70,  isAssessment: false, youtube_video_id: 'GBU4YAeXiNE', videoTeacher: 'Bhavika' },
       { id: 'l1_06', title: 'By One More — Digit Sums & Casting Out 9s',            xp: 60,  isAssessment: false, youtube_video_id: '' },
-      { id: 'l1_07', title: 'Urdhva-Tiryagbhyam — 2-Digit Multiplication',          xp: 80,  isAssessment: false, youtube_video_id: '' },
+      { id: 'l1_07', title: 'Urdhva-Tiryagbhyam — 2-Digit Multiplication',          xp: 80,  isAssessment: false, youtube_video_id: 'XG_XQ0XAVWE', videoTeacher: 'Dadi Ji' },
       { id: 'l1_08', title: 'Multiplication by 11 and 12',                           xp: 70,  isAssessment: false, youtube_video_id: 'TvUzPSLdKe4', videoTeacher: 'Bhavika' },
       { id: 'l1_09', title: 'Multiplication by 9, 99, 999',                          xp: 70,  isAssessment: false, youtube_video_id: '' },
       { id: 'l1_10', title: 'Level 1 Assessment — Beginner Mastery Quiz',            xp: 100, isAssessment: true,  youtube_video_id: '' },
