@@ -623,10 +623,12 @@ function CompletedView() {
 
 // ─── Question Loader ─────────────────────────────────────────────────────────
 
+const DIGIT_SUM_RULE = `IMPORTANT convention for any digit-sum questions: when a digit sum reduces to 9, the correct answer is "0" not "9". Always include "0" as one of the four options for such questions, never "9" as the correct answer.`;
+
 const PROMPTS = {
-  junior: `Generate 30 Vedic Mathematics Olympiad MCQ questions for Class 1-7 students. Mix of difficulty: 12 easy, 12 medium, 6 hard. Topics: all Level 1-2 sutras. Include visual/pattern questions where possible. Each: question, options (array of 4 strings), answer (exact string matching one option), hint, difficulty, topic, sutra. Return a JSON array only, no markdown.`,
-  senior: `Generate 30 Vedic Mathematics Olympiad MCQ questions for Class 8-12 students. Mix: 8 medium, 14 hard, 8 very hard. Topics: all Level 1-3 sutras, algebraic applications, divisibility. Each: question, options (array of 4 strings), answer (exact string matching one option), hint, difficulty, topic, sutra. Return a JSON array only, no markdown.`,
-  open: `Generate 30 Vedic Mathematics Olympiad MCQ questions for adults and competitive exam aspirants. All hard to very hard. Topics: all 16 sutras, calendar, auxiliary fractions, osculators, speed arithmetic, mental calculation tricks. Timed pressure questions. Each: question, options (array of 4 strings), answer (exact string matching one option), hint, difficulty, topic, sutra. Return a JSON array only, no markdown.`,
+  junior: `Generate 30 Vedic Mathematics Olympiad MCQ questions for Class 1-7 students. Mix of difficulty: 12 easy, 12 medium, 6 hard. Topics: all Level 1-2 sutras. Include visual/pattern questions where possible. Each: question, options (array of 4 strings), answer (exact string matching one option), hint, difficulty, topic, sutra. Return a JSON array only, no markdown. ${DIGIT_SUM_RULE}`,
+  senior: `Generate 30 Vedic Mathematics Olympiad MCQ questions for Class 8-12 students. Mix: 8 medium, 14 hard, 8 very hard. Topics: all Level 1-3 sutras, algebraic applications, divisibility. Each: question, options (array of 4 strings), answer (exact string matching one option), hint, difficulty, topic, sutra. Return a JSON array only, no markdown. ${DIGIT_SUM_RULE}`,
+  open: `Generate 30 Vedic Mathematics Olympiad MCQ questions for adults and competitive exam aspirants. All hard to very hard. Topics: all 16 sutras, calendar, auxiliary fractions, osculators, speed arithmetic, mental calculation tricks. Timed pressure questions. Each: question, options (array of 4 strings), answer (exact string matching one option), hint, difficulty, topic, sutra. Return a JSON array only, no markdown. ${DIGIT_SUM_RULE}`,
 };
 
 function LoadingScreen({ level }) {
