@@ -14,9 +14,10 @@ const SUPABASE_URL = 'https://xlyfyqjmzwyyoqurvuzx.supabase.co';
 // Default lesson to use for brand-new users with 0 completed lessons
 const DEFAULT_FIRST_LESSON = 'l1_01';
 
-// Daily Quiz configuration (from the locked-in plan)
-const DAILY_QUIZ_QUESTION_COUNT = 5;
-const DIFFICULTY_TARGET = { easy: 0.6, medium: 0.3, hard: 0.1 };
+// Daily Quiz difficulty target — adjusted to match actual question bank
+// distribution which skews medium/hard. Using 40/40/20 until the easy
+// bucket is filled out via content expansion (post-launch task).
+const DIFFICULTY_TARGET = { easy: 0.4, medium: 0.4, hard: 0.2 };
 
 function getSupabaseAdmin() {
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
