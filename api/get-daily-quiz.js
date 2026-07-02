@@ -14,6 +14,9 @@ const SUPABASE_URL = 'https://xlyfyqjmzwyyoqurvuzx.supabase.co';
 // Default lesson to use for brand-new users with 0 completed lessons
 const DEFAULT_FIRST_LESSON = 'l1_01';
 
+// Total number of questions in each Daily Quiz
+const DAILY_QUIZ_QUESTION_COUNT = 5;
+
 // Daily Quiz difficulty target — adjusted to match actual question bank
 // distribution which skews medium/hard. Using 40/40/20 until the easy
 // bucket is filled out via content expansion (post-launch task).
