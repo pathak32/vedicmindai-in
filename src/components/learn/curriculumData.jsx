@@ -13,7 +13,7 @@ export const CURRICULUM = [
       { id: 'l1_06', title: 'By One More — Digit Sums & Casting Out 9s',            xp: 60,  isAssessment: false, youtube_video_id: 'UMd7TGyWiTc', videoTeacher: 'Dadi Ji' },
       { id: 'l1_07', title: 'Urdhva-Tiryagbhyam — 2-Digit Multiplication',          xp: 80,  isAssessment: false, youtube_video_id: 'XG_XQ0XAVWE', videoTeacher: 'Dadi Ji' },
       { id: 'l1_08', title: 'Multiplication by 11 and 12',                           xp: 70,  isAssessment: false, youtube_video_id: 'TvUzPSLdKe4', videoTeacher: 'Bhavika' },
-      { id: 'l1_09', title: 'Multiplication by 9, 99, 999',                          xp: 70,  isAssessment: false, youtube_video_id: '' },
+      { id: 'l1_09', title: 'Multiplication by 9, 99, 999',                          xp: 70,  isAssessment: false, youtube_video_id: 'KDpnRPZbJ7A', videoTeacher: 'Dadi Ji' },
       { id: 'l1_10', title: 'Level 1 Assessment — Beginner Mastery Quiz',            xp: 100, isAssessment: true,  youtube_video_id: '' },
     ],
   },
@@ -43,7 +43,7 @@ export const CURRICULUM = [
     icon: '⚡',
     lockKey: 'l2_12',
     lessons: [
-      { id: 'l3_01', title: 'Urdhva-Tiryagbhyam — General 2-Digit Method',          xp: 100, isAssessment: false, youtube_video_id: '' },
+      { id: 'l3_01', title: 'Urdhva-Tiryagbhyam — General 2-Digit Method',          xp: 100, isAssessment: false, youtube_video_id: 'hmjCizC-MFc', videoTeacher: 'Bhavika' },
       { id: 'l3_02', title: 'Nikhilam for Large Numbers',                             xp: 110, isAssessment: false, youtube_video_id: '' },
       { id: 'l3_03', title: 'Anurupyena — Proportional Scaling',                     xp: 110, isAssessment: false, youtube_video_id: '' },
       { id: 'l3_04', title: 'Vinculum — Complement Representation',                  xp: 120, isAssessment: false, youtube_video_id: '' },
