@@ -25,7 +25,7 @@ export const CURRICULUM = [
     lessons: [
       { id: 'l2_01', title: 'Paravartya — Division by Near-Base Numbers',           xp: 80,  isAssessment: false, youtube_video_id: '' },
       { id: 'l2_02', title: 'Urdhva-Tiryagbhyam — 3-Digit Multiplication',          xp: 90,  isAssessment: false, youtube_video_id: '' },
-      { id: 'l2_03', title: 'Squaring 2-Digit Numbers — General Method',             xp: 80,  isAssessment: false, youtube_video_id: '' },
+      { id: 'l2_03', title: 'Squaring 2-Digit Numbers — General Method',             xp: 80,  isAssessment: false, youtube_video_id: 'EevFTxaXp5Q', videoTeacher: 'Bhavika' },
       { id: 'l2_04', title: 'Cubing Numbers — Vedic Shortcut',                       xp: 90,  isAssessment: false, youtube_video_id: '' },
       { id: 'l2_05', title: 'Vedic Square Roots — 4-Digit Numbers',                  xp: 90,  isAssessment: false, youtube_video_id: 'nNW6wTYFV9Q', videoTeacher: 'Dadi Ji' },
       { id: 'l2_06', title: 'Vedic Cube Roots — 6-Digit Numbers',                    xp: 90,  isAssessment: false, youtube_video_id: '' },
