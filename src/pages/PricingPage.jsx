@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { loadRazorpayScript } from '@/lib/loadRazorpay';
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -272,8 +273,9 @@ export default function PricingPage() {
       navigate('/auth');
       return;
     }
-    if (!window.Razorpay) {
-      alert('Payment system is still loading. Please wait a moment and try again.');
+    const razorpayReady = await loadRazorpayScript();
+    if (!razorpayReady || !window.Razorpay) {
+      alert('Payment system failed to load. Please check your connection and try again.');
       return;
     }
 

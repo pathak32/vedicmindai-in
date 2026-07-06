@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { loadRazorpayScript } from '@/lib/loadRazorpay';
 
 export default function RupeeOneOffer({ quizStreak = 0 }) {
   const { user } = useVedicAuth();
@@ -16,8 +17,14 @@ export default function RupeeOneOffer({ quizStreak = 0 }) {
 
   if (!eligible || dismissed) return null;
 
-  function handleClaim() {
+  async function handleClaim() {
     setLoading(true);
+    const ready = await loadRazorpayScript();
+    if (!ready || !window.Razorpay) {
+      alert('Payment system failed to load. Please check your connection and try again.');
+      setLoading(false);
+      return;
+    }
     const options = {
       key: RAZORPAY_KEY,
       amount: 100, // ₹1 in paise
