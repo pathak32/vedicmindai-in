@@ -196,7 +196,19 @@ export const translations = {
     "tryItWrong": "Not quite — the answer is",
     "tryItDoneHeading": "You just used real Vedic Maths sutras!",
     "tryItDoneSubheading": "Imagine mastering 40 more tricks like this — completely personalized to you.",
-    "tryItCta": "Start Learning Free"
+    "tryItCta": "Start Learning Free",
+    "mindCheckEyebrow": "Test Your Mind",
+    "mindCheckHeading": "How Fast Is Your Brain?",
+    "mindCheckSubheading": "3 questions. 5 seconds each. Sutras, Aptitude & Reasoning — see how you score.",
+    "mindCheckIntroTitle": "Ready for the 5-Second Challenge?",
+    "mindCheckIntroDesc": "20 real questions in our bank — a fresh set of 3 every time you play.",
+    "mindCheckStart": "Start Challenge",
+    "mindCheckCorrect": "Correct! Your brain just used real Vedic Maths speed.",
+    "mindCheckWrong": "Not quite — the answer was",
+    "mindCheckTimeout": "Time's up! It's okay — this trick takes practice. Answer:",
+    "mindCheckScoreLabel": "Correct",
+    "mindCheckEndDesc": "Whatever your score — imagine what 40 structured lessons could do for you.",
+    "mindCheckTryMore": "Try 3 More"
   },
   "hi": {
     "features": "विशेषताएं",
@@ -391,7 +403,19 @@ export const translations = {
     "tryItWrong": "गलत — सही उत्तर है",
     "tryItDoneHeading": "आपने अभी असली वैदिक गणित सूत्रों का उपयोग किया!",
     "tryItDoneSubheading": "सोचिए, ऐसी 40 और तकनीकें सीखना — पूरी तरह आपके अनुसार व्यक्तिगत।",
-    "tryItCta": "मुफ़्त सीखना शुरू करें"
+    "tryItCta": "मुफ़्त सीखना शुरू करें",
+    "mindCheckEyebrow": "अपने दिमाग को परखें",
+    "mindCheckHeading": "आपका दिमाग कितना तेज़ है?",
+    "mindCheckSubheading": "3 सवाल। हर एक 5 सेकंड में। सूत्र, एप्टीट्यूड और रीज़निंग — देखें आपका स्कोर।",
+    "mindCheckIntroTitle": "5-सेकंड चैलेंज के लिए तैयार?",
+    "mindCheckIntroDesc": "हमारे बैंक में 20 असली सवाल हैं — हर बार खेलने पर नए 3 सवाल।",
+    "mindCheckStart": "चैलेंज शुरू करें",
+    "mindCheckCorrect": "सही! आपके दिमाग ने अभी असली वैदिक गणित की गति का उपयोग किया।",
+    "mindCheckWrong": "गलत — सही उत्तर था",
+    "mindCheckTimeout": "समय समाप्त! कोई बात नहीं — इस तरकीब में अभ्यास लगता है। उत्तर:",
+    "mindCheckScoreLabel": "सही",
+    "mindCheckEndDesc": "आपका स्कोर जो भी हो — सोचिए 40 संरचित पाठ आपके लिए क्या कर सकते हैं।",
+    "mindCheckTryMore": "3 और आज़माएं"
   }
 };
 

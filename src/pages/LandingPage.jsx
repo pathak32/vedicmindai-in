@@ -1,7 +1,7 @@
 import React from 'react';
 import LandingNavbar from '@/components/landing/LandingNavbar';
 import HeroSection from '@/components/landing/HeroSection';
-import TryItSection from '@/components/landing/TryItSection';
+import MindCheckSection from '@/components/landing/MindCheckSection';
 import PurposeSection from '@/components/landing/PurposeSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
 import FamiliesReviewsSection from '@/components/landing/FamiliesReviewsSection';
@@ -15,7 +15,7 @@ export default function LandingPage() {
     <div className="min-h-screen">
       <LandingNavbar />
       <HeroSection />
-      <TryItSection />
+      <MindCheckSection />
       <PurposeSection />
       <FeaturesSection />
       <FamiliesReviewsSection />
