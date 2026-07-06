@@ -6,7 +6,7 @@ import { ProgressProvider } from '@/lib/ProgressContext';
 import { ProfileProvider } from '@/lib/ProfileContext';
 import ScrollToTop from '@/lib/ScrollToTop';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { Toaster } from "sonner";
 import LandingPage from '@/pages/LandingPage';
@@ -64,9 +64,24 @@ function RouteTransition() {
   const location = useLocation();
   const isPersistentTab = PERSISTENT_TABS.includes(location.pathname);
 
+  // Only mount a persistent tab's component once the user has actually
+  // navigated to it at least once. Mounting them unconditionally on every
+  // route (including the public landing page, before anyone is logged in)
+  // caused their own auth guards to fire and redirect the whole app to
+  // /auth a moment after any page loaded.
+  const [visitedTabs, setVisitedTabs] = useState(() =>
+    new Set(isPersistentTab ? [location.pathname] : [])
+  );
+
+  useEffect(() => {
+    if (PERSISTENT_TABS.includes(location.pathname)) {
+      setVisitedTabs(prev => (prev.has(location.pathname) ? prev : new Set(prev).add(location.pathname)));
+    }
+  }, [location.pathname]);
+
   return (
     <>
-      {PERSISTENT_TABS.map(path => (
+      {PERSISTENT_TABS.filter(path => visitedTabs.has(path)).map(path => (
         <div
           key={path}
           style={{ display: location.pathname === path ? 'block' : 'none' }}
