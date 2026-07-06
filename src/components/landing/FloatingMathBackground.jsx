@@ -22,16 +22,23 @@ const PARTICLES_SOURCE = [
 export default function FloatingMathBackground() {
   const shouldReduceMotion = useReducedMotion();
 
-  // Randomize position/timing once per mount, not on every render
+  // Randomize position/timing once per mount, not on every render.
+  // Keep count modest, confined to the left/right margins (not the center
+  // column where the headline sits), and low-opacity so it reads as ambient
+  // texture rather than competing with the text on top of it.
   const particles = useMemo(
     () =>
-      PARTICLES_SOURCE.map((item, i) => ({
-        ...item,
-        id: i,
-        left: 4 + ((i * 37) % 92), // deterministic-ish spread, avoids edge clustering
-        delay: (i * 1.7) % 10,
-        duration: 16 + ((i * 5) % 12),
-      })),
+      PARTICLES_SOURCE.filter((_, i) => i % 2 === 0).map((item, i) => {
+        const inLeftBand = i % 2 === 0;
+        const left = inLeftBand ? 2 + ((i * 11) % 20) : 78 + ((i * 7) % 20);
+        return {
+          ...item,
+          id: i,
+          left,
+          delay: (i * 2.3) % 12,
+          duration: 18 + ((i * 6) % 14),
+        };
+      }),
     []
   );
 
@@ -51,7 +58,7 @@ export default function FloatingMathBackground() {
             border: '1px solid rgba(255,255,255,0.08)',
           }}
           initial={{ y: '115%', opacity: 0 }}
-          animate={{ y: '-25%', opacity: [0, 1, 1, 0] }}
+          animate={{ y: '-25%', opacity: [0, 0.7, 0.7, 0] }}
           transition={{
             duration: p.duration,
             delay: p.delay,

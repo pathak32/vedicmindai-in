@@ -28,11 +28,11 @@ export default function LandingNavbar() {
         scrolled ? 'bg-white/80 backdrop-blur-xl shadow-sm' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <Link to="/" className="font-heading text-xl font-bold text-[#0A1628]">
+          <Link to="/" className="font-heading text-lg sm:text-xl font-bold text-[#0A1628] truncate min-w-0 flex-1 mr-2">
             VedicMindAI™
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8 flex-shrink-0">
             <button onClick={() => scrollTo('about')} className="text-sm font-medium text-[#4B5563] hover:text-[#0A1628] transition-colors">
               {t('purposeNavLabel')}
             </button>
@@ -50,8 +50,8 @@ export default function LandingNavbar() {
             </Link>
           </div>
 
-          <div className="flex items-center gap-3">
-            <LanguageToggle size="sm" />
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            <LanguageToggle size="xs" />
             <Link
               to="/auth"
               className="hidden md:inline-flex items-center justify-center h-11 px-6 rounded-xl bg-[#0A1628] text-white text-sm font-semibold hover:bg-[#0D2252] transition-colors"

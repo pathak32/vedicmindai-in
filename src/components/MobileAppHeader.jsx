@@ -50,7 +50,7 @@ export default function MobileAppHeader() {
             <ChevronLeft size={20} strokeWidth={2.5} style={{ flexShrink: 0 }} />
             {t('back')}
           </button>
-          <LanguageToggle size="sm" />
+          <LanguageToggle size="xs" />
         </div>
       </div>
       <style>{`
