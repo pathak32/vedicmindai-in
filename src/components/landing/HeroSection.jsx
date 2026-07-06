@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
+import FloatingMathBackground from './FloatingMathBackground';
 
 const tricks = [
   { calc: '98 × 97 = 9506', label: 'Nikhilam Method — 3 seconds' },
@@ -28,6 +29,7 @@ export default function HeroSection() {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1E40AF]/20 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#3B82F6]/15 rounded-full blur-3xl" />
       </div>
+      <FloatingMathBackground />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

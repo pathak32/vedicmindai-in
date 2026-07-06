@@ -33,6 +33,9 @@ export default function LandingNavbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
+            <button onClick={() => scrollTo('about')} className="text-sm font-medium text-[#4B5563] hover:text-[#0A1628] transition-colors">
+              {t('purposeNavLabel')}
+            </button>
             <button onClick={() => scrollTo('features')} className="text-sm font-medium text-[#4B5563] hover:text-[#0A1628] transition-colors">
               {t('features')}
             </button>
@@ -81,6 +84,7 @@ export default function LandingNavbar() {
               </button>
             </div>
             <div className="flex flex-col px-6 py-8 gap-2">
+              <button onClick={() => scrollTo('about')} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]">{t('purposeNavLabel')}</button>
               <button onClick={() => scrollTo('features')} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]">{t('features')}</button>
               <Link to="/curriculum" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>{t('curriculum')}</Link>
               <Link to="/reviews" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>{t('reviews')}</Link>

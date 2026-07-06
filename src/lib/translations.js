@@ -178,7 +178,25 @@ export const translations = {
     "waitingForOpponent": "Waiting for opponent...",
     "youWin": "You Win! 🎉",
     "youLose": "Better luck next time!",
-    "draw": "It's a Draw!"
+    "draw": "It's a Draw!",
+    "purposeNavLabel": "About",
+    "purposeEyebrow": "Our Purpose",
+    "purposeHeading": "Why VedicMindAI Exists",
+    "purposeIntro": "We built VedicMindAI because millions of students in India and abroad are taught to calculate slowly, fear math, and rely on calculators for things their own minds could do faster. Vedic Mathematics — a set of ancient calculation techniques rediscovered from Indian sutras — solves this. We combine that ancient wisdom with modern AI to make it fun, personalized, and effective for every student from Class 3 to 10.",
+    "purposeWhatTitle": "What We Do",
+    "purposeWhatDesc": "VedicMindAI teaches Vedic Mathematics and Reasoning & Aptitude through structured lessons, daily quizzes, and an AI tutor that adapts to each student's level, board, and pace.",
+    "purposeWhyTitle": "Why It Matters",
+    "purposeWhyDesc": "Speed and confidence in mental math build a foundation for competitive exams, reasoning skills, and lifelong problem-solving — skills schools rarely teach directly.",
+    "purposeMissionTitle": "Our Mission",
+    "purposeMissionDesc": "To make ancient Indian mathematical wisdom accessible to every student, everywhere — regardless of board, budget, or background.",
+    "tryItEyebrow": "No Sign-Up Needed",
+    "tryItHeading": "Try It Yourself Right Now",
+    "tryItSubheading": "Answer 3 quick questions using real Vedic Maths sutras — see how fast you can get.",
+    "tryItCorrect": "Correct! That's the power of Vedic Maths.",
+    "tryItWrong": "Not quite — the answer is",
+    "tryItDoneHeading": "You just used real Vedic Maths sutras!",
+    "tryItDoneSubheading": "Imagine mastering 40 more tricks like this — completely personalized to you.",
+    "tryItCta": "Start Learning Free"
   },
   "hi": {
     "features": "विशेषताएं",
@@ -355,7 +373,25 @@ export const translations = {
     "waitingForOpponent": "प्रतिद्वंद्वी का इंतजार...",
     "youWin": "आप जीत गए! 🎉",
     "youLose": "अगली बार बेहतर करें!",
-    "draw": "बराबरी हुई!"
+    "draw": "बराबरी हुई!",
+    "purposeNavLabel": "हमारे बारे में",
+    "purposeEyebrow": "हमारा उद्देश्य",
+    "purposeHeading": "VedicMindAI क्यों बनाया गया",
+    "purposeIntro": "हमने VedicMindAI इसलिए बनाया क्योंकि भारत और विदेश में लाखों छात्रों को धीमी गणना सिखाई जाती है, वे गणित से डरते हैं, और उन चीज़ों के लिए कैलकुलेटर पर निर्भर रहते हैं जो उनका दिमाग खुद तेज़ी से कर सकता है। वैदिक गणित — भारतीय सूत्रों से पुनः खोजी गई प्राचीन गणना तकनीकें — इसका समाधान है। हम इस प्राचीन ज्ञान को आधुनिक AI के साथ जोड़कर इसे कक्षा 3 से 10 तक हर छात्र के लिए मज़ेदार, व्यक्तिगत और प्रभावी बनाते हैं।",
+    "purposeWhatTitle": "हम क्या करते हैं",
+    "purposeWhatDesc": "VedicMindAI संरचित पाठों, दैनिक क्विज़ और एक AI ट्यूटर के माध्यम से वैदिक गणित और रीज़निंग एवं एप्टीट्यूड सिखाता है, जो हर छात्र के स्तर, बोर्ड और गति के अनुसार खुद को ढालता है।",
+    "purposeWhyTitle": "यह क्यों ज़रूरी है",
+    "purposeWhyDesc": "मानसिक गणित में गति और आत्मविश्वास प्रतियोगी परीक्षाओं, रीज़निंग कौशल और जीवन भर समस्या-समाधान की नींव रखते हैं — ऐसे कौशल जो स्कूल शायद ही सीधे सिखाते हैं।",
+    "purposeMissionTitle": "हमारा मिशन",
+    "purposeMissionDesc": "प्राचीन भारतीय गणितीय ज्ञान को हर छात्र तक पहुंचाना — चाहे कोई भी बोर्ड, बजट या पृष्ठभूमि हो।",
+    "tryItEyebrow": "साइन-अप की ज़रूरत नहीं",
+    "tryItHeading": "अभी खुद आज़माएं",
+    "tryItSubheading": "असली वैदिक गणित सूत्रों से 3 सवालों के जवाब दें — देखें आप कितने तेज़ हैं।",
+    "tryItCorrect": "सही! यही वैदिक गणित की ताकत है।",
+    "tryItWrong": "गलत — सही उत्तर है",
+    "tryItDoneHeading": "आपने अभी असली वैदिक गणित सूत्रों का उपयोग किया!",
+    "tryItDoneSubheading": "सोचिए, ऐसी 40 और तकनीकें सीखना — पूरी तरह आपके अनुसार व्यक्तिगत।",
+    "tryItCta": "मुफ़्त सीखना शुरू करें"
   }
 };
 
