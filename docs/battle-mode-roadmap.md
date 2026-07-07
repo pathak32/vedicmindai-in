@@ -149,9 +149,52 @@ real-time scoring. *(Live now, pending your testing confirmation.)*
 
 ---
 
-## The one thing to decide before Phase C
-Whether "open challenges" stay scoped to known groups (schools, testers, friend
-circles) or eventually go fully public. Given your users are largely minors, I'd
-recommend staying scoped indefinitely, and building broader reach through schools
-signing up as groups rather than opening the matchmaking pool to the general public.
-This doesn't limit your growth — it just channels it through a safer structure.
+## Refined safety model (agreed direction, July 7 2026)
+
+Following further discussion, the open-challenge model has been refined into
+something that resolves the earlier safety concern well:
+
+- Open challenges show **only a username/animated display name + completion
+  level** — never a full profile, real name, or personal details.
+- Challenges are grouped by **age group / level** (e.g., beginners only see
+  beginner challenges) — this is both pedagogically sound (fair matches) and
+  a meaningful safety measure, since it naturally prevents, say, a Class 3
+  student from being matched against a Class 10 stranger.
+- Unaccepted open challenges **auto-expire after 24 hours**.
+- A **pre-battle consent/disclaimer screen** is shown to both players before
+  the room opens — framing the battle as fun/learning, not something to take
+  personally, with a short waiting window (room opens 3-4 minutes before
+  start) after both confirm.
+- **Hard permanent rule: no free-text chat between opponents, ever.** The
+  entire flow (challenge → accept → battle → result) has zero open
+  communication surface between two people who don't already know each
+  other. If any future version considers adding messaging between users,
+  that decision should be revisited carefully and separately — it changes
+  the safety model fundamentally.
+
+This design keeps the competitive/social fun intact while avoiding the
+stranger-contact risk of a profile-based or chat-based system.
+
+---
+
+## New idea — "Quiz Squad" (small-group Daily Quiz)
+
+Separate from Battle Mode, but reusing the same real-time engine: let 2-3
+known friends (added by email, not public discovery) opt into taking the
+*same* Daily Quiz together in real time, instead of solving it solo and
+never knowing how a friend did.
+
+- Scoped to people who already know each other (added by email) — same
+  safety model as code-based Battle challenges, not public matchmaking.
+- A join window (e.g., a fixed daily time slot) — the quiz only starts once
+  everyone in the group has joined; if someone doesn't show up, it simply
+  doesn't start for the group (no one's individual streak is penalized).
+- Distinct identity from Battle Mode — suggested name: **"Quiz Squad"** or
+  **"Study Circle"** — same underlying tech, different tone (collaborative
+  peer group vs. anonymous ladder-style battle).
+- Strong potential to make daily quiz habit-forming — turns a solo
+  5-10 question routine into something social and anticipated.
+
+This slots naturally after Phase B/C of Battle Mode, since it reuses the
+same real-time room infrastructure already being built.
+
