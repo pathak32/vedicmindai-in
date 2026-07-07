@@ -20,8 +20,16 @@ import { getSupabase } from '@/lib/supabaseClient';
 // PIN-gated and never holds its own Supabase session, so this signUp can't
 // hijack anything.
 
+// IMPORTANT: this must match the login page's fakeEmail exactly. The login
+// page (VedicAuthContext.signInWithPassword) always builds mobile as
+// `${countryCode}${localNumber}` (e.g. "+919565524546") BEFORE stripping to
+// digits. This form only ever collects Indian numbers, so we must prepend
+// +91 here too — otherwise the auth user we create here
+// ("9565524546@vedicmindai.in") never matches what login looks up
+// ("919565524546@vedicmindai.in") and the account is permanently unloginable
+// regardless of password.
 const mobileToEmail = (mobile) => {
-  const digits = mobile.replace(/\D/g, '');
+  const digits = `91${mobile.replace(/\D/g, '')}`;
   return `${digits}@vedicmindai.in`;
 };
 
