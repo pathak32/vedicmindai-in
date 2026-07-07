@@ -16,6 +16,20 @@ const TOPIC_KEYWORDS = {
   'Antyayor Dashakepi': 'antyayor',
 };
 
+// Returns true if this student's class is considered "lower stage" — young
+// enough that picking Hard difficulty should show a warning first, rather
+// than being freely available like it is for older/more advanced students.
+// Grade can be numeric ("3".."12"), a named stage ("Nursery"), or a
+// competitive-exam track ("JEE"/"NEET"/"SSC") from the signup dropdown.
+export function isLowerStage(grade) {
+  if (!grade) return true; // unknown grade — default to the safer, gated behavior
+  const advancedTracks = ['JEE', 'NEET', 'SSC'];
+  if (advancedTracks.includes(grade)) return false;
+  const num = parseInt(grade, 10);
+  if (Number.isNaN(num)) return true; // "Nursery", custom text, etc. — treat as young/unknown
+  return num <= 5;
+}
+
 // Returns the list of Battle Mode topics this student has actually earned
 // the right to battle on, based on lessons they've completed. 'Mixed' is
 // only offered once at least one real topic is unlocked — a student who

@@ -6,7 +6,8 @@ import { getSupabase } from '@/lib/supabaseClient';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
 import { drawBattleQuestions } from '@/data/battleQuestions';
-import { getUnlockedBattleTopics } from '@/lib/battleTopicUnlock';
+import { getUnlockedBattleTopics, isLowerStage } from '@/lib/battleTopicUnlock';
+import { BATTLE_DIFFICULTIES } from '@/data/battleQuestions';
 
 const WIN_TARGET = 5;
 const COUNTDOWN_SECONDS = 10;
@@ -30,6 +31,9 @@ export default function BattleModePage() {
   const [room, setRoom] = useState(null);
   const [joinCode, setJoinCode] = useState('');
   const [selectedTopic, setSelectedTopic] = useState('');
+  const [selectedDifficulty, setSelectedDifficulty] = useState('easy');
+  const [showHardWarning, setShowHardWarning] = useState(false);
+  const lowerStage = isLowerStage(profile?.grade);
   const [error, setError] = useState('');
   const [selected, setSelected] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -177,7 +181,8 @@ export default function BattleModePage() {
           creator_id: user.id,
           creator_name: myName,
           topic: selectedTopic,
-          questions: drawBattleQuestions(10, selectedTopic),
+          difficulty: selectedDifficulty,
+          questions: drawBattleQuestions(10, selectedTopic, selectedDifficulty),
           status: 'waiting',
         })
         .select()
@@ -410,6 +415,43 @@ export default function BattleModePage() {
                     ))}
                   </select>
 
+                  <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13, marginBottom: 8, textAlign: 'left' }}>Choose difficulty:</p>
+                  <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+                    {BATTLE_DIFFICULTIES.map((diff) => (
+                      <button
+                        key={diff}
+                        onClick={() => {
+                          if (diff === 'hard' && lowerStage) {
+                            setShowHardWarning(true);
+                          } else {
+                            setSelectedDifficulty(diff);
+                          }
+                        }}
+                        style={{
+                          flex: 1, height: 40, borderRadius: 10, textTransform: 'capitalize', cursor: 'pointer',
+                          fontWeight: 600, fontSize: 13, border: '1px solid rgba(255,255,255,0.2)',
+                          background: selectedDifficulty === diff ? '#3B82F6' : 'rgba(255,255,255,0.08)',
+                          color: 'white',
+                        }}
+                      >
+                        {diff}
+                      </button>
+                    ))}
+                  </div>
+
+                  {showHardWarning && (
+                    <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.4)', borderRadius: 12, padding: 14, marginBottom: 16, textAlign: 'left' }}>
+                      <p style={{ color: '#FCA5A5', fontWeight: 600, fontSize: 13, marginBottom: 6 }}>⚠️ This is the hardest difficulty</p>
+                      <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 12, marginBottom: 10 }}>
+                        You might be challenging someone more advanced than you, and there's a real chance you could lose. Are you sure?
+                      </p>
+                      <div style={{ display: 'flex', gap: 8 }}>
+                        <button onClick={() => setShowHardWarning(false)} style={{ flex: 1, height: 34, borderRadius: 8, background: 'transparent', border: '1px solid rgba(255,255,255,0.3)', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', fontSize: 12 }}>Cancel</button>
+                        <button onClick={() => { setSelectedDifficulty('hard'); setShowHardWarning(false); }} style={{ flex: 1, height: 34, borderRadius: 8, background: '#EF4444', border: 'none', color: 'white', cursor: 'pointer', fontSize: 12, fontWeight: 600 }}>Yes, I'm sure</button>
+                      </div>
+                    </div>
+                  )}
+
                   <button
                     onClick={handleCreate}
                     disabled={busy}
@@ -452,7 +494,7 @@ export default function BattleModePage() {
 
           {phase === 'waiting' && room && (
             <div>
-              <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 4 }}>Topic: <strong style={{ color: 'white' }}>{room.topic}</strong></p>
+              <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 4 }}>Topic: <strong style={{ color: 'white' }}>{room.topic}</strong> · Difficulty: <strong style={{ color: 'white', textTransform: 'capitalize' }}>{room.difficulty}</strong></p>
               <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 12 }}>Share this code with your opponent:</p>
               <div style={{
                 fontFamily: 'monospace', fontSize: 40, fontWeight: 700, color: '#3B82F6',
@@ -490,6 +532,10 @@ export default function BattleModePage() {
                 {room.creator_name} has challenged you!
               </h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 4 }}>Topic: <strong style={{ color: 'white' }}>{room.topic}</strong></p>
+              <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 4 }}>
+                Difficulty: <strong style={{ color: room.difficulty === 'hard' ? '#FCA5A5' : 'white', textTransform: 'capitalize' }}>{room.difficulty}</strong>
+                {room.difficulty === 'hard' && ' 🔥'}
+              </p>
               <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 24 }}>First to {WIN_TARGET} correct answers wins</p>
 
               <div style={{ display: 'flex', gap: 10 }}>

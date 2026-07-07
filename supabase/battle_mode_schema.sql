@@ -10,6 +10,7 @@ create table if not exists battle_rooms (
   opponent_name text,
   status text not null default 'waiting', -- waiting | starting | active | completed
   topic text not null default 'Mixed',    -- which sutra/topic this battle covers
+  difficulty text not null default 'moderate', -- easy | moderate | hard, chosen by the creator
   battle_starts_at timestamptz,           -- shared countdown target so both screens sync exactly
   questions jsonb not null,               -- array of {prompt, options, answer, tag}
   current_round int not null default 0,
