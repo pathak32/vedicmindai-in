@@ -20,8 +20,16 @@ import { getSupabase } from '@/lib/supabaseClient';
 // PIN-gated and never holds its own Supabase session, so this signUp can't
 // hijack anything.
 
+// IMPORTANT: this must match the login page's fakeEmail exactly. The login
+// page (VedicAuthContext.signInWithPassword) always builds mobile as
+// `${countryCode}${localNumber}` (e.g. "+919565524546") BEFORE stripping to
+// digits. This form only ever collects Indian numbers, so we must prepend
+// +91 here too — otherwise the auth user we create here
+// ("9565524546@vedicmindai.in") never matches what login looks up
+// ("919565524546@vedicmindai.in") and the account is permanently unloginable
+// regardless of password.
 const mobileToEmail = (mobile) => {
-  const digits = mobile.replace(/\D/g, '');
+  const digits = `91${mobile.replace(/\D/g, '')}`;
   return `${digits}@vedicmindai.in`;
 };
 
@@ -37,6 +45,8 @@ export default function AdminReviewerAccess() {
   // before we touch their data — never upgrade silently.
   const [existingAccount, setExistingAccount] = useState(null);
   const [upgrading, setUpgrading] = useState(false);
+  const [resettingPw, setResettingPw] = useState(false);
+  const [pwResetResult, setPwResetResult] = useState(null);
 
   async function createReviewer() {
     setError('');
@@ -50,6 +60,31 @@ export default function AdminReviewerAccess() {
       const sb = await getSupabase();
       const fakeEmail = mobileToEmail(form.mobile);
 
+      // 0. Check for an existing account FIRST, before ever calling signUp().
+      // Supabase's duplicate-email error is inconsistent — sometimes it's
+      // "User already registered", but for accounts with an existing
+      // confirmed identity it can instead return a generic
+      // "Database error saving new user", which used to slip past the
+      // string-matching below and surface as a confusing raw failure.
+      // Checking profiles directly means we never have to guess which
+      // error message Supabase feels like returning.
+      const { data: preExisting } = await sb
+        .from('profiles')
+        .select('id, name, full_name, plan, subscription_status, mobile')
+        .eq('mobile', `+91${form.mobile.trim()}`)
+        .maybeSingle();
+
+      if (preExisting) {
+        setExistingAccount({
+          ...preExisting,
+          mobileEntered: form.mobile.trim(),
+          requestedName: form.name,
+          requestedNotes: form.notes,
+        });
+        setLoading(false);
+        return;
+      }
+
       // 1. Create the real auth user (same signup path real users go through)
       const { data: signUpData, error: signUpErr } = await sb.auth.signUp({
         email: fakeEmail,
@@ -60,10 +95,9 @@ export default function AdminReviewerAccess() {
       let userId = signUpData?.user?.id;
 
       if (signUpErr) {
-        if (signUpErr.message.includes('already registered')) {
-          // Look up who this actually is so the admin can see exactly what
-          // they're about to change before confirming anything — never
-          // upgrade someone's existing plan/data silently.
+        // Fallback safety net, in case Supabase has an account under this
+        // email that isn't reflected in profiles (e.g. profile row missing).
+        if (/already registered|already exists|database error saving new user/i.test(signUpErr.message)) {
           const { data: existing } = await sb
             .from('profiles')
             .select('id, name, full_name, plan, subscription_status, mobile')
@@ -183,6 +217,33 @@ export default function AdminReviewerAccess() {
     setUpgrading(false);
   }
 
+  // Directly sets a password for an already-existing account (found via the
+  // lookup above). Needed because these accounts use a mobile-number fake
+  // email, so Supabase's normal "email a reset link" flow has no real inbox
+  // to deliver to. Uses the service-role admin-reset-password endpoint.
+  async function resetPassword() {
+    if (!existingAccount?.id) { setError('No existing account ID to reset.'); return; }
+    if (!form.password || form.password.length < 6) {
+      setError('Enter a password (min 6 chars) in the Password field above, then click Reset Password.');
+      return;
+    }
+    setResettingPw(true);
+    setError('');
+    try {
+      const res = await fetch('/api/admin-reset-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: existingAccount.id, newPassword: form.password }),
+      });
+      const result = await res.json();
+      if (!res.ok) throw new Error(result.error || 'Reset failed');
+      setPwResetResult(form.password);
+    } catch (e) {
+      setError(e.message);
+    }
+    setResettingPw(false);
+  }
+
   async function loadList() {
     const sb = await getSupabase();
     const { data, error } = await sb.from('reviewer_accounts').select('*').order('created_at', { ascending: false }).limit(50);
@@ -253,13 +314,26 @@ export default function AdminReviewerAccess() {
               <p style={{ fontSize: 12, color: '#92400E', marginBottom: 12 }}>
                 Their password stays exactly as it is — this only changes their plan to full (Family) access. Confirm this is the right person before upgrading.
               </p>
-              <div style={{ display: 'flex', gap: 8 }}>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 <button onClick={upgradeExisting} disabled={upgrading} style={btn(upgrading ? '#9CA3AF' : '#D97706')}>
                   {upgrading ? '⏳ Upgrading...' : '✅ Yes, upgrade this account to full access'}
                 </button>
                 <button onClick={() => setExistingAccount(null)} style={{ ...btn('#6B7280') }}>
                   Cancel
                 </button>
+              </div>
+              <div style={{ marginTop: 14, paddingTop: 14, borderTop: '1px dashed #FCD34D' }}>
+                <p style={{ fontSize: 12, color: '#92400E', marginBottom: 8 }}>
+                  Don't know their password (e.g. it's a leftover account from before, or they forgot it)? Set a new one directly — this account uses a mobile-number fake email, so "forgot password" emails can't reach them.
+                </p>
+                <button onClick={resetPassword} disabled={resettingPw} style={btn(resettingPw ? '#9CA3AF' : '#DC2626')}>
+                  {resettingPw ? '⏳ Setting password...' : `🔑 Set password to "${form.password || '(enter one above)'}"`}
+                </button>
+                {pwResetResult && (
+                  <p style={{ fontSize: 12, color: '#166534', marginTop: 8, fontFamily: 'monospace' }}>
+                    ✅ Password set. They can log in with mobile +91{existingAccount.mobileEntered} and password: <strong>{pwResetResult}</strong>
+                  </p>
+                )}
               </div>
             </div>
           )}
