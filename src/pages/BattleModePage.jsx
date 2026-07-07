@@ -1,238 +1,326 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
-import { useNavigate } from 'react-router-dom';
+import { getSupabase } from '@/lib/supabaseClient';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
+import { drawBattleQuestions } from '@/data/battleQuestions';
+
+const WIN_TARGET = 5;
+
+function generateRoomCode() {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let code = '';
+  for (let i = 0; i < 6; i++) code += chars[Math.floor(Math.random() * chars.length)];
+  return code;
+}
 
 export default function BattleModePage() {
   const { t } = useLanguage();
-  const navigate = useNavigate();
-  const { user, loading } = useVedicAuth();
-  const auth = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_auth') || '{}'); } catch { return {}; } })();
-  const firstName = (auth.name || 'You').split(' ')[0];
-  const initial = firstName.charAt(0).toUpperCase();
+  const { user, profile } = useVedicAuth();
+  const myName = profile?.name || 'Player';
 
-  const [mobile, setMobile] = useState('');
+  const [phase, setPhase] = useState('menu');
+  const [room, setRoom] = useState(null);
+  const [joinCode, setJoinCode] = useState('');
   const [error, setError] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [selected, setSelected] = useState(null);
+  const [busy, setBusy] = useState(false);
+  const channelRef = useRef(null);
 
-  const waitlist = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_battle_waitlist') || '[]'); } catch { return []; } })();
+  const isCreator = room && user && room.creator_id === user.id;
+  const myScore = room ? (isCreator ? room.creator_score : room.opponent_score) : 0;
+  const opponentScore = room ? (isCreator ? room.opponent_score : room.creator_score) : 0;
+  const opponentName = room ? (isCreator ? room.opponent_name : room.creator_name) : '';
+  const currentQuestion = room?.questions?.[room.current_round];
 
-  const handleNotify = () => {
-    const cleaned = mobile.replace(/\D/g, '');
-    if (cleaned.length !== 10) {
-      setError('Enter a valid 10-digit number');
-      return;
-    }
+  const subscribeToRoom = useCallback((roomId) => {
+    (async () => {
+      const supabase = await getSupabase();
+      if (channelRef.current) supabase.removeChannel(channelRef.current);
+      const channel = supabase
+        .channel(`battle_room_${roomId}`)
+        .on(
+          'postgres_changes',
+          { event: 'UPDATE', schema: 'public', table: 'battle_rooms', filter: `id=eq.${roomId}` },
+          (payload) => {
+            setRoom(payload.new);
+            setSelected(null);
+            if (payload.new.status === 'active') setPhase((p) => (p === 'waiting' ? 'active' : p));
+            if (payload.new.match_winner_id) setPhase('completed');
+          }
+        )
+        .subscribe();
+      channelRef.current = channel;
+    })();
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (channelRef.current) {
+        getSupabase().then((supabase) => supabase.removeChannel(channelRef.current));
+      }
+    };
+  }, []);
+
+  const handleCreate = async () => {
+    if (!user) return;
+    setBusy(true);
     setError('');
-    const list = [...waitlist, { mobile: cleaned, name: auth.name || '', savedAt: new Date().toISOString() }];
-    localStorage.setItem('vedicmind_battle_waitlist', JSON.stringify(list));
-    setSubmitted(true);
+    try {
+      const supabase = await getSupabase();
+      const code = generateRoomCode();
+      const { data, error: insertErr } = await supabase
+        .from('battle_rooms')
+        .insert({
+          code,
+          creator_id: user.id,
+          creator_name: myName,
+          questions: drawBattleQuestions(10),
+          status: 'waiting',
+        })
+        .select()
+        .single();
+      if (insertErr) throw insertErr;
+      setRoom(data);
+      setPhase('waiting');
+      subscribeToRoom(data.id);
+    } catch (e) {
+      setError('Could not create a battle right now. Please try again.');
+    } finally {
+      setBusy(false);
+    }
   };
 
-  const currentCount = submitted ? waitlist.length + 1 : waitlist.length;
+  const handleJoin = async () => {
+    if (!user || joinCode.trim().length < 4) {
+      setError('Enter a valid battle code');
+      return;
+    }
+    setBusy(true);
+    setError('');
+    try {
+      const supabase = await getSupabase();
+      const code = joinCode.trim().toUpperCase();
+      const { data: found, error: findErr } = await supabase
+        .from('battle_rooms')
+        .select('*')
+        .eq('code', code)
+        .eq('status', 'waiting')
+        .is('opponent_id', null)
+        .maybeSingle();
+      if (findErr || !found) {
+        setError('Battle not found, already started, or already full.');
+        setBusy(false);
+        return;
+      }
+      const { data: updated, error: joinErr } = await supabase
+        .from('battle_rooms')
+        .update({ opponent_id: user.id, opponent_name: myName, status: 'active' })
+        .eq('id', found.id)
+        .is('opponent_id', null)
+        .select()
+        .single();
+      if (joinErr || !updated) {
+        setError('Someone just joined this battle first — try another code.');
+        setBusy(false);
+        return;
+      }
+      setRoom(updated);
+      setPhase('active');
+      subscribeToRoom(updated.id);
+    } catch (e) {
+      setError('Something went wrong joining the battle.');
+    } finally {
+      setBusy(false);
+    }
+  };
 
-  const steps = [
-    'Challenge a friend via WhatsApp link',
-    'Both solve the same Vedic Maths question simultaneously',
-    'First correct answer wins the round',
-    'Win 5 rounds to become the Battle Champion 🏆',
-  ];
+  const handleAnswer = async (opt) => {
+    if (!room || selected || !currentQuestion) return;
+    setSelected(opt);
+    const isCorrect = opt === currentQuestion.answer;
+    if (!isCorrect) return;
+
+    const supabase = await getSupabase();
+    const scoreField = isCreator ? 'creator_score' : 'opponent_score';
+    const newScore = myScore + 1;
+    const matchWinnerId = newScore >= WIN_TARGET ? user.id : null;
+
+    const { data: claimed } = await supabase
+      .from('battle_rooms')
+      .update({
+        round_winner_id: user.id,
+        [scoreField]: newScore,
+        match_winner_id: matchWinnerId,
+      })
+      .eq('id', room.id)
+      .is('round_winner_id', null)
+      .select()
+      .single();
+
+    if (claimed) {
+      setRoom(claimed);
+      if (claimed.match_winner_id) {
+        setPhase('completed');
+        return;
+      }
+      setTimeout(async () => {
+        await supabase
+          .from('battle_rooms')
+          .update({ current_round: claimed.current_round + 1, round_winner_id: null })
+          .eq('id', room.id)
+          .eq('round_winner_id', user.id);
+      }, 1800);
+    }
+  };
+
+  const resetToMenu = () => {
+    if (channelRef.current) {
+      getSupabase().then((supabase) => supabase.removeChannel(channelRef.current));
+    }
+    setRoom(null);
+    setPhase('menu');
+    setSelected(null);
+    setJoinCode('');
+    setError('');
+  };
 
   return (
     <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #0A1628 0%, #1a0533 100%)' }}>
       <DashboardNavbar />
 
-      <style>{`
-        @keyframes gloveFloat {
-          from { transform: translateY(0px); }
-          to   { transform: translateY(-8px); }
-        }
-        @media (max-width: 480px) {
-          .battle-heading { font-size: 28px !important; }
-          .battle-subheading { font-size: 15px !important; }
-          .battle-vs-row { flex-direction: row !important; }
-          .battle-notify-row { flex-direction: column !important; }
-          .battle-notify-row input,
-          .battle-notify-row button { width: 100% !important; }
-        }
-      `}</style>
-
       <main style={{ padding: '48px 24px 64px', textAlign: 'center' }}>
+        <span style={{ fontSize: 64, display: 'inline-block' }}>🥊</span>
+        <h1 className="font-heading" style={{ fontSize: 36, fontWeight: 700, color: 'white', marginTop: 16 }}>
+          {t('liveBattleMode') || 'Live Battle Mode'}
+        </h1>
 
-        {/* Hero */}
-        <div>
-          <span style={{ fontSize: 64, display: 'inline-block', animation: 'gloveFloat 1s ease-in-out infinite alternate' }}>
-            🥊
-          </span>
-
-          <h1 className="font-heading battle-heading" style={{ fontSize: 40, fontWeight: 700, color: 'white', marginTop: 16, marginBottom: 0 }}>
-            {t('liveBattleMode')}
-          </h1>
-
-          <p className="battle-subheading" style={{ fontFamily: 'var(--font-body)', fontSize: 18, color: 'rgba(255,255,255,0.7)', maxWidth: 480, margin: '12px auto 0', lineHeight: 1.6 }}>
-            Challenge your classmates to real-time Vedic Maths battles
-          </p>
-
-          <div style={{
-            display: 'inline-block', marginTop: 20,
-            background: 'rgba(245,158,11,0.2)',
-            border: '1px solid rgba(245,158,11,0.5)',
-            color: '#F59E0B',
-            borderRadius: 99, padding: '8px 20px',
-            fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600,
-          }}>
-            ⚡ Coming in Phase 2
-          </div>
-        </div>
-
-        {/* How it works card */}
-        <div style={{
-          background: 'rgba(255,255,255,0.06)',
-          border: '1px solid rgba(255,255,255,0.12)',
-          borderRadius: 20, padding: '28px 24px',
-          maxWidth: 480, margin: '32px auto',
-          textAlign: 'left',
-        }}>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 16, marginTop: 0 }}>
-            How it works
-          </p>
-          {steps.map((step, i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: i < steps.length - 1 ? 14 : 0 }}>
-              <div style={{
-                width: 32, height: 32, borderRadius: '50%', flexShrink: 0,
-                background: 'rgba(245,158,11,0.2)',
-                border: '1px solid rgba(245,158,11,0.4)',
-                color: '#F59E0B',
-                fontFamily: 'var(--font-mono)', fontSize: 13, fontWeight: 600,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-              }}>
-                {i + 1}
-              </div>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'white', lineHeight: 1.5, margin: 0 }}>
-                {step}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* VS Row */}
-        <div style={{ maxWidth: 400, margin: '24px auto 0' }}>
-          <div className="battle-vs-row" style={{ display: 'flex', alignItems: 'center', gap: 16, justifyContent: 'center' }}>
-            {/* You */}
-            <div style={{
-              background: 'rgba(59,130,246,0.15)',
-              border: '1px solid rgba(59,130,246,0.3)',
-              borderRadius: 12, padding: 16, textAlign: 'center', flex: 1,
-            }}>
-              <div style={{
-                width: 48, height: 48, borderRadius: '50%', background: '#3B82F6',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontFamily: 'var(--font-body)', fontSize: 20, color: 'white', fontWeight: 700,
-                margin: '0 auto',
-              }}>
-                {initial}
-              </div>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'white', margin: '8px 0 2px' }}>{firstName}</p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(255,255,255,0.5)', margin: 0 }}>You</p>
-            </div>
-
-            {/* VS */}
-            <span className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: '#F59E0B', flexShrink: 0 }}>VS</span>
-
-            {/* Opponent */}
-            <div style={{
-              background: 'rgba(239,68,68,0.15)',
-              border: '1px solid rgba(239,68,68,0.3)',
-              borderRadius: 12, padding: 16, textAlign: 'center', flex: 1,
-            }}>
-              <div style={{
-                width: 48, height: 48, borderRadius: '50%', background: '#EF4444',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontFamily: 'var(--font-body)', fontSize: 20, color: 'white', fontWeight: 700,
-                margin: '0 auto',
-              }}>
-                ?
-              </div>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'white', margin: '8px 0 2px' }}>???</p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(255,255,255,0.5)', margin: 0 }}>Opponent</p>
-            </div>
-          </div>
-
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.5)', textAlign: 'center', marginTop: 8 }}>
-            Your opponent could be your classmate, friend, or anyone from your class group!
-          </p>
-        </div>
-
-        {/* Notify Me */}
-        <div style={{ marginTop: 32 }}>
-          <h2 style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'white', fontWeight: 600, margin: '0 0 12px' }}>
-            Get notified when it launches
-          </h2>
-
-          {submitted ? (
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#10B981', textAlign: 'center' }}>
-              ✅ You're on the list! We'll WhatsApp you when Battle Mode launches 🥊
-            </p>
-          ) : (
-            <>
-              <div className="battle-notify-row" style={{ display: 'flex', gap: 8, maxWidth: 400, margin: '0 auto' }}>
-                <input
-                  type="tel"
-                  placeholder="Your WhatsApp number"
-                  value={mobile}
-                  onChange={e => { setMobile(e.target.value); setError(''); }}
-                  style={{
-                    flex: 1, height: 48, borderRadius: 12, padding: '0 16px',
-                    background: 'rgba(255,255,255,0.08)',
-                    border: `1px solid ${error ? '#EF4444' : 'rgba(255,255,255,0.2)'}`,
-                    color: 'white', fontFamily: 'var(--font-body)', fontSize: 16,
-                    outline: 'none', minWidth: 0,
-                  }}
-                  onFocus={e => { e.target.style.borderColor = '#3B82F6'; e.target.style.background = 'rgba(255,255,255,0.12)'; }}
-                  onBlur={e => { e.target.style.borderColor = error ? '#EF4444' : 'rgba(255,255,255,0.2)'; e.target.style.background = 'rgba(255,255,255,0.08)'; }}
-                />
-                <button
-                  onClick={handleNotify}
-                  style={{
-                    height: 48, borderRadius: 12, padding: '0 20px',
-                    background: '#F59E0B', color: '#0A1628',
-                    border: 'none', fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600,
-                    cursor: 'pointer', whiteSpace: 'nowrap', flexShrink: 0,
-                  }}
-                >
-                  Notify Me 🔔
-                </button>
-              </div>
-              {error && (
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#EF4444', marginTop: 6, textAlign: 'center' }}>
-                  {error}
-                </p>
-              )}
-            </>
-          )}
-
-          {currentCount > 0 && (
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.5)', textAlign: 'center', marginTop: 12 }}>
-              🔥 {currentCount} student{currentCount !== 1 ? 's' : ''} already waiting
-            </p>
-          )}
-        </div>
-
-        {/* Back button */}
-        <button
-          onClick={() => navigate('/dashboard')}
+        <div
           style={{
-            display: 'block', margin: '32px auto 0',
-            width: 200, height: 44, borderRadius: 12,
-            background: 'transparent',
-            border: '1.5px solid rgba(255,255,255,0.3)',
-            color: 'white', fontFamily: 'var(--font-body)', fontSize: 14,
-            fontWeight: 500, cursor: 'pointer',
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,255,255,0.12)',
+            borderRadius: 20,
+            padding: '28px 24px',
+            maxWidth: 480,
+            margin: '32px auto',
           }}
         >
-          ← Back to Dashboard
-        </button>
+          {phase === 'menu' && (
+            <div>
+              <button
+                onClick={handleCreate}
+                disabled={busy}
+                style={{
+                  width: '100%', height: 52, borderRadius: 14, background: '#3B82F6', color: 'white',
+                  fontWeight: 700, fontSize: 16, border: 'none', marginBottom: 16, cursor: 'pointer',
+                }}
+              >
+                {busy ? 'Creating...' : 'Create a Battle'}
+              </button>
+
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13, margin: '16px 0' }}>— or join with a code —</p>
+
+              <input
+                value={joinCode}
+                onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
+                placeholder="Enter 6-letter code"
+                maxLength={6}
+                style={{
+                  width: '100%', height: 48, borderRadius: 12, textAlign: 'center', fontSize: 20,
+                  letterSpacing: 4, marginBottom: 12, border: '1px solid rgba(255,255,255,0.2)',
+                  background: 'rgba(255,255,255,0.08)', color: 'white',
+                }}
+              />
+              <button
+                onClick={handleJoin}
+                disabled={busy}
+                style={{
+                  width: '100%', height: 48, borderRadius: 12, background: 'transparent',
+                  border: '1.5px solid #3B82F6', color: '#93C5FD', fontWeight: 600, cursor: 'pointer',
+                }}
+              >
+                Join Battle
+              </button>
+              {error && <p style={{ color: '#FCA5A5', marginTop: 12, fontSize: 14 }}>{error}</p>}
+            </div>
+          )}
+
+          {phase === 'waiting' && room && (
+            <div>
+              <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 12 }}>Share this code with your opponent:</p>
+              <div style={{
+                fontFamily: 'monospace', fontSize: 40, fontWeight: 700, color: '#3B82F6',
+                letterSpacing: 8, margin: '16px 0',
+              }}>
+                {room.code}
+              </div>
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14 }}>Waiting for them to join...</p>
+              <button onClick={resetToMenu} style={{ marginTop: 24, background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', cursor: 'pointer', fontSize: 13 }}>
+                Cancel
+              </button>
+            </div>
+          )}
+
+          {phase === 'active' && room && currentQuestion && (
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20, fontSize: 14, color: 'rgba(255,255,255,0.8)' }}>
+                <span>You: <strong style={{ color: '#6EE7B7' }}>{myScore}</strong></span>
+                <span>{opponentName || 'Opponent'}: <strong style={{ color: '#FCA5A5' }}>{opponentScore}</strong></span>
+              </div>
+              <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', marginBottom: 4 }}>{currentQuestion.tag}</p>
+              <p style={{ fontFamily: 'monospace', fontSize: 32, fontWeight: 700, color: 'white', marginBottom: 24 }}>
+                {currentQuestion.prompt}
+              </p>
+              <div style={{ display: 'grid', gap: 12 }}>
+                {currentQuestion.options.map((opt) => {
+                  const showState = room.round_winner_id != null;
+                  const isThisCorrect = opt === currentQuestion.answer;
+                  let bg = 'rgba(255,255,255,0.1)';
+                  if (showState && isThisCorrect) bg = 'rgba(16,185,129,0.9)';
+                  else if (selected === opt && !isThisCorrect) bg = 'rgba(239,68,68,0.9)';
+                  return (
+                    <button
+                      key={opt}
+                      onClick={() => handleAnswer(opt)}
+                      disabled={!!selected || room.round_winner_id != null}
+                      style={{
+                        padding: '14px', borderRadius: 12, fontFamily: 'monospace', fontSize: 18,
+                        fontWeight: 700, color: 'white', background: bg, border: '1px solid rgba(255,255,255,0.2)',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {opt}
+                    </button>
+                  );
+                })}
+              </div>
+              {room.round_winner_id && (
+                <p style={{ marginTop: 16, fontWeight: 600, color: room.round_winner_id === user.id ? '#6EE7B7' : '#FCA5A5' }}>
+                  {room.round_winner_id === user.id ? 'You won this round! 🎉' : `${opponentName} won this round`}
+                </p>
+              )}
+            </div>
+          )}
+
+          {phase === 'completed' && room && (
+            <div>
+              <span style={{ fontSize: 48 }}>{room.match_winner_id === user.id ? '🏆' : '🥈'}</span>
+              <h2 style={{ color: 'white', fontSize: 24, fontWeight: 700, margin: '16px 0' }}>
+                {room.match_winner_id === user.id ? 'You are the Battle Champion!' : `${opponentName} won this match`}
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: 20 }}>Final score: {myScore} - {opponentScore}</p>
+              <button
+                onClick={resetToMenu}
+                style={{
+                  height: 48, padding: '0 28px', borderRadius: 12, background: '#3B82F6', color: 'white',
+                  fontWeight: 700, border: 'none', cursor: 'pointer',
+                }}
+              >
+                Battle Again
+              </button>
+            </div>
+          )}
+        </div>
       </main>
     </div>
   );
