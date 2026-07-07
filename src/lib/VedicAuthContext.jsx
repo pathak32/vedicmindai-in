@@ -59,6 +59,23 @@ export function VedicAuthProvider({ children }) {
     const supabase = await getSupabase();
     const fakeEmail = mobileToEmail(mobile);
 
+    // 0. Check for an existing account FIRST, before ever calling signUp().
+    // Supabase's duplicate-email error is inconsistent — sometimes it's
+    // "User already registered", but for accounts with an existing
+    // confirmed identity it can instead return a generic "Database error
+    // saving new user", which is confusing and unhelpful if shown raw.
+    // Checking profiles directly means we never have to guess which error
+    // message Supabase feels like returning this time.
+    const { data: preExisting } = await supabase
+      .from('profiles')
+      .select('id, mobile')
+      .eq('mobile', mobile)
+      .maybeSingle();
+
+    if (preExisting) {
+      throw new Error('An account with this mobile number already exists. Please sign in instead, or use "Forgot Password" if needed.');
+    }
+
     // 1. Create Supabase auth user (no email confirmation needed)
     const { data, error } = await supabase.auth.signUp({
       email: fakeEmail,
@@ -68,7 +85,17 @@ export function VedicAuthProvider({ children }) {
         data: { name, mobile },
       }
     });
-    if (error) throw new Error(error.message);
+
+    if (error) {
+      // Fallback safety net, in case Supabase has an account under this
+      // email that isn't reflected in profiles (e.g. a previous signup's
+      // profile-save step failed, orphaning the auth user). Give a clear,
+      // actionable message instead of Supabase's raw internal error text.
+      if (/already registered|already exists|database error saving new user/i.test(error.message)) {
+        throw new Error('An account with this mobile number already exists, or a previous signup attempt was left incomplete. Please try signing in, or contact support@vedicmindai.in if that fails.');
+      }
+      throw new Error(error.message);
+    }
 
     // If user already exists, try signing in instead
     let userId = data.user?.id;
