@@ -45,6 +45,8 @@ export default function AdminReviewerAccess() {
   // before we touch their data — never upgrade silently.
   const [existingAccount, setExistingAccount] = useState(null);
   const [upgrading, setUpgrading] = useState(false);
+  const [resettingPw, setResettingPw] = useState(false);
+  const [pwResetResult, setPwResetResult] = useState(null);
 
   async function createReviewer() {
     setError('');
@@ -215,6 +217,33 @@ export default function AdminReviewerAccess() {
     setUpgrading(false);
   }
 
+  // Directly sets a password for an already-existing account (found via the
+  // lookup above). Needed because these accounts use a mobile-number fake
+  // email, so Supabase's normal "email a reset link" flow has no real inbox
+  // to deliver to. Uses the service-role admin-reset-password endpoint.
+  async function resetPassword() {
+    if (!existingAccount?.id) { setError('No existing account ID to reset.'); return; }
+    if (!form.password || form.password.length < 6) {
+      setError('Enter a password (min 6 chars) in the Password field above, then click Reset Password.');
+      return;
+    }
+    setResettingPw(true);
+    setError('');
+    try {
+      const res = await fetch('/api/admin-reset-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: existingAccount.id, newPassword: form.password }),
+      });
+      const result = await res.json();
+      if (!res.ok) throw new Error(result.error || 'Reset failed');
+      setPwResetResult(form.password);
+    } catch (e) {
+      setError(e.message);
+    }
+    setResettingPw(false);
+  }
+
   async function loadList() {
     const sb = await getSupabase();
     const { data, error } = await sb.from('reviewer_accounts').select('*').order('created_at', { ascending: false }).limit(50);
@@ -285,13 +314,26 @@ export default function AdminReviewerAccess() {
               <p style={{ fontSize: 12, color: '#92400E', marginBottom: 12 }}>
                 Their password stays exactly as it is — this only changes their plan to full (Family) access. Confirm this is the right person before upgrading.
               </p>
-              <div style={{ display: 'flex', gap: 8 }}>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 <button onClick={upgradeExisting} disabled={upgrading} style={btn(upgrading ? '#9CA3AF' : '#D97706')}>
                   {upgrading ? '⏳ Upgrading...' : '✅ Yes, upgrade this account to full access'}
                 </button>
                 <button onClick={() => setExistingAccount(null)} style={{ ...btn('#6B7280') }}>
                   Cancel
                 </button>
+              </div>
+              <div style={{ marginTop: 14, paddingTop: 14, borderTop: '1px dashed #FCD34D' }}>
+                <p style={{ fontSize: 12, color: '#92400E', marginBottom: 8 }}>
+                  Don't know their password (e.g. it's a leftover account from before, or they forgot it)? Set a new one directly — this account uses a mobile-number fake email, so "forgot password" emails can't reach them.
+                </p>
+                <button onClick={resetPassword} disabled={resettingPw} style={btn(resettingPw ? '#9CA3AF' : '#DC2626')}>
+                  {resettingPw ? '⏳ Setting password...' : `🔑 Set password to "${form.password || '(enter one above)'}"`}
+                </button>
+                {pwResetResult && (
+                  <p style={{ fontSize: 12, color: '#166534', marginTop: 8, fontFamily: 'monospace' }}>
+                    ✅ Password set. They can log in with mobile +91{existingAccount.mobileEntered} and password: <strong>{pwResetResult}</strong>
+                  </p>
+                )}
               </div>
             </div>
           )}
