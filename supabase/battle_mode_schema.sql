@@ -15,6 +15,8 @@ create table if not exists battle_rooms (
   round_started_at timestamptz default now(),
   creator_score int not null default 0,
   opponent_score int not null default 0,
+  creator_answered boolean not null default false,  -- has creator submitted an answer this round?
+  opponent_answered boolean not null default false, -- has opponent submitted an answer this round?
   match_winner_id uuid,                   -- overall winner once someone reaches 5
   created_at timestamptz default now()
 );

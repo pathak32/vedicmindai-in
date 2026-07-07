@@ -37,15 +37,21 @@ export default function BattleModePage() {
   // realtime subscription or the polling fallback below.
   const applyRoomUpdate = useCallback((newRoom) => {
     setRoom((prev) => {
-      // Avoid pointless re-renders/selection resets if nothing meaningful changed
       if (prev && prev.status === newRoom.status &&
           prev.current_round === newRoom.current_round && prev.round_winner_id === newRoom.round_winner_id &&
-          prev.creator_score === newRoom.creator_score && prev.opponent_score === newRoom.opponent_score) {
+          prev.creator_score === newRoom.creator_score && prev.opponent_score === newRoom.opponent_score &&
+          prev.creator_answered === newRoom.creator_answered && prev.opponent_answered === newRoom.opponent_answered) {
         return prev;
+      }
+      // Only clear the locally-selected answer once the round has actually
+      // moved on — otherwise a player who already answered (right or wrong)
+      // would briefly see their choice un-highlight while still waiting on
+      // their opponent, which looks like the app forgot their answer.
+      if (!prev || prev.current_round !== newRoom.current_round) {
+        setSelected(null);
       }
       return newRoom;
     });
-    setSelected(null);
     setPhase((p) => {
       if (newRoom.match_winner_id) return 'completed';
       if (newRoom.status === 'active' && p === 'waiting') return 'active';
@@ -168,9 +174,43 @@ export default function BattleModePage() {
     if (!room || selected || !currentQuestion) return;
     setSelected(opt);
     const isCorrect = opt === currentQuestion.answer;
-    if (!isCorrect) return;
-
     const supabase = await getSupabase();
+
+    if (!isCorrect) {
+      // Mark that I've submitted a (wrong) answer this round, then check
+      // whether BOTH players have now missed — if so, resolve the round
+      // with no winner instead of leaving it stuck forever.
+      const answeredField = isCreator ? 'creator_answered' : 'opponent_answered';
+      const { data: afterMiss } = await supabase
+        .from('battle_rooms')
+        .update({ [answeredField]: true })
+        .eq('id', room.id)
+        .eq('current_round', room.current_round)
+        .select()
+        .single();
+
+      if (afterMiss && afterMiss.creator_answered && afterMiss.opponent_answered && !afterMiss.round_winner_id) {
+        setRoom(afterMiss);
+        setTimeout(async () => {
+          await supabase
+            .from('battle_rooms')
+            .update({
+              current_round: afterMiss.current_round + 1,
+              round_winner_id: null,
+              creator_answered: false,
+              opponent_answered: false,
+            })
+            .eq('id', room.id)
+            .eq('current_round', afterMiss.current_round)
+            .eq('creator_answered', true)
+            .eq('opponent_answered', true);
+        }, 3000);
+      } else if (afterMiss) {
+        setRoom(afterMiss);
+      }
+      return;
+    }
+
     const scoreField = isCreator ? 'creator_score' : 'opponent_score';
     const newScore = myScore + 1;
     const matchWinnerId = newScore >= WIN_TARGET ? user.id : null;
@@ -196,7 +236,7 @@ export default function BattleModePage() {
       setTimeout(async () => {
         await supabase
           .from('battle_rooms')
-          .update({ current_round: claimed.current_round + 1, round_winner_id: null })
+          .update({ current_round: claimed.current_round + 1, round_winner_id: null, creator_answered: false, opponent_answered: false })
           .eq('id', room.id)
           .eq('round_winner_id', user.id);
       }, 3000);
@@ -302,7 +342,8 @@ export default function BattleModePage() {
               </p>
               <div style={{ display: 'grid', gap: 12 }}>
                 {currentQuestion.options.map((opt) => {
-                  const showState = room.round_winner_id != null;
+                  const bothMissed = room.creator_answered && room.opponent_answered && !room.round_winner_id;
+                  const showState = room.round_winner_id != null || bothMissed;
                   const isThisCorrect = opt === currentQuestion.answer;
                   let bg = 'rgba(255,255,255,0.1)';
                   if (showState && isThisCorrect) bg = 'rgba(16,185,129,0.9)';
@@ -326,6 +367,11 @@ export default function BattleModePage() {
               {room.round_winner_id && (
                 <p style={{ marginTop: 16, fontWeight: 600, color: room.round_winner_id === user.id ? '#6EE7B7' : '#FCA5A5' }}>
                   {room.round_winner_id === user.id ? 'You won this round! 🎉' : `${opponentName} won this round`}
+                </p>
+              )}
+              {!room.round_winner_id && room.creator_answered && room.opponent_answered && (
+                <p style={{ marginTop: 16, fontWeight: 600, color: '#FCD34D' }}>
+                  Both of you missed this one! The answer was {currentQuestion.answer} — next question coming up.
                 </p>
               )}
             </div>
