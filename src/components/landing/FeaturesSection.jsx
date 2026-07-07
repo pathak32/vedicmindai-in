@@ -24,8 +24,8 @@ const features = [
     emoji: '🥊',
     title: 'Live Battle Mode',
     desc: 'Challenge your classmates to real-time Vedic Maths battles. First to answer wins. Prove who\'s the fastest calculator in your class.',
-    comingSoon: false,
-    isLive: true,
+    comingSoon: true,
+    isLive: false,
   },
 ];
 
@@ -72,6 +72,17 @@ export default function FeaturesSection() {
                   fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 600,
                 }}>
                   ✅ Live
+                </span>
+              )}
+              {f.comingSoon && (
+                <span style={{
+                  display: 'inline-block', marginTop: 8,
+                  background: 'rgba(245,158,11,0.15)', color: '#B45309',
+                  border: '1px solid rgba(245,158,11,0.4)',
+                  borderRadius: 99, padding: '3px 12px',
+                  fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 600,
+                }}>
+                  ⚡ Coming Soon
                 </span>
               )}
             </motion.div>
