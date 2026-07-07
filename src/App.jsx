@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { Toaster } from "sonner";
 import LandingPage from '@/pages/LandingPage';
+import ReasoningPilotPage from '@/pages/ReasoningPilotPage';
 import AuthPage from '@/pages/AuthPage';
 import OnboardingPage from '@/pages/OnboardingPage';
 import DashboardPage from '@/pages/DashboardPage';
@@ -104,6 +105,7 @@ function RouteTransition() {
           >
             <Routes location={location}>
               <Route path="/" element={<LandingPage />} />
+              <Route path="/reasoning-pilot" element={<ReasoningPilotPage />} />
               <Route path="/auth" element={<AuthPage />} />
               <Route path="/onboarding" element={<OnboardingPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />

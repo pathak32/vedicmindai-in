@@ -72,6 +72,59 @@ function SectionTitle({ children }) {
   );
 }
 
+// ── Deep-content components (Origin / Why It Works / Common Mistake / Real World) ──
+// These four give every lesson the same "why, not just how" depth: where the
+// technique comes from, why it mathematically works, what students typically
+// get wrong, and where they'd actually use it outside the app.
+
+function OriginBox({ text }) {
+  const { language } = useLanguage();
+  const label = language === 'hi' ? '📜 यह कहाँ से आया?' : '📜 Where does this come from?';
+  return (
+    <div style={{ background: '#FAF5FF', border: '1px solid #E9D5FF', borderRadius: 12, padding: '14px 18px', marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: '#6B21A8', marginBottom: 6 }}>{label}</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', lineHeight: 1.7 }}>{tr(text, language)}</div>
+    </div>
+  );
+}
+
+function WhyItWorksBox({ text }) {
+  const { language } = useLanguage();
+  const label = language === 'hi' ? '💡 यह क्यों काम करता है?' : '💡 Why does this work?';
+  return (
+    <div style={{ background: '#F0F4FF', borderRadius: 12, padding: '14px 18px', marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: '#0A1628', marginBottom: 6 }}>{label}</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', lineHeight: 1.7 }}>{tr(text, language)}</div>
+    </div>
+  );
+}
+
+function CommonMistakeBox({ text }) {
+  const { language } = useLanguage();
+  const label = language === 'hi' ? '⚠️ आम गलती' : '⚠️ Common Mistake';
+  return (
+    <div style={{ background: '#FEF3C7', borderLeft: '4px solid #F59E0B', borderRadius: '0 8px 8px 0', padding: '14px 18px', marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: '#92400E', marginBottom: 6 }}>{label}</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', lineHeight: 1.7 }}>{tr(text, language)}</div>
+    </div>
+  );
+}
+
+function RealWorldBox({ text }) {
+  const { language } = useLanguage();
+  const label = language === 'hi' ? '🌍 असल जिंदगी में उपयोग' : '🌍 Where you\'d actually use this';
+  return (
+    <div style={{ background: '#ECFDF5', border: '1px solid #A7F3D0', borderRadius: 12, padding: '14px 18px', marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: '#065F46', marginBottom: 6 }}>{label}</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#065F46', lineHeight: 1.7 }}>{tr(text, language)}</div>
+    </div>
+  );
+}
+
+// Exported so other pages (e.g. the new Reasoning & Aptitude curriculum)
+// can reuse this exact same "why, not just how" template.
+export { SutraBox, StepBox, ExampleCard, SectionTitle, OriginBox, WhyItWorksBox, CommonMistakeBox, RealWorldBox };
+
 // ── L1_01 ─────────────────────────────────────────────────────────────────────
 
 // L1_01 — bilingual data. Structure: every text field is { en, hi } so a
@@ -264,6 +317,11 @@ const L1_03_CONTENT = (
   <>
     <SutraBox sutra="Nikhilam Navatashcaramam Dashatah" meaning={{ en: 'All from 9 and the last from 10', hi: 'सब 9 से और अंतिम 10 से' }} />
 
+    <OriginBox text={{
+      en: 'This sutra comes from a collection of 16 Vedic Maths formulae compiled by Swami Bharati Krishna Tirthaji in the early 20th century, who described them as rediscovered from ancient Sanskrit texts. Nikhilam solves a very old, practical problem: multiplying two numbers that are both close to a "round" number like 10, 100, or 1000 — something merchants and scholars needed to do quickly, long before calculators existed.',
+      hi: 'यह सूत्र स्वामी भारती कृष्ण तीर्थजी द्वारा 20वीं सदी की शुरुआत में संकलित 16 वैदिक गणित सूत्रों में से एक है, जिन्हें उन्होंने प्राचीन संस्कृत ग्रंथों से पुनः खोजा हुआ बताया। निखिलम् एक बहुत पुरानी, व्यावहारिक समस्या हल करता है: दो ऐसी संख्याओं को गुणा करना जो दोनों किसी "गोल" संख्या जैसे 10, 100, या 1000 के निकट हों — यह काम व्यापारियों और विद्वानों को कैलकुलेटर के आविष्कार से बहुत पहले तेज़ी से करना पड़ता था।',
+    }} />
+
     <SectionTitle>{{ en: 'The Technique — Near Base 10', hi: 'तकनीक — आधार 10 के निकट' }}</SectionTitle>
     <L1_03_RunningExampleNote />
     <StepBox number={1}
@@ -279,6 +337,11 @@ const L1_03_CONTENT = (
       text={{ en: 'Combine: LEFT part | RIGHT part', hi: 'जोड़ें: बायां भाग | दायां भाग' }}
       example={{ en: '5 | 6 → Answer: 56', hi: '5 | 6 → उत्तर: 56' }} />
     <L1_03_RunningExampleResult />
+
+    <WhyItWorksBox text={{
+      en: 'Say the two numbers are (10−x) and (10−y) — that\'s just a formal way of saying "x and y less than 10". Multiplying them out: (10−x)(10−y) = 100 − 10x − 10y + xy = 10×(10−x−y) + xy. Look closely: "10−x−y" is exactly the cross-subtraction step (e.g. 8−3), and "xy" is exactly the deficit product step (e.g. 2×3). The trick isn\'t magic — it\'s regular algebra, just rearranged into steps that are fast to do in your head.',
+      hi: 'मान लीजिए दो संख्याएं (10−x) और (10−y) हैं — यह सिर्फ यह कहने का औपचारिक तरीका है कि x और y दोनों 10 से कम हैं। इन्हें गुणा करने पर: (10−x)(10−y) = 100 − 10x − 10y + xy = 10×(10−x−y) + xy। ध्यान से देखें: "10−x−y" ठीक वही तिरछा घटाव चरण है (जैसे 8−3), और "xy" ठीक वही कमी का गुणनफल चरण है (जैसे 2×3)। यह तरकीब जादू नहीं है — यह साधारण बीजगणित ही है, बस ऐसे चरणों में व्यवस्थित किया गया है जो दिमाग में तेज़ी से किए जा सकें।',
+    }} />
 
     <SectionTitle>{{ en: 'Worked Examples', hi: 'हल किए गए उदाहरण' }}</SectionTitle>
     <ExampleCard
@@ -308,9 +371,16 @@ const L1_03_CONTENT = (
       ]}
       result="7 × 6 = 42 ✓"
     />
-    <div style={{ background: '#FEF3C7', borderLeft: '4px solid #F59E0B', borderRadius: '0 8px 8px 0', padding: '12px 16px' }}>
-      <L1_03_Warning />
-    </div>
+
+    <CommonMistakeBox text={{
+      en: 'Two mistakes trip up most students: (1) forgetting to carry when the deficit product is 2 digits or more (see Example 3 above), and (2) thinking this only works for single-digit numbers under 10. It actually works for ANY two numbers close to the same base — 8×7 uses base 10, but 97×96 uses base 100 with the exact same 4 steps (you\'ll see this in the next lesson).',
+      hi: 'ज़्यादातर छात्र दो गलतियाँ करते हैं: (1) जब कमियों का गुणनफल 2 अंकों या अधिक का हो तो आगे ले जाना भूल जाना (ऊपर उदाहरण 3 देखें), और (2) यह सोचना कि यह केवल 10 से कम की एक-अंकीय संख्याओं के लिए काम करता है। यह वास्तव में किन्हीं भी दो संख्याओं के लिए काम करता है जो एक ही आधार के निकट हों — 8×7 आधार 10 का उपयोग करता है, लेकिन 97×96 आधार 100 का उपयोग करता है, बिल्कुल उन्हीं 4 चरणों के साथ (आप इसे अगले पाठ में देखेंगे)।',
+    }} />
+
+    <RealWorldBox text={{
+      en: 'Any time you\'re estimating quickly without a calculator — checking if a shopkeeper gave the right change, splitting a bill between friends, or double-checking a calculator answer during an exam (calculators occasionally get mis-typed inputs, but your mental check won\'t). This exact method is also a favorite shortcut among students preparing for competitive exams like SSC, where speed matters as much as accuracy.',
+      hi: 'जब भी आप बिना कैलकुलेटर के जल्दी अनुमान लगा रहे हों — यह जांचना कि दुकानदार ने सही बकाया दिया या नहीं, दोस्तों के बीच बिल बांटना, या परीक्षा के दौरान कैलकुलेटर के उत्तर की दोबारा जांच करना (कैलकुलेटर में कभी-कभी गलत इनपुट टाइप हो जाता है, लेकिन आपकी मानसिक जांच नहीं चूकेगी)। यह ठीक यही तरीका SSC जैसी प्रतियोगी परीक्षाओं की तैयारी करने वाले छात्रों के बीच एक पसंदीदा शॉर्टकट भी है, जहां गति उतनी ही मायने रखती है जितनी सटीकता।',
+    }} />
   </>
 );
 
