@@ -33,6 +33,26 @@ export default function BattleModePage() {
   const opponentName = room ? (isCreator ? room.opponent_name : room.creator_name) : '';
   const currentQuestion = room?.questions?.[room.current_round];
 
+  // Shared handler for any fresh room data, whether it arrived via the
+  // realtime subscription or the polling fallback below.
+  const applyRoomUpdate = useCallback((newRoom) => {
+    setRoom((prev) => {
+      // Avoid pointless re-renders/selection resets if nothing meaningful changed
+      if (prev && prev.status === newRoom.status &&
+          prev.current_round === newRoom.current_round && prev.round_winner_id === newRoom.round_winner_id &&
+          prev.creator_score === newRoom.creator_score && prev.opponent_score === newRoom.opponent_score) {
+        return prev;
+      }
+      return newRoom;
+    });
+    setSelected(null);
+    setPhase((p) => {
+      if (newRoom.match_winner_id) return 'completed';
+      if (newRoom.status === 'active' && p === 'waiting') return 'active';
+      return p;
+    });
+  }, []);
+
   const subscribeToRoom = useCallback((roomId) => {
     (async () => {
       const supabase = await getSupabase();
@@ -42,17 +62,26 @@ export default function BattleModePage() {
         .on(
           'postgres_changes',
           { event: 'UPDATE', schema: 'public', table: 'battle_rooms', filter: `id=eq.${roomId}` },
-          (payload) => {
-            setRoom(payload.new);
-            setSelected(null);
-            if (payload.new.status === 'active') setPhase((p) => (p === 'waiting' ? 'active' : p));
-            if (payload.new.match_winner_id) setPhase('completed');
-          }
+          (payload) => applyRoomUpdate(payload.new)
         )
         .subscribe();
       channelRef.current = channel;
     })();
-  }, []);
+  }, [applyRoomUpdate]);
+
+  // Polling safety net — real-time delivery isn't always reliable across
+  // every device/network combination, so this quietly re-checks room state
+  // every 2s as a backup. Whichever arrives first (realtime or this) wins;
+  // applyRoomUpdate ignores no-op updates so this is cheap and harmless.
+  useEffect(() => {
+    if (!room?.id || phase === 'completed' || phase === 'menu') return undefined;
+    const interval = setInterval(async () => {
+      const supabase = await getSupabase();
+      const { data } = await supabase.from('battle_rooms').select('*').eq('id', room.id).maybeSingle();
+      if (data) applyRoomUpdate(data);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [room?.id, phase, applyRoomUpdate]);
 
   useEffect(() => {
     return () => {
@@ -170,7 +199,7 @@ export default function BattleModePage() {
           .update({ current_round: claimed.current_round + 1, round_winner_id: null })
           .eq('id', room.id)
           .eq('round_winner_id', user.id);
-      }, 1800);
+      }, 3000);
     }
   };
 
