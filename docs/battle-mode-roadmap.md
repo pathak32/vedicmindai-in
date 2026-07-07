@@ -198,3 +198,29 @@ never knowing how a friend did.
 This slots naturally after Phase B/C of Battle Mode, since it reuses the
 same real-time room infrastructure already being built.
 
+---
+
+## New idea — Institution-scoped chat (schools/coaching centers only)
+
+A further refinement worth capturing: **chat between students should only
+ever exist inside a school/coaching-institution-verified closed group** —
+never in the public open-challenge pool. A school or coaching center that
+officially onboards its own class (e.g., 50 students under one institution
+account) creates a fundamentally different trust context than public
+matchmaking, since an adult has already vetted who's in that group.
+
+Guardrails to build in alongside this, when the time comes:
+- Chat exists **only** within institution-verified groups — this boundary
+  should be enforced technically, not just as a policy choice.
+- The institution must **explicitly opt in** — not a default-on feature.
+- A **teacher/admin account can view chat logs** for their own group, for
+  oversight (not surveillance) purposes.
+- **Basic profanity/safety filtering** on all messages, even within a
+  trusted group.
+- The public/open Battle Mode and Quiz Squad flows remain permanently
+  chat-free, as established above.
+
+This is a distinct, longer-term feature (essentially a "schools" product
+tier) rather than part of core Battle Mode — worth scoping separately once
+institution accounts/verification exist as a concept in the platform.
+
