@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { useProgress } from '@/lib/ProgressContext';
 import { getSupabase } from '@/lib/supabaseClient';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
-import { drawBattleQuestions, BATTLE_TOPICS } from '@/data/battleQuestions';
+import { drawBattleQuestions } from '@/data/battleQuestions';
+import { getUnlockedBattleTopics } from '@/lib/battleTopicUnlock';
 
 const WIN_TARGET = 5;
 const COUNTDOWN_SECONDS = 10;
+const ROUND_SECONDS = 15; // per-question time limit — also what resolves a disconnected/quit opponent
 
 function generateRoomCode() {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -18,18 +22,25 @@ function generateRoomCode() {
 export default function BattleModePage() {
   const { t } = useLanguage();
   const { user, profile } = useVedicAuth();
+  const { progress } = useProgress();
   const myName = profile?.name || 'Player';
+  const unlockedTopics = getUnlockedBattleTopics(progress?.completedLessons || []);
 
   const [phase, setPhase] = useState('menu');
   const [room, setRoom] = useState(null);
   const [joinCode, setJoinCode] = useState('');
-  const [selectedTopic, setSelectedTopic] = useState('Mixed');
+  const [selectedTopic, setSelectedTopic] = useState('');
   const [error, setError] = useState('');
   const [selected, setSelected] = useState(null);
   const [busy, setBusy] = useState(false);
   const [countdown, setCountdown] = useState(COUNTDOWN_SECONDS);
+  const [roundTimeLeft, setRoundTimeLeft] = useState(ROUND_SECONDS);
   const [copied, setCopied] = useState(false);
   const channelRef = useRef(null);
+
+  useEffect(() => {
+    if (unlockedTopics.length > 0 && !selectedTopic) setSelectedTopic(unlockedTopics[0]);
+  }, [unlockedTopics, selectedTopic]);
 
   const isCreator = room && user && room.creator_id === user.id;
   const myScore = room ? (isCreator ? room.creator_score : room.opponent_score) : 0;
@@ -93,7 +104,7 @@ export default function BattleModePage() {
       if (remaining <= 0) {
         setPhase('active');
         getSupabase().then((supabase) =>
-          supabase.from('battle_rooms').update({ status: 'active' }).eq('id', room.id).eq('status', 'starting')
+          supabase.from('battle_rooms').update({ status: 'active', round_started_at: new Date().toISOString() }).eq('id', room.id).eq('status', 'starting')
         );
       }
     };
@@ -101,6 +112,56 @@ export default function BattleModePage() {
     const interval = setInterval(tick, 250);
     return () => clearInterval(interval);
   }, [phase, room?.battle_starts_at, room?.id]);
+
+  // Per-question timer. This is also what protects the game from a
+  // disconnected, quit, or unresponsive opponent — rather than trying to
+  // detect "they left" directly (which needs presence/heartbeat tracking),
+  // every question simply has a hard time limit. If nobody answers
+  // correctly in time, the round resolves with no winner and play moves
+  // on, exactly like a double-miss.
+  useEffect(() => {
+    if (phase !== 'active' || !room?.round_started_at || room.round_winner_id) return undefined;
+    const alreadyBothMissed = room.creator_answered && room.opponent_answered;
+    if (alreadyBothMissed) return undefined;
+
+    const target = new Date(room.round_started_at).getTime() + ROUND_SECONDS * 1000;
+    const tick = async () => {
+      const remaining = Math.max(0, Math.ceil((target - Date.now()) / 1000));
+      setRoundTimeLeft(remaining);
+      if (remaining <= 0) {
+        const supabase = await getSupabase();
+        await supabase
+          .from('battle_rooms')
+          .update({
+            current_round: room.current_round + 1,
+            round_winner_id: null,
+            creator_answered: false,
+            opponent_answered: false,
+            round_started_at: new Date().toISOString(),
+          })
+          .eq('id', room.id)
+          .eq('current_round', room.current_round)
+          .is('round_winner_id', null);
+      }
+    };
+    tick();
+    const interval = setInterval(tick, 500);
+    return () => clearInterval(interval);
+  }, [phase, room?.round_started_at, room?.current_round, room?.round_winner_id, room?.creator_answered, room?.opponent_answered, room?.id]);
+
+  // Leaving mid-battle forfeits the match to whoever's still there, rather
+  // than leaving them stuck waiting indefinitely for someone who's gone.
+  const handleForfeit = async () => {
+    if (!room || !user) return;
+    if (!window.confirm('Leave this battle? Your opponent will be declared the winner.')) return;
+    const opponentId = isCreator ? room.opponent_id : room.creator_id;
+    const supabase = await getSupabase();
+    await supabase
+      .from('battle_rooms')
+      .update({ match_winner_id: opponentId, status: 'completed' })
+      .eq('id', room.id);
+    resetToMenu();
+  };
 
   const handleCreate = async () => {
     if (!user) return;
@@ -229,6 +290,7 @@ export default function BattleModePage() {
               round_winner_id: null,
               creator_answered: false,
               opponent_answered: false,
+              round_started_at: new Date().toISOString(),
             })
             .eq('id', room.id)
             .eq('current_round', afterMiss.current_round)
@@ -266,7 +328,7 @@ export default function BattleModePage() {
       setTimeout(async () => {
         await supabase
           .from('battle_rooms')
-          .update({ current_round: claimed.current_round + 1, round_winner_id: null, creator_answered: false, opponent_answered: false })
+          .update({ current_round: claimed.current_round + 1, round_winner_id: null, creator_answered: false, opponent_answered: false, round_started_at: new Date().toISOString() })
           .eq('id', room.id)
           .eq('round_winner_id', user.id);
       }, 3000);
@@ -319,30 +381,39 @@ export default function BattleModePage() {
         >
           {phase === 'menu' && (
             <div>
-              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13, marginBottom: 8, textAlign: 'left' }}>Choose a topic:</p>
-              <select
-                value={selectedTopic}
-                onChange={(e) => setSelectedTopic(e.target.value)}
-                style={{
-                  width: '100%', height: 44, borderRadius: 10, marginBottom: 16, padding: '0 12px',
-                  background: 'rgba(255,255,255,0.08)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', fontSize: 14,
-                }}
-              >
-                {BATTLE_TOPICS.map((topic) => (
-                  <option key={topic} value={topic} style={{ color: '#0A1628' }}>{topic}</option>
-                ))}
-              </select>
+              {unlockedTopics.length === 0 ? (
+                <div style={{ background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.3)', borderRadius: 12, padding: 16, marginBottom: 16, textAlign: 'left' }}>
+                  <p style={{ color: '#FCD34D', fontWeight: 600, marginBottom: 4 }}>Complete a lesson to unlock Battle Mode</p>
+                  <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13 }}>You can only battle on topics you've actually learned. <Link to="/learn" style={{ color: '#93C5FD' }}>Start with Lesson 1 →</Link></p>
+                </div>
+              ) : (
+                <>
+                  <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13, marginBottom: 8, textAlign: 'left' }}>Choose a topic you've completed:</p>
+                  <select
+                    value={selectedTopic}
+                    onChange={(e) => setSelectedTopic(e.target.value)}
+                    style={{
+                      width: '100%', height: 44, borderRadius: 10, marginBottom: 16, padding: '0 12px',
+                      background: 'rgba(255,255,255,0.08)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', fontSize: 14,
+                    }}
+                  >
+                    {unlockedTopics.map((topic) => (
+                      <option key={topic} value={topic} style={{ color: '#0A1628' }}>{topic}</option>
+                    ))}
+                  </select>
 
-              <button
-                onClick={handleCreate}
-                disabled={busy}
-                style={{
-                  width: '100%', height: 52, borderRadius: 14, background: '#3B82F6', color: 'white',
-                  fontWeight: 700, fontSize: 16, border: 'none', marginBottom: 16, cursor: 'pointer',
-                }}
-              >
-                {busy ? 'Creating...' : 'Create a Battle'}
-              </button>
+                  <button
+                    onClick={handleCreate}
+                    disabled={busy}
+                    style={{
+                      width: '100%', height: 52, borderRadius: 14, background: '#3B82F6', color: 'white',
+                      fontWeight: 700, fontSize: 16, border: 'none', marginBottom: 16, cursor: 'pointer',
+                    }}
+                  >
+                    {busy ? 'Creating...' : 'Create a Battle'}
+                  </button>
+                </>
+              )}
 
               <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13, margin: '16px 0' }}>— or join with a code —</p>
 
@@ -454,8 +525,9 @@ export default function BattleModePage() {
 
           {phase === 'active' && room && currentQuestion && (
             <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20, fontSize: 14, color: 'rgba(255,255,255,0.8)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12, fontSize: 14, color: 'rgba(255,255,255,0.8)' }}>
                 <span>You: <strong style={{ color: '#6EE7B7' }}>{myScore}</strong></span>
+                <span style={{ fontFamily: 'monospace', color: roundTimeLeft <= 5 ? '#FCA5A5' : 'rgba(255,255,255,0.6)' }}>⏱ {roundTimeLeft}s</span>
                 <span>{opponentName || 'Opponent'}: <strong style={{ color: '#FCA5A5' }}>{opponentScore}</strong></span>
               </div>
               <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', marginBottom: 4 }}>{currentQuestion.tag}</p>
@@ -496,6 +568,9 @@ export default function BattleModePage() {
                   Both of you missed this one! The answer was {currentQuestion.answer} — next question coming up.
                 </p>
               )}
+              <button onClick={handleForfeit} style={{ marginTop: 20, background: 'none', border: 'none', color: 'rgba(255,255,255,0.4)', cursor: 'pointer', fontSize: 12 }}>
+                Leave Battle
+              </button>
             </div>
           )}
 

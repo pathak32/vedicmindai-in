@@ -197,6 +197,7 @@ const MORE_LINKS = [
   { label: 'Weekly Exam', path: '/weekly-exam' },
   { label: 'Olympiad 🏅', path: '/olympiad' },
   { label: '⚔️ Battle',  path: '/battle', badge: 'NEW' },
+  { label: '🏅 My Battles', path: '/my-battles' },
   { label: 'Aptitude',    path: '/aptitude' },
   { label: '📝 Screenless Teaching', path: '/screenless' },
   { label: 'Reviews',     path: '/reviews' },
