@@ -8,7 +8,9 @@ create table if not exists battle_rooms (
   creator_name text not null,
   opponent_id uuid references auth.users(id),
   opponent_name text,
-  status text not null default 'waiting', -- waiting | active | completed
+  status text not null default 'waiting', -- waiting | starting | active | completed
+  topic text not null default 'Mixed',    -- which sutra/topic this battle covers
+  battle_starts_at timestamptz,           -- shared countdown target so both screens sync exactly
   questions jsonb not null,               -- array of {prompt, options, answer, tag}
   current_round int not null default 0,
   round_winner_id uuid,                   -- winner of the CURRENT round, null until answered

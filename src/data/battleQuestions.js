@@ -19,7 +19,11 @@ export const BATTLE_QUESTIONS = [
   { prompt: '25² = ?', options: ['625', '525', '725'], answer: '625', tag: 'Ekadhikena Purvena' },
 ];
 
-export function drawBattleQuestions(count = 5) {
-  const shuffled = [...BATTLE_QUESTIONS].sort(() => Math.random() - 0.5);
+export const BATTLE_TOPICS = ['Mixed', 'Nikhilam Sutra', 'Ekadhikena Purvena', 'By 11 Trick', 'Antyayor Dashakepi'];
+
+export function drawBattleQuestions(count = 5, topic = 'Mixed') {
+  const pool = topic === 'Mixed' ? BATTLE_QUESTIONS : BATTLE_QUESTIONS.filter((q) => q.tag === topic);
+  const source = pool.length >= count ? pool : BATTLE_QUESTIONS; // fall back if a topic is too small
+  const shuffled = [...source].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, count);
 }
