@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { useProgress } from '@/lib/ProgressContext';
 import { getSupabase } from '@/lib/supabaseClient';
@@ -22,7 +22,9 @@ function generateRoomCode() {
 
 export default function BattleModePage() {
   const { t } = useLanguage();
-  const { user, profile } = useVedicAuth();
+  const { user, profile, loading: authLoading } = useVedicAuth();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { progress } = useProgress();
   const myName = profile?.name || 'Player';
   const unlockedTopics = getUnlockedBattleTopics(progress?.completedLessons || []);
@@ -45,6 +47,25 @@ export default function BattleModePage() {
   useEffect(() => {
     if (unlockedTopics.length > 0 && !selectedTopic) setSelectedTopic(unlockedTopics[0]);
   }, [unlockedTopics, selectedTopic]);
+
+  // Handle someone arriving via a shared WhatsApp battle link
+  // (vedicmindai.in/battle?code=ABC123). If they're not logged in yet,
+  // send them to sign in first and bring them right back here afterward.
+  // If they are logged in, auto-run the preview lookup for that code.
+  useEffect(() => {
+    const codeFromLink = searchParams.get('code');
+    if (!codeFromLink || authLoading) return;
+    if (!user) {
+      const returnPath = `/battle?code=${codeFromLink}`;
+      navigate(`/auth?redirect=${encodeURIComponent(returnPath)}`, { replace: true });
+      return;
+    }
+    if (phase === 'menu') {
+      setJoinCode(codeFromLink);
+      handlePreview(codeFromLink);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams, user, authLoading]);
 
   const isCreator = room && user && room.creator_id === user.id;
   const myScore = room ? (isCreator ? room.creator_score : room.opponent_score) : 0;
@@ -198,8 +219,9 @@ export default function BattleModePage() {
     }
   };
 
-  const handlePreview = async () => {
-    if (!user || joinCode.trim().length < 4) {
+  const handlePreview = async (codeOverride) => {
+    const rawCode = codeOverride ?? joinCode;
+    if (!user || rawCode.trim().length < 4) {
       setError('Enter a valid battle code');
       return;
     }
@@ -207,7 +229,7 @@ export default function BattleModePage() {
     setError('');
     try {
       const supabase = await getSupabase();
-      const code = joinCode.trim().toUpperCase();
+      const code = rawCode.trim().toUpperCase();
       const { data: found, error: findErr } = await supabase
         .from('battle_rooms')
         .select('*')
@@ -360,7 +382,7 @@ export default function BattleModePage() {
     setCountdown(COUNTDOWN_SECONDS);
   };
 
-  const shareText = room ? `I'm challenging you to a Vedic Maths battle on VedicMindAI! 🥊\nTopic: ${room.topic}\nEnter my code: ${room.code}\n\nOpen the app → Battle Mode → enter this code to accept!` : '';
+  const shareText = room ? `I'm challenging you to a Vedic Maths battle on VedicMindAI! 🥊\nTopic: ${room.topic} (${room.difficulty})\n\nTap to accept: https://vedicmindai.in/battle?code=${room.code}\n\n(If you're not logged in yet, it'll ask you to sign in first, then bring you straight here.)` : '';
   const handleCopyCode = () => {
     if (!room) return;
     navigator.clipboard?.writeText(room.code);

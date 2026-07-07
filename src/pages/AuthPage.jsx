@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
@@ -27,6 +27,8 @@ function SignUpForm({ onSwitchTab }) {
   const { t } = useLanguage();
   const { signUpWithPassword } = useVedicAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const redirectTo = searchParams.get('redirect');
   const [step, setStep]       = useState(1); // 1 = essentials, 2 = recovery info
   const [name, setName]       = useState('');
   const [mobile, setMobile]   = useState('');
@@ -110,7 +112,7 @@ function SignUpForm({ onSwitchTab }) {
         grade: grade === 'other' ? customGrade.trim() : grade,
       });
       toast.success('Account created! Welcome to VedicMindAI™ 🎉');
-      navigate('/dashboard');
+      navigate(redirectTo || '/dashboard');
     } catch (err) {
       toast.error(err.message || 'Sign up failed. Try again.');
     } finally {
@@ -353,6 +355,8 @@ function SignInForm({ onSwitchTab }) {
   const { t } = useLanguage();
   const { signInWithPassword } = useVedicAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const redirectTo = searchParams.get('redirect');
   const [mobile, setMobile]   = useState('');
   const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY.code);
   const [customCountryCode, setCustomCountryCode] = useState('');
@@ -372,7 +376,7 @@ function SignInForm({ onSwitchTab }) {
       const countryInfo = resolveCountryInfo(countryCode, customCountryCode);
       await signInWithPassword({ mobile: `${countryInfo.code}${mobile}`, password });
       toast.success('Welcome back! 🎉');
-      navigate('/dashboard');
+      navigate(redirectTo || '/dashboard');
     } catch (err) {
       toast.error(err.message || 'Login failed. Check your number & password.');
     } finally {
@@ -438,9 +442,11 @@ export default function AuthPage() {
   const [tab, setTab] = useState('signin');
   const { user, loading } = useVedicAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const redirectTo = searchParams.get('redirect');
 
   useEffect(() => {
-    if (!loading && user) navigate('/dashboard', { replace: true });
+    if (!loading && user) navigate(redirectTo || '/dashboard', { replace: true });
   }, [user, loading]);
 
   if (loading) return null;
