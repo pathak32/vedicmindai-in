@@ -32,7 +32,10 @@ create policy "Anyone authenticated can create a battle room"
 
 create policy "Players can update their own battle rooms"
   on battle_rooms for update
-  using (auth.uid() = creator_id or auth.uid() = opponent_id);
+  using (auth.uid() = creator_id or auth.uid() = opponent_id or opponent_id is null);
+  -- "or opponent_id is null" is required so a joining player can claim an
+  -- open room in the first place — without it, joining is impossible since
+  -- you aren't yet the opponent at the moment you're trying to become one.
 
 -- Enable Realtime so both players see live updates to this table
 alter publication supabase_realtime add table battle_rooms;
