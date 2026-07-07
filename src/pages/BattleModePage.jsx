@@ -307,13 +307,21 @@ export default function BattleModePage() {
     const newScore = myScore + 1;
     const matchWinnerId = newScore >= WIN_TARGET ? user.id : null;
 
+    const updatePayload = {
+      round_winner_id: user.id,
+      [scoreField]: newScore,
+      match_winner_id: matchWinnerId,
+    };
+    // A match that just ended needs status flipped to 'completed' too —
+    // otherwise the row is never picked up by "My Battles" history, which
+    // filters on status specifically (this was the actual bug: a real win
+    // was being saved with match_winner_id set, but status stuck on
+    // 'active' forever, so it silently never showed up in history).
+    if (matchWinnerId) updatePayload.status = 'completed';
+
     const { data: claimed } = await supabase
       .from('battle_rooms')
-      .update({
-        round_winner_id: user.id,
-        [scoreField]: newScore,
-        match_winner_id: matchWinnerId,
-      })
+      .update(updatePayload)
       .eq('id', room.id)
       .is('round_winner_id', null)
       .select()

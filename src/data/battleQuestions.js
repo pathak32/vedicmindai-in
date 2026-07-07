@@ -23,7 +23,17 @@ export const BATTLE_TOPICS = ['Mixed', 'Nikhilam Sutra', 'Ekadhikena Purvena', '
 
 export function drawBattleQuestions(count = 5, topic = 'Mixed') {
   const pool = topic === 'Mixed' ? BATTLE_QUESTIONS : BATTLE_QUESTIONS.filter((q) => q.tag === topic);
-  const source = pool.length >= count ? pool : BATTLE_QUESTIONS; // fall back if a topic is too small
-  const shuffled = [...source].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count);
+  // Never silently substitute a different topic's questions, even if the
+  // chosen topic's pool is smaller than the requested count — a battle
+  // scoped to "Nikhilam" must ONLY ever show Nikhilam questions. If the
+  // pool is smaller than needed, cycle through it again (reshuffled) so
+  // some repeats are possible rather than breaking topic integrity.
+  const source = pool.length > 0 ? pool : BATTLE_QUESTIONS; // only true fallback: topic has zero questions at all
+  const result = [];
+  let shuffled = [];
+  while (result.length < count) {
+    if (shuffled.length === 0) shuffled = [...source].sort(() => Math.random() - 0.5);
+    result.push(shuffled.pop());
+  }
+  return result;
 }
