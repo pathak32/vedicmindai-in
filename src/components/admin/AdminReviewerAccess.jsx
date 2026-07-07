@@ -58,6 +58,31 @@ export default function AdminReviewerAccess() {
       const sb = await getSupabase();
       const fakeEmail = mobileToEmail(form.mobile);
 
+      // 0. Check for an existing account FIRST, before ever calling signUp().
+      // Supabase's duplicate-email error is inconsistent — sometimes it's
+      // "User already registered", but for accounts with an existing
+      // confirmed identity it can instead return a generic
+      // "Database error saving new user", which used to slip past the
+      // string-matching below and surface as a confusing raw failure.
+      // Checking profiles directly means we never have to guess which
+      // error message Supabase feels like returning.
+      const { data: preExisting } = await sb
+        .from('profiles')
+        .select('id, name, full_name, plan, subscription_status, mobile')
+        .eq('mobile', `+91${form.mobile.trim()}`)
+        .maybeSingle();
+
+      if (preExisting) {
+        setExistingAccount({
+          ...preExisting,
+          mobileEntered: form.mobile.trim(),
+          requestedName: form.name,
+          requestedNotes: form.notes,
+        });
+        setLoading(false);
+        return;
+      }
+
       // 1. Create the real auth user (same signup path real users go through)
       const { data: signUpData, error: signUpErr } = await sb.auth.signUp({
         email: fakeEmail,
@@ -68,10 +93,9 @@ export default function AdminReviewerAccess() {
       let userId = signUpData?.user?.id;
 
       if (signUpErr) {
-        if (signUpErr.message.includes('already registered')) {
-          // Look up who this actually is so the admin can see exactly what
-          // they're about to change before confirming anything — never
-          // upgrade someone's existing plan/data silently.
+        // Fallback safety net, in case Supabase has an account under this
+        // email that isn't reflected in profiles (e.g. profile row missing).
+        if (/already registered|already exists|database error saving new user/i.test(signUpErr.message)) {
           const { data: existing } = await sb
             .from('profiles')
             .select('id, name, full_name, plan, subscription_status, mobile')
