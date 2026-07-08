@@ -168,9 +168,14 @@ export async function getTodayQuizResult(userId) {
 // Chrome — the app will wrongly say "take the quiz" even though the server
 // knows it's done. Call this once per session (Dashboard mount) to reconcile
 // local state from the server before any completion check runs.
+//
+// IMPORTANT: dailyQuizHistory entries everywhere else use the device's LOCAL
+// calendar date (getFullYear/getMonth/getDate), not UTC — must match that
+// exactly here, or this mismatches for ~5.5hrs/day (IST vs UTC date rollover).
 export async function reconcileTodayQuizFromServer(userId) {
   if (!userId) return false;
-  const today = new Date().toISOString().split('T')[0];
+  const now = new Date();
+  const today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
   const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'); } catch { return {}; } })();
   const alreadyLocal = (progress.dailyQuizHistory || []).some(h => h.date === today);
   if (alreadyLocal) return false; // nothing to reconcile
