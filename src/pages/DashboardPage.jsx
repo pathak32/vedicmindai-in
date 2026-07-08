@@ -579,7 +579,9 @@ function DashboardPage() {
             totalXP: supaProgress.total_xp || 0,
             currentLevel: supaProgress.current_level || 1,
             dailyQuizStreak: supaProgress.daily_quiz_streak || existingLocal.dailyQuizStreak || 0,
-            dailyQuizHistory: supaProgress.daily_quiz_history || existingLocal.dailyQuizHistory || [],
+            dailyQuizHistory: (Array.isArray(supaProgress.daily_quiz_history) && supaProgress.daily_quiz_history.length > 0)
+              ? supaProgress.daily_quiz_history
+              : (existingLocal.dailyQuizHistory || []),
             lastQuizDate: supaProgress.last_quiz_date || existingLocal.lastQuizDate || null,
             // Real plan status from the profiles table, not a local-only
             // value. Falls back to whatever was already cached locally if
