@@ -563,6 +563,14 @@ function DashboardPage() {
           localStorage.setItem('vedicmind_profile', JSON.stringify(supaProfile));
         }
         if (supaProgress && Object.keys(supaProgress).length > 0) {
+          // Preserve fields that live ONLY in localStorage and are not
+          // columns on the Supabase `progress` table (daily quiz completion
+          // history, streak, last-quiz-date). Without this, every dashboard
+          // load overwrites localStorage wholesale with the server row and
+          // silently wipes today's just-completed quiz record, since
+          // `progress` table hydration doesn't carry dailyQuizHistory at all.
+          const existingLocal = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'); } catch { return {}; } })();
+
           // Map Supabase column names to app's expected keys
           const mappedProgress = {
             ...supaProgress,
@@ -570,12 +578,14 @@ function DashboardPage() {
             lessonScores: supaProgress.lesson_scores || {},
             totalXP: supaProgress.total_xp || 0,
             currentLevel: supaProgress.current_level || 1,
-            dailyQuizStreak: supaProgress.daily_quiz_streak || 0,
+            dailyQuizStreak: supaProgress.daily_quiz_streak || existingLocal.dailyQuizStreak || 0,
+            dailyQuizHistory: supaProgress.daily_quiz_history || existingLocal.dailyQuizHistory || [],
+            lastQuizDate: supaProgress.last_quiz_date || existingLocal.lastQuizDate || null,
             // Real plan status from the profiles table, not a local-only
             // value. Falls back to whatever was already cached locally if
             // the profiles row has no plan set, rather than silently
             // downgrading someone back to 'free'.
-            plan: planProfile?.plan || supaProgress.plan || JSON.parse(localStorage.getItem('vedicmind_progress') || '{}').plan || 'free',
+            plan: planProfile?.plan || supaProgress.plan || existingLocal.plan || 'free',
           };
           setProgress(mappedProgress);
           localStorage.setItem('vedicmind_progress', JSON.stringify(mappedProgress));
