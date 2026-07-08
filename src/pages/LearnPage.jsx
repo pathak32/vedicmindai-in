@@ -44,7 +44,7 @@ export default function LearnPage() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#F0F4FF', display: 'flex', flexDirection: 'column', paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
+    <div style={{ minHeight: '100vh', background: '#100B22', display: 'flex', flexDirection: 'column', paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
       <DashboardNavbar />
 
       <div style={{ display: 'flex', flex: 1, overflow: 'hidden', position: 'relative' }}>
@@ -63,7 +63,7 @@ export default function LearnPage() {
         {sidebarOpen && (
           <div style={{ position: 'fixed', inset: 0, zIndex: 200 }}>
             <div onClick={() => setSidebarOpen(false)} style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.4)' }} />
-            <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 300, background: 'white', zIndex: 201 }}>
+            <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 300, background: '#17102E', zIndex: 201 }}>
               <LearnSidebar
                 activeLessonId={activeLessonId}
                 onSelect={handleSelectLesson}
@@ -77,12 +77,15 @@ export default function LearnPage() {
         )}
 
         {/* Main lesson area */}
-        <div style={{ flex: 1, overflowY: 'auto', padding: '24px 16px 100px', minWidth: 0 }}>
+        <div style={{ flex: 1, overflowY: 'auto', position: 'relative', minWidth: 0 }}>
+          <div className="learn-grid-bg" />
+          <div style={{ position: 'relative', padding: '24px 16px 100px' }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
-            <Link to="/dashboard" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 14, color: '#6B7280', fontSize: 14, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>
+            <Link to="/dashboard" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 14, color: '#A5A0C4', fontSize: 14, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>
               <ArrowLeft size={15} /> {language === 'hi' ? 'डैशबोर्ड' : 'Dashboard'}
             </Link>
-            <LearnPillarSwitcher active="vedic-maths" />
+            <LearnPillarSwitcher active="vedic-maths" dark />
+            <div style={{ background: 'white', borderRadius: 20, padding: '28px 30px', boxShadow: '0 24px 60px rgba(0,0,0,0.35)' }}>
             {activeLesson && (
               <LessonViewer
                 lesson={activeLesson}
@@ -123,6 +126,8 @@ export default function LearnPage() {
                 }}
               />
             )}
+            </div>
+          </div>
           </div>
         </div>
       </div>
@@ -173,6 +178,14 @@ export default function LearnPage() {
       )}
 
       <style>{`
+        .learn-grid-bg {
+          position: absolute; inset: 0; pointer-events: none;
+          background-image:
+            linear-gradient(rgba(167,139,250,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(167,139,250,0.05) 1px, transparent 1px);
+          background-size: 42px 42px;
+          mask-image: radial-gradient(ellipse 70% 60% at 30% 0%, black 40%, transparent 90%);
+        }
         .learn-sidebar-desktop {
           width: 280px;
           flex-shrink: 0;
@@ -180,8 +193,8 @@ export default function LearnPage() {
           position: sticky;
           top: 64px;
           overflow-y: auto;
-          border-right: 1px solid rgba(30,64,175,0.12);
-          background: white;
+          border-right: 1px solid rgba(255,255,255,0.08);
+          background: rgba(255,255,255,0.02);
           /* Prevent desktop sidebar from capturing mobile touch swipes */
           touch-action: pan-y;
           overscroll-behavior: contain;

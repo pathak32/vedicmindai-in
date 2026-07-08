@@ -11,7 +11,6 @@ import { LanguageProvider } from "@/lib/LanguageContext";
 import { Toaster } from "sonner";
 import LandingPage from '@/pages/LandingPage';
 import ReasoningPilotPage from '@/pages/ReasoningPilotPage';
-import ReasoningIndexPage from '@/pages/reasoning/ReasoningIndexPage';
 import ReasoningChapterPage from '@/pages/reasoning/ReasoningChapterPage';
 import MyBattlesPage from '@/pages/MyBattlesPage';
 import AuthPage from '@/pages/AuthPage';
@@ -110,7 +109,7 @@ function RouteTransition() {
             <Routes location={location}>
               <Route path="/" element={<LandingPage />} />
               <Route path="/reasoning-pilot" element={<ReasoningPilotPage />} />
-              <Route path="/reasoning" element={<ReasoningIndexPage />} />
+              <Route path="/reasoning" element={<ReasoningChapterPage />} />
               <Route path="/reasoning/:chapterId" element={<ReasoningChapterPage />} />
               <Route path="/my-battles" element={<MyBattlesPage />} />
               <Route path="/auth" element={<AuthPage />} />

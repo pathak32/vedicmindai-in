@@ -38,11 +38,11 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
 
   return (
     <div style={{ padding: 16, height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: 12, borderBottom: '1px solid rgba(30,64,175,0.1)', marginBottom: 12 }}>
-        <span style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: '#0A1628' }}>📚 Curriculum</span>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: 12, borderBottom: '1px solid rgba(255,255,255,0.1)', marginBottom: 12 }}>
+        <span style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: '#F5F3FF' }}>📚 Curriculum</span>
         {showClose && (
           <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4 }}>
-            <X size={20} color="#4B5563" />
+            <X size={20} color="#A5A0C4" />
           </button>
         )}
       </div>
@@ -65,20 +65,20 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
                 }}
               >
                 <span style={{ fontSize: 18 }}>{locked ? '🔒' : level.icon}</span>
-                <span style={{ flex: 1, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: locked ? '#9CA3AF' : '#0A1628' }}>
+                <span style={{ flex: 1, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: locked ? '#6B6590' : '#F5F3FF' }}>
                   Level {level.level} — {level.name}
                 </span>
-                <span style={{ fontSize: 11, color: '#4B5563', fontFamily: 'var(--font-body)', marginRight: 4 }}>
+                <span style={{ fontSize: 11, color: '#8B85AD', fontFamily: 'var(--font-body)', marginRight: 4 }}>
                   {lvCompleted}/{level.lessons.length}
                 </span>
-                {isOpen ? <ChevronDown size={14} color="#4B5563" /> : <ChevronRight size={14} color="#4B5563" />}
+                {isOpen ? <ChevronDown size={14} color="#8B85AD" /> : <ChevronRight size={14} color="#8B85AD" />}
               </button>
 
               {/* Lesson list */}
               {isOpen && (
                 <div style={{ paddingLeft: 4 }}>
                   {locked ? (
-                    <div style={{ padding: '8px 12px', fontSize: 12, color: '#9CA3AF', fontFamily: 'var(--font-body)' }}>
+                    <div style={{ padding: '8px 12px', fontSize: 12, color: '#6B6590', fontFamily: 'var(--font-body)' }}>
                       Complete Level {level.level - 1} to unlock
                     </div>
                   ) : (
@@ -96,7 +96,7 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
                             width: '100%', display: 'flex', alignItems: 'center', gap: 8,
                             height: 40, padding: '0 12px', borderRadius: 8, border: 'none',
                             cursor: (unlocked && !planLocked) ? 'pointer' : 'not-allowed',
-                            background: isActive ? '#DBEAFE' : 'transparent',
+                            background: isActive ? 'rgba(167,139,250,0.18)' : 'transparent',
                             textAlign: 'left', marginBottom: 2,
                             transition: 'background 0.15s',
                           }}
@@ -107,13 +107,13 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
                           <span style={{
                             flex: 1, fontSize: 13, fontFamily: 'var(--font-body)',
                             fontWeight: isActive ? 600 : 400,
-                            color: planLocked ? '#9CA3AF' : isDone ? '#10B981' : unlocked ? '#0A1628' : '#9CA3AF',
+                            color: planLocked ? '#6B6590' : isDone ? '#34D399' : unlocked ? '#F5F3FF' : '#6B6590',
                             overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                           }}>
                             {lesson.title}
                           </span>
                           {!planLocked && (
-                            <span style={{ fontSize: 11, color: '#4B5563', fontFamily: 'var(--font-body)', flexShrink: 0 }}>
+                            <span style={{ fontSize: 11, color: '#8B85AD', fontFamily: 'var(--font-body)', flexShrink: 0 }}>
                               +{lesson.xp}
                             </span>
                           )}
