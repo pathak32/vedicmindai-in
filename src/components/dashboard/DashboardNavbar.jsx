@@ -407,6 +407,7 @@ export default function DashboardNavbar() {
             { label: 'Olympiad 🏅', path: '/olympiad' },
             { label: 'Practice', path: '/practice' },
             { label: '⚔️ Battle', path: '/battle', badge: 'NEW' },
+            { label: '🏅 My Battles', path: '/my-battles' },
             { label: 'Aptitude', path: '/aptitude' },
             { label: 'Leaderboard', path: '/leaderboard' },
             { label: '📝 Screenless Teaching', path: '/screenless' },
