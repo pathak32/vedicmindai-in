@@ -27,6 +27,7 @@ import DailyQuizPage from '@/pages/DailyQuizPage';
 import DailyQuizResultsPage from '@/pages/DailyQuizResultsPage';
 import LeaderboardPage from '@/pages/LeaderboardPage';
 import AptitudeZonePage from '@/pages/AptitudeZonePage';
+import AptitudeComingSoonPage from '@/pages/AptitudeComingSoonPage';
 import AdminPanel from '@/pages/AdminPanel';
 import PricingPage from '@/pages/PricingPage';
 import WeeklyExamPage from '@/pages/WeeklyExamPage';
@@ -121,7 +122,7 @@ function RouteTransition() {
               <Route path="/daily-quiz" element={<DailyQuizPage />} />
               <Route path="/daily-quiz/results" element={<DailyQuizResultsPage />} />
               <Route path="/leaderboard" element={<LeaderboardPage />} />
-              <Route path="/aptitude" element={<AptitudeZonePage />} />
+              <Route path="/aptitude" element={<AptitudeComingSoonPage />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/weekly-exam" element={<WeeklyExamPage />} />
               <Route path="/weekly-exam/results" element={<WeeklyExamResultsPage />} />

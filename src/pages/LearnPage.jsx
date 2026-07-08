@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Menu } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
+import { Menu, ArrowLeft } from 'lucide-react';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import LearnSidebar from '@/components/learn/LearnSidebar';
 import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
@@ -13,7 +13,7 @@ import { getSupabase } from '@/lib/supabaseClient';
 import { useLanguage } from '@/lib/LanguageContext';
 
 export default function LearnPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
   const { user: auth, loading } = useVedicAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -79,6 +79,9 @@ export default function LearnPage() {
         {/* Main lesson area */}
         <div style={{ flex: 1, overflowY: 'auto', padding: '24px 16px 100px', minWidth: 0 }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
+            <Link to="/dashboard" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 14, color: '#6B7280', fontSize: 14, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>
+              <ArrowLeft size={15} /> {language === 'hi' ? 'डैशबोर्ड' : 'Dashboard'}
+            </Link>
             <LearnPillarSwitcher active="vedic-maths" />
             {activeLesson && (
               <LessonViewer

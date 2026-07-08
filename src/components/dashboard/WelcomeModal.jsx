@@ -21,16 +21,9 @@ const STEPS_FREE = [
     path: '/learn',
   },
   {
-    emoji: '🎯',
-    title: 'Take the Daily Quiz',
-    desc: 'Every day there\'s a fresh 5-question quiz based on what you\'ve learnt. Streak = XP = Leaderboard rank.',
-    action: 'Take Today\'s Quiz',
-    path: '/daily-quiz',
-  },
-  {
     emoji: '🏆',
     title: 'Climb the Leaderboard',
-    desc: 'Earn XP by completing lessons and quizzes. See how you rank against students across India.',
+    desc: 'Earn XP by completing lessons and quizzes — including the Daily Quiz waiting for you on your dashboard. See how you rank against students across India.',
     action: 'See Leaderboard',
     path: '/leaderboard',
   },
@@ -52,11 +45,11 @@ const STEPS_PAID = [
     path: '/ai-tutor',
   },
   {
-    emoji: '🎯',
-    title: 'Daily Quiz + Weekly Exam',
-    desc: 'Build a daily habit with the quiz. Take the Weekly Exam to test yourself across all lessons you\'ve done.',
-    action: 'Take Today\'s Quiz',
-    path: '/daily-quiz',
+    emoji: '📊',
+    title: 'Weekly Exam',
+    desc: 'Test yourself across everything you\'ve learnt so far. Your Daily Quiz is already live on the dashboard — the Weekly Exam goes deeper.',
+    action: 'Take Weekly Exam',
+    path: '/weekly-exam',
   },
 ];
 
