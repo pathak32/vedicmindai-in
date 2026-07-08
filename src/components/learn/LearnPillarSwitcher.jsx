@@ -4,8 +4,8 @@ import { useLanguage } from '@/lib/LanguageContext';
 
 const PILLARS = [
   { id: 'vedic-maths', path: '/learn', emoji: '📘', label: { en: 'Vedic Maths', hi: 'वैदिक गणित' } },
-  { id: 'reasoning',   path: '/reasoning', emoji: '🧠', label: { en: 'Reasoning', hi: 'रीज़निंग' } },
-  { id: 'aptitude',    path: '/aptitude', emoji: '🎯', label: { en: 'Aptitude', hi: 'एप्टीट्यूड' } },
+  { id: 'reasoning',   path: '/reasoning', emoji: '🧠', label: { en: 'Intelligent Reasoning', hi: 'बौद्धिक तर्क' } },
+  { id: 'aptitude',    path: '/aptitude', emoji: '🎯', label: { en: 'Mindful Aptitude', hi: 'माइंडफुल एप्टीट्यूड' } },
 ];
 
 const tr = (field, language) => field?.[language] ?? field?.en ?? '';

@@ -107,7 +107,7 @@ function ClassSelector({ onSelect }) {
               fontWeight: 700, fontSize: 16, cursor: 'pointer',
             }}
           >
-            Start Aptitude Zone →
+            Start Mindful Aptitude →
           </button>
         </motion.div>
       )}
@@ -586,7 +586,7 @@ export default function AptitudeZonePage() {
             </div>
             <div>
               <h1 className="font-heading" style={{ fontSize: 'clamp(22px,4vw,30px)', fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>
-                Aptitude Zone
+                Mindful Aptitude
               </h1>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563', margin: 0 }}>
                 Class-wise MCQ practice · +4/−1 scoring · Vedic Sutra tips after every answer

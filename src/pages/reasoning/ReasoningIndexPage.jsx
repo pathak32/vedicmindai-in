@@ -110,7 +110,7 @@ export default function ReasoningIndexPage() {
         </div>
 
         <h1 className="ra-hero-title" style={{ fontFamily: 'var(--font-heading)', fontSize: 56, lineHeight: 1.08, fontWeight: 700, color: '#F5F3FF', marginBottom: 18, maxWidth: 760 }}>
-          {language === 'hi' ? 'रीज़निंग' : 'Reasoning'}
+          {language === 'hi' ? 'बौद्धिक तर्क' : 'Intelligent Reasoning'}
         </h1>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, color: '#A5A0C4', maxWidth: 640, lineHeight: 1.7, marginBottom: 48 }}>
           {language === 'hi'

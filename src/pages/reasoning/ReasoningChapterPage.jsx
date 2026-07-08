@@ -30,7 +30,7 @@ export default function ReasoningChapterPage() {
       <div style={{ minHeight: '100vh', background: '#100B22', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }}>
         <div style={{ textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--font-body)', color: '#A5A0C4', marginBottom: 16 }}>Chapter not found.</p>
-          <Link to="/reasoning" style={{ color: '#C4B5FD', fontWeight: 600 }}>← Back to Reasoning</Link>
+          <Link to="/reasoning" style={{ color: '#C4B5FD', fontWeight: 600 }}>← Back to Intelligent Reasoning</Link>
         </div>
       </div>
     );
