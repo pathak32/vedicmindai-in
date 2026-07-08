@@ -8,7 +8,7 @@ import TrialBanner from '@/components/dashboard/TrialBanner';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import ReferralCard from '@/components/ReferralCard';
 import RupeeOneOffer from '@/components/RupeeOneOffer';
-import { getUserProfile, getUserProgress, getPlanProfile } from '@/lib/supabaseDataService';
+import { getUserProfile, getUserProgress, getPlanProfile, reconcileTodayQuizFromServer } from '@/lib/supabaseDataService';
 import { getDailyQuizStatus, getTodayString } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@/lib/leaderboardEngine';
 import { useLanguage } from '@/lib/LanguageContext';
@@ -155,6 +155,18 @@ function getMinutesUntil8AM() {
 function DailyQuizCard() {
   const { t } = useLanguage();
   const navigate = useNavigate();
+  const { user } = useVedicAuth();
+  const [, forceRerender] = useState(0);
+
+  useEffect(() => {
+    let cancelled = false;
+    if (user?.id) {
+      reconcileTodayQuizFromServer(user.id).then((changed) => {
+        if (changed && !cancelled) forceRerender((n) => n + 1);
+      }).catch(() => { /* non-critical */ });
+    }
+    return () => { cancelled = true; };
+  }, [user?.id]);
 
   const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'); } catch { return {}; } })();
   const today = getDQTodayString();

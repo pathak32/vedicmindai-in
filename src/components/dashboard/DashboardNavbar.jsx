@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { hasCompletedTodayQuiz } from '@/lib/dailyQuizEngine';
+import { reconcileTodayQuizFromServer } from '@/lib/supabaseDataService';
 import { generateLeaderboard, getUserEntry } from '@/lib/leaderboardEngine';
 import { getWeeklyExamStatus } from '@/lib/weeklyExamEngine';
 import { getOlympiadStatus } from '@/lib/olympiadEngine';
@@ -51,8 +52,21 @@ function AdminNavLink({
 }
 
 function useQuizState() {
+  const { user } = useVedicAuth();
+  const [reconciled, setReconciled] = useState(0); // bump to force re-check after server sync
   const hour = new Date().getHours();
   const completed = hasCompletedTodayQuiz();
+
+  useEffect(() => {
+    let cancelled = false;
+    if (user?.id) {
+      reconcileTodayQuizFromServer(user.id).then((changed) => {
+        if (changed && !cancelled) setReconciled((n) => n + 1);
+      }).catch(() => { /* non-critical, local state remains authoritative */ });
+    }
+    return () => { cancelled = true; };
+  }, [user?.id]);
+
   const isAvailable = hour >= 8;
   const weeklyStatus = getWeeklyExamStatus();
   const weeklyLive = weeklyStatus === 'live';

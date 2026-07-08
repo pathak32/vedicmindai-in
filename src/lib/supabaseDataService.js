@@ -161,6 +161,36 @@ export async function getTodayQuizResult(userId) {
   return data || null;
 }
 
+// Local completion tracking (vedicmind_progress.dailyQuizHistory) only lives
+// in this browser's localStorage. Supabase's daily_quiz_results table is the
+// real source of truth. If a device/browser never recorded today's local
+// entry — different device, cleared storage, Incognito, TWA app vs desktop
+// Chrome — the app will wrongly say "take the quiz" even though the server
+// knows it's done. Call this once per session (Dashboard mount) to reconcile
+// local state from the server before any completion check runs.
+export async function reconcileTodayQuizFromServer(userId) {
+  if (!userId) return false;
+  const today = new Date().toISOString().split('T')[0];
+  const progress = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'); } catch { return {}; } })();
+  const alreadyLocal = (progress.dailyQuizHistory || []).some(h => h.date === today);
+  if (alreadyLocal) return false; // nothing to reconcile
+
+  const serverResult = await getTodayQuizResult(userId);
+  if (!serverResult) return false; // server also has no record — genuinely not done
+
+  if (!progress.dailyQuizHistory) progress.dailyQuizHistory = [];
+  progress.dailyQuizHistory.push({
+    date: today,
+    score: serverResult.score || 0,
+    maxScore: serverResult.total_possible || 110,
+    answers: serverResult.answers || [],
+    completedAt: Date.now(),
+    reconciledFromServer: true,
+  });
+  localStorage.setItem('vedicmind_progress', JSON.stringify(progress));
+  return true; // reconciled — caller should re-render
+}
+
 // ─── LEADERBOARD ─────────────────────────────────────────────────────────────
 
 export async function getLeaderboard(classGroup = 'class_a') {
