@@ -133,17 +133,42 @@ export async function getWeeklyExamResultsByUser(userId) {
 export async function saveDailyQuizResult(userId, result) {
   const supabase = await getSupabase();
   const today = new Date().toISOString().split('T')[0];
-  const { error } = await supabase
+  const payload = {
+    user_id: userId,
+    quiz_date: today,
+    score: result.score || 0,
+    total_possible: result.totalPossible || 110,
+    answers: result.answers || [],
+    time_taken: result.timeTaken || 0,
+    rank: result.rank || null,
+  };
+
+  // NOTE: previously used .upsert(payload, { onConflict: 'user_id,quiz_date' }).
+  // That silently failed on EVERY call if the daily_quiz_results table doesn't
+  // have a matching UNIQUE(user_id, quiz_date) constraint — Postgres rejects
+  // ON CONFLICT entirely when no such constraint exists, and the error was
+  // only ever console.warn'd as "non-critical" by the caller, so this went
+  // completely unnoticed. No migration file for this table exists in the repo
+  // (unlike every other table), meaning it was very likely created ad-hoc in
+  // the Supabase dashboard without that constraint. Doing a manual
+  // select-then-insert-or-update instead works regardless of whether that
+  // constraint exists, so this can't silently no-op again for the same reason.
+  const { data: existing, error: selectError } = await supabase
     .from('daily_quiz_results')
-    .upsert({
-      user_id: userId,
-      quiz_date: today,
-      score: result.score || 0,
-      total_possible: result.totalPossible || 110,
-      answers: result.answers || [],
-      time_taken: result.timeTaken || 0,
-      rank: result.rank || null,
-    }, { onConflict: 'user_id,quiz_date' });
+    .select('id')
+    .eq('user_id', userId)
+    .eq('quiz_date', today)
+    .maybeSingle();
+
+  if (selectError) {
+    console.error('saveDailyQuizResult (select check):', selectError);
+    return false;
+  }
+
+  const { error } = existing
+    ? await supabase.from('daily_quiz_results').update(payload).eq('id', existing.id)
+    : await supabase.from('daily_quiz_results').insert(payload);
+
   if (error) console.error('saveDailyQuizResult:', error);
   return !error;
 }
