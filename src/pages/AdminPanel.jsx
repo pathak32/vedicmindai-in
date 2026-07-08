@@ -10,6 +10,7 @@ import AdminReviewerAccess from '@/components/admin/AdminReviewerAccess';
 import AdminReviewerActivity from '@/components/admin/AdminReviewerActivity';
 import AdminAnalytics from '@/components/admin/AdminAnalytics';
 import AdminLiveActivity from '@/components/admin/AdminLiveActivity';
+import AdminFoundingCircleTracker from '@/components/admin/AdminFoundingCircleTracker';
 
 const ADMIN_KEY = 'VM@Admin2026';
 const ADMIN_PIN = '271187';
@@ -17,6 +18,7 @@ const SESSION_KEY = 'vm_admin_session';
 
 const TABS = [
   { id: 'live',      label: '🟢 Live Today' },
+  { id: 'circle',    label: '🎯 Founding Circle' },
   { id: 'analytics', label: '📊 Analytics' },
   { id: 'students',  label: '👥 Students'  },
   { id: 'quiz',      label: '⚡ Quiz Engine'},
@@ -142,6 +144,7 @@ function AdminDashboard({ onLock }) {
         <AnimatePresence mode="wait">
           <motion.div key={activeTab} initial={{ opacity:0, y:8 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0 }} transition={{ duration:0.2 }}>
             {activeTab === 'live'      && <AdminLiveActivity />}
+            {activeTab === 'circle'    && <AdminFoundingCircleTracker />}
             {activeTab === 'analytics' && <AdminAnalytics />}
             {activeTab === 'students'  && <AdminStudents />}
             {activeTab === 'quiz'      && <AdminQuizManager />}
