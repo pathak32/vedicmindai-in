@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Lock, Sprout, Layers3, Flame, Crown } from 'lucide-react';
+import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
 import { useLanguage } from '@/lib/LanguageContext';
 import { RA_LEVEL1_CHAPTERS } from '@/data/reasoningAptitudeLevel1Content';
 
@@ -101,6 +102,8 @@ export default function ReasoningIndexPage() {
       <div className="ra-grid-bg" />
 
       <div style={{ position: 'relative', maxWidth: 1160, margin: '0 auto', padding: '56px 24px 80px' }}>
+        <LearnPillarSwitcher active="reasoning" dark />
+
         {/* Hero */}
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(167,139,250,0.12)', border: '1px solid rgba(167,139,250,0.35)', color: '#C4B5FD', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', padding: '6px 14px', borderRadius: 99, marginBottom: 24, fontFamily: 'var(--font-body)', textTransform: 'uppercase' }}>
           {language === 'hi' ? `${TOTAL_CHAPTERS} अध्यायों की निपुणता यात्रा` : `A ${TOTAL_CHAPTERS}-Chapter Mastery Path`}

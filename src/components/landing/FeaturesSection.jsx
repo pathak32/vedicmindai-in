@@ -24,8 +24,8 @@ const features = [
     emoji: '🥊',
     title: 'Live Battle Mode',
     desc: 'Challenge your classmates to real-time Vedic Maths battles. First to answer wins. Prove who\'s the fastest calculator in your class.',
-    comingSoon: true,
-    isLive: false,
+    comingSoon: false,
+    isLive: true,
   },
 ];
 

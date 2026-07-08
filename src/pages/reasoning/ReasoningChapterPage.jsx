@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
 import { useLanguage } from '@/lib/LanguageContext';
 import { getQuestionsByChapter } from '@/data/reasoningAptitudeLevel1';
 import { RA_LEVEL1_CHAPTERS, getChapterContent } from '@/data/reasoningAptitudeLevel1Content';
@@ -69,6 +70,7 @@ export default function ReasoningChapterPage() {
       <div className="ra-grid-bg2" />
 
       <div style={{ position: 'relative', maxWidth: 880, margin: '0 auto', padding: '44px 24px 80px' }}>
+        <LearnPillarSwitcher active="reasoning" dark />
         <Link to="/reasoning" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 20, color: '#A5A0C4', fontSize: 14, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>
           <ArrowLeft size={15} />
           {language === 'hi' ? 'सभी अध्याय' : 'All Chapters'}

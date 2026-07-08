@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
 import { getClassGroup, CLASS_GROUPS, TOPICS, getQuestions } from '@/lib/aptitudeQuestions';
 import { getTopicInfo } from '@/lib/aptitudeTopicInfo';
 import { useLanguage } from '@/lib/LanguageContext';
@@ -575,6 +576,7 @@ export default function AptitudeZonePage() {
     <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
       <DashboardNavbar />
       <main style={{ maxWidth: 800, margin: '0 auto', padding: '24px 16px 60px' }}>
+        <LearnPillarSwitcher active="aptitude" />
 
         {/* Page Header */}
         <div style={{ marginBottom: 28 }}>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import LearnSidebar from '@/components/learn/LearnSidebar';
+import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
 import LessonViewer from '@/components/learn/LessonViewer';
 import AITutorPanel from '@/components/learn/AITutorPanel';
 import { CURRICULUM } from '@/components/learn/curriculumData';
@@ -78,6 +79,7 @@ export default function LearnPage() {
         {/* Main lesson area */}
         <div style={{ flex: 1, overflowY: 'auto', padding: '24px 16px 100px', minWidth: 0 }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
+            <LearnPillarSwitcher active="vedic-maths" />
             {activeLesson && (
               <LessonViewer
                 lesson={activeLesson}
