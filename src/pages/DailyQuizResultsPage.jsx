@@ -267,7 +267,7 @@ function ShareModal({ score, onClose }) {
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
-export default function DailyQuizResultsPage() {
+function DailyQuizResultsPageInner() {
   const { t } = useLanguage();
   const navigate = useNavigate();
   const midnight = useMidnightCountdown();
@@ -304,7 +304,7 @@ export default function DailyQuizResultsPage() {
 
   const score = result?.score || 0;
   const maxScore = result?.maxScore || 110;
-  const answers = result?.answers || [];
+  const answers = Array.isArray(result?.answers) ? result.answers : [];
   const correctCount = answers.filter(a => a.correct).length;
   const allCorrect = correctCount === 5;
   const pct = Math.round((score / maxScore) * 100);
@@ -558,5 +558,40 @@ export default function DailyQuizResultsPage() {
 
       </div>
     </div>
+  );
+}
+
+// ─── Error Boundary ─────────────────────────────────────────────────────────
+// Without this, any render-time crash here (e.g. an unexpected data shape
+// in a reconciled/cross-device result) silently unmounts the whole page,
+// leaving only the sticky MobileAppHeader visible on a blank background —
+// with no error message, no way to recover except manually navigating away.
+class ResultsErrorBoundary extends React.Component {
+  constructor(props) { super(props); this.state = { hasError: false }; }
+  static getDerivedStateFromError() { return { hasError: true }; }
+  componentDidCatch(err) { console.error('DailyQuizResultsPage crashed:', err); }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ minHeight: '100vh', background: '#F0F4FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 16, padding: 40, textAlign: 'center' }}>
+          <span style={{ fontSize: 48 }}>⚠️</span>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: '#0A1628' }}>
+            Couldn't load your quiz result. Your score was saved — try going back to the dashboard.
+          </p>
+          <a href="/dashboard" style={{ minHeight: 48, padding: '12px 32px', background: '#3B82F6', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+            ← Back to Dashboard
+          </a>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+export default function DailyQuizResultsPage() {
+  return (
+    <ResultsErrorBoundary>
+      <DailyQuizResultsPageInner />
+    </ResultsErrorBoundary>
   );
 }
