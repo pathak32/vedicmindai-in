@@ -28,6 +28,7 @@ export default function AdminFoundingCircleTracker() {
   const [newMobile, setNewMobile] = useState('');
   const [adding, setAdding] = useState(false);
   const [error, setError] = useState('');
+  const [debugProfileCount, setDebugProfileCount] = useState(null);
 
   const loadAll = useCallback(async () => {
     setLoading(true);
@@ -59,7 +60,13 @@ export default function AdminFoundingCircleTracker() {
       ]);
 
       const profiles = profilesRes.data || [];
+      if (profilesRes.error) throw new Error(`profiles fetch failed: ${profilesRes.error.message}`);
       const progress = progressRes.data || [];
+      if (progressRes.error) console.warn('progress fetch:', progressRes.error);
+      if (dailyQuizRes.error) console.warn('daily_quiz_results fetch:', dailyQuizRes.error);
+      if (lessonQuizRes.error) console.warn('quiz_results fetch:', lessonQuizRes.error);
+      if (weeklyExamRes.error) console.warn('weekly_exam_results fetch:', weeklyExamRes.error);
+      if (battlesRes.error) console.warn('battle_rooms fetch:', battlesRes.error);
       const dailyQuizUserIds = new Set((dailyQuizRes.data || []).map((r) => r.user_id));
       const lessonQuizUserIds = new Set((lessonQuizRes.data || []).map((r) => r.user_id));
       const weeklyExamUserIds = new Set((weeklyExamRes.data || []).map((r) => r.user_id));
@@ -97,6 +104,7 @@ export default function AdminFoundingCircleTracker() {
 
       setActivity(activityMap);
       setLastUpdated(new Date());
+      setDebugProfileCount(profiles.length);
     } catch (e) {
       console.error('AdminFoundingCircleTracker:', e);
       setError(e.message || 'Failed to load. Have you run supabase/founding_circle_schema.sql yet?');
@@ -146,6 +154,7 @@ export default function AdminFoundingCircleTracker() {
           <h3 style={{ fontSize: 16, fontWeight: 700, margin: 0, color: '#0A1628' }}>Founding Circle Tracker</h3>
           <p style={{ fontSize: 12, color: '#9CA3AF', margin: '2px 0 0' }}>
             {roster.length} testers on roster, {matchedCount} matched to real accounts.
+            {debugProfileCount !== null && ` (${debugProfileCount} total profiles fetched from database.)`}
             {lastUpdated && ` Last updated ${lastUpdated.toLocaleTimeString('en-IN')}.`}
           </p>
         </div>
