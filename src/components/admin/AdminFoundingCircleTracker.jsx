@@ -47,9 +47,10 @@ export default function AdminFoundingCircleTracker() {
       if (!testers || testers.length === 0) { setLoading(false); return; }
 
       const mobiles = testers.map((t) => t.mobile).filter(Boolean);
+      const normalize = (m) => (m || '').replace(/\D/g, '').slice(-10); // last 10 digits, ignore +91/spaces/dashes
 
       const [profilesRes, progressRes, dailyQuizRes, lessonQuizRes, weeklyExamRes, battlesRes] = await Promise.all([
-        sb.from('profiles').select('id, mobile, full_name').in('mobile', mobiles),
+        sb.from('profiles').select('id, mobile, full_name'), // fetch all — normalized matching happens client-side below
         sb.from('progress').select('user_id, completed_lessons, last_activity_date'),
         sb.from('daily_quiz_results').select('user_id').eq('quiz_date', today),
         sb.from('quiz_results').select('user_id').gte('created_at', todayStartISO),
@@ -72,11 +73,11 @@ export default function AdminFoundingCircleTracker() {
       progress.forEach((p) => { progressByUser[p.user_id] = p; });
 
       const mobileToProfile = {};
-      profiles.forEach((p) => { mobileToProfile[p.mobile] = p; });
+      profiles.forEach((p) => { mobileToProfile[normalize(p.mobile)] = p; });
 
       const activityMap = {};
       testers.forEach((t) => {
-        const profile = t.mobile ? mobileToProfile[t.mobile] : null;
+        const profile = t.mobile ? mobileToProfile[normalize(t.mobile)] : null;
         if (!profile) {
           activityMap[t.id] = { matched: false };
           return;
