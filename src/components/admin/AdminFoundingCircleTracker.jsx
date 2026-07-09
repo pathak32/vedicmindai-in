@@ -121,6 +121,12 @@ export default function AdminFoundingCircleTracker() {
 
   async function addTester() {
     if (!newName.trim()) return;
+    let digits = newMobile.replace(/\D/g, '');
+    if (digits.length === 12 && digits.startsWith('91')) digits = digits.slice(2); // country code included
+    if (digits && (digits.length !== 10 || digits.startsWith('0'))) {
+      setError('Mobile number must be exactly 10 digits and cannot start with 0.');
+      return;
+    }
     setAdding(true);
     try {
       const sb = await getSupabase();
@@ -149,7 +155,51 @@ export default function AdminFoundingCircleTracker() {
     }
   }
 
+  const [showNumbers, setShowNumbers] = useState(false);
+  const [sortKey, setSortKey] = useState('lessons');
+  const [sortDir, setSortDir] = useState('desc');
+
   const matchedCount = Object.values(activity).filter((a) => a.matched).length;
+
+  function scoreFor(t) {
+    const a = activity[t.id] || {};
+    if (!a.matched) return -1; // unmatched always sorts last
+    // Simple weighted performance score: lessons matter most, then today's signals.
+    return (a.totalLessonsCompleted || 0) * 10
+      + (a.appOpenToday ? 1 : 0) + (a.dailyQuiz ? 1 : 0) + (a.lessonQuiz ? 1 : 0)
+      + (a.weeklyExam ? 1 : 0) + (a.battle ? 1 : 0);
+  }
+
+  function toggleSort(key) {
+    if (sortKey === key) {
+      setSortDir((d) => (d === 'desc' ? 'asc' : 'desc'));
+    } else {
+      setSortKey(key);
+      setSortDir('desc');
+    }
+  }
+
+  const sortedRoster = [...roster].sort((a, b) => {
+    let av, bv;
+    if (sortKey === 'name') { av = a.name.toLowerCase(); bv = b.name.toLowerCase(); }
+    else if (sortKey === 'lessons') { av = scoreFor(a); bv = scoreFor(b); }
+    else { av = (activity[a.id]?.[sortKey]) ? 1 : 0; bv = (activity[b.id]?.[sortKey]) ? 1 : 0; }
+    if (av < bv) return sortDir === 'asc' ? -1 : 1;
+    if (av > bv) return sortDir === 'asc' ? 1 : -1;
+    return 0;
+  });
+
+  function SortHeader({ label, sortField }) {
+    const active = sortKey === sortField;
+    return (
+      <th
+        onClick={() => toggleSort(sortField)}
+        style={{ padding: '8px 12px', textAlign: 'center', fontWeight: 600, color: active ? '#1e40af' : '#374151', borderBottom: '1px solid #E5E7EB', cursor: 'pointer', userSelect: 'none' }}
+      >
+        {label} {active ? (sortDir === 'desc' ? '▼' : '▲') : ''}
+      </th>
+    );
+  }
 
   return (
     <div>
@@ -190,6 +240,13 @@ export default function AdminFoundingCircleTracker() {
         </button>
       </div>
 
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
+        <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: '#4B5563', cursor: 'pointer' }}>
+          <input type="checkbox" checked={showNumbers} onChange={(e) => setShowNumbers(e.target.checked)} />
+          Show mobile numbers (hide before sharing a screenshot with the group)
+        </label>
+      </div>
+
       <div style={card}>
         {loading ? (
           <p style={{ color: '#6B7280', textAlign: 'center', padding: 30 }}>Loading roster...</p>
@@ -200,24 +257,26 @@ export default function AdminFoundingCircleTracker() {
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
                 <tr style={{ background: '#F9FAFB' }}>
-                  <th style={{ padding: '8px 12px', textAlign: 'left', fontWeight: 600, color: '#374151', borderBottom: '1px solid #E5E7EB' }}>Tester</th>
-                  <th style={{ padding: '8px 12px', textAlign: 'center', fontWeight: 600, color: '#374151', borderBottom: '1px solid #E5E7EB' }}>App Today</th>
-                  <th style={{ padding: '8px 12px', textAlign: 'center', fontWeight: 600, color: '#374151', borderBottom: '1px solid #E5E7EB' }}>Daily Quiz</th>
-                  <th style={{ padding: '8px 12px', textAlign: 'center', fontWeight: 600, color: '#374151', borderBottom: '1px solid #E5E7EB' }}>Lesson Quiz</th>
-                  <th style={{ padding: '8px 12px', textAlign: 'center', fontWeight: 600, color: '#374151', borderBottom: '1px solid #E5E7EB' }}>Weekly Exam</th>
-                  <th style={{ padding: '8px 12px', textAlign: 'center', fontWeight: 600, color: '#374151', borderBottom: '1px solid #E5E7EB' }}>Battle</th>
-                  <th style={{ padding: '8px 12px', textAlign: 'center', fontWeight: 600, color: '#374151', borderBottom: '1px solid #E5E7EB' }}>Lessons Done (total)</th>
+                  <th onClick={() => toggleSort('name')} style={{ padding: '8px 12px', textAlign: 'left', fontWeight: 600, color: sortKey === 'name' ? '#1e40af' : '#374151', borderBottom: '1px solid #E5E7EB', cursor: 'pointer', userSelect: 'none' }}>
+                    Tester {sortKey === 'name' ? (sortDir === 'desc' ? '▼' : '▲') : ''}
+                  </th>
+                  <SortHeader label="App Today" sortField="appOpenToday" />
+                  <SortHeader label="Daily Quiz" sortField="dailyQuiz" />
+                  <SortHeader label="Lesson Quiz" sortField="lessonQuiz" />
+                  <SortHeader label="Weekly Exam" sortField="weeklyExam" />
+                  <SortHeader label="Battle" sortField="battle" />
+                  <SortHeader label="Lessons Done (total)" sortField="lessons" />
                   <th style={{ padding: '8px 12px', textAlign: 'center', fontWeight: 600, color: '#374151', borderBottom: '1px solid #E5E7EB' }}></th>
                 </tr>
               </thead>
               <tbody>
-                {roster.map((t, i) => {
+                {sortedRoster.map((t, i) => {
                   const a = activity[t.id] || {};
                   return (
                     <tr key={t.id} style={{ background: i % 2 === 0 ? '#fff' : '#F9FAFB' }}>
                       <td style={{ padding: '10px 12px', borderBottom: '1px solid #F3F4F6' }}>
                         <div style={{ fontWeight: 600, color: '#0A1628' }}>{t.name}</div>
-                        <div style={{ fontSize: 11, color: '#9CA3AF' }}>{t.mobile || 'no mobile on file'}</div>
+                        {showNumbers && <div style={{ fontSize: 11, color: '#9CA3AF' }}>{t.mobile || 'no mobile on file'}</div>}
                         {!a.matched && <div style={{ fontSize: 11, color: '#D97706', marginTop: 2 }}>⚠️ not matched to an account yet</div>}
                       </td>
                       <td style={{ padding: '10px 12px', borderBottom: '1px solid #F3F4F6', textAlign: 'center' }}><Flag ok={a.appOpenToday} /></td>

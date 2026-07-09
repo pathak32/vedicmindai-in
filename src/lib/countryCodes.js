@@ -21,7 +21,12 @@ export function validateMobileForCountry(mobile, countryCode) {
     return digitsOnly.length >= 6 && digitsOnly.length <= 15;
   }
   const country = findCountryByCode(countryCode);
-  return country.lengths.includes(digitsOnly.length);
+  if (!country.lengths.includes(digitsOnly.length)) return false;
+  // India: real mobile numbers always start with 6, 7, 8, or 9 — never 0-5.
+  // Catches accidental short/misdialled entries that could otherwise slip
+  // through on length alone (e.g. a landline-style number starting with 0).
+  if (countryCode === '+91' && !/^[6-9]/.test(digitsOnly)) return false;
+  return true;
 }
 
 export function validateCustomCountryCode(code) {
