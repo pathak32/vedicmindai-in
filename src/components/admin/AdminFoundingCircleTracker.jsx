@@ -60,13 +60,17 @@ export default function AdminFoundingCircleTracker() {
       ]);
 
       const profiles = profilesRes.data || [];
-      if (profilesRes.error) throw new Error(`profiles fetch failed: ${profilesRes.error.message}`);
+      const queryErrors = [];
+      if (profilesRes.error) queryErrors.push(`profiles: ${profilesRes.error.message}`);
+      if (progressRes.error) queryErrors.push(`progress: ${progressRes.error.message}`);
+      if (dailyQuizRes.error) queryErrors.push(`daily_quiz_results: ${dailyQuizRes.error.message}`);
+      if (lessonQuizRes.error) queryErrors.push(`quiz_results: ${lessonQuizRes.error.message}`);
+      if (weeklyExamRes.error) queryErrors.push(`weekly_exam_results: ${weeklyExamRes.error.message}`);
+      if (battlesRes.error) queryErrors.push(`battle_rooms: ${battlesRes.error.message}`);
+      if (queryErrors.length > 0) {
+        setError(`Database query errors — this is why data may be missing or wrong: ${queryErrors.join(' | ')}`);
+      }
       const progress = progressRes.data || [];
-      if (progressRes.error) console.warn('progress fetch:', progressRes.error);
-      if (dailyQuizRes.error) console.warn('daily_quiz_results fetch:', dailyQuizRes.error);
-      if (lessonQuizRes.error) console.warn('quiz_results fetch:', lessonQuizRes.error);
-      if (weeklyExamRes.error) console.warn('weekly_exam_results fetch:', weeklyExamRes.error);
-      if (battlesRes.error) console.warn('battle_rooms fetch:', battlesRes.error);
       const dailyQuizUserIds = new Set((dailyQuizRes.data || []).map((r) => r.user_id));
       const lessonQuizUserIds = new Set((lessonQuizRes.data || []).map((r) => r.user_id));
       const weeklyExamUserIds = new Set((weeklyExamRes.data || []).map((r) => r.user_id));
