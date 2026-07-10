@@ -1368,27 +1368,52 @@ const L2_09_CONTENT = (
     <StepBox number={3} text="Bring first dividend digit down as first quotient digit" />
     <StepBox number={4} text="Multiply quotient digit by flag, add to next dividend digit to get next quotient digit" />
     <StepBox number={5} text="Last calculation gives the remainder" />
+    <StepBox number={6} text="If a value goes negative or the remainder is ≥ the divisor: work right to left, carrying/borrowing between columns until every digit is valid" example="Remainder 13 with divisor 13 → carry 1 left, remainder becomes 0" />
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 156 ÷ 13"
-      lines={['Flag = −3 (divisor 13 = 10+3)', 'Q1 = first digit = 1', 'Next: 5 + (1 × −3) = 2  → Q2 = 2', 'Remainder: 6 + (2 × −3) = 0']}
-      result="156 ÷ 13 = 12, remainder 0 ✓"
+      title="Example 1 — 247 ÷ 13"
+      lines={[
+        'Flag = −3 (divisor 13 = 10+3)',
+        'Q1 = first digit = 2',
+        'Next: 4 + (2 × −3) = −2',
+        'Remainder (raw): 7 + (−2 × −3) = 13',
+        'Fix-up: 13 ≥ 13 → carry 1 left, remainder → 0',
+        'Last digit: −2 + 1 = −1 → still negative, borrow: −1 + 10 = 9',
+        'First digit: 2 − 1 = 1',
+      ]}
+      result="247 ÷ 13 = 19, remainder 0 ✓"
     />
     <ExampleCard
-      title="Example 2 — 168 ÷ 14"
-      lines={['Flag = −4 (divisor 14 = 10+4)', 'Q1 = first digit = 1', 'Next: 6 + (1 × −4) = 2  → Q2 = 2', 'Remainder: 8 + (2 × −4) = 0']}
-      result="168 ÷ 14 = 12, remainder 0 ✓"
+      title="Example 2 — 256 ÷ 16"
+      lines={[
+        'Flag = −6 (divisor 16 = 10+6)',
+        'Q1 = first digit = 2',
+        'Next: 5 + (2 × −6) = −7',
+        'Remainder (raw): 6 + (−7 × −6) = 48',
+        'Fix-up: 48 ÷ 16 = 3 remainder 0 → carry 3 left, remainder → 0',
+        'Last digit: −7 + 3 = −4 → still negative, borrow: −4 + 10 = 6',
+        'First digit: 2 − 1 = 1',
+      ]}
+      result="256 ÷ 16 = 16, remainder 0 ✓"
     />
     <ExampleCard
-      title="Example 3 — 187 ÷ 17"
-      lines={['Flag = −7 (divisor 17 = 10+7)', 'Q1 = first digit = 1', 'Next: 8 + (1 × −7) = 1  → Q2 = 1', 'Remainder: 7 + (1 × −7) = 0']}
-      result="187 ÷ 17 = 11, remainder 0 ✓"
+      title="Example 3 — 391 ÷ 17"
+      lines={[
+        'Flag = −7 (divisor 17 = 10+7)',
+        'Q1 = first digit = 3',
+        'Next: 9 + (3 × −7) = −12',
+        'Remainder (raw): 1 + (−12 × −7) = 85',
+        'Fix-up: 85 ÷ 17 = 5 remainder 0 → carry 5 left, remainder → 0',
+        'Last digit: −12 + 5 = −7 → still negative, borrow: −7 + 10 = 3',
+        'First digit: 3 − 1 = 2',
+      ]}
+      result="391 ÷ 17 = 23, remainder 0 ✓"
     />
 
     <div style={{ background: '#FEF3C7', borderLeft: '4px solid #F59E0B', borderRadius: '0 8px 8px 0', padding: '14px 16px', marginTop: 8, marginBottom: 8 }}>
       <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
-        ⚠️ <strong>If a step goes negative:</strong> borrow 1 from the previous quotient digit (reduce it by 1) and add 10 to the current value, then continue. These examples were chosen to avoid that so you can see the clean pattern first — borrowing examples are a natural next step once this feels automatic.
+        💡 <strong>Why the fix-up step exists:</strong> the flag-multiply step can produce a value that's negative or too large to be a single digit. Don't panic — work right to left, borrowing 1 from the column to the left (adding 10 here) or carrying extra into the column to the left, until every digit is valid. All three examples above needed this step at least once.
       </p>
     </div>
 
