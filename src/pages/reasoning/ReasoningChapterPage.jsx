@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { Menu, ArrowLeft } from 'lucide-react';
+import { Menu, ArrowLeft, Lock } from 'lucide-react';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
 import ReasoningSidebar from '@/components/learn/ReasoningSidebar';
@@ -10,6 +10,7 @@ import { RA_LEVEL1_CHAPTERS, getChapterContent } from '@/data/reasoningAptitudeL
 import {
   StepBox, ExampleCard, SectionTitle, OriginBox, WhyItWorksBox, CommonMistakeBox, RealWorldBox,
 } from '@/components/learn/ConceptTab';
+import { saveReasoningChapterResult, isReasoningChapterUnlocked, getReasoningScores, REASONING_PASS_THRESHOLD } from '@/lib/reasoningProgress';
 
 const tr = (field, language) => field?.[language] ?? field?.en ?? '';
 
@@ -24,13 +25,37 @@ export default function ReasoningChapterPage() {
   const [score, setScore] = useState(0);
 
   const sortedChapters = [...RA_LEVEL1_CHAPTERS].sort((a, b) => a.order - b.order);
+  const sortedChapterIds = sortedChapters.map((c) => c.id);
   const chapterId = paramChapterId || sortedChapters[0].id;
   const chapter = getChapterContent(chapterId);
   const questions = getQuestionsByChapter(chapterId);
   const chapterIndex = sortedChapters.findIndex((c) => c.id === chapterId);
   const nextChapter = sortedChapters[chapterIndex + 1];
+  const scores = getReasoningScores();
+  const nextChapterUnlocked = nextChapter ? isReasoningChapterUnlocked(nextChapter.id, sortedChapterIds) : false;
 
   const q = questions[qIndex];
+
+  // If someone reaches this chapter directly (URL, back button, etc.)
+  // without having unlocked it via the sidebar, bounce them to the last
+  // chapter they've actually earned — mirrors how Sutra lessons enforce
+  // this, which Reasoning never did until now.
+  useEffect(() => {
+    if (!isReasoningChapterUnlocked(chapterId, sortedChapterIds)) {
+      const lastUnlockedIdx = sortedChapterIds.findIndex((id) => !isReasoningChapterUnlocked(id, sortedChapterIds));
+      navigate(`/reasoning/${sortedChapterIds[Math.max(0, lastUnlockedIdx - 1)] || sortedChapterIds[0]}`, { replace: true });
+    }
+  }, [chapterId]);
+
+  // Save the result the moment the quiz is finished (last question answered),
+  // not just held in memory — this was the actual gap Hitesh found: 3
+  // completed chapters with zero record of it anywhere.
+  useEffect(() => {
+    if (selected && qIndex === questions.length - 1 && questions.length > 0) {
+      const pct = Math.round((score / questions.length) * 100);
+      saveReasoningChapterResult(chapterId, pct);
+    }
+  }, [selected, qIndex]);
 
   const selectChapter = (id) => {
     navigate(`/reasoning/${id}`);
@@ -197,14 +222,27 @@ export default function ReasoningChapterPage() {
                   )}
                   {selected && qIndex === questions.length - 1 && (
                     <div style={{ marginTop: 20 }}>
-                      <p style={{ fontWeight: 700, color: '#0A1628', marginBottom: 16, fontFamily: 'var(--font-body)' }}>
-                        {language === 'hi' ? `पूरा हुआ! अंतिम स्कोर: ${score}/${questions.length}` : `Done! Final score: ${score}/${questions.length}`}
-                      </p>
+                      {(() => {
+                        const pct = Math.round((score / questions.length) * 100);
+                        const passed = pct >= REASONING_PASS_THRESHOLD;
+                        return (
+                          <>
+                            <p style={{ fontWeight: 700, color: passed ? '#059669' : '#0A1628', marginBottom: 6, fontFamily: 'var(--font-body)' }}>
+                              {language === 'hi' ? `पूरा हुआ! अंतिम स्कोर: ${score}/${questions.length} (${pct}%)` : `Done! Final score: ${score}/${questions.length} (${pct}%)`}
+                            </p>
+                            <p style={{ fontSize: 13, color: passed ? '#059669' : '#D97706', marginBottom: 16, fontFamily: 'var(--font-body)' }}>
+                              {passed
+                                ? (language === 'hi' ? `✓ अगला अध्याय अनलॉक हो गया (${REASONING_PASS_THRESHOLD}%+ चाहिए था)` : `✓ Next chapter unlocked (needed ${REASONING_PASS_THRESHOLD}%+)`)
+                                : (language === 'hi' ? `अगला अध्याय अनलॉक करने के लिए ${REASONING_PASS_THRESHOLD}% चाहिए — दोबारा प्रयास करें` : `Need ${REASONING_PASS_THRESHOLD}%+ to unlock the next chapter — try again`)}
+                            </p>
+                          </>
+                        );
+                      })()}
                       <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                         <button onClick={restartQuiz} style={{ padding: '10px 20px', borderRadius: 10, background: '#E5E7EB', color: '#374151', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
                           {language === 'hi' ? 'दोबारा करें' : 'Retry Quiz'}
                         </button>
-                        {nextChapter && (
+                        {nextChapter && nextChapterUnlocked && (
                           <button onClick={() => selectChapter(nextChapter.id)} style={{ padding: '10px 20px', borderRadius: 10, background: '#6D28D9', color: 'white', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
                             {language === 'hi' ? 'अगला अध्याय →' : 'Next Chapter →'}
                           </button>
