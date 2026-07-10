@@ -23,6 +23,7 @@ export default function ReasoningChapterPage() {
   const [qIndex, setQIndex] = useState(0);
   const [selected, setSelected] = useState(null);
   const [score, setScore] = useState(0);
+  const [finalScore, setFinalScore] = useState(null); // set once on last answer, avoids async state race
 
   const sortedChapters = [...RA_LEVEL1_CHAPTERS].sort((a, b) => a.order - b.order);
   const sortedChapterIds = sortedChapters.map((c) => c.id);
@@ -47,15 +48,8 @@ export default function ReasoningChapterPage() {
     }
   }, [chapterId]);
 
-  // Save the result the moment the quiz is finished (last question answered),
-  // not just held in memory — this was the actual gap Hitesh found: 3
-  // completed chapters with zero record of it anywhere.
-  useEffect(() => {
-    if (selected && qIndex === questions.length - 1 && questions.length > 0) {
-      const pct = Math.round((score / questions.length) * 100);
-      saveReasoningChapterResult(chapterId, pct);
-    }
-  }, [selected, qIndex]);
+  // Score is saved synchronously in handleAnswer on the last question
+  // to avoid React async state race (score state lags by 1 update).
 
   const selectChapter = (id) => {
     navigate(`/reasoning/${id}`);
@@ -69,7 +63,15 @@ export default function ReasoningChapterPage() {
   const handleAnswer = (opt) => {
     if (selected) return;
     setSelected(opt);
-    if (opt === q.answer) setScore((s) => s + 1);
+    const correct = opt === q.answer;
+    const newScore = correct ? score + 1 : score;
+    if (correct) setScore(newScore);
+    // On last question — compute final score synchronously (avoids React async state race)
+    if (qIndex === questions.length - 1) {
+      const pct = Math.round((newScore / questions.length) * 100);
+      setFinalScore(pct);
+      saveReasoningChapterResult(chapterId, pct);
+    }
   };
 
   const nextQuestion = () => {
@@ -81,6 +83,7 @@ export default function ReasoningChapterPage() {
     setSelected(null);
     setQIndex(0);
     setScore(0);
+    setFinalScore(null);
   };
 
   return (
@@ -220,11 +223,15 @@ export default function ReasoningChapterPage() {
                       {language === 'hi' ? 'अगला प्रश्न →' : 'Next Question →'}
                     </button>
                   )}
-                  {selected && qIndex === questions.length - 1 && (
+                  {selected && qIndex === questions.length - 1 && finalScore !== null && (
                     <div style={{ marginTop: 20 }}>
                       {(() => {
-                        const pct = Math.round((score / questions.length) * 100);
+                        const pct = finalScore;
                         const passed = pct >= REASONING_PASS_THRESHOLD;
+                        // Re-read unlock status AFTER save — finalScore means save already happened
+                        const nextNowUnlocked = nextChapter
+                          ? isReasoningChapterUnlocked(nextChapter.id, sortedChapterIds)
+                          : false;
                         return (
                           <>
                             <p style={{ fontWeight: 700, color: passed ? '#059669' : '#0A1628', marginBottom: 6, fontFamily: 'var(--font-body)' }}>
@@ -242,11 +249,18 @@ export default function ReasoningChapterPage() {
                         <button onClick={restartQuiz} style={{ padding: '10px 20px', borderRadius: 10, background: '#E5E7EB', color: '#374151', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
                           {language === 'hi' ? 'दोबारा करें' : 'Retry Quiz'}
                         </button>
-                        {nextChapter && nextChapterUnlocked && (
-                          <button onClick={() => selectChapter(nextChapter.id)} style={{ padding: '10px 20px', borderRadius: 10, background: '#6D28D9', color: 'white', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
-                            {language === 'hi' ? 'अगला अध्याय →' : 'Next Chapter →'}
-                          </button>
-                        )}
+                        {nextChapter && (() => {
+                          const pct = finalScore;
+                          const passed = pct >= REASONING_PASS_THRESHOLD;
+                          const nextNowUnlocked = nextChapter
+                            ? isReasoningChapterUnlocked(nextChapter.id, sortedChapterIds)
+                            : false;
+                          return passed && nextNowUnlocked ? (
+                            <button onClick={() => selectChapter(nextChapter.id)} style={{ padding: '10px 20px', borderRadius: 10, background: '#6D28D9', color: 'white', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
+                              {language === 'hi' ? 'अगला अध्याय →' : 'Next Chapter →'}
+                            </button>
+                          ) : null;
+                        })()}
                       </div>
                     </div>
                   )}
