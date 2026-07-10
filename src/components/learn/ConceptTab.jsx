@@ -1528,13 +1528,14 @@ const L2_11_CONTENT = (
 
     <SectionTitle>The Formula</SectionTitle>
     <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 20, textAlign: 'center' }}>
-      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 18, color: 'white', marginBottom: 12 }}>Day = (d + m + y + ⌊y÷4⌋ − 1) mod 7</div>
+      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 18, color: 'white', marginBottom: 12 }}>Day = (d + m + y + ⌊y÷4⌋ + C − 1) mod 7</div>
       <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'left', display: 'inline-block' }}>
         <div>d = date number</div>
         <div>m = month code (see table)</div>
         <div>y = last 2 digits of year</div>
         <div>⌊y÷4⌋ = floor division</div>
-        <div>0=Sun · 1=Mon · 2=Tue · 3=Wed · 4=Thu · 5=Fri · 6=Sat</div>
+        <div>C = century correction (see table below)</div>
+        <div>Result → 0 (zero) = Sunday, 1 = Mon, 2 = Tue, 3 = Wed, 4 = Thu, 5 = Fri, 6 = Sat</div>
       </div>
     </div>
 
@@ -1563,17 +1564,17 @@ const L2_11_CONTENT = (
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
       title="Example 1 — 15 August 1947"
-      lines={['d=15, m=3 (Aug), y=47, ⌊47÷4⌋=11', 'Century (1900s) = 0', 'Total: 15+3+47+11+0 = 76', '76 − 1 = 75', '75 mod 7 = 5 = Friday']}
+      lines={['d=15, m=3 (Aug), y=47, ⌊47÷4⌋=11', 'C (1900s) = 0', 'Total: 15+3+47+11+0 = 76', '76 − 1 = 75', '75 mod 7 = 5 = Friday']}
       result="15 Aug 1947 = Friday ✓"
     />
     <ExampleCard
       title="Example 2 — 26 January 2025"
-      lines={['d=26, m=1 (Jan), y=25, ⌊25÷4⌋=6', 'Century (2000s) = 6', 'Total: 26+1+25+6+6 = 64', '64 − 1 = 63', '63 mod 7 = 0 = Sunday']}
+      lines={['d=26, m=1 (Jan), y=25, ⌊25÷4⌋=6', 'C (2000s) = 6', 'Total: 26+1+25+6+6 = 64', '64 − 1 = 63', '63 mod 7 = 0 (zero) = Sunday']}
       result="26 Jan 2025 = Sunday ✓"
     />
     <ExampleCard
       title="Example 3 — 2 October 1869"
-      lines={['d=2, m=1 (Oct), y=69, ⌊69÷4⌋=17', 'Century (1800s) = 2', 'Total: 2+1+69+17+2 = 91', '91 − 1 = 90', '90 mod 7 = 6 = Saturday']}
+      lines={['d=2, m=1 (Oct), y=69, ⌊69÷4⌋=17', 'C (1800s) = 2', 'Total: 2+1+69+17+2 = 91', '91 − 1 = 90', '90 mod 7 = 6 = Saturday']}
       result="2 Oct 1869 = Saturday ✓"
     />
 
