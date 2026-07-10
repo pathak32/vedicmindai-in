@@ -1482,8 +1482,8 @@ const L2_10_CONTENT = (
     </div>
 
     <SectionTitle>Addition Steps</SectionTitle>
-    <StepBox number={1} text="Cross multiply: top-left × bottom-right + bottom-left × top-right" example="1/3 + 1/4 → 1×4 + 3×1 = 7" />
-    <StepBox number={2} text="Multiply denominators for the new denominator" example="3 × 4 = 12" />
+    <StepBox number={1} text="Cross multiply: top-left × bottom-right + bottom-left × top-right" example="Numerator = a×d + b×c" />
+    <StepBox number={2} text="Multiply denominators for the new denominator" example="Denominator = b×d" />
     <StepBox number={3} text="Simplify if needed" />
 
     <SectionTitle>Subtraction</SectionTitle>
