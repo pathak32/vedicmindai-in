@@ -46,7 +46,24 @@ function StepBox({ number, text, example }) {
   );
 }
 
-function ExampleCard({ title, lines, result }) {
+function DigitBreakdown({ digits }) {
+  const { language } = useLanguage();
+  if (!digits || digits.length === 0) return null;
+  return (
+    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 10, marginBottom: 10 }}>
+      {digits.map((d, i) => (
+        <div key={i} style={{
+          background: '#0A1628', borderRadius: 10, padding: '8px 14px', textAlign: 'center', minWidth: 64,
+        }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 20, color: '#FBBF24' }}>{tr(d.value, language)}</div>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: 10, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.04em', marginTop: 2 }}>{tr(d.label, language)}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ExampleCard({ title, lines, result, breakdown }) {
   const { language } = useLanguage();
   return (
     <div style={{ background: '#F0F4FF', border: '1px solid rgba(30,64,175,0.12)', borderRadius: 12, padding: '16px 20px', marginBottom: 12 }}>
@@ -54,6 +71,14 @@ function ExampleCard({ title, lines, result }) {
       {lines.map((l, i) => (
         <div key={i} style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#4B5563', marginBottom: 4 }}>{tr(l, language)}</div>
       ))}
+      {breakdown && (
+        <>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#6B7280', fontWeight: 600, marginTop: 10, textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+            {language === 'hi' ? 'तो उत्तर बनता है' : 'So the answer is built from'}
+          </div>
+          <DigitBreakdown digits={breakdown} />
+        </>
+      )}
       {result && (
         <div style={{ marginTop: 10, background: '#DBEAFE', borderRadius: 8, padding: '8px 14px', display: 'inline-block' }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 15, color: '#0A1628' }}>{tr(result, language)}</span>
@@ -1375,10 +1400,11 @@ const L2_09_CONTENT = (
       title="Example 1 — 156 ÷ 13 (clean, no fix-up needed)"
       lines={[
         'Flag = −3 (divisor 13 = 10+3)',
-        'Q1 = first digit = 1',
-        'Next: 5 + (1 × −3) = 2',
+        'Q1 = first digit = 1   ← this is the TENS digit of the answer',
+        'Next: 5 + (1 × −3) = 2   ← this is the UNITS digit of the answer',
         'Remainder: 6 + (2 × −3) = 0',
       ]}
+      breakdown={[{ label: 'Tens', value: '1' }, { label: 'Units', value: '2' }, { label: 'Remainder', value: '0' }]}
       result="156 ÷ 13 = 12, remainder 0 ✓"
     />
     <ExampleCard
@@ -1389,9 +1415,10 @@ const L2_09_CONTENT = (
         'Next: 4 + (2 × −3) = −2',
         'Remainder (raw): 7 + (−2 × −3) = 13',
         'Fix-up: 13 ≥ 13 → carry 1 left, remainder → 0',
-        'Last digit: −2 + 1 = −1 → still negative, borrow: −1 + 10 = 9',
-        'First digit: 2 − 1 = 1',
+        'Last digit: −2 + 1 = −1 → still negative, borrow: −1 + 10 = 9   ← this is the UNITS digit of the answer',
+        'First digit: 2 − 1 = 1   ← this is the TENS digit of the answer',
       ]}
+      breakdown={[{ label: 'Tens', value: '1' }, { label: 'Units', value: '9' }, { label: 'Remainder', value: '0' }]}
       result="247 ÷ 13 = 19, remainder 0 ✓"
     />
     <ExampleCard
@@ -1402,9 +1429,10 @@ const L2_09_CONTENT = (
         'Next: 9 + (3 × −7) = −12',
         'Remainder (raw): 1 + (−12 × −7) = 85',
         'Fix-up: 85 ÷ 17 = 5 remainder 0 → carry 5 left, remainder → 0',
-        'Last digit: −12 + 5 = −7 → still negative, borrow: −7 + 10 = 3',
-        'First digit: 3 − 1 = 2',
+        'Last digit: −12 + 5 = −7 → still negative, borrow: −7 + 10 = 3   ← this is the UNITS digit of the answer',
+        'First digit: 3 − 1 = 2   ← this is the TENS digit of the answer',
       ]}
+      breakdown={[{ label: 'Tens', value: '2' }, { label: 'Units', value: '3' }, { label: 'Remainder', value: '0' }]}
       result="391 ÷ 17 = 23, remainder 0 ✓"
     />
 
