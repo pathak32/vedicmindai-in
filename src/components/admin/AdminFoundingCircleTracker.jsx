@@ -50,13 +50,14 @@ export default function AdminFoundingCircleTracker() {
       const mobiles = testers.map((t) => t.mobile).filter(Boolean);
       const normalize = (m) => (m || '').replace(/\D/g, '').slice(-10); // last 10 digits, ignore +91/spaces/dashes
 
-      const [profilesRes, progressRes, dailyQuizRes, lessonQuizRes, weeklyExamRes, battlesRes] = await Promise.all([
+      const [profilesRes, progressRes, dailyQuizRes, lessonQuizRes, weeklyExamRes, battlesRes, reasoningRes] = await Promise.all([
         sb.from('profiles').select('id, mobile, full_name'), // fetch all — normalized matching happens client-side below
         sb.from('progress').select('user_id, completed_lessons, last_activity_date'),
         sb.from('daily_quiz_results').select('user_id').eq('quiz_date', today),
         sb.from('quiz_results').select('user_id').gte('created_at', todayStartISO),
         sb.from('weekly_exam_results').select('user_id').gte('created_at', todayStartISO),
         sb.from('battle_rooms').select('creator_id, opponent_id, status').gte('created_at', todayStartISO),
+        sb.from('reasoning_progress').select('user_id, chapter_id, completed'),
       ]);
 
       const profiles = profilesRes.data || [];
@@ -67,6 +68,7 @@ export default function AdminFoundingCircleTracker() {
       if (lessonQuizRes.error) queryErrors.push(`quiz_results: ${lessonQuizRes.error.message}`);
       if (weeklyExamRes.error) queryErrors.push(`weekly_exam_results: ${weeklyExamRes.error.message}`);
       if (battlesRes.error) queryErrors.push(`battle_rooms: ${battlesRes.error.message}`);
+      if (reasoningRes.error) queryErrors.push(`reasoning_progress: ${reasoningRes.error.message} (have you run supabase/reasoning_progress_schema.sql yet?)`);
       if (queryErrors.length > 0) {
         setError(`Database query errors — this is why data may be missing or wrong: ${queryErrors.join(' | ')}`);
       }
@@ -78,6 +80,11 @@ export default function AdminFoundingCircleTracker() {
       (battlesRes.data || []).forEach((b) => {
         if (b.creator_id) battleUserIds.add(b.creator_id);
         if (b.opponent_id) battleUserIds.add(b.opponent_id);
+      });
+      const reasoningCompletedByUser = {};
+      (reasoningRes.data || []).forEach((r) => {
+        if (!r.completed) return;
+        reasoningCompletedByUser[r.user_id] = (reasoningCompletedByUser[r.user_id] || 0) + 1;
       });
 
       const progressByUser = {};
@@ -103,6 +110,7 @@ export default function AdminFoundingCircleTracker() {
           weeklyExam: weeklyExamUserIds.has(uid),
           battle: battleUserIds.has(uid),
           totalLessonsCompleted: (p?.completed_lessons || []).length,
+          reasoningChaptersDone: reasoningCompletedByUser[uid] || 0,
         };
       });
 
@@ -165,7 +173,7 @@ export default function AdminFoundingCircleTracker() {
     const a = activity[t.id] || {};
     if (!a.matched) return -1; // unmatched always sorts last
     // Simple weighted performance score: lessons matter most, then today's signals.
-    return (a.totalLessonsCompleted || 0) * 10
+    return (a.totalLessonsCompleted || 0) * 10 + (a.reasoningChaptersDone || 0) * 10
       + (a.appOpenToday ? 1 : 0) + (a.dailyQuiz ? 1 : 0) + (a.lessonQuiz ? 1 : 0)
       + (a.weeklyExam ? 1 : 0) + (a.battle ? 1 : 0);
   }
@@ -183,6 +191,7 @@ export default function AdminFoundingCircleTracker() {
     let av, bv;
     if (sortKey === 'name') { av = a.name.toLowerCase(); bv = b.name.toLowerCase(); }
     else if (sortKey === 'lessons') { av = scoreFor(a); bv = scoreFor(b); }
+    else if (sortKey === 'reasoningChaptersDone') { av = activity[a.id]?.reasoningChaptersDone || 0; bv = activity[b.id]?.reasoningChaptersDone || 0; }
     else { av = (activity[a.id]?.[sortKey]) ? 1 : 0; bv = (activity[b.id]?.[sortKey]) ? 1 : 0; }
     if (av < bv) return sortDir === 'asc' ? -1 : 1;
     if (av > bv) return sortDir === 'asc' ? 1 : -1;
@@ -266,6 +275,7 @@ export default function AdminFoundingCircleTracker() {
                   <SortHeader label="Weekly Exam" sortField="weeklyExam" />
                   <SortHeader label="Battle" sortField="battle" />
                   <SortHeader label="Lessons Done (total)" sortField="lessons" />
+                  <SortHeader label="Reasoning Chapters" sortField="reasoningChaptersDone" />
                   <th style={{ padding: '8px 12px', textAlign: 'center', fontWeight: 600, color: '#374151', borderBottom: '1px solid #E5E7EB' }}></th>
                 </tr>
               </thead>
@@ -285,6 +295,7 @@ export default function AdminFoundingCircleTracker() {
                       <td style={{ padding: '10px 12px', borderBottom: '1px solid #F3F4F6', textAlign: 'center' }}><Flag ok={a.weeklyExam} /></td>
                       <td style={{ padding: '10px 12px', borderBottom: '1px solid #F3F4F6', textAlign: 'center' }}><Flag ok={a.battle} /></td>
                       <td style={{ padding: '10px 12px', borderBottom: '1px solid #F3F4F6', textAlign: 'center', fontWeight: 700, color: '#1e40af' }}>{a.matched ? a.totalLessonsCompleted : '—'}</td>
+                      <td style={{ padding: '10px 12px', borderBottom: '1px solid #F3F4F6', textAlign: 'center', fontWeight: 700, color: '#7C3AED' }}>{a.matched ? `${a.reasoningChaptersDone || 0}/10` : '—'}</td>
                       <td style={{ padding: '10px 12px', borderBottom: '1px solid #F3F4F6', textAlign: 'center' }}>
                         <button onClick={() => removeTester(t.id)} style={{ background: 'none', border: 'none', color: '#DC2626', cursor: 'pointer', fontSize: 12 }}>Remove</button>
                       </td>
@@ -299,7 +310,7 @@ export default function AdminFoundingCircleTracker() {
 
       <div style={{ ...card, marginTop: 16, background: '#FFFBEB', border: '1px solid #FDE68A' }}>
         <p style={{ fontSize: 12, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
-          ⚠️ <strong>Honest limitation:</strong> Reasoning and Aptitude chapter completion aren't saved to the server yet — those sections don't persist progress anywhere, so I can't show them here truthfully. Happy to build that tracking next if you want it included.
+          ⚠️ <strong>Note:</strong> Reasoning chapter completion is now tracked (added after Hitesh flagged the gap). Aptitude still isn't — that section is paused pending redesign, so nothing to track there yet.
           <br />
           Matching works by mobile number — a tester only shows real data once their mobile here matches the number they actually log in with.
         </p>

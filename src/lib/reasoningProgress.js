@@ -4,7 +4,9 @@
 // score was pure in-memory React state that vanished the moment you left
 // the page. This gives Reasoning the same persistence + gating Sutras have.
 
-export const REASONING_PASS_THRESHOLD = 80; // % required to unlock the next chapter
+import { getSupabase } from './supabaseClient';
+
+export const REASONING_PASS_THRESHOLD = 60; // % required to unlock the next chapter — matches Sutra lessons
 const XP_PER_CHAPTER = 50;
 
 function readProgress() {
@@ -47,6 +49,27 @@ export function saveReasoningChapterResult(chapterId, pct) {
   }
 
   writeProgress(p);
+  syncReasoningProgressToServer(chapterId, p.reasoningScores[chapterId] ?? pct, p.reasoningCompleted.includes(chapterId));
+}
+
+// Fire-and-forget sync to Supabase — local write above already happened, so
+// the UI never waits on this. Mirrors the same non-blocking pattern used
+// for daily quiz saves.
+async function syncReasoningProgressToServer(chapterId, bestScore, completed) {
+  try {
+    const supabase = await getSupabase();
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session?.user?.id) return;
+    await supabase.from('reasoning_progress').upsert({
+      user_id: session.user.id,
+      chapter_id: chapterId,
+      best_score: bestScore,
+      completed,
+      updated_at: new Date().toISOString(),
+    }, { onConflict: 'user_id,chapter_id' });
+  } catch (e) {
+    console.warn('Reasoning progress sync failed (non-critical, local save succeeded):', e);
+  }
 }
 
 // First chapter always open. Every later chapter requires the immediately
