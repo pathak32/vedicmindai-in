@@ -1622,8 +1622,8 @@ function L2_12_CONTENT({ onSwitchTab }) {
       </div>
 
       <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 14 }}>Quick Revision</h3>
-      <style>{`@media(max-width:640px){.rev-row2{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;}}`}</style>
-      <div className="rev-row2" style={{ display: 'flex', gap: 10, marginBottom: 4 }}>
+      <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginBottom: 4, paddingBottom: 6 }}>
+        <div style={{ display: 'flex', gap: 10, minWidth: 'max-content' }}>
         {[
           { title: 'Paravartya', rule: 'Transpose divisor\ndigits, apply' },
           { title: '3×3 Urdhva', rule: '5-step\ncrosswise' },
@@ -1637,6 +1637,7 @@ function L2_12_CONTENT({ onSwitchTab }) {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: '#3B82F6', whiteSpace: 'pre-line' }}>{b.rule}</div>
           </div>
         ))}
+        </div>
       </div>
     </>
   );
