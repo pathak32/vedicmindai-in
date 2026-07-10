@@ -9,10 +9,16 @@ function isLevelLocked(level, scores) {
   return (scores?.[level.lockKey] || 0) < 60;
 }
 
-function isLessonUnlocked(lessonId, completed, scores) {
+function isLessonUnlocked(lessonId, completed, scores, isReviewer) {
   const allIds = CURRICULUM.flatMap(lv => lv.lessons.map(l => l.id));
   const idx = allIds.indexOf(lessonId);
   if (idx === 0) return true;
+  // Reviewer accounts get every lesson unlocked immediately, no sequential
+  // completion required — they're evaluating content, not progressing
+  // through it as a learner would. Deliberately NOT tied to plan tier alone
+  // (paying 'family' customers should still progress normally); this checks
+  // the isReviewer flag set specifically from the reviewer_accounts table.
+  if (isReviewer) return true;
   // level lock check
   const level = CURRICULUM.find(lv => lv.lessons.some(l => l.id === lessonId));
   if (level && isLevelLocked(level, scores)) return false;
@@ -32,6 +38,7 @@ function isLessonUnlocked(lessonId, completed, scores) {
 export default function LearnSidebar({ activeLessonId, onSelect, progress, onClose, showClose }) {
   const completed = progress.completedLessons || [];
   const scores = progress.lessonScores || {};
+  const isReviewer = !!progress.isReviewer;
   const [collapsed, setCollapsed] = useState({});
 
   const toggle = (lvl) => setCollapsed(p => ({ ...p, [lvl]: !p[lvl] }));
@@ -85,7 +92,7 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
                     level.lessons.map((lesson) => {
                       const isDone = completed.includes(lesson.id);
                       const isActive = activeLessonId === lesson.id;
-                      const unlocked = isLessonUnlocked(lesson.id, completed, scores);
+                      const unlocked = isLessonUnlocked(lesson.id, completed, scores, isReviewer);
                       const planLocked = !isLessonAccessible(lesson.id);
 
                       return (

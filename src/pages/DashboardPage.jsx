@@ -8,7 +8,7 @@ import TrialBanner from '@/components/dashboard/TrialBanner';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import ReferralCard from '@/components/ReferralCard';
 import RupeeOneOffer from '@/components/RupeeOneOffer';
-import { getUserProfile, getUserProgress, getPlanProfile, reconcileTodayQuizFromServer } from '@/lib/supabaseDataService';
+import { getUserProfile, getUserProgress, getPlanProfile, reconcileTodayQuizFromServer, isReviewerAccount } from '@/lib/supabaseDataService';
 import { getDailyQuizStatus, getTodayString } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@/lib/leaderboardEngine';
 import { useLanguage } from '@/lib/LanguageContext';
@@ -553,10 +553,11 @@ function DashboardPage() {
     if (!auth?.id) return;
     (async () => {
       try {
-        const [supaProfile, supaProgress, planProfile] = await Promise.all([
+        const [supaProfile, supaProgress, planProfile, isReviewer] = await Promise.all([
           getUserProfile(auth.id),
           getUserProgress(auth.id),
           getPlanProfile(auth.id),
+          isReviewerAccount(auth.id),
         ]);
         if (supaProfile && Object.keys(supaProfile).length > 0) {
           setProfile(supaProfile);
@@ -588,6 +589,10 @@ function DashboardPage() {
             // the profiles row has no plan set, rather than silently
             // downgrading someone back to 'free'.
             plan: planProfile?.plan || supaProgress.plan || existingLocal.plan || 'free',
+            // Reviewer accounts (see reviewer_accounts table) bypass sequential
+            // lesson unlocking in LearnSidebar — checked live each load rather
+            // than cached indefinitely, so revoking access takes effect promptly.
+            isReviewer,
           };
           setProgress(mappedProgress);
           localStorage.setItem('vedicmind_progress', JSON.stringify(mappedProgress));

@@ -223,6 +223,26 @@ export async function reconcileTodayQuizFromServer(userId) {
 
 // ─── LEADERBOARD ─────────────────────────────────────────────────────────────
 
+// Reviewer accounts (Mr. Ray etc.) are tracked separately from regular paid
+// plans in reviewer_accounts — created via the admin panel's Reviewer Access
+// tab. This lets a reviewer's status be checked without conflating it with
+// paying 'family' plan customers, who also get plan:'family' but should NOT
+// automatically bypass sequential lesson unlocking (that's a deliberate
+// gamification mechanic for regular users, not something to accidentally
+// give away to every top-tier subscriber).
+export async function isReviewerAccount(userId) {
+  if (!userId) return false;
+  const supabase = await getSupabase();
+  const { data, error } = await supabase
+    .from('reviewer_accounts')
+    .select('id')
+    .eq('user_id', userId)
+    .eq('is_active', true)
+    .maybeSingle();
+  if (error) { console.warn('isReviewerAccount:', error); return false; }
+  return !!data;
+}
+
 export async function getLeaderboard(classGroup = 'class_a') {
   const supabase = await getSupabase();
   const { data, error } = await supabase
