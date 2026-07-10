@@ -1372,7 +1372,17 @@ const L2_09_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 247 ÷ 13"
+      title="Example 1 — 156 ÷ 13 (clean, no fix-up needed)"
+      lines={[
+        'Flag = −3 (divisor 13 = 10+3)',
+        'Q1 = first digit = 1',
+        'Next: 5 + (1 × −3) = 2',
+        'Remainder: 6 + (2 × −3) = 0',
+      ]}
+      result="156 ÷ 13 = 12, remainder 0 ✓"
+    />
+    <ExampleCard
+      title="Example 2 — 247 ÷ 13 (needs the fix-up step)"
       lines={[
         'Flag = −3 (divisor 13 = 10+3)',
         'Q1 = first digit = 2',
@@ -1385,20 +1395,7 @@ const L2_09_CONTENT = (
       result="247 ÷ 13 = 19, remainder 0 ✓"
     />
     <ExampleCard
-      title="Example 2 — 256 ÷ 16"
-      lines={[
-        'Flag = −6 (divisor 16 = 10+6)',
-        'Q1 = first digit = 2',
-        'Next: 5 + (2 × −6) = −7',
-        'Remainder (raw): 6 + (−7 × −6) = 48',
-        'Fix-up: 48 ÷ 16 = 3 remainder 0 → carry 3 left, remainder → 0',
-        'Last digit: −7 + 3 = −4 → still negative, borrow: −4 + 10 = 6',
-        'First digit: 2 − 1 = 1',
-      ]}
-      result="256 ÷ 16 = 16, remainder 0 ✓"
-    />
-    <ExampleCard
-      title="Example 3 — 391 ÷ 17"
+      title="Example 3 — 391 ÷ 17 (needs the fix-up step)"
       lines={[
         'Flag = −7 (divisor 17 = 10+7)',
         'Q1 = first digit = 3',
@@ -1413,7 +1410,7 @@ const L2_09_CONTENT = (
 
     <div style={{ background: '#FEF3C7', borderLeft: '4px solid #F59E0B', borderRadius: '0 8px 8px 0', padding: '14px 16px', marginTop: 8, marginBottom: 8 }}>
       <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
-        💡 <strong>Why the fix-up step exists:</strong> the flag-multiply step can produce a value that's negative or too large to be a single digit. Don't panic — work right to left, borrowing 1 from the column to the left (adding 10 here) or carrying extra into the column to the left, until every digit is valid. All three examples above needed this step at least once.
+        💡 <strong>Why the fix-up step exists:</strong> the flag-multiply step can produce a value that's negative or too large to be a single digit. Don't panic — work right to left, borrowing 1 from the column to the left (adding 10 here) or carrying extra into the column to the left, until every digit is valid. Example 1 didn't need this; Examples 2 and 3 both did — you'll get both types of questions, so it's worth being comfortable with each.
       </p>
     </div>
 
