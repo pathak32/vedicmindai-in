@@ -102,7 +102,13 @@ export default function LessonViewer({ lesson, progress, onLessonComplete, allLe
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('concept');
   const [conceptDone, setConceptDone] = useState(false);
-  const [practiceDone, setPracticeDone] = useState(false);
+  const [practiceDone, setPracticeDone] = useState(() => {
+    // Restore from localStorage so practice progress survives page refresh
+    try {
+      const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+      return !!(p.practiceDone || {})[lesson.id];
+    } catch { return false; }
+  });
   const [quizDone, setQuizDone] = useState(false);
   const [toast, setToast] = useState('');
   const [toastVisible, setToastVisible] = useState(false);
@@ -111,7 +117,11 @@ export default function LessonViewer({ lesson, progress, onLessonComplete, allLe
   useEffect(() => {
     setActiveTab('concept');
     setConceptDone(false);
-    setPracticeDone(false);
+    // Restore practiceDone for the new lesson from localStorage
+    try {
+      const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+      setPracticeDone(!!(p.practiceDone || {})[lesson.id]);
+    } catch { setPracticeDone(false); }
     setQuizDone(false);
     window.scrollTo(0, 0);
   }, [lesson.id]);
@@ -133,6 +143,13 @@ export default function LessonViewer({ lesson, progress, onLessonComplete, allLe
 
   const handlePracticeComplete = () => {
     setPracticeDone(true);
+    // Persist to localStorage so it survives page refresh
+    try {
+      const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+      if (!p.practiceDone) p.practiceDone = {};
+      p.practiceDone[lesson.id] = true;
+      localStorage.setItem('vedicmind_progress', JSON.stringify(p));
+    } catch { /* silent */ }
     setTimeout(() => {
       setActiveTab('quiz');
       window.scrollTo({ top: 0, behavior: 'smooth' });
