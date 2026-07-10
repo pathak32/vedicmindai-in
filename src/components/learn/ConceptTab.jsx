@@ -1371,20 +1371,26 @@ const L2_09_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 247 ÷ 13"
-      lines={['Flag = −3', '13 × 19 = 247', 'Quotient digits: 2, 4 (since 13×10=130, 247−130=117, 117÷13=9)', 'Check: 13 × 19 = 247']}
-      result="247 ÷ 13 = 19 ✓"
+      title="Example 1 — 156 ÷ 13"
+      lines={['Flag = −3 (divisor 13 = 10+3)', 'Q1 = first digit = 1', 'Next: 5 + (1 × −3) = 2  → Q2 = 2', 'Remainder: 6 + (2 × −3) = 0']}
+      result="156 ÷ 13 = 12, remainder 0 ✓"
     />
     <ExampleCard
-      title="Example 2 — 256 ÷ 16"
-      lines={['Flag = −6', '16 × 16 = 256', 'No remainder']}
-      result="256 ÷ 16 = 16 ✓"
+      title="Example 2 — 168 ÷ 14"
+      lines={['Flag = −4 (divisor 14 = 10+4)', 'Q1 = first digit = 1', 'Next: 6 + (1 × −4) = 2  → Q2 = 2', 'Remainder: 8 + (2 × −4) = 0']}
+      result="168 ÷ 14 = 12, remainder 0 ✓"
     />
     <ExampleCard
-      title="Example 3 — 391 ÷ 17"
-      lines={['Flag = −7', '17 × 23 = 391', 'Check: 17×20=340, 391−340=51, 51÷17=3 → Q=23']}
-      result="391 ÷ 17 = 23 ✓"
+      title="Example 3 — 187 ÷ 17"
+      lines={['Flag = −7 (divisor 17 = 10+7)', 'Q1 = first digit = 1', 'Next: 8 + (1 × −7) = 1  → Q2 = 1', 'Remainder: 7 + (1 × −7) = 0']}
+      result="187 ÷ 17 = 11, remainder 0 ✓"
     />
+
+    <div style={{ background: '#FEF3C7', borderLeft: '4px solid #F59E0B', borderRadius: '0 8px 8px 0', padding: '14px 16px', marginTop: 8, marginBottom: 8 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
+        ⚠️ <strong>If a step goes negative:</strong> borrow 1 from the previous quotient digit (reduce it by 1) and add 10 to the current value, then continue. These examples were chosen to avoid that so you can see the clean pattern first — borrowing examples are a natural next step once this feels automatic.
+      </p>
+    </div>
 
     <div style={{ background: '#FEF3C7', borderLeft: '4px solid #F59E0B', borderRadius: '0 8px 8px 0', padding: '14px 16px', marginTop: 8 }}>
       <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
