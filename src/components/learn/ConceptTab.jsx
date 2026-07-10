@@ -376,6 +376,7 @@ const L1_03_CONTENT = (
         { en: 'Cross: 8 − 3 = 5', hi: 'तिरछा: 8 − 3 = 5' },
         { en: 'Product: 2 × 3 = 6', hi: 'गुणनफल: 2 × 3 = 6' },
       ]}
+      breakdown={[{ label: { en: 'Left', hi: 'बायां' }, value: '5' }, { label: { en: 'Right', hi: 'दायां' }, value: '6' }]}
       result="8 × 7 = 56 ✓"
     />
     <ExampleCard
@@ -385,6 +386,7 @@ const L1_03_CONTENT = (
         { en: 'Cross: 9 − 4 = 5', hi: 'तिरछा: 9 − 4 = 5' },
         { en: 'Product: 1 × 4 = 4', hi: 'गुणनफल: 1 × 4 = 4' },
       ]}
+      breakdown={[{ label: { en: 'Left', hi: 'बायां' }, value: '5' }, { label: { en: 'Right', hi: 'दायां' }, value: '4' }]}
       result="9 × 6 = 54 ✓"
     />
     <ExampleCard
@@ -392,8 +394,10 @@ const L1_03_CONTENT = (
       lines={[
         { en: 'Deficits: 3 and 4', hi: 'कमियाँ: 3 और 4' },
         { en: 'Cross: 7 − 4 = 3', hi: 'तिरछा: 7 − 4 = 3' },
-        { en: 'Product: 3 × 4 = 12 → carry 1 → left = 3+1 = 4, right = 2', hi: 'गुणनफल: 3 × 4 = 12 → 1 आगे ले जाएं → बायां = 3+1 = 4, दायां = 2' },
+        { en: 'Product: 3 × 4 = 12 → carry 1 → left = 3+1 = 4   ← this becomes the LEFT digit (not the original 3!)', hi: 'गुणनफल: 3 × 4 = 12 → 1 आगे ले जाएं → बायां = 3+1 = 4   ← यह बायां अंक बनता है (मूल 3 नहीं!)' },
+        { en: 'right = 2   ← this is the RIGHT digit', hi: 'दायां = 2   ← यह दायां अंक है' },
       ]}
+      breakdown={[{ label: { en: 'Left', hi: 'बायां' }, value: '4' }, { label: { en: 'Right', hi: 'दायां' }, value: '2' }]}
       result="7 × 6 = 42 ✓"
     />
 
@@ -448,16 +452,19 @@ const L1_04_CONTENT = (
     <ExampleCard
       title={{ en: 'Example 1: 97 × 96', hi: 'उदाहरण 1: 97 × 96' }}
       lines={[{ en: 'Deficits: 3, 4', hi: 'कमियाँ: 3, 4' }, { en: 'Cross: 97 − 4 = 93', hi: 'तिरछा: 97 − 4 = 93' }, { en: 'Product: 3 × 4 = 12', hi: 'गुणनफल: 3 × 4 = 12' }]}
+      breakdown={[{ label: { en: 'Left', hi: 'बायां' }, value: '93' }, { label: { en: 'Right', hi: 'दायां' }, value: '12' }]}
       result="97 × 96 = 9312 ✓"
     />
     <ExampleCard
       title={{ en: 'Example 2: 98 × 97', hi: 'उदाहरण 2: 98 × 97' }}
       lines={[{ en: 'Deficits: 2, 3', hi: 'कमियाँ: 2, 3' }, { en: 'Cross: 98 − 3 = 95', hi: 'तिरछा: 98 − 3 = 95' }, { en: 'Product: 2 × 3 = 06 (pad zero!)', hi: 'गुणनफल: 2 × 3 = 06 (शून्य लगाएं!)' }]}
+      breakdown={[{ label: { en: 'Left', hi: 'बायां' }, value: '95' }, { label: { en: 'Right', hi: 'दायां' }, value: '06' }]}
       result="98 × 97 = 9506 ✓"
     />
     <ExampleCard
       title={{ en: 'Example 3: 95 × 94', hi: 'उदाहरण 3: 95 × 94' }}
       lines={[{ en: 'Deficits: 5, 6', hi: 'कमियाँ: 5, 6' }, { en: 'Cross: 95 − 6 = 89', hi: 'तिरछा: 95 − 6 = 89' }, { en: 'Product: 5 × 6 = 30', hi: 'गुणनफल: 5 × 6 = 30' }]}
+      breakdown={[{ label: { en: 'Left', hi: 'बायां' }, value: '89' }, { label: { en: 'Right', hi: 'दायां' }, value: '30' }]}
       result="95 × 94 = 8930 ✓"
     />
   </>
@@ -509,16 +516,19 @@ const L1_05_CONTENT = (
     <ExampleCard
       title={{ en: 'Example 1: 998 × 997', hi: 'उदाहरण 1: 998 × 997' }}
       lines={[{ en: 'Deficits: 2, 3', hi: 'कमियाँ: 2, 3' }, { en: 'Cross: 998 − 3 = 995', hi: 'तिरछा: 998 − 3 = 995' }, { en: 'Product: 2 × 3 = 6 → 006', hi: 'गुणनफल: 2 × 3 = 6 → 006' }]}
+      breakdown={[{ label: { en: 'Left', hi: 'बायां' }, value: '995' }, { label: { en: 'Right', hi: 'दायां' }, value: '006' }]}
       result="998 × 997 = 995006 ✓"
     />
     <ExampleCard
       title={{ en: 'Example 2: 996 × 994', hi: 'उदाहरण 2: 996 × 994' }}
       lines={[{ en: 'Deficits: 4, 6', hi: 'कमियाँ: 4, 6' }, { en: 'Cross: 996 − 6 = 990', hi: 'तिरछा: 996 − 6 = 990' }, { en: 'Product: 4 × 6 = 24 → 024', hi: 'गुणनफल: 4 × 6 = 24 → 024' }]}
+      breakdown={[{ label: { en: 'Left', hi: 'बायां' }, value: '990' }, { label: { en: 'Right', hi: 'दायां' }, value: '024' }]}
       result="996 × 994 = 990024 ✓"
     />
     <ExampleCard
       title={{ en: 'Example 3: 999 × 998', hi: 'उदाहरण 3: 999 × 998' }}
       lines={[{ en: 'Deficits: 1, 2', hi: 'कमियाँ: 1, 2' }, { en: 'Cross: 999 − 2 = 997', hi: 'तिरछा: 999 − 2 = 997' }, { en: 'Product: 1 × 2 = 2 → 002', hi: 'गुणनफल: 1 × 2 = 2 → 002' }]}
+      breakdown={[{ label: { en: 'Left', hi: 'बायां' }, value: '997' }, { label: { en: 'Right', hi: 'दायां' }, value: '002' }]}
       result="999 × 998 = 997002 ✓"
     />
 
@@ -672,24 +682,27 @@ const L1_07_CONTENT = (
         { en: 'Step 2: 1×3 + 2×1 = 3+2 = 5 (tens)', hi: 'चरण 2: 1×3 + 2×1 = 3+2 = 5 (दहाई)' },
         { en: 'Step 3: 1×1 = 1 (hundreds)', hi: 'चरण 3: 1×1 = 1 (सैंकड़ा)' },
       ]}
+      breakdown={[{ label: { en: 'Hundreds', hi: 'सैंकड़ा' }, value: '1' }, { label: { en: 'Tens', hi: 'दहाई' }, value: '5' }, { label: { en: 'Units', hi: 'इकाई' }, value: '6' }]}
       result="12 × 13 = 156 ✓"
     />
     <ExampleCard
       title={{ en: 'Example 2: 23 × 32', hi: 'उदाहरण 2: 23 × 32' }}
       lines={[
-        { en: 'Step 1: 3×2 = 6', hi: 'चरण 1: 3×2 = 6' },
-        { en: 'Step 2: 2×2 + 3×3 = 4+9 = 13 → write 3, carry 1', hi: 'चरण 2: 2×2 + 3×3 = 4+9 = 13 → 3 लिखें, 1 आगे ले जाएं' },
-        { en: 'Step 3: 2×3 = 6 + carry 1 = 7', hi: 'चरण 3: 2×3 = 6 + कैरी 1 = 7' },
+        { en: 'Step 1: 3×2 = 6 (units)', hi: 'चरण 1: 3×2 = 6 (इकाई)' },
+        { en: 'Step 2: 2×2 + 3×3 = 4+9 = 13 → write 3, carry 1 (tens)', hi: 'चरण 2: 2×2 + 3×3 = 4+9 = 13 → 3 लिखें, 1 आगे ले जाएं (दहाई)' },
+        { en: 'Step 3: 2×3 = 6 + carry 1 = 7   ← the carry changed this to 7, not 6! (hundreds)', hi: 'चरण 3: 2×3 = 6 + कैरी 1 = 7   ← कैरी ने इसे 7 बना दिया, 6 नहीं! (सैंकड़ा)' },
       ]}
+      breakdown={[{ label: { en: 'Hundreds', hi: 'सैंकड़ा' }, value: '7' }, { label: { en: 'Tens', hi: 'दहाई' }, value: '3' }, { label: { en: 'Units', hi: 'इकाई' }, value: '6' }]}
       result="23 × 32 = 736 ✓"
     />
     <ExampleCard
       title={{ en: 'Example 3: 47 × 63', hi: 'उदाहरण 3: 47 × 63' }}
       lines={[
-        { en: 'Step 1: 7×3 = 21 → write 1, carry 2', hi: 'चरण 1: 7×3 = 21 → 1 लिखें, 2 आगे ले जाएं' },
-        { en: 'Step 2: 4×3 + 7×6 = 12+42 = 54 + carry 2 = 56 → write 6, carry 5', hi: 'चरण 2: 4×3 + 7×6 = 12+42 = 54 + कैरी 2 = 56 → 6 लिखें, 5 आगे ले जाएं' },
-        { en: 'Step 3: 4×6 = 24 + carry 5 = 29', hi: 'चरण 3: 4×6 = 24 + कैरी 5 = 29' },
+        { en: 'Step 1: 7×3 = 21 → write 1, carry 2 (units)', hi: 'चरण 1: 7×3 = 21 → 1 लिखें, 2 आगे ले जाएं (इकाई)' },
+        { en: 'Step 2: 4×3 + 7×6 = 12+42 = 54 + carry 2 = 56 → write 6, carry 5 (tens)', hi: 'चरण 2: 4×3 + 7×6 = 12+42 = 54 + कैरी 2 = 56 → 6 लिखें, 5 आगे ले जाएं (दहाई)' },
+        { en: 'Step 3: 4×6 = 24 + carry 5 = 29   ← this multi-digit value IS the hundreds+ part, written as-is', hi: 'चरण 3: 4×6 = 24 + कैरी 5 = 29   ← यह बहु-अंकीय मान ही सैंकड़ा+ भाग है, ऐसे ही लिखें' },
       ]}
+      breakdown={[{ label: { en: 'Hundreds+', hi: 'सैंकड़ा+' }, value: '29' }, { label: { en: 'Tens', hi: 'दहाई' }, value: '6' }, { label: { en: 'Units', hi: 'इकाई' }, value: '1' }]}
       result="47 × 63 = 2961 ✓"
     />
   </>
@@ -730,25 +743,28 @@ const L1_08_CONTENT = (
     <ExampleCard
       title={{ en: 'Example 1: 23 × 11', hi: 'उदाहरण 1: 23 × 11' }}
       lines={[{ en: 'First: 2', hi: 'पहला: 2' }, { en: 'Middle: 2+3 = 5', hi: 'मध्य: 2+3 = 5' }, { en: 'Last: 3', hi: 'अंतिम: 3' }]}
+      breakdown={[{ label: { en: 'First', hi: 'पहला' }, value: '2' }, { label: { en: 'Middle', hi: 'मध्य' }, value: '5' }, { label: { en: 'Last', hi: 'अंतिम' }, value: '3' }]}
       result="23 × 11 = 253 ✓"
     />
     <ExampleCard
       title={{ en: 'Example 2: 67 × 11', hi: 'उदाहरण 2: 67 × 11' }}
       lines={[
         { en: 'First: 6', hi: 'पहला: 6' },
-        { en: 'Middle: 6+7 = 13 → write 3, carry 1 → first digit becomes 6+1=7', hi: 'मध्य: 6+7 = 13 → 3 लिखें, 1 आगे ले जाएं → पहला अंक 6+1=7 बनता है' },
+        { en: 'Middle: 6+7 = 13 → write 3, carry 1 → first digit becomes 6+1=7   ← this changes the FIRST digit!', hi: 'मध्य: 6+7 = 13 → 3 लिखें, 1 आगे ले जाएं → पहला अंक 6+1=7 बनता है   ← इससे पहला अंक बदल जाता है!' },
         { en: 'Last: 7', hi: 'अंतिम: 7' },
       ]}
+      breakdown={[{ label: { en: 'First', hi: 'पहला' }, value: '7' }, { label: { en: 'Middle', hi: 'मध्य' }, value: '3' }, { label: { en: 'Last', hi: 'अंतिम' }, value: '7' }]}
       result="67 × 11 = 737 ✓"
     />
     <ExampleCard
       title={{ en: 'Example 3: 346 × 11', hi: 'उदाहरण 3: 346 × 11' }}
       lines={[
         { en: 'First: 3', hi: 'पहला: 3' },
-        '3+4 = 7',
+        { en: '3+4 = 7   ← this is the FIRST middle digit (before any later carry)', hi: '3+4 = 7   ← यह पहला मध्य अंक है (आगे किसी कैरी से पहले)' },
         { en: '4+6 = 10 → write 0, carry 1 → previous 7 becomes 8', hi: '4+6 = 10 → 0 लिखें, 1 आगे ले जाएं → पिछला 7, 8 बनता है' },
         { en: 'Last: 6', hi: 'अंतिम: 6' },
       ]}
+      breakdown={[{ label: { en: 'First', hi: 'पहला' }, value: '3' }, { label: { en: 'Mid 1', hi: 'मध्य 1' }, value: '8' }, { label: { en: 'Mid 2', hi: 'मध्य 2' }, value: '0' }, { label: { en: 'Last', hi: 'अंतिम' }, value: '6' }]}
       result="346 × 11 = 3806 ✓"
     />
 
