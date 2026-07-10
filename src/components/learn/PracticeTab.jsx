@@ -260,7 +260,7 @@ const LESSON_PROBLEMS = {
   ],
   l2_11: [
     { q: 'What month code is used for August in the day-of-week formula?', options: ['2','3','5','6'], correct: 1, exp: 'August month code = 3' },
-    { q: 'What day of the week is 26 January 2025?', options: ['Sunday','Monday','Tuesday','Wednesday'], correct: 1, exp: 'd=26, m=1, y=25, ⌊25÷4⌋=6, century(2000s)=6. Total=64. 64 mod 7=1 → Monday' },
+    { q: 'What day of the week is 26 January 2025?', options: ['Sunday','Monday','Tuesday','Wednesday'], correct: 0, exp: 'Using Zeller\'s formula for 26 Jan 2025: treat Jan as month 13 of 2024. h=(26+⌊13×14/5⌋+24+⌊24/4⌋+⌊20/4⌋−2×20) mod 7 = 1 → Zeller h=1 means Sunday. Verified: 26 January 2025 was a Sunday.' },
     { q: 'What century correction applies to years in the 1900s?', options: ['+2','+0','+4','+6'], correct: 1, exp: 'Century correction: 1800s=+2, 1900s=+0, 2000s=+6' },
     { q: 'The day calculation formula uses which modulo?', options: ['mod 5','mod 6','mod 7','mod 12'], correct: 2, exp: '7 days in a week → (d + m + y + ⌊y÷4⌋) mod 7' },
     { q: 'In the formula, result 0 corresponds to which day?', options: ['Monday','Saturday','Sunday','Friday'], correct: 2, exp: '0=Sunday, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat' },
