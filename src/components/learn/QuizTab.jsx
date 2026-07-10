@@ -442,25 +442,36 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
     : [];
 
   const [current, setCurrent] = useState(0);
-  const [selected, setSelected] = useState(null);
-  const [revealed, setRevealed] = useState(false);
-  const [answers, setAnswers] = useState(priorAnswers);
+  // Selected option index per question (null = unanswered yet). Replaces the
+  // old single 'selected'/'revealed' state that only tracked the CURRENT
+  // question — that made it impossible to go back and see a previous
+  // question's answer, since leaving it wiped that state. Now each question
+  // keeps its own answer, so navigating back just reads a different slot.
+  const [selectedAnswers, setSelectedAnswers] = useState(Array(questions.length).fill(null));
   const [done, setDone] = useState(priorScore != null);
   const [isReviewOfPastAttempt] = useState(priorScore != null);
 
   const q = questions[current];
+  const selected = selectedAnswers[current];
+  const revealed = selected !== null;
+  const answers = priorScore != null && selectedAnswers.every((a) => a === null)
+    ? priorAnswers // still showing the restored past-attempt summary, nothing answered fresh yet
+    : selectedAnswers.map((sel, i) => sel !== null && sel === questions[i]?.correct);
 
   const handleSelect = (idx) => {
-    setSelected(idx);
-    setRevealed(true);
-    setAnswers(prev => [...prev, idx === q.correct]);
+    if (selectedAnswers[current] !== null) return; // already answered — view only, no changing after the fact
+    const next = [...selectedAnswers];
+    next[current] = idx;
+    setSelectedAnswers(next);
+  };
+
+  const handlePrevious = () => {
+    if (current > 0) setCurrent((c) => c - 1);
   };
 
   const handleNext = () => {
     if (current < questions.length - 1) {
       setCurrent(c => c + 1);
-      setSelected(null);
-      setRevealed(false);
     } else {
       setDone(true);
     }
@@ -560,7 +571,7 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
             </button>
           ) : null}
           <button
-            onClick={() => { setCurrent(0); setSelected(null); setRevealed(false); setAnswers([]); setDone(false); }}
+            onClick={() => { setCurrent(0); setSelectedAnswers(Array(questions.length).fill(null)); setDone(false); }}
             style={{ flex: 1, minWidth: 120, minHeight: 44, background: 'transparent', color: '#0A1628', border: '1.5px solid #0A1628', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}
           >
             Retake Quiz
@@ -587,10 +598,15 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
           </span>
           <div style={{ display: 'flex', gap: 4 }}>
             {questions.map((_, i) => (
-              <div key={i} style={{
-                width: 28, height: 4, borderRadius: 100,
-                background: i < current ? '#10B981' : i === current ? '#3B82F6' : 'rgba(30,64,175,0.12)',
-              }} />
+              <div
+                key={i}
+                onClick={() => { if (i <= current || selectedAnswers[i] !== null) setCurrent(i); }}
+                style={{
+                  width: 28, height: 4, borderRadius: 100,
+                  background: i < current ? '#10B981' : i === current ? '#3B82F6' : 'rgba(30,64,175,0.12)',
+                  cursor: (i <= current || selectedAnswers[i] !== null) ? 'pointer' : 'default',
+                }}
+              />
             ))}
           </div>
         </div>
@@ -613,18 +629,29 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
           />
         ))}
 
-        {/* Next button */}
-        {revealed && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ marginTop: 12 }}>
-            <button onClick={handleNext} style={{
-              minHeight: 44, padding: '0 24px', background: '#0A1628', color: 'white',
-              border: 'none', borderRadius: 10, fontSize: 15, fontWeight: 600,
+        {/* Previous / Next buttons */}
+        <div style={{ display: 'flex', gap: 10, marginTop: 12 }}>
+          {current > 0 && (
+            <button onClick={handlePrevious} style={{
+              minHeight: 44, padding: '0 20px', background: 'transparent', color: '#0A1628',
+              border: '1.5px solid #0A1628', borderRadius: 10, fontSize: 15, fontWeight: 600,
               cursor: 'pointer', fontFamily: 'var(--font-body)',
             }}>
-              {current < questions.length - 1 ? 'Next Question →' : 'See Results →'}
+              ← {language === 'hi' ? 'पिछला प्रश्न' : 'Previous Question'}
             </button>
-          </motion.div>
-        )}
+          )}
+          {revealed && (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              <button onClick={handleNext} style={{
+                minHeight: 44, padding: '0 24px', background: '#0A1628', color: 'white',
+                border: 'none', borderRadius: 10, fontSize: 15, fontWeight: 600,
+                cursor: 'pointer', fontFamily: 'var(--font-body)',
+              }}>
+                {current < questions.length - 1 ? 'Next Question →' : 'See Results →'}
+              </button>
+            </motion.div>
+          )}
+        </div>
       </motion.div>
     </AnimatePresence>
   );

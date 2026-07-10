@@ -2326,10 +2326,30 @@ const LESSON_CONTENT = {
 // ── MAIN COMPONENT ────────────────────────────────────────────────────────────
 
 export default function ConceptTab({ lesson, glass, progress, onSwitchTab, onConceptComplete }) {
-  const [conceptDone, setConceptDone] = useState(false);
+  // Was this lesson's concept already marked complete before? Previously
+  // this only lived in local component state (useState(false)) with no
+  // check against saved progress — so revisiting a lesson reset the button
+  // to "Mark Concept Complete" every time, AND clicking it again handed out
+  // another +20 XP for a lesson already credited. Both fixed by tracking a
+  // real per-lesson flag instead of just blindly adding XP on every click.
+  const alreadyDone = (() => {
+    try {
+      const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+      return !!(p.conceptCompletedLessons || []).includes(lesson.id);
+    } catch { return false; }
+  })();
+  const [conceptDone, setConceptDone] = useState(alreadyDone);
 
   const saveXP = () => {
     const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+    if (!Array.isArray(p.conceptCompletedLessons)) p.conceptCompletedLessons = [];
+    if (p.conceptCompletedLessons.includes(lesson.id)) {
+      // Already credited previously — just reflect the completed UI state,
+      // don't award XP again.
+      setConceptDone(true);
+      return;
+    }
+    p.conceptCompletedLessons.push(lesson.id);
     p.totalXP = (p.totalXP || 0) + 20;
     localStorage.setItem('vedicmind_progress', JSON.stringify(p));
     setConceptDone(true);
