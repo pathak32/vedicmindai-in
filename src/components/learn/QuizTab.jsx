@@ -426,11 +426,27 @@ function MasterCelebration({ totalXP, badgeCount, xpEarned, correct, total, shar
 export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLessonIds }) {
   const { t, language } = useLanguage();
   const questions = getQuestions(lesson.id);
+
+  // If this lesson was already completed, restore that state on mount instead
+  // of always starting blank at Question 1. The score was already being saved
+  // to lessonScores — it just was never read back, so returning to a done
+  // lesson looked identical to never having attempted it (Mr. Ray's report).
+  const priorScore = (() => {
+    try {
+      const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+      return typeof p.lessonScores?.[lesson.id] === 'number' ? p.lessonScores[lesson.id] : null;
+    } catch { return null; }
+  })();
+  const priorAnswers = priorScore != null
+    ? Array.from({ length: questions.length }, (_, i) => i < Math.round((priorScore / 100) * questions.length))
+    : [];
+
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState(null);
   const [revealed, setRevealed] = useState(false);
-  const [answers, setAnswers] = useState([]);
-  const [done, setDone] = useState(false);
+  const [answers, setAnswers] = useState(priorAnswers);
+  const [done, setDone] = useState(priorScore != null);
+  const [isReviewOfPastAttempt] = useState(priorScore != null);
 
   const q = questions[current];
 
@@ -512,15 +528,17 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
           borderRadius: 16, padding: 24,
         }}>
         <style>{`@media(max-width:360px){.quiz-btn-row{flex-direction:column!important;}}`}</style>
-        <div style={{ fontSize: 40, marginBottom: 8 }}>🎉</div>
+        <div style={{ fontSize: 40, marginBottom: 8 }}>{isReviewOfPastAttempt ? '✅' : '🎉'}</div>
         <h2 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>
-          {t('lessonComplete')}
+          {isReviewOfPastAttempt ? (language === 'hi' ? 'आपने यह पाठ पहले ही पूरा किया है' : 'You already completed this lesson') : t('lessonComplete')}
         </h2>
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>
           {correct}/{questions.length} correct · {pct}%
         </div>
         <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#10B981', marginBottom: 8 }}>
-          +{xpEarned} XP earned
+          {isReviewOfPastAttempt
+            ? (language === 'hi' ? `पहले ${xpEarned} XP अर्जित किया गया था` : `${xpEarned} XP was earned on your first attempt`)
+            : `+${xpEarned} XP earned`}
         </div>
         <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: feedbackColor, marginBottom: 20 }}>
           {feedbackText}
