@@ -149,9 +149,9 @@ const LESSON_QUESTIONS = {
   ],
   l2_11: [
     { q: 'What is the month code for January?', options: ['0','1','2','4'], correct: 1 },
-    { q: 'What day of the week is 26 January 2025?', options: ['Sunday','Monday','Tuesday','Wednesday'], correct: 1 },
+    { q: 'What day of the week is 26 January 2025?', options: ['Sunday','Monday','Tuesday','Wednesday'], correct: 0 },
     { q: 'Century correction for years 2000–2099 is?', options: ['+0','+2','+4','+6'], correct: 3 },
-    { q: 'The formula (d+m+y+⌊y÷4⌋) mod 7 gives?', options: ['Month number','Day of week number','Year code','Week number'], correct: 1 },
+    { q: 'The formula (d+m+y+⌊y÷4⌋−1) mod 7 gives?', options: ['Month number','Day of week number','Year code','Week number'], correct: 1 },
     { q: 'Result 6 in the formula corresponds to?', options: ['Sunday','Friday','Saturday','Monday'], correct: 2 },
   ],
   l3_01: [

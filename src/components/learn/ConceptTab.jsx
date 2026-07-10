@@ -1484,7 +1484,7 @@ const L2_11_CONTENT = (
 
     <SectionTitle>The Formula</SectionTitle>
     <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 20, textAlign: 'center' }}>
-      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 18, color: 'white', marginBottom: 12 }}>Day = (d + m + y + ⌊y÷4⌋) mod 7</div>
+      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 18, color: 'white', marginBottom: 12 }}>Day = (d + m + y + ⌊y÷4⌋ − 1) mod 7</div>
       <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'left', display: 'inline-block' }}>
         <div>d = date number</div>
         <div>m = month code (see table)</div>
@@ -1519,18 +1519,18 @@ const L2_11_CONTENT = (
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
       title="Example 1 — 15 August 1947"
-      lines={['d=15, m=3 (Aug), y=47, ⌊47÷4⌋=11', 'Century (1900s) = 0', 'Total: 15+3+47+11+0 = 76', '76 mod 7 = 6 = Saturday']}
-      result="15 Aug 1947 = Saturday ✓"
+      lines={['d=15, m=3 (Aug), y=47, ⌊47÷4⌋=11', 'Century (1900s) = 0', 'Total: 15+3+47+11+0 = 76', '76 − 1 = 75', '75 mod 7 = 5 = Friday']}
+      result="15 Aug 1947 = Friday ✓"
     />
     <ExampleCard
       title="Example 2 — 26 January 2025"
-      lines={['d=26, m=1 (Jan), y=25, ⌊25÷4⌋=6', 'Century (2000s) = 6', 'Total: 26+1+25+6+6 = 64', '64 mod 7 = 1 = Monday']}
-      result="26 Jan 2025 = Monday ✓"
+      lines={['d=26, m=1 (Jan), y=25, ⌊25÷4⌋=6', 'Century (2000s) = 6', 'Total: 26+1+25+6+6 = 64', '64 − 1 = 63', '63 mod 7 = 0 = Sunday']}
+      result="26 Jan 2025 = Sunday ✓"
     />
     <ExampleCard
       title="Example 3 — 2 October 1869"
-      lines={['d=2, m=1 (Oct), y=69, ⌊69÷4⌋=17', 'Century (1800s) = 2', 'Total: 2+1+69+17+2 = 91', '91 mod 7 = 0 = Sunday']}
-      result="2 Oct 1869 = Sunday ✓"
+      lines={['d=2, m=1 (Oct), y=69, ⌊69÷4⌋=17', 'Century (1800s) = 2', 'Total: 2+1+69+17+2 = 91', '91 − 1 = 90', '90 mod 7 = 6 = Saturday']}
+      result="2 Oct 1869 = Saturday ✓"
     />
 
     <div style={{ background: '#F0F4FF', borderRadius: 12, padding: 16, marginTop: 8 }}>
@@ -1614,17 +1614,17 @@ const L3_01_CONTENT = (
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
       title="Example 1 — 23 × 41"
-      lines={['Step 1: 2×4 = 8', 'Step 2: 2×1 + 3×4 = 2+12 = 14 → write 4, carry 1', 'Step 3: 3×1 = 3', 'Result: (8+1)|4|3 = 943']}
+      lines={['Right: 3×1 = 3 → write 3, carry 0', 'Middle: 2×1 + 3×4 = 2+12 = 14, +carry 0 = 14 → write 4, carry 1', 'Left: 2×4 = 8, +carry 1 = 9', 'Result: 9|4|3 = 943']}
       result="23 × 41 = 943 ✓"
     />
     <ExampleCard
       title="Example 2 — 34 × 52"
-      lines={['Step 1: 3×5 = 15', 'Step 2: 3×2 + 4×5 = 6+20 = 26 → write 6, carry 2', 'Step 3: 4×2 = 8', 'Result: (15+2)|6|8 = 1768']}
+      lines={['Right: 4×2 = 8 → write 8, carry 0', 'Middle: 3×2 + 4×5 = 6+20 = 26, +carry 0 = 26 → write 6, carry 2', 'Left: 3×5 = 15, +carry 2 = 17', 'Result: 17|6|8 = 1768']}
       result="34 × 52 = 1768 ✓"
     />
     <ExampleCard
       title="Example 3 — 67 × 83"
-      lines={['Step 1: 6×8 = 48', 'Step 2: 6×3 + 7×8 = 18+56 = 74 → write 4, carry 7', 'Step 3: 7×3 = 21 → write 1, carry 2', 'Result: (48+7+2)|4|1 = 5561']}
+      lines={['Right: 7×3 = 21 → write 1, carry 2', 'Middle: 6×3 + 7×8 = 18+56 = 74, +carry 2 = 76 → write 6, carry 7', 'Left: 6×8 = 48, +carry 7 = 55', 'Result: 55|6|1 = 5561']}
       result="67 × 83 = 5561 ✓"
     />
 
@@ -1791,12 +1791,19 @@ const L3_05_CONTENT = (
     />
     <ExampleCard
       title="Example 2 — 34²"
-      lines={['D(3) = 9', 'D(34) = 2×3×4 = 24 → write 4, carry 2', 'D(4) = 16 → write 6, carry 1', 'Result: (9+2+1)|4|6 = 1156']}
+      lines={['D(4) = 16 → write 6, carry 1', 'D(34) = 2×3×4 = 24, +carry 1 = 25 → write 5, carry 2', 'D(3) = 9, +carry 2 = 11', 'Result: 11|5|6 = 1156']}
       result="34² = 1156 ✓"
     />
     <ExampleCard
       title="Example 3 — 123²"
-      lines={['D(1) = 1', 'D(12) = 2×1×2 = 4', 'D(123) = 2×1×3 + 2² = 6+4 = 10 → write 0, carry 1', 'D(23) = 2×2×3 = 12 → write 2+carry = 3, carry 1', 'D(3) = 9+1 = 10 → write 0, carry 1', 'Result: (1+1)|4|0|3|0 → 15129 (with carry propagation)']}
+      lines={[
+        'D(3) = 9 → write 9, carry 0',
+        'D(23) = 2×2×3 = 12, +carry 0 = 12 → write 2, carry 1',
+        'D(123) = 2×1×3 + 2² = 6+4 = 10, +carry 1 = 11 → write 1, carry 1',
+        'D(12) = 2×1×2 = 4, +carry 1 = 5 → write 5, carry 0',
+        'D(1) = 1, +carry 0 = 1',
+        'Result: 1|5|1|2|9 = 15129',
+      ]}
       result="123² = 15129 ✓"
     />
 
