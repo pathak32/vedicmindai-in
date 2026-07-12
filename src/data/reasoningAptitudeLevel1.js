@@ -59,7 +59,7 @@ export const RA_LEVEL1_QUESTIONS = [
   { chapter: 'coding-decoding-basic', prompt: 'If CAT is coded as DBU, how is DOG coded?', options: ['EPH', 'EPI', 'FPH'], answer: 'EPH', difficulty: 'medium' },
   { chapter: 'coding-decoding-basic', prompt: 'If A=1, B=2, C=3, what does C-A-T spell as numbers?', options: ['3-1-20', '3-1-19', '3-2-20'], answer: '3-1-20', difficulty: 'medium' },
   { chapter: 'coding-decoding-basic', prompt: 'If BALL is coded as CBMM, how is BELL coded?', options: ['CFMM', 'CFMN', 'CFLM'], answer: 'CFMM', difficulty: 'medium' },
-  { chapter: 'coding-decoding-basic', prompt: 'If SUN is coded as TVO, how is MOON coded?', options: ['NPPO', 'NPPO', 'NPOO'], answer: 'NPPO', difficulty: 'medium' },
+  { chapter: 'coding-decoding-basic', prompt: 'If SUN is coded as TVO, how is MOON coded?', options: ['NPPO', 'MPPO', 'NPOO'], answer: 'NPPO', difficulty: 'medium' },
   { chapter: 'coding-decoding-basic', prompt: 'Each letter shifts back by 1. If DOG becomes CNF, what does CAT become?', options: ['BZS', 'BZR', 'BYS'], answer: 'BZS', difficulty: 'hard' },
   { chapter: 'coding-decoding-basic', prompt: 'If 1=A, 2=B, 3=C... what word does 2-1-20 spell?', options: ['BAT', 'CAT', 'BAG'], answer: 'BAT', difficulty: 'medium' },
   { chapter: 'coding-decoding-basic', prompt: 'If PEN is coded as QFO, how is BOOK coded?', options: ['CPPL', 'CPOL', 'CPPK'], answer: 'CPPL', difficulty: 'hard' },
