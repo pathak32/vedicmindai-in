@@ -923,7 +923,7 @@ function L1_10_CONTENT({ onSwitchTab }) {
         </p>
 
         {/* 2×2 grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 10, marginBottom: 20 }}>
           {checklistItems.map(t => (
             <div key={t} style={{ background: 'rgba(255,255,255,0.1)', borderRadius: 10, padding: 12, fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.9)' }}>
               {t}
@@ -1595,7 +1595,7 @@ function L2_12_CONTENT({ onSwitchTab }) {
         <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: 'white', marginBottom: 6 }}>🏆 Level 2 Assessment</h2>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'rgba(255,255,255,0.8)', marginBottom: 20 }}>Test your Intermediate Vedic Maths mastery</p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 10, marginBottom: 20 }}>
           {[
             '✓ Paravartya Division',
             '✓ 3-Digit Urdhva Multiplication',
@@ -2051,7 +2051,7 @@ function L3_10_CONTENT({ onSwitchTab }) {
       <div style={{ background: 'linear-gradient(135deg, #0A1628, #1E40AF)', borderRadius: 16, padding: 28, marginBottom: 24 }}>
         <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: 'white', marginBottom: 6 }}>🏆 Level 3 Assessment</h2>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'rgba(255,255,255,0.8)', marginBottom: 20 }}>Test your Advanced Vedic Maths mastery</p>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 10, marginBottom: 20 }}>
           {[
             '✓ Urdhva-Tiryagbhyam (general)',
             '✓ Nikhilam for large bases',

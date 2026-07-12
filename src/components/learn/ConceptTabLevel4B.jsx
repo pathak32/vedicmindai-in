@@ -221,7 +221,7 @@ export function L4_08_CONTENT({ onSwitchTab }) {
           The ultimate test of Vedic Mathematics mastery — all 40 lessons
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 10, marginBottom: 20 }}>
           {[
             '✓ All Level 1 Beginner techniques',
             '✓ All Level 2 Intermediate methods',
