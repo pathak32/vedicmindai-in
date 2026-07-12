@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import usePullToRefresh from '@/hooks/usePullToRefresh';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+import LiveClassBanner from '@/components/dashboard/LiveClassBanner';
 import TrialBanner from '@/components/dashboard/TrialBanner';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import ReferralCard from '@/components/ReferralCard';
@@ -635,6 +636,7 @@ function DashboardPage() {
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF', paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
       <DashboardNavbar />
+      <LiveClassBanner />
 
       {/* First-time welcome onboarding modal */}
       {showWelcome && (

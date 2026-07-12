@@ -17,6 +17,7 @@ import AuthPage from '@/pages/AuthPage';
 import OnboardingPage from '@/pages/OnboardingPage';
 import DashboardPage from '@/pages/DashboardPage';
 import ParentDashboardPage from '@/pages/ParentDashboardPage';
+import LiveClassPage from '@/pages/LiveClassPage';
 import LearnPage from '@/pages/LearnPage';
 import PracticePage from '@/pages/PracticePage';
 import ProfilePage from '@/pages/ProfilePage';
@@ -117,6 +118,7 @@ function RouteTransition() {
               <Route path="/onboarding" element={<OnboardingPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/progress-report" element={<ParentDashboardPage />} />
+              <Route path="/live-class/:classId" element={<LiveClassPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/demo" element={<DemoPage />} />
               <Route path="/curriculum" element={<CurriculumPage />} />
