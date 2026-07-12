@@ -1702,7 +1702,7 @@ const L3_02_CONTENT = (
     />
     <ExampleCard
       title="Example 2 — 98 × 97"
-      lines={['Deficiencies: −2, −3', 'Cross: 98 − 3 = 95', 'Product: 2 × 3 = 06 (pad!)']}
+      lines={['Deficiencies: −2, −3', 'Cross: 98 − 3 = 95', 'Product: 2 × 3 = 6', 'Right part needs 2 digits for base 100, so 6 is written as 06']}
       result="98 × 97 = 9506 ✓"
     />
     <ExampleCard
