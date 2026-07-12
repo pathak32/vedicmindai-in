@@ -1783,6 +1783,12 @@ const L3_04_CONTENT = (
     <StepBox number={2} text="Rebuild the number with the new digits and carries" example="76 → 6 is (4), carry 1, so 7+1=8 → 8(4) = 80−4 = 76 ✓" />
     <StepBox number={3} text="Multiply the vinculum form, then convert back" />
 
+    <div style={{ background: '#FEF3C7', borderLeft: '4px solid #F59E0B', borderRadius: '0 8px 8px 0', padding: '14px 16px', marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#92400E', margin: 0, lineHeight: 1.6 }}>
+        ⚠️ Sometimes the number in parentheses — or the digit to its left — goes above 9. For example, 96 in vinculum is written 10(4), and 9(3) × 5 works out to 45(15). That's not a mistake: the rule hasn't changed, it's just been applied to a bigger chunk of the number. Expand it exactly the same way — 10(4) = 100 − 4 = 96, and 45(15) = 450 − 15 = 435.
+      </p>
+    </div>
+
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
       title="Example 1 — Convert 8 to vinculum"
@@ -1803,6 +1809,11 @@ const L3_04_CONTENT = (
       title="Example 4 — 79 × 6"
       lines={['Convert 79 → 8(1)  (9→(1) carry 1, 7+1=8)', '8(1) × 6 = 48(6)', '48(6) = 480 − 6 = 474']}
       result="79 × 6 = 474 ✓"
+    />
+    <ExampleCard
+      title="Example 5 — 87 × 5 (when the part in parentheses goes above 9)"
+      lines={['Convert 87 → 9(3)  (since 7→(3) carry 1, 8+1=9)', '9(3) × 5 = 45(15)', '15 is two digits here — that\'s fine, expand it the same way: 450 − 15 = 435']}
+      result="87 × 5 = 435 ✓"
     />
 
     <div style={{ background: '#F0F4FF', borderRadius: 12, padding: 16, marginTop: 8 }}>

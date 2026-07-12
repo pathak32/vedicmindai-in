@@ -172,7 +172,7 @@ const LESSON_PROBLEMS = {
     { q: 'Vinculum form of 86 is?', options: ['8(4)','9(4)','8(6)','9(6)'], correct: 1, exp: '6→(4) carry 1, 8+1=9 → 9(4) = 90−4=86 ✓' },
     { q: '78 × 3 using vinculum = ?', options: ['224','234','244','254'], correct: 1, exp: '78→8(2). 8(2)×3=24(6)=240−6=234 ✓' },
     { q: '69 × 4 using vinculum = ?', options: ['266','276','286','296'], correct: 1, exp: '69→7(1). 7(1)×4=28(4)=280−4=276 ✓' },
-    { q: '87 × 5 using vinculum = ?', options: ['425','435','445','455'], correct: 1, exp: '87→9(3). 9(3)×5=45(15)=450−15=435 ✓' },
+    { q: '87 × 5 using vinculum = ?', options: ['425','435','445','455'], correct: 1, exp: '87→9(3). 9(3)×5=45(15) — 15 is two digits, that\'s fine: 450−15=435 ✓' },
   ],
   l3_06: [
     { q: '∛13824 = ?', options: ['22','24','26','28'], correct: 1, exp: 'Remove last 3: 13 → 2³=8≤13 → first=2. Last digit 4 → root ends 4. Answer: 24' },
