@@ -457,7 +457,7 @@ const L1_04_CONTENT = (
     />
     <ExampleCard
       title={{ en: 'Example 2: 98 × 97', hi: 'उदाहरण 2: 98 × 97' }}
-      lines={[{ en: 'Deficits: 2, 3', hi: 'कमियाँ: 2, 3' }, { en: 'Cross: 98 − 3 = 95', hi: 'तिरछा: 98 − 3 = 95' }, { en: 'Product: 2 × 3 = 06 (pad zero!)', hi: 'गुणनफल: 2 × 3 = 06 (शून्य लगाएं!)' }]}
+      lines={[{ en: 'Deficits: 2, 3', hi: 'कमियाँ: 2, 3' }, { en: 'Cross: 98 − 3 = 95', hi: 'तिरछा: 98 − 3 = 95' }, { en: 'Product: 2 × 3 = 6', hi: 'गुणनफल: 2 × 3 = 6' }, { en: 'Right part needs 2 digits for base 100, so 6 is written as 06', hi: 'आधार 100 के लिए दायें भाग में 2 अंक चाहिए, इसलिए 6 को 06 लिखा जाता है' }]}
       breakdown={[{ label: { en: 'Left', hi: 'बायां' }, value: '95' }, { label: { en: 'Right', hi: 'दायां' }, value: '06' }]}
       result="98 × 97 = 9506 ✓"
     />
