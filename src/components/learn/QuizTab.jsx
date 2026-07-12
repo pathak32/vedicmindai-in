@@ -441,15 +441,60 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
     ? Array.from({ length: questions.length }, (_, i) => i < Math.round((priorScore / 100) * questions.length))
     : [];
 
-  const [current, setCurrent] = useState(0);
+  // Restore an unfinished attempt (mid-quiz, not yet scored). QuizTab is
+  // unmounted every time the Concept/Practice/Quiz tab switches (LessonViewer
+  // only renders the active tab), which was wiping current/selectedAnswers
+  // even though the quiz was never completed — reported by Mr. Ray as
+  // "leaving Quiz half-done, coming back, quiz not saved". Only used when
+  // there's no completed score for this lesson (that case is handled above).
+  const inProgress = (() => {
+    if (priorScore != null) return null;
+    try {
+      const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+      const saved = p.quizInProgress?.[lesson.id];
+      if (saved && Array.isArray(saved.selectedAnswers) && saved.selectedAnswers.length === questions.length) {
+        return saved;
+      }
+      return null;
+    } catch { return null; }
+  })();
+
+  const [current, setCurrent] = useState(inProgress?.current ?? 0);
   // Selected option index per question (null = unanswered yet). Replaces the
   // old single 'selected'/'revealed' state that only tracked the CURRENT
   // question — that made it impossible to go back and see a previous
   // question's answer, since leaving it wiped that state. Now each question
   // keeps its own answer, so navigating back just reads a different slot.
-  const [selectedAnswers, setSelectedAnswers] = useState(Array(questions.length).fill(null));
+  const [selectedAnswers, setSelectedAnswers] = useState(
+    inProgress?.selectedAnswers ?? Array(questions.length).fill(null)
+  );
   const [done, setDone] = useState(priorScore != null);
   const [isReviewOfPastAttempt] = useState(priorScore != null);
+
+  // Persist in-progress (unfinished, unscored) attempts so switching to
+  // another tab and back restores exactly where the student left off.
+  useEffect(() => {
+    if (done) return; // once scored, the completed-lesson path above takes over
+    try {
+      const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+      if (!p.quizInProgress) p.quizInProgress = {};
+      p.quizInProgress[lesson.id] = { current, selectedAnswers };
+      localStorage.setItem('vedicmind_progress', JSON.stringify(p));
+    } catch { /* silent */ }
+  }, [current, selectedAnswers, done, lesson.id]);
+
+  // Clear the in-progress record once the quiz is completed and scored —
+  // the completed score (lessonScores) takes over as the source of truth.
+  useEffect(() => {
+    if (!done) return;
+    try {
+      const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+      if (p.quizInProgress?.[lesson.id]) {
+        delete p.quizInProgress[lesson.id];
+        localStorage.setItem('vedicmind_progress', JSON.stringify(p));
+      }
+    } catch { /* silent */ }
+  }, [done, lesson.id]);
 
   const q = questions[current];
   const selected = selectedAnswers[current];
