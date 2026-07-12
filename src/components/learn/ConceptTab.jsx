@@ -1777,7 +1777,7 @@ const L3_04_CONTENT = (
 
     <SectionTitle>Vinculum — Complement Representation</SectionTitle>
     <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563', lineHeight: 1.7, marginBottom: 16 }}>
-      A vinculum converts digits greater than 5 into their complement (10 − d), reducing large-digit arithmetic to small-digit arithmetic. We show vinculum digits in parentheses: (d).
+      A vinculum converts digits greater than 5 into their complement (10 − d), reducing large-digit arithmetic to small-digit arithmetic. In traditional Vedic Maths, this is called a <strong>"bar number"</strong> — the digit is written with a bar (line) over it, e.g. an over-lined 4 means −4. Since a bar over a digit is hard to show in an app, we write the same thing in parentheses instead: (4) means exactly the same as a barred 4.
     </p>
     <StepBox number={1} text="For each digit d > 5: replace with (10 − d) and carry +1 to the left" example="Digit 8 → (2) carry 1 | Digit 7 → (3) carry 1" />
     <StepBox number={2} text="Rebuild the number with the new digits and carries" example="76 → 6 is (4), carry 1, so 7+1=8 → 8(4) = 80−4 = 76 ✓" />
