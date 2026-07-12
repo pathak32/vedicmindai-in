@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 
@@ -345,17 +345,19 @@ function OptionBtn({ label, idx, selected, correct, revealed, onClick }) {
 
 // ─── MCQ Problem Card ─────────────────────────────────────────────────────────
 
-function MCQCard({ problem, idx, glass, onCorrect }) {
+function MCQCard({ problem, idx, glass, savedSelected, onSelect }) {
   const { language } = useLanguage();
-  const [selected, setSelected] = useState(null);
-  const [revealed, setRevealed] = useState(false);
+  // Selected/revealed now come from the parent (PracticeTab), which persists
+  // them, instead of living only in this component's own state — that local
+  // state was wiped every time the Concept/Practice/Quiz tab switched away
+  // from Practice and back (LessonViewer only renders the active tab),
+  // reported by Mr. Ray as "Practice not saved".
+  const selected = savedSelected ?? null;
+  const revealed = selected !== null;
 
   const handleSelect = (i) => {
     if (revealed) return;
-    setSelected(i);
-    setRevealed(true);
-    // always call onCorrect (which handles both XP and answered tracking)
-    onCorrect(i === problem.correct);
+    onSelect(idx, i);
   };
 
   return (
@@ -489,23 +491,62 @@ function PracticeCompleteCard({ xpEarned, onTakeQuiz }) {
 // ─── Main Export ──────────────────────────────────────────────────────────────
 
 export default function PracticeTab({ lesson, glass, onPracticeComplete }) {
-  const [xpGiven, setXpGiven] = useState(new Set());
-  const [answeredCount, setAnsweredCount] = useState(0);
-
   const problems = getProblems(lesson.id);
   const totalProblems = problems ? problems.length : 3;
+
+  // Restore any in-progress (or already-finished) MCQ answers for this
+  // lesson so switching tabs and coming back doesn't reset Practice —
+  // matches the fix already applied to QuizTab for the same root cause.
+  const restored = (() => {
+    try {
+      const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+      const saved = p.practiceInProgress?.[lesson.id];
+      if (Array.isArray(saved) && saved.length === totalProblems) return saved;
+      return null;
+    } catch { return null; }
+  })();
+
+  // answers[i] = selected option index for question i, or null if unanswered
+  const [answers, setAnswers] = useState(restored ?? Array(totalProblems).fill(null));
+
+  // xpGiven is derived from which restored answers were already correct, so
+  // XP earned on a prior visit isn't re-awarded — it's only ever added to
+  // localStorage totalXP inside handleAnswer, which only fires on a fresh
+  // click (onSelect), never during restore.
+  const [xpGiven, setXpGiven] = useState(() => {
+    const initial = new Set();
+    if (problems) {
+      answers.forEach((sel, i) => { if (sel !== null && sel === problems[i]?.correct) initial.add(i); });
+    }
+    return initial;
+  });
+
+  const answeredCount = answers.filter(a => a !== null).length;
   const xpEarned = xpGiven.size * 10;
   const allAnswered = answeredCount >= totalProblems;
 
-  const handleAnswer = (idx, wasCorrect) => {
-    // track answered (each card only fires once due to revealed guard)
-    setAnsweredCount(prev => {
-      const next = prev + 1;
-      if (next >= totalProblems && onPracticeComplete) {
-        setTimeout(onPracticeComplete, 400);
-      }
+  // Persist on every change so leaving Practice mid-way and coming back —
+  // or a page refresh — restores exactly where the student left off.
+  useEffect(() => {
+    try {
+      const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+      if (!p.practiceInProgress) p.practiceInProgress = {};
+      p.practiceInProgress[lesson.id] = answers;
+      localStorage.setItem('vedicmind_progress', JSON.stringify(p));
+    } catch { /* silent */ }
+  }, [answers, lesson.id]);
+
+  const handleAnswer = (idx, selectedIdx) => {
+    const wasCorrect = problems && selectedIdx === problems[idx].correct;
+    setAnswers(prev => {
+      const next = [...prev];
+      next[idx] = selectedIdx;
       return next;
     });
+    const nextAnsweredCount = answers.filter(a => a !== null).length + (answers[idx] === null ? 1 : 0);
+    if (nextAnsweredCount >= totalProblems && onPracticeComplete) {
+      setTimeout(onPracticeComplete, 400);
+    }
     // award XP only for correct answers, once per question
     if (wasCorrect && !xpGiven.has(idx)) {
       setXpGiven(prev => new Set([...prev, idx]));
@@ -528,7 +569,8 @@ export default function PracticeTab({ lesson, glass, onPracticeComplete }) {
             problem={p}
             idx={i}
             glass={glass}
-            onCorrect={(wasCorrect) => handleAnswer(i, wasCorrect)}
+            savedSelected={answers[i]}
+            onSelect={handleAnswer}
           />
         ))}
         {allAnswered && (
