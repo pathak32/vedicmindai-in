@@ -1736,9 +1736,12 @@ const L3_03_CONTENT = (
     <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563', lineHeight: 1.7, marginBottom: 16 }}>
       Scale one or both numbers to a round base (like 50 or 200), apply Nikhilam, then scale back.
     </p>
-    <StepBox number={1} text="Choose a convenient base near your numbers" example="For numbers near 45–50: use base 50" />
-    <StepBox number={2} text="Find deficiencies from that base" example="48 from 50: deficiency = −2" />
-    <StepBox number={3} text="Cross subtract and multiply by the base" example="Cross = 43, then 43 × 50 = 2150" />
+    <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#1E40AF', fontWeight: 600, marginBottom: 12 }}>
+      Example used in the steps below: 45 × 48
+    </p>
+    <StepBox number={1} text="Choose a convenient base near your numbers" example="45 and 48 are both close to 50 → use base 50" />
+    <StepBox number={2} text="Find deficiencies from that base" example="45 from 50: deficiency = −5. 48 from 50: deficiency = −2" />
+    <StepBox number={3} text="Cross subtract and multiply by the base" example="Cross = 45 − 2 = 43, then 43 × 50 = 2150" />
     <StepBox number={4} text="Add deficiency product" example="5 × 2 = 10 → 2150 + 10 = 2160" />
 
     <SectionTitle>Worked Examples</SectionTitle>
