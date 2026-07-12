@@ -263,14 +263,14 @@ const LESSON_QUESTIONS = {
     { q: '97 × 96 using Nikhilam = ?', options: ['9212','9312','9412','9512'], correct: 1 },
   ],
   l2_12: [
-    { q: 'To pass the Level 2 assessment, you need at least?', options: ['40%','50%','60%','80%'], correct: 2 },
+    { q: '1/3 + 1/4 using the Vedic method = ?', options: ['5/12','7/12','1/7','7/7'], correct: 1 },
     { q: 'Paravartya division works best for divisors?', options: ['2–9','11–19','50–99','100+'], correct: 1 },
     { q: 'For ∛x, you split x into groups of ___ digits from the right', options: ['1','2','3','4'], correct: 2 },
     { q: 'Multiplying by 125 using Anurupyena: divide by ___, then append 000', options: ['4','5','8','10'], correct: 2 },
     { q: 'Verify 47 × 32 = 1504 using digit sums', options: ['Correct ✓','Wrong ✗'], correct: 0 },
   ],
   l1_10: [
-    { q: { en: 'To pass the Level 1 assessment, you need at least?', hi: 'Level 1 मूल्यांकन पास करने के लिए कम से कम कितना चाहिए?' }, options: ['40%','50%','60%','80%'], correct: 2 },
+    { q: { en: 'Calculate 98 × 97 using Nikhilam (base 100)', hi: 'निखिलम् (आधार 100) से 98 × 97 निकालें' }, options: ['9406','9506','9606','9706'], correct: 1 },
     { q: { en: 'Which sutra means "By one more than the previous one"?', hi: 'कौन सा सूत्र "पिछले से एक अधिक" का अर्थ रखता है?' }, options: ['Nikhilam','Ekadhikena Purvena','Urdhva-Tiryagbhyam','Anurupyena'], correct: 1 },
     { q: { en: 'What is 85²?', hi: '85² क्या है?' }, options: ['7025','7125','7225','7325'], correct: 2 },
     { q: { en: 'Calculate 8 × 9 using Nikhilam', hi: 'निखिलम् से 8 × 9 निकालें' }, options: ['70','72','74','76'], correct: 1 },

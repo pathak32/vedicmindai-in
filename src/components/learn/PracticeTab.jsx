@@ -267,6 +267,35 @@ const LESSON_PROBLEMS = {
   ],
 };
 
+// Level assessment pages (l1_10, l2_12, l3_10, l4_08) had no entries here at
+// all, which silently triggered the broken "Practice Problem 1/2/3, answer:
+// null" fallback below — a text box that could never actually be checked.
+// Adding real MCQ content, pulling representative problems across each
+// level's sutras, distinct from that level's Quiz questions.
+LESSON_PROBLEMS.l1_10 = [
+  { q: { en: 'Calculate 75² using Ekadhikena Purvena', hi: 'एकाधिकेन पूर्वेण से 75² निकालें' }, options: ['5525','5625','5725','5825'], correct: 1, exp: { en: '7×8=56, append 25 → 5625', hi: '7×8=56, 25 जोड़ें → 5625' } },
+  { q: { en: 'Calculate 23 × 32 using Urdhva-Tiryagbhyam', hi: 'ऊर्ध्व-तिर्यग्भ्याम् से 23 × 32 निकालें' }, options: ['726','736','746','756'], correct: 1, exp: { en: 'Units: 3×2=6, Tens: 2×2+3×3=13→3 carry 1, Hundreds: 2×3+1=7 → 736', hi: 'इकाई: 3×2=6, दहाई: 2×2+3×3=13→3 (1 आगे), सैंकड़ा: 2×3+1=7 → 736' } },
+  { q: { en: 'Calculate 346 × 11 using the ×11 rule', hi: '×11 नियम से 346 × 11 निकालें' }, options: ['3796','3806','3816','3826'], correct: 1, exp: { en: 'First 3, 3+4=7, 4+6=10→0 carry 1 (7→8), Last 6 → 3806', hi: 'पहला 3, 3+4=7, 4+6=10→0 (1 आगे, 7→8), अंतिम 6 → 3806' } },
+];
+
+LESSON_PROBLEMS.l2_12 = [
+  { q: '998 × 997 using Nikhilam (base 1000) = ?', options: ['994006','995006','996006','997006'], correct: 1, exp: 'Deficits 2,3 → cross 998-3=995, product 2×3=6→006 → 995006' },
+  { q: '34² using the Duplex method = ?', options: ['1146','1156','1166','1176'], correct: 1, exp: 'D(3)=9, D(34)=24, D(4)=16 → carried correctly gives 1156' },
+  { q: '2/5 + 3/7 using the Vedic method = ?', options: ['5/12','29/35','5/35','1/12'], correct: 1, exp: 'Numerator: 2×7+5×3=29, Denominator: 5×7=35 → 29/35' },
+];
+
+LESSON_PROBLEMS.l3_10 = [
+  { q: '97 × 94 using Nikhilam (base 100) = ?', options: ['9018','9118','9218','9318'], correct: 1, exp: 'Deficits 3,6 → cross 97-6=91, product 3×6=18 → 9118' },
+  { q: '48 × 46 using Anurupyena (base 50) = ?', options: ['2108','2208','2308','2408'], correct: 1, exp: 'Cross 44×50=2200, product 2×4=08 → 2208' },
+  { q: '1234 ÷ 9 using Straight Division = ?', options: ['Q:136 R:10','Q:137 R:1','Q:138 R:2','Q:135 R:9'], correct: 1, exp: 'Running sum 1,3,6,10→carry: Q=137, R=1' },
+];
+
+LESSON_PROBLEMS.l4_08 = [
+  { q: '23³ using the Vedic cubing shortcut = ?', options: ['11067','12167','13067','12267'], correct: 1, exp: '23³ = 12167, verified by direct computation' },
+  { q: '√7 to 3 decimal places ≈ ?', options: ['2.536','2.646','2.746','2.846'], correct: 1, exp: '√7 ≈ 2.646' },
+  { q: 'Factors of 2x² + 7x + 6 = ?', options: ['(2x+3)(x+2)','(2x+2)(x+3)','(x+2)(2x+1)','(2x+6)(x+1)'], correct: 0, exp: 'Expand (2x+3)(x+2) = 2x²+4x+3x+6 = 2x²+7x+6 ✓' },
+];
+
 // Default fallback for lessons without custom problems
 function getProblems(lessonId) {
   return LESSON_PROBLEMS[lessonId] || null;
