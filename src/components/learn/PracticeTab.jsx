@@ -208,6 +208,8 @@ const LESSON_PROBLEMS = {
     { q: '43² using Duplex = ?', options: ['1829','1839','1849','1859'], correct: 2, exp: 'D(4)=16→write 6 carry 1. D(43)=2×4×3=24→write 4 carry 2. D(3)=9. (1+2)|4|9 with carry adj=1849 ✓' },
     { q: 'D(34) (Duplex of two digits) = ?', options: ['12','18','24','7'], correct: 2, exp: 'D(ab)=2×a×b = 2×3×4 = 24' },
     { q: '31² = ?', options: ['951','961','971','981'], correct: 1, exp: 'D(3)=9. D(31)=2×3×1=6. D(1)=1. 9|6|1=961 ✓' },
+    { q: '212² using Duplex (3-digit) = ?', options: ['44844','44944','45044','44644'], correct: 1, exp: 'D(2)=4. D(12)=2×1×2=4. D(212)=2×2×2+1²=9. D(21)=2×2×1=4. D(2)=4. 4|4|9|4|4=44944 ✓' },
+    { q: '312² using Duplex (3-digit) = ?', options: ['97244','97344','97444','97144'], correct: 1, exp: 'D(2)=4. D(12)=2×1×2=4. D(312)=2×3×2+1²=13→write 3 carry 1. D(31)=2×3×1=6+1=7. D(3)=9. 9|7|3|4|4=97344 ✓' },
   ],
   l4_01: [
     { q: '11³ = ?', options: ['1221','1311','1331','1441'], correct: 2, exp: 'a=1,b=1: 1|3|3|1 — no carries. Answer: 1331' },
