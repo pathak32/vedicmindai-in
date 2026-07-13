@@ -1208,7 +1208,7 @@ const L2_05_CONTENT = (
           ].map(([num, root], i) => (
             <tr key={num} style={{ borderTop: '1px solid rgba(30,64,175,0.08)', background: i % 2 ? 'rgba(30,64,175,0.02)' : 'white' }}>
               <td style={{ padding: '10px 12px', fontFamily: 'var(--font-mono)', fontWeight: 700, color: '#1E40AF' }}>{num}</td>
-              <td style={{ padding: '10px 12px', color: '#0A1628' }}>{root}</td>
+              <td style={{ padding: '10px 12px', fontFamily: 'var(--font-mono)', color: '#0A1628' }}>{root}</td>
             </tr>
           ))}
         </tbody>
@@ -1265,7 +1265,7 @@ const L2_06_CONTENT = (
           ].map(([num, root], i) => (
             <tr key={num} style={{ borderTop: '1px solid rgba(30,64,175,0.08)', background: i % 2 ? 'rgba(30,64,175,0.02)' : 'white' }}>
               <td style={{ padding: '10px 12px', fontFamily: 'var(--font-mono)', fontWeight: 700, color: '#1E40AF' }}>{num}</td>
-              <td style={{ padding: '10px 12px', color: '#0A1628' }}>{root}</td>
+              <td style={{ padding: '10px 12px', fontFamily: 'var(--font-mono)', color: '#0A1628' }}>{root}</td>
             </tr>
           ))}
         </tbody>
@@ -1902,7 +1902,7 @@ const L3_06_CONTENT = (
           {[['1','1'],['2','8'],['3','7'],['4','4'],['5','5'],['6','6'],['7','3'],['8','2'],['9','9'],['0','0']].map(([n,r],i)=>(
             <tr key={n} style={{ borderTop: '1px solid rgba(30,64,175,0.08)', background: i%2?'rgba(30,64,175,0.02)':'white' }}>
               <td style={{ padding:'10px 12px', fontFamily:'var(--font-mono)', fontWeight:700, color:'#1E40AF' }}>{n}</td>
-              <td style={{ padding:'10px 12px', color:'#0A1628' }}>{r}</td>
+              <td style={{ padding:'10px 12px', fontFamily:'var(--font-mono)', color:'#0A1628' }}>{r}</td>
             </tr>
           ))}
         </tbody>
@@ -1946,17 +1946,32 @@ const L3_07_CONTENT = (
     </p>
     <StepBox number={1} text="Bring down the first digit of the dividend as the first quotient digit" />
     <StepBox number={2} text="Add it to the next digit to get the next quotient digit" example="Repeat: running sum = previous quotient digit + next dividend digit" />
-    <StepBox number={3} text="The last sum is the remainder (mod 9 if ≥ 9)" />
+    <StepBox number={3} text="The last sum is the remainder (mod 9 if ≥ 9) — carry the extra 1 back to the previous quotient digit" example="If that digit was already 9, it becomes 10 — write 0 and carry 1 again, one digit further back" />
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
       title="Example 1 — 1234 ÷ 9"
-      lines={['Bring down 1 → Q=1', '1+2=3 → Q=3', '3+3=6 → Q=6', '6+4=10 → Q digit = 10 (adjust: Q adds 1 extra, R=1)', 'Q=137, R=1']}
+      lines={[
+        'Bring down 1 → Q=1',
+        '1+2=3',
+        '3+3=6 → write 6 (for now)',
+        '6+4=10 → this last sum is the remainder step: since it\'s ≥9, R = 10−9 = 1, and carry 1 back to the last quotient digit',
+        'Carry lands on that last digit: 6+1=7',
+        'Final quotient digits: 1, 3, 7',
+      ]}
       result="1234 ÷ 9 = Q:137 R:1 ✓ (9×137+1=1234)"
     />
     <ExampleCard
       title="Example 2 — 2345 ÷ 9"
-      lines={['Bring down 2 → Q=2', '2+3=5', '5+4=9 → write 9', '9+5=14 → adjust: +1 to quotient, R=5', 'Q=260, R=5']}
+      lines={[
+        'Bring down 2 → Q=2',
+        '2+3=5',
+        '5+4=9 → write 9 (for now)',
+        '9+5=14 → this last sum is the remainder step: since it\'s ≥9, R = 14−9 = 5, and carry 1 back to the last quotient digit',
+        'Carry lands on that last digit: 9+1=10 — that\'s two digits, so write 0 and carry 1 again, one digit further back',
+        'Second carry lands on the digit before it: 5+1=6',
+        'Final quotient digits: 2, 6, 0',
+      ]}
       result="2345 ÷ 9 = Q:260 R:5 ✓ (9×260+5=2345)"
     />
     <ExampleCard
