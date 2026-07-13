@@ -954,8 +954,7 @@ function L1_10_CONTENT({ onSwitchTab }) {
       <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 14 }}>
         {hi ? 'त्वरित पुनरावृत्ति' : 'Quick Revision'}
       </h3>
-      <style>{`@media(max-width:640px){.rev-row{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;}}`}</style>
-      <div className="rev-row" style={{ display: 'flex', gap: 10, marginBottom: 4 }}>
+      <div className="rev-row" style={{ display: 'flex', gap: 10, marginBottom: 4, overflowX: 'auto', WebkitOverflowScrolling: 'touch', paddingBottom: 4 }}>
         {revisionItems.map(b => (
           <div key={b.title} style={{
             background: '#F0F4FF', borderRadius: 12, padding: 14, textAlign: 'center',
@@ -988,17 +987,17 @@ const L2_01_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 121 ÷ 11"
+      title="Example 1: 121 ÷ 11"
       lines={['Divisor 11: transposed digit = −1', 'Dividend: 12 | 1', 'Bring down 1 → Q digit = 1', '1 × (−1) = −1 → 2 + (−1) = 1 → next Q digit = 1', 'Remainder: 1 × (−1) = −1 → 1 + (−1) = 0']}
       result="121 ÷ 11 = 11 ✓"
     />
     <ExampleCard
-      title="Example 2 — 234 ÷ 12"
+      title="Example 2: 234 ÷ 12"
       lines={['Divisor 12: transposed digit = −2', 'Bring down 2 → Q digit = 1', '1 × (−2) = −2 → 3 + (−2) = 1 → next digit... ', 'Net result: 12 × 19 = 228, remainder = 234 − 228 = 6']}
       result="234 ÷ 12 = 19 remainder 6 ✓"
     />
     <ExampleCard
-      title="Example 3 — 156 ÷ 13"
+      title="Example 3: 156 ÷ 13"
       lines={['Divisor 13: transposed digit = −3', '13 × 12 = 156 → no remainder']}
       result="156 ÷ 13 = 12 ✓"
     />
@@ -1039,17 +1038,17 @@ const L2_02_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 112 × 111"
+      title="Example 1: 112 × 111"
       lines={['Step 1: 2×1 = 2', 'Step 2: 1×1 + 2×1 = 3', 'Step 3: 1×1 + 1×1 + 2×1 = 4', 'Step 4: 1×1 + 1×1 = 2', 'Step 5: 1×1 = 1']}
       result="112 × 111 = 12432 ✓"
     />
     <ExampleCard
-      title="Example 2 — 123 × 321"
+      title="Example 2: 123 × 321"
       lines={['Step 1: 3×1 = 3', 'Step 2: 2×1 + 3×2 = 8', 'Step 3: 1×1 + 2×2 + 3×3 = 14 → write 4, carry 1', 'Step 4: 1×2 + 2×3 = 8 + carry 1 = 9', 'Step 5: 1×3 = 3']}
       result="123 × 321 = 39483 ✓"
     />
     <ExampleCard
-      title="Example 3 — 204 × 103"
+      title="Example 3: 204 × 103"
       lines={['Step 1: 4×3 = 12 → write 2, carry 1', 'Step 2: 0×3 + 4×0 = 0 + carry 1 = 1', 'Step 3: 2×3 + 0×0 + 4×1 = 10 → write 0, carry 1', 'Step 4: 2×0 + 0×1 = 0 + carry 1 = 1', 'Step 5: 2×1 = 2']}
       result="204 × 103 = 21012 ✓"
     />
@@ -1076,17 +1075,17 @@ const L2_03_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 47² (near 50)"
+      title="Example 1: 47² (near 50)"
       lines={['d = 47 − 50 = −3', 'First part: 25 + (−3) = 22', 'Second part: (−3)² = 9 → 09']}
       result="47² = 2209 ✓"
     />
     <ExampleCard
-      title="Example 2 — 53² (near 50)"
+      title="Example 2: 53² (near 50)"
       lines={['d = 53 − 50 = 3', 'First part: 25 + 3 = 28', 'Second part: 3² = 9 → 09']}
       result="53² = 2809 ✓"
     />
     <ExampleCard
-      title="Example 3 — 38² (duplex method)"
+      title="Example 3: 38² (duplex method)"
       lines={['3² | 2×3×8 | 8²', '9 | 48 | 64', '64 → write 4, carry 6', '48 + 6 = 54 → write 4, carry 5', '9 + 5 = 14']}
       result="38² = 1444 ✓"
     />
@@ -1137,17 +1136,17 @@ const L2_04_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 12³"
+      title="Example 1: 12³"
       lines={['a=1, b=2', 'Row: 1 | 3×1×2=6 | 3×1×4=12 | 8', '8 → 8', '12 → write 2, carry 1', '6 + 1 = 7', '1 stays']}
       result="12³ = 1728 ✓"
     />
     <ExampleCard
-      title="Example 2 — 23³"
+      title="Example 2: 23³"
       lines={['a=2, b=3', 'Row: 8 | 3×4×3=36 | 3×2×9=54 | 27', '27 → write 7, carry 2', '54 + 2 = 56 → write 6, carry 5', '36 + 5 = 41 → write 1, carry 4', '8 + 4 = 12']}
       result="23³ = 12167 ✓"
     />
     <ExampleCard
-      title="Example 3 — 11³"
+      title="Example 3: 11³"
       lines={['a=1, b=1', 'Row: 1 | 3 | 3 | 1', 'No carries needed']}
       result="11³ = 1331 ✓"
     />
@@ -1177,17 +1176,17 @@ const L2_05_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — √1764"
+      title="Example 1: √1764"
       lines={['Pairs: 17 | 64', 'First digit: 4 (4²=16 ≤ 17)', 'Last digit of 1764 = 4 → answer ends in 2 or 8', 'Test 42: 42² = 1764 ✓']}
       result="√1764 = 42 ✓"
     />
     <ExampleCard
-      title="Example 2 — √5625"
+      title="Example 2: √5625"
       lines={['Pairs: 56 | 25', 'First digit: 7 (7²=49 ≤ 56, 8²=64 > 56)', 'Last digit 5 → answer ends in 5', 'Answer: 75 → 75² = 5625 ✓']}
       result="√5625 = 75 ✓"
     />
     <ExampleCard
-      title="Example 3 — √9801"
+      title="Example 3: √9801"
       lines={['Pairs: 98 | 01', 'First digit: 9 (9²=81 ≤ 98)', 'Last digit 1 → ends in 1 or 9', 'Test 99: 99² = 9801 ✓']}
       result="√9801 = 99 ✓"
     />
@@ -1234,17 +1233,17 @@ const L2_06_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — ∛17576"
+      title="Example 1: ∛17576"
       lines={['Groups: 17 | 576', 'First digit: 2 (2³=8 ≤ 17 < 27=3³)', 'Last digit of 17576 = 6 → cube root ends in 6', 'Answer: 26 → 26³ = 17576 ✓']}
       result="∛17576 = 26 ✓"
     />
     <ExampleCard
-      title="Example 2 — ∛74088"
+      title="Example 2: ∛74088"
       lines={['Groups: 74 | 088', 'First digit: 4 (4³=64 ≤ 74 < 125=5³)', 'Last digit 8 → cube root ends in 2', 'Answer: 42 → 42³ = 74088 ✓']}
       result="∛74088 = 42 ✓"
     />
     <ExampleCard
-      title="Example 3 — ∛19683"
+      title="Example 3: ∛19683"
       lines={['Groups: 19 | 683', 'First digit: 2 (2³=8 ≤ 19 < 27=3³)', 'Last digit 3 → cube root ends in 7', 'Answer: 27 → 27³ = 19683 ✓']}
       result="∛19683 = 27 ✓"
     />
@@ -1303,17 +1302,17 @@ const L2_07_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — Verify 236 × 47 = 11092"
+      title="Example 1: Verify 236 × 47 = 11092"
       lines={['DS(236) = 2+3+6 = 11 → 2', 'DS(47) = 4+7 = 11 → 2', '2 × 2 = 4', 'DS(11092) = 1+1+0+9+2 = 13 → 4 ✓']}
       result="Answer is likely correct ✓"
     />
     <ExampleCard
-      title="Example 2 — Spot error: 158 × 43 = 6784 (wrong!)"
+      title="Example 2: Spot error: 158 × 43 = 6784 (wrong!)"
       lines={['DS(158) = 14 → 5', 'DS(43) = 7', '5 × 7 = 35 → 8', 'DS(6784) = 25 → 7', '8 ≠ 7 → Answer is WRONG! Correct: 158 × 43 = 6794']}
       result="Error detected! ✗"
     />
     <ExampleCard
-      title="Example 3 — Verify 4567 + 3891 = 8458"
+      title="Example 3: Verify 4567 + 3891 = 8458"
       lines={['DS(4567) = 22 → 4', 'DS(3891) = 21 → 3', '4 + 3 = 7', 'DS(8458) = 25 → 7 ✓']}
       result="Addition verified ✓"
     />
@@ -1360,9 +1359,9 @@ const L2_08_CONTENT = (
     <StepBox number={2} text="Append 000" example="56 × 125 → 56÷8=7 → 7000" />
 
     <SectionTitle>Worked Examples</SectionTitle>
-    <ExampleCard title="Example 1 — 84 × 5" lines={['84 ÷ 2 = 42', 'Append 0 → 420']} result="84 × 5 = 420 ✓" />
-    <ExampleCard title="Example 2 — 68 × 25" lines={['68 ÷ 4 = 17', 'Append 00 → 1700']} result="68 × 25 = 1700 ✓" />
-    <ExampleCard title="Example 3 — 96 × 125" lines={['96 ÷ 8 = 12', 'Append 000 → 12000']} result="96 × 125 = 12000 ✓" />
+    <ExampleCard title="Example 1: 84 × 5" lines={['84 ÷ 2 = 42', 'Append 0 → 420']} result="84 × 5 = 420 ✓" />
+    <ExampleCard title="Example 2: 68 × 25" lines={['68 ÷ 4 = 17', 'Append 00 → 1700']} result="68 × 25 = 1700 ✓" />
+    <ExampleCard title="Example 3: 96 × 125" lines={['96 ÷ 8 = 12', 'Append 000 → 12000']} result="96 × 125 = 12000 ✓" />
 
     <SectionTitle>Speed Reference Table</SectionTitle>
     <div style={{ background: 'white', border: '1px solid rgba(30,64,175,0.12)', borderRadius: 12, padding: 16, overflowX: 'auto' }}>
@@ -1413,7 +1412,7 @@ const L2_09_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 156 ÷ 13 (clean, no fix-up needed)"
+      title="Example 1: 156 ÷ 13 (clean, no fix-up needed)"
       lines={[
         'Flag = −3 (divisor 13 = 10+3)',
         'Q1 = first digit = 1   ← this is the TENS digit of the answer',
@@ -1424,7 +1423,7 @@ const L2_09_CONTENT = (
       result="156 ÷ 13 = 12, remainder 0 ✓"
     />
     <ExampleCard
-      title="Example 2 — 247 ÷ 13 (needs the fix-up step)"
+      title="Example 2: 247 ÷ 13 (needs the fix-up step)"
       lines={[
         'Flag = −3 (divisor 13 = 10+3)',
         'Q1 = first digit = 2',
@@ -1438,7 +1437,7 @@ const L2_09_CONTENT = (
       result="247 ÷ 13 = 19, remainder 0 ✓"
     />
     <ExampleCard
-      title="Example 3 — 391 ÷ 17 (needs the fix-up step)"
+      title="Example 3: 391 ÷ 17 (needs the fix-up step)"
       lines={[
         'Flag = −7 (divisor 17 = 10+7)',
         'Q1 = first digit = 3',
@@ -1491,17 +1490,17 @@ const L2_10_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 1/3 + 1/4"
+      title="Example 1: 1/3 + 1/4"
       lines={['Numerator: 1×4 + 3×1 = 7', 'Denominator: 3×4 = 12']}
       result="1/3 + 1/4 = 7/12 ✓"
     />
     <ExampleCard
-      title="Example 2 — 2/5 + 3/7"
+      title="Example 2: 2/5 + 3/7"
       lines={['Numerator: 2×7 + 5×3 = 14+15 = 29', 'Denominator: 5×7 = 35']}
       result="2/5 + 3/7 = 29/35 ✓"
     />
     <ExampleCard
-      title="Example 3 — 3/4 − 1/6"
+      title="Example 3: 3/4 − 1/6"
       lines={['Numerator: 3×6 − 4×1 = 18−4 = 14', 'Denominator: 4×6 = 24', 'Simplify: 14/24 = 7/12']}
       result="3/4 − 1/6 = 7/12 ✓"
     />
@@ -1563,17 +1562,17 @@ const L2_11_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 15 August 1947"
+      title="Example 1: 15 August 1947"
       lines={['d=15, m=3 (Aug), y=47, ⌊47÷4⌋=11', 'C (1900s) = 0', 'Total: 15+3+47+11+0 = 76', '76 − 1 = 75', '75 mod 7 = 5 = Friday']}
       result="15 Aug 1947 = Friday ✓"
     />
     <ExampleCard
-      title="Example 2 — 26 January 2025"
+      title="Example 2: 26 January 2025"
       lines={['d=26, m=1 (Jan), y=25, ⌊25÷4⌋=6', 'C (2000s) = 6', 'Total: 26+1+25+6+6 = 64', '64 − 1 = 63', '63 mod 7 = 0 (zero) = Sunday']}
       result="26 Jan 2025 = Sunday ✓"
     />
     <ExampleCard
-      title="Example 3 — 2 October 1869"
+      title="Example 3: 2 October 1869"
       lines={['d=2, m=1 (Oct), y=69, ⌊69÷4⌋=17', 'C (1800s) = 2', 'Total: 2+1+69+17+2 = 91', '91 − 1 = 90', '90 mod 7 = 6 = Saturday']}
       result="2 Oct 1869 = Saturday ✓"
     />
@@ -1659,17 +1658,17 @@ const L3_01_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 23 × 41"
+      title="Example 1: 23 × 41"
       lines={['Right: 3×1 = 3 → write 3, carry 0', 'Middle: 2×1 + 3×4 = 2+12 = 14, +carry 0 = 14 → write 4, carry 1', 'Left: 2×4 = 8, +carry 1 = 9', 'Result: 9|4|3 = 943']}
       result="23 × 41 = 943 ✓"
     />
     <ExampleCard
-      title="Example 2 — 34 × 52"
+      title="Example 2: 34 × 52"
       lines={['Right: 4×2 = 8 → write 8, carry 0', 'Middle: 3×2 + 4×5 = 6+20 = 26, +carry 0 = 26 → write 6, carry 2', 'Left: 3×5 = 15, +carry 2 = 17', 'Result: 17|6|8 = 1768']}
       result="34 × 52 = 1768 ✓"
     />
     <ExampleCard
-      title="Example 3 — 67 × 83"
+      title="Example 3: 67 × 83"
       lines={['Right: 7×3 = 21 → write 1, carry 2', 'Middle: 6×3 + 7×8 = 18+56 = 74, +carry 2 = 76 → write 6, carry 7', 'Left: 6×8 = 48, +carry 7 = 55', 'Result: 55|6|1 = 5561']}
       result="67 × 83 = 5561 ✓"
     />
@@ -1696,24 +1695,24 @@ const L3_02_CONTENT = (
 
     <SectionTitle>Worked Examples — Base 100</SectionTitle>
     <ExampleCard
-      title="Example 1 — 97 × 96"
+      title="Example 1: 97 × 96"
       lines={['Deficiencies: −3, −4', 'Cross: 97 − 4 = 93', 'Product: 3 × 4 = 12']}
       result="97 × 96 = 9312 ✓"
     />
     <ExampleCard
-      title="Example 2 — 98 × 97"
+      title="Example 2: 98 × 97"
       lines={['Deficiencies: −2, −3', 'Cross: 98 − 3 = 95', 'Product: 2 × 3 = 6', 'Right part needs 2 digits for base 100, so 6 is written as 06']}
       result="98 × 97 = 9506 ✓"
     />
     <ExampleCard
-      title="Example 3 — 88 × 92"
+      title="Example 3: 88 × 92"
       lines={['Deficiencies: −12, −8', 'Cross: 88 − 8 = 80', 'Product: 12 × 8 = 96']}
       result="88 × 92 = 8096 ✓"
     />
 
     <SectionTitle>Base 1000 Example</SectionTitle>
     <ExampleCard
-      title="Example 4 — 997 × 994"
+      title="Example 4: 997 × 994"
       lines={['Deficiencies: −3, −6', 'Cross: 997 − 6 = 991', 'Product: 3 × 6 = 018 (3 digits for base 1000)']}
       result="997 × 994 = 991018 ✓"
     />
@@ -1746,17 +1745,17 @@ const L3_03_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 48 × 46 (base 50)"
+      title="Example 1: 48 × 46 (base 50)"
       lines={['Deficiencies: −2, −4', 'Cross: 48 − 4 = 44 → 44 × 50 = 2200', 'Product: 2 × 4 = 08', 'Result: 2200 + 08 = 2208']}
       result="48 × 46 = 2208 ✓"
     />
     <ExampleCard
-      title="Example 2 — 45 × 48 (base 50)"
+      title="Example 2: 45 × 48 (base 50)"
       lines={['Deficiencies: −5, −2', 'Cross: 45 − 2 = 43 → 43 × 50 = 2150', 'Product: 5 × 2 = 10', 'Result: 2150 + 10 = 2160']}
       result="45 × 48 = 2160 ✓"
     />
     <ExampleCard
-      title="Example 3 — 196 × 198 (base 200)"
+      title="Example 3: 196 × 198 (base 200)"
       lines={['Deficiencies: −4, −2', 'Cross: 196 − 2 = 194 → 194 × 200 = 38800', 'Product: 4 × 2 = 08', 'Result: 38800 + 08 = 38808']}
       result="196 × 198 = 38808 ✓"
     />
@@ -1791,27 +1790,27 @@ const L3_04_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — Convert 8 to vinculum"
+      title="Example 1: Convert 8 to vinculum"
       lines={['8 > 5 → replace with (10−8)=(2), carry 1', 'So 18 → 2(2) = 20 − 2 = 18 ✓']}
       result="8 in vinculum = (2) with carry 1"
     />
     <ExampleCard
-      title="Example 2 — Convert 76 to vinculum"
+      title="Example 2: Convert 76 to vinculum"
       lines={['Units 6 → (4), carry 1', 'Tens 7 + carry 1 = 8', 'Result: 8(4)']}
       result="76 = 8(4) → 80 − 4 = 76 ✓"
     />
     <ExampleCard
-      title="Example 3 — 68 × 4 using vinculum"
+      title="Example 3: 68 × 4 using vinculum"
       lines={['Convert 68 → 7(2)  (since 8→(2) carry 1, 6+1=7)', '7(2) × 4 = 28(8)', '28(8) = 280 − 8 = 272']}
       result="68 × 4 = 272 ✓"
     />
     <ExampleCard
-      title="Example 4 — 79 × 6"
+      title="Example 4: 79 × 6"
       lines={['Convert 79 → 8(1)  (9→(1) carry 1, 7+1=8)', '8(1) × 6 = 48(6)', '48(6) = 480 − 6 = 474']}
       result="79 × 6 = 474 ✓"
     />
     <ExampleCard
-      title="Example 5 — 87 × 5 (when the part in parentheses goes above 9)"
+      title="Example 5: 87 × 5 (when the part in parentheses goes above 9)"
       lines={['Convert 87 → 9(3)  (since 7→(3) carry 1, 8+1=9)', '9(3) × 5 = 45(15)', '15 is two digits here — that\'s fine, expand it the same way: 450 − 15 = 435']}
       result="87 × 5 = 435 ✓"
     />
@@ -1845,17 +1844,17 @@ const L3_05_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 23²"
+      title="Example 1: 23²"
       lines={['D(2) = 4', 'D(23) = 2×2×3 = 12 → write 2, carry 1', 'D(3) = 9', 'Result: (4+1)|2|9 = 529']}
       result="23² = 529 ✓"
     />
     <ExampleCard
-      title="Example 2 — 34²"
+      title="Example 2: 34²"
       lines={['D(4) = 16 → write 6, carry 1', 'D(34) = 2×3×4 = 24, +carry 1 = 25 → write 5, carry 2', 'D(3) = 9, +carry 2 = 11', 'Result: 11|5|6 = 1156']}
       result="34² = 1156 ✓"
     />
     <ExampleCard
-      title="Example 3 — 123²"
+      title="Example 3: 123²"
       lines={[
         'D(3) = 9 → write 9, carry 0',
         'D(23) = 2×2×3 = 12, +carry 0 = 12 → write 2, carry 1',
@@ -1911,17 +1910,17 @@ const L3_06_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — ∛17576"
+      title="Example 1: ∛17576"
       lines={['Remove last 3 digits: 17', 'Largest cube ≤ 17: 2³=8 ✓ → first digit = 2', 'Last digit of 17576 = 6 → root ends in 6', 'Answer: 26']}
       result="∛17576 = 26 ✓ (26³=17576)"
     />
     <ExampleCard
-      title="Example 2 — ∛54872"
+      title="Example 2: ∛54872"
       lines={['Remove last 3 digits: 54', '3³=27 ≤ 54 < 4³=64 → first digit = 3', 'Last digit 2 → root ends in 8', 'Answer: 38']}
       result="∛54872 = 38 ✓ (38³=54872)"
     />
     <ExampleCard
-      title="Example 3 — ∛157464"
+      title="Example 3: ∛157464"
       lines={['Remove last 3 digits: 157', '5³=125 ≤ 157 < 6³=216 → first digit = 5', 'Last digit 4 → root ends in 4', 'Answer: 54']}
       result="∛157464 = 54 ✓ (54³=157464)"
     />
@@ -1950,7 +1949,7 @@ const L3_07_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 1234 ÷ 9"
+      title="Example 1: 1234 ÷ 9"
       lines={[
         'Bring down 1 → Q=1',
         '1+2=3',
@@ -1962,7 +1961,7 @@ const L3_07_CONTENT = (
       result="1234 ÷ 9 = Q:137 R:1 ✓ (9×137+1=1234)"
     />
     <ExampleCard
-      title="Example 2 — 2345 ÷ 9"
+      title="Example 2: 2345 ÷ 9"
       lines={[
         'Bring down 2 → Q=2',
         '2+3=5',
@@ -1975,7 +1974,7 @@ const L3_07_CONTENT = (
       result="2345 ÷ 9 = Q:260 R:5 ✓ (9×260+5=2345)"
     />
     <ExampleCard
-      title="Example 3 — 1111 ÷ 9"
+      title="Example 3: 1111 ÷ 9"
       lines={['1 → 1+1=2 → 2+1=3 → 3+1=4', 'No carry needed', 'Q=123, R=4']}
       result="1111 ÷ 9 = Q:123 R:4 ✓ (9×123+4=1111)"
     />
@@ -2004,17 +2003,17 @@ const L3_08_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — (x+2)(x+3)"
+      title="Example 1: (x+2)(x+3)"
       lines={['Vertical: x×x = x²', 'Cross: x×3 + 2×x = 5x', 'Vertical: 2×3 = 6']}
       result="(x+2)(x+3) = x² + 5x + 6 ✓"
     />
     <ExampleCard
-      title="Example 2 — (2x+3)(x+4)"
+      title="Example 2: (2x+3)(x+4)"
       lines={['Vertical: 2x×x = 2x²', 'Cross: 2x×4 + 3×x = 8x+3x = 11x', 'Vertical: 3×4 = 12']}
       result="(2x+3)(x+4) = 2x² + 11x + 12 ✓"
     />
     <ExampleCard
-      title="Example 3 — (x+6)(x−2)"
+      title="Example 3: (x+6)(x−2)"
       lines={['Vertical: x×x = x²', 'Cross: x×(−2) + 6×x = −2x+6x = 4x', 'Vertical: 6×(−2) = −12']}
       result="(x+6)(x−2) = x² + 4x − 12 ✓"
     />
@@ -2049,17 +2048,17 @@ const L3_09_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 2x+3y=7, x+2y=4"
+      title="Example 1: 2x+3y=7, x+2y=4"
       lines={['a=2,b=3,c=7 | d=1,e=2,f=4', 'Denominator: 2×2 − 3×1 = 4−3 = 1', 'x = (7×2 − 3×4)/1 = (14−12)/1 = 2', 'y = (2×4 − 7×1)/1 = (8−7)/1 = 1']}
       result="x=2, y=1 ✓ (2×2+3×1=7, 2+2×1=4)"
     />
     <ExampleCard
-      title="Example 2 — 3x+2y=12, x+y=5"
+      title="Example 2: 3x+2y=12, x+y=5"
       lines={['a=3,b=2,c=12 | d=1,e=1,f=5', 'Denominator: 3×1 − 2×1 = 1', 'x = (12×1 − 2×5)/1 = (12−10)/1 = 2', 'y = (3×5 − 12×1)/1 = (15−12)/1 = 3']}
       result="x=2, y=3 ✓ (3×2+2×3=12, 2+3=5)"
     />
     <ExampleCard
-      title="Example 3 — 2x+y=7, x+2y=8"
+      title="Example 3: 2x+y=7, x+2y=8"
       lines={['a=2,b=1,c=7 | d=1,e=2,f=8', 'Denominator: 2×2 − 1×1 = 3', 'x = (7×2 − 1×8)/3 = (14−8)/3 = 6/3 = 2', 'y = (2×8 − 7×1)/3 = (16−7)/3 = 9/3 = 3']}
       result="x=2, y=3 ✓ (2×2+3=7, 2+2×3=8)"
     />
@@ -2103,8 +2102,7 @@ function L3_10_CONTENT({ onSwitchTab }) {
       </div>
 
       <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 14 }}>Quick Revision</h3>
-      <style>{`@media(max-width:640px){.rev-row3{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;}}`}</style>
-      <div className="rev-row3" style={{ display: 'flex', gap: 10, marginBottom: 4 }}>
+      <div className="rev-row3" style={{ display: 'flex', gap: 10, marginBottom: 4, overflowX: 'auto', WebkitOverflowScrolling: 'touch', paddingBottom: 4 }}>
         {[
           { title: 'Urdhva 2×2', rule: 'AC|AD+BC|BD' },
           { title: 'Nikhilam', rule: 'cross | def×def' },
@@ -2141,17 +2139,17 @@ const L4_01_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 12³  (a=1, b=2)"
+      title="Example 1: 12³  (a=1, b=2)"
       lines={['Row: 1 | 6 | 12 | 8', '12 → write 2, carry 1 → 6+1=7', 'Result: 1|7|2|8']}
       result="12³ = 1728 ✓"
     />
     <ExampleCard
-      title="Example 2 — 23³  (a=2, b=3)"
+      title="Example 2: 23³  (a=2, b=3)"
       lines={['Row: 8 | 36 | 54 | 27', '27 → write 7, carry 2', '54+2=56 → write 6, carry 5', '36+5=41 → write 1, carry 4', '8+4=12']}
       result="23³ = 12167 ✓"
     />
     <ExampleCard
-      title="Example 3 — 14³  (a=1, b=4)"
+      title="Example 3: 14³  (a=1, b=4)"
       lines={['Row: 1 | 12 | 48 | 64', '64 → write 4, carry 6', '48+6=54 → write 4, carry 5', '12+5=17 → write 7, carry 1', '1+1=2']}
       result="14³ = 2744 ✓"
     />
@@ -2186,17 +2184,17 @@ const L4_02_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 213²"
+      title="Example 1: 213²"
       lines={['D(2)=4, D(21)=2×2×1=4, D(213)=2×2×3+1²=13', 'D(13)=2×1×3=6, D(3)=9', 'Row: 4|4|13|6|9', '13→3 carry 1 → 4+1=5', 'Result: 45369']}
       result="213² = 45369 ✓"
     />
     <ExampleCard
-      title="Example 2 — 111²"
+      title="Example 2: 111²"
       lines={['D(1)=1, D(11)=2, D(111)=2+1=3, D(11)=2, D(1)=1', 'Row: 1|2|3|2|1 — no carries!']}
       result="111² = 12321 ✓"
     />
     <ExampleCard
-      title="Example 3 — 122²"
+      title="Example 3: 122²"
       lines={['D(1)=1, D(12)=4, D(122)=2×1×2+4=8, D(22)=8, D(2)=4', 'Row: 1|4|8|8|4 — no carries!', 'Result: 14884']}
       result="122² = 14884 ✓"
     />
@@ -2235,22 +2233,22 @@ const L4_03_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — Is 399 divisible by 19? (P=2)"
+      title="Example 1: Is 399 divisible by 19? (P=2)"
       lines={['399 → detach 9: 39 + 9×2 = 39+18 = 57', '57 → detach 7: 5 + 7×2 = 5+14 = 19', '19 is divisible by 19 → YES']}
       result="399 ÷ 19 = 21 ✓"
     />
     <ExampleCard
-      title="Example 2 — Is 572 divisible by 11? (Q=1)"
+      title="Example 2: Is 572 divisible by 11? (Q=1)"
       lines={['572 → detach 2: 57 − 2×1 = 55', '55 → detach 5: 5 − 5×1 = 0', '0 is divisible by 11 → YES']}
       result="572 ÷ 11 = 52 ✓"
     />
     <ExampleCard
-      title="Example 3 — Is 253 divisible by 11? (Q=1)"
+      title="Example 3: Is 253 divisible by 11? (Q=1)"
       lines={['253 → detach 3: 25 − 3 = 22', '22 → detach 2: 2 − 2 = 0 → YES']}
       result="253 ÷ 11 = 23 ✓"
     />
     <ExampleCard
-      title="Example 4 — Is 646 divisible by 19? (P=2)"
+      title="Example 4: Is 646 divisible by 19? (P=2)"
       lines={['646 → detach 6: 64 + 6×2 = 64+12 = 76', '76 → detach 6: 7 + 6×2 = 7+12 = 19 → YES']}
       result="646 ÷ 19 = 34 ✓"
     />
@@ -2274,12 +2272,12 @@ const L4_04_CONTENT = (
 
     <SectionTitle>Worked Examples</SectionTitle>
     <ExampleCard
-      title="Example 1 — 1/19  (Ekadhikena = 2)"
+      title="Example 1: 1/19  (Ekadhikena = 2)"
       lines={['1÷2=0 r1 → .0', '10÷2=5 r0 → .05', '5÷2=2 r1 → .052', '12÷2=6 r0 → .0526', '6÷2=3 r0 → .05263...']}
       result="1/19 = 0.052631578947368421... (repeating)"
     />
     <ExampleCard
-      title="Example 2 — 1/29  (Ekadhikena = 3)"
+      title="Example 2: 1/29  (Ekadhikena = 3)"
       lines={['1÷3=0 r1 → .0', '10÷3=3 r1 → .03', '13÷3=4 r1 → .034', '14÷3=4 r2 → .0344...']}
       result="1/29 = 0.0344827... (repeating)"
     />
