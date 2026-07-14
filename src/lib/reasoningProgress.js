@@ -81,3 +81,22 @@ export function isReasoningChapterUnlocked(chapterId, sortedChapterIds) {
   const prevId = sortedChapterIds[idx - 1];
   return (scores[prevId] ?? 0) >= REASONING_PASS_THRESHOLD;
 }
+
+// ── Level 2 unlock ──────────────────────────────────────────────────────────
+// Level 2 becomes accessible only once the user has passed EVERY Level 1
+// chapter at >= REASONING_PASS_THRESHOLD. Within Level 2, the same
+// sequential unlock rule applies (each chapter requires the previous one).
+
+export function isLevel2Unlocked(level1ChapterIds) {
+  const scores = getReasoningScores();
+  return level1ChapterIds.every((id) => (scores[id] ?? 0) >= REASONING_PASS_THRESHOLD);
+}
+
+export function isLevel2ChapterUnlocked(chapterId, sortedLevel2Ids, level1ChapterIds) {
+  if (!isLevel2Unlocked(level1ChapterIds)) return false;
+  const idx = sortedLevel2Ids.indexOf(chapterId);
+  if (idx <= 0) return true; // first L2 chapter is open once L2 is unlocked
+  const scores = getReasoningScores();
+  const prevId = sortedLevel2Ids[idx - 1];
+  return (scores[prevId] ?? 0) >= REASONING_PASS_THRESHOLD;
+}

@@ -3,26 +3,12 @@ import { Link } from 'react-router-dom';
 import { Lock, CheckCircle2, Sprout, Layers3, Flame, Crown, ChevronDown, ChevronRight, X } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { RA_LEVEL1_CHAPTERS } from '@/data/reasoningAptitudeLevel1Content';
-import { getReasoningScores, isReasoningChapterUnlocked, REASONING_PASS_THRESHOLD } from '@/lib/reasoningProgress';
+import { RA_LEVEL2_CHAPTERS } from '@/data/reasoningAptitudeLevel2Content';
+import { getReasoningScores, isReasoningChapterUnlocked, isLevel2Unlocked, isLevel2ChapterUnlocked, REASONING_PASS_THRESHOLD } from '@/lib/reasoningProgress';
 
 const tr = (field, language) => field?.[language] ?? field?.en ?? '';
 
 const LOCKED_LEVELS = [
-  {
-    id: 'intermediate', icon: Layers3, label: { en: 'Intermediate', hi: 'मध्यम' },
-    topics: [
-      { en: 'Number Series (Advanced)', hi: 'संख्या श्रृंखला (उन्नत)' },
-      { en: 'Coding-Decoding (Word & Number)', hi: 'कोडिंग-डिकोडिंग (शब्द व संख्या)' },
-      { en: 'Blood Relations (Extended Family)', hi: 'रक्त संबंध (विस्तृत परिवार)' },
-      { en: 'Clock Problems', hi: 'घड़ी संबंधी प्रश्न' },
-      { en: 'Ratio & Proportion', hi: 'अनुपात व समानुपात' },
-      { en: 'Percentage Basics', hi: 'प्रतिशत की मूल बातें' },
-      { en: 'Average', hi: 'औसत' },
-      { en: 'Profit & Loss (Basic)', hi: 'लाभ व हानि (मूल)' },
-      { en: 'Simple Interest', hi: 'साधारण ब्याज' },
-      { en: 'Venn Diagrams (Basic Set Logic)', hi: 'वेन आरेख (मूल सेट तर्क)' },
-    ],
-  },
   {
     id: 'advanced', icon: Flame, label: { en: 'Advanced', hi: 'उन्नत' },
     topics: [
@@ -61,9 +47,61 @@ export default function ReasoningSidebar({ activeChapterId, onClose, showClose }
   const { language } = useLanguage();
   const [collapsed, setCollapsed] = useState({});
   const toggle = (id) => setCollapsed((p) => ({ ...p, [id]: !p[id] }));
-  const chapters = [...RA_LEVEL1_CHAPTERS].sort((a, b) => a.order - b.order);
-  const chapterIds = chapters.map((c) => c.id);
+
+  const l1Chapters = [...RA_LEVEL1_CHAPTERS].sort((a, b) => a.order - b.order);
+  const l1Ids = l1Chapters.map((c) => c.id);
+  const l2Chapters = [...RA_LEVEL2_CHAPTERS].sort((a, b) => a.order - b.order);
+  const l2Ids = l2Chapters.map((c) => c.id);
+
   const scores = getReasoningScores();
+  const l2Unlocked = isLevel2Unlocked(l1Ids);
+
+  function renderChapterList(chapters, ids, isL2 = false) {
+    return chapters.map((c) => {
+      const isActive = activeChapterId === c.id;
+      const isDone = (scores[c.id] ?? 0) >= REASONING_PASS_THRESHOLD;
+      const unlocked = isL2
+        ? isLevel2ChapterUnlocked(c.id, ids, l1Ids)
+        : isReasoningChapterUnlocked(c.id, ids);
+
+      const rowStyle = {
+        display: 'flex', alignItems: 'center', gap: 8, height: 40, padding: '0 12px',
+        borderRadius: 8, textDecoration: 'none', marginBottom: 2,
+        background: isActive ? 'rgba(167,139,250,0.18)' : 'transparent',
+        opacity: unlocked ? 1 : 0.45,
+      };
+      const inner = (
+        <>
+          {isDone ? (
+            <CheckCircle2 size={14} color="#34D399" style={{ flexShrink: 0 }} />
+          ) : unlocked ? (
+            <span style={{ fontSize: 12, color: isActive ? '#C4B5FD' : '#8B85AD', flexShrink: 0, width: 14, textAlign: 'center' }}>{c.order}</span>
+          ) : (
+            <Lock size={12} color="#6B6590" style={{ flexShrink: 0 }} />
+          )}
+          <span style={{
+            flex: 1, fontSize: 13, fontFamily: 'var(--font-body)',
+            fontWeight: isActive ? 600 : 400,
+            color: isActive ? '#F5F3FF' : unlocked ? '#B8B2D6' : '#6B6590',
+            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+          }}>
+            {tr(c.title, language)}
+          </span>
+          {isDone && (
+            <span style={{ fontSize: 10, color: '#34D399', fontFamily: 'var(--font-body)', flexShrink: 0 }}>{scores[c.id]}%</span>
+          )}
+        </>
+      );
+      if (!unlocked) {
+        return <div key={c.id} style={{ ...rowStyle, cursor: 'not-allowed' }}>{inner}</div>;
+      }
+      return (
+        <Link key={c.id} to={`/reasoning/${c.id}`} onClick={onClose} style={rowStyle}>
+          {inner}
+        </Link>
+      );
+    });
+  }
 
   return (
     <div style={{ padding: 16, height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -79,77 +117,73 @@ export default function ReasoningSidebar({ activeChapterId, onClose, showClose }
       </div>
 
       <div style={{ flex: 1, overflowY: 'auto' }}>
-        {/* Beginner — unlocked */}
+
+        {/* ── Level 1: Beginner ── */}
         <div style={{ marginBottom: 8 }}>
-          <button
-            onClick={() => toggle('beginner')}
-            style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 8, padding: '10px 8px', borderRadius: 10, border: 'none', cursor: 'pointer', background: 'transparent', textAlign: 'left' }}
-          >
+          <button onClick={() => toggle('beginner')} style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 8, padding: '10px 8px', borderRadius: 10, border: 'none', cursor: 'pointer', background: 'transparent', textAlign: 'left' }}>
             <Sprout size={16} color="#A78BFA" />
             <span style={{ flex: 1, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#F5F3FF' }}>
-              {language === 'hi' ? 'शुरुआती' : 'Beginner'}
+              {language === 'hi' ? 'शुरुआती (स्तर 1)' : 'Beginner (Level 1)'}
             </span>
-            <span style={{ fontSize: 11, color: '#8B85AD', fontFamily: 'var(--font-body)', marginRight: 4 }}>{chapters.filter((c) => (scores[c.id] ?? 0) >= REASONING_PASS_THRESHOLD).length}/{chapters.length}</span>
+            <span style={{ fontSize: 11, color: '#8B85AD', fontFamily: 'var(--font-body)', marginRight: 4 }}>
+              {l1Chapters.filter((c) => (scores[c.id] ?? 0) >= REASONING_PASS_THRESHOLD).length}/{l1Chapters.length}
+            </span>
             {collapsed.beginner ? <ChevronRight size={14} color="#8B85AD" /> : <ChevronDown size={14} color="#8B85AD" />}
           </button>
-
           {!collapsed.beginner && (
             <div style={{ paddingLeft: 4 }}>
-              {chapters.map((c) => {
-                const isActive = activeChapterId === c.id;
-                const isDone = (scores[c.id] ?? 0) >= REASONING_PASS_THRESHOLD;
-                const unlocked = isReasoningChapterUnlocked(c.id, chapterIds);
-                const rowStyle = {
-                  display: 'flex', alignItems: 'center', gap: 8, height: 40, padding: '0 12px',
-                  borderRadius: 8, textDecoration: 'none', marginBottom: 2,
-                  background: isActive ? 'rgba(167,139,250,0.18)' : 'transparent',
-                  opacity: unlocked ? 1 : 0.45,
-                };
-                const inner = (
-                  <>
-                    {isDone ? (
-                      <CheckCircle2 size={14} color="#34D399" style={{ flexShrink: 0 }} />
-                    ) : unlocked ? (
-                      <span style={{ fontSize: 12, color: isActive ? '#C4B5FD' : '#8B85AD', flexShrink: 0, width: 14, textAlign: 'center' }}>{c.order}</span>
-                    ) : (
-                      <Lock size={12} color="#6B6590" style={{ flexShrink: 0 }} />
-                    )}
-                    <span style={{
-                      flex: 1, fontSize: 13, fontFamily: 'var(--font-body)',
-                      fontWeight: isActive ? 600 : 400,
-                      color: isActive ? '#F5F3FF' : unlocked ? '#B8B2D6' : '#6B6590',
-                      overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                    }}>
-                      {tr(c.title, language)}
-                    </span>
-                    {isDone && (
-                      <span style={{ fontSize: 10, color: '#34D399', fontFamily: 'var(--font-body)', flexShrink: 0 }}>{scores[c.id]}%</span>
-                    )}
-                  </>
-                );
-                if (!unlocked) {
-                  return <div key={c.id} style={{ ...rowStyle, cursor: 'not-allowed' }}>{inner}</div>;
-                }
-                return (
-                  <Link key={c.id} to={`/reasoning/${c.id}`} onClick={onClose} style={rowStyle}>
-                    {inner}
-                  </Link>
-                );
-              })}
+              {renderChapterList(l1Chapters, l1Ids, false)}
             </div>
           )}
         </div>
 
-        {/* Locked levels */}
+        {/* ── Level 2: Intermediate ── */}
+        <div style={{ marginBottom: 8 }}>
+          <button onClick={() => toggle('intermediate')} style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 8, padding: '10px 8px', borderRadius: 10, border: 'none', cursor: 'pointer', background: 'transparent', textAlign: 'left' }}>
+            <Layers3 size={16} color={l2Unlocked ? '#A78BFA' : '#6B6590'} />
+            <span style={{ flex: 1, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: l2Unlocked ? '#F5F3FF' : '#8B85AD' }}>
+              {language === 'hi' ? 'मध्यम (स्तर 2)' : 'Intermediate (Level 2)'}
+            </span>
+            {!l2Unlocked && <Lock size={11} color="#6B6590" />}
+            {l2Unlocked && (
+              <span style={{ fontSize: 11, color: '#8B85AD', fontFamily: 'var(--font-body)', marginRight: 4 }}>
+                {l2Chapters.filter((c) => (scores[c.id] ?? 0) >= REASONING_PASS_THRESHOLD).length}/{l2Chapters.length}
+              </span>
+            )}
+            {collapsed.intermediate ? <ChevronRight size={14} color="#8B85AD" /> : <ChevronDown size={14} color="#8B85AD" />}
+          </button>
+          {!collapsed.intermediate && (
+            <div style={{ paddingLeft: 4 }}>
+              {l2Unlocked ? (
+                renderChapterList(l2Chapters, l2Ids, true)
+              ) : (
+                <div style={{ padding: '8px 12px' }}>
+                  <p style={{ fontSize: 12, color: '#6B6590', fontFamily: 'var(--font-body)', margin: 0 }}>
+                    {language === 'hi'
+                      ? '🔒 सभी स्तर 1 अध्याय पूरे करने पर अनलॉक होगा'
+                      : '🔒 Complete all Level 1 chapters to unlock'}
+                  </p>
+                  <div style={{ marginTop: 8 }}>
+                    {l2Chapters.map((c, i) => (
+                      <div key={c.id} style={{ fontSize: 12, color: '#6B6590', fontFamily: 'var(--font-body)', padding: '3px 0', display: 'flex', alignItems: 'center', gap: 6 }}>
+                        <Lock size={10} color="#6B6590" />
+                        {tr(c.title, language)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* ── Locked future levels ── */}
         {LOCKED_LEVELS.map((lvl) => {
           const Icon = lvl.icon;
           const isOpen = !collapsed[lvl.id];
           return (
             <div key={lvl.id} style={{ marginBottom: 8 }}>
-              <button
-                onClick={() => toggle(lvl.id)}
-                style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 8, padding: '10px 8px', borderRadius: 10, border: 'none', cursor: 'pointer', background: 'transparent', textAlign: 'left' }}
-              >
+              <button onClick={() => toggle(lvl.id)} style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 8, padding: '10px 8px', borderRadius: 10, border: 'none', cursor: 'pointer', background: 'transparent', textAlign: 'left' }}>
                 <Icon size={16} color="#6B6590" />
                 <span style={{ flex: 1, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#8B85AD' }}>
                   {tr(lvl.label, language)}
@@ -169,6 +203,7 @@ export default function ReasoningSidebar({ activeChapterId, onClose, showClose }
             </div>
           );
         })}
+
       </div>
     </div>
   );

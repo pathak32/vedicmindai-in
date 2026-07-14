@@ -7,10 +7,12 @@ import ReasoningSidebar from '@/components/learn/ReasoningSidebar';
 import { useLanguage } from '@/lib/LanguageContext';
 import { getQuestionsByChapter } from '@/data/reasoningAptitudeLevel1';
 import { RA_LEVEL1_CHAPTERS, getChapterContent } from '@/data/reasoningAptitudeLevel1Content';
+import { getLevel2QuestionsByChapter } from '@/data/reasoningAptitudeLevel2';
+import { RA_LEVEL2_CHAPTERS, getLevel2ChapterContent } from '@/data/reasoningAptitudeLevel2Content';
 import {
   StepBox, ExampleCard, SectionTitle, OriginBox, WhyItWorksBox, CommonMistakeBox, RealWorldBox,
 } from '@/components/learn/ConceptTab';
-import { saveReasoningChapterResult, isReasoningChapterUnlocked, getReasoningScores, REASONING_PASS_THRESHOLD } from '@/lib/reasoningProgress';
+import { saveReasoningChapterResult, isReasoningChapterUnlocked, isLevel2ChapterUnlocked, getReasoningScores, REASONING_PASS_THRESHOLD } from '@/lib/reasoningProgress';
 
 const tr = (field, language) => field?.[language] ?? field?.en ?? '';
 
@@ -25,15 +27,27 @@ export default function ReasoningChapterPage() {
   const [score, setScore] = useState(0);
   const [finalScore, setFinalScore] = useState(null); // set once on last answer, avoids async state race
 
-  const sortedChapters = [...RA_LEVEL1_CHAPTERS].sort((a, b) => a.order - b.order);
-  const sortedChapterIds = sortedChapters.map((c) => c.id);
-  const chapterId = paramChapterId || sortedChapters[0].id;
-  const chapter = getChapterContent(chapterId);
-  const questions = getQuestionsByChapter(chapterId);
-  const chapterIndex = sortedChapters.findIndex((c) => c.id === chapterId);
-  const nextChapter = sortedChapters[chapterIndex + 1];
+  const sortedL1 = [...RA_LEVEL1_CHAPTERS].sort((a, b) => a.order - b.order);
+  const l1Ids = sortedL1.map((c) => c.id);
+  const sortedL2 = [...RA_LEVEL2_CHAPTERS].sort((a, b) => a.order - b.order);
+  const l2Ids = sortedL2.map((c) => c.id);
+  const allChapters = [...sortedL1, ...sortedL2];
+  const sortedChapters = allChapters; // for backward compat
+  const sortedChapterIds = allChapters.map((c) => c.id);
+
+  const isL2Chapter = paramChapterId ? l2Ids.includes(paramChapterId) : false;
+  const chapterId = paramChapterId || sortedL1[0].id;
+  const chapter = isL2Chapter ? getLevel2ChapterContent(chapterId) : getChapterContent(chapterId);
+  const questions = isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId);
+
+  const chapterIndex = allChapters.findIndex((c) => c.id === chapterId);
+  const nextChapter = allChapters[chapterIndex + 1];
   const scores = getReasoningScores();
-  const nextChapterUnlocked = nextChapter ? isReasoningChapterUnlocked(nextChapter.id, sortedChapterIds) : false;
+  const nextChapterUnlocked = nextChapter
+    ? (l2Ids.includes(nextChapter.id)
+        ? isLevel2ChapterUnlocked(nextChapter.id, l2Ids, l1Ids)
+        : isReasoningChapterUnlocked(nextChapter.id, l1Ids))
+    : false;
 
   const q = questions[qIndex];
 
@@ -42,9 +56,11 @@ export default function ReasoningChapterPage() {
   // chapter they've actually earned — mirrors how Sutra lessons enforce
   // this, which Reasoning never did until now.
   useEffect(() => {
-    if (!isReasoningChapterUnlocked(chapterId, sortedChapterIds)) {
-      const lastUnlockedIdx = sortedChapterIds.findIndex((id) => !isReasoningChapterUnlocked(id, sortedChapterIds));
-      navigate(`/reasoning/${sortedChapterIds[Math.max(0, lastUnlockedIdx - 1)] || sortedChapterIds[0]}`, { replace: true });
+    const isUnlocked = isL2Chapter
+      ? isLevel2ChapterUnlocked(chapterId, l2Ids, l1Ids)
+      : isReasoningChapterUnlocked(chapterId, l1Ids);
+    if (!isUnlocked) {
+      navigate(`/reasoning/${sortedL1[0].id}`, { replace: true });
     }
   }, [chapterId]);
 
