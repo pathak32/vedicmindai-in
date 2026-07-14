@@ -9,7 +9,6 @@ const EXAM_TYPES = ['daily','weekly','olympiad','jee','neet','ssc','upsc','gener
 const DIFFICULTIES = [1,2,3,4,5];
 const SUTRAS = ['Ekadhikena Purvena','Nikhilam Navatashcaramam Dashatah','Anurupyena','Paravartya Yojayet','Shunyam Saamyasamuccaye','Anurupye Shunyamanyat','Sankalana-Vyavakalanabhyam','Puranapuranabhyam','Chalana-Kalanabhyam','Yavadunam','Vyashtisamanstih','Shesanyankena Charamena','Sopaantyadvayamantyam','Ekanyunena Purvena','Gunitasamuchyah','Gunakasamuchyah'];
 
-// quiz_questions (the live-serving table) uses easy/medium/hard, not the 1-5 scale.
 function bandForDifficulty(d) {
   return d <= 2 ? 'easy' : d <= 3 ? 'medium' : 'hard';
 }
@@ -58,19 +57,6 @@ export default function AdminQuizManager() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'API error');
 
-      const sb = await getSupabase();
-      const rows = data.questions.map(q => ({
-        ...q,
-        sutra: genConfig.sutra,
-        difficulty: genConfig.difficulty,
-        exam_type: genConfig.exam_type,
-        topic: genConfig.sutra,
-        lesson_id: genConfig.lesson_id,
-        is_active: true,
-      }));
-      const { error } = await sb.from('questions').insert(rows);
-      if (error) throw error;
-
       setGenResult(`✅ ${data.questions.length} questions generated and saved!`);
       loadQuestions();
     } catch(e) {
@@ -84,9 +70,6 @@ export default function AdminQuizManager() {
     loadQuestions();
   }
 
-  // Push a reviewed question from the staging `questions` table into the
-  // live-serving `quiz_questions` table. Maps the 1-5 difficulty scale to
-  // quiz_questions' easy/medium/hard band, and marks it approved + daily.
   async function promoteQuestion(q) {
     setPromoting(p => ({ ...p, [q.id]: true }));
     try {
@@ -124,7 +107,6 @@ export default function AdminQuizManager() {
 
   return (
     <div>
-      {/* Generator */}
       <div style={card}>
         <h3 style={{ fontSize:16, fontWeight:600, marginBottom:4 }}>🤖 AI Question Generator</h3>
         <p style={{ fontSize:12, color:'#6B7280', marginBottom:16 }}>Select sutra, difficulty and exam type — AI will generate ready-to-use questions instantly.</p>
@@ -166,7 +148,6 @@ export default function AdminQuizManager() {
         {genResult && <p style={{ marginTop:12, fontSize:13, color: genResult.startsWith('✅')?'#059669':genResult.startsWith('🤖')?'#1e40af':'#DC2626', fontWeight:500 }}>{genResult}</p>}
       </div>
 
-      {/* Filters + Table */}
       <div style={card}>
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:14, flexWrap:'wrap', gap:8 }}>
           <h3 style={{ fontSize:16, fontWeight:600, margin:0 }}>📚 Question Bank ({questions.length})</h3>
