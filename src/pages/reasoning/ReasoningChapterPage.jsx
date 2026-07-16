@@ -12,7 +12,8 @@ import { RA_LEVEL2_CHAPTERS, getLevel2ChapterContent } from '@/data/reasoningApt
 import {
   StepBox, ExampleCard, SectionTitle, OriginBox, WhyItWorksBox, CommonMistakeBox, RealWorldBox,
 } from '@/components/learn/ConceptTab';
-import { saveReasoningChapterResult, isReasoningChapterUnlocked, isLevel2ChapterUnlocked, getReasoningScores, REASONING_PASS_THRESHOLD } from '@/lib/reasoningProgress';
+import { saveReasoningChapterResult, isReasoningChapterUnlocked, isLevel2ChapterUnlocked, getReasoningScores, REASONING_PASS_THRESHOLD, reconcileReasoningFromServer } from '@/lib/reasoningProgress';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 
 const tr = (field, language) => field?.[language] ?? field?.en ?? '';
 
@@ -20,12 +21,25 @@ export default function ReasoningChapterPage() {
   const { chapterId: paramChapterId } = useParams();
   const navigate = useNavigate();
   const { language } = useLanguage();
+  const { user } = useVedicAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [tab, setTab] = useState('concept');
   const [qIndex, setQIndex] = useState(0);
   const [selected, setSelected] = useState(null);
   const [score, setScore] = useState(0);
   const [finalScore, setFinalScore] = useState(null); // set once on last answer, avoids async state race
+  const [, forceRerenderAfterSync] = useState(0);
+
+  // Fixes the exact bug Hitesh hit: server (Supabase) had his real 10/10
+  // completion the whole time, but a fresh browser session's localStorage
+  // never gets told that — every unlock check below reads localStorage only.
+  // Pull server progress down and merge it in before rendering lock states.
+  useEffect(() => {
+    if (!user?.id) return;
+    reconcileReasoningFromServer(user.id).then((changed) => {
+      if (changed) forceRerenderAfterSync((n) => n + 1);
+    });
+  }, [user?.id]);
 
   const sortedL1 = [...RA_LEVEL1_CHAPTERS].sort((a, b) => a.order - b.order);
   const l1Ids = sortedL1.map((c) => c.id);

@@ -100,3 +100,44 @@ export function isLevel2ChapterUnlocked(chapterId, sortedLevel2Ids, level1Chapte
   const prevId = sortedLevel2Ids[idx - 1];
   return (scores[prevId] ?? 0) >= REASONING_PASS_THRESHOLD;
 }
+
+// The gap that caused Hitesh's bug: every read above only ever looked at
+// localStorage. If someone logs in on a new device/browser, or clears
+// storage, the app has no way to know the server already has their real
+// progress — Reasoning silently shows as fully unstarted even though the
+// admin panel (which reads directly from Supabase) shows it correctly.
+// Call this once on load, before the sidebar/chapter page render their
+// lock states, to pull server data down and merge it into localStorage.
+export async function reconcileReasoningFromServer(userId) {
+  if (!userId) return false;
+  try {
+    const sb = await getSupabase();
+    const { data, error } = await sb
+      .from('reasoning_progress')
+      .select('chapter_id, best_score, completed')
+      .eq('user_id', userId);
+    if (error || !data || data.length === 0) return false;
+
+    const p = readProgress();
+    if (!p.reasoningScores) p.reasoningScores = {};
+    if (!Array.isArray(p.reasoningCompleted)) p.reasoningCompleted = [];
+
+    let changed = false;
+    for (const row of data) {
+      const localScore = p.reasoningScores[row.chapter_id] ?? -1;
+      if (row.best_score > localScore) {
+        p.reasoningScores[row.chapter_id] = row.best_score;
+        changed = true;
+      }
+      if (row.completed && !p.reasoningCompleted.includes(row.chapter_id)) {
+        p.reasoningCompleted.push(row.chapter_id);
+        changed = true;
+      }
+    }
+    if (changed) writeProgress(p);
+    return changed;
+  } catch (e) {
+    console.warn('reconcileReasoningFromServer failed (non-critical):', e);
+    return false;
+  }
+}
