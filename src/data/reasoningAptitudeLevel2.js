@@ -6,14 +6,14 @@
 export const RA_LEVEL2_QUESTIONS = [
 
   // ── Chapter 1: Odd One Out (Level 2 — abstract/tricky categories) ──
-  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Newspaper, Television, Radio, Telephone?', options: ['Newspaper', 'Telephone', 'Radio'], answer: 'Telephone', difficulty: 'medium' },
-  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Square, Rectangle, Rhombus, Circle?', options: ['Circle', 'Rhombus', 'Square'], answer: 'Circle', difficulty: 'medium' },
-  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Mercury, Venus, Moon, Mars?', options: ['Moon', 'Venus', 'Mercury'], answer: 'Moon', difficulty: 'medium' },
-  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Poet, Author, Sculptor, Reader?', options: ['Reader', 'Poet', 'Sculptor'], answer: 'Reader', difficulty: 'medium' },
-  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: 8, 27, 64, 100?', options: ['100', '64', '27'], answer: '100', difficulty: 'hard' },
-  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Laugh, Cry, Run, Smile?', options: ['Run', 'Laugh', 'Cry'], answer: 'Run', difficulty: 'hard' },
-  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Wool, Cotton, Silk, Nylon?', options: ['Nylon', 'Silk', 'Cotton'], answer: 'Nylon', difficulty: 'medium' },
-  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: 2, 3, 5, 9?', options: ['9', '2', '5'], answer: '9', difficulty: 'hard' },
+  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Newspaper, Television, Radio, Telephone?', options: ['Newspaper', 'Telephone', 'Radio'], answer: 'Telephone', difficulty: 'medium', exp: 'Newspaper, Television, and Radio are all mass media — they broadcast the same information to many people at once (one-to-many). A Telephone is two-way, point-to-point communication between individuals, not a broadcast medium — that\'s the difference.' },
+  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Square, Rectangle, Rhombus, Circle?', options: ['Circle', 'Rhombus', 'Square'], answer: 'Circle', difficulty: 'medium', exp: 'Square, Rectangle, and Rhombus are all quadrilaterals — shapes with 4 straight sides. A Circle has no straight sides at all, so it doesn\'t belong to that group.' },
+  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Mercury, Venus, Moon, Mars?', options: ['Moon', 'Venus', 'Mercury'], answer: 'Moon', difficulty: 'medium', exp: 'Mercury, Venus, and Mars are planets that orbit the Sun directly. The Moon is a natural satellite — it orbits Earth, not the Sun — so it belongs to a different category.' },
+  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Poet, Author, Sculptor, Reader?', options: ['Reader', 'Poet', 'Sculptor'], answer: 'Reader', difficulty: 'medium', exp: 'A Poet, Author, and Sculptor all create something — a poem, a book, a sculpture. A Reader consumes what others created rather than creating something themselves, which makes it the odd one out.' },
+  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: 8, 27, 64, 100?', options: ['100', '64', '27'], answer: '100', difficulty: 'hard', exp: '8, 27, and 64 are perfect cubes (2³, 3³, 4³). 100 is not a perfect cube — the closest cubes to it are 64 (4³) and 125 (5³) — so it breaks the pattern even though it\'s a perfect square (10²).' },
+  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Laugh, Cry, Run, Smile?', options: ['Run', 'Laugh', 'Cry'], answer: 'Run', difficulty: 'hard', exp: 'Laugh, Cry, and Smile are all ways of expressing an emotion through your face. Run is a physical action unrelated to expressing feelings — that\'s the distinction.' },
+  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: Wool, Cotton, Silk, Nylon?', options: ['Nylon', 'Silk', 'Cotton'], answer: 'Nylon', difficulty: 'medium', exp: 'Wool, Cotton, and Silk are all natural fibers — wool from animals, cotton and silk from plants/insects. Nylon is a synthetic (man-made) fiber, produced chemically rather than grown.' },
+  { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: 2, 3, 5, 9?', options: ['9', '2', '5'], answer: '9', difficulty: 'hard', exp: '2, 3, and 5 are all prime numbers — divisible only by 1 and themselves. 9 is divisible by 3 as well (9 = 3×3), which makes it composite, not prime.' },
 
   // ── Chapter 2: Number Series (Level 2 — geometric, alternating, mixed) ──
   { chapter: 'number-series-l2', prompt: '3, 6, 12, 24, ?', options: ['36', '48', '30'], answer: '48', difficulty: 'medium' },

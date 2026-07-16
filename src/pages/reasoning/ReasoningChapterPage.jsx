@@ -248,6 +248,25 @@ export default function ReasoningChapterPage() {
                       );
                     })}
                   </div>
+
+                  {/* Explanation — same pattern as the Vedic Maths Lesson Quiz fix,
+                      shown immediately once an answer is selected */}
+                  {selected && q.exp && (
+                    <div style={{
+                      marginTop: 14,
+                      background: selected === q.answer ? '#F0FDF4' : '#FEF2F2',
+                      border: `1px solid ${selected === q.answer ? '#BBF7D0' : '#FECACA'}`,
+                      borderRadius: 12, padding: '14px 16px',
+                      fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', lineHeight: 1.65,
+                    }}>
+                      {selected !== q.answer && (
+                        <p style={{ margin: '0 0 6px', fontWeight: 700, color: '#B91C1C' }}>
+                          {language === 'hi' ? `सही उत्तर: ${q.answer}` : `Correct answer: ${q.answer}`}
+                        </p>
+                      )}
+                      <p style={{ margin: 0 }}>💡 {q.exp}</p>
+                    </div>
+                  )}
                   {selected && qIndex < questions.length - 1 && (
                     <button onClick={nextQuestion} style={{ marginTop: 20, padding: '10px 24px', borderRadius: 10, background: '#0A1628', color: 'white', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
                       {language === 'hi' ? 'अगला प्रश्न →' : 'Next Question →'}

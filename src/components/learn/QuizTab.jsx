@@ -674,6 +674,26 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
           />
         ))}
 
+        {/* Explanation — shown immediately on reveal, same pattern already proven
+            in Daily Quiz and Practice, just never built into Lesson Quiz until now */}
+        {revealed && q.exp && (
+          <motion.div initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} style={{ marginTop: 14 }}>
+            <div style={{
+              background: selected === q.correct ? '#F0FDF4' : '#FEF2F2',
+              border: `1px solid ${selected === q.correct ? '#BBF7D0' : '#FECACA'}`,
+              borderRadius: 12, padding: '14px 16px',
+              fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', lineHeight: 1.65,
+            }}>
+              {selected !== q.correct && (
+                <p style={{ margin: '0 0 6px', fontWeight: 700, color: '#B91C1C' }}>
+                  {language === 'hi' ? `सही उत्तर: ${q.options[q.correct]}` : `Correct answer: ${q.options[q.correct]}`}
+                </p>
+              )}
+              <p style={{ margin: 0 }}>💡 {tr(q.exp, language)}</p>
+            </div>
+          </motion.div>
+        )}
+
         {/* Previous / Next buttons */}
         <div style={{ display: 'flex', gap: 10, marginTop: 12 }}>
           {current > 0 && (
