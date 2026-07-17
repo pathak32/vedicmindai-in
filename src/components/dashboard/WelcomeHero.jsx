@@ -77,7 +77,7 @@ export default function WelcomeHero({ user, progress }) {
         {[
           { icon: '📚', label: 'Lessons', value: lessonsCount },
           { icon: '🔥', label: 'Day Streak', value: streakCount },
-          { icon: '⚡', label: 'Total XP', value: xpCount },
+          { icon: '🎯', label: 'Knowledge Points', value: xpCount },
         ].map((stat) => (
           <div key={stat.label} className="rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 p-3 text-center">
             <span className="text-xl">{stat.icon}</span>

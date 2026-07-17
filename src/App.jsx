@@ -19,6 +19,7 @@ import DashboardPage from '@/pages/DashboardPage';
 import ParentDashboardPage from '@/pages/ParentDashboardPage';
 import LiveClassPage from '@/pages/LiveClassPage';
 import LifeSkillsHubPage from '@/pages/LifeSkillsHubPage';
+import KnowledgePointsPage from '@/pages/KnowledgePointsPage';
 import LifeSkillsTrackPage from '@/pages/LifeSkillsTrackPage';
 import LearnPage from '@/pages/LearnPage';
 import PracticePage from '@/pages/PracticePage';
@@ -123,6 +124,7 @@ function RouteTransition() {
               <Route path="/live-class/:classId" element={<LiveClassPage />} />
               <Route path="/life-skills" element={<LifeSkillsHubPage />} />
               <Route path="/life-skills/:trackId" element={<LifeSkillsTrackPage />} />
+              <Route path="/knowledge-points" element={<KnowledgePointsPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/demo" element={<DemoPage />} />
               <Route path="/curriculum" element={<CurriculumPage />} />

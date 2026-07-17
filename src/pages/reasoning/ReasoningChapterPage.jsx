@@ -13,6 +13,7 @@ import {
   StepBox, ExampleCard, SectionTitle, OriginBox, WhyItWorksBox, CommonMistakeBox, RealWorldBox,
 } from '@/components/learn/ConceptTab';
 import { saveReasoningChapterResult, isReasoningChapterUnlocked, isLevel2ChapterUnlocked, getReasoningScores, REASONING_PASS_THRESHOLD, reconcileReasoningFromServer } from '@/lib/reasoningProgress';
+import { awardPoints, recalculateMonthlyStatus, POINTS } from '@/lib/knowledgePoints';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 
 const tr = (field, language) => field?.[language] ?? field?.en ?? '';
@@ -100,7 +101,17 @@ export default function ReasoningChapterPage() {
     if (qIndex === questions.length - 1) {
       const pct = Math.round((newScore / questions.length) * 100);
       setFinalScore(pct);
+      const priorBest = getReasoningScores()[chapterId] ?? -1;
       saveReasoningChapterResult(chapterId, pct);
+      // Knowledge Points: same idempotent guard as the XP award below it —
+      // only award on a genuinely new pass, never on a repeat attempt of an
+      // already-passed chapter.
+      if (user?.id && pct >= REASONING_PASS_THRESHOLD && priorBest < REASONING_PASS_THRESHOLD) {
+        awardPoints(user.id, newScore * POINTS.QUESTION_CORRECT, 'reasoning_lesson_quiz', chapterId);
+        awardPoints(user.id, (questions.length - newScore) * POINTS.QUESTION_WRONG, 'reasoning_lesson_quiz', chapterId);
+        awardPoints(user.id, POINTS.LESSON_COMPLETE, 'reasoning_lesson_completion', chapterId)
+          .then(() => recalculateMonthlyStatus(user.id));
+      }
     }
   };
 

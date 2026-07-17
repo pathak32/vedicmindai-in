@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { useLanguage } from '@/lib/LanguageContext';
+import { awardPoints, recalculateMonthlyStatus, POINTS } from '@/lib/knowledgePoints';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 
 // Resolves a field that may be a plain string (older English-only question
 // banks) or a { en, hi } bilingual object (new banks). Falls back to English.
@@ -425,6 +427,7 @@ function MasterCelebration({ totalXP, badgeCount, xpEarned, correct, total, shar
 
 export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLessonIds }) {
   const { t, language } = useLanguage();
+  const { user } = useVedicAuth();
   const questions = getQuestions(lesson.id);
 
   // If this lesson was already completed, restore that state on mount instead
@@ -470,6 +473,23 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
   );
   const [done, setDone] = useState(priorScore != null);
   const [isReviewOfPastAttempt] = useState(priorScore != null);
+
+  // Award Knowledge Points once, only on a genuinely fresh completion — never
+  // when revisiting an already-done lesson (isReviewOfPastAttempt), and only
+  // once per completion even if this component re-renders.
+  const pointsAwardedRef = React.useRef(false);
+  useEffect(() => {
+    if (!done || isReviewOfPastAttempt || pointsAwardedRef.current || !user?.id) return;
+    pointsAwardedRef.current = true;
+    (async () => {
+      const correctCount = answers.filter(Boolean).length;
+      const wrongCount = questions.length - correctCount;
+      if (correctCount > 0) await awardPoints(user.id, correctCount * POINTS.QUESTION_CORRECT, 'lesson_quiz', lesson.id);
+      if (wrongCount > 0) await awardPoints(user.id, wrongCount * POINTS.QUESTION_WRONG, 'lesson_quiz', lesson.id);
+      await awardPoints(user.id, POINTS.LESSON_COMPLETE, 'lesson_completion', lesson.id);
+      recalculateMonthlyStatus(user.id);
+    })();
+  }, [done, isReviewOfPastAttempt, user?.id]);
 
   // Persist in-progress (unfinished, unscored) attempts so switching to
   // another tab and back restores exactly where the student left off.

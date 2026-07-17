@@ -7,6 +7,7 @@ import {
   getTodayQuizResult,
 } from '@/lib/dailyQuizEngine';
 import { saveDailyQuizResult, saveUserProgress } from '@/lib/supabaseDataService';
+import { awardPoints, recalculateMonthlyStatus, POINTS } from '@/lib/knowledgePoints';
 import { getSupabase } from '@/lib/supabaseClient';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { speakExplanation, buildExplanation } from '@/lib/voiceExplanation';
@@ -476,6 +477,8 @@ function saveQuizResult(answers, totalScore, questions) {
           score: totalScore, totalPossible: 110, answers: answers, timeTaken: 0,
         });
         await saveUserProgress(session.user.id, progress);
+        awardPoints(session.user.id, POINTS.DAILY_QUIZ_COMPLETE, 'daily_quiz', new Date().toISOString().slice(0, 10))
+          .then(() => recalculateMonthlyStatus(session.user.id));
       }
     } catch (e) { console.warn('Supabase quiz save failed (non-critical):', e); }
   })();
