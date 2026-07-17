@@ -265,7 +265,7 @@ export default function PricingPage() {
   // /api/verify-razorpay-payment before Supabase is updated. Replaces the
   // earlier client-only flow where the amount and "success" state were
   // both just trusted from the browser with no server confirmation.
-  const RAZORPAY_KEY = 'rzp_live_T7T0dODtgqw5G2';
+  const RAZORPAY_KEY = import.meta.env.VITE_RAZORPAY_KEY_ID;
 
   async function initiatePayment(planObj) {
     if (!user?.id) {
