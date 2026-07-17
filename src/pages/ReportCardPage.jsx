@@ -88,7 +88,7 @@ export default function ReportCardPage() {
             >
               Upgrade to Pro →
             </button>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', marginTop: 16 }}>Pro from ₹599/month</p>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', marginTop: 16 }}>Pro from ₹999/month</p>
           </div>
         </main>
       </div>

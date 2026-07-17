@@ -53,9 +53,9 @@ export default function TermsPage() {
       <h2 style={s.h2}>5. Subscription & Payments</h2>
       <ul>
         <li style={s.li}><strong>Free Trial:</strong> 7-day full access, no credit card required</li>
-        <li style={s.li}><strong>Basic Plan:</strong> ₹299/month — Core lessons and daily quiz</li>
-        <li style={s.li}><strong>Pro Plan:</strong> ₹599/month — All features including Olympiad and Battle Mode</li>
-        <li style={s.li}><strong>Family Plan:</strong> ₹899/month — Up to 5 family members</li>
+        <li style={s.li}><strong>Basic Plan:</strong> ₹499/month — Core lessons and daily quiz</li>
+        <li style={s.li}><strong>Pro Plan:</strong> ₹999/month — All features including Olympiad and Battle Mode</li>
+        <li style={s.li}><strong>Family Plan:</strong> ₹1,499/month — Up to 5 family members</li>
         <li style={s.li}>Annual plans available at discounted rates</li>
         <li style={s.li}>All payments are processed securely via Razorpay</li>
         <li style={s.li}>Subscriptions auto-renew unless cancelled before the renewal date</li>

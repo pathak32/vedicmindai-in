@@ -14,12 +14,12 @@ const razorpay = new Razorpay({
 // Source of truth for pricing — amounts in paise (Razorpay's smallest unit).
 // Keep this in sync with the prices displayed in PricingPage.jsx.
 const PLAN_AMOUNTS = {
-  basic: 29900,           // ₹299/month
-  basic_annual: 299000,   // ₹2,990/year
-  pro: 59900,             // ₹599/month
-  pro_annual: 599000,     // ₹5,990/year
-  family: 89900,          // ₹899/month
-  family_annual: 899000,  // ₹8,990/year
+  basic: 49900,            // ₹499/month
+  basic_annual: 499000,    // ₹4,990/year
+  pro: 99900,              // ₹999/month
+  pro_annual: 999000,      // ₹9,990/year
+  family: 149900,          // ₹1,499/month
+  family_annual: 1499000,  // ₹14,990/year
 };
 
 export default async function handler(req, res) {
