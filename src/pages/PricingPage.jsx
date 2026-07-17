@@ -290,8 +290,17 @@ export default function PricingPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ plan: planId, userId: user.id }),
       });
-      const orderData = await orderRes.json();
-      if (!orderRes.ok) throw new Error(orderData.error || 'Could not start payment. Please try again.');
+      let orderData;
+      try {
+        orderData = await orderRes.json();
+      } catch (parseErr) {
+        console.error('create-razorpay-order returned non-JSON response:', parseErr);
+        throw new Error(`Payment server returned an unexpected response (status ${orderRes.status}). This usually means a server-side configuration issue — check Vercel function logs.`);
+      }
+      if (!orderRes.ok) {
+        console.error('create-razorpay-order failed:', orderData);
+        throw new Error(orderData.error || `Could not start payment (status ${orderRes.status}). Check Vercel function logs for the exact cause.`);
+      }
 
       // Step 2 — open Checkout against that specific order
       const options = {
