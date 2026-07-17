@@ -96,14 +96,14 @@ export const RA_LEVEL2_QUESTIONS = [
   { chapter: 'blood-relations-l2', prompt: 'My mother\'s brother\'s son is my ?', options: ['Cousin', 'Nephew', 'Brother'], answer: 'Cousin', difficulty: 'medium', exp: 'Your mother\'s brother is your maternal uncle. His son is your cousin — children of siblings are cousins to each other.' },
 
   // ── Chapter 10: Mirror Images (Level 2 — clock faces, complex shapes) ──
-  { chapter: 'mirror-images-l2', prompt: 'If a clock shows 3:40, what time does its mirror image show?', options: ['8:20', '8:40', '3:20'], answer: '8:20', difficulty: 'hard' },
-  { chapter: 'mirror-images-l2', prompt: 'Which of these letter sequences looks the same in a mirror: AHA, BOB, MOM?', options: ['AHA', 'BOB', 'MOM'], answer: 'AHA', difficulty: 'hard' },
-  { chapter: 'mirror-images-l2', prompt: 'The mirror image of the number "1001" is ?', options: ['1001', '1000', '0011'], answer: '1001', difficulty: 'medium' },
-  { chapter: 'mirror-images-l2', prompt: 'A square rotated 45° looks like a diamond. What does its mirror image look like?', options: ['A diamond', 'A square', 'A circle'], answer: 'A diamond', difficulty: 'medium' },
-  { chapter: 'mirror-images-l2', prompt: 'If a clock shows 9:15, its mirror image shows?', options: ['2:45', '3:45', '2:15'], answer: '2:45', difficulty: 'hard' },
-  { chapter: 'mirror-images-l2', prompt: 'Which number looks the same in a mirror: 0, 1, 2?', options: ['0', '1', '2'], answer: '0', difficulty: 'medium' },
-  { chapter: 'mirror-images-l2', prompt: 'In a mirror placed on the right side, the letter "d" appears as ?', options: ['b', 'p', 'q'], answer: 'b', difficulty: 'hard' },
-  { chapter: 'mirror-images-l2', prompt: 'If a clock shows 6:30, what time does its mirror image show?', options: ['5:30', '6:30', '5:00'], answer: '5:30', difficulty: 'hard' },
+  { chapter: 'mirror-images-l2', prompt: 'If a clock shows 3:40, what time does its mirror image show?', options: ['8:20', '8:40', '3:20'], answer: '8:20', difficulty: 'hard', exp: 'A clock\'s mirror time is found by subtracting the actual time from 12:00. 12:00 − 3:40 = 8:20.' },
+  { chapter: 'mirror-images-l2', prompt: 'Which of these letter sequences looks the same in a mirror: AHA, BOB, DAD?', options: ['AHA', 'BOB', 'DAD'], answer: 'AHA', difficulty: 'hard', exp: 'For a word to look identical in a mirror, every individual letter must itself be left-right symmetric (like A, H, M, O, T, U, V, W, X, Y). B and D both have a curved side, so they break symmetry when mirrored — only AHA is built entirely from symmetric letters.' },
+  { chapter: 'mirror-images-l2', prompt: 'The mirror image of the number "1001" is ?', options: ['1001', '1000', '0011'], answer: '1001', difficulty: 'medium', exp: 'Both 0 and 1 are left-right symmetric digits, and "1001" reads the same forwards and backwards — so it mirrors to itself exactly.' },
+  { chapter: 'mirror-images-l2', prompt: 'A square rotated 45° looks like a diamond. What does its mirror image look like?', options: ['A diamond', 'A square', 'A circle'], answer: 'A diamond', difficulty: 'medium', exp: 'A diamond shape is symmetric down its vertical center line, so mirroring it left-right leaves it looking exactly the same — still a diamond.' },
+  { chapter: 'mirror-images-l2', prompt: 'If a clock shows 9:15, its mirror image shows?', options: ['2:45', '3:45', '2:15'], answer: '2:45', difficulty: 'hard', exp: '12:00 − 9:15 = 2:45, using the same mirror-clock rule.' },
+  { chapter: 'mirror-images-l2', prompt: 'Which number looks the same in a mirror: 0, 1, 2?', options: ['0', '1', '2'], answer: '0', difficulty: 'medium', exp: '0 is a simple symmetric oval, so it looks identical either way. 2 clearly changes shape when flipped, and in standard print, 1 usually has a small angled flag at the top that also breaks its symmetry — 0 is the safe, unambiguous answer.' },
+  { chapter: 'mirror-images-l2', prompt: 'In a mirror placed on the right side, the letter "d" appears as ?', options: ['b', 'p', 'q'], answer: 'b', difficulty: 'hard', exp: 'A left-right mirror swaps the letter\'s vertical stroke from one side to the other. The stroke in "d" is on the right — flipped, it moves to the left, which is exactly what "b" looks like.' },
+  { chapter: 'mirror-images-l2', prompt: 'If a clock shows 6:30, what time does its mirror image show?', options: ['5:30', '6:30', '5:00'], answer: '5:30', difficulty: 'hard', exp: '12:00 − 6:30 = 5:30.' },
 ];
 
 export function getLevel2QuestionsByChapter(chapterId) {
