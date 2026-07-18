@@ -303,13 +303,18 @@ export default function PricingPage() {
       }
 
       // Step 2 — open Checkout against that specific order
+      const discountApplied = orderData.discountApplied || 0;
+      const planDescription = discountApplied > 0
+        ? `${planLabel} Plan — ${discountApplied}% Knowledge Points discount applied! 🎉`
+        : `${planLabel} Plan Subscription`;
+
       const options = {
         key: RAZORPAY_KEY,
         amount: orderData.amount,
         currency: orderData.currency,
         order_id: orderData.orderId,
         name: 'VedicMindAI',
-        description: `${planLabel} Plan Subscription`,
+        description: planDescription,
         image: 'https://vedicmindai.in/logo.png',
         theme: { color: '#1E40AF' },
         handler: async function (response) {
