@@ -16,14 +16,14 @@ export const RA_LEVEL2_QUESTIONS = [
   { chapter: 'odd-one-out-l2', prompt: 'Which does not belong: 2, 3, 5, 9?', options: ['9', '2', '5'], answer: '9', difficulty: 'hard', exp: '2, 3, and 5 are all prime numbers — divisible only by 1 and themselves. 9 is divisible by 3 as well (9 = 3×3), which makes it composite, not prime.' },
 
   // ── Chapter 2: Number Series (Level 2 — geometric, alternating, mixed) ──
-  { chapter: 'number-series-l2', prompt: '3, 6, 12, 24, ?', options: ['36', '48', '30'], answer: '48', difficulty: 'medium' },
-  { chapter: 'number-series-l2', prompt: '1, 4, 9, 16, ?', options: ['20', '25', '30'], answer: '25', difficulty: 'medium' },
-  { chapter: 'number-series-l2', prompt: '2, 3, 5, 8, 13, ?', options: ['18', '21', '20'], answer: '21', difficulty: 'hard' },
-  { chapter: 'number-series-l2', prompt: '81, 27, 9, 3, ?', options: ['2', '1', '0'], answer: '1', difficulty: 'medium' },
-  { chapter: 'number-series-l2', prompt: '2, 6, 12, 20, 30, ?', options: ['40', '42', '36'], answer: '42', difficulty: 'hard' },
-  { chapter: 'number-series-l2', prompt: '1, 1, 2, 3, 5, 8, ?', options: ['11', '12', '13'], answer: '13', difficulty: 'medium' },
-  { chapter: 'number-series-l2', prompt: '5, 11, 23, 47, ?', options: ['94', '95', '96'], answer: '95', difficulty: 'hard' },
-  { chapter: 'number-series-l2', prompt: '144, 121, 100, 81, ?', options: ['64', '72', '60'], answer: '64', difficulty: 'medium' },
+  { chapter: 'number-series-l2', prompt: '3, 6, 12, 24, ?', options: ['36', '48', '30'], answer: '48', difficulty: 'medium', exp: 'Each number is double the one before it: 3→6→12→24. Doubling 24 gives 48.' },
+  { chapter: 'number-series-l2', prompt: '1, 4, 9, 16, ?', options: ['20', '25', '30'], answer: '25', difficulty: 'medium', exp: 'These are perfect squares: 1², 2², 3², 4². The next is 5² = 25.' },
+  { chapter: 'number-series-l2', prompt: '2, 3, 5, 8, 13, ?', options: ['18', '21', '20'], answer: '21', difficulty: 'hard', exp: 'Each number is the sum of the two before it (a Fibonacci-style rule): 8 + 13 = 21.' },
+  { chapter: 'number-series-l2', prompt: '81, 27, 9, 3, ?', options: ['2', '1', '0'], answer: '1', difficulty: 'medium', exp: 'Each number is the previous one divided by 3: 81→27→9→3, so 3÷3 = 1.' },
+  { chapter: 'number-series-l2', prompt: '2, 6, 12, 20, 30, ?', options: ['40', '42', '36'], answer: '42', difficulty: 'hard', exp: 'The gaps between numbers grow by 2 each time: +4, +6, +8, +10 — so the next gap is +12, giving 30 + 12 = 42. (You can also see it as 1×2, 2×3, 3×4, 4×5, 5×6 → 6×7 = 42.)' },
+  { chapter: 'number-series-l2', prompt: '1, 1, 2, 3, 5, 8, ?', options: ['11', '12', '13'], answer: '13', difficulty: 'medium', exp: 'This is the famous Fibonacci sequence — each number is the sum of the previous two: 5 + 8 = 13.' },
+  { chapter: 'number-series-l2', prompt: '5, 11, 23, 47, ?', options: ['94', '95', '96'], answer: '95', difficulty: 'hard', exp: 'Each number is double the previous one, plus 1: 5→11 (5×2+1), 11→23, 23→47 — so 47×2+1 = 95.' },
+  { chapter: 'number-series-l2', prompt: '144, 121, 100, 81, ?', options: ['64', '72', '60'], answer: '64', difficulty: 'medium', exp: 'These are perfect squares counting downwards: 12², 11², 10², 9². The next is 8² = 64.' },
 
   // ── Chapter 3: Analogies (Level 2 — abstract relationships) ──
   { chapter: 'analogies-l2', prompt: 'Author is to Novel as Composer is to ?', options: ['Symphony', 'Concert', 'Instrument'], answer: 'Symphony', difficulty: 'medium', exp: 'An Author writes a Novel — that\'s the finished creative work. A Composer writes a Symphony — also the finished work itself. A Concert is the event where it\'s performed, and an Instrument is just a tool, not the created work.' },
