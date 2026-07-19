@@ -94,21 +94,31 @@ export default function LearnPage() {
                 onNavigateToLesson={(id) => { setActiveLessonId(id); window.scrollTo(0, 0); }}
                 onLessonComplete={(lessonId, xp, score) => {
                   const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
-                  if (!p.completedLessons) p.completedLessons = [];
-                  if (!p.completedLessons.includes(lessonId)) p.completedLessons.push(lessonId);
                   if (!p.lessonScores) p.lessonScores = {};
                   p.lessonScores[lessonId] = score;
                   p.totalXP = (p.totalXP || 0) + xp;
-                  // badge checks
-                  if (!p.badges) p.badges = [];
-                  if (p.completedLessons.length >= 1 && !p.badges.includes('first_lesson')) p.badges.push('first_lesson');
-                  if (p.completedLessons.length >= 5 && !p.badges.includes('five_lessons')) p.badges.push('five_lessons');
-                  if (p.totalXP >= 500 && !p.badges.includes('xp_500')) p.badges.push('xp_500');
-                  if (score === 100 && !p.badges.includes('perfect_score')) p.badges.push('perfect_score');
-                  // advance current lesson pointer (does NOT navigate)
-                  const nextId = allIds[allIds.indexOf(lessonId) + 1];
-                  if (nextId) p.currentLesson = nextId;
-                  // study date
+
+                  // 100% COMPLETION GATE — a lesson is only marked 'completed'
+                  // (and the next lesson thereby unlocked) if the student scored
+                  // at least 60% on the quiz. Attempting the quiz and scoring
+                  // below 60% records the score for display purposes but does
+                  // NOT add the lesson to completedLessons, so the next lesson
+                  // remains locked until they retry and pass.
+                  const PASS_THRESHOLD = 60;
+                  if (score >= PASS_THRESHOLD) {
+                    if (!p.completedLessons) p.completedLessons = [];
+                    if (!p.completedLessons.includes(lessonId)) p.completedLessons.push(lessonId);
+                    // badge checks (only on genuine pass, not failed attempts)
+                    if (!p.badges) p.badges = [];
+                    if (p.completedLessons.length >= 1 && !p.badges.includes('first_lesson')) p.badges.push('first_lesson');
+                    if (p.completedLessons.length >= 5 && !p.badges.includes('five_lessons')) p.badges.push('five_lessons');
+                    if (p.totalXP >= 500 && !p.badges.includes('xp_500')) p.badges.push('xp_500');
+                    if (score === 100 && !p.badges.includes('perfect_score')) p.badges.push('perfect_score');
+                    // advance current lesson pointer
+                    const nextId = allIds[allIds.indexOf(lessonId) + 1];
+                    if (nextId) p.currentLesson = nextId;
+                  }
+                  // study date always recorded regardless of pass/fail
                   const today = new Date().toISOString().split('T')[0];
                   if (!p.studyDates) p.studyDates = [];
                   if (!p.studyDates.includes(today)) p.studyDates.push(today);
