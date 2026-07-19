@@ -91,10 +91,15 @@ export default function LifeSkillsTrackPage() {
                   fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)',
                 }}
               >
-                {tier === 'primary' ? T('Class 1-5', 'कक्षा 1-5') : tier === 'secondary' ? T('Class 6-9', 'कक्षा 6-9') : T('Class 10-12', 'कक्षा 10-12')}
+                {tier === 'primary'
+                  ? T('Class 1-5', 'कक्षा 1-5')
+                  : tier === 'secondary'
+                  ? T('Class 6-10', 'कक्षा 6-10')
+                  : trackId === 'teacher'
+                  ? T('Class 11-12 & Coaching', 'कक्षा 11-12 एवं कोचिंग')
+                  : T('Class 10-12', 'कक्षा 10-12')}
               </button>
-            ))}
-          </div>
+            ))}\n          </div>
         )}
 
         {/* Module list */}

@@ -420,7 +420,7 @@ export const LIFE_SKILLS_TRACKS = {
 
   teacher: {
     label: { en: 'Teacher Guide', hi: 'शिक्षक मार्गदर्शन' },
-    tiered: false,
+    tiered: true,
     modules: [
       {
         id: 'teacher_m1',
@@ -472,6 +472,406 @@ export const LIFE_SKILLS_TRACKS = {
           },
         ],
       },
+
+      // ── Module 3 ─────────────────────────────────────────────────────
+      {
+        id: 'teacher_m3',
+        order: 3,
+        title: { en: 'Shraddha — The Student Who Has Stopped Believing', hi: 'श्रद्धा — वह छात्र जिसने विश्वास करना बंद कर दिया' },
+        concept: {
+          en: 'Shraddha in the Vedic tradition is not blind belief — it is the student\'s active, willing openness to be changed by learning. The Mundaka Upanishad places it as the first requirement for a student approaching a Guru. Without Shraddha, the teacher\'s words land and leave, like water on stone.\n\nIn a modern classroom, you will recognise the absence of Shraddha: the student who stares through you, who submits blank papers not out of inability but out of having decided — often after repeated failures or humiliation — that trying is not worth it. This is not laziness. It is self-protection.\n\nThe Gurukul teacher understood this. The Guru did not simply increase the volume of instruction for a struggling student — they first worked to restore the student\'s belief that their mind was capable of change. The instruction came second.',
+          hi: 'श्रद्धा का अर्थ अंधा विश्वास नहीं है — यह छात्र की वह सक्रिय, स्वेच्छापूर्ण खुलापन है जो सीखने से परिवर्तित होने के लिए तैयार हो। जब कक्षा में एक छात्र आपसे आर-पार देखता है, खाली कागज़ जमा करता है — तो यह आलस नहीं है। यह आत्म-सुरक्षा है। गुरुकुल का शिक्षक यह समझता था — वह पहले छात्र की श्रद्धा को पुनर्जीवित करता था, फिर ज्ञान देता था।',
+        },
+        vedic_source: 'Mundaka Upanishad 1.2.12',
+        tiers: {
+          primary: {
+            label: { en: 'Classes 1–5', hi: 'कक्षा 1–5' },
+            steps: [
+              { en: 'Find one thing the child does well — anything — and name it specifically in front of them before any correction.', hi: 'एक चीज़ ढूंढें जो बच्चा अच्छी तरह करता है — कुछ भी — और उसे उसके सामने नाम से कहें।' },
+              { en: 'Lower the task until they succeed, then raise it one step. One success changes the internal story — "I can\'t" softens to "maybe."', hi: 'काम को इतना छोटा करें कि वे सफल हों, फिर एक कदम आगे बढ़ें। एक सफलता आंतरिक कहानी बदलती है।' },
+              { en: 'Never correct them in front of others — primary-age children take public correction as identity-level feedback.', hi: 'उन्हें कभी दूसरों के सामने न सुधारें — इस उम्र में सार्वजनिक सुधार पहचान पर चोट की तरह लगता है।' },
+            ],
+          },
+          secondary: {
+            label: { en: 'Classes 6–10', hi: 'कक्षा 6–10' },
+            steps: [
+              { en: 'Address the pattern, not the instance: "I\'ve noticed you don\'t attempt the last two questions — what\'s happening there?"', hi: '"मैंने देखा है कि तुम आखिरी दो सवाल नहीं करते — वहां क्या हो रहा है?"' },
+              { en: 'Share a moment when you yourself didn\'t understand something — briefly. It signals that confusion is normal, not a sign of deficiency.', hi: 'एक पल साझा करें जब आप खुद कुछ नहीं समझ पाए थे — संक्षेप में। यह संकेत देता है कि भ्रम सामान्य है।' },
+              { en: 'Give a task slightly below their current ceiling — guaranteed success — before raising difficulty.', hi: 'उनकी मौजूदा सीमा से थोड़ा नीचे का काम दें — पक्की सफलता — फिर कठिनाई बढ़ाएं।' },
+            ],
+          },
+          senior: {
+            label: { en: 'Classes 11–12 & Coaching', hi: 'कक्षा 11–12 एवं कोचिंग' },
+            steps: [
+              { en: 'Separate effort from outcome: "the score doesn\'t tell me how hard you worked — tell me what you tried."', hi: '"अंक मुझे यह नहीं बताते कि तुमने कितनी मेहनत की — मुझे बताओ तुमने क्या कोशिश की।"' },
+              { en: 'When a student says "I\'m just bad at this," respond with specificity: "you solved the first three steps correctly — you\'re not bad at it, you\'re stuck at step four."', hi: '"तुमने पहले तीन चरण सही हल किए — तुम इसमें बुरे नहीं हो, चरण चार पर अटके हो।"' },
+              { en: 'Protect their attempt in front of peers — never let class laughter at a wrong answer go unaddressed.', hi: 'साथियों के सामने उनके प्रयास की रक्षा करें — गलत जवाब पर कक्षा की हंसी को कभी अनसुना न करें।' },
+            ],
+          },
+        },
+        practiceSet: [
+          {
+            q: { en: 'A Class 9 student who previously performed well has stopped attempting questions. When you ask why, they shrug. What is most likely happening?', hi: 'कक्षा 9 का एक छात्र जो पहले अच्छा करता था, सवाल करना बंद कर दिया है। सबसे अधिक क्या हो रहा है?' },
+            options: [
+              { en: 'They have become lazy — needs stricter enforcement', hi: 'वे आलसी हो गए हैं — सख्त अनुशासन चाहिए' },
+              { en: 'They have lost Shraddha — self-protection after repeated failure or humiliation', hi: 'उन्होंने श्रद्धा खो दी है — बार-बार विफलता के बाद आत्म-सुरक्षा' },
+              { en: 'The content is too easy — they are bored', hi: 'सामग्री बहुत आसान है — वे ऊब गए हैं' },
+            ],
+            correct: 1,
+          },
+        ],
+        reflection: { en: 'Think of one student who seems to have "switched off." What do you actually know about what brought them to that point?', hi: 'एक छात्र के बारे में सोचें जो "बंद" लगता है। आप वास्तव में उस बारे में क्या जानते हैं जो उन्हें उस बिंदु पर लाया?' },
+      },
+
+      // ── Module 4 ─────────────────────────────────────────────────────
+      {
+        id: 'teacher_m4',
+        order: 4,
+        title: { en: 'Speaking So They Hear — The Four Levels of Vak', hi: 'ऐसे बोलें कि वे सुनें — वाक् के चार स्तर' },
+        concept: {
+          en: 'The Rigveda describes four levels of speech — Para, Pashyanti, Madhyama, Vaikhari. Vaikhari is the spoken word — what you say in class. The student receives it through Madhyama (their inner formulation). When instruction fails, teachers often respond by repeating Vaikhari — saying the same thing louder or slower. But the failure is rarely at the Vaikhari level. It happens when the teacher\'s spoken word cannot reach the student\'s Madhyama — when the formulation is too abstract, too fast, or delivered in a way that assumes prior knowledge the student doesn\'t have.',
+          hi: 'ऋग्वेद में वाक् के चार स्तर — परा, पश्यन्ती, मध्यमा, वैखरी। वैखरी वह है जो आप कक्षा में कहते हैं। जब शिक्षण विफल होता है, शिक्षक अक्सर वैखरी को दोहराते हैं। लेकिन विफलता शायद ही वैखरी के स्तर पर होती है। यह तब होती है जब बोला गया शब्द छात्र की मध्यमा तक नहीं पहुंच पाता।',
+        },
+        vedic_source: 'Rigveda 1.164.45',
+        tiers: {
+          primary: {
+            label: { en: 'Classes 1–5', hi: 'कक्षा 1–5' },
+            steps: [
+              { en: 'Use concrete objects and stories before abstract words. "Three apples plus two apples" reaches Madhyama; "addition" alone does not, at age 6.', hi: 'अमूर्त शब्दों से पहले ठोस वस्तुओं का उपयोग करें। "तीन सेब और दो सेब" मध्यमा तक पहुंचता है।' },
+              { en: 'After explaining, ask "can you show me with your hands?" — this externalises Madhyama and shows whether understanding has formed.', hi: 'समझाने के बाद पूछें "क्या तुम इसे हाथों से दिखा सकते हो?"' },
+              { en: 'Leave 7 seconds of silence after a question before taking an answer. Primary children need processing time.', hi: 'सवाल के बाद 7 सेकंड की चुप्पी रखें।' },
+            ],
+          },
+          secondary: {
+            label: { en: 'Classes 6–10', hi: 'कक्षा 6–10' },
+            steps: [
+              { en: 'Before teaching a new concept, ask what students already know about it. Connecting new information to existing Madhyama is how retention happens.', hi: 'नई अवधारणा सिखाने से पहले पूछें कि छात्र पहले से क्या जानते हैं।' },
+              { en: 'When a student gives a wrong answer, ask "how did you get there?" before correcting. Their path of thinking reveals where Madhyama diverged.', hi: 'गलत जवाब पर सुधारने से पहले पूछें "तुम वहां कैसे पहुंचे?"' },
+              { en: 'Use analogies from the students\' own world — cricket, cooking, WhatsApp — not from yours.', hi: 'छात्रों की अपनी दुनिया से उपमाएं लें — क्रिकेट, खाना बनाना।' },
+            ],
+          },
+          senior: {
+            label: { en: 'Classes 11–12 & Coaching', hi: 'कक्षा 11–12 एवं कोचिंग' },
+            steps: [
+              { en: 'Ask students to explain a concept to each other — peer Vaikhari is often more effective because the peer speaks from a closer Madhyama.', hi: 'छात्रों से एक-दूसरे को अवधारणा समझाने को कहें।' },
+              { en: 'Slow down at exactly the point where you feel most confident — overexplanation of easy parts, underexplanation of hard parts is the most common teaching error.', hi: 'ठीक उस बिंदु पर धीमे हों जहां आप सबसे आत्मविश्वासी हैं।' },
+              { en: 'Replace "any doubts?" with "tell me the first step of this method in your own words."', hi: '"कोई शंका?" की जगह "इस विधि का पहला चरण अपने शब्दों में बताओ।"' },
+            ],
+          },
+        },
+        practiceSet: [
+          {
+            q: { en: 'You have explained a concept twice using the same words. Most students still look confused. What is the most useful next move?', hi: 'आपने एक अवधारणा को एक ही शब्दों से दो बार समझाया। अधिकांश छात्र अभी भी भ्रमित दिखते हैं। सबसे उपयोगी अगला कदम क्या है?' },
+            options: [
+              { en: 'Explain it a third time, more slowly', hi: 'इसे तीसरी बार, और धीरे समझाएं' },
+              { en: 'Ask a student to tell you in their own words what they understand so far — use their Madhyama as the starting point', hi: 'एक छात्र से पूछें कि वे अब तक क्या समझते हैं — उनकी मध्यमा को शुरुआती बिंदु बनाएं' },
+              { en: 'Move on and come back to it next class', hi: 'आगे बढ़ें और अगली कक्षा में वापस आएं' },
+            ],
+            correct: 1,
+          },
+        ],
+        reflection: { en: 'Think of a concept you teach that students consistently struggle with. What assumption about prior knowledge might you be making?', hi: 'एक अवधारणा के बारे में सोचें जो छात्र लगातार संघर्ष करते हैं। पूर्व ज्ञान के बारे में आप क्या मान रहे होंगे?' },
+      },
+
+      // ── Module 5 ─────────────────────────────────────────────────────
+      {
+        id: 'teacher_m5',
+        order: 5,
+        title: { en: 'The Question That Opens and the Question That Closes', hi: 'वह प्रश्न जो खोलता है और वह जो बंद करता है' },
+        concept: {
+          en: 'The Upanishads were not lectures — they were dialogues driven by the Guru\'s questions. There are two kinds of questions a teacher can ask. Opening questions — "what do you notice about these three numbers?" — require the student to generate thought. Closing questions — "what is the formula for this?" — test retrieval. Both have a place, but when teachers use only closing questions, students learn to wait for the teacher to ask the right question rather than developing their own capacity to inquire.',
+          hi: 'उपनिषद् व्याख्यान नहीं थे — वे गुरु के प्रश्नों से चलने वाले संवाद थे। दो प्रकार के प्रश्न होते हैं। खोलने वाले प्रश्न — "इन तीन संख्याओं में तुम क्या देखते हो?" जब शिक्षक केवल बंद करने वाले प्रश्न पूछते हैं, तो छात्र सही प्रश्न का इंतज़ार करना सीखते हैं।',
+        },
+        vedic_source: 'Brihadaranyaka Upanishad 3.1–9 (Yajnavalkya dialogues)',
+        tiers: {
+          primary: {
+            label: { en: 'Classes 1–5', hi: 'कक्षा 1–5' },
+            steps: [
+              { en: 'Use "what do you notice?" as your primary opening question — it has no wrong answer, and every child can respond.', hi: '"तुम्हें क्या दिखता है?" को अपना प्राथमिक प्रश्न बनाएं।' },
+              { en: 'When a child gives a surprising answer, ask "how did you think of that?" — modelling curiosity about thinking itself.', hi: 'जब बच्चा कोई आश्चर्यजनक जवाब दे, "तुमने ऐसा कैसे सोचा?" पूछें।' },
+              { en: 'End lessons with "what is one thing you are still wondering about?" — this teaches children that confusion is a starting point, not an endpoint.', hi: 'पाठ का अंत "एक चीज़ जो तुम अभी भी जानना चाहते हो?" से करें।' },
+            ],
+          },
+          secondary: {
+            label: { en: 'Classes 6–10', hi: 'कक्षा 6–10' },
+            steps: [
+              { en: 'Replace "does everyone understand?" with "what is one thing that is still unclear?" — specific enough to answer honestly.', hi: '"क्या सब समझे?" की जगह "एक चीज़ जो अभी भी स्पष्ट नहीं है?" पूछें।' },
+              { en: 'Ask "what\'s another way to look at this?" after giving the standard explanation.', hi: 'मानक व्याख्या देने के बाद "इसे देखने का एक और तरीका क्या है?" पूछें।' },
+              { en: 'When a student is stuck, ask "what do you know for certain about this problem?" — certainty-mapping shows them they have more ground than they think.', hi: 'जब छात्र अटका हो, "इस समस्या के बारे में तुम क्या निश्चित रूप से जानते हो?" पूछें।' },
+            ],
+          },
+          senior: {
+            label: { en: 'Classes 11–12 & Coaching', hi: 'कक्षा 11–12 एवं कोचिंग' },
+            steps: [
+              { en: 'Ask "where could this be wrong?" about your own explanations — modelling self-questioning is one of the highest-value things a teacher can demonstrate.', hi: '"यह कहां गलत हो सकता है?" — अपनी खुद की व्याख्याओं के बारे में पूछें।' },
+              { en: 'Use Socratic questioning on misconceptions: don\'t correct directly — ask "if that\'s true, what would follow from it?" and let students reach the contradiction themselves.', hi: 'गलतफहमियों पर सीधे सुधार न करें — "अगर यह सच है, तो इससे क्या निकलेगा?" पूछें।' },
+              { en: 'Ask "what would change in your approach if you had 30 minutes less?" — forces prioritisation thinking, the actual skill tested in competitive exams.', hi: '"अगर तुम्हारे पास 30 मिनट कम होते तो तुम्हारा तरीका क्या बदलता?"' },
+            ],
+          },
+        },
+        practiceSet: [
+          {
+            q: { en: 'You ask "does everyone understand?" after a difficult explanation. The class is silent. What does that silence most likely mean?', hi: 'आप कठिन व्याख्या के बाद "क्या सब समझे?" पूछते हैं। कक्षा चुप है। इस चुप्पी का सबसे अधिक क्या मतलब है?' },
+            options: [
+              { en: 'Everyone understood — no questions', hi: 'सभी समझ गए — कोई सवाल नहीं' },
+              { en: 'The question was too broad to answer honestly — students need a specific, safer question', hi: 'प्रश्न ईमानदारी से उत्तर देने के लिए बहुत व्यापक था — छात्रों को एक विशिष्ट, सुरक्षित प्रश्न चाहिए' },
+              { en: 'Students are tired — move on', hi: 'छात्र थके हुए हैं — आगे बढ़ें' },
+            ],
+            correct: 1,
+          },
+        ],
+        reflection: { en: 'In your last class, what proportion of your questions were opening questions versus closing questions?', hi: 'आपकी पिछली कक्षा में, आपके कितने प्रश्न खोलने वाले थे बनाम बंद करने वाले?' },
+      },
+
+      // ── Module 6 ─────────────────────────────────────────────────────
+      {
+        id: 'teacher_m6',
+        order: 6,
+        title: { en: 'Seeing the Whole Child — Pancha Kosha', hi: 'पूरे बच्चे को देखना — पंचकोश' },
+        concept: {
+          en: 'The Taittiriya Upanishad describes five layers (koshas) of a human being: Annamaya (physical body), Pranamaya (vital/breath body), Manomaya (mental body), Vijnanamaya (intellectual body), Anandamaya (bliss body). Learning is only possible when the first three are stable. A student who hasn\'t eaten, who slept badly, or who is in acute social stress has genuinely reduced cognitive bandwidth — this is not metaphor, it is neuroscience. The Gurukul teacher knew their students deeply enough to read which Kosha was unavailable on a given day.',
+          hi: 'तैत्तिरीय उपनिषद् पंचकोश का वर्णन करता है। सीखना तभी संभव है जब पहले तीन स्थिर हों। जो छात्र भूखा है, जिसने बुरी तरह सोया है, या जो तीव्र तनाव में है — उसकी संज्ञानात्मक क्षमता वास्तव में कम होती है।',
+        },
+        vedic_source: 'Taittiriya Upanishad 2.1–5 (Brahmananda Valli)',
+        tiers: {
+          primary: {
+            label: { en: 'Classes 1–5', hi: 'कक्षा 1–5' },
+            steps: [
+              { en: 'Notice if a child is physically off — hasn\'t eaten, tired, in pain. A 2-minute conversation ("you seem quiet today, everything okay?") is not lost teaching time — it is the condition for teaching time.', hi: 'ध्यान दें कि क्या बच्चा शारीरिक रूप से ठीक नहीं है। 2 मिनट की बातचीत खोया हुआ समय नहीं — यह पढ़ाने के समय की शर्त है।' },
+              { en: 'Build a 3-minute settling routine at the start of class — a breath, a question. This transitions Pranamaya from the stimulation of the corridor to the focus of the classroom.', hi: 'कक्षा की शुरुआत में 3 मिनट का स्थिरीकरण रूटीन बनाएं।' },
+              { en: 'Seat children who seem anxious near you — not as punishment, but as proximity support.', hi: 'जो बच्चे चिंतित दिखें उन्हें अपने पास बिठाएं — दंड के रूप में नहीं, निकटता समर्थन के रूप में।' },
+            ],
+          },
+          secondary: {
+            label: { en: 'Classes 6–10', hi: 'कक्षा 6–10' },
+            steps: [
+              { en: 'If a student who is normally present seems absent — eyes glazed — check in privately after class, not during. Public check-ins at this age are threatening to Pranamaya.', hi: 'अगर सामान्यतः उपस्थित छात्र अनुपस्थित लगे — कक्षा के दौरान नहीं, बाद में निजी रूप से बात करें।' },
+              { en: 'Acknowledge when the class seems collectively anxious — before a major exam. Naming group Pranamaya is more effective than ignoring it and teaching through it.', hi: 'जब पूरी कक्षा सामूहिक रूप से चिंतित हो — नाम लेकर स्वीकार करें।' },
+              { en: 'After a school event that caused conflict, give 5 minutes for students to settle before beginning content.', hi: 'किसी संघर्षपूर्ण घटना के बाद सामग्री शुरू करने से पहले 5 मिनट दें।' },
+            ],
+          },
+          senior: {
+            label: { en: 'Classes 11–12 & Coaching', hi: 'कक्षा 11–12 एवं कोचिंग' },
+            steps: [
+              { en: 'In weeks before board exams, explicitly teach one breathing technique. The 3-5 minutes this costs is recovered tenfold in cognitive availability during the exam.', hi: 'बोर्ड परीक्षाओं से पहले एक श्वास तकनीक सिखाएं।' },
+              { en: 'Watch for Annamaya signals — students not eating, surviving on caffeine, not sleeping. Name it: "your brain doesn\'t retain well below 6 hours of sleep."', hi: '"6 घंटे से कम नींद में मस्तिष्क अच्छी तरह याद नहीं रखता।"' },
+              { en: 'Distinguish between a student who can\'t do the work and one who currently can\'t access their capacity because Pranamaya is overwhelmed. The intervention is completely different.', hi: 'उस छात्र में फर्क करें जो काम नहीं कर सकता और जो इस समय नहीं कर सकता क्योंकि उसका प्राणमय अभिभूत है।' },
+            ],
+          },
+        },
+        practiceSet: [
+          {
+            q: { en: 'A student who normally performs well scores very poorly and seems distracted for a week. What does the Pancha Kosha framework suggest first?', hi: 'एक छात्र जो सामान्यतः अच्छा करता है, एक हफ्ते के लिए खराब प्रदर्शन करता है। पंचकोश ढांचा पहले क्या सुझाता है?' },
+            options: [
+              { en: 'Increase academic support immediately — extra practice', hi: 'तुरंत अकादमिक समर्थन बढ़ाएं' },
+              { en: 'Check whether something has disrupted their Pranamaya or Annamaya first — performance changes are often symptoms, not problems', hi: 'पहले जांचें कि क्या उनके प्राणमय या अन्नमय को कुछ बाधित किया है' },
+              { en: 'Inform parents immediately about the drop', hi: 'तुरंत माता-पिता को गिरावट के बारे में सूचित करें' },
+            ],
+            correct: 1,
+          },
+        ],
+        reflection: { en: 'Think of a student who is consistently underperforming. What do you actually know about their Annamaya and Pranamaya conditions?', hi: 'एक छात्र के बारे में सोचें जो लगातार कम प्रदर्शन कर रहा है। आप उनकी अन्नमय और प्राणमय स्थिति के बारे में वास्तव में क्या जानते हैं?' },
+      },
+
+      // ── Module 7 ─────────────────────────────────────────────────────
+      {
+        id: 'teacher_m7',
+        order: 7,
+        title: { en: 'Sama, Dama, Uparati — Managing Yourself in the Classroom', hi: 'शम, दम, उपरति — कक्षा में स्वयं को संभालना' },
+        concept: {
+          en: 'Adi Shankaracharya\'s Vivekachudamani lists Sama (inner calm), Dama (sense restraint), and Uparati (non-reactivity) as foundational qualities for a teacher. A teacher who cannot access these in a difficult moment — when a student is disruptive, when the class is chaotic — loses the capacity to respond thoughtfully and falls back on reaction. The Gurukul Guru\'s authority came from this visible quality of groundedness. Students trust a teacher who does not lose themselves under pressure.',
+          hi: 'आदि शंकराचार्य के विवेकचूड़ामणि में शम, दम और उपरति — एक शिक्षक के लिए मूलभूत गुण हैं। गुरुकुल गुरु का अधिकार पद से नहीं — इस दृश्यमान स्थिरता से आता था। उपरति उदासीनता नहीं है — यह उत्तेजना और प्रतिक्रिया के बीच के अंतर को बनाने के बारे में है।',
+        },
+        vedic_source: 'Vivekachudamani v.22–24 (Adi Shankaracharya)',
+        tiers: {
+          primary: {
+            label: { en: 'Classes 1–5', hi: 'कक्षा 1–5' },
+            steps: [
+              { en: 'When a child\'s behaviour triggers frustration, use a physical anchor before responding — a deliberate breath, lower your voice rather than raising it.', hi: 'जब किसी बच्चे का व्यवहार निराशा उत्पन्न करे, जवाब देने से पहले एक जानबूझकर श्वास लें, आवाज़ को ऊंचा करने की जगह नीचा करें।' },
+              { en: 'Build a classroom signal for "pause" that gives both you and students a reset moment.', hi: 'एक कक्षा "विराम" संकेत बनाएं जो आपको और छात्रों को रीसेट पल देता है।' },
+              { en: 'After a difficult classroom moment, acknowledge it briefly: "that was a hard moment — let\'s take a breath and start again."', hi: 'कठिन पल के बाद संक्षेप में स्वीकार करें: "वह एक कठिन पल था — एक श्वास लेते हैं।"' },
+            ],
+          },
+          secondary: {
+            label: { en: 'Classes 6–10', hi: 'कक्षा 6–10' },
+            steps: [
+              { en: 'Respond to the behaviour, not your interpretation: "you\'re talking when I\'m teaching" not "you don\'t care about this class."', hi: '"तुम तब बात कर रहे हो जब मैं पढ़ा रहा हूं" — न कि "तुम्हें इस कक्षा की परवाह नहीं।"' },
+              { en: 'Identify your personal triggers — the specific student behaviours that most reliably destabilise your Sama. Name them to yourself so they become less automatic.', hi: 'अपने व्यक्तिगत ट्रिगर पहचानें — वे व्यवहार जो सबसे विश्वसनीय रूप से आपके शम को अस्थिर करते हैं।' },
+              { en: 'When you make an error in class, acknowledge it without excessive apology or defensiveness. This is Dama in action.', hi: 'जब आप गलती करें — बिना अत्यधिक माफी या रक्षात्मकता के स्वीकार करें।' },
+            ],
+          },
+          senior: {
+            label: { en: 'Classes 11–12 & Coaching', hi: 'कक्षा 11–12 एवं कोचिंग' },
+            steps: [
+              { en: 'When students challenge or confront you, Uparati means receiving it without either collapsing or escalating. Neither is strength.', hi: 'जब छात्र चुनौती दें, उपरति का अर्थ है — न ढहकर और न बढ़ाकर स्वीकार करना।' },
+              { en: 'Build a post-class reflection practice: "what triggered me today, and what was my actual response?" Sama is a capacity that can be trained.', hi: 'कक्षा के बाद चिंतन अभ्यास बनाएं: "आज मुझे क्या ट्रिगर हुआ?"' },
+              { en: 'Before a major exam, your visible Sama is the most powerful intervention available — students borrow nervous system regulation from calm adults around them.', hi: 'प्रमुख परीक्षा से पहले, आपका दृश्यमान शम सबसे शक्तिशाली हस्तक्षेप है।' },
+            ],
+          },
+        },
+        practiceSet: [
+          {
+            q: { en: 'A student responds to your correction with visible irritation: "this explanation doesn\'t make sense." Which response best demonstrates Uparati?', hi: 'एक छात्र आपके सुधार पर चिड़चिड़ाहट से कहता है: "यह व्याख्या समझ नहीं आती।" कौन सी प्रतिक्रिया उपरति दर्शाती है?' },
+            options: [
+              { en: '"You need to be more respectful in this classroom."', hi: '"तुम्हें इस कक्षा में अधिक सम्मानजनक होना होगा।"' },
+              { en: '"Tell me specifically which part isn\'t clear — I\'d like to explain it better."', hi: '"मुझे बताओ विशेष रूप से कौन सा हिस्सा स्पष्ट नहीं है — मैं इसे बेहतर समझाना चाहूंगा।"' },
+              { en: 'Continue the lesson and address their attitude after class', hi: 'पाठ जारी रखें और उनके रवैये को बाद में संबोधित करें' },
+            ],
+            correct: 1,
+          },
+        ],
+        reflection: { en: 'What is the one student behaviour that most reliably destabilises your Sama? What do you do in those moments that you would not do if you had two more seconds?', hi: 'वह कौन सा छात्र व्यवहार है जो सबसे विश्वसनीय रूप से आपके शम को अस्थिर करता है?' },
+      },
+
+      // ── Module 8 ─────────────────────────────────────────────────────
+      {
+        id: 'teacher_m8',
+        order: 8,
+        title: { en: 'The Moment of Mastery — Naming What You See', hi: 'महारत का पल — जो दिखे उसे नाम दो' },
+        concept: {
+          en: 'In the Chandogya Upanishad, when Satyakama Jabali returns to his Guru after twelve years, the Guru says: "You shine like one who knows Brahman." Not "well done" — but a precise naming of what the Guru observes. Modern teaching has largely replaced this with generic praise: "good job," "excellent." These phrases pass through students without sticking because they contain no information. The moment of mastery — when a struggling student finally gets something — is a pedagogical event. What you do in that moment determines whether the student\'s identity updates to include "I can do this."',
+          hi: 'छांदोग्य उपनिषद् में, गुरु कहते हैं: "तुम ब्रह्म को जानने वाले की तरह चमकते हो।" यह सामान्य प्रशंसा नहीं — विशिष्ट, देखी हुई है। "अच्छा किया," "बहुत बढ़िया" — ये वाक्यांश छात्रों से गुज़र जाते हैं। महारत का पल — जब एक संघर्षरत छात्र अंततः कुछ समझ जाता है — एक शैक्षणिक घटना है।',
+        },
+        vedic_source: 'Chandogya Upanishad 4.14 (Satyakama Jabali)',
+        tiers: {
+          primary: {
+            label: { en: 'Classes 1–5', hi: 'कक्षा 1–5' },
+            steps: [
+              { en: 'When a child gets something after struggling, name what you observed specifically: "you kept trying even when it was hard — that\'s the thing that made it work."', hi: 'जब बच्चा संघर्ष के बाद कुछ समझे, विशेष रूप से नाम लें: "तुम कठिन होने पर भी कोशिश करते रहे।"' },
+              { en: 'Avoid comparative recognition — "best in the class." Comparative praise teaches children to evaluate themselves against others, not their own previous state.', hi: 'तुलनात्मक मान्यता से बचें। तुलनात्मक प्रशंसा बच्चों को दूसरों के मुकाबले खुद का मूल्यांकन करना सिखाती है।' },
+              { en: 'Keep a mental note of each child\'s last mastery moment — reference it when they struggle next: "remember when you finally got this? this is the same kind of problem."', hi: 'हर बच्चे के आखिरी महारत पल का मानसिक नोट रखें और अगले संघर्ष में उसका संदर्भ दें।' },
+            ],
+          },
+          secondary: {
+            label: { en: 'Classes 6–10', hi: 'कक्षा 6–10' },
+            steps: [
+              { en: 'When a student produces something genuinely good, name it precisely in front of the class: "what Priya just did is called a proof by contradiction — that\'s a university-level move."', hi: 'जब छात्र कुछ वास्तव में अच्छा करे, इसे कक्षा के सामने सटीक रूप से नाम दें।' },
+              { en: 'After a student who has struggled gets something right, acknowledge it privately first — then, if appropriate, publicly.', hi: 'जब एक संघर्षरत छात्र सही करे, पहले निजी रूप से स्वीकार करें — फिर उचित हो तो सार्वजनिक रूप से।' },
+              { en: 'Distinguish between praising the result and praising the process: "the way you checked your work at the end caught an error that most people miss."', hi: '"तुमने अंत में अपना काम जांचा जिसने वह त्रुटि पकड़ी जो ज़्यादातर लोग चूक जाते हैं।"' },
+            ],
+          },
+          senior: {
+            label: { en: 'Classes 11–12 & Coaching', hi: 'कक्षा 11–12 एवं कोचिंग' },
+            steps: [
+              { en: 'When a struggling student makes a breakthrough, stop the class for 30 seconds to name it: "what just happened in Rahul\'s working is exactly the insight this entire topic depends on."', hi: 'जब एक संघर्षरत छात्र को सफलता मिले — 30 सेकंड के लिए कक्षा रोककर इसे नाम दें।' },
+              { en: 'Write specific feedback, not grades alone: "your analysis in paragraph 3 correctly identified the causal chain — this is the level of reasoning the board exam tests."', hi: 'केवल ग्रेड नहीं — विशिष्ट फीडबैक लिखें।' },
+              { en: 'In the last weeks before exams, create explicit moments to remind students how far they have come — not to comfort, but to anchor their identity before assessment.', hi: 'परीक्षाओं से पहले के अंतिम हफ्तों में छात्रों को याद दिलाएं कि वे कितनी दूर आए हैं।' },
+            ],
+          },
+        },
+        practiceSet: [
+          {
+            q: { en: 'After a struggling student finally solves a difficult problem correctly, which response best follows the Chandogya Upanishad\'s principle?', hi: 'एक संघर्षरत छात्र अंततः एक कठिन समस्या सही हल करता है। कौन सी प्रतिक्रिया सबसे अच्छी है?' },
+            options: [
+              { en: '"Good job!"', hi: '"अच्छा किया!"' },
+              { en: '"Excellent — 10 out of 10."', hi: '"बहुत बढ़िया — 10 में से 10।"' },
+              { en: '"You found the pattern that makes this whole method work — that\'s the thinking that will carry you through the rest of this chapter."', hi: '"तुमने वह पैटर्न खोजा जो इस पूरी विधि को काम करता है।"' },
+            ],
+            correct: 2,
+          },
+        ],
+        reflection: { en: 'Think of the last time a student in your class had a genuine mastery moment. What did you say? What would you say now?', hi: 'उस आखिरी बार के बारे में सोचें जब आपके कक्षा में किसी छात्र को वास्तविक महारत का पल मिला। आपने क्या कहा?' },
+      },
+
+      // ── Module 9 ─────────────────────────────────────────────────────
+      {
+        id: 'teacher_m9',
+        order: 9,
+        title: { en: 'Fair Witness — Assessment Without Bias', hi: 'निष्पक्ष साक्षी — बिना पूर्वाग्रह के आकलन' },
+        concept: {
+          en: 'The Nyaya Shastra holds that valid knowledge (Pramana) must be acquired through correct means. Pratyaksha (direct perception) is the highest — but teachers most often assess through Anumana (inference). "This student is bright but lazy" — the "bright" might be Pratyaksha, but the "lazy" is almost certainly Anumana. Research on teacher expectation effects (Rosenthal and Jacobson, 1968) confirms what the Nyaya school articulated 2500 years ago: how you perceive a student becomes a self-fulfilling prophecy through your differential treatment of them.',
+          hi: 'न्याय शास्त्र: किसी चीज़ को जानने का दावा करने से पहले, यह पहचानें कि आप किस प्रमाण से उस ज्ञान तक आए। "यह छात्र प्रतिभाशाली लेकिन आलसी है" — "आलसी" लगभग निश्चित रूप से अनुमान है। रोसेन्थल और जैकबसन (1968) ने पुष्टि की: आप एक छात्र को जैसा देखते हैं, वह स्व-पूर्ण भविष्यवाणी बन जाता है।',
+        },
+        vedic_source: 'Nyaya Sutras (Gautama Muni) — Pratyaksha, Anumana, Upamana, Shabda',
+        tiers: {
+          primary: {
+            label: { en: 'Classes 1–5', hi: 'कक्षा 1–5' },
+            steps: [
+              { en: 'Before a test, write one genuine observation about each child\'s understanding — not expectation. Compare to the result. Where they diverge is where your Anumana was operating.', hi: 'परीक्षा से पहले, प्रत्येक बच्चे की समझ के बारे में एक वास्तविक अवलोकन लिखें — अपेक्षा नहीं।' },
+              { en: 'When a child consistently underperforms, ask: "what do I actually observe, versus what have I come to assume about this child?"', hi: '"मैं वास्तव में क्या देखता हूं, बनाम इस बच्चे के बारे में मैंने क्या मान लिया है?"' },
+              { en: 'Give every child a low-stakes oral opportunity separate from written tests — some children\'s Pratyaksha is invisible in written form.', hi: 'हर बच्चे को लिखित परीक्षाओं से अलग एक मौखिक अवसर दें।' },
+            ],
+          },
+          secondary: {
+            label: { en: 'Classes 6–10', hi: 'कक्षा 6–10' },
+            steps: [
+              { en: 'When marking, cover the name before reading the paper — especially for students you have a strong prior impression of. This is Pratyaksha discipline.', hi: 'जांचते समय पेपर पढ़ने से पहले नाम ढकें — विशेष रूप से उन छात्रों के लिए जिनके बारे में आपकी पहले से मजबूत राय है।' },
+              { en: 'Audit your questioning patterns: which students do you call on most? Least? These patterns reveal your Anumana about who is capable.', hi: 'अपने प्रश्न पूछने के पैटर्न की जांच करें: आप किन छात्रों को सबसे अधिक बुलाते हैं?' },
+              { en: 'When a student surprises you, treat it as data about your Anumana — not the student\'s inconsistency.', hi: 'जब कोई छात्र आपको आश्चर्यचकित करे, इसे अपने अनुमान के बारे में डेटा मानें।' },
+            ],
+          },
+          senior: {
+            label: { en: 'Classes 11–12 & Coaching', hi: 'कक्षा 11–12 एवं कोचिंग' },
+            steps: [
+              { en: 'Be explicit with students: "right now, your approach to time-management is weak" is not the same as "you are weak." Assessment of current performance ≠ assessment of capacity.', hi: '"अभी, परीक्षाओं में समय-प्रबंधन के प्रति तुम्हारा दृष्टिकोण कमज़ोर है" — "तुम कमज़ोर हो" जैसा नहीं।' },
+              { en: 'In coaching, students who have been with you longer get more benefit-of-the-doubt. Name this to yourself and actively counteract it.', hi: 'कोचिंग में, जो छात्र अधिक समय से हैं उन्हें अधिक संदेह का लाभ मिलता है। इसे खुद से कहें और प्रतिकार करें।' },
+              { en: 'Separate prediction from preparation: "I think you\'ll get 85" is Anumana. "Here\'s what I observe about your preparation" is Pratyaksha.', hi: '"मुझे लगता है तुम्हें 85 मिलेंगे" अनुमान है। "तुम्हारी तैयारी के बारे में मैं यह देखता हूं" प्रत्यक्ष है।' },
+            ],
+          },
+        },
+        practiceSet: [
+          {
+            q: { en: 'A teacher says: "I know Arun is bright — he just doesn\'t apply himself." Using the Nyaya framework, what kind of knowledge claim is "he doesn\'t apply himself"?', hi: 'एक शिक्षक कहता है: "अरुण प्रतिभाशाली है — वह बस खुद को नहीं लगाता।" न्याय ढांचे में यह किस प्रकार का ज्ञान दावा है?' },
+            options: [
+              { en: 'Pratyaksha — directly observed', hi: 'प्रत्यक्ष — सीधे देखा गया' },
+              { en: 'Anumana — inferred from incomplete observation, filtered through expectation', hi: 'अनुमान — अधूरे अवलोकन से निष्कर्षित, अपेक्षा से फ़िल्टर किया गया' },
+              { en: 'Shabda — received from another teacher\'s report', hi: 'शब्द — किसी अन्य शिक्षक की रिपोर्ट से प्राप्त' },
+            ],
+            correct: 1,
+          },
+        ],
+        reflection: { en: 'Name one student about whom you hold a strong opinion. How much of that opinion is Pratyaksha and how much is Anumana?', hi: 'एक छात्र का नाम लें जिसके बारे में आपकी मजबूत राय है। वह राय कितनी प्रत्यक्ष है और कितनी अनुमान?' },
+      },
+
+      // ── Module 10 ────────────────────────────────────────────────────
+      {
+        id: 'teacher_m10',
+        order: 10,
+        title: { en: 'The Teacher Who Keeps Learning — Neti Neti', hi: 'वह शिक्षक जो सीखता रहता है — नेति नेति' },
+        concept: {
+          en: '"Neti neti" — not this, not this — is the Upanishadic recognition that reality exceeds any description of it. Applied to teaching: every model you have of a subject is "neti neti" — correct as far as it goes, but incomplete. Every model of a student is the same. The moment a teacher stops treating their own understanding as provisional — the moment they stop being curious — their teaching calcifies into information delivery. A teacher who stops being a student cannot transmit the living quality of Shraddha — only its dead form.',
+          hi: '"नेति नेति" — "यह नहीं, यह नहीं।" किसी विषय के बारे में आपका हर मॉडल "नेति नेति" है। जो शिक्षक छात्र बनना बंद कर देता है, वह श्रद्धा को जीवित रूप में नहीं बल्कि उसके मृत रूप में ही प्रसारित कर सकता है।',
+        },
+        vedic_source: 'Brihadaranyaka Upanishad 2.3.6',
+        tiers: {
+          primary: {
+            label: { en: 'Classes 1–5', hi: 'कक्षा 1–5' },
+            steps: [
+              { en: 'When a child asks a question you can\'t answer, say "I don\'t know — let\'s find out together." You are teaching them that not-knowing is the beginning of learning, not its failure.', hi: '"मुझे नहीं पता — चलो मिलकर पता करते हैं।" आप उन्हें सिखा रहे हैं कि न-जानना सीखने की शुरुआत है।' },
+              { en: 'Show genuine curiosity about something outside your subject in class. Curiosity is caught, not taught — students need to see it in you.', hi: 'कक्षा में अपने विषय से बाहर किसी चीज़ के बारे में वास्तविक जिज्ञासा दिखाएं।' },
+              { en: 'When a child corrects you, receive it fully: "you\'re right, I made an error." This models intellectual honesty at the most formative age.', hi: 'जब बच्चा सुधारे: "तुम सही हो, मैंने गलती की।" यह सबसे महत्वपूर्ण उम्र में बौद्धिक ईमानदारी का आदर्श है।' },
+            ],
+          },
+          secondary: {
+            label: { en: 'Classes 6–10', hi: 'कक्षा 6–10' },
+            steps: [
+              { en: 'Periodically tell your class something you are currently learning — not as performance, but genuine disclosure. It signals that learning doesn\'t stop when you become a teacher.', hi: 'समय-समय पर अपनी कक्षा को कुछ बताएं जो आप वर्तमान में सीख रहे हैं।' },
+              { en: 'When a student interprets a concept you\'ve taught for years in an unexpected way, be genuinely curious before evaluating it. "Neti neti" applies to your own subject knowledge.', hi: 'जब छात्र एक अवधारणा को अप्रत्याशित रूप से व्याख्यायित करे, मूल्यांकन करने से पहले वास्तव में जिज्ञासु हों।' },
+              { en: 'Identify one chapter you teach without thinking. Relearn it — what changed in the field? What do you now find unsatisfying in your old explanation?', hi: 'एक अध्याय पहचानें जो आप बिना सोचे पढ़ाते हैं। इसे फिर से सीखें।' },
+            ],
+          },
+          senior: {
+            label: { en: 'Classes 11–12 & Coaching', hi: 'कक्षा 11–12 एवं कोचिंग' },
+            steps: [
+              { en: 'When a student knows more about a narrow topic than you do, acknowledge it: "you\'ve read more recent work on this than I have — teach me." This is not a loss of authority; it is its highest form.', hi: '"तुमने इस पर मुझसे अधिक हालिया शोध पढ़ा है — मुझे सिखाओ।" यह अधिकार का नुकसान नहीं — इसका सर्वोच्च रूप है।' },
+              { en: 'When your approach is challenged with a valid alternative method, work through both publicly — "neti neti" means neither has the final word.', hi: 'वैध वैकल्पिक विधि से चुनौती मिले तो दोनों को सार्वजनिक रूप से देखें।' },
+              { en: 'Tell students directly: "I have been wrong about things I was certain of. The willingness to update when evidence changes is not weakness — it distinguishes a thinker from a parrot."', hi: '"मैं उन चीज़ों के बारे में गलत रहा हूं जिनके बारे में मैं निश्चित था। सबूत बदलने पर अपडेट करने की इच्छा कमज़ोरी नहीं है।"' },
+            ],
+          },
+        },
+        practiceSet: [
+          {
+            q: { en: 'A student corrects your explanation with a valid alternative interpretation you hadn\'t considered. What best reflects Neti Neti?', hi: 'एक छात्र आपकी व्याख्या को एक वैध वैकल्पिक व्याख्या से सुधारता है। नेति नेति क्या दर्शाता है?' },
+            options: [
+              { en: '"That\'s an interesting idea but the textbook approach is what matters for exams."', hi: '"यह दिलचस्प विचार है लेकिन परीक्षाओं के लिए पाठ्यपुस्तक का तरीका मायने रखता है।"' },
+              { en: '"You\'re right — let\'s examine both and see where each one holds and where it breaks."', hi: '"तुम सही हो — चलो दोनों को देखते हैं और जांचते हैं कि हर एक कहां टिकता है।"' },
+              { en: 'Acknowledge it briefly and continue with your original explanation', hi: 'संक्षेप में स्वीकार करें और अपनी मूल व्याख्या जारी रखें' },
+            ],
+            correct: 1,
+          },
+        ],
+        reflection: { en: 'What is one thing you believe about teaching that you have never seriously questioned? Where did that belief come from?', hi: 'शिक्षण के बारे में एक चीज़ क्या है जिसे आपने कभी गंभीरता से नहीं पूछा? वह विश्वास कहां से आया?' },
+      },
     ],
   },
 };
@@ -484,7 +884,9 @@ export function getModuleContent(trackId, moduleId, ageTier) {
   const mod = getModulesForTrack(trackId).find((m) => m.id === moduleId);
   if (!mod) return null;
   if (LIFE_SKILLS_TRACKS[trackId].tiered) {
-    return { ...mod, ...mod.tiers[ageTier || 'secondary'] };
+    // Teacher modules use 'senior' key; page tier selector uses 'teen' — map transparently
+    const tierKey = ageTier === 'teen' && mod.tiers && mod.tiers.senior ? 'senior' : (ageTier || 'secondary');
+    return { ...mod, ...mod.tiers[tierKey] };
   }
   return mod;
 }
