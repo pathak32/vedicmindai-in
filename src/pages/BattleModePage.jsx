@@ -8,6 +8,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { drawBattleQuestions } from '@/data/battleQuestions';
 import { getUnlockedBattleTopics, isLowerStage } from '@/lib/battleTopicUnlock';
 import { BATTLE_DIFFICULTIES } from '@/data/battleQuestions';
+import { awardBattlePoints } from '@/lib/knowledgePoints';
 
 const WIN_TARGET = 5;
 const COUNTDOWN_SECONDS = 10;
@@ -173,6 +174,13 @@ export default function BattleModePage() {
     const interval = setInterval(tick, 500);
     return () => clearInterval(interval);
   }, [phase, room?.round_started_at, room?.current_round, room?.round_winner_id, room?.creator_answered, room?.opponent_answered, room?.id]);
+
+  // Award Knowledge Points when battle completes — once per calendar day
+  useEffect(() => {
+    if (phase === 'completed' && user?.id) {
+      awardBattlePoints(user.id);
+    }
+  }, [phase]);
 
   // Leaving mid-battle forfeits the match to whoever's still there, rather
   // than leaving them stuck waiting indefinitely for someone who's gone.

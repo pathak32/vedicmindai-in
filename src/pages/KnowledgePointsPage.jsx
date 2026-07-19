@@ -153,7 +153,7 @@ export default function KnowledgePointsPage() {
               </h3>
 
               <ExplainSection title={T('How you earn them', 'कैसे कमाएं')}>
-                {T('+1 point for every question you answer correctly, −1 for a wrong answer, +5 for finishing a Daily Quiz, +5 for completing a lesson (Vedic Maths or Reasoning). Wrong answers do cost you — this rewards genuine effort, not guessing.',
+                {T('+2 points for every correct answer, −1 for a wrong answer. Bonus points: +25 for completing a Daily Quiz, +15 for completing any lesson, +50 for each Weekly Exam, +10 for Battle Mode (once per day). Monthly caps apply to Practice and Battle sections — this rewards consistent daily effort, not grinding.',
                    'हर सही जवाब पर +1 पॉइंट, गलत जवाब पर −1, डेली क्विज़ पूरी करने पर +5, कोई भी पाठ (वैदिक गणित या रीज़निंग) पूरा करने पर +5। गलत जवाबों पर पॉइंट्स कटते हैं — यह असली मेहनत को इनाम देता है, अंदाज़े को नहीं।')}
               </ExplainSection>
 

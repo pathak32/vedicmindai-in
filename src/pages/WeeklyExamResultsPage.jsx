@@ -4,6 +4,8 @@ import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { getClassGroupLabel, formatMMSS } from '@/lib/weeklyExamEngine';
 import { QUESTION_BANKS } from '@/lib/weeklyQuestionBanks';
 import { useLanguage } from '@/lib/LanguageContext';
+import { awardPoints, POINTS } from '@/lib/knowledgePoints';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -96,6 +98,7 @@ function QuestionRow({ q, ans, index }) {
 export default function WeeklyExamResultsPage() {
   const { t } = useLanguage();
   const navigate = useNavigate();
+  const { user } = useVedicAuth();
   const [showAll, setShowAll] = useState(false);
 
   const progress = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
@@ -119,6 +122,16 @@ export default function WeeklyExamResultsPage() {
   }
 
   const { score, totalPossible, timeTaken, classGroup, answers = [], weekId } = result;
+
+  // Award Knowledge Points for weekly exam (fire-and-forget)
+  useEffect(() => {
+    if (!user?.id || !result) return;
+    const correct = (result.answers || []).filter(a => a?.correct).length;
+    const wrong = (result.answers || []).filter(a => a?.correct === false).length;
+    const netAnswerPts = correct * POINTS.QUESTION_CORRECT + wrong * POINTS.QUESTION_WRONG;
+    awardPoints(user.id, netAnswerPts, 'weekly_exam', result.weekId || result.date);
+    awardPoints(user.id, POINTS.WEEKLY_EXAM_COMPLETE, 'weekly_exam_complete', result.weekId || result.date);
+  }, [user?.id]);
   const questions = QUESTION_BANKS[classGroup] || QUESTION_BANKS.middle;
   const correctCount = answers.filter(a => a?.correct).length;
   const accuracy = answers.length > 0 ? Math.round((correctCount / answers.length) * 100) : 0;

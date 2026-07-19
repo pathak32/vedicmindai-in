@@ -1,3 +1,5 @@
+import { awardPoints, POINTS } from '@/lib/knowledgePoints';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { generateQuestion, TOPIC_OPTIONS, saveProgress } from './questionGenerator';
@@ -29,8 +31,18 @@ export default function TopicPractice({ topic, onExit, onChangeTopic }) {
   const [answers, setAnswers] = useState([]);
   const [xp, setXP] = useState(0);
   const [done, setDone] = useState(false);
+  const { user } = useVedicAuth();
 
   const topicLabel = TOPIC_OPTIONS.find(t => t.value === topic)?.label || topic;
+
+  // Award Knowledge Points when topic practice completes
+  useEffect(() => {
+    if (!done || !user?.id) return;
+    const correct = answers.filter(Boolean).length;
+    const wrong = answers.filter(a => !a).length;
+    const pts = correct * POINTS.QUESTION_CORRECT + wrong * POINTS.QUESTION_WRONG;
+    if (pts !== 0) awardPoints(user.id, pts, 'topic_practice', new Date().toISOString().slice(0, 10));
+  }, [done]);
   const q = questions[current];
 
   const handleSelect = (idx) => {

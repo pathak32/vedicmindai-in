@@ -1,3 +1,5 @@
+import { awardPoints, POINTS } from '@/lib/knowledgePoints';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { generateMixed, saveProgress } from './questionGenerator';
@@ -15,6 +17,7 @@ const glass = {
 
 export default function ChallengeMode({onExit }) {
   const { t } = useLanguage();
+  const { user } = useVedicAuth();
   const questions = useMemo(() => Array.from({ length: TOTAL_Q }, () => generateMixed()), []);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState(null);
@@ -23,6 +26,15 @@ export default function ChallengeMode({onExit }) {
   const [xp, setXP] = useState(0);
   const [xpAnim, setXpAnim] = useState(null); // 'up' | 'down'
   const [done, setDone] = useState(false);
+
+  // Award Knowledge Points when challenge completes
+  useEffect(() => {
+    if (!done || !user?.id) return;
+    const correct = answers.filter(Boolean).length;
+    const wrong = answers.filter(a => !a).length;
+    const pts = correct * POINTS.QUESTION_CORRECT + wrong * POINTS.QUESTION_WRONG;
+    if (pts !== 0) awardPoints(user.id, pts, 'challenge_mode', new Date().toISOString().slice(0, 10));
+  }, [done]);
 
   const q = questions[current];
 

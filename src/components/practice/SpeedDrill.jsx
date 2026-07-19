@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { generateQuestion, generateMixed, saveProgress } from './questionGenerator';
 import { useLanguage } from '@/lib/LanguageContext';
+import { awardPoints, POINTS } from '@/lib/knowledgePoints';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 
 const TOTAL_SECS = 120;
 const glass = {
@@ -33,6 +35,7 @@ function XPToast({
 
 export default function SpeedDrill({onExit }) {
   const { t } = useLanguage();
+  const { user } = useVedicAuth();
   const [timeLeft, setTimeLeft] = useState(TOTAL_SECS);
   const [running, setRunning] = useState(true);
   const [question, setQuestion] = useState(() => generateMixed());
@@ -57,6 +60,13 @@ export default function SpeedDrill({onExit }) {
     }, 1000);
     return () => clearInterval(timerRef.current);
   }, [running]);
+
+  // Award Knowledge Points when drill completes
+  useEffect(() => {
+    if (!done || !user?.id) return;
+    const pts = correct * POINTS.QUESTION_CORRECT + wrong * POINTS.QUESTION_WRONG;
+    if (pts !== 0) awardPoints(user.id, pts, 'speed_drill', new Date().toISOString().slice(0, 10));
+  }, [done]);
 
   const nextQ = useCallback(() => {
     setQuestion(generateMixed());
