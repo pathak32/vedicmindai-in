@@ -108,5 +108,9 @@ export const RA_LEVEL1_QUESTIONS = [
 ];
 
 export function getQuestionsByChapter(chapterId) {
-  return RA_LEVEL1_QUESTIONS.filter((q) => q.chapter === chapterId);
+  const qs = RA_LEVEL1_QUESTIONS.filter((q) => q.chapter === chapterId);
+  // Shuffle so question order varies each attempt — same 8 questions,
+  // different sequence. When pool expands to 16+, switch to slice(0,8) to
+  // also randomise which questions appear.
+  return [...qs].sort(() => Math.random() - 0.5);
 }
