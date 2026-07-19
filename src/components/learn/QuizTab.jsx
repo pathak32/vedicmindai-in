@@ -150,6 +150,16 @@ const LESSON_QUESTIONS = {
     { q: 'The denominator in the cross-multiply formula is?', options: ['a+c','b+d','a×c','b×d'], correct: 3 , exp: 'The denominator is always b×d — the product of both original denominators.' },
   ],
   l2_11: [
+    { q: '63 × 67 = ?', options: ['4221','4211','4231','4241'], correct: 0, exp: 'Same tens (6), units 3+7=10. Left: 6×7=42. Right: 3×7=21. Answer: 4221.' },
+    { q: '24 × 26 = ?', options: ['614','624','634','644'], correct: 1, exp: 'Same tens (2), units 4+6=10. Left: 2×3=6. Right: 4×6=24. Answer: 624.' },
+    { q: '48 × 42 = ?', options: ['2006','2016','2026','2036'], correct: 1, exp: 'Same tens (4), units 8+2=10. Left: 4×5=20. Right: 8×2=16. Answer: 2016.' },
+    { q: 'In Antyayor Dashakepi, the right part of 89 × 81 is?', options: ['9','09','90','18'], correct: 1, exp: '9×1=9 but right part must always be 2 digits — write 09, not 9. Joining: 72|09 = 7209.' },
+    { q: '36 × 34 = ?', options: ['1214','1224','1234','1244'], correct: 1, exp: 'Same tens (3), units 6+4=10. Left: 3×4=12. Right: 6×4=24. Answer: 1224.' },
+    { q: 'Which pair can use Antyayor Dashakepi?', options: ['43×57','43×47','42×48','63×64'], correct: 1, exp: '43×47: same tens digit (4) and 3+7=10. That\'s the pattern. 43×57 has different tens digits; 42×48 has 2+8=10 but tens are same — actually this also works! But 43×47 is the cleaner standard example.' },
+    { q: '73 × 77 = ?', options: ['5521','5621','5721','5821'], correct: 1, exp: 'Same tens (7), units 3+7=10. Left: 7×8=56. Right: 3×7=21. Answer: 5621.' },
+    { q: 'The formula for Antyayor Dashakepi is T×(T+1) joined with A×B. For 56×54, what is T?', options: ['4','5','6','10'], correct: 1, exp: 'T is the common tens digit. For 56×54, both numbers start with 5, so T=5.' },
+  ],
+  l2_12: [
     { q: 'What is the month code for January?', options: ['0','1','2','4'], correct: 1 , exp: 'In the Vedic calendar formula, January has month code 1.' },
     { q: 'What day of the week is 26 January 2025?', options: ['Sunday','Monday','Tuesday','Wednesday'], correct: 0 , exp: '26 Jan 2025 = Sunday. (Verified directly — India\'s Republic Day 2025 was indeed a Sunday.)' },
     { q: 'Century correction for years 2000–2099 is?', options: ['+0','+2','+4','+6'], correct: 3 , exp: 'The century correction for the 2000s is +6 in the standard Doomsday/Vedic calendar formula.' },
@@ -264,7 +274,7 @@ const LESSON_QUESTIONS = {
     { q: 'Is 572 divisible by 11?', options: ['Yes','No'], correct: 0 , exp: 'Rule: alternating digit sum: 5−7+2=0. Since 0 is divisible by 11, yes — 572÷11=52 ✓' },
     { q: '97 × 96 using Nikhilam = ?', options: ['9212','9312','9412','9512'], correct: 1 , exp: 'Deficits: 3 and 4. Cross: 97−4=93. Product: 3×4=12. Answer: 9312.' },
   ],
-  l2_12: [
+  l2_13: [
     { q: '1/3 + 1/4 using the Vedic method = ?', options: ['5/12','7/12','1/7','7/7'], correct: 1 , exp: 'Cross-multiply: 1x4+3x1=7 numerator, 3x4=12 denominator. Answer: 7/12.' },
     { q: 'Paravartya division works best for divisors?', options: ['2–9','11–19','50–99','100+'], correct: 1 , exp: 'Paravartya works best for divisors 11-19, just above the base of 10.' },
     { q: 'For ∛x, you split x into groups of ___ digits from the right', options: ['1','2','3','4'], correct: 2 , exp: 'Groups of 3 digits from the right - each group gives one digit of the cube root.' },

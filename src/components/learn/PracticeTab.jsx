@@ -261,6 +261,13 @@ const LESSON_PROBLEMS = {
     { q: 'Factors of 2x²+5x+3 = ?', options: ['(2x+1)(x+3)','(2x+3)(x+1)','(x+1)(2x+3)','(2x+2)(x+1)'], correct: 1, exp: '2×3=6, p+q=5 → 3,2. Split: 2x²+3x+2x+3=(2x+3)(x+1) ✓' },
   ],
   l2_11: [
+    { q: '63 × 67 = ?', options: ['4201','4221','4241','4261'], correct: 1, exp: 'Same tens (6), 3+7=10. Left: 6×7=42. Right: 3×7=21. Answer: 4221.' },
+    { q: '24 × 26 = ?', options: ['604','614','624','634'], correct: 2, exp: 'Same tens (2), 4+6=10. Left: 2×3=6. Right: 4×6=24. Answer: 624.' },
+    { q: '89 × 81 = ?', options: ['7109','7209','7309','7409'], correct: 1, exp: 'Same tens (8), 9+1=10. Left: 8×9=72. Right: 9×1=09 (2 digits!). Answer: 7209.' },
+    { q: 'The right part of Antyayor Dashakepi for 37 × 33 is?', options: ['11','21','111','211'], correct: 1, exp: '7×3=21. Always 2 digits for the right part. Answer: 3×4|7×3 = 12|21 = 1221.' },
+    { q: '56 × 54 = ?', options: ['2914','3014','3024','3124'], correct: 2, exp: 'Same tens (5), 6+4=10. Left: 5×6=30. Right: 6×4=24. Answer: 3024.' },
+  ],
+  l2_12: [
     { q: 'What month code is used for August in the day-of-week formula?', options: ['2','3','5','6'], correct: 1, exp: 'August month code = 3' },
     { q: 'What day of the week is 26 January 2025?', options: ['Sunday','Monday','Tuesday','Wednesday'], correct: 0, exp: 'Using Zeller\'s formula for 26 Jan 2025: treat Jan as month 13 of 2024. h=(26+⌊13×14/5⌋+24+⌊24/4⌋+⌊20/4⌋−2×20) mod 7 = 1 → Zeller h=1 means Sunday. Verified: 26 January 2025 was a Sunday.' },
     { q: 'What century correction applies to years in the 1900s?', options: ['+2','+0','+4','+6'], correct: 1, exp: 'Century correction: 1800s=+2, 1900s=+0, 2000s=+6' },
@@ -269,7 +276,7 @@ const LESSON_PROBLEMS = {
   ],
 };
 
-// Level assessment pages (l1_10, l2_12, l3_10, l4_08) had no entries here at
+// Level assessment pages (l1_10, l2_13, l3_10, l4_08) had no entries here at
 // all, which silently triggered the broken "Practice Problem 1/2/3, answer:
 // null" fallback below — a text box that could never actually be checked.
 // Adding real MCQ content, pulling representative problems across each
@@ -280,7 +287,7 @@ LESSON_PROBLEMS.l1_10 = [
   { q: { en: 'Calculate 346 × 11 using the ×11 rule', hi: '×11 नियम से 346 × 11 निकालें' }, options: ['3796','3806','3816','3826'], correct: 1, exp: { en: 'First 3, 3+4=7, 4+6=10→0 carry 1 (7→8), Last 6 → 3806', hi: 'पहला 3, 3+4=7, 4+6=10→0 (1 आगे, 7→8), अंतिम 6 → 3806' } },
 ];
 
-LESSON_PROBLEMS.l2_12 = [
+LESSON_PROBLEMS.l2_13 = [
   { q: '998 × 997 using Nikhilam (base 1000) = ?', options: ['994006','995006','996006','997006'], correct: 1, exp: 'Deficits 2,3 → cross 998-3=995, product 2×3=6→006 → 995006' },
   { q: '34² using the Duplex method = ?', options: ['1146','1156','1166','1176'], correct: 1, exp: 'D(3)=9, D(34)=24, D(4)=16 → carried correctly gives 1156' },
   { q: '2/5 + 3/7 using the Vedic method = ?', options: ['5/12','29/35','5/35','1/12'], correct: 1, exp: 'Numerator: 2×7+5×3=29, Denominator: 5×7=35 → 29/35' },

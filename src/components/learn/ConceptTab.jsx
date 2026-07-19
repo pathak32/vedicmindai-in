@@ -1516,9 +1516,82 @@ const L2_10_CONTENT = (
   </>
 );
 
-// ── L2_11 ─────────────────────────────────────────────────────────────────────
+// ── L2_11 — Antyayor Dashakepi ───────────────────────────────────────────────
 
 const L2_11_CONTENT = (
+  <>
+    <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Antyayor Dashakepi</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>When the last digits (antyayo) add up to ten (dasha)</div>
+    </div>
+
+    <SectionTitle>When to Use This Sutra</SectionTitle>
+    <div style={{ background: '#F0F4FF', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#0A1628', margin: '0 0 10px 0', lineHeight: 1.7 }}>
+        Use Antyayor Dashakepi when <strong>two numbers share the same tens digit</strong> and their <strong>units digits add to 10</strong>.
+      </p>
+      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: '#1E40AF' }}>
+        <div>48 × 52 → tens: 4 = 5? No — but 48+52=100, both near 50 ✓</div>
+        <div style={{ marginTop: 6 }}>63 × 67 → tens: 6 = 6 ✓ and 3+7=10 ✓</div>
+        <div style={{ marginTop: 6 }}>24 × 26 → tens: 2 = 2 ✓ and 4+6=10 ✓</div>
+      </div>
+    </div>
+
+    <SectionTitle>The Formula</SectionTitle>
+    <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 20, textAlign: 'center' }}>
+      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 20, color: '#D9A441', marginBottom: 12 }}>
+        (T × (T+1)) | (A × B)
+      </div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, textAlign: 'left', display: 'inline-block' }}>
+        <div>T = tens digit (same for both numbers)</div>
+        <div>A = units digit of first number</div>
+        <div>B = units digit of second number (A+B=10)</div>
+        <div>| = join the two parts (right part: always 2 digits)</div>
+      </div>
+    </div>
+
+    <SectionTitle>Worked Examples</SectionTitle>
+    <ExampleCard
+      title="Example 1: 63 × 67"
+      lines={['Same tens digit: 6', 'Units: 3 + 7 = 10 ✓', 'Left part: 6 × (6+1) = 6 × 7 = 42', 'Right part: 3 × 7 = 21', 'Join: 42|21 = 4221']}
+      result="63 × 67 = 4221 ✓"
+    />
+    <ExampleCard
+      title="Example 2: 24 × 26"
+      lines={['Same tens digit: 2', 'Units: 4 + 6 = 10 ✓', 'Left part: 2 × 3 = 6', 'Right part: 4 × 6 = 24', 'Join: 6|24 = 624']}
+      result="24 × 26 = 624 ✓"
+    />
+    <ExampleCard
+      title="Example 3: 89 × 81"
+      lines={['Same tens digit: 8', 'Units: 9 + 1 = 10 ✓', 'Left part: 8 × 9 = 72', 'Right part: 9 × 1 = 09 (pad to 2 digits!)', 'Join: 72|09 = 7209']}
+      result="89 × 81 = 7209 ✓"
+    />
+
+    <SectionTitle>⚠️ Common Mistake</SectionTitle>
+    <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#B91C1C', margin: '0 0 8px 0', fontWeight: 600 }}>
+        Always write the right part as 2 digits.
+      </p>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', margin: 0 }}>
+        For 89 × 81: right part = 9×1 = 9 → write as 09, not 9.<br />
+        Without padding: 7209. If you write 729, that's completely wrong.
+      </p>
+    </div>
+
+    <SectionTitle>Why It Works</SectionTitle>
+    <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 16, marginBottom: 8 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#065F46', margin: 0, lineHeight: 1.7 }}>
+        This is the algebraic identity <strong>(10T + A)(10T + B)</strong> where A+B=10.<br />
+        Expanding: 100T² + 10T(A+B) + AB = 100T² + 100T + AB = 100T(T+1) + AB.<br />
+        That's exactly T×(T+1) in the hundreds + AB in the units — what the formula gives you.
+      </p>
+    </div>
+  </>
+);
+
+// ── L2_12 — Calendar Calculations ────────────────────────────────────────────
+
+const L2_12_CONTENT = (
   <>
     <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
       <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Vilokanam</div>
@@ -1585,9 +1658,9 @@ const L2_11_CONTENT = (
   </>
 );
 
-// ── L2_12 ─────────────────────────────────────────────────────────────────────
+// ── L2_13 — Level 2 Assessment ───────────────────────────────────────────────
 
-function L2_12_CONTENT({ onSwitchTab }) {
+function L2_13_CONTENT({ onSwitchTab }) {
   return (
     <>
       <div style={{ background: 'linear-gradient(135deg, #0A1628, #1E40AF)', borderRadius: 16, padding: 28, marginBottom: 24 }}>
@@ -2334,6 +2407,7 @@ const LESSON_CONTENT = {
   l2_09: () => L2_09_CONTENT,
   l2_10: () => L2_10_CONTENT,
   l2_11: () => L2_11_CONTENT,
+  l2_12: () => L2_12_CONTENT,
   l3_01: () => L3_01_CONTENT,
   l3_02: () => L3_02_CONTENT,
   l3_03: () => L3_03_CONTENT,
@@ -2387,7 +2461,7 @@ export default function ConceptTab({ lesson, glass, progress, onSwitchTab, onCon
 
   const renderContent = () => {
     if (lesson.id === 'l1_10') return <L1_10_CONTENT onSwitchTab={onSwitchTab} />;
-    if (lesson.id === 'l2_12') return <L2_12_CONTENT onSwitchTab={onSwitchTab} />;
+    if (lesson.id === 'l2_13') return <L2_13_CONTENT onSwitchTab={onSwitchTab} />;
     if (lesson.id === 'l3_10') return <L3_10_CONTENT onSwitchTab={onSwitchTab} />;
     if (lesson.id === 'l4_08') return <L4_08_CONTENT onSwitchTab={onSwitchTab} />;
     const factory = LESSON_CONTENT[lesson.id];
