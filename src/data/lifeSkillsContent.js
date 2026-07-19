@@ -112,6 +112,108 @@ export const LIFE_SKILLS_TRACKS = {
           },
         },
       },
+      {
+        id: 'parent_m2',
+        order: 2,
+        title: { en: 'How to Help Without Taking Over', hi: 'मदद कैसे करें — बिना सब खुद करे' },
+        tiers: {
+          primary: {
+            concept: {
+              en: "Sitting next to a young child while they do homework feels like helping. And it can be — but only if you're watching them think, not thinking for them. The moment you pick up the pen, or say \"no, do it like this,\" you've moved from supporting to replacing. The child then learns two things: that they can't figure things out themselves, and that they need you to check every step. Neither is what you want.",
+              hi: 'होमवर्क करते समय छोटे बच्चे के पास बैठना मदद जैसा लगता है। और हो सकता है — लेकिन केवल तभी जब आप उन्हें सोचते हुए देख रहे हों, उनकी जगह सोच नहीं रहे। जिस पल आपने पेन उठाया, या कहा "नहीं, ऐसे करो," आप सहयोग से हटकर बदलने में चले गए। बच्चा तब दो चीज़ें सीखता है: कि वह खुद कुछ नहीं सोच सकता, और कि हर कदम पर उसे आपकी ज़रूरत है।',
+            },
+            steps: [
+              { en: 'Ask "what do you think the first step is?" before giving any hint — even if they\'re stuck, give them 30 seconds of quiet first.', hi: 'कोई संकेत देने से पहले पूछें "तुम्हें क्या लगता है पहला कदम क्या है?" — भले ही वे अटके हों, पहले 30 सेकंड की शांति दें।' },
+              { en: 'When they get something wrong, ask "what makes you say that?" instead of "that\'s wrong" — they often catch their own mistake in explaining it.', hi: 'जब वे कुछ गलत करें, "यह गलत है" की जगह पूछें "तुम ऐसा क्यों कह रहे हो?" — वे अक्सर समझाते-समझाते खुद ही अपनी गलती पकड़ लेते हैं।' },
+              { en: 'Leave the room for 5 minutes during homework time — see if they can begin without you. You\'re building a habit, not just completing a worksheet.', hi: 'होमवर्क के दौरान 5 मिनट के लिए कमरे से बाहर जाएं — देखें क्या वे आपके बिना शुरू कर सकते हैं। आप एक आदत बना रहे हैं, सिर्फ एक वर्कशीट पूरी नहीं कर रहे।' },
+            ],
+            practiceSet: [
+              {
+                q: { en: 'Your child is stuck on a maths problem and looks at you for help. What\'s the most useful first move?', hi: 'आपका बच्चा एक गणित की समस्या में अटका है और आपकी तरफ मदद के लिए देखता है। सबसे उपयोगी पहला कदम क्या है?' },
+                options: [
+                  { en: 'Show them the correct method immediately so they don\'t stay stuck', hi: 'तुरंत सही तरीका दिखाएं ताकि वे अटके न रहें' },
+                  { en: '"What do you think the first step might be?"', hi: '"तुम्हें क्या लगता है पहला कदम क्या हो सकता है?"' },
+                  { en: 'Do the problem alongside them so they can copy the method', hi: 'उनके साथ समस्या करें ताकि वे तरीका नकल कर सकें' },
+                ],
+                correct: 1,
+              },
+            ],
+            test: [
+              {
+                q: { en: 'Why can doing a child\'s problem for them actually slow down their learning?', hi: 'बच्चे की समस्या उनके लिए करना उनकी सीखने की प्रक्रिया को वास्तव में धीमा क्यों कर सकता है?' },
+                options: [
+                  { en: 'It takes away the thinking moment they needed — and teaches them they can\'t manage without you', hi: 'यह उस सोचने के पल को छीन लेता है जिसकी उन्हें ज़रूरत थी — और उन्हें सिखाता है कि वे आपके बिना नहीं कर सकते' },
+                  { en: 'It doesn\'t — helping always speeds up learning', hi: 'नहीं करता — मदद हमेशा सीखने को तेज़ करती है' },
+                ],
+                correct: 0,
+              },
+            ],
+          },
+          secondary: {
+            concept: {
+              en: 'At this age, the content is harder and the temptation to just explain it yourself is real — especially if you know the subject. But a child who watches you solve it hasn\'t solved it. What they\'ve learned is that when it gets hard, someone else handles it. That habit, if it sets in between Class 6 and 9, is genuinely difficult to unlearn before competitive exams.',
+              hi: 'इस उम्र में, विषय-वस्तु कठिन होती है और खुद ही समझाने का लालच असली होता है — खासकर अगर आप विषय जानते हों। लेकिन जो बच्चा आपको हल करते देखता है, उसने हल नहीं किया। उसने जो सीखा वह यह है कि जब मुश्किल होती है, कोई और संभाल लेता है। यह आदत, अगर कक्षा 6 से 9 के बीच जम जाए, तो प्रतियोगी परीक्षाओं से पहले सच में छुड़ाना मुश्किल है।',
+            },
+            steps: [
+              { en: 'Instead of explaining the solution, explain the type of problem — "this is the kind where you work backwards from the answer" — then let them try.', hi: 'हल समझाने की जगह, समस्या का प्रकार समझाएं — "यह वैसी है जहां आप जवाब से पीछे की ओर काम करते हैं" — फिर उन्हें करने दें।' },
+              { en: 'When they say "I can\'t do this," reply with "you haven\'t figured this type out yet" — the word "yet" is doing real work here.', hi: 'जब वे कहें "मैं यह नहीं कर सकता," जवाब दें "तुमने अभी तक इस प्रकार को नहीं समझा है" — यहां "अभी तक" शब्द असली काम कर रहा है।' },
+              { en: 'Set a visible timer for 10 minutes of solo attempt before any discussion — the boundary makes the attempt feel defined, not endless.', hi: 'किसी भी चर्चा से पहले 10 मिनट के एकल प्रयास के लिए एक दिखाई देने वाला टाइमर लगाएं — सीमा प्रयास को परिभाषित बनाती है, अंतहीन नहीं।' },
+            ],
+            practiceSet: [
+              {
+                q: { en: 'Your Class 7 child is struggling with algebra. Which response builds independence best?', hi: 'आपका कक्षा 7 का बच्चा बीजगणित में संघर्ष कर रहा है। कौन सी प्रतिक्रिया सबसे अच्छी स्वतंत्रता बनाती है?' },
+                options: [
+                  { en: 'Sit with them and work through every problem together', hi: 'उनके साथ बैठें और हर समस्या मिलकर हल करें' },
+                  { en: '"Try it for 10 minutes first — then show me where you got stuck"', hi: '"पहले 10 मिनट खुद कोशिश करो — फिर मुझे दिखाओ कहां अटके"' },
+                  { en: 'Call a tutor immediately', hi: 'तुरंत एक ट्यूटर बुलाएं' },
+                ],
+                correct: 1,
+              },
+            ],
+            test: [
+              {
+                q: { en: 'What does adding the word "yet" do when a child says "I can\'t do this"?', hi: 'जब बच्चा कहे "मैं यह नहीं कर सकता" तो "अभी तक" शब्द जोड़ने से क्या होता है?' },
+                options: [
+                  { en: 'It changes inability from a fixed state into a temporary one — something that can change with effort', hi: 'यह असमर्थता को एक स्थायी अवस्था से अस्थायी में बदल देता है — कुछ ऐसा जो प्रयास से बदल सकता है' },
+                  { en: 'It doesn\'t change anything — it\'s just a word', hi: 'इससे कुछ नहीं बदलता — यह सिर्फ एक शब्द है' },
+                ],
+                correct: 0,
+              },
+            ],
+          },
+          teen: {
+            concept: {
+              en: 'At this stage, your role is less teacher and more thinking partner — if you can manage it. A teenager who has to explain their reasoning to you, out loud, will often catch their own gaps. That\'s more valuable than a correct answer you handed them. The practical limit: this only works if they actually believe you won\'t take over when it gets hard.',
+              hi: 'इस चरण में, आपकी भूमिका कम शिक्षक और अधिक सोचने में साझेदार है — अगर आप यह कर सकते हैं। एक किशोर जिसे आपको अपनी सोच ज़ोर से समझानी होती है, वह अक्सर खुद ही अपनी कमियां पकड़ लेता है। यह किसी सही जवाब से ज़्यादा मूल्यवान है जो आपने दे दिया। व्यावहारिक सीमा: यह तभी काम करता है जब वे वाकई यकीन करते हों कि मुश्किल होने पर आप संभाल नहीं लेंगे।',
+            },
+            steps: [
+              { en: 'Ask "walk me through what you\'ve tried" — not to evaluate, but to make them articulate the problem. They will often find it themselves while explaining.', hi: 'पूछें "मुझे बताओ तुमने क्या-क्या कोशिश की है" — आंकने के लिए नहीं, बल्कि उन्हें समस्या को शब्दों में कहने पर मजबूर करने के लिए। वे अक्सर समझाते-समझाते खुद ही इसे खोज लेंगे।' },
+              { en: 'When they figure something out themselves — even partially — notice it out loud: "you worked that one out yourself." This lands differently than general praise.', hi: 'जब वे खुद कुछ समझ लें — थोड़ा भी — उसे ज़ोर से नोटिस करें: "तुमने यह खुद निकाला।" यह सामान्य प्रशंसा से अलग तरह से असर करता है।' },
+              { en: 'Set a rule for yourself: don\'t give the answer in the last 30 days before a major exam. Let them wrestle. Struggling through a problem the night before is better preparation than seeing you solve it cleanly.', hi: 'अपने लिए एक नियम बनाएं: किसी बड़ी परीक्षा से पहले के आखिरी 30 दिनों में जवाब न दें। उन्हें संघर्ष करने दें।' },
+            ],
+            practiceSet: [
+              {
+                q: { en: 'Your teen preparing for a competitive exam asks you to explain a concept you actually know well. What\'s most helpful?', hi: 'प्रतियोगी परीक्षा की तैयारी कर रहा आपका किशोर आपसे एक अवधारणा समझाने को कहता है जो आप वाकई अच्छी तरह जानते हैं। सबसे मददगार क्या है?' },
+                options: [
+                  { en: 'Explain it clearly and completely — your knowledge is the resource here', hi: 'इसे स्पष्ट और पूरी तरह समझाएं — आपका ज्ञान यहां संसाधन है' },
+                  { en: '"Tell me what you already understand about it, and where it stops making sense"', hi: '"मुझे बताओ तुम इसके बारे में पहले से क्या समझते हो, और कहां समझ बंद हो जाती है"' },
+                ],
+                correct: 1,
+              },
+            ],
+            test: [
+              {
+                q: { en: 'Why is "walk me through what you\'ve tried" often more useful than directly answering a teenager\'s question?', hi: '"मुझे बताओ तुमने क्या कोशिश की" एक किशोर के सवाल का सीधे जवाब देने से अक्सर ज़्यादा उपयोगी क्यों है?' },
+                options: [
+                  { en: 'It forces them to articulate the problem — and people often solve their own problems while explaining them', hi: 'यह उन्हें समस्या को शब्दों में कहने पर मजबूर करता है — और लोग अक्सर समझाते-समझाते अपनी समस्याएं खुद हल कर लेते हैं' },
+                  { en: 'It doesn\'t — directly explaining is always faster and better', hi: 'नहीं करता — सीधे समझाना हमेशा तेज़ और बेहतर होता है' },
+                ],
+                correct: 0,
+              },
+            ],
+          },
+        },
+      },
     ],
   },
 
@@ -216,6 +318,103 @@ export const LIFE_SKILLS_TRACKS = {
           },
         },
       },
+      {
+        id: 'student_m2',
+        order: 2,
+        title: { en: 'How to Actually Study (Not Just Sit There)', hi: 'असल में पढ़ाई कैसे करें (बस बैठे न रहें)' },
+        tiers: {
+          primary: {
+            concept: {
+              en: 'Studying and reading are not the same thing. When you read something three times without thinking about it, you haven\'t studied it — you\'ve just seen the words. Real studying means stopping, closing the book, and asking yourself: "what did I just read?" If you can\'t say it in your own words, your brain hasn\'t stored it yet.',
+              hi: 'पढ़ाई और पढ़ना एक नहीं है। जब आप बिना सोचे कुछ तीन बार पढ़ते हैं, तो आपने इसे पढ़ा नहीं है — आपने बस शब्द देखे हैं। असली पढ़ाई का मतलब है रुकना, किताब बंद करना, और खुद से पूछना: "मैंने अभी क्या पढ़ा?" अगर आप इसे अपने शब्दों में नहीं कह सकते, तो आपके दिमाग ने इसे अभी तक सहेजा नहीं है।',
+            },
+            steps: [
+              { en: 'After reading one page, close the book and say out loud — or write — one thing you just learned. Not copying, your own words.', hi: 'एक पेज पढ़ने के बाद, किताब बंद करें और ज़ोर से बोलें — या लिखें — एक चीज़ जो आपने अभी सीखी। नकल नहीं, अपने शब्दों में।' },
+              { en: 'Make a question out of what you just read — "what would a test ask about this?" — then answer it without looking.', hi: 'जो आपने अभी पढ़ा उससे एक सवाल बनाएं — "टेस्ट इसके बारे में क्या पूछेगा?" — फिर बिना देखे जवाब दें।' },
+              { en: 'Study in 20-minute bursts with a real break — not an hour of half-attention. Shorter, sharper, then rest.', hi: '20 मिनट की कोशिश करें एक असली ब्रेक के साथ — एक घंटे की आधी-अधूरी ध्यान नहीं। छोटा, तेज़, फिर आराम।' },
+            ],
+            practiceSet: [
+              {
+                q: { en: 'You\'ve read the same chapter three times but still don\'t feel confident. What\'s most likely missing?', hi: 'आपने एक ही अध्याय तीन बार पढ़ा है लेकिन फिर भी आत्मविश्वास नहीं लगता। सबसे अधिक क्या कमी है?' },
+                options: [
+                  { en: 'You haven\'t read it enough times yet', hi: 'आपने इसे अभी तक पर्याप्त बार नहीं पढ़ा' },
+                  { en: 'You\'ve been reading without testing yourself — re-reading feels like learning but often isn\'t', hi: 'आप खुद को जांचे बिना पढ़ रहे हैं — दोबारा पढ़ना सीखने जैसा लगता है लेकिन अक्सर होता नहीं' },
+                ],
+                correct: 1,
+              },
+            ],
+            test: [
+              {
+                q: { en: 'True or False: Closing the book and trying to say what you just read — even roughly — helps you remember it better than reading it again.', hi: 'सही या गलत: किताब बंद करके यह कहने की कोशिश करना कि आपने अभी क्या पढ़ा — भले ही मोटे तौर पर — इसे दोबारा पढ़ने से बेहतर याद रखने में मदद करता है।' },
+                options: [{ en: 'True', hi: 'सही' }, { en: 'False', hi: 'गलत' }],
+                correct: 0,
+              },
+            ],
+          },
+          secondary: {
+            concept: {
+              en: 'The most common study mistake at this age: reading notes and thinking that\'s the same as knowing them. It isn\'t. Recognition (seeing something and thinking "yes, I know this") is not the same as recall (being able to produce it from nothing). Every exam tests recall — not recognition. The fix isn\'t more time studying; it\'s changing what you do during that time.',
+              hi: 'इस उम्र में सबसे आम पढ़ाई की गलती: नोट्स पढ़ना और यह सोचना कि यह उन्हें जानने जैसा है। यह नहीं है। पहचानना (कुछ देखकर सोचना "हां, मैं यह जानता हूं") याद करने जैसा नहीं है (बिना कुछ देखे इसे बता पाना)। हर परीक्षा याद करने की जांच करती है — पहचानने की नहीं।',
+            },
+            steps: [
+              { en: 'After reading a section, flip the page over or close the book — try to write the key points from memory. Check what you missed, not what you got right.', hi: 'एक खंड पढ़ने के बाद, पेज पलटें या किताब बंद करें — याददाश्त से मुख्य बिंदु लिखने की कोशिश करें। यह जांचें कि आप क्या चूके, क्या सही किया यह नहीं।' },
+              { en: 'Use a blank sheet: write a topic in the middle and try to build everything you know around it, without notes. The gaps are what to study next.', hi: 'एक खाली शीट इस्तेमाल करें: बीच में एक विषय लिखें और बिना नोट्स के आप जो जानते हैं वह सब उसके आसपास बनाने की कोशिश करें। कमियां ही अगली पढ़ाई का विषय हैं।' },
+              { en: 'Teach one concept to someone — a sibling, a friend, or even an imaginary listener. If you can\'t explain it, you don\'t know it yet.', hi: 'किसी को एक अवधारणा सिखाएं — एक भाई-बहन, दोस्त, या काल्पनिक श्रोता को। अगर आप इसे समझा नहीं सकते, तो आप अभी तक इसे जानते नहीं।' },
+            ],
+            practiceSet: [
+              {
+                q: { en: 'Which study method will most reliably prepare you for a recall-based exam?', hi: 'कौन सा अध्ययन तरीका सबसे भरोसेमंद तरीके से आपको याद करने पर आधारित परीक्षा के लिए तैयार करेगा?' },
+                options: [
+                  { en: 'Reading your notes carefully multiple times until they feel familiar', hi: 'अपने नोट्स को कई बार ध्यान से पढ़ना जब तक वे परिचित न लगें' },
+                  { en: 'Closing notes and testing yourself — then using mistakes to guide what to review', hi: 'नोट्स बंद करके खुद को जांचना — फिर गलतियों का इस्तेमाल करके यह तय करना कि क्या दोबारा पढ़ना है' },
+                ],
+                correct: 1,
+              },
+            ],
+            test: [
+              {
+                q: { en: 'What\'s the difference between recognition and recall, and why does it matter for exams?', hi: 'पहचानने और याद करने में क्या फर्क है, और परीक्षाओं के लिए यह क्यों मायने रखता है?' },
+                options: [
+                  { en: 'Recognition is seeing something and thinking "I know this"; recall is producing it from nothing — exams test recall, not recognition', hi: 'पहचानना है कुछ देखकर सोचना "मैं यह जानता हूं"; याद करना है इसे बिना कुछ देखे बताना — परीक्षाएं याद करने की जांच करती हैं, पहचानने की नहीं' },
+                  { en: 'They\'re the same thing — if you recognise it, you can recall it', hi: 'वे एक ही चीज़ हैं — अगर आप इसे पहचानते हैं, तो आप इसे याद कर सकते हैं' },
+                ],
+                correct: 0,
+              },
+            ],
+          },
+          teen: {
+            concept: {
+              en: 'You have probably heard about "active recall" and "spaced repetition." This isn\'t new science — it\'s been studied since the 1880s (Hermann Ebbinghaus, the forgetting curve). What\'s new is that most students still don\'t do it, because re-reading feels more comfortable than being tested. Comfort is not the same as learning. The discomfort of not knowing the answer — and then finding it — is exactly where the memory forms.',
+              hi: 'आपने शायद "सक्रिय स्मरण" और "अंतरिक्षीय पुनरावृत्ति" के बारे में सुना होगा। यह नया विज्ञान नहीं है — इसका अध्ययन 1880 के दशक से किया जा रहा है। जो नया है वह यह है कि अधिकांश छात्र अभी भी इसे नहीं करते, क्योंकि दोबारा पढ़ना जांचे जाने से ज़्यादा आरामदायक लगता है। आराम सीखने जैसा नहीं है।',
+            },
+            steps: [
+              { en: 'Build a "question deck" as you study — not flash cards with the answer visible, but questions only, answered from memory, checked after.', hi: 'पढ़ाई करते समय एक "प्रश्न डेक" बनाएं — जवाब दिखने वाले फ्लैशकार्ड नहीं, बल्कि केवल प्रश्न, याददाश्त से जवाब दिए जाएं, बाद में जांचे जाएं।' },
+              { en: 'Space your review: look at something once today, once in 2 days, once in a week. Three spaced sessions beats one 3-hour session the night before.', hi: 'अपनी समीक्षा को बांटें: आज एक बार देखें, 2 दिन में एक बार, एक हफ्ते में एक बार। तीन बंटे हुए सत्र परीक्षा से एक रात पहले एक 3 घंटे के सत्र को हराते हैं।' },
+              { en: 'When you get something wrong during self-testing, don\'t just read the correct answer — explain to yourself why you got it wrong. That explanation is what sticks.', hi: 'जब आप खुद-परीक्षण में कुछ गलत करें, तो सिर्फ सही जवाब न पढ़ें — खुद को समझाएं कि आप गलत क्यों हुए। वह समझाना ही याद रहता है।' },
+            ],
+            practiceSet: [
+              {
+                q: { en: 'You have 3 hours to study one topic. Which plan will produce the strongest memory?', hi: 'आपके पास एक विषय पढ़ने के लिए 3 घंटे हैं। कौन सी योजना सबसे मज़बूत याददाश्त बनाएगी?' },
+                options: [
+                  { en: 'Read thoroughly for 3 hours — depth over interruption', hi: 'पूरी तरह 3 घंटे पढ़ें — बाधा से ज़्यादा गहराई' },
+                  { en: '1 hour reading + 2 hours of self-testing and reviewing mistakes', hi: '1 घंटे पढ़ना + 2 घंटे खुद को जांचना और गलतियों की समीक्षा करना' },
+                ],
+                correct: 1,
+              },
+            ],
+            test: [
+              {
+                q: { en: 'Why does self-testing feel harder than re-reading — and why is that exactly the point?', hi: 'खुद को जांचना दोबारा पढ़ने से ज़्यादा कठिन क्यों लगता है — और यही बात महत्वपूर्ण क्यों है?' },
+                options: [
+                  { en: 'The difficulty of retrieval is where memory forms — struggle during study means less struggle during the real exam', hi: 'याद करने की कठिनाई ही वह जगह है जहां स्मृति बनती है — पढ़ाई के दौरान संघर्ष का मतलब है असली परीक्षा के दौरान कम संघर्ष' },
+                  { en: 'It\'s harder because it\'s less efficient — re-reading is actually better for most students', hi: 'यह कठिन है क्योंकि यह कम कुशल है — ज़्यादातर छात्रों के लिए दोबारा पढ़ना वास्तव में बेहतर है' },
+                ],
+                correct: 0,
+              },
+            ],
+          },
+        },
+      },
     ],
   },
 
@@ -243,6 +442,31 @@ export const LIFE_SKILLS_TRACKS = {
               { en: 'Call them out in front of the class to re-engage them', hi: 'उन्हें फिर से जोड़ने के लिए क्लास के सामने बुलाएं' },
               { en: 'A brief, private, low-pressure check-in — "I noticed you\'ve been quiet, everything okay?"', hi: 'एक संक्षिप्त, निजी, कम दबाव वाली बातचीत — "मैंने देखा तुम चुप हो, सब ठीक है?"' },
               { en: 'Wait and see if it resolves on its own', hi: 'इंतज़ार करें और देखें कि क्या यह अपने आप ठीक हो जाता है' },
+            ],
+            correct: 1,
+          },
+        ],
+      },
+      {
+        id: 'teacher_m2',
+        order: 2,
+        title: { en: 'The Student Who Isn\'t Getting It', hi: 'वह छात्र जो समझ नहीं पा रहा' },
+        concept: {
+          en: 'Every class has at least one student who consistently doesn\'t follow — and in a room of 30, the temptation is to keep moving and let the group carry them. But what that student is learning, lesson by lesson, is that being lost is their permanent condition. There\'s a specific, small thing you can do that doesn\'t slow the class but signals to that student that they\'re seen — and that changes what they do next.',
+          hi: 'हर कक्षा में कम से कम एक छात्र होता है जो लगातार नहीं समझता — और 30 छात्रों के कमरे में, आगे बढ़ते रहने और समूह को उन्हें संभालने देने का लालच होता है। लेकिन वह छात्र, पाठ दर पाठ, यह सीख रहा होता है कि खोया रहना उनकी स्थायी स्थिति है। एक खास, छोटी चीज़ है जो आप कर सकते हैं जो कक्षा को धीमा नहीं करती लेकिन उस छात्र को संकेत देती है कि उन्हें देखा गया है।',
+        },
+        steps: [
+          { en: 'At the end of a lesson, say the key concept in a second, simpler way — not for the class, just one more version — "another way to think about this is..." This costs 30 seconds and catches the ones who almost understood.', hi: 'पाठ के अंत में, मुख्य अवधारणा को एक दूसरे, सरल तरीके से कहें — पूरी कक्षा के लिए नहीं, बस एक और संस्करण — "इसके बारे में सोचने का एक और तरीका यह है..." यह 30 सेकंड लेता है और उन्हें पकड़ता है जो लगभग समझ गए थे।' },
+          { en: 'Identify the one student who looks most lost — not to call on them, but to position a question near them: "let\'s check this from the beginning — what\'s the first step?" This lets them hear the foundation again without being singled out.', hi: 'उस एक छात्र को पहचानें जो सबसे अधिक खोया हुआ दिखता है — उन्हें बुलाने के लिए नहीं, बल्कि उनके पास एक सवाल रखने के लिए: "चलो इसे शुरू से जांचते हैं — पहला कदम क्या है?" यह उन्हें अलग किए बिना फिर से नींव सुनने देता है।' },
+          { en: 'When a student makes a wrong answer in front of the class, respond to the logic, not the error: "I can see why you\'d think that — here\'s the part that shifts it..." This keeps others willing to try.', hi: 'जब कोई छात्र कक्षा के सामने गलत जवाब दे, गलती पर नहीं बल्कि तर्क पर प्रतिक्रिया करें: "मैं समझ सकता हूं आप ऐसा क्यों सोचेंगे — यहां वह हिस्सा है जो इसे बदलता है..." यह दूसरों को कोशिश करने के लिए तैयार रखता है।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'A student answers a question incorrectly in front of the class. Which response best keeps them and others willing to participate?', hi: 'एक छात्र कक्षा के सामने एक सवाल का गलत जवाब देता है। कौन सी प्रतिक्रिया उन्हें और दूसरों को भाग लेने के लिए तैयार रखती है?' },
+            options: [
+              { en: '"That\'s wrong — who has the correct answer?"', hi: '"यह गलत है — किसके पास सही जवाब है?"' },
+              { en: '"I can see why you\'d think that — the part that changes it is..."', hi: '"मैं समझ सकता हूं आप ऐसा क्यों सोचेंगे — जो हिस्सा इसे बदलता है वह है..."' },
+              { en: 'Move on quickly to avoid embarrassing them', hi: 'उन्हें शर्मिंदगी से बचाने के लिए जल्दी आगे बढ़ें' },
             ],
             correct: 1,
           },
