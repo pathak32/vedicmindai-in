@@ -13,7 +13,7 @@ import { getUserProfile, getUserProgress, getPlanProfile, reconcileTodayQuizFrom
 import { getDailyQuizStatus, getTodayString } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@/lib/leaderboardEngine';
 import { useLanguage } from '@/lib/LanguageContext';
-
+import { recalculateMonthlyStatus, pointsToNextTier } from '@/lib/knowledgePoints';
 // ─── helpers ────────────────────────────────────────────────────────────────
 
 function greeting(auth, profile) {
@@ -531,6 +531,7 @@ function DashboardPage() {
   const [profile, setProfile] = useState(() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile')) || {}; } catch(e) { return {}; } });
   const [progress, setProgress] = useState(() => { try { return JSON.parse(localStorage.getItem('vedicmind_progress')) || {}; } catch(e) { return {}; } });
   const [dataLoading, setDataLoading] = useState(true);
+  const [kpStatus, setKpStatus] = useState(null);
   const [showWelcome, setShowWelcome] = useState(false);
 
   const hasActivePlan = profile?.subscriptionStatus === 'active' || profile?.subscription_status === 'active' || profile?.paymentStatus === 'completed' || profile?.payment_status === 'completed';
@@ -601,6 +602,7 @@ function DashboardPage() {
       } catch (e) {
         console.error('Dashboard data load error:', e);
       } finally {
+        const kp = await recalculateMonthlyStatus(auth.id); setKpStatus(kp);
         setDataLoading(false);
         // Show welcome modal once for new users — only after data is ready
         if (!hasSeenWelcome()) setShowWelcome(true);
@@ -685,7 +687,14 @@ function DashboardPage() {
           <Link to="/knowledge-points" style={{ textDecoration: 'none', background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#FEF3C7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🎯</div>
             <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{'Knowledge Points'}</span>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 32, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>{totalXP}</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 32, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>
+  {kpStatus ? kpStatus.totalPoints : totalXP}
+</span>
+<span style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: kpStatus && pointsToNextTier(kpStatus.totalPoints) ? '#F59E0B' : '#4B5563', marginTop: 2 }}>
+  {kpStatus && pointsToNextTier(kpStatus.totalPoints)
+    ? `${pointsToNextTier(kpStatus.totalPoints).pointsNeeded} pts to ${pointsToNextTier(kpStatus.totalPoints).tier.discountPct}% off`
+    : 'this month'}
+</span>
           </Link>
           {/* 2. Day Streak */}
           <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>

@@ -5,14 +5,25 @@
 import { getSupabase } from './supabaseClient';
 
 export const POINTS = {
-  QUESTION_CORRECT: 1,
-  QUESTION_WRONG: -1,      // negative marking, applies to lesson quiz, practice, battle mode
-  DAILY_QUIZ_COMPLETE: 5,
-  LESSON_COMPLETE: 5,
+  QUESTION_CORRECT: 2,          // was 1
+  QUESTION_WRONG: -1,           // unchanged — negative marking
+  DAILY_QUIZ_COMPLETE: 25,      // was 5
+  LESSON_COMPLETE: 15,          // was 5
+  WEEKLY_EXAM_COMPLETE: 50,     // new
+  BATTLE_DAY: 10,               // new — flat per day, win or lose
 };
 
-// Tiers are fixed and capped — 2000 points is the ceiling, matching the
-// max useful discount. No further benefit past this point in a given month.
+// Monthly caps — points beyond these limits are silently ignored.
+// Natural limits (daily quiz = 1/day, weekly exam = 1/week) need no cap.
+export const MONTHLY_CAPS = {
+  LESSONS: 20,                  // max 20 lesson completions count per month
+  BATTLE: 300,                  // 30 days × 10 = 300 max
+  SPEED_DRILL: 50,              // combined answer points from speed drill
+  TOPIC_PRACTICE: 50,           // combined answer points from topic practice
+  CHALLENGE_MODE: 50,           // combined answer points from challenge mode
+};
+
+// Tiers are fixed and capped — 2000 points is the ceiling.
 export const TIERS = [
   { points: 2000, discountPct: 50 },
   { points: 1500, discountPct: 40 },
@@ -37,11 +48,16 @@ function currentMonthYear() {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
 }
 
+function todayString() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
 // Record a points event — called from Daily Quiz, Lesson Quiz, Practice,
 // Battle Mode completion handlers. Fire-and-forget against Supabase; local
 // running total is updated synchronously so the UI never waits on network.
 export async function awardPoints(userId, amount, source, referenceId = null) {
-  if (!userId) return;
+  if (!userId || amount === 0) return;
   try {
     const sb = await getSupabase();
     await sb.from('knowledge_points_ledger').insert({
@@ -49,6 +65,31 @@ export async function awardPoints(userId, amount, source, referenceId = null) {
     });
   } catch (e) {
     console.warn('awardPoints failed (non-critical):', e);
+  }
+}
+
+// Battle Mode: award +10 only once per calendar day per user.
+// Checks the ledger for an existing battle_mode entry today before inserting.
+export async function awardBattlePoints(userId) {
+  if (!userId) return false;
+  try {
+    const sb = await getSupabase();
+    const today = todayString();
+    const { data: existing } = await sb
+      .from('knowledge_points_ledger')
+      .select('id')
+      .eq('user_id', userId)
+      .eq('source', 'battle_mode')
+      .eq('reference_id', today)
+      .maybeSingle();
+    if (existing) return false; // already awarded today
+    await sb.from('knowledge_points_ledger').insert({
+      user_id: userId, points: POINTS.BATTLE_DAY, source: 'battle_mode', reference_id: today,
+    });
+    return true;
+  } catch (e) {
+    console.warn('awardBattlePoints failed (non-critical):', e);
+    return false;
   }
 }
 
@@ -76,24 +117,47 @@ export async function recalculateMonthlyStatus(userId) {
     ]);
 
     const ledgerRows = ledgerRes.data || [];
-    const totalPoints = Math.max(0, ledgerRows.reduce((sum, r) => sum + r.points, 0));
+
+    // --- Apply monthly caps per source category ---
+    // Lessons (capped at 20 unique lessons)
+    const lessonCompletionIds = new Set(
+      ledgerRows.filter(r => r.source === 'lesson_completion').map(r => r.reference_id)
+    );
+    const reasoningLessonIds = new Set(
+      ledgerRows.filter(r => r.source === 'reasoning_lesson_completion').map(r => r.reference_id)
+    );
+    const cappedLessonCount = Math.min(lessonCompletionIds.size + reasoningLessonIds.size, MONTHLY_CAPS.LESSONS);
+
+    // Practice caps: sum raw points per source, cap each
+    const sumSource = (src) => ledgerRows.filter(r => r.source === src).reduce((s, r) => s + r.points, 0);
+    const speedDrillPts = Math.min(sumSource('speed_drill'), MONTHLY_CAPS.SPEED_DRILL);
+    const topicPracticePts = Math.min(sumSource('topic_practice'), MONTHLY_CAPS.TOPIC_PRACTICE);
+    const challengeModePts = Math.min(sumSource('challenge_mode'), MONTHLY_CAPS.CHALLENGE_MODE);
+
+    // Battle: already 1/day enforced at insert time, but also cap total
+    const battlePts = Math.min(sumSource('battle_mode'), MONTHLY_CAPS.BATTLE);
+
+    // Daily quiz, weekly exam, lesson quiz answers — no extra cap (natural limits)
+    const dailyQuizPts = sumSource('daily_quiz') + sumSource('daily_quiz_complete');
+    const weeklyExamPts = sumSource('weekly_exam') + sumSource('weekly_exam_complete');
+    const lessonQuizPts = sumSource('lesson_quiz');
+
+    // Lesson completion bonuses: only count up to cap
+    const lessonBonusPts = cappedLessonCount * POINTS.LESSON_COMPLETE;
+
+    const totalPoints = Math.max(0,
+      dailyQuizPts + weeklyExamPts + lessonQuizPts +
+      lessonBonusPts + battlePts +
+      speedDrillPts + topicPracticePts + challengeModePts
+    );
+
     const dailyQuizDays = new Set((dailyQuizRes.data || []).map(r => r.quiz_date)).size;
     const dailyQuizPct = (dailyQuizDays / daysInMonth) * 100;
-
     const weeklyExamsGiven = (weeklyExamRes.data || []).length;
     const allWeeklyExamsGiven = weeklyExamsGiven >= 4;
 
-    // Lesson completions THIS MONTH specifically — counted from the ledger
-    // (which is timestamped), not from the lifetime-cumulative progress
-    // tables. Using those instead would let someone who finished 5 lessons
-    // years ago pass this criterion forever, which defeats the point of a
-    // monthly re-engagement requirement.
-    const reasoningLessonsThisMonth = new Set(
-      ledgerRows.filter(r => r.source === 'reasoning_lesson_completion').map(r => r.reference_id)
-    ).size;
-    const mathsLessonsCompleted = new Set(
-      ledgerRows.filter(r => r.source === 'lesson_completion').map(r => r.reference_id)
-    ).size;
+    const reasoningLessonsThisMonth = reasoningLessonIds.size;
+    const mathsLessonsCompleted = lessonCompletionIds.size;
 
     const criteriaMet = dailyQuizPct >= 50 && allWeeklyExamsGiven &&
       reasoningLessonsThisMonth >= 5 && mathsLessonsCompleted >= 5;
@@ -121,7 +185,11 @@ export async function recalculateMonthlyStatus(userId) {
       await upgradeAnnualLockIfHigher(userId, tier);
     }
 
-    return { totalPoints, dailyQuizPct, allWeeklyExamsGiven, reasoningLessonsThisMonth, mathsLessonsCompleted, criteriaMet, tier };
+    return {
+      totalPoints, dailyQuizPct, allWeeklyExamsGiven,
+      reasoningLessonsThisMonth, mathsLessonsCompleted,
+      criteriaMet, tier,
+    };
   } catch (e) {
     console.warn('recalculateMonthlyStatus failed:', e);
     return null;
@@ -134,10 +202,7 @@ async function upgradeAnnualLockIfHigher(userId, tier) {
     .select('*').eq('user_id', userId).order('subscription_start_date', { ascending: false }).limit(1).maybeSingle();
 
   if (!existing) {
-    // First lock record for this subscription — needs subscription_start_date,
-    // which should be set when the annual plan is first purchased. Skipping
-    // creation here if it doesn't exist; that record should be seeded at
-    // checkout time instead (see payment success handler).
+    // First lock record for this subscription — seeded at checkout time.
     return;
   }
   if (tier.points > existing.locked_tier) {
