@@ -237,6 +237,7 @@ export function VedicAuthProvider({ children }) {
       getPasswordHint,
       verifySecurityAnswer,
       resetPassword,
+      refreshProfile: () => user?.id && loadProfile(user.id),
     }}>
       {children}
     </VedicAuthContext.Provider>

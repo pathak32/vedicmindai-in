@@ -28,6 +28,7 @@ import NotFoundPage from '@/pages/NotFoundPage';
 import DemoPage from '@/pages/DemoPage';
 import CurriculumPage from '@/pages/CurriculumPage';
 import DailyQuizPage from '@/pages/DailyQuizPage';
+import ProfileCompletionGate from '@/components/ProfileCompletionGate';
 import DailyQuizResultsPage from '@/pages/DailyQuizResultsPage';
 import LeaderboardPage from '@/pages/LeaderboardPage';
 import AptitudeZonePage from '@/pages/AptitudeZonePage';
@@ -128,16 +129,16 @@ function RouteTransition() {
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/demo" element={<DemoPage />} />
               <Route path="/curriculum" element={<CurriculumPage />} />
-              <Route path="/daily-quiz" element={<DailyQuizPage />} />
+              <Route path="/daily-quiz" element={<ProfileCompletionGate><DailyQuizPage /></ProfileCompletionGate>} />
               <Route path="/daily-quiz/results" element={<DailyQuizResultsPage />} />
               <Route path="/leaderboard" element={<LeaderboardPage />} />
               <Route path="/aptitude" element={<AptitudeComingSoonPage />} />
               <Route path="/pricing" element={<PricingPage />} />
-              <Route path="/weekly-exam" element={<WeeklyExamPage />} />
+              <Route path="/weekly-exam" element={<ProfileCompletionGate><WeeklyExamPage /></ProfileCompletionGate>} />
               <Route path="/weekly-exam/results" element={<WeeklyExamResultsPage />} />
-              <Route path="/olympiad" element={<OlympiadPage />} />
+              <Route path="/olympiad" element={<ProfileCompletionGate><OlympiadPage /></ProfileCompletionGate>} />
               <Route path="/olympiad/results" element={<OlympiadResultsPage />} />
-              <Route path="/battle" element={<BattleModePage />} />
+              <Route path="/battle" element={<ProfileCompletionGate><BattleModePage /></ProfileCompletionGate>} />
               <Route path="/payment-success" element={<PaymentSuccessPage />} />
               <Route path="/reviews" element={<ReviewsPage />} />
               <Route path="/screenless" element={<ScreenlessLearningPage />} />
