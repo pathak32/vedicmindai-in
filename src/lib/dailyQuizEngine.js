@@ -299,14 +299,15 @@ export function getDailyQuestions(grade) {
   const band = getGradeBand(grade);
 
   const vmPool = VEDIC_BANK.filter(q => q.bands.includes(band));
-  const apPool = APTITUDE_BANK.filter(q => q.bands.includes(band));
   const rsPool = REASONING_BANK.filter(q => q.bands.includes(band));
+  // Aptitude paused from the daily rotation until the Aptitude Zone
+  // section itself has live content — re-enable alongside APTITUDE_BANK
+  // when that's ready (plan: expand to 9-10 total questions then).
 
-  const vmPicks = seededPick(vmPool, 2, rand);
-  const apPicks = seededPick(apPool, 2, rand);
+  const vmPicks = seededPick(vmPool, 3, rand);
   const rsPicks = seededPick(rsPool, 2, rand);
 
-  const combined = seededPick([...vmPicks, ...apPicks, ...rsPicks], 6, rand);
+  const combined = seededPick([...vmPicks, ...rsPicks], 5, rand);
 
   return combined.map((q, i) => {
     // Shuffle options with the same seeded rand so results are deterministic
