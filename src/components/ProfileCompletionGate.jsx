@@ -36,6 +36,7 @@ export default function ProfileCompletionGate({ children }) {
   const [childName, setChildName] = useState('');
   const [childSchoolName, setChildSchoolName] = useState('');
   const [childGrade, setChildGrade] = useState('');
+  const [childSection, setChildSection] = useState('');
 
   if (!profile || isProfileComplete(profile)) {
     return children;
@@ -46,19 +47,19 @@ export default function ProfileCompletionGate({ children }) {
     setError('');
     if (isParent) {
       if (!childName.trim() || !childSchoolName.trim() || !childGrade) {
-        setError('Please fill in all fields.'); return;
+        setError('Please fill in all required fields.'); return;
       }
     } else {
-      if (!schoolName.trim() || !board || !classSection.trim()) {
-        setError('Please fill in all fields.'); return;
+      if (!schoolName.trim() || !board) {
+        setError('Please fill in all required fields.'); return;
       }
     }
     setSaving(true);
     try {
       const sb = await getSupabase();
       const updates = isParent
-        ? { child_name: childName.trim(), child_school_name: childSchoolName.trim(), child_grade: childGrade }
-        : { school_name: schoolName.trim(), board, class_section: classSection.trim() };
+        ? { child_name: childName.trim(), child_school_name: childSchoolName.trim(), child_grade: childGrade, child_section: childSection.trim() || null }
+        : { school_name: schoolName.trim(), board, class_section: classSection.trim() || null };
       const { error: updErr } = await sb.from('profiles').update(updates).eq('id', profile.id);
       if (updErr) throw updErr;
       await refreshProfile();
@@ -96,12 +97,16 @@ export default function ProfileCompletionGate({ children }) {
                 <label style={labelStyle}>Child's School Name *</label>
                 <input style={inputStyle} value={childSchoolName} onChange={e => setChildSchoolName(e.target.value)} placeholder="e.g. Delhi Public School" />
               </div>
-              <div style={{ marginBottom: 8 }}>
+              <div style={{ marginBottom: 16 }}>
                 <label style={labelStyle}>Child's Class *</label>
                 <select style={{ ...inputStyle, cursor: 'pointer' }} value={childGrade} onChange={e => setChildGrade(e.target.value)}>
                   <option value="">-- Select Class --</option>
                   {GRADES.map(g => <option key={g} value={g}>{g === 'Other' ? 'Other' : `Class ${g}`}</option>)}
                 </select>
+              </div>
+              <div style={{ marginBottom: 8 }}>
+                <label style={labelStyle}>Child's Section (optional)</label>
+                <input style={inputStyle} value={childSection} onChange={e => setChildSection(e.target.value)} placeholder="e.g. A" />
               </div>
             </>
           ) : (
@@ -118,7 +123,7 @@ export default function ProfileCompletionGate({ children }) {
                 </select>
               </div>
               <div style={{ marginBottom: 8 }}>
-                <label style={labelStyle}>Class & Section *</label>
+                <label style={labelStyle}>Class & Section (optional)</label>
                 <input style={inputStyle} value={classSection} onChange={e => setClassSection(e.target.value)} placeholder="e.g. 8-A" />
               </div>
             </>
