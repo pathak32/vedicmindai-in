@@ -51,7 +51,7 @@ export default function TopicPractice({ topic, onExit, onChangeTopic }) {
     setRevealed(true);
     const isCorrect = idx === q.correctIndex;
     setAnswers(prev => [...prev, isCorrect]);
-    setXP(prev => Math.max(0, prev + (isCorrect ? 10 : -2)));
+    setXP(prev => Math.max(0, prev + (isCorrect ? 2 : -1)));
 
     setTimeout(() => {
       if (current < TOTAL_Q - 1) {
@@ -78,7 +78,7 @@ export default function TopicPractice({ topic, onExit, onChangeTopic }) {
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 48, fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>{correctCount}/{TOTAL_Q}</div>
         <div style={{ fontSize: 14, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 24 }}>{accuracy}% accuracy</div>
         <div style={{ background: '#FEF3C7', borderRadius: 12, padding: '16px', marginBottom: 24 }}>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#92400E' }}>+{xp} XP ⭐</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#92400E' }}>+{xp} KP ⭐</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <button onClick={() => { setCurrent(0); setSelected(null); setRevealed(false); setAnswers([]); setXP(0); setDone(false); }}
@@ -173,7 +173,7 @@ export default function TopicPractice({ topic, onExit, onChangeTopic }) {
       </AnimatePresence>
 
       <div style={{ marginTop: 12, textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 14, color: '#0A1628' }}>
-        XP: <span style={{ color: xp >= 0 ? '#10B981' : '#EF4444', fontWeight: 700 }}>+{xp}</span>
+        KP: <span style={{ color: xp >= 0 ? '#10B981' : '#EF4444', fontWeight: 700 }}>+{xp}</span>
       </div>
     </div>
   );

@@ -86,11 +86,11 @@ export default function SpeedDrill({onExit }) {
     if (isCorrect) {
       setCorrect(c => c + 1);
       setStreak(s => { const ns = s + 1; if (ns > bestStreak) setBestStreak(ns); return ns; });
-      showToast('+10 XP ⭐', true);
+      showToast('+2 KP ⭐', true);
     } else {
       setWrong(w => w + 1);
       setStreak(0);
-      showToast('-2 XP', false);
+      showToast('-1 KP', false);
     }
     setTimeout(nextQ, 300);
   };
@@ -100,7 +100,7 @@ export default function SpeedDrill({onExit }) {
   const timerColor = timeLeft < 30 ? '#EF4444' : '#0A1628';
 
   if (done) {
-    const xpEarned = Math.max(0, correct * 10 - wrong * 2);
+    const xpEarned = Math.max(0, correct * POINTS.QUESTION_CORRECT + wrong * POINTS.QUESTION_WRONG);
     const accuracy = qCount > 1 ? Math.round((correct / (correct + wrong)) * 100) : 0;
     saveProgress({ xpEarned, mode: 'speed', score: correct, accuracy });
     return (
@@ -119,8 +119,8 @@ export default function SpeedDrill({onExit }) {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
           <div style={{ background: '#FEF3C7', borderRadius: 12, padding: '12px' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: '#92400E' }}>+{xpEarned} XP</div>
-            <div style={{ fontSize: 12, color: '#92400E', fontFamily: 'var(--font-body)' }}>{t('xpEarned')}</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: '#92400E' }}>+{xpEarned} KP</div>
+            <div style={{ fontSize: 12, color: '#92400E', fontFamily: 'var(--font-body)' }}>KP Earned</div>
           </div>
           <div style={{ background: '#DBEAFE', borderRadius: 12, padding: '12px' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: '#1E40AF' }}>{bestStreak}🔥</div>

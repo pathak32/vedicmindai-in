@@ -44,7 +44,7 @@ export default function ChallengeMode({onExit }) {
     setRevealed(true);
     const isCorrect = idx === q.correctIndex;
     setAnswers(prev => [...prev, isCorrect]);
-    const delta = isCorrect ? 15 : -5;
+    const delta = isCorrect ? 2 : -1;
     setXP(prev => Math.max(0, prev + delta));
     setXpAnim(isCorrect ? 'up' : 'down');
     setTimeout(() => setXpAnim(null), 500);
@@ -77,7 +77,7 @@ export default function ChallengeMode({onExit }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 24 }}>
           <div style={{ background: '#FEF3C7', borderRadius: 12, padding: '16px' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#92400E' }}>+{xp}</div>
-            <div style={{ fontSize: 12, color: '#92400E', fontFamily: 'var(--font-body)' }}>{t('totalXP')}</div>
+            <div style={{ fontSize: 12, color: '#92400E', fontFamily: 'var(--font-body)' }}>Total KP</div>
           </div>
           <div style={{ background: '#D1FAE5', borderRadius: 12, padding: '16px' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#065F46' }}>{correctCount}</div>
@@ -111,7 +111,7 @@ export default function ChallengeMode({onExit }) {
             transition={{ duration: 0.5 }}
             style={{ fontFamily: 'var(--font-mono)', fontSize: 20, fontWeight: 700, color: '#0A1628' }}
           >
-            ⭐ {xp} XP
+            ⭐ {xp} KP
           </motion.span>
           <button onClick={onExit}
             style={{ minHeight: 44, padding: '0 12px', background: 'transparent', color: '#4B5563', border: '1px solid rgba(30,64,175,0.2)', borderRadius: 10, fontSize: 14, cursor: 'pointer', fontFamily: 'var(--font-body)' }}>
@@ -173,8 +173,8 @@ export default function ChallengeMode({onExit }) {
             {revealed && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ marginTop: 14, textAlign: 'center' }}>
                 {selected === q.correctIndex
-                  ? <span style={{ color: '#10B981', fontFamily: 'var(--font-body)', fontWeight: 600 }}>🔥 +15 XP</span>
-                  : <span style={{ color: '#EF4444', fontFamily: 'var(--font-body)', fontWeight: 600 }}>💥 -5 XP</span>
+                  ? <span style={{ color: '#10B981', fontFamily: 'var(--font-body)', fontWeight: 600 }}>🔥 +2 KP</span>
+                  : <span style={{ color: '#EF4444', fontFamily: 'var(--font-body)', fontWeight: 600 }}>💥 -1 KP</span>
                 }
               </motion.div>
             )}
