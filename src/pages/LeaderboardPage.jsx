@@ -1,10 +1,12 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { motion } from 'framer-motion';
 import usePullToRefresh from '@/hooks/usePullToRefresh';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
+import { getSupabase } from '@/lib/supabaseClient';
+import { RA_LEVEL1_CHAPTERS } from '@/data/reasoningAptitudeLevel1Content';
 import {
   generateLeaderboard, getUserEntry, getTopN,
   getUserPercentile, filterByPeriod,
@@ -55,6 +57,19 @@ const auth     = (() => { try { return JSON.parse(localStorage.getItem('vedicmin
   React.useEffect(() => {
     if (!loading && !user) { navigate('/auth'); return; }
   }, []);
+
+  const [reasoningRows, setReasoningRows] = useState([]);
+  useEffect(() => {
+    if (!user?.id) return;
+    (async () => {
+      try {
+        const sb = await getSupabase();
+        const { data } = await sb.from('reasoning_progress')
+          .select('chapter_id, best_score, completed').eq('user_id', user.id);
+        setReasoningRows(data || []);
+      } catch { setReasoningRows([]); }
+    })();
+  }, [user?.id]);
 
   const classBoard  = useMemo(() => generateLeaderboard(profile, progress, 'class'),  []);
   const schoolBoard = useMemo(() => generateLeaderboard(profile, progress, 'school'), []);
@@ -128,7 +143,7 @@ const auth     = (() => { try { return JSON.parse(localStorage.getItem('vedicmin
 
           {/* ── MODE TABS ── */}
           <div style={{ display: 'flex', gap: 4, background: 'white', borderRadius: 14, padding: 4, border: '1px solid rgba(30,64,175,0.12)', marginBottom: 24, width: 'fit-content' }}>
-            {[{ id: 'vedic', label: '🧮 Vedic Maths' }, { id: 'aptitude', label: '🎯 Aptitude Zone' }].map(t => (
+            {[{ id: 'vedic', label: '🧮 Vedic Maths' }, { id: 'reasoning', label: '🧠 Reasoning' }, { id: 'aptitude', label: '🎯 Aptitude Zone' }].map(t => (
               <button key={t.id} onClick={() => setActiveTab(t.id)} style={{
                 padding: '8px 20px', minHeight: 40, borderRadius: 10, border: 'none', cursor: 'pointer',
                 fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14,
@@ -161,6 +176,57 @@ const auth     = (() => { try { return JSON.parse(localStorage.getItem('vedicmin
               </div>
             )}
           </div>
+
+          {/* ── REASONING TAB CONTENT ── */}
+          {activeTab === 'reasoning' && (() => {
+            const completedRows = reasoningRows.filter(r => r.completed);
+            const avgScore = completedRows.length > 0
+              ? Math.round(completedRows.reduce((a, r) => a + (r.best_score || 0), 0) / completedRows.length)
+              : 0;
+            const chapterNames = completedRows.map(r => {
+              const ch = RA_LEVEL1_CHAPTERS?.find(c => c.id === r.chapter_id);
+              return ch?.title?.en || r.chapter_id;
+            });
+            return (
+              <div>
+                {completedRows.length === 0 ? (
+                  <div style={{ ...glass, padding: 40, textAlign: 'center' }}>
+                    <div style={{ fontSize: 48, marginBottom: 16 }}>🧠</div>
+                    <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>No Reasoning Chapters Completed Yet</h3>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563', marginBottom: 20 }}>
+                      Complete chapters in Intelligent Reasoning to see your stats here.
+                    </p>
+                    <button onClick={() => navigate('/learn')} style={{ minHeight: 48, padding: '0 28px', background: '#0A1628', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>
+                      Go to Reasoning →
+                    </button>
+                  </div>
+                ) : (
+                  <div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12, marginBottom: 20 }}>
+                      {[
+                        { label: '📘 Chapters Completed', value: completedRows.length, unit: `of ${RA_LEVEL1_CHAPTERS?.length || 20}` },
+                        { label: '🏆 Average Score', value: avgScore, unit: '%' },
+                      ].map((s, i) => (
+                        <div key={i} style={{ ...glass, padding: 20, textAlign: 'center' }}>
+                          <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginBottom: 6 }}>{s.label}</div>
+                          <div style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#0A1628' }}>{s.value}</div>
+                          {s.unit && <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF' }}>{s.unit}</div>}
+                        </div>
+                      ))}
+                    </div>
+                    <div style={{ ...glass, padding: 20 }}>
+                      <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 700, color: '#0A1628', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Chapters Mastered</div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                        {chapterNames.map((name, i) => (
+                          <span key={i} style={{ background: '#EDE9FE', color: '#5B21B6', borderRadius: 100, padding: '5px 14px', fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600 }}>{name}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })()}
 
           {/* ── APTITUDE TAB CONTENT ── */}
           {activeTab === 'aptitude' && (() => {
