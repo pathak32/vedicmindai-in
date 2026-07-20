@@ -1,6 +1,6 @@
 import { awardPoints, POINTS } from '@/lib/knowledgePoints';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { generateQuestion, TOPIC_OPTIONS, saveProgress } from './questionGenerator';
 
