@@ -113,6 +113,28 @@ const auth     = (() => { try { return JSON.parse(localStorage.getItem('vedicmin
 
   const podiumOrder = [1, 0, 2]; // silver, gold, bronze
 
+  // Leaderboards are a student-competitive feature — Parent accounts
+  // shouldn't be ranked or shown as a competitor entry.
+  if (profile?.user_type === 'Parent') {
+    return (
+      <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
+        <DashboardNavbar />
+        <main style={{ maxWidth: 600, margin: '0 auto', padding: '60px 16px' }}>
+          <div style={{ ...glass, padding: 40, textAlign: 'center' }}>
+            <div style={{ fontSize: 48, marginBottom: 16 }}>🏆</div>
+            <h2 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>Leaderboards Are for Students</h2>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563', marginBottom: 20 }}>
+              Ask your child to log in with their own account to see their class, school, and global ranking.
+            </p>
+            <button onClick={() => navigate('/dashboard')} style={{ minHeight: 48, padding: '0 28px', background: '#0A1628', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>
+              Back to Dashboard →
+            </button>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
       <DashboardNavbar />
