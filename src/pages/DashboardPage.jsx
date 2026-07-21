@@ -12,44 +12,44 @@ import RupeeOneOffer from '@/components/RupeeOneOffer';
 import { getUserProfile, getUserProgress, getPlanProfile, reconcileTodayQuizFromServer, isReviewerAccount } from '@/lib/supabaseDataService';
 import { getDailyQuizStatus, getTodayString } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@/lib/leaderboardEngine';
-import { useLanguage } from '@/lib/LanguageContext';
+import { useLanguage, translations } from '@/lib/LanguageContext';
 import { recalculateMonthlyStatus, pointsToNextTier } from '@/lib/knowledgePoints';
 // ─── helpers ────────────────────────────────────────────────────────────────
 
-function greeting(auth, profile) {
+function greeting(auth, profile, t) {
   const h = new Date().getHours();
-  const tod = h >= 5 && h < 12 ? 'morning' : h >= 12 && h < 17 ? 'afternoon' : 'evening';
+  const todWord = h >= 5 && h < 12 ? t('greetingMorning') : h >= 12 && h < 17 ? t('greetingAfternoon') : t('greetingEvening');
   const displayName = profile.name || auth?.user_metadata?.name || '';
-  if (!displayName) return `Good ${tod}! 👋`;
+  if (!displayName) return `${todWord}! 👋`;
   const firstName = displayName.split(' ')[0];
-  return `Good ${tod}, ${firstName}! 👋`;
+  return `${todWord}, ${firstName}! 👋`;
 }
 
-const LEVELS = [
-  { id: 1, name: 'Beginner',     icon: '🌱', count: 10, prefix: 'l1_', lockKey: null },
-  { id: 2, name: 'Intermediate', icon: '📈', count: 12, prefix: 'l2_', lockKey: 'l1_10' },
-  { id: 3, name: 'Advanced',     icon: '⚡', count: 10, prefix: 'l3_', lockKey: 'l2_12' },
-  { id: 4, name: 'Master',       icon: '👑', count: 8,  prefix: 'l4_', lockKey: 'l3_10' },
+const LEVELS = (t) => [
+  { id: 1, name: t('levelBeginner'),     icon: '🌱', count: 10, prefix: 'l1_', lockKey: null },
+  { id: 2, name: t('levelIntermediate'), icon: '📈', count: 12, prefix: 'l2_', lockKey: 'l1_10' },
+  { id: 3, name: t('levelAdvanced'),     icon: '⚡', count: 10, prefix: 'l3_', lockKey: 'l2_12' },
+  { id: 4, name: t('levelMaster'),       icon: '👑', count: 8,  prefix: 'l4_', lockKey: 'l3_10' },
 ];
 
-const BADGES_DEF = [
-  { id: 'first_lesson',  emoji: '🥇', name: 'First Lesson' },
-  { id: 'five_lessons',  emoji: '📚', name: '5 Lessons Done' },
-  { id: 'streak_3',      emoji: '🔥', name: '3-Day Streak' },
-  { id: 'streak_7',      emoji: '💪', name: '7-Day Streak' },
-  { id: 'perfect_score', emoji: '⭐', name: 'Perfect Score' },
-  { id: 'xp_500',        emoji: '✨', name: '500 XP Club' },
+const BADGES_DEF = (t) => [
+  { id: 'first_lesson',  emoji: '🥇', name: t('badgeFirstLesson') },
+  { id: 'five_lessons',  emoji: '📚', name: t('badgeFiveLessons') },
+  { id: 'streak_3',      emoji: '🔥', name: t('badgeStreak3') },
+  { id: 'streak_7',      emoji: '💪', name: t('badgeStreak7') },
+  { id: 'perfect_score', emoji: '⭐', name: t('badgePerfectScore') },
+  { id: 'xp_500',        emoji: '✨', name: t('badgeXp500') },
 ];
 
-const LESSON_META = {
-  l1_01: { title: 'Introduction to Vedic Mathematics', desc: 'Discover the power of ancient Vedic sutras and their modern applications.' },
-  l1_02: { title: 'The Ekadhikena Purvena Sutra',     desc: 'Master "By one more than the one before" for rapid squaring.' },
-  l1_03: { title: 'Nikhilam Multiplication',           desc: 'Multiply large numbers using the base system.' },
-  l1_04: { title: 'Anurupyena — Proportionality',      desc: 'Apply proportional reasoning to simplify calculations.' },
-  l1_05: { title: 'Vertically & Crosswise Method',     desc: 'Two-digit multiplication using the cross-multiplication sutra.' },
-};
+const LESSON_META = (t) => ({
+  l1_01: { title: t('lessonL101Title'), desc: t('lessonL101Desc') },
+  l1_02: { title: t('lessonL102Title'), desc: t('lessonL102Desc') },
+  l1_03: { title: t('lessonL103Title'), desc: t('lessonL103Desc') },
+  l1_04: { title: t('lessonL104Title'), desc: t('lessonL104Desc') },
+  l1_05: { title: t('lessonL105Title'), desc: t('lessonL105Desc') },
+});
 
-const getLevelName = (level, t) => ({ 1: 'Beginner', 2: 'Intermediate', 3: 'Advanced', 4: 'Master' })[level] || 'Level ' + level;
+const getLevelName = (level, t) => ({ 1: t('levelBeginner'), 2: t('levelIntermediate'), 3: t('levelAdvanced'), 4: t('levelMaster') })[level] || `${t('curriculumLevelWord')} ${level}`;
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -73,16 +73,18 @@ class DashboardErrorBoundary extends React.Component {
   static getDerivedStateFromError() { return { hasError: true }; }
   render() {
     if (this.state.hasError) {
+      const lang = localStorage.getItem('vedicmind_language') || 'en';
+      const t = (key) => translations[lang]?.[key] || translations['en']?.[key] || key;
       return (
         <div style={{ padding: 40, textAlign: 'center' }}>
           <p style={{ fontFamily: 'DM Sans', fontSize: 16, color: '#EF4444' }}>
-            Dashboard failed to load. Please refresh the page.
+            {t('dbErrorTitle')}
           </p>
           <button
             onClick={() => window.location.reload()}
             style={{ marginTop: 16, padding: '10px 24px', background: '#0A1628', color: 'white', borderRadius: 12, border: 'none', cursor: 'pointer' }}
           >
-            {'Refresh'}
+            {t('dbRefresh')}
           </button>
         </div>
       );
@@ -112,7 +114,7 @@ function ProgressRing({ pct }) {
         {Math.round(pct)}%
       </text>
       <text x={cx} y={cy + 18} textAnchor="middle" fontSize={13} fontFamily="var(--font-body)" fill="#4B5563">
-        {'Complete'}
+        {t('dbProgressComplete')}
       </text>
     </svg>
   );
@@ -216,10 +218,10 @@ function DailyQuizCard() {
 
   const headerIcons = { A: '🔴', B: '✅', C: '⏳', D: '⚠️' };
   const pills = {
-    A: { label: 'LIVE',     bg: '#EFF6FF', color: '#1D4ED8', border: '#BFDBFE' },
-    B: { label: 'DONE',     bg: '#ECFDF5', color: '#065F46', border: '#A7F3D0' },
-    C: { label: 'SOON',     bg: '#F3F4F6', color: '#374151', border: '#D1D5DB' },
-    D: { label: 'EXPIRING', bg: '#FFFBEB', color: '#92400E', border: '#FCD34D' },
+    A: { label: t('pillLive'),     bg: '#EFF6FF', color: '#1D4ED8', border: '#BFDBFE' },
+    B: { label: t('pillDone'),     bg: '#ECFDF5', color: '#065F46', border: '#A7F3D0' },
+    C: { label: t('pillSoon'),     bg: '#F3F4F6', color: '#374151', border: '#D1D5DB' },
+    D: { label: t('pillExpiring'), bg: '#FFFBEB', color: '#92400E', border: '#FCD34D' },
   };
   const pill = pills[state];
 
@@ -265,11 +267,11 @@ function DailyQuizCard() {
           <div style={{ margin: '4px 0 12px' }}>
             {(progress.dailyQuizStreak >= 1) ? (
               <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 500, color: '#F59E0B', whiteSpace: 'nowrap' }}>
-                🔥 {progress.dailyQuizStreak} day quiz streak
+                🔥 {progress.dailyQuizStreak} {t('dqStreakActive')}
               </span>
             ) : (
               <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', whiteSpace: 'nowrap' }}>
-                Start your quiz streak today!
+                {t('dqStreakStart')}
               </span>
             )}
           </div>
@@ -279,13 +281,13 @@ function DailyQuizCard() {
         {state === 'A' && (
           <>
             <h2 className="font-heading" style={{ fontSize: 18, fontWeight: 600, color: '#0A1628', margin: '0 0 4px' }}>
-              Today's Quiz is waiting!
+              {t('dqStateATitle')}
             </h2>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', margin: '0 0 16px' }}>
-              5 questions · 30 seconds each · Compete with your class
+              {t('dqStateADesc')}
             </p>
             <button onClick={() => navigate('/daily-quiz')} style={{ ...btnStyle, background: '#0A1628' }}>
-              Take Quiz Now →
+              {t('dqStateABtn')}
             </button>
           </>
         )}
@@ -302,18 +304,18 @@ function DailyQuizCard() {
               </span>
             </div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', marginBottom: todayEntry.rank ? 8 : 12 }}>
-              Today's Score
+              {t('dqStateBScoreLabel')}
             </div>
             {todayEntry.rank && (
               <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 500, color: '#10B981', marginBottom: 12 }}>
-                🏆 Rank #{todayEntry.rank} in your class
+                {t('dqRankPrefix')}{todayEntry.rank} {t('dqRankSuffix')}
               </div>
             )}
             <div
               onClick={() => navigate('/leaderboard')}
               style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#3B82F6', cursor: 'pointer', marginTop: 4 }}
             >
-              View Leaderboard →
+              {t('dqStateBViewLb')}
             </div>
           </>
         )}
@@ -322,7 +324,7 @@ function DailyQuizCard() {
         {state === 'C' && (
           <>
             <h2 className="font-heading" style={{ fontSize: 18, fontWeight: 600, color: '#0A1628', margin: '0 0 8px' }}>
-              Next quiz drops at 8:00 AM
+              {t('dqStateCTitle')}
             </h2>
             <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
               <span style={{
@@ -330,11 +332,11 @@ function DailyQuizCard() {
                 background: '#F0F4FF', borderRadius: 8, padding: '8px 16px',
                 display: 'inline-block',
               }}>
-                In {countdown.hours}h {countdown.minutes}m
+                {t('dqStateCIn')} {countdown.hours}h {countdown.minutes}m
               </span>
             </div>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', margin: '8px 0 0' }}>
-              Come back then to compete with your class
+              {t('dqStateCDesc')}
             </p>
           </>
         )}
@@ -343,13 +345,13 @@ function DailyQuizCard() {
         {state === 'D' && (
           <>
             <h2 className="font-heading" style={{ fontSize: 18, fontWeight: 600, color: '#0A1628', margin: '0 0 4px' }}>
-              Quiz expires at midnight!
+              {t('dqStateDTitle')}
             </h2>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', margin: '0 0 16px' }}>
-              Only a few hours left. Don't miss today's quiz and break your streak.
+              {t('dqStateDDesc')}
             </p>
             <button onClick={() => navigate('/daily-quiz')} style={{ ...btnStyle, background: '#F59E0B' }}>
-              Take Quiz Before It Expires →
+              {t('dqStateDBtn')}
             </button>
           </>
         )}
@@ -383,10 +385,10 @@ function LeaderboardPreviewCard({ profile, progress }) {
       <div className="lb-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 0 }}>
         <div>
           <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: '#0A1628' }}>
-            🏆 Class Leaderboard
+            {t('lbClassLeaderboard')}
           </div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', marginTop: 2 }}>
-            Updated daily · {classBoard.length} students in your class
+            {t('lbUpdatedDaily')} {classBoard.length} {t('lbStudentsInClass')}
           </div>
         </div>
         <button
@@ -394,7 +396,7 @@ function LeaderboardPreviewCard({ profile, progress }) {
           onClick={() => navigate('/leaderboard')}
           style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 14, color: '#3B82F6', fontWeight: 500, padding: 0 }}
         >
-          View Full →
+          {t('lbViewFull')}
         </button>
       </div>
 
@@ -408,13 +410,13 @@ function LeaderboardPreviewCard({ profile, progress }) {
           {/* Left */}
           <div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 2 }}>
-              {'Your Rank'}
+              {t('lbYourRank')}
             </div>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 32, fontWeight: 700, color: 'white', lineHeight: 1 }}>
               #{userEntry.rank}
             </div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>
-              of {classBoard.length} students
+              {classBoard.length} {t('lbOfStudentsSuffix')}
             </div>
           </div>
 
@@ -424,13 +426,13 @@ function LeaderboardPreviewCard({ profile, progress }) {
           {/* Right */}
           <div style={{ textAlign: 'right' }}>
             <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 13, color: '#10B981', marginBottom: 4 }}>
-              ↑{userEntry.movementAmount} since yesterday
+              ↑{userEntry.movementAmount} {t('lbSinceYesterday')}
             </div>
             <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: 'white' }}>
-              Top {100 - percentile}%
+              {t('lbTop')} {100 - percentile}%
             </div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>
-              of your class
+              {t('lbOfYourClass')}
             </div>
           </div>
         </div>
@@ -439,7 +441,7 @@ function LeaderboardPreviewCard({ profile, progress }) {
       {/* Top 3 List */}
       <div style={{ marginTop: 16 }}>
         <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
-          {'Top Students'}
+          {t('lbTopStudents')}
         </div>
         {top3.map((entry, index) => (
           <div key={entry.id} style={{
@@ -462,8 +464,8 @@ function LeaderboardPreviewCard({ profile, progress }) {
               fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 500,
               color: '#0A1628', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
             }}>
-              {entry.isAnonymous ? 'Anonymous 🎭' : entry.name.slice(0, 18) + (entry.name.length > 18 ? '…' : '')}
-              {entry.isCurrentUser && <span style={{ color: '#3B82F6' }}> (You)</span>}
+              {entry.isAnonymous ? t('lbAnonymous') : entry.name.slice(0, 18) + (entry.name.length > 18 ? '…' : '')}
+              {entry.isCurrentUser && <span style={{ color: '#3B82F6' }}> {t('lbYouSuffix')}</span>}
             </span>
             <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 600, fontSize: 13, color: '#4B5563', flexShrink: 0 }}>
               {entry.score}
@@ -489,7 +491,7 @@ function LeaderboardPreviewCard({ profile, progress }) {
                 {userEntry.name.charAt(0)}
               </div>
               <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 500, color: '#0A1628', flex: 1 }}>
-                {userEntry.name}<span style={{ color: '#3B82F6' }}> (You)</span>
+                {userEntry.name}<span style={{ color: '#3B82F6' }}> {t('lbYouSuffix')}</span>
               </span>
               <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 600, fontSize: 13, color: '#3B82F6', flexShrink: 0 }}>
                 #{userEntry.rank}
@@ -511,7 +513,7 @@ function LeaderboardPreviewCard({ profile, progress }) {
           alignItems: 'center', justifyContent: 'center',
         }}
       >
-        View Full Leaderboard →
+        {t('lbViewFullMobile')}
       </button>
     </div>
   );
@@ -630,8 +632,8 @@ function DashboardPage() {
   ];
   // (10 + 12 + 10 + 8 = 40 total lessons)
   const nextLessonId = allLessonIds.find(id => !completed.includes(id)) || allLessonIds[0];
-  const nextMeta = LESSON_META[nextLessonId] || { title: 'Introduction to Vedic Mathematics', desc: 'Begin your Vedic Maths journey.' };
-  const nextLevel = LEVELS.find(l => nextLessonId.startsWith(l.prefix.slice(0, 2)));
+  const nextMeta = LESSON_META(t)[nextLessonId] || { title: t('lessonL101Title'), desc: t('dbBeginJourney') };
+  const nextLevel = LEVELS(t).find(l => nextLessonId.startsWith(l.prefix.slice(0, 2)));
 
   const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
@@ -651,7 +653,7 @@ function DashboardPage() {
 
       {pulling && (
         <div style={{ textAlign: 'center', padding: '8px 0', fontSize: 13, color: '#3B82F6', fontFamily: 'var(--font-body)', transform: `translateY(${pullDistance * 0.4}px)`, transition: 'transform 0.1s' }}>
-          {pullDistance >= 80 ? '↑ Release to refresh' : '↓ Pull to refresh'}
+          {pullDistance >= 80 ? t('dbPullRelease') : t('dbPullDown')}
         </div>
       )}
 
@@ -667,7 +669,7 @@ function DashboardPage() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24, flexWrap: 'wrap', gap: 16 }}>
           <div>
             <h1 className="font-heading" style={{ fontSize: 'clamp(24px,5vw,32px)', fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>
-              {greeting(auth, profile)}
+              {greeting(auth, profile, t)}
             </h1>
             {aiAnalysis.personalizedTip && (
               <p style={{ fontSize: 15, color: '#4B5563', maxWidth: 500, fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>
@@ -677,7 +679,7 @@ function DashboardPage() {
           </div>
           <div style={{ ...glass, padding: '14px 20px', textAlign: 'right', minWidth: 160 }}>
             <div style={{ fontSize: 14, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 4 }}>{today}</div>
-            {streak > 0 && <div style={{ fontSize: 13, color: '#F59E0B', fontFamily: 'var(--font-body)' }}>🔥 Keep your streak alive!</div>}
+            {streak > 0 && <div style={{ fontSize: 13, color: '#F59E0B', fontFamily: 'var(--font-body)' }}>{t('dbKeepStreakAlive')}</div>}
           </div>
         </div>
 
@@ -686,34 +688,34 @@ function DashboardPage() {
           {/* 1. Total XP */}
           <Link to="/knowledge-points" style={{ textDecoration: 'none', background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#FEF3C7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🎯</div>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{'Knowledge Points'}</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{t('dbKnowledgePoints')}</span>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 32, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>
   {kpStatus ? kpStatus.totalPoints : totalXP}
 </span>
 <span style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: kpStatus && pointsToNextTier(kpStatus.totalPoints) ? '#F59E0B' : '#4B5563', marginTop: 2 }}>
   {kpStatus && pointsToNextTier(kpStatus.totalPoints)
-    ? `${pointsToNextTier(kpStatus.totalPoints).pointsNeeded} pts to ${pointsToNextTier(kpStatus.totalPoints).tier.discountPct}% off`
-    : 'this month'}
+    ? `${pointsToNextTier(kpStatus.totalPoints).pointsNeeded} ${t('dbPtsTo')} ${pointsToNextTier(kpStatus.totalPoints).tier.discountPct}% ${t('dbOff')}`
+    : t('dbThisMonth')}
 </span>
           </Link>
           {/* 2. Day Streak */}
           <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#FEF3C7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🔥</div>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{'Day Streak'}</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{t('dbDayStreak')}</span>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 32, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>{streak}</span>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>{'Day Streak'}</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>{t('dbDayStreak')}</span>
           </div>
           {/* 3. Lessons Completed */}
           <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>📚</div>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>Lessons Completed</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{t('dbLessonsCompleted')}</span>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>{completed.length} / 40</span>
           </div>
           {/* 4. Current Level */}
           <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#D1FAE5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🏆</div>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>Current Level</span>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>Level {progress.currentLevel ?? 1}</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{t('dbCurrentLevel')}</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>{t('curriculumLevelWord')} {progress.currentLevel ?? 1}</span>
             <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>{levelName}</span>
           </div>
         </div>
@@ -726,7 +728,7 @@ function DashboardPage() {
               color: 'white', border: 'none', borderRadius: 12,
               fontSize: 16, fontWeight: 600, cursor: 'pointer',
               fontFamily: 'var(--font-body)',
-            }}>🛡️ Admin Panel →</button>
+            }}>{t('dbAdminPanelBtn')}</button>
           </div>
         )}
 
@@ -738,10 +740,10 @@ function DashboardPage() {
 
           {/* Progress Ring */}
           <div className="md:w-3/5" style={{ ...glass, padding: 28 }}>
-            <h2 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>Your Progress</h2>
+            <h2 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>{t('dbYourProgress')}</h2>
             <ProgressRing pct={overallPct} />
             <div style={{ marginTop: 24 }}>
-              {LEVELS.map(lv => {
+              {LEVELS(t).map(lv => {
                 const lvCompleted = completed.filter(id => id.startsWith(lv.prefix.slice(0, 2))).length;
                 return <LevelBar key={lv.id} level={`${lv.icon} ${lv.name}`} completed={lvCompleted} total={lv.count} />;
               })}
@@ -750,7 +752,7 @@ function DashboardPage() {
 
           {/* Next Lesson */}
           <div className="md:w-2/5" style={{ ...glass, padding: 24 }}>
-            <h2 className="font-heading" style={{ fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>{'Continue Learning'}</h2>
+            <h2 className="font-heading" style={{ fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>{t('dbContinueLearning')}</h2>
             <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 18, color: '#0A1628', marginBottom: 8 }}>
               {nextMeta.title}
             </div>
@@ -761,7 +763,7 @@ function DashboardPage() {
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
               {nextLevel && (
                 <span style={{ background: '#DBEAFE', color: '#1E40AF', borderRadius: 100, padding: '4px 12px', fontSize: 13, fontFamily: 'var(--font-body)' }}>
-                  Level {nextLevel.id} — {nextLevel.name}
+                  {t('curriculumLevelWord')} {nextLevel.id} — {nextLevel.name}
                 </span>
               )}
               <span style={{ background: '#FEF3C7', color: '#92400E', borderRadius: 100, padding: '4px 12px', fontSize: 13, fontFamily: 'var(--font-body)' }}>
@@ -774,12 +776,12 @@ function DashboardPage() {
                 border: 'none', borderRadius: 12, fontSize: 15, fontWeight: 600,
                 cursor: 'pointer', fontFamily: 'var(--font-body)',
               }}>
-                Continue Lesson →
+                {t('dbContinueLessonBtn')}
               </button>
             </Link>
             {(progress.currentLevel ?? 1) === 1 && completed.length < 10 && (
               <p style={{ fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)', marginTop: 12, textAlign: 'center' }}>
-                {'Complete previous level'}
+                {t('dbCompletePreviousLevel')}
               </p>
             )}
           </div>
@@ -792,7 +794,7 @@ function DashboardPage() {
           <div style={{ ...glass, padding: 24 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
               <span style={{ fontSize: 20 }}>🤖</span>
-              <span style={{ fontSize: 16, fontWeight: 700, color: '#0A1628', fontFamily: 'var(--font-body)' }}>AI Insight</span>
+              <span style={{ fontSize: 16, fontWeight: 700, color: '#0A1628', fontFamily: 'var(--font-body)' }}>{t('dbAiInsight')}</span>
               <span style={{ fontSize: 16 }}>✨</span>
             </div>
             {aiAnalysis.whyVedicMaths && (
@@ -820,8 +822,8 @@ function DashboardPage() {
 
           {/* XP Chart Placeholder */}
           <div style={{ ...glass, padding: 24 }}>
-            <h2 className="font-heading" style={{ fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 2 }}>XP Over Time</h2>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginBottom: 16, marginTop: 0 }}>Last 7 days</p>
+            <h2 className="font-heading" style={{ fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 2 }}>{t('dbXpOverTime')}</h2>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginBottom: 16, marginTop: 0 }}>{t('dbLast7Days')}</p>
             <div style={{
               background: '#F0F4FF', borderRadius: 12, padding: '24px',
               textAlign: 'center', display: 'flex',
@@ -830,7 +832,7 @@ function DashboardPage() {
             }}>
               <span style={{ fontSize: 40 }}>📊</span>
               <p style={{ fontFamily: 'DM Sans', fontSize: 14, color: '#4B5563', margin: 0 }}>
-                Your XP chart appears after your first study session
+                {t('dbXpChartPlaceholder')}
               </p>
             </div>
           </div>
@@ -838,9 +840,9 @@ function DashboardPage() {
 
         {/* ── ROW 5: LEVEL CARDS ── */}
         <div className="mb-6">
-          <h2 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>Your Learning Path</h2>
+          <h2 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>{t('dbYourLearningPath')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
-            {LEVELS.map(lv => {
+            {LEVELS(t).map(lv => {
               const lvCompleted = completed.filter(id => id.startsWith(lv.prefix.slice(0, 2))).length;
               const isLocked = lv.lockKey ? (scores[lv.lockKey] || 0) < 60 : false;
               const isDone = lvCompleted >= lv.count;
@@ -857,14 +859,14 @@ function DashboardPage() {
                       color: isDone ? '#065F46' : isLocked ? '#4B5563' : '#1E40AF',
                       borderRadius: 100, padding: '3px 10px', fontSize: 11, fontFamily: 'var(--font-body)',
                     }}>
-                      {isDone ? 'Completed' : isLocked ? 'Locked' : 'In Progress'}
+                      {isDone ? t('dbCompleted') : isLocked ? t('dbLocked') : t('dbInProgress')}
                     </span>
                   </div>
                   <div style={{ fontWeight: 700, fontSize: 15, color: '#0A1628', fontFamily: 'var(--font-body)', marginBottom: 4 }}>
-                    Level {lv.id} — {lv.name}
+                    {t('curriculumLevelWord')} {lv.id} — {lv.name}
                   </div>
                   <div style={{ fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 12 }}>
-                    {lv.count} lessons
+                    {lv.count} {t('curriculumLessonsCount')}
                   </div>
                   <div style={{ marginBottom: 14 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 5 }}>
@@ -876,7 +878,7 @@ function DashboardPage() {
                   </div>
                   {isLocked ? (
                     <div style={{ fontSize: 11, color: '#4B5563', fontFamily: 'var(--font-body)', textAlign: 'center', padding: '8px 0' }}>
-                      Unlocks after Level {lv.id - 1} Assessment (60%+)
+                      {t('dbUnlocksAfter')} {lv.id - 1} {t('dbAssessmentSuffix')}
                     </div>
                   ) : (
                     <Link to="/learn">
@@ -885,7 +887,7 @@ function DashboardPage() {
                         border: 'none', borderRadius: 10, fontSize: 14, fontWeight: 600,
                         cursor: 'pointer', fontFamily: 'var(--font-body)',
                       }}>
-                        {isDone ? 'Review →' : 'Start →'}
+                        {isDone ? t('dbReviewBtn') : t('dbStartBtn')}
                       </button>
                     </Link>
                   )}
@@ -898,27 +900,27 @@ function DashboardPage() {
         {/* ── SHARE YOUR STORY BANNER ── */}
         <div style={{ ...glass, padding: 20, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
           <div>
-            <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, color: '#0A1628', marginBottom: 2 }}>💬 Share Your VedicMindAI™ Story</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563' }}>Help other students and parents by sharing your experience</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, color: '#0A1628', marginBottom: 2 }}>{t('dbShareStoryTitle')}</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563' }}>{t('dbShareStoryDesc')}</div>
           </div>
           <button
             onClick={() => navigate('/reviews')}
             style={{ padding: '10px 20px', background: '#0A1628', color: 'white', border: 'none', borderRadius: 10, fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, cursor: 'pointer', minHeight: 44, whiteSpace: 'nowrap' }}
           >
-            Share My Story →
+            {t('dbShareStoryBtn')}
           </button>
         </div>
 
         {/* ── ROW 6: BADGES ── */}
         <div style={{ ...glass, padding: 24 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-            <h2 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: '#0A1628' }}>Badges Earned</h2>
+            <h2 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: '#0A1628' }}>{t('dbBadgesEarned')}</h2>
             <Link to="/profile" style={{ fontSize: 14, color: '#3B82F6', fontFamily: 'var(--font-body)', textDecoration: 'none' }}>
-              View All Badges →
+              {t('dbViewAllBadges')}
             </Link>
           </div>
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-            {BADGES_DEF.map(b => {
+            {BADGES_DEF(t).map(b => {
               const earned = badges.includes(b.id);
               return (
                 <div key={b.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, minWidth: 60 }}>
