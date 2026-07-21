@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
-const SAMPLE_REVIEWS = [
-  { id: '1', role: 'Parent', name: 'Sunita', city: 'Mumbai', stars: 5, duration: '1 month', text: 'My daughter\'s mental math has improved dramatically! She now calculates faster than her calculator. VedicMind is a gem.', date: '2025-05-10T00:00:00.000Z', approved: true },
-  { id: '2', role: 'Student', name: 'Arjun', city: 'Pune', stars: 5, duration: '3 months', text: 'The daily quiz is addictive! I\'ve not missed a single day in 2 months. My maths score in school went from 72% to 94%.', date: '2025-05-18T00:00:00.000Z', approved: true },
-  { id: '3', role: 'Parent', name: 'Kavitha', city: 'Chennai', stars: 5, duration: '2 weeks', text: 'Very well structured course. The Vedic methods are explained simply and my son loves the leaderboard competition.', date: '2025-06-01T00:00:00.000Z', approved: true },
-];
+import { useLanguage } from '@/lib/LanguageContext';
 
 function StarRow({ stars }) {
   return (
@@ -18,6 +13,14 @@ function StarRow({ stars }) {
 }
 
 export default function FamiliesReviewsSection() {
+  const { t } = useLanguage();
+
+  const SAMPLE_REVIEWS = [
+    { id: '1', role: 'Parent', name: 'Sunita', city: 'Mumbai', stars: 5, duration: t('durationMonth1'), text: t('familiesReview1Text'), date: '2025-05-10T00:00:00.000Z', approved: true },
+    { id: '2', role: 'Student', name: 'Arjun', city: 'Pune', stars: 5, duration: t('durationMonths3'), text: t('familiesReview2Text'), date: '2025-05-18T00:00:00.000Z', approved: true },
+    { id: '3', role: 'Parent', name: 'Kavitha', city: 'Chennai', stars: 5, duration: t('durationWeeks2'), text: t('familiesReview3Text'), date: '2025-06-01T00:00:00.000Z', approved: true },
+  ];
+
   const [reviews, setReviews] = useState(SAMPLE_REVIEWS);
 
   useEffect(() => {
@@ -33,6 +36,7 @@ export default function FamiliesReviewsSection() {
 
   const roleColor = { Student: '#DBEAFE', Parent: '#D1FAE5', Guardian: '#EDE9FE' };
   const roleText  = { Student: '#1E40AF', Parent: '#065F46', Guardian: '#5B21B6' };
+  const roleLabel = { Student: t('roleStudent'), Parent: t('roleParent'), Guardian: t('roleGuardian') };
 
   return (
     <section style={{ background: '#F0F4FF', padding: '72px 16px' }}>
@@ -41,13 +45,13 @@ export default function FamiliesReviewsSection() {
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#DBEAFE', borderRadius: 99, padding: '6px 16px', marginBottom: 12 }}>
             <span style={{ fontSize: 14 }}>💬</span>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#1E40AF' }}>Student & Parent Reviews</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#1E40AF' }}>{t('familiesReviewsBadge')}</span>
           </div>
           <h2 className="font-heading" style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 700, color: '#0A1628', marginBottom: 10 }}>
-            What Families Say
+            {t('familiesReviewsTitle')}
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: '#4B5563', margin: 0 }}>
-            Thousands of students improving their speed maths every day
+            {t('familiesReviewsSubtitle')}
           </p>
         </div>
 
@@ -81,7 +85,7 @@ export default function FamiliesReviewsSection() {
                   borderRadius: 99, padding: '3px 10px', fontSize: 11,
                   fontFamily: 'var(--font-body)', fontWeight: 600,
                 }}>
-                  {r.role}
+                  {roleLabel[r.role] || r.role}
                 </span>
               </div>
             </div>
@@ -96,7 +100,7 @@ export default function FamiliesReviewsSection() {
               border: '1.5px solid rgba(10,22,40,0.25)', borderRadius: 10,
               fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600, cursor: 'pointer',
             }}>
-              Read all reviews →
+              {t('readAllReviews')}
             </button>
           </Link>
         </div>

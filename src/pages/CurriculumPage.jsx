@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import LandingNavbar from '@/components/landing/LandingNavbar';
 import { CURRICULUM } from '@/components/learn/curriculumData';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const LEVEL_BG = {
   1: '#0A1628',
@@ -13,6 +14,7 @@ const LEVEL_BG = {
 
 export default function CurriculumPage() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
@@ -23,13 +25,13 @@ export default function CurriculumPage() {
         {/* Hero */}
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <h1 className="font-heading" style={{ fontSize: 'clamp(26px,5vw,36px)', fontWeight: 700, color: '#0A1628', marginBottom: 12 }}>
-            40 Lessons. 4 Levels. One Complete Vedic Maths Journey.
+            {t('curriculumHeroTitle')}
           </h1>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: '#4B5563', marginBottom: 24 }}>
-            From basic squaring to Master-level competition mathematics.
+            {t('curriculumHeroSubtitle')}
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            {['📚 40 Lessons', '🏆 4 Levels', '⭐ 16 Vedic Sutras'].map(stat => (
+            {[t('curriculumStat1'), t('curriculumStat2'), t('curriculumStat3')].map(stat => (
               <div key={stat} style={{
                 background: 'white', border: '1px solid rgba(30,64,175,0.15)',
                 borderRadius: 12, padding: '12px 20px',
@@ -54,12 +56,12 @@ export default function CurriculumPage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <span style={{ fontSize: 28 }}>{level.icon}</span>
                   <span className="font-heading" style={{ fontSize: 'clamp(18px,3vw,22px)', fontWeight: 700, color: 'white' }}>
-                    Level {level.level} — {level.name}
+                    {t('curriculumLevelWord')} {level.level} — {level.name}
                   </span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
                   <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.7)' }}>
-                    {level.lessons.length} lessons
+                    {level.lessons.length} {t('curriculumLessonsCount')}
                   </span>
                   {level.lockKey && (
                     <span style={{
@@ -67,7 +69,7 @@ export default function CurriculumPage() {
                       borderRadius: 100, padding: '4px 14px',
                       fontFamily: 'var(--font-body)', fontSize: 12,
                     }}>
-                      🔒 Unlocks after completing previous level
+                      {t('curriculumLockedMsg')}
                     </span>
                   )}
                 </div>
@@ -116,7 +118,7 @@ export default function CurriculumPage() {
                         {!locked && (
                           <button onClick={() => navigate('/demo')}
                             style={{ marginTop: 6, background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 12, color: '#3B82F6', padding: 0 }}>
-                            Preview →
+                            {t('curriculumPreview')}
                           </button>
                         )}
                       </div>
@@ -134,19 +136,19 @@ export default function CurriculumPage() {
           textAlign: 'center', margin: '48px 0',
         }}>
           <h2 className="font-heading" style={{ fontSize: 'clamp(22px,4vw,28px)', fontWeight: 700, color: 'white', marginBottom: 12 }}>
-            Ready to start your Vedic Maths journey?
+            {t('curriculumCtaTitle')}
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'rgba(255,255,255,0.7)', marginBottom: 24 }}>
-            Join 12,000+ students already learning with VedicMind
+            {t('curriculumCtaSubtitle')}
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <button onClick={() => navigate('/auth')}
               style={{ minHeight: 48, padding: '0 28px', background: 'white', color: '#0A1628', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, cursor: 'pointer' }}>
-              Start Free — Level 1 Unlocked
+              {t('curriculumCtaBtn1')}
             </button>
             <button onClick={() => navigate('/demo')}
               style={{ minHeight: 48, padding: '0 28px', background: 'transparent', color: 'white', border: '1.5px solid white', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, cursor: 'pointer' }}>
-              Try 3 Free Questions First
+              {t('curriculumCtaBtn2')}
             </button>
           </div>
         </div>
