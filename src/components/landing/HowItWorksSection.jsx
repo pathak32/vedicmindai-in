@@ -3,29 +3,15 @@ import { motion } from 'framer-motion';
 import { UserCircle, Sparkles, Target } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
 
-const steps = [
-  {
-    icon: UserCircle,
-    num: '01',
-    title: 'Tell us about yourself',
-    desc: 'Quick 4-step onboarding to understand your level, board, and learning goals.',
-  },
-  {
-    icon: Sparkles,
-    num: '02',
-    title: 'Get your AI learning path',
-    desc: 'Our AI analyzes your profile and creates a personalized curriculum just for you.',
-  },
-  {
-    icon: Target,
-    num: '03',
-    title: 'Learn, practice, master',
-    desc: 'Daily lessons with Vedic sutras plus speed drills to build unstoppable mental math skills.',
-  },
-];
-
 export default function HowItWorksSection() {
   const { t } = useLanguage();
+
+  const steps = [
+    { icon: UserCircle, num: '01', title: t('step1Title'), desc: t('step1Desc') },
+    { icon: Sparkles, num: '02', title: t('step2Title'), desc: t('step2Desc') },
+    { icon: Target, num: '03', title: t('step3Title'), desc: t('step3Desc') },
+  ];
+
   return (
     <section id="how-it-works" className="py-24 bg-[#F8FAFF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

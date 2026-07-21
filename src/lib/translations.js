@@ -230,7 +230,23 @@ export const translations = {
     "testimonial2Text": "My CAT percentile jumped 12 points after learning Nikhilam and Urdhva techniques.",
     "testimonial2Role": "MBA Aspirant",
     "testimonial3Text": "My daughter now solves 2-digit multiplications in her head. Her teacher is amazed!",
-    "testimonial3Role": "Parent"
+    "testimonial3Role": "Parent",
+    "step1Title": "Tell us about yourself",
+    "step1Desc": "Quick 4-step onboarding to understand your level, board, and learning goals.",
+    "step2Title": "Get your AI learning path",
+    "step2Desc": "Our AI analyzes your profile and creates a personalized curriculum just for you.",
+    "step3Title": "Learn, practice, master",
+    "step3Desc": "Daily lessons with Vedic sutras plus speed drills to build unstoppable mental math skills.",
+    "feature1Title": "AI Knows You",
+    "feature1Desc": "Personalized AI analysis understands your level, board, and goals to craft the perfect learning path.",
+    "feature2Title": "Structured Path",
+    "feature2Desc": "4 levels, 40 lessons, real Vedic sutras with step-by-step examples and visual breakdowns.",
+    "feature3Title": "Track Mastery",
+    "feature3Desc": "Live dashboard, XP system, streaks, and achievement badges to keep you motivated.",
+    "feature4Title": "Live Battle Mode",
+    "feature4Desc": "Challenge your classmates to real-time Vedic Maths battles. First to answer wins. Prove who's the fastest calculator in your class.",
+    "badgeLive": "Live",
+    "badgeComingSoon": "Coming Soon"
   },
   "hi": {
     "features": "विशेषताएं",
@@ -459,7 +475,23 @@ export const translations = {
     "testimonial2Text": "Nikhilam और Urdhva तकनीक सीखने के बाद मेरा CAT पर्सेंटाइल 12 अंक बढ़ गया।",
     "testimonial2Role": "MBA उम्मीदवार",
     "testimonial3Text": "मेरी बेटी अब 2-अंकों की गुणा दिमाग में कर लेती है। उसकी टीचर हैरान हैं!",
-    "testimonial3Role": "अभिभावक"
+    "testimonial3Role": "अभिभावक",
+    "step1Title": "अपने बारे में बताएं",
+    "step1Desc": "आपके स्तर, बोर्ड और सीखने के लक्ष्यों को समझने के लिए 4-चरणों वाला त्वरित ऑनबोर्डिंग।",
+    "step2Title": "अपना AI लर्निंग पाथ पाएं",
+    "step2Desc": "हमारा AI आपकी प्रोफ़ाइल का विश्लेषण करता है और सिर्फ आपके लिए एक पर्सनलाइज़्ड पाठ्यक्रम बनाता है।",
+    "step3Title": "सीखें, अभ्यास करें, महारत हासिल करें",
+    "step3Desc": "अजेय मानसिक गणित कौशल बनाने के लिए वैदिक सूत्रों वाले डेली पाठ और स्पीड ड्रिल्स।",
+    "feature1Title": "AI आपको समझता है",
+    "feature1Desc": "पर्सनलाइज़्ड AI विश्लेषण आपके स्तर, बोर्ड और लक्ष्यों को समझकर सटीक लर्निंग पाथ तैयार करता है।",
+    "feature2Title": "संरचित पाठ",
+    "feature2Desc": "4 स्तर, 40 पाठ, चरण-दर-चरण उदाहरणों और विज़ुअल ब्रेकडाउन के साथ असली वैदिक सूत्र।",
+    "feature3Title": "प्रगति ट्रैक करें",
+    "feature3Desc": "आपको प्रेरित रखने के लिए लाइव डैशबोर्ड, XP सिस्टम, स्ट्रीक्स और उपलब्धि बैज।",
+    "feature4Title": "लाइव बैटल मोड",
+    "feature4Desc": "अपने सहपाठियों को रीयल-टाइम वैदिक गणित बैटल में चुनौती दें। जो पहले जवाब देगा वही जीतेगा। साबित करें कि आपकी क्लास में सबसे तेज़ कैलकुलेटर कौन है।",
+    "badgeLive": "लाइव",
+    "badgeComingSoon": "जल्द आ रहा है"
   }
 };
 
