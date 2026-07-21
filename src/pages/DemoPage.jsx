@@ -2,39 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import LandingNavbar from '@/components/landing/LandingNavbar';
-
-const QUESTIONS = [
-  {
-    id: 1,
-    topic: 'Ekadhikena Purvena',
-    question: 'What is 35²?',
-    hint: '💡 Vedic Trick: Take the digit before 5 (which is 3), multiply by the next number (3×4=12), then append 25',
-    options: ['A) 1025', 'B) 1225', 'C) 1325', 'D) 1125'],
-    correct: 1,
-  },
-  {
-    id: 2,
-    topic: 'Eka-dasha (×11)',
-    question: 'What is 43 × 11?',
-    hint: '💡 Vedic Trick: Write the first digit (4), add both digits in middle (4+3=7), write last digit (3) → 473',
-    options: ['A) 473', 'B) 453', 'C) 483', 'D) 463'],
-    correct: 0,
-  },
-  {
-    id: 3,
-    topic: 'Nikhilam',
-    question: 'What is 97 × 96?',
-    hint: '💡 Vedic Trick: Both numbers are near 100. Deficit: 97→3, 96→4. Cross: 97−4=93. Product: 3×4=12. Answer: 9312',
-    options: ['A) 9412', 'B) 9212', 'C) 9312', 'D) 9112'],
-    correct: 2,
-  },
-];
-
-const TECHNIQUES = [
-  { name: 'Ekadhikena Purvena', desc: 'Squaring numbers ending in 5' },
-  { name: 'Eka-dasha', desc: 'Multiply by 11 instantly' },
-  { name: 'Nikhilam', desc: 'Near-base multiplication' },
-];
+import { useLanguage } from '@/lib/LanguageContext';
 
 const glass = {
   background: 'rgba(255,255,255,0.85)',
@@ -64,12 +32,28 @@ function Confetti() {
 
 export default function DemoPage() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState(null);
   const [showNext, setShowNext] = useState(false);
   const [score, setScore] = useState(0);
   const [done, setDone] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+
+  const QUESTIONS = [
+    { id: 1, topic: t('demoQ1Topic'), question: t('demoQ1Question'), hint: t('demoQ1Hint'),
+      options: [t('demoQ1OptA'), t('demoQ1OptB'), t('demoQ1OptC'), t('demoQ1OptD')], correct: 1 },
+    { id: 2, topic: t('demoQ2Topic'), question: t('demoQ2Question'), hint: t('demoQ2Hint'),
+      options: [t('demoQ2OptA'), t('demoQ2OptB'), t('demoQ2OptC'), t('demoQ2OptD')], correct: 0 },
+    { id: 3, topic: t('demoQ3Topic'), question: t('demoQ3Question'), hint: t('demoQ3Hint'),
+      options: [t('demoQ3OptA'), t('demoQ3OptB'), t('demoQ3OptC'), t('demoQ3OptD')], correct: 2 },
+  ];
+
+  const TECHNIQUES = [
+    { name: t('demoTech1Name'), desc: t('demoTech1Desc') },
+    { name: t('demoTech2Name'), desc: t('demoTech2Desc') },
+    { name: t('demoTech3Name'), desc: t('demoTech3Desc') },
+  ];
 
   const q = QUESTIONS[current];
 
@@ -113,13 +97,13 @@ export default function DemoPage() {
       {/* Hero */}
       <div style={{ background: '#0A1628', padding: '80px 24px 40px', textAlign: 'center' }}>
         <h1 className="font-heading" style={{ fontSize: 'clamp(24px,5vw,32px)', fontWeight: 700, color: 'white', marginBottom: 12 }}>
-          Try Vedic Maths — No Sign Up Needed
+          {t('demoHeroTitle')}
         </h1>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'rgba(255,255,255,0.8)', marginBottom: 16, maxWidth: 500, margin: '0 auto 16px' }}>
-          Solve 3 real questions using ancient Vedic techniques. Takes 2 minutes.
+          {t('demoHeroSubtitle')}
         </p>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.6)', margin: 0 }}>
-          ✓ No account required&nbsp;&nbsp;✓ Instant results&nbsp;&nbsp;✓ Free forever
+          {t('demoHeroChecklist')}
         </p>
       </div>
 
@@ -131,7 +115,7 @@ export default function DemoPage() {
               {/* Badges */}
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
                 <span style={{ background: '#DBEAFE', color: '#1E40AF', borderRadius: 100, padding: '4px 14px', fontFamily: 'var(--font-body)', fontSize: 13 }}>
-                  Question {current + 1} of 3
+                  {t('demoQuestionOf')} {current + 1} {t('demoOf3')}
                 </span>
                 <span style={{ background: '#F0F4FF', color: '#4B5563', borderRadius: 100, padding: '4px 14px', fontFamily: 'var(--font-body)', fontSize: 12 }}>
                   {q.topic}
@@ -159,7 +143,7 @@ export default function DemoPage() {
               {selected !== null && (
                 <motion.p initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
                   style={{ fontFamily: 'var(--font-body)', fontSize: 14, margin: '0 0 12px', color: selected === q.correct ? '#065F46' : '#991B1B' }}>
-                  {selected === q.correct ? '✅ Correct! That\'s Vedic Maths in action!' : '❌ Not quite — but now you know the Vedic trick!'}
+                  {selected === q.correct ? t('demoCorrectMsg') : t('demoWrongMsg')}
                 </motion.p>
               )}
 
@@ -167,7 +151,7 @@ export default function DemoPage() {
                 <motion.button initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
                   onClick={handleNext}
                   style={{ width: '100%', minHeight: 48, background: '#0A1628', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, cursor: 'pointer' }}>
-                  {current < 2 ? 'Next Question →' : 'See Results →'}
+                  {current < 2 ? t('demoNextQuestion') : t('demoSeeResults')}
                 </motion.button>
               )}
             </motion.div>
@@ -175,38 +159,38 @@ export default function DemoPage() {
             <motion.div key="done" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}
               style={{ ...glass, padding: 32, textAlign: 'center' }}>
               <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>
-                🎉 You just used 3 Vedic Techniques!
+                {t('demoDoneTitle')}
               </h2>
               <p style={{ fontFamily: 'var(--font-mono)', fontSize: 36, fontWeight: 700, color: '#3B82F6', margin: '12px 0 24px' }}>
-                {score}/3 correct
+                {score}/3 {t('demoCorrectCount')}
               </p>
 
               {/* Technique cards */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 12, marginBottom: 28, textAlign: 'left' }}>
-                {TECHNIQUES.map(t => (
-                  <div key={t.name} style={{ background: '#F0F4FF', borderRadius: 12, padding: 16 }}>
-                    <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628', marginBottom: 4 }}>{t.name}</div>
-                    <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>{t.desc}</div>
+                {TECHNIQUES.map(tech => (
+                  <div key={tech.name} style={{ background: '#F0F4FF', borderRadius: 12, padding: 16 }}>
+                    <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628', marginBottom: 4 }}>{tech.name}</div>
+                    <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>{tech.desc}</div>
                   </div>
                 ))}
               </div>
 
               <h3 style={{ fontFamily: 'var(--font-body)', fontSize: 18, fontWeight: 600, color: '#0A1628', marginBottom: 16 }}>
-                There are 37 more techniques waiting for you
+                {t('demoMoreTechniques')}
               </h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 <button onClick={() => navigate('/auth')}
                   style={{ width: '100%', minHeight: 52, background: '#0A1628', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 16, cursor: 'pointer' }}>
-                  🚀 Start Learning Free →
+                  {t('demoStartLearningBtn')}
                 </button>
                 <button onClick={() => navigate('/curriculum')}
                   style={{ width: '100%', minHeight: 52, background: 'white', color: '#0A1628', border: '1.5px solid #0A1628', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, cursor: 'pointer' }}>
-                  View Full Curriculum →
+                  {t('demoViewCurriculumBtn')}
                 </button>
               </div>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', marginTop: 12 }}>
-                No credit card required · Cancel anytime
+                {t('demoFooterNote')}
               </p>
             </motion.div>
           )}
