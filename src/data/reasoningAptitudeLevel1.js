@@ -109,8 +109,12 @@ export const RA_LEVEL1_QUESTIONS = [
 
 export function getQuestionsByChapter(chapterId) {
   const qs = RA_LEVEL1_QUESTIONS.filter((q) => q.chapter === chapterId);
-  // Shuffle so question order varies each attempt — same 8 questions,
-  // different sequence. When pool expands to 16+, switch to slice(0,8) to
-  // also randomise which questions appear.
-  return [...qs].sort(() => Math.random() - 0.5);
+  // Fisher-Yates shuffle — unbiased, unlike sort(() => Math.random() - 0.5)
+  // which is a well-known anti-pattern that skews toward certain orderings.
+  const arr = [...qs];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }

@@ -30,7 +30,6 @@ export default function ReasoningChapterPage() {
   const [score, setScore] = useState(0);
   const [finalScore, setFinalScore] = useState(null); // set once on last answer, avoids async state race
   const [, forceRerenderAfterSync] = useState(0);
-
   // Fixes the exact bug Hitesh hit: server (Supabase) had his real 10/10
   // completion the whole time, but a fresh browser session's localStorage
   // never gets told that — every unlock check below reads localStorage only.
@@ -53,7 +52,21 @@ export default function ReasoningChapterPage() {
   const isL2Chapter = paramChapterId ? l2Ids.includes(paramChapterId) : false;
   const chapterId = paramChapterId || sortedL1[0].id;
   const chapter = isL2Chapter ? getLevel2ChapterContent(chapterId) : getChapterContent(chapterId);
-  const questions = isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId);
+
+  // Shuffled ONCE per chapter load, not on every render. The previous
+  // version called getQuestionsByChapter() directly in the render body —
+  // since that function does a fresh Math.random() shuffle internally,
+  // every re-render (which happens after every click: selecting an
+  // answer, Next Question) produced a brand-new random order. The
+  // question sitting at the current index could silently become a
+  // different question between renders, which is exactly what testers
+  // were seeing as repeats/skips mid-quiz.
+  const [questions, setQuestions] = useState(() =>
+    isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId)
+  );
+  useEffect(() => {
+    setQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId));
+  }, [chapterId, isL2Chapter]);
 
   const chapterIndex = allChapters.findIndex((c) => c.id === chapterId);
   const nextChapter = allChapters[chapterIndex + 1];
@@ -125,6 +138,7 @@ export default function ReasoningChapterPage() {
     setQIndex(0);
     setScore(0);
     setFinalScore(null);
+    setQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId));
   };
 
   return (
