@@ -6,8 +6,10 @@ import PurposeSection from '@/components/landing/PurposeSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
 import FamiliesReviewsSection from '@/components/landing/FamiliesReviewsSection';
 import ComparisonSection from '@/components/landing/ComparisonSection';
+import FeaturesShowcaseSection from '@/components/landing/FeaturesShowcaseSection';
 import HowItWorksSection from '@/components/landing/HowItWorksSection';
 import TestimonialsSection from '@/components/landing/TestimonialsSection';
+import FAQSection from '@/components/landing/FAQSection';
 import ContactSection from '@/components/landing/ContactSection';
 import Footer from '@/components/landing/Footer';
 
@@ -21,8 +23,10 @@ export default function LandingPage() {
       <FeaturesSection />
       <FamiliesReviewsSection />
       <ComparisonSection />
+      <FeaturesShowcaseSection />
       <HowItWorksSection />
       <TestimonialsSection />
+      <FAQSection />
       <ContactSection />
       <Footer />
     </div>
