@@ -7,6 +7,7 @@ import FeaturesSection from '@/components/landing/FeaturesSection';
 import FamiliesReviewsSection from '@/components/landing/FamiliesReviewsSection';
 import ComparisonSection from '@/components/landing/ComparisonSection';
 import FeaturesShowcaseSection from '@/components/landing/FeaturesShowcaseSection';
+import VideoLibrarySection from '@/components/landing/VideoLibrarySection';
 import HowItWorksSection from '@/components/landing/HowItWorksSection';
 import TestimonialsSection from '@/components/landing/TestimonialsSection';
 import FAQSection from '@/components/landing/FAQSection';
@@ -24,6 +25,7 @@ export default function LandingPage() {
       <FamiliesReviewsSection />
       <ComparisonSection />
       <FeaturesShowcaseSection />
+      <VideoLibrarySection />
       <HowItWorksSection />
       <TestimonialsSection />
       <FAQSection />

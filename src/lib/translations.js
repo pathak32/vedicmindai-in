@@ -668,7 +668,13 @@ export const translations = {
     "showcaseScreenlessTitle": "Screenless Learning",
     "showcaseScreenlessDesc": "Offline mock test booklets — pen, paper, and focus. A fresh set every month for Classes 6-10, with a subscription discount when you submit your score.",
     "showcaseScreenlessBadge": "New booklet every month",
-    "showcaseLearnMore": "Learn more →"
+    "showcaseLearnMore": "Learn more →",
+    "videoLibraryLabel": "Watch & Learn",
+    "videoLibraryTitle": "See VedicMindAI in action",
+    "videoLibrarySubtitle": "Real explainer videos from our Instagram and YouTube — new ones added every week.",
+    "videoLibraryFollowCta": "Follow us for new videos every week",
+    "videoLibraryWatchOn": "Watch on",
+    "videoLibraryViewAll": "View all videos →"
   },
   "hi": {
     "features": "विशेषताएं",
@@ -1335,7 +1341,13 @@ export const translations = {
     "showcaseScreenlessTitle": "Screenless Learning",
     "showcaseScreenlessDesc": "ऑफलाइन मॉक Test बुकलेट — कलम, कागज़ और एकाग्रता। Class 6-10 के लिए हर महीने एक नया सेट, और अपना स्कोर सबमिट करने पर सब्सक्रिप्शन छूट।",
     "showcaseScreenlessBadge": "हर महीने नई बुकलेट",
-    "showcaseLearnMore": "और जानें →"
+    "showcaseLearnMore": "और जानें →",
+    "videoLibraryLabel": "देखें और सीखें",
+    "videoLibraryTitle": "VedicMindAI को काम करते देखें",
+    "videoLibrarySubtitle": "हमारे Instagram और YouTube से असली explainer वीडियो — हर हफ्ते नए जुड़ते हैं।",
+    "videoLibraryFollowCta": "हर हफ्ते नए वीडियो के लिए हमें Follow करें",
+    "videoLibraryWatchOn": "यहां देखें:",
+    "videoLibraryViewAll": "सभी वीडियो देखें →"
   }
 };
 
