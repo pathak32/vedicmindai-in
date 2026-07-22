@@ -674,7 +674,12 @@ export const translations = {
     "videoLibrarySubtitle": "Real explainer videos from our Instagram and YouTube — new ones added every week.",
     "videoLibraryFollowCta": "Follow us for new videos every week",
     "videoLibraryWatchOn": "Watch on",
-    "videoLibraryViewAll": "View all videos →"
+    "videoLibraryViewAll": "View all videos →",
+    "communityLabel": "Community",
+    "communityTitle": "Questions from real students & parents",
+    "communitySubtitle": "Answered directly by our team — this is a growing thread, not a script.",
+    "communityAskBtn": "Ask Your Own Question →",
+    "communityAnsweredBy": "Answered by the VedicMindAI team"
   },
   "hi": {
     "features": "विशेषताएं",
@@ -1347,7 +1352,12 @@ export const translations = {
     "videoLibrarySubtitle": "हमारे Instagram और YouTube से असली explainer वीडियो — हर हफ्ते नए जुड़ते हैं।",
     "videoLibraryFollowCta": "हर हफ्ते नए वीडियो के लिए हमें Follow करें",
     "videoLibraryWatchOn": "यहां देखें:",
-    "videoLibraryViewAll": "सभी वीडियो देखें →"
+    "videoLibraryViewAll": "सभी वीडियो देखें →",
+    "communityLabel": "Community",
+    "communityTitle": "असली छात्रों और अभिभावकों के सवाल",
+    "communitySubtitle": "हमारी टीम द्वारा सीधे जवाब दिए गए — यह एक बढ़ती हुई चर्चा है, कोई स्क्रिप्ट नहीं।",
+    "communityAskBtn": "अपना सवाल पूछें →",
+    "communityAnsweredBy": "VedicMindAI टीम द्वारा जवाब दिया गया"
   }
 };
 
