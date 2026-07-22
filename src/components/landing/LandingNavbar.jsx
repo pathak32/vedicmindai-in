@@ -25,11 +25,14 @@ export default function LandingNavbar() {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/80 backdrop-blur-xl shadow-sm' : 'bg-transparent'
+        scrolled ? 'bg-white/90 backdrop-blur-xl shadow-sm' : 'bg-white/70 backdrop-blur-xl'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <Link to="/" className="font-heading text-lg sm:text-xl font-bold text-[#0A1628] truncate min-w-0 flex-1 mr-2">
-            VedicMindAI™
+          <Link to="/" className="flex items-center gap-2 min-w-0 flex-1 mr-2">
+            <img src="/icons/icon-192.png" alt="VedicMindAI logo" className="w-8 h-8 rounded-lg flex-shrink-0" />
+            <span className="font-heading text-lg sm:text-xl font-bold text-[#0A1628] truncate">
+              VedicMindAI™
+            </span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8 flex-shrink-0">
@@ -78,7 +81,10 @@ export default function LandingNavbar() {
             className="fixed inset-0 z-[100] bg-white flex flex-col"
           >
             <div className="flex items-center justify-between px-4 h-16">
-              <span className="font-heading text-xl font-bold text-[#0A1628]">VedicMindAI™</span>
+              <span className="flex items-center gap-2">
+                <img src="/icons/icon-192.png" alt="VedicMindAI logo" className="w-7 h-7 rounded-lg" />
+                <span className="font-heading text-xl font-bold text-[#0A1628]">VedicMindAI™</span>
+              </span>
               <button onClick={() => setMobileOpen(false)} className="p-2">
                 <X className="w-6 h-6 text-[#0A1628]" />
               </button>

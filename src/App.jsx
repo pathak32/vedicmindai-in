@@ -46,6 +46,7 @@ import ScreenlessLearningPage from '@/pages/ScreenlessLearningPage';
 import ReportCardPage from '@/pages/ReportCardPage';
 import ForgotPassword from '@/pages/ForgotPassword';
 import TermsPage from '@/pages/TermsPage';
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
 import CollaboratePage from '@/pages/CollaboratePage';
 import ResetPasswordPage from '@/pages/ResetPasswordPage';
 import MobileBottomNav from '@/components/MobileLayout';
@@ -145,6 +146,7 @@ function RouteTransition() {
               <Route path="/report-card" element={<ReportCardPage />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/terms" element={<TermsPage />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/collaborate" element={<CollaboratePage />} />
               <Route path="/reset-password" element={<ResetPasswordPage />} />
               <Route path="*" element={<NotFoundPage />} />

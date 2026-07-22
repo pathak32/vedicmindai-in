@@ -634,7 +634,14 @@ export const translations = {
     "pillLive": "LIVE",
     "pillDone": "DONE",
     "pillSoon": "SOON",
-    "pillExpiring": "EXPIRING"
+    "pillExpiring": "EXPIRING",
+    "contactSectionLabel": "Contact & Support",
+    "contactSectionTitle": "We're here to help",
+    "contactSectionSubtitle": "Questions about VedicMindAI? Reach out — a real person reads every message.",
+    "contactSupportLabel": "Support Queries",
+    "contactAdminLabel": "General / Business Inquiries",
+    "contactAddressLabel": "Registered Address",
+    "contactAddressValue": "E-2/508, Saryu Enclave, Sector D, Awadh Vihar Yojna, Lucknow, Uttar Pradesh – 226002"
   },
   "hi": {
     "features": "विशेषताएं",
@@ -1267,7 +1274,14 @@ export const translations = {
     "pillLive": "लाइव",
     "pillDone": "पूर्ण",
     "pillSoon": "जल्द",
-    "pillExpiring": "समाप्त हो रहा"
+    "pillExpiring": "समाप्त हो रहा",
+    "contactSectionLabel": "संपर्क और सहायता",
+    "contactSectionTitle": "हम मदद के लिए यहां हैं",
+    "contactSectionSubtitle": "VedicMindAI के बारे में कोई सवाल है? संपर्क करें — हर संदेश एक असली व्यक्ति पढ़ता है।",
+    "contactSupportLabel": "Support Queries",
+    "contactAdminLabel": "सामान्य / व्यावसायिक पूछताछ",
+    "contactAddressLabel": "पंजीकृत पता",
+    "contactAddressValue": "E-2/508, Saryu Enclave, Sector D, Awadh Vihar Yojna, Lucknow, Uttar Pradesh – 226002"
   }
 };
 

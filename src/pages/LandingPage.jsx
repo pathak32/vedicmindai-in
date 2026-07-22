@@ -8,6 +8,7 @@ import FamiliesReviewsSection from '@/components/landing/FamiliesReviewsSection'
 import ComparisonSection from '@/components/landing/ComparisonSection';
 import HowItWorksSection from '@/components/landing/HowItWorksSection';
 import TestimonialsSection from '@/components/landing/TestimonialsSection';
+import ContactSection from '@/components/landing/ContactSection';
 import Footer from '@/components/landing/Footer';
 
 export default function LandingPage() {
@@ -22,6 +23,7 @@ export default function LandingPage() {
       <ComparisonSection />
       <HowItWorksSection />
       <TestimonialsSection />
+      <ContactSection />
       <Footer />
     </div>
   );
