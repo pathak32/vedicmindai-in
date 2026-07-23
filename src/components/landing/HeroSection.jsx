@@ -112,10 +112,12 @@ export default function HeroSection() {
 
             {/* Small trick previews */}
             <div className="flex gap-3 mt-6">
-              {tricks.map((_, i) => (
+              {tricks.map((trick, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentTrick(i)}
+                  aria-label={`Show trick: ${trick.label}`}
+                  aria-current={i === currentTrick ? 'true' : undefined}
                   className={`w-2.5 h-2.5 rounded-full transition-all ${
                     i === currentTrick ? 'bg-[#3B82F6] scale-125' : 'bg-white/30'
                   }`}

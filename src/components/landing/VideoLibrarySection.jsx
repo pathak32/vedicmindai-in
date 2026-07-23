@@ -93,6 +93,7 @@ export default function VideoLibrarySection() {
           {/* Desktop-only prev/next buttons */}
           <button
             onClick={() => scroll(-1)}
+            aria-label="Previous videos"
             className="hidden md:flex"
             style={{
               position: 'absolute', left: -20, top: '38%', transform: 'translateY(-50%)',
@@ -105,6 +106,7 @@ export default function VideoLibrarySection() {
           </button>
           <button
             onClick={() => scroll(1)}
+            aria-label="Next videos"
             className="hidden md:flex"
             style={{
               position: 'absolute', right: -20, top: '38%', transform: 'translateY(-50%)',
