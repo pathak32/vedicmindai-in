@@ -10,6 +10,10 @@ export default function FAQSection() {
   const faqs = [
     { id: 1, q: t('faq1Q'), a: t('faq1A') },
     { id: 2, q: t('faq2Q'), a: t('faq2A') },
+    { id: '2b', q: t('faq2bQ'), a: t('faq2bA') },
+    { id: '2c', q: t('faq2cQ'), a: t('faq2cA') },
+    { id: '2d', q: t('faq2dQ'), a: t('faq2dA') },
+    { id: '2e', q: t('faq2eQ'), a: t('faq2eA') },
     { id: 3, q: t('faq3Q'), a: t('faq3A') },
     { id: 4, q: t('faq4Q'), a: t('faq4A') },
     { id: 5, q: t('faq5Q'), a: t('faq5A') },

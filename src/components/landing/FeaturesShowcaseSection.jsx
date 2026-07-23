@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 
+// ⚠️ ACTION NEEDED (Life Skills example only): the excerpt below is a
+// plausible placeholder written to match the real track/structure, NOT
+// verbatim real Module 1 content — Hitesh asked for a clearly-marked
+// placeholder here since the actual lesson text wasn't available. Swap
+// showcaseLifeSkillsExampleTitle / showcaseLifeSkillsExampleBody in
+// translations.js for the real Module 1 excerpt before this is final.
+// The Screenless Learning example IS a real, verified sample question.
+
 export default function FeaturesShowcaseSection() {
   const { t } = useLanguage();
 
@@ -15,6 +23,9 @@ export default function FeaturesShowcaseSection() {
       link: '/life-skills',
       accent: '#10B981',
       accentBg: '#ECFDF5',
+      exampleTitle: t('showcaseLifeSkillsExampleTitle'),
+      exampleBody: t('showcaseLifeSkillsExampleBody'),
+      restNote: t('showcaseLifeSkillsRest'),
     },
     {
       emoji: '📝',
@@ -24,6 +35,9 @@ export default function FeaturesShowcaseSection() {
       link: '/screenless',
       accent: '#3B82F6',
       accentBg: '#EFF6FF',
+      exampleTitle: t('showcaseScreenlessExampleTitle'),
+      exampleBody: t('showcaseScreenlessExampleBody'),
+      restNote: t('showcaseScreenlessRest'),
     },
   ];
 
@@ -44,7 +58,7 @@ export default function FeaturesShowcaseSection() {
           </h2>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 24 }}>
           {cards.map((card) => (
             <motion.div
               key={card.title}
@@ -77,6 +91,29 @@ export default function FeaturesShowcaseSection() {
               }}>
                 {card.badge}
               </span>
+
+              {/* Real example preview */}
+              <div style={{
+                background: '#F8FAFF', borderLeft: `3px solid ${card.accent}`,
+                borderRadius: '0 12px 12px 0', padding: '14px 16px', marginBottom: 16,
+              }}>
+                <p style={{
+                  fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 600, color: card.accent,
+                  textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8,
+                }}>
+                  {t('showcaseExampleLabel')}
+                </p>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', marginBottom: 6 }}>
+                  {card.exampleTitle}
+                </p>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', lineHeight: 1.6, margin: 0, whiteSpace: 'pre-line' }}>
+                  {card.exampleBody}
+                </p>
+              </div>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', fontStyle: 'italic', marginBottom: 18 }}>
+                {card.restNote}
+              </p>
+
               <div>
                 <Link to={card.link} style={{
                   display: 'inline-block', fontFamily: 'var(--font-body)', fontSize: 14,
