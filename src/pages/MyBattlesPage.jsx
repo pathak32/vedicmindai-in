@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { getSupabase } from '@/lib/supabaseClient';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function MyBattlesPage() {
   const { user } = useVedicAuth();
+  const { t } = useLanguage();
   const [battles, setBattles] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,21 +35,21 @@ export default function MyBattlesPage() {
       <DashboardNavbar />
       <main style={{ maxWidth: 640, margin: '0 auto', padding: '32px 20px 64px' }}>
         <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 28, fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>
-          My Battles
+          {t('myBattlesTitle')}
         </h1>
         <p style={{ color: '#6B7280', marginBottom: 24 }}>
-          {battles.length} battle{battles.length !== 1 ? 's' : ''} played - {wins}W {losses}L
+          {battles.length} {battles.length !== 1 ? t('myBattlesPlayedStatPlural') : t('myBattlesPlayedStat')} {t('myBattlesPlayedSuffix')} - {wins}W {losses}L
         </p>
 
-        {loading && <p style={{ color: '#6B7280' }}>Loading...</p>}
+        {loading && <p style={{ color: '#6B7280' }}>{t('loadingText')}</p>}
 
         {!loading && battles.length === 0 && (
           <div style={{ background: 'white', borderRadius: 16, padding: 32, textAlign: 'center', boxShadow: '0 4px 20px rgba(10,22,40,0.06)' }}>
             <span style={{ fontSize: 40 }}>Battle</span>
-            <p style={{ color: '#0A1628', fontWeight: 600, marginTop: 12, marginBottom: 8 }}>No battles yet</p>
-            <p style={{ color: '#6B7280', fontSize: 14, marginBottom: 20 }}>Challenge someone to your first Vedic Maths battle!</p>
+            <p style={{ color: '#0A1628', fontWeight: 600, marginTop: 12, marginBottom: 8 }}>{t('myBattlesEmptyTitle')}</p>
+            <p style={{ color: '#6B7280', fontSize: 14, marginBottom: 20 }}>{t('myBattlesEmptyDesc')}</p>
             <Link to="/battle" style={{ display: 'inline-block', background: '#0A1628', color: 'white', padding: '10px 24px', borderRadius: 10, textDecoration: 'none', fontWeight: 600 }}>
-              Start a Battle
+              {t('myBattlesStartBtn')}
             </Link>
           </div>
         )}
@@ -64,8 +66,8 @@ export default function MyBattlesPage() {
             return (
               <div key={b.id} style={{ background: 'white', borderRadius: 14, padding: 18, boxShadow: '0 2px 10px rgba(10,22,40,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div>
-                  <p style={{ fontWeight: 700, color: '#0A1628', marginBottom: 2 }}>vs {opponentName || 'Unknown'}</p>
-                  <p style={{ fontSize: 13, color: '#6B7280' }}>{b.topic || 'Mixed'} - {date}</p>
+                  <p style={{ fontWeight: 700, color: '#0A1628', marginBottom: 2 }}>{t('myBattlesVs')} {opponentName || t('myBattlesUnknown')}</p>
+                  <p style={{ fontSize: 13, color: '#6B7280' }}>{b.topic || t('myBattlesMixed')} - {date}</p>
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <p style={{ fontFamily: 'monospace', fontWeight: 700, fontSize: 16, color: '#0A1628' }}>{myScore} - {oppScore}</p>
@@ -73,7 +75,7 @@ export default function MyBattlesPage() {
                     display: 'inline-block', marginTop: 4, fontSize: 11, fontWeight: 700, padding: '2px 10px', borderRadius: 99,
                     background: won ? '#D1FAE5' : '#FEE2E2', color: won ? '#065F46' : '#991B1B',
                   }}>
-                    {won ? 'WON' : 'LOST'}
+                    {won ? t('myBattlesWon') : t('myBattlesLost')}
                   </span>
                 </div>
               </div>

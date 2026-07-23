@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageToggle } from '@/components/LanguageToggle';
@@ -10,6 +10,7 @@ export default function LandingNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -17,19 +18,30 @@ export default function LandingNavbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Fixed: previously this only did document.getElementById(id) directly,
+  // which silently did nothing on any page other than the homepage since
+  // those section IDs only exist there. Now it navigates home first (with
+  // the target section passed via router state) if we're elsewhere.
   const scrollTo = (id) => {
     setMobileOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/80 backdrop-blur-xl shadow-sm' : 'bg-transparent'
+        scrolled ? 'bg-white/90 backdrop-blur-xl shadow-sm' : 'bg-white/70 backdrop-blur-xl'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <Link to="/" className="font-heading text-lg sm:text-xl font-bold text-[#0A1628] truncate min-w-0 flex-1 mr-2">
-            VedicMindAI™
+          <Link to="/" className="flex items-center gap-2 min-w-0 flex-1 mr-2">
+            <img src="/icons/icon-192.png" alt="VedicMindAI logo" className="w-8 h-8 rounded-lg flex-shrink-0" />
+            <span className="font-heading text-lg sm:text-xl font-bold text-[#0A1628] truncate">
+              VedicMindAI™
+            </span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8 flex-shrink-0">
@@ -44,6 +56,12 @@ export default function LandingNavbar() {
             </Link>
             <Link to="/reviews" className="text-sm font-medium text-[#4B5563] hover:text-[#0A1628] transition-colors">
               {t('reviews')}
+            </Link>
+            <button onClick={() => scrollTo('faq')} className="text-sm font-medium text-[#4B5563] hover:text-[#0A1628] transition-colors">
+              {t('faqSectionLabel')}
+            </button>
+            <Link to="/blog" className="text-sm font-medium text-[#4B5563] hover:text-[#0A1628] transition-colors">
+              {t('blogNavLabel')}
             </Link>
             <Link to="/demo" className="text-sm font-medium text-[#0A1628] border border-[#0A1628] rounded-xl px-4 py-1.5 hover:bg-[#0A1628] hover:text-white transition-colors" style={{ borderWidth: '1.5px' }}>
               {t('tryFreeDemo')}
@@ -78,7 +96,10 @@ export default function LandingNavbar() {
             className="fixed inset-0 z-[100] bg-white flex flex-col"
           >
             <div className="flex items-center justify-between px-4 h-16">
-              <span className="font-heading text-xl font-bold text-[#0A1628]">VedicMindAI™</span>
+              <span className="flex items-center gap-2">
+                <img src="/icons/icon-192.png" alt="VedicMindAI logo" className="w-7 h-7 rounded-lg" />
+                <span className="font-heading text-xl font-bold text-[#0A1628]">VedicMindAI™</span>
+              </span>
               <button onClick={() => setMobileOpen(false)} className="p-2">
                 <X className="w-6 h-6 text-[#0A1628]" />
               </button>
@@ -88,6 +109,8 @@ export default function LandingNavbar() {
               <button onClick={() => scrollTo('features')} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]">{t('features')}</button>
               <Link to="/curriculum" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>{t('curriculum')}</Link>
               <Link to="/reviews" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>{t('reviews')}</Link>
+              <button onClick={() => scrollTo('faq')} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]">{t('faqSectionLabel')}</button>
+              <Link to="/blog" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>{t('blogNavLabel')}</Link>
               <Link to="/demo" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#3B82F6] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>{t('tryFreeDemo')}</Link>
               <Link
                 to="/auth"

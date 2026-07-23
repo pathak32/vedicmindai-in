@@ -3,34 +3,16 @@ import { motion } from 'framer-motion';
 import { Brain, BookOpen, BarChart3 } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
 
-const features = [
-  {
-    icon: Brain,
-    title: 'AI Knows You',
-    desc: 'Personalized AI analysis understands your level, board, and goals to craft the perfect learning path.',
-  },
-  {
-    icon: BookOpen,
-    title: 'Structured Path',
-    desc: '4 levels, 40 lessons, real Vedic sutras with step-by-step examples and visual breakdowns.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Track Mastery',
-    desc: 'Live dashboard, XP system, streaks, and achievement badges to keep you motivated.',
-  },
-  {
-    icon: null,
-    emoji: '🥊',
-    title: 'Live Battle Mode',
-    desc: 'Challenge your classmates to real-time Vedic Maths battles. First to answer wins. Prove who\'s the fastest calculator in your class.',
-    comingSoon: false,
-    isLive: true,
-  },
-];
-
 export default function FeaturesSection() {
   const { t } = useLanguage();
+
+  const features = [
+    { icon: Brain, title: t('feature1Title'), desc: t('feature1Desc') },
+    { icon: BookOpen, title: t('feature2Title'), desc: t('feature2Desc') },
+    { icon: BarChart3, title: t('feature3Title'), desc: t('feature3Desc') },
+    { icon: null, emoji: '🥊', title: t('feature4Title'), desc: t('feature4Desc'), comingSoon: false, isLive: true },
+  ];
+
   return (
     <section id="features" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +53,7 @@ export default function FeaturesSection() {
                   borderRadius: 99, padding: '3px 12px',
                   fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 600,
                 }}>
-                  ✅ Live
+                  ✅ {t('badgeLive')}
                 </span>
               )}
               {f.comingSoon && (
@@ -82,7 +64,7 @@ export default function FeaturesSection() {
                   borderRadius: 99, padding: '3px 12px',
                   fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 600,
                 }}>
-                  ⚡ Coming Soon
+                  ⚡ {t('badgeComingSoon')}
                 </span>
               )}
             </motion.div>

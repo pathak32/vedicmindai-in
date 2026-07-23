@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getSupabase } from '@/lib/supabaseClient';
 import { motion, AnimatePresence } from 'framer-motion';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const glass = {
   background: 'rgba(255,255,255,0.75)',
@@ -35,9 +36,10 @@ function StarRating({ value, onChange, readOnly }) {
   );
 }
 
-function ReviewCard({ review }) {
+function ReviewCard({ review, t }) {
   const roleColor = { Student: '#DBEAFE', Parent: '#D1FAE5', Guardian: '#EDE9FE' };
   const roleText  = { Student: '#1E40AF', Parent: '#065F46', Guardian: '#5B21B6' };
+  const roleLabel = { Student: t('roleStudent'), Parent: t('roleParent'), Guardian: t('roleGuardian') };
   return (
     <div style={{ ...glass, padding: 20 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10, flexWrap: 'wrap', gap: 8 }}>
@@ -54,7 +56,7 @@ function ReviewCard({ review }) {
               borderRadius: 99, padding: '2px 10px', fontSize: 11,
               fontFamily: 'var(--font-body)', fontWeight: 600,
             }}>
-              {review.role}
+              {roleLabel[review.role] || review.role}
             </span>
             <span style={{ fontSize: 11, color: '#9CA3AF', fontFamily: 'var(--font-body)' }}>{review.duration}</span>
           </div>
@@ -70,18 +72,19 @@ function ReviewCard({ review }) {
   );
 }
 
-function SubmitReviewForm({ onSubmit, onClose }) {
+function SubmitReviewForm({ onSubmit, onClose, t }) {
   const [form, setForm] = useState({ role: 'Student', name: '', city: '', stars: 0, duration: '', text: '' });
   const [error, setError] = useState('');
 
-  const DURATIONS = ['1 week', '2 weeks', '1 month', '3 months', '6 months+'];
+  const DURATIONS = [t('reviewsDur1Week'), t('reviewsDur2Weeks'), t('reviewsDur1Month'), t('reviewsDur3Months'), t('reviewsDur6MonthsPlus')];
+  const roleLabel = { Student: t('roleStudent'), Parent: t('roleParent'), Guardian: t('roleGuardian') };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!form.name.trim()) { setError('Please enter your name.'); return; }
-    if (!form.stars) { setError('Please select a star rating.'); return; }
-    if (!form.duration) { setError('Please select how long you\'ve been using VedicMind.'); return; }
-    if (!form.text.trim()) { setError('Please share your experience.'); return; }
+    if (!form.name.trim()) { setError(t('reviewsErrName')); return; }
+    if (!form.stars) { setError(t('reviewsErrStars')); return; }
+    if (!form.duration) { setError(t('reviewsErrDuration')); return; }
+    if (!form.text.trim()) { setError(t('reviewsErrText')); return; }
     setError('');
     const review = {
       id: Date.now().toString(),
@@ -127,12 +130,12 @@ function SubmitReviewForm({ onSubmit, onClose }) {
           zIndex: 1,
         }}
       >
-        <h2 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>Share Your Story 💬</h2>
+        <h2 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>{t('reviewsFormTitle')}</h2>
 
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           {/* Role pills */}
           <div>
-            <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 8 }}>I am a...</label>
+            <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 8 }}>{t('reviewsIAmA')}</label>
             <div style={{ display: 'flex', gap: 8 }}>
               {['Student', 'Parent', 'Guardian'].map(r => (
                 <button
@@ -145,7 +148,7 @@ function SubmitReviewForm({ onSubmit, onClose }) {
                     color: form.role === r ? 'white' : '#4B5563',
                     fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 500, cursor: 'pointer',
                   }}
-                >{r}</button>
+                >{roleLabel[r]}</button>
               ))}
             </div>
           </div>
@@ -153,20 +156,20 @@ function SubmitReviewForm({ onSubmit, onClose }) {
           {/* Name + City */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             <div>
-              <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 6 }}>First Name</label>
+              <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 6 }}>{t('reviewsFirstName')}</label>
               <input
                 value={form.name}
                 onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                placeholder="Your name"
+                placeholder={t('reviewsNamePlaceholder')}
                 style={{ width: '100%', height: 44, borderRadius: 10, border: '1.5px solid rgba(30,64,175,0.15)', padding: '0 12px', fontFamily: 'var(--font-body)', fontSize: 14, outline: 'none', boxSizing: 'border-box' }}
               />
             </div>
             <div>
-              <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 6 }}>City</label>
+              <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 6 }}>{t('reviewsCity')}</label>
               <input
                 value={form.city}
                 onChange={e => setForm(f => ({ ...f, city: e.target.value }))}
-                placeholder="Your city"
+                placeholder={t('reviewsCityPlaceholder')}
                 style={{ width: '100%', height: 44, borderRadius: 10, border: '1.5px solid rgba(30,64,175,0.15)', padding: '0 12px', fontFamily: 'var(--font-body)', fontSize: 14, outline: 'none', boxSizing: 'border-box' }}
               />
             </div>
@@ -174,13 +177,13 @@ function SubmitReviewForm({ onSubmit, onClose }) {
 
           {/* Star rating */}
           <div>
-            <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 8 }}>Your Rating</label>
+            <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 8 }}>{t('reviewsYourRating')}</label>
             <StarRating value={form.stars} onChange={s => setForm(f => ({ ...f, stars: s }))} />
           </div>
 
           {/* Duration */}
           <div>
-            <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 8 }}>How long have you been using VedicMind?</label>
+            <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 8 }}>{t('reviewsHowLong')}</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {DURATIONS.map(d => (
                 <button
@@ -201,12 +204,12 @@ function SubmitReviewForm({ onSubmit, onClose }) {
           {/* Experience textarea */}
           <div>
             <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 6 }}>
-              Your Experience <span style={{ fontWeight: 400, color: '#9CA3AF' }}>(max 300 chars)</span>
+              {t('reviewsExperienceLabel')} <span style={{ fontWeight: 400, color: '#9CA3AF' }}>{t('reviewsMaxChars')}</span>
             </label>
             <textarea
               value={form.text}
               onChange={e => setForm(f => ({ ...f, text: e.target.value.slice(0, 300) }))}
-              placeholder="Tell others about your experience with VedicMind..."
+              placeholder={t('reviewsExperiencePlaceholder')}
               rows={4}
               style={{ width: '100%', borderRadius: 10, border: '1.5px solid rgba(30,64,175,0.15)', padding: '10px 12px', fontFamily: 'var(--font-body)', fontSize: 14, outline: 'none', resize: 'none', boxSizing: 'border-box', lineHeight: 1.5 }}
             />
@@ -216,11 +219,11 @@ function SubmitReviewForm({ onSubmit, onClose }) {
           {/* Photo upload (UI only) */}
           <div>
             <label style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', display: 'block', marginBottom: 6 }}>
-              Upload a Photo <span style={{ fontWeight: 400, color: '#9CA3AF' }}>(optional)</span>
+              {t('reviewsUploadPhoto')} <span style={{ fontWeight: 400, color: '#9CA3AF' }}>{t('authOptional')}</span>
             </label>
             <div style={{ border: '2px dashed rgba(30,64,175,0.2)', borderRadius: 10, padding: '16px 20px', textAlign: 'center', cursor: 'pointer' }}>
               <span style={{ fontSize: 24 }}>📸</span>
-              <p style={{ margin: '4px 0 0', fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF' }}>Tap to add a photo</p>
+              <p style={{ margin: '4px 0 0', fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF' }}>{t('reviewsTapToAddPhoto')}</p>
             </div>
           </div>
 
@@ -230,7 +233,7 @@ function SubmitReviewForm({ onSubmit, onClose }) {
             type="submit"
             style={{ width: '100%', minHeight: 48, background: '#0A1628', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontSize: 15, fontWeight: 600, cursor: 'pointer' }}
           >
-            Share My Story ✨
+            {t('reviewsShareMyStoryBtn')}
           </button>
         </form>
       </motion.div>
@@ -240,6 +243,7 @@ function SubmitReviewForm({ onSubmit, onClose }) {
 
 export default function ReviewsPage() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [reviews, setReviews] = useState([]);
   const [filter, setFilter] = useState('All');
   const [sort, setSort] = useState('Latest');
@@ -251,9 +255,9 @@ export default function ReviewsPage() {
     // Seed some sample reviews if empty
     if (stored.length === 0) {
       const samples = [
-        { id: '1', role: 'Parent', name: 'Sunita', city: 'Mumbai', stars: 5, duration: '1 month', text: 'My daughter\'s mental math has improved dramatically! She now calculates faster than her calculator. VedicMind is a gem.', date: '2025-05-10T00:00:00.000Z', approved: true },
-        { id: '2', role: 'Student', name: 'Arjun', city: 'Pune', stars: 5, duration: '3 months', text: 'The daily quiz is addictive! I\'ve not missed a single day in 2 months. My maths score in school went from 72% to 94%.', date: '2025-05-18T00:00:00.000Z', approved: true },
-        { id: '3', role: 'Parent', name: 'Kavitha', city: 'Chennai', stars: 4, duration: '2 weeks', text: 'Very well structured course. The Vedic methods are explained simply and my son loves the leaderboard competition.', date: '2025-06-01T00:00:00.000Z', approved: true },
+        { id: '1', role: 'Parent', name: 'Sunita', city: 'Mumbai', stars: 5, duration: t('durationMonth1'), text: t('familiesReview1Text'), date: '2025-05-10T00:00:00.000Z', approved: true },
+        { id: '2', role: 'Student', name: 'Arjun', city: 'Pune', stars: 5, duration: t('durationMonths3'), text: t('familiesReview2Text'), date: '2025-05-18T00:00:00.000Z', approved: true },
+        { id: '3', role: 'Parent', name: 'Kavitha', city: 'Chennai', stars: 4, duration: t('durationWeeks2'), text: t('familiesReview3Text'), date: '2025-06-01T00:00:00.000Z', approved: true },
       ];
       localStorage.setItem('vedicmind_reviews', JSON.stringify(samples));
       setReviews(samples);
@@ -286,22 +290,22 @@ export default function ReviewsPage() {
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <h1 className="font-heading" style={{ fontSize: 'clamp(26px,5vw,36px)', fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>
-            What Families Say 💬
+            {t('reviewsPageTitle')}
           </h1>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563', marginBottom: 16 }}>
-            Real stories from students and parents across India
+            {t('reviewsPageSubtitle')}
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <span style={{ fontSize: 24, color: '#F59E0B' }}>★</span>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: '#0A1628' }}>{avgRating}</span>
-              <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563' }}>· {reviews.length} reviews</span>
+              <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563' }}>· {reviews.length} {t('reviewsCount')}</span>
             </div>
             <button
               onClick={() => setShowForm(true)}
               style={{ padding: '10px 24px', background: '#0A1628', color: 'white', border: 'none', borderRadius: 10, fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600, cursor: 'pointer', minHeight: 44 }}
             >
-              + Share Your Story
+              {t('reviewsShareStoryBtn')}
             </button>
           </div>
         </div>
@@ -315,7 +319,7 @@ export default function ReviewsPage() {
               exit={{ opacity: 0 }}
               style={{ background: '#ECFDF5', border: '1px solid #A7F3D0', borderRadius: 12, padding: '14px 20px', marginBottom: 20, fontFamily: 'var(--font-body)', fontSize: 14, color: '#065F46', textAlign: 'center' }}
             >
-              ✅ Thank you! Your review has been shared.
+              {t('reviewsThankYou')}
             </motion.div>
           )}
         </AnimatePresence>
@@ -323,17 +327,21 @@ export default function ReviewsPage() {
         {/* Filter + Sort */}
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', gap: 8 }}>
-            {['All', 'Students', 'Parents'].map(f => (
+            {[
+              { key: 'All', label: t('filterAll'), value: 'All' },
+              { key: 'Students', label: t('filterStudents'), value: 'Student' },
+              { key: 'Parents', label: t('filterParents'), value: 'Parent' },
+            ].map(f => (
               <button
-                key={f}
-                onClick={() => setFilter(f === 'Students' ? 'Student' : f === 'Parents' ? 'Parent' : 'All')}
+                key={f.key}
+                onClick={() => setFilter(f.value)}
                 style={{
-                  padding: '6px 16px', borderRadius: 99, border: `1.5px solid ${(filter === 'All' && f === 'All') || filter === f.slice(0, -1) || (f === 'Students' && filter === 'Student') || (f === 'Parents' && filter === 'Parent') ? '#0A1628' : 'rgba(30,64,175,0.2)'}`,
-                  background: (filter === 'All' && f === 'All') || (f === 'Students' && filter === 'Student') || (f === 'Parents' && filter === 'Parent') ? '#0A1628' : 'white',
-                  color: (filter === 'All' && f === 'All') || (f === 'Students' && filter === 'Student') || (f === 'Parents' && filter === 'Parent') ? 'white' : '#4B5563',
+                  padding: '6px 16px', borderRadius: 99, border: `1.5px solid ${filter === f.value ? '#0A1628' : 'rgba(30,64,175,0.2)'}`,
+                  background: filter === f.value ? '#0A1628' : 'white',
+                  color: filter === f.value ? 'white' : '#4B5563',
                   fontFamily: 'var(--font-body)', fontSize: 13, cursor: 'pointer', fontWeight: 500,
                 }}
-              >{f}</button>
+              >{f.label}</button>
             ))}
           </div>
           <select
@@ -341,8 +349,8 @@ export default function ReviewsPage() {
             onChange={e => setSort(e.target.value)}
             style={{ height: 36, borderRadius: 8, border: '1.5px solid rgba(30,64,175,0.15)', padding: '0 12px', fontFamily: 'var(--font-body)', fontSize: 13, outline: 'none', background: 'white', color: '#0A1628', cursor: 'pointer' }}
           >
-            <option value="Latest">Latest first</option>
-            <option value="Highest">Highest rated</option>
+            <option value="Latest">{t('sortLatest')}</option>
+            <option value="Highest">{t('sortHighest')}</option>
           </select>
         </div>
 
@@ -351,17 +359,17 @@ export default function ReviewsPage() {
           @media(min-width:640px){ .review-grid{ grid-template-columns: 1fr 1fr !important; } }
         `}</style>
         <div className="review-grid" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16 }}>
-          {filtered.map(r => <ReviewCard key={r.id} review={r} />)}
+          {filtered.map(r => <ReviewCard key={r.id} review={r} t={t} />)}
           {filtered.length === 0 && (
             <div style={{ textAlign: 'center', padding: '40px 0', color: '#4B5563', fontFamily: 'var(--font-body)' }}>
-              No reviews yet. Be the first to share your story!
+              {t('reviewsNoReviews')}
             </div>
           )}
         </div>
       </main>
 
       <AnimatePresence>
-        {showForm && <SubmitReviewForm onSubmit={handleSubmit} onClose={() => setShowForm(false)} />}
+        {showForm && <SubmitReviewForm onSubmit={handleSubmit} onClose={() => setShowForm(false)} t={t} />}
       </AnimatePresence>
     </div>
   );

@@ -108,5 +108,10 @@ export const RA_LEVEL2_QUESTIONS = [
 
 export function getLevel2QuestionsByChapter(chapterId) {
   const qs = RA_LEVEL2_QUESTIONS.filter((q) => q.chapter === chapterId);
-  return [...qs].sort(() => Math.random() - 0.5);
+  const arr = [...qs];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }

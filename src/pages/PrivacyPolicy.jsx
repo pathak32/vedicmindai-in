@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function PrivacyPolicy() {
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '40px 24px', fontFamily: 'DM Sans, sans-serif', color: '#0A1628' }}>
+      <Link to="/" style={{ display: 'inline-block', marginBottom: 24, color: '#1e40af', textDecoration: 'none', fontSize: 14 }}>← Back to Home</Link>
       <div style={{ background: '#FFF7ED', border: '1px solid #FED7AA', borderRadius: 8, padding: '12px 16px', marginBottom: 24 }}>
         <p style={{ margin: 0, fontSize: 13, color: '#92400E', fontWeight: 500 }}>
           ™ VedicMindAI™ is a registered trademark applicant. Unauthorized use of this name or logo is prohibited.
@@ -38,9 +40,9 @@ export default function PrivacyPolicy() {
       <h2>7. Leaderboard Privacy</h2>
       <p>Your name is shown as "First name + Last initial" only. You can opt out in Profile Settings.</p>
       <h2>8. Data Deletion</h2>
-      <p>Delete your account anytime from Profile page or email us at <a href="mailto:hitesh@vedicmindai.in">hitesh@vedicmindai.in</a>.</p>
+      <p>Delete your account anytime from Profile page or email us at <a href="mailto:admin@vedicmindai.in">admin@vedicmindai.in</a>.</p>
       <h2>9. Contact Us</h2>
-      <p><strong>Email:</strong> hitesh@vedicmindai.in<br/>
+      <p><strong>Email:</strong> admin@vedicmindai.in<br/>
       <strong>Website:</strong> https://vedicmindai.in<br/>
       <strong>Address:</strong> Lucknow, Uttar Pradesh, India</p>
     </div>

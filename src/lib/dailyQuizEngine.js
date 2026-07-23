@@ -181,6 +181,99 @@ const APTITUDE_BANK = [
     explanation: 'P(H)×P(H) = 1/2 × 1/2 = 1/4', sutra: null },
 ];
 
+const REASONING_BANK = [
+  { id: 'r01', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'Which one does not belong: Apple, Banana, Carrot, Mango?', options: ['Apple','Carrot','Mango'], correctIndex: 1,
+    explanation: 'Apple, Banana, and Mango are all fruits. Carrot is a vegetable — it doesn\'t belong.', sutra: null },
+  { id: 'r02', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'Which one does not belong: Dog, Cat, Cow, Table?', options: ['Cow','Table','Dog'], correctIndex: 1,
+    explanation: 'Dog, Cat, and Cow are all animals. Table is furniture — it doesn\'t belong.', sutra: null },
+  { id: 'r03', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'Which one does not belong: Circle, Square, Triangle, Red?', options: ['Red','Circle','Square'], correctIndex: 0,
+    explanation: 'Circle, Square, and Triangle are all shapes. Red is a colour — not a shape, so it doesn\'t belong.', sutra: null },
+  { id: 'r04', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: '2, 4, 6, 8, ?', options: ['9','10','12'], correctIndex: 1,
+    explanation: 'Each number increases by 2 (+2, +2...). The next is 8 + 2 = 10.', sutra: null },
+  { id: 'r05', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: '5, 10, 15, 20, ?', options: ['22','25','30'], correctIndex: 1,
+    explanation: 'Each number increases by 5 (+5, +5...). The next is 20 + 5 = 25.', sutra: null },
+  { id: 'r06', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: '1, 3, 5, 7, ?', options: ['8','9','10'], correctIndex: 1,
+    explanation: 'Odd numbers in order, each +2. The next is 7 + 2 = 9.', sutra: null },
+  { id: 'r07', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'Hand is to Glove as Foot is to ?', options: ['Shoe','Sock','Leg'], correctIndex: 0,
+    explanation: 'A Glove covers/protects the Hand. Similarly, a Shoe covers/protects the Foot.', sutra: null },
+  { id: 'r08', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'Bird is to Nest as Bee is to ?', options: ['Flower','Hive','Sky'], correctIndex: 1,
+    explanation: 'A Nest is where a Bird lives. Similarly, a Hive is where a Bee lives.', sutra: null },
+  { id: 'r09', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'Sun is to Day as Moon is to ?', options: ['Night','Star','Sky'], correctIndex: 0,
+    explanation: 'The Sun lights the Day. Similarly, the Moon lights the Night.', sutra: null },
+  { id: 'r10', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'Rahul is taller than Priya. Priya is taller than Aman. Who is the shortest?', options: ['Rahul','Priya','Aman'], correctIndex: 2,
+    explanation: 'Chain: Rahul > Priya > Aman. Aman is at the bottom — the shortest.', sutra: null },
+  { id: 'r11', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'In a race, Rani finished before Sam, and Sam finished before Tina. Who finished first?', options: ['Rani','Sam','Tina'], correctIndex: 0,
+    explanation: 'Chain: Rani > Sam > Tina. Rani is at the top — she finished first.', sutra: null },
+  { id: 'r12', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'A is older than B. C is older than A. Who is the oldest?', options: ['A','B','C'], correctIndex: 2,
+    explanation: 'Chain: C > A > B. C is at the top — the oldest.', sutra: null },
+  { id: 'r13', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'You walk 5m North, then turn right. Which direction are you facing now?', options: ['East','West','South'], correctIndex: 0,
+    explanation: 'Turning right from North means you face East.', sutra: null },
+  { id: 'r14', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'You walk 3m East, then turn left. Which direction are you facing now?', options: ['North','South','West'], correctIndex: 0,
+    explanation: 'Turning left from East means you face North.', sutra: null },
+  { id: 'r15', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'Facing North, if you turn 180°, which direction do you face?', options: ['South','East','West'], correctIndex: 0,
+    explanation: 'A 180° turn from North brings you to face South — the exact opposite direction.', sutra: null },
+  { id: 'r16', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'If CAT is coded as DBU, how is DOG coded?', options: ['EPH','EPI','FPH'], correctIndex: 0,
+    explanation: 'Each letter shifts forward by 1 (C→D, A→B, T→U). Apply the same +1 shift to DOG: D→E, O→P, G→H = EPH.', sutra: null },
+  { id: 'r17', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'If A=1, B=2, C=3, what does C-A-T spell as numbers?', options: ['3-1-20','3-1-19','3-2-20'], correctIndex: 0,
+    explanation: 'Using standard alphabet positions: C=3, A=1, T=20.', sutra: null },
+  { id: 'r18', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'If BALL is coded as CBMM, how is BELL coded?', options: ['CFMM','CFMN','CFLM'], correctIndex: 0,
+    explanation: 'Each letter shifts +1: B→C, A→B, L→M, L→M = CBMM. Apply to BELL: B→C, E→F, L→M, L→M = CFMM.', sutra: null },
+  { id: 'r19', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'If today is Monday, what day will it be after 10 days?', options: ['Wednesday','Thursday','Friday'], correctIndex: 1,
+    explanation: '10 ÷ 7 leaves a remainder of 3. Three days after Monday: Tuesday, Wednesday, Thursday.', sutra: null },
+  { id: 'r20', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'How many days are there in a leap year?', options: ['365','366','364'], correctIndex: 1,
+    explanation: 'A leap year has one extra day (February 29), giving 365 + 1 = 366 days.', sutra: null },
+  { id: 'r21', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'If today is Friday, what day was it 3 days ago?', options: ['Tuesday','Wednesday','Monday'], correctIndex: 0,
+    explanation: 'Three days before Friday: Thursday, Wednesday, Tuesday.', sutra: null },
+  { id: 'r22', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'A square, then a circle, then a square, then a circle. What comes next?', options: ['Square','Circle','Triangle'], correctIndex: 0,
+    explanation: 'The pattern alternates Square, Circle, Square, Circle... The next is Square.', sutra: null },
+  { id: 'r23', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'Red, Blue, Red, Blue, Red, ? — what color comes next?', options: ['Red','Blue','Green'], correctIndex: 1,
+    explanation: 'The pattern alternates Red, Blue, Red, Blue... The next is Blue.', sutra: null },
+  { id: 'r24', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'A shape grows: 1 dot, 2 dots, 3 dots, 4 dots. How many dots come next?', options: ['5','6','4'], correctIndex: 0,
+    explanation: 'Each step adds one dot. The next is 5 dots.', sutra: null },
+  { id: 'r25', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: '"This is my father\'s son, but not me." Who is it?', options: ['Brother','Uncle','Cousin'], correctIndex: 0,
+    explanation: 'Your father\'s son is either you or your brother. Since it isn\'t you, it must be your brother.', sutra: null },
+  { id: 'r26', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'My mother\'s mother is my ?', options: ['Grandmother','Aunt','Sister'], correctIndex: 0,
+    explanation: 'Your mother\'s mother is your grandmother (on your mother\'s side).', sutra: null },
+  { id: 'r27', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'My father\'s brother is my ?', options: ['Uncle','Cousin','Nephew'], correctIndex: 0,
+    explanation: 'Your father\'s brother is your uncle (paternal uncle).', sutra: null },
+  { id: 'r28', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'In a mirror, the letter "b" looks like which letter?', options: ['d','p','q'], correctIndex: 0,
+    explanation: 'A mirror flips left and right. The stroke in "b" is on the right — flipped, it moves to the left, which is exactly "d".', sutra: null },
+  { id: 'r29', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'In a mirror, does "3:00" on a clock face appear reversed as which time position?', options: ['9:00 position','3:00 position','6:00 position'], correctIndex: 0,
+    explanation: 'A clock face is mirrored left-to-right. The 3:00 position (right side) moves to the left side, which is the 9:00 position.', sutra: null },
+  { id: 'r30', type: 'reasoning', bands: ['JUNIOR','MIDDLE','SENIOR','HIGHER'],
+    question: 'In a mirror, the word "MOM" appears as ?', options: ['MOM','WOW','MOW'], correctIndex: 0,
+    explanation: 'M and O are both left-right symmetric letters, and MOM reads the same forwards and backwards — so it mirrors to itself: MOM.', sutra: null },
+];
+
 // ─── seededPick helper ────────────────────────────────────────────────────────
 
 function seededPick(pool, count, rand) {
@@ -206,12 +299,15 @@ export function getDailyQuestions(grade) {
   const band = getGradeBand(grade);
 
   const vmPool = VEDIC_BANK.filter(q => q.bands.includes(band));
-  const apPool = APTITUDE_BANK.filter(q => q.bands.includes(band));
+  const rsPool = REASONING_BANK.filter(q => q.bands.includes(band));
+  // Aptitude paused from the daily rotation until the Aptitude Zone
+  // section itself has live content — re-enable alongside APTITUDE_BANK
+  // when that's ready (plan: expand to 9-10 total questions then).
 
   const vmPicks = seededPick(vmPool, 3, rand);
-  const apPicks = seededPick(apPool, 2, rand);
+  const rsPicks = seededPick(rsPool, 2, rand);
 
-  const combined = seededPick([...vmPicks, ...apPicks], 5, rand);
+  const combined = seededPick([...vmPicks, ...rsPicks], 5, rand);
 
   return combined.map((q, i) => {
     // Shuffle options with the same seeded rand so results are deterministic

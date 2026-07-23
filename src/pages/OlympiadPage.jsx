@@ -10,10 +10,30 @@ import {
   formatOlympiadDate,
   getDaysUntil,
   getQuarterId,
-  getCachedQuestions,
-  setCachedQuestions,
   saveOlympiadResult,
 } from '@/lib/olympiadEngine';
+import { OLYMPIAD_BANKS } from '@/lib/olympiadQuestionBanks';
+
+function seededShuffle(arr, seed) {
+  let s = seed;
+  const rand = () => {
+    s = (s * 1664525 + 1013904223) & 0xffffffff;
+    return (s >>> 0) / 0xffffffff;
+  };
+  const out = [...arr];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+function seedFromQuarterAndLevel(quarterId, level) {
+  let hash = 0;
+  const str = quarterId + level;
+  for (let i = 0; i < str.length; i++) hash = (hash * 31 + str.charCodeAt(i)) & 0xffffffff;
+  return hash;
+}
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -623,13 +643,6 @@ function CompletedView() {
 
 // ─── Question Loader ─────────────────────────────────────────────────────────
 
-const DIGIT_SUM_RULE = `IMPORTANT convention for any digit-sum questions: when a digit sum reduces to 9, the correct answer is "0" not "9". Always include "0" as one of the four options for such questions, never "9" as the correct answer.`;
-
-const PROMPTS = {
-  junior: `Generate 30 Vedic Mathematics Olympiad MCQ questions for Class 1-7 students. Mix of difficulty: 12 easy, 12 medium, 6 hard. Topics: all Level 1-2 sutras. Include visual/pattern questions where possible. Each: question, options (array of 4 strings), answer (exact string matching one option), hint, difficulty, topic, sutra. Return a JSON array only, no markdown. ${DIGIT_SUM_RULE}`,
-  senior: `Generate 30 Vedic Mathematics Olympiad MCQ questions for Class 8-12 students. Mix: 8 medium, 14 hard, 8 very hard. Topics: all Level 1-3 sutras, algebraic applications, divisibility. Each: question, options (array of 4 strings), answer (exact string matching one option), hint, difficulty, topic, sutra. Return a JSON array only, no markdown. ${DIGIT_SUM_RULE}`,
-  open: `Generate 30 Vedic Mathematics Olympiad MCQ questions for adults and competitive exam aspirants. All hard to very hard. Topics: all 16 sutras, calendar, auxiliary fractions, osculators, speed arithmetic, mental calculation tricks. Timed pressure questions. Each: question, options (array of 4 strings), answer (exact string matching one option), hint, difficulty, topic, sutra. Return a JSON array only, no markdown. ${DIGIT_SUM_RULE}`,
-};
 
 function LoadingScreen({ level }) {
   return (
@@ -663,8 +676,6 @@ export default function OlympiadPage() {
   const [level, setLevel] = useState(() => getOlympiadLevel(profile.grade));
   const [status, setStatus] = useState(getOlympiadStatus());
   const [questions, setQuestions] = useState(null);
-  const [loadingQ, setLoadingQ] = useState(false);
-  const [loadError, setLoadError] = useState(null);
 
   // Refresh status every 30s
   useEffect(() => {
@@ -672,60 +683,19 @@ export default function OlympiadPage() {
     return () => clearInterval(id);
   }, []);
 
-  // Load questions when live
+  // Load questions when live — static bank, shuffled deterministically per
+  // quarter+level so everyone at that level sees the same set/order for
+  // the quarter, no live AI call needed (that path is gone — it depended
+  // on base44, which no longer exists in this codebase).
   useEffect(() => {
     if (status !== 'live') return;
-    const cached = getCachedQuestions(level);
-    if (cached) { setQuestions(cached); return; }
-    setLoadingQ(true);
-    setLoadError(null);
-    base44.integrations.Core.InvokeLLM({
-      prompt: PROMPTS[level],
-      response_json_schema: {
-        type: 'object',
-        properties: {
-          questions: {
-            type: 'array',
-            items: {
-              type: 'object',
-              properties: {
-                question: { type: 'string' },
-                options: { type: 'array', items: { type: 'string' } },
-                answer: { type: 'string' },
-                hint: { type: 'string' },
-                difficulty: { type: 'string' },
-                topic: { type: 'string' },
-                sutra: { type: 'string' },
-              },
-            },
-          },
-        },
-      },
-    })
-      .then(res => {
-        const qs = res.questions || res;
-        const arr = Array.isArray(qs) ? qs : [];
-        setCachedQuestions(level, arr);
-        setQuestions(arr);
-        setLoadingQ(false);
-      })
-      .catch(err => {
-        setLoadError(err.message || 'Failed to load questions');
-        setLoadingQ(false);
-      });
+    const quarterId = getQuarterId();
+    const seed = seedFromQuarterAndLevel(quarterId, level);
+    const bank = OLYMPIAD_BANKS[level] || OLYMPIAD_BANKS.senior;
+    setQuestions(seededShuffle(bank, seed));
   }, [status, level]);
 
   if (status === 'live') {
-    if (loadingQ) return <LoadingScreen level={level} />;
-    if (loadError) return (
-      <div style={{ ...DARK_BG, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
-        <div style={{ textAlign: 'center' }}>
-          <div style={{ fontSize: 36, marginBottom: 12 }}>⚠️</div>
-          <p style={{ color: 'white', fontFamily: 'var(--font-body)', marginBottom: 16 }}>{loadError}</p>
-          <button onClick={() => window.location.reload()} style={{ padding: '10px 24px', background: '#F59E0B', color: '#0A1628', border: 'none', borderRadius: 10, cursor: 'pointer', fontFamily: 'var(--font-body)', fontWeight: 700 }}>Retry</button>
-        </div>
-      </div>
-    );
     if (questions) return <ExamInterface level={level} questions={questions} />;
     return null;
   }

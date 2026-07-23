@@ -7,10 +7,12 @@ import ModeSelector from '@/components/practice/ModeSelector';
 import SpeedDrill from '@/components/practice/SpeedDrill';
 import TopicPractice from '@/components/practice/TopicPractice';
 import ChallengeMode from '@/components/practice/ChallengeMode';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function PracticePage() {
   const navigate = useNavigate();
   const { user, loading } = useVedicAuth();
+  const { t } = useLanguage();
   const [mode, setMode] = useState(null); // null | 'speed' | 'topic' | 'challenge'
   const [selectedTopic, setSelectedTopic] = useState('ekadhikena');
 
@@ -26,10 +28,10 @@ export default function PracticePage() {
           {!mode && (
             <>
               <h1 className="font-heading" style={{ fontSize: 'clamp(24px,5vw,32px)', fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>
-                ⚡ Practice Arena
+                {t('practiceArenaTitle')}
               </h1>
               <p style={{ fontSize: 16, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 32 }}>
-                Sharpen your Vedic Maths speed with targeted practice
+                {t('practiceArenaSubtitle')}
               </p>
               <ModeSelector
                 selectedTopic={selectedTopic}

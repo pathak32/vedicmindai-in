@@ -21,23 +21,13 @@
       "name": "Daily Quiz",
       "shortName": "Quiz",
       "url": "/daily-quiz",
-      "icons": [
-        {
-          "src": "https://vedicmindai.in/icons/icon-192.png",
-          "sizes": "192x192"
-        }
-      ]
+      "chosenIconUrl": "https://vedicmindai.in/icons/icon-192.png"
     },
     {
       "name": "Learn",
       "shortName": "Learn",
       "url": "/learn",
-      "icons": [
-        {
-          "src": "https://vedicmindai.in/icons/icon-192.png",
-          "sizes": "192x192"
-        }
-      ]
+      "chosenIconUrl": "https://vedicmindai.in/icons/icon-192.png"
     }
   ],
   "generatorApp": "bubblewrap-cli",

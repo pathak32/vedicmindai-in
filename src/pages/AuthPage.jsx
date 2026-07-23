@@ -57,23 +57,23 @@ function SignUpForm({ onSwitchTab }) {
 
   const validateStep1 = () => {
     const e = {};
-    if (!name.trim())            e.name     = 'Name required';
-    if (!userType)               e.userType = 'Please select Student or Parent';
-    if (!grade)                  e.grade    = userType === 'parent' ? "Child's class required" : 'Your class required';
-    if (grade === 'other' && !customGrade.trim()) e.grade = 'Please specify the class';
-    if (!validateMobile(mobile, countryCode)) e.mobile = 'Please enter a valid mobile number for the selected country';
-    if (countryCode === 'OTHER' && !validateCustomCountryCode(customCountryCode)) e.mobile = 'Please enter a valid country code, e.g. +33';
-    if (!password || password.length < 8) e.password = 'Min 8 characters';
+    if (!name.trim())            e.name     = t('authErrNameRequired');
+    if (!userType)               e.userType = t('authErrSelectType');
+    if (!grade)                  e.grade    = userType === 'parent' ? t('authErrChildClassRequired') : t('authErrYourClassRequired');
+    if (grade === 'other' && !customGrade.trim()) e.grade = t('authErrSpecifyClass');
+    if (!validateMobile(mobile, countryCode)) e.mobile = t('authErrValidMobile');
+    if (countryCode === 'OTHER' && !validateCustomCountryCode(customCountryCode)) e.mobile = t('authErrValidCountryCode');
+    if (!password || password.length < 8) e.password = t('authErrMin8');
     return e;
   };
 
   const validateStep2 = () => {
     const e = {};
-    if (!validateDOB(dob))      e.dob    = 'Format: DD/MM/YYYY';
-    if (!secQ.trim())           e.secQ   = 'Security question required';
-    if (!secA.trim())           e.secA   = 'Security answer required';
-    if (!sameNum && !validateMobile(whatsapp, whatsappCountryCode)) e.whatsapp = 'Please enter a valid WhatsApp number for the selected country';
-    if (!sameNum && whatsappCountryCode === 'OTHER' && !validateCustomCountryCode(whatsappCustomCountryCode)) e.whatsapp = 'Please enter a valid country code, e.g. +33';
+    if (!validateDOB(dob))      e.dob    = t('authErrDobFormat');
+    if (!secQ.trim())           e.secQ   = t('authErrSecQRequired');
+    if (!secA.trim())           e.secA   = t('authErrSecARequired');
+    if (!sameNum && !validateMobile(whatsapp, whatsappCountryCode)) e.whatsapp = t('authErrValidWhatsapp');
+    if (!sameNum && whatsappCountryCode === 'OTHER' && !validateCustomCountryCode(whatsappCustomCountryCode)) e.whatsapp = t('authErrValidCountryCode');
     return e;
   };
 
@@ -111,10 +111,10 @@ function SignUpForm({ onSwitchTab }) {
         userType,
         grade: grade === 'other' ? customGrade.trim() : grade,
       });
-      toast.success('Account created! Welcome to VedicMindAI™ 🎉');
+      toast.success(t('authToastAccountCreated'));
       navigate(redirectTo || '/dashboard');
     } catch (err) {
-      toast.error(err.message || 'Sign up failed. Try again.');
+      toast.error(err.message || t('authToastSignupFailed'));
     } finally {
       setLoading(false);
     }
@@ -132,12 +132,12 @@ function SignUpForm({ onSwitchTab }) {
     <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:18 }}>
       <div style={{ display:'flex', alignItems:'center', gap:6, flex:1 }}>
         <div style={{ width:24, height:24, borderRadius:'50%', background:'#0A1628', color:'white', fontSize:12, fontWeight:700, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>1</div>
-        <span style={{ fontSize:12, fontWeight:600, color:'#0A1628' }}>Your basics</span>
+        <span style={{ fontSize:12, fontWeight:600, color:'#0A1628' }}>{t('authStepBasics')}</span>
       </div>
       <div style={{ flex:1, height:2, background: step >= 2 ? '#0A1628' : 'rgba(30,64,175,0.15)', borderRadius:1 }} />
       <div style={{ display:'flex', alignItems:'center', gap:6, flex:1 }}>
         <div style={{ width:24, height:24, borderRadius:'50%', background: step >= 2 ? '#0A1628' : 'rgba(30,64,175,0.15)', color: step >= 2 ? 'white' : '#9CA3AF', fontSize:12, fontWeight:700, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>2</div>
-        <span style={{ fontSize:12, fontWeight:600, color: step >= 2 ? '#0A1628' : '#9CA3AF' }}>Account recovery</span>
+        <span style={{ fontSize:12, fontWeight:600, color: step >= 2 ? '#0A1628' : '#9CA3AF' }}>{t('authStepRecovery')}</span>
       </div>
     </div>
   );
@@ -149,7 +149,7 @@ function SignUpForm({ onSwitchTab }) {
 
         {/* Name */}
         <div>
-          <label style={lbl}>Full Name *</label>
+          <label style={lbl}>{t('authFullName')}</label>
           <input value={name} onChange={e => setName(e.target.value)}
             placeholder="Hitesh Pathak" style={inp(errors.name)} autoFocus />
           {errors.name && <Err>{errors.name}</Err>}
@@ -157,7 +157,7 @@ function SignUpForm({ onSwitchTab }) {
 
         {/* Student or Parent */}
         <div>
-          <label style={lbl}>I am a *</label>
+          <label style={lbl}>{t('authIAmA')}</label>
           <div style={{ display:'flex', gap:10 }}>
             {['student','parent'].map(type => (
               <button key={type} type="button"
@@ -168,7 +168,7 @@ function SignUpForm({ onSwitchTab }) {
                   color: userType===type ? 'white' : '#4B5563',
                   fontFamily:'var(--font-body)', fontSize:14, fontWeight:600, cursor:'pointer',
                 }}>
-                {type === 'student' ? '🎓 Student' : '👨‍👩‍👧 Parent'}
+                {type === 'student' ? t('authStudent') : t('authParent')}
               </button>
             ))}
           </div>
@@ -179,33 +179,33 @@ function SignUpForm({ onSwitchTab }) {
         {userType && (
           <div>
             <label style={lbl}>
-              {userType === 'parent' ? "Child's Class *" : 'Your Class *'}
+              {userType === 'parent' ? t('authChildClass') : t('authYourClass')}
             </label>
             <select value={grade} onChange={e => { setGrade(e.target.value); setCustomGrade(''); }}
               style={{ ...inp(errors.grade), appearance:'none', cursor:'pointer' }}>
-              <option value="">-- Select Class --</option>
-              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>── Early Years ──</option>
-              <option value="Nursery">Nursery / LKG / UKG</option>
-              <option value="1">Class 1</option>
-              <option value="2">Class 2</option>
-              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>── Primary (App Supported) ──</option>
+              <option value="">{t('authSelectClass')}</option>
+              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>{t('authEarlyYears')}</option>
+              <option value="Nursery">{t('authNursery')}</option>
+              <option value="1">{t('authClassWord')} 1</option>
+              <option value="2">{t('authClassWord')} 2</option>
+              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>{t('authPrimarySupported')}</option>
               {['3','4','5','6','7','8','9','10'].map(g => (
-                <option key={g} value={g}>Class {g}</option>
+                <option key={g} value={g}>{t('authClassWord')} {g}</option>
               ))}
-              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>── Senior Secondary ──</option>
-              <option value="11">Class 11</option>
-              <option value="12">Class 12</option>
-              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>── Competitive Prep ──</option>
-              <option value="JEE">JEE Preparation</option>
-              <option value="NEET">NEET Preparation</option>
-              <option value="SSC">SSC / Government Exams</option>
-              <option value="other">Other (specify below)</option>
+              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>{t('authSeniorSecondary')}</option>
+              <option value="11">{t('authClassWord')} 11</option>
+              <option value="12">{t('authClassWord')} 12</option>
+              <option disabled style={{ color:'#9CA3AF', fontSize:12 }}>{t('authCompetitivePrep')}</option>
+              <option value="JEE">{t('authJEE')}</option>
+              <option value="NEET">{t('authNEET')}</option>
+              <option value="SSC">{t('authSSC')}</option>
+              <option value="other">{t('authOtherSpecify')}</option>
             </select>
             {grade === 'other' && (
               <input
                 value={customGrade}
                 onChange={e => setCustomGrade(e.target.value)}
-                placeholder="e.g. Adult learner, A-Levels, Class 13..."
+                placeholder={t('authCustomGradePlaceholder')}
                 style={{ ...inp(false), marginTop: 8 }}
                 autoFocus
               />
@@ -216,7 +216,7 @@ function SignUpForm({ onSwitchTab }) {
 
         {/* Mobile */}
         <div>
-          <label style={lbl}>Mobile Number *</label>
+          <label style={lbl}>{t('authMobileNumber')}</label>
           <MobileNumberInput
             countryCode={countryCode}
             onCountryCodeChange={setCountryCode}
@@ -224,7 +224,7 @@ function SignUpForm({ onSwitchTab }) {
             onCustomCountryCodeChange={setCustomCountryCode}
             mobile={mobile}
             onMobileChange={setMobile}
-            placeholder="Mobile number"
+            placeholder={t('authMobilePlaceholder')}
             hasError={!!errors.mobile}
           />
           {errors.mobile && <Err>{errors.mobile}</Err>}
@@ -232,11 +232,11 @@ function SignUpForm({ onSwitchTab }) {
 
         {/* Password */}
         <div>
-          <label style={lbl}>Password *</label>
+          <label style={lbl}>{t('authPassword')}</label>
           <div style={{ position:'relative' }}>
             <input type={showPass?'text':'password'} value={password}
               onChange={e => setPassword(e.target.value)}
-              placeholder="Min 8 characters"
+              placeholder={t('authPasswordPlaceholderMin')}
               style={{ ...inp(errors.password), paddingRight:44 }} />
             <button type="button" onClick={() => setShowPass(!showPass)}
               style={{ position:'absolute', right:12, top:'50%', transform:'translateY(-50%)', background:'none', border:'none', cursor:'pointer', fontSize:16, color:'#6B7280' }}>
@@ -248,10 +248,10 @@ function SignUpForm({ onSwitchTab }) {
 
         <button type="button" onClick={handleContinue}
           style={{ width:'100%', height:46, background:'#0A1628', color:'white', border:'none', borderRadius:12, fontSize:15, fontWeight:700, cursor:'pointer', marginTop:4 }}>
-          Continue →
+          {t('authContinue')}
         </button>
         <p style={{ textAlign:'center', fontSize:12, color:'#9CA3AF', margin:0 }}>
-          One more short step — just account recovery info
+          {t('authOneMoreStep')}
         </p>
       </div>
     );
@@ -266,12 +266,12 @@ function SignUpForm({ onSwitchTab }) {
         <input type="checkbox" id="sameNum" checked={sameNum} onChange={e => setSameNum(e.target.checked)}
           style={{ width:16, height:16, cursor:'pointer' }} />
         <label htmlFor="sameNum" style={{ fontSize:13, color:'#4B5563', cursor:'pointer' }}>
-          WhatsApp number is same as mobile
+          {t('authWhatsappSame')}
         </label>
       </div>
       {!sameNum && (
         <div>
-          <label style={lbl}>WhatsApp Number *</label>
+          <label style={lbl}>{t('authWhatsappNumber')}</label>
           <MobileNumberInput
             countryCode={whatsappCountryCode}
             onCountryCodeChange={setWhatsappCountryCode}
@@ -279,7 +279,7 @@ function SignUpForm({ onSwitchTab }) {
             onCustomCountryCodeChange={setWhatsappCustomCountryCode}
             mobile={whatsapp}
             onMobileChange={setWhatsapp}
-            placeholder="WhatsApp number"
+            placeholder={t('authWhatsappPlaceholder')}
             hasError={!!errors.whatsapp}
           />
           {errors.whatsapp && <Err>{errors.whatsapp}</Err>}
@@ -287,7 +287,7 @@ function SignUpForm({ onSwitchTab }) {
       )}
       {/* DOB */}
       <div>
-        <label style={lbl}>Date of Birth * (DD/MM/YYYY)</label>
+        <label style={lbl}>{t('authDOB')}</label>
         <input value={dob}
           onChange={e => {
             const raw = e.target.value.replace(/\D/g,'').slice(0,8);
@@ -302,48 +302,48 @@ function SignUpForm({ onSwitchTab }) {
 
       {/* Email (optional) */}
       <div>
-        <label style={lbl}>Email <span style={{ color:'#9CA3AF', fontSize:12 }}>(optional — for password recovery)</span></label>
+        <label style={lbl}>{t('authEmail')} <span style={{ color:'#9CA3AF', fontSize:12 }}>{t('authEmailOptional')}</span></label>
         <input type="email" value={email} onChange={e => setEmail(e.target.value)}
           placeholder="you@email.com" style={inp(false)} />
       </div>
       {/* Referral Code (optional) */}
       <div>
-        <label style={lbl}>Referral Code <span style={{ color:'#9CA3AF', fontSize:12 }}>(optional)</span></label>
+        <label style={lbl}>{t('authReferralCode')} <span style={{ color:'#9CA3AF', fontSize:12 }}>{t('authOptional')}</span></label>
         <input type="text" value={referralCode} onChange={e => setReferralCode(e.target.value)}
-          placeholder="Enter code if you have one" style={inp(false)} />
+          placeholder={t('authReferralPlaceholder')} style={inp(false)} />
       </div>
 
       {/* Security Question */}
       <div>
-        <label style={lbl}>Security Question * <span style={{ color:'#9CA3AF', fontSize:12 }}>(for forgot password)</span></label>
+        <label style={lbl}>{t('authSecurityQuestion')} <span style={{ color:'#9CA3AF', fontSize:12 }}>{t('authForgotPasswordHint')}</span></label>
         <select value={secQ} onChange={e => setSecQ(e.target.value)}
           style={{ ...inp(errors.secQ), appearance:'none', cursor:'pointer' }}>
-          <option value="">-- Select a question --</option>
-          <option>What is your mother's maiden name?</option>
-          <option>What was the name of your first pet?</option>
-          <option>What city were you born in?</option>
-          <option>What is your favourite teacher's name?</option>
-          <option>What was the name of your primary school?</option>
+          <option value="">{t('authSelectQuestion')}</option>
+          <option>{t('authSecQ1')}</option>
+          <option>{t('authSecQ2')}</option>
+          <option>{t('authSecQ3')}</option>
+          <option>{t('authSecQ4')}</option>
+          <option>{t('authSecQ5')}</option>
         </select>
         {errors.secQ && <Err>{errors.secQ}</Err>}
       </div>
 
       {/* Security Answer */}
       <div>
-        <label style={lbl}>Answer *</label>
+        <label style={lbl}>{t('authAnswer')}</label>
         <input value={secA} onChange={e => setSecA(e.target.value)}
-          placeholder="Your answer (case-insensitive)" style={inp(errors.secA)} />
+          placeholder={t('authAnswerPlaceholder')} style={inp(errors.secA)} />
         {errors.secA && <Err>{errors.secA}</Err>}
       </div>
 
       <div style={{ display:'flex', gap:10, marginTop:4 }}>
         <button type="button" onClick={() => setStep(1)}
           style={{ height:46, padding:'0 18px', background:'white', color:'#0A1628', border:'1.5px solid rgba(30,64,175,0.2)', borderRadius:12, fontSize:15, fontWeight:600, cursor:'pointer' }}>
-          ← Back
+          {t('authBack')}
         </button>
         <button type="button" onClick={handleSignUp} disabled={loading}
           style={{ flex:1, height:46, background: loading?'#6B7280':'#0A1628', color:'white', border:'none', borderRadius:12, fontSize:15, fontWeight:700, cursor: loading?'not-allowed':'pointer' }}>
-          {loading ? 'Creating Account…' : 'Create Account →'}
+          {loading ? t('authCreatingAccount') : t('authCreateAccount')}
         </button>
       </div>
     </div>
@@ -366,19 +366,19 @@ function SignInForm({ onSwitchTab }) {
   const [loading, setLoading] = useState(false);
   const handleSignIn = async () => {
     const e = {};
-    if (!validateMobile(mobile, countryCode)) e.mobile = 'Please enter a valid mobile number for the selected country';
-    if (countryCode === 'OTHER' && !validateCustomCountryCode(customCountryCode)) e.mobile = 'Please enter a valid country code, e.g. +33';
-    if (!password)               e.password = 'Password required';
+    if (!validateMobile(mobile, countryCode)) e.mobile = t('authErrValidMobile');
+    if (countryCode === 'OTHER' && !validateCustomCountryCode(customCountryCode)) e.mobile = t('authErrValidCountryCode');
+    if (!password)               e.password = t('authErrPasswordRequired');
     setErrors(e);
     if (Object.keys(e).length) return;
     setLoading(true);
     try {
       const countryInfo = resolveCountryInfo(countryCode, customCountryCode);
       await signInWithPassword({ mobile: `${countryInfo.code}${mobile}`, password });
-      toast.success('Welcome back! 🎉');
+      toast.success(t('authToastWelcomeBack'));
       navigate(redirectTo || '/dashboard');
     } catch (err) {
-      toast.error(err.message || 'Login failed. Check your number & password.');
+      toast.error(err.message || t('authToastLoginFailed'));
     } finally {
       setLoading(false);
     }
@@ -392,7 +392,7 @@ function SignInForm({ onSwitchTab }) {
   return (
     <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
       <div>
-        <label style={lbl}>Mobile Number *</label>
+        <label style={lbl}>{t('authMobileNumber')}</label>
         <MobileNumberInput
           countryCode={countryCode}
           onCountryCodeChange={setCountryCode}
@@ -400,17 +400,17 @@ function SignInForm({ onSwitchTab }) {
           onCustomCountryCodeChange={setCustomCountryCode}
           mobile={mobile}
           onMobileChange={setMobile}
-          placeholder="Mobile number"
+          placeholder={t('authMobilePlaceholder')}
           hasError={!!errors.mobile}
         />
         {errors.mobile && <Err>{errors.mobile}</Err>}
       </div>
       <div>
-        <label style={lbl}>Password *</label>
+        <label style={lbl}>{t('authPassword')}</label>
         <div style={{ position:'relative' }}>
           <input type={showPass?'text':'password'} value={password}
             onChange={e => setPassword(e.target.value)}
-            placeholder="Your password"
+            placeholder={t('authYourPassword')}
             style={{ ...inp(errors.password), paddingRight:44 }} />
           <button type="button" onClick={() => setShowPass(!showPass)}
             style={{ position:'absolute', right:12, top:'50%', transform:'translateY(-50%)', background:'none', border:'none', cursor:'pointer', fontSize:16, color:'#6B7280' }}>
@@ -427,7 +427,7 @@ function SignInForm({ onSwitchTab }) {
       </div>
       <button type="button" onClick={handleSignIn} disabled={loading}
         style={{ width:'100%', height:46, background: loading?'#6B7280':'#0A1628', color:'white', border:'none', borderRadius:12, fontSize:15, fontWeight:700, cursor: loading?'not-allowed':'pointer' }}>
-        {loading ? 'Signing In…' : 'Sign In →'}
+        {loading ? t('authSigningIn') : t('authSignInSubmit')}
       </button>
     </div>
   );
@@ -486,15 +486,15 @@ export default function AuthPage() {
         <div style={{ position:'relative', zIndex:2, textAlign:'center', maxWidth:360 }}>
           <span style={{ fontSize:64, display:'block', marginBottom:24 }}>🧮</span>
           <h2 className="font-heading" style={{ fontSize:34, fontWeight:700, color:'white', lineHeight:1.2, marginBottom:24, whiteSpace:'pre-line' }}>
-            {"Ancient Wisdom.\nInfinite Speed."}
+            {t('authHeroTagline')}
           </h2>
           <div style={{ display:'flex', flexDirection:'column', gap:14, textAlign:'left' }}>
             {[
-              '40 Vedic Maths lessons — Beginner to Master',
-              'AI Tutor available 24/7',
-              'Daily Quiz, Leaderboard & Aptitude 🎉',
-              '⚡ Battle Mode & Weekly Exam — Live!',
-              '🔒 No OTP needed — Simple Password Login',
+              t('authHeroPoint1'),
+              t('authHeroPoint2'),
+              t('authHeroPoint3'),
+              t('authHeroPoint4'),
+              t('authHeroPoint5'),
             ].map(point => (
               <div key={point} style={{ display:'flex', alignItems:'center', gap:12 }}>
                 <div style={{ width:20, height:20, borderRadius:'50%', background:'rgba(255,255,255,0.15)', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, fontSize:11, color:'white' }}>✓</div>
@@ -522,10 +522,10 @@ export default function AuthPage() {
           </div>
 
           <p style={{ textAlign:'center', fontSize:13, color:'#6B7280', marginTop:16 }}>
-            {tab === 'signin' ? "Don't have an account? " : 'Already have an account? '}
+            {tab === 'signin' ? t('authDontHaveAccount') : t('authAlreadyHaveAccount')}
             <button type="button" onClick={() => setTab(tab==='signin'?'signup':'signin')}
               style={{ background:'none', border:'none', cursor:'pointer', color:'#3B82F6', fontWeight:700, fontSize:13 }}>
-              {tab === 'signin' ? 'Sign Up' : 'Sign In'}
+              {tab === 'signin' ? t('signUp') : t('signIn')}
             </button>
           </p>
         </div>

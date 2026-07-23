@@ -5,6 +5,7 @@ import { getSupabase } from '@/lib/supabaseClient';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { toast } from 'sonner';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const glass = {
   background: 'rgba(255,255,255,0.75)',
@@ -14,14 +15,6 @@ const glass = {
   boxShadow: '0 8px 32px rgba(10,22,40,0.08)',
   borderRadius: 16,
 };
-
-const CLASSES = [
-  { id: '6',  label: 'Class 6',  tagline: 'Foundation Sutras — Squaring & Simple Multiplication' },
-  { id: '7',  label: 'Class 7',  tagline: 'Building Speed — Squaring, Near-Base Multiplication & 11s' },
-  { id: '8',  label: 'Class 8',  tagline: 'Sharpening Skills — Cross Multiplication & Near-Base Mastery' },
-  { id: '9',  label: 'Class 9',  tagline: 'Intermediate Mastery — Cubing, 3-Digit Multiplication & Speed' },
-  { id: '10', label: 'Class 10', tagline: 'Exam-Ready Speed — Cubing, Square/Cube Roots, Board Style' },
-];
 
 const MONTH_LABEL = 'June 2026';
 
@@ -48,7 +41,7 @@ function ClassCard({ cls, onSelect, selected }) {
   );
 }
 
-function ScoreSubmitForm({ onSubmitted }) {
+function ScoreSubmitForm({ onSubmitted, classes, t }) {
   const { user } = useVedicAuth();
   const [classId, setClassId] = useState('8');
   const [score, setScore] = useState('');
@@ -57,7 +50,7 @@ function ScoreSubmitForm({ onSubmitted }) {
 
   const handleSubmit = async () => {
     if (!score || Number(score) < 0 || Number(score) > Number(total)) {
-      toast.error('Please enter a valid score (0 to ' + total + ').');
+      toast.error(`${t('slErrValidScore')} ${total}).`);
       return;
     }
     setLoading(true);
@@ -73,12 +66,12 @@ function ScoreSubmitForm({ onSubmitted }) {
         status: 'pending_review',
       });
       if (error) throw error;
-      toast.success('Score submitted! Our team will review it and apply your discount within 48 hours. 🎉');
+      toast.success(t('slSuccessMsg'));
       setScore('');
       onSubmitted && onSubmitted();
     } catch (err) {
       console.error('Screenless submission error:', err.message);
-      toast.error('Could not submit right now. Please try again in a moment.');
+      toast.error(t('slErrGeneric'));
     } finally {
       setLoading(false);
     }
@@ -93,31 +86,31 @@ function ScoreSubmitForm({ onSubmitted }) {
   return (
     <div style={{ ...glass, padding: 24 }}>
       <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>
-        📤 Submit Your Score
+        {t('slSubmitScoreTitle')}
       </h3>
       <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#6B7280', marginBottom: 18, lineHeight: 1.5 }}>
-        Completed a mock test offline? Submit your score below — our team reviews submissions and applies a subscription discount within 48 hours.
+        {t('slSubmitScoreDesc')}
       </p>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 14 }}>
         <div>
-          <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#374151', marginBottom: 4 }}>Class</label>
+          <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#374151', marginBottom: 4 }}>{t('slClassLabel')}</label>
           <select value={classId} onChange={e => setClassId(e.target.value)} style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}>
-            {CLASSES.map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
+            {classes.map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
           </select>
         </div>
         <div>
-          <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#374151', marginBottom: 4 }}>Total Questions</label>
+          <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#374151', marginBottom: 4 }}>{t('slTotalQuestions')}</label>
           <input value={total} onChange={e => setTotal(e.target.value.replace(/\D/g, ''))} style={inputStyle} />
         </div>
       </div>
 
       <div style={{ marginBottom: 18 }}>
-        <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#374151', marginBottom: 4 }}>Your Score (out of {total || '35'})</label>
+        <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#374151', marginBottom: 4 }}>{t('slYourScore')} {total || '35'})</label>
         <input
           type="number" min="0" max={total || 35} value={score}
           onChange={e => setScore(e.target.value)}
-          placeholder="e.g. 28"
+          placeholder={t('slScorePlaceholder')}
           style={inputStyle}
         />
       </div>
@@ -131,7 +124,7 @@ function ScoreSubmitForm({ onSubmitted }) {
           cursor: loading ? 'not-allowed' : 'pointer', fontFamily: 'var(--font-body)',
         }}
       >
-        {loading ? 'Submitting…' : 'Submit Score →'}
+        {loading ? t('slSubmitting') : t('slSubmitBtn')}
       </button>
     </div>
   );
@@ -139,8 +132,17 @@ function ScoreSubmitForm({ onSubmitted }) {
 
 export default function ScreenlessLearningPage() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [selectedClass, setSelectedClass] = useState('8');
   const [submitted, setSubmitted] = useState(false);
+
+  const CLASSES = [
+    { id: '6',  label: `${t('authClassWord')} 6`,  tagline: t('slClass6Tagline') },
+    { id: '7',  label: `${t('authClassWord')} 7`,  tagline: t('slClass7Tagline') },
+    { id: '8',  label: `${t('authClassWord')} 8`,  tagline: t('slClass8Tagline') },
+    { id: '9',  label: `${t('authClassWord')} 9`,  tagline: t('slClass9Tagline') },
+    { id: '10', label: `${t('authClassWord')} 10`, tagline: t('slClass10Tagline') },
+  ];
 
   const pdfUrl = `/screenless/VedicMind_Screenless_Class${selectedClass}_June2026.pdf`;
 
@@ -159,30 +161,30 @@ export default function ScreenlessLearningPage() {
             marginBottom: 16, minHeight: 44,
           }}
         >
-          ← Back to Dashboard
+          {t('slBackToDashboard')}
         </button>
 
         {/* Hero */}
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <span style={{ fontSize: 40, display: 'block', marginBottom: 8 }}>📝</span>
           <h1 className="font-heading" style={{ fontSize: 'clamp(26px,5vw,34px)', fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>
-            Screenless Teaching
+            {t('slHeroTitle')}
           </h1>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563', margin: 0 }}>
-            Offline mock tests, fresh every month — pen, paper, and focus.
+            {t('slHeroSubtitle')}
           </p>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 14,
             background: '#ECFDF5', border: '1px solid #A7F3D0', borderRadius: 99,
             padding: '6px 16px', fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#065F46',
           }}>
-            🎁 Submit your score to unlock a subscription discount
+            {t('slHeroBadge')}
           </div>
         </div>
 
         {/* Class selector */}
         <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 16, fontWeight: 700, color: '#0A1628', marginBottom: 12 }}>
-          Choose your class
+          {t('slChooseClass')}
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 10, marginBottom: 28 }}>
           {CLASSES.map(c => (
@@ -197,10 +199,10 @@ export default function ScreenlessLearningPage() {
             borderRadius: 99, padding: '4px 14px', fontSize: 12, fontWeight: 700,
             fontFamily: 'var(--font-body)', marginBottom: 10,
           }}>
-            {MONTH_LABEL} Set
+            {MONTH_LABEL} {t('slMonthSet')}
           </div>
           <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>
-            {CLASSES.find(c => c.id === selectedClass)?.label} — Mock Test Booklet
+            {CLASSES.find(c => c.id === selectedClass)?.label} {t('slMockTestBooklet')}
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#6B7280', marginBottom: 20, maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>
             {CLASSES.find(c => c.id === selectedClass)?.tagline}
@@ -208,10 +210,10 @@ export default function ScreenlessLearningPage() {
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: '12px 24px', flexWrap: 'wrap', marginBottom: 22 }}>
             {[
-              { icon: '📄', text: '5 Mock Tests' },
-              { icon: '🧮', text: '35 Questions' },
-              { icon: '⏱️', text: '~20 min/paper' },
-              { icon: '💰', text: 'Rs. 49/month' },
+              { icon: '📄', text: t('slStat1') },
+              { icon: '🧮', text: t('slStat2') },
+              { icon: '⏱️', text: t('slStat3') },
+              { icon: '💰', text: t('slStat4') },
             ].map(item => (
               <div key={item.text} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                 <span style={{ fontSize: 16 }}>{item.icon}</span>
@@ -233,16 +235,16 @@ export default function ScreenlessLearningPage() {
               fontSize: 15, fontWeight: 700, minHeight: 48,
             }}
           >
-            ⬇️ Download {CLASSES.find(c => c.id === selectedClass)?.label} PDF
+            {t('slDownloadBtn')} {CLASSES.find(c => c.id === selectedClass)?.label} {t('slDownloadBtnSuffix')}
           </motion.a>
         </div>
 
         {/* Score submission */}
-        <ScoreSubmitForm onSubmitted={() => setSubmitted(true)} />
+        <ScoreSubmitForm onSubmitted={() => setSubmitted(true)} classes={CLASSES} t={t} />
 
         {/* Footer note */}
         <p style={{ textAlign: 'center', fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', marginTop: 24 }}>
-          A brand-new set drops every month — same price, fresh questions. Available in Hindi soon.
+          {t('slFooterNote')}
         </p>
 
       </main>

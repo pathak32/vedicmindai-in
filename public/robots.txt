@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Auth-gated app pages — nothing for a logged-out crawler to index here
+Disallow: /dashboard
+Disallow: /learn
+Disallow: /practice
+Disallow: /daily-quiz
+Disallow: /weekly-exam
+Disallow: /olympiad
+Disallow: /battle
+Disallow: /leaderboard
+Disallow: /profile
+Disallow: /admin-panel
+
+Sitemap: https://www.vedicmindai.in/sitemap.xml

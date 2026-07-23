@@ -2,17 +2,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 
-const rows = [
-  { feature: 'Structured 40-Lesson Curriculum', us: '✅', them: '❌', usSub: null },
-  { feature: 'AI Personal Tutor',               us: '✅', them: '❌', usSub: null },
-  { feature: 'Class-based Competitions',         us: '✅', them: '❌', usSub: null },
-  { feature: 'Daily Quiz + Olympiad',            us: '✅', them: '❌', usSub: null },
-  { feature: 'Progress Tracking + XP',           us: '✅', them: '⚠️', usSub: null, themSub: 'partial' },
-  { feature: 'Hindi + Regional Languages',       us: '✅', them: '❌', usSub: 'Coming Soon' },
-  { feature: 'Free Trial — Full Access',         us: '✅', them: '⚠️', usSub: '7 Days', themSub: 'Limited' },
-];
-
 export default function ComparisonSection() {
+  const { t } = useLanguage();
+
+  const rows = [
+    { feature: t('comparisonRow1'), us: '✅', them: '❌', usSub: null },
+    { feature: t('comparisonRow2'), us: '✅', them: '❌', usSub: null },
+    { feature: t('comparisonRow3'), us: '✅', them: '❌', usSub: null },
+    { feature: t('comparisonRow4'), us: '✅', them: '❌', usSub: null },
+    { feature: t('comparisonRow5'), us: '✅', them: '⚠️', usSub: null, themSub: t('comparisonRow5Sub') },
+    { feature: t('comparisonRow6'), us: '✅', them: '❌', usSub: t('comparisonRow6Sub') },
+    { feature: t('comparisonRow7'), us: '✅', them: '⚠️', usSub: t('comparisonRow7UsSub'), themSub: t('comparisonRow7ThemSub') },
+  ];
+
   return (
     <section style={{ background: '#F8FAFF', padding: '80px 0' }}>
       <div style={{ maxWidth: 700, margin: '0 auto', padding: '0 16px' }}>
@@ -23,10 +25,10 @@ export default function ComparisonSection() {
           style={{ textAlign: 'center', marginBottom: 32 }}
         >
           <h2 className="font-heading" style={{ fontSize: 'clamp(24px,4vw,32px)', fontWeight: 700, color: '#0A1628', margin: '0 0 10px' }}>
-            Why VedicMind is Different
+            {t('comparisonTitle')}
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: '#4B5563', margin: 0 }}>
-            Not just tricks — a complete AI-powered learning system
+            {t('comparisonSubtitle')}
           </p>
         </motion.div>
 
@@ -57,7 +59,7 @@ export default function ComparisonSection() {
               textAlign: 'center',
               fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#4B5563',
             }}>
-              Other Apps
+              {t('comparisonThemHeader')}
             </div>
           </div>
 

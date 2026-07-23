@@ -30,10 +30,11 @@ export default function TermsPage() {
       <p style={s.p}>By downloading, installing, or using VedicMindAI™ ("App", "Service") operated by VedicMindAI™ (UDYAM-UP-50-0073523), you agree to be bound by these Terms & Conditions. If you do not agree, do not use the Service.</p>
 
       <h2 style={s.h2}>2. Description of Service</h2>
-      <p style={s.p}>VedicMindAI™ is an AI-powered Vedic Mathematics learning platform providing:</p>
+      <p style={s.p}>VedicMindAI™ is an AI-powered learning platform built on three pillars — Vedic Mathematics, Intelligent Reasoning, and Mindful Aptitude (coming soon) — providing:</p>
       <ul>
         <li style={s.li}>40+ structured Vedic Mathematics lessons</li>
-        <li style={s.li}>Daily Quiz, Weekly Exam, and Olympiad competitions</li>
+        <li style={s.li}>Intelligent Reasoning chapters covering verbal and non-verbal reasoning</li>
+        <li style={s.li}>Daily Quiz, Weekly Exam, and Olympiad competitions spanning Vedic Maths and Reasoning</li>
         <li style={s.li}>AI-powered practice and aptitude tests</li>
         <li style={s.li}>Leaderboard and progress tracking</li>
         <li style={s.li}>Subscription-based premium content</li>
@@ -62,7 +63,7 @@ export default function TermsPage() {
       </ul>
 
       <h2 style={s.h2}>6. Refund Policy</h2>
-      <p style={s.p}>We offer a 7-day money-back guarantee for first-time subscribers. Refund requests after 7 days are evaluated on a case-by-case basis. To request a refund, email <a href="mailto:hitesh@vedicmindai.in">hitesh@vedicmindai.in</a> within the eligible period.</p>
+      <p style={s.p}>We offer a 7-day money-back guarantee for first-time subscribers. Refund requests after 7 days are evaluated on a case-by-case basis. To request a refund, email <a href="mailto:admin@vedicmindai.in">admin@vedicmindai.in</a> within the eligible period.</p>
 
       <h2 style={s.h2}>7. Intellectual Property</h2>
       <p style={s.p}>All content on VedicMindAI™ — including lessons, questions, UI design, logos, and the VedicMindAI™ trademark (filed under Classes 9, 41 & 42; App. Nos. 7785746, 7785747, 7785748) — is owned by VedicMindAI™. You may not copy, reproduce, distribute, or create derivative works without written permission.</p>
@@ -87,7 +88,7 @@ export default function TermsPage() {
       <p style={s.p}>VedicMindAI™'s liability is limited to the amount paid by you in the 3 months preceding the claim. We are not liable for indirect, incidental, or consequential damages.</p>
 
       <h2 style={s.h2}>12. Privacy</h2>
-      <p style={s.p}>Your use of the Service is also governed by our <Link to="/privacy-policy" style={{ color: '#1e40af' }}>Privacy Policy</Link>, which is incorporated by reference into these Terms.</p>
+      <p style={s.p}>Your use of the Service is also governed by our <Link to="/privacy" style={{ color: '#1e40af' }}>Privacy Policy</Link>, which is incorporated by reference into these Terms.</p>
 
       <h2 style={s.h2}>13. Account Deletion</h2>
       <p style={s.p}>You may delete your account at any time from Profile → Account Settings → Delete Account. Upon deletion, all your personal data, progress, and quiz history will be permanently removed within 30 days, except where retention is required by law.</p>
@@ -100,7 +101,7 @@ export default function TermsPage() {
 
       <h2 style={s.h2}>16. Contact Us</h2>
       <p style={s.p}>
-        <strong>Email:</strong> hitesh@vedicmindai.in<br/>
+        <strong>Email:</strong> admin@vedicmindai.in<br/>
         <strong>Website:</strong> https://vedicmindai.in<br/>
         <strong>Address:</strong> Lucknow, Uttar Pradesh, India<br/>
         <strong>UDYAM Registration:</strong> UDYAM-UP-50-0073523
