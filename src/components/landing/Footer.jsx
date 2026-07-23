@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div className="flex flex-col items-center md:items-center gap-3">
+          <div className="flex flex-row items-center justify-center gap-6">
             <Link to="/privacy" className="text-base text-blue-200 hover:text-white transition-colors">{t('privacy')}</Link>
             <Link to="/terms" className="text-base text-blue-200 hover:text-white transition-colors">{t('terms')}</Link>
             <a href="#contact" onClick={scrollToContact} className="text-base text-blue-200 hover:text-white transition-colors">{t('contact')}</a>
