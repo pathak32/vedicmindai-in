@@ -6,50 +6,88 @@ import { ProgressProvider } from '@/lib/ProgressContext';
 import { ProfileProvider } from '@/lib/ProfileContext';
 import ScrollToTop from '@/lib/ScrollToTop';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { Toaster } from "sonner";
-import LandingPage from '@/pages/LandingPage';
-import ReasoningPilotPage from '@/pages/ReasoningPilotPage';
-import ReasoningChapterPage from '@/pages/reasoning/ReasoningChapterPage';
-import MyBattlesPage from '@/pages/MyBattlesPage';
-import AuthPage from '@/pages/AuthPage';
-import OnboardingPage from '@/pages/OnboardingPage';
-import DashboardPage from '@/pages/DashboardPage';
-import ParentDashboardPage from '@/pages/ParentDashboardPage';
-import LiveClassPage from '@/pages/LiveClassPage';
-import LifeSkillsHubPage from '@/pages/LifeSkillsHubPage';
-import KnowledgePointsPage from '@/pages/KnowledgePointsPage';
-import LifeSkillsTrackPage from '@/pages/LifeSkillsTrackPage';
-import LearnPage from '@/pages/LearnPage';
-import PracticePage from '@/pages/PracticePage';
-import ProfilePage from '@/pages/ProfilePage';
-import NotFoundPage from '@/pages/NotFoundPage';
-import DemoPage from '@/pages/DemoPage';
-import CurriculumPage from '@/pages/CurriculumPage';
-import DailyQuizPage from '@/pages/DailyQuizPage';
-import DailyQuizResultsPage from '@/pages/DailyQuizResultsPage';
-import LeaderboardPage from '@/pages/LeaderboardPage';
-import AptitudeZonePage from '@/pages/AptitudeZonePage';
-import AptitudeComingSoonPage from '@/pages/AptitudeComingSoonPage';
-import AdminPanel from '@/pages/AdminPanel';
-import PricingPage from '@/pages/PricingPage';
-import WeeklyExamPage from '@/pages/WeeklyExamPage';
-import WeeklyExamResultsPage from '@/pages/WeeklyExamResultsPage';
-import OlympiadPage from '@/pages/OlympiadPage';
-import OlympiadResultsPage from '@/pages/OlympiadResultsPage';
-import BattleModePage from '@/pages/BattleModePage';
-import PaymentSuccessPage from '@/pages/PaymentSuccessPage';
-import ReviewsPage from '@/pages/ReviewsPage';
-import ScreenlessLearningPage from '@/pages/ScreenlessLearningPage';
-import ReportCardPage from '@/pages/ReportCardPage';
-import ForgotPassword from '@/pages/ForgotPassword';
-import TermsPage from '@/pages/TermsPage';
-import CollaboratePage from '@/pages/CollaboratePage';
-import ResetPasswordPage from '@/pages/ResetPasswordPage';
+import ProfileCompletionGate from '@/components/ProfileCompletionGate';
 import MobileBottomNav from '@/components/MobileLayout';
 import MobileAppHeader from '@/components/MobileAppHeader';
 
+// ---------------------------------------------------------------------------
+// Lazy-loaded pages — each page's JS is only downloaded when first navigated to.
+// This splits the single large bundle into per-route chunks, dramatically
+// reducing the initial JS payload that was causing the 6 s mobile LCP.
+// ---------------------------------------------------------------------------
+const LandingPage            = lazy(() => import('@/pages/LandingPage'));
+const BlogListPage           = lazy(() => import('@/pages/BlogListPage'));
+const BlogPostPage           = lazy(() => import('@/pages/BlogPostPage'));
+const ReasoningPilotPage     = lazy(() => import('@/pages/ReasoningPilotPage'));
+const ReasoningChapterPage   = lazy(() => import('@/pages/reasoning/ReasoningChapterPage'));
+const MyBattlesPage          = lazy(() => import('@/pages/MyBattlesPage'));
+const AuthPage               = lazy(() => import('@/pages/AuthPage'));
+const OnboardingPage         = lazy(() => import('@/pages/OnboardingPage'));
+const DashboardPage          = lazy(() => import('@/pages/DashboardPage'));
+const ParentDashboardPage    = lazy(() => import('@/pages/ParentDashboardPage'));
+const LiveClassPage          = lazy(() => import('@/pages/LiveClassPage'));
+const LifeSkillsHubPage      = lazy(() => import('@/pages/LifeSkillsHubPage'));
+const KnowledgePointsPage    = lazy(() => import('@/pages/KnowledgePointsPage'));
+const LifeSkillsTrackPage    = lazy(() => import('@/pages/LifeSkillsTrackPage'));
+const LearnPage              = lazy(() => import('@/pages/LearnPage'));
+const PracticePage           = lazy(() => import('@/pages/PracticePage'));
+const ProfilePage            = lazy(() => import('@/pages/ProfilePage'));
+const NotFoundPage           = lazy(() => import('@/pages/NotFoundPage'));
+const DemoPage               = lazy(() => import('@/pages/DemoPage'));
+const CurriculumPage         = lazy(() => import('@/pages/CurriculumPage'));
+const DailyQuizPage          = lazy(() => import('@/pages/DailyQuizPage'));
+const DailyQuizResultsPage   = lazy(() => import('@/pages/DailyQuizResultsPage'));
+const LeaderboardPage        = lazy(() => import('@/pages/LeaderboardPage'));
+const AptitudeZonePage       = lazy(() => import('@/pages/AptitudeZonePage'));
+const AptitudeComingSoonPage = lazy(() => import('@/pages/AptitudeComingSoonPage'));
+const AdminPanel             = lazy(() => import('@/pages/AdminPanel'));
+const PricingPage            = lazy(() => import('@/pages/PricingPage'));
+const WeeklyExamPage         = lazy(() => import('@/pages/WeeklyExamPage'));
+const WeeklyExamResultsPage  = lazy(() => import('@/pages/WeeklyExamResultsPage'));
+const OlympiadPage           = lazy(() => import('@/pages/OlympiadPage'));
+const OlympiadResultsPage    = lazy(() => import('@/pages/OlympiadResultsPage'));
+const BattleModePage         = lazy(() => import('@/pages/BattleModePage'));
+const PaymentSuccessPage     = lazy(() => import('@/pages/PaymentSuccessPage'));
+const ReviewsPage            = lazy(() => import('@/pages/ReviewsPage'));
+const ScreenlessLearningPage = lazy(() => import('@/pages/ScreenlessLearningPage'));
+const ReportCardPage         = lazy(() => import('@/pages/ReportCardPage'));
+const ForgotPassword         = lazy(() => import('@/pages/ForgotPassword'));
+const TermsPage              = lazy(() => import('@/pages/TermsPage'));
+const PrivacyPolicy          = lazy(() => import('@/pages/PrivacyPolicy'));
+const CollaboratePage        = lazy(() => import('@/pages/CollaboratePage'));
+const ResetPasswordPage      = lazy(() => import('@/pages/ResetPasswordPage'));
+
+// ---------------------------------------------------------------------------
+// Minimal spinner shown while a lazy chunk is downloading (typically <300 ms
+// on a real connection — just prevents a blank flash).
+// ---------------------------------------------------------------------------
+function PageLoader() {
+  return (
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: '60vh',
+    }}>
+      <div style={{
+        width: 40,
+        height: 40,
+        border: '3px solid rgba(139, 92, 246, 0.2)',
+        borderTopColor: '#8b5cf6',
+        borderRadius: '50%',
+        animation: 'vm-spin 0.7s linear infinite',
+      }} />
+      <style>{`@keyframes vm-spin { to { transform: rotate(360deg); } }`}</style>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Syncs Tailwind dark-mode class with the OS preference
+// ---------------------------------------------------------------------------
 function DarkModeSync() {
   useEffect(() => {
     const apply = (e) => {
@@ -67,6 +105,10 @@ function DarkModeSync() {
   return null;
 }
 
+// ---------------------------------------------------------------------------
+// /learn and /practice stay mounted after first visit so tab-switching is
+// instant. All other routes use AnimatePresence for the slide transition.
+// ---------------------------------------------------------------------------
 const PERSISTENT_TABS = ['/learn', '/practice'];
 
 function RouteTransition() {
@@ -96,8 +138,10 @@ function RouteTransition() {
           style={{ display: location.pathname === path ? 'block' : 'none' }}
           aria-hidden={location.pathname !== path}
         >
-          {path === '/learn' && <LearnPage />}
-          {path === '/practice' && <PracticePage />}
+          <Suspense fallback={<PageLoader />}>
+            {path === '/learn'    && <LearnPage />}
+            {path === '/practice' && <PracticePage />}
+          </Suspense>
         </div>
       ))}
 
@@ -111,43 +155,50 @@ function RouteTransition() {
             transition={{ duration: 0.18, ease: 'easeInOut' }}
             style={{ width: '100%' }}
           >
-            <Routes location={location}>
-              <Route path="/" element={<LandingPage />} />
-              <Route path="/reasoning-pilot" element={<ReasoningPilotPage />} />
-              <Route path="/reasoning" element={<ReasoningChapterPage />} />
-              <Route path="/reasoning/:chapterId" element={<ReasoningChapterPage />} />
-              <Route path="/my-battles" element={<MyBattlesPage />} />
-              <Route path="/auth" element={<AuthPage />} />
-              <Route path="/onboarding" element={<OnboardingPage />} />
-              <Route path="/dashboard" element={<DashboardPage />} />
-              <Route path="/progress-report" element={<ParentDashboardPage />} />
-              <Route path="/live-class/:classId" element={<LiveClassPage />} />
-              <Route path="/life-skills" element={<LifeSkillsHubPage />} />
-              <Route path="/life-skills/:trackId" element={<LifeSkillsTrackPage />} />
-              <Route path="/knowledge-points" element={<KnowledgePointsPage />} />
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path="/demo" element={<DemoPage />} />
-              <Route path="/curriculum" element={<CurriculumPage />} />
-              <Route path="/daily-quiz" element={<DailyQuizPage />} />
-              <Route path="/daily-quiz/results" element={<DailyQuizResultsPage />} />
-              <Route path="/leaderboard" element={<LeaderboardPage />} />
-              <Route path="/aptitude" element={<AptitudeComingSoonPage />} />
-              <Route path="/pricing" element={<PricingPage />} />
-              <Route path="/weekly-exam" element={<WeeklyExamPage />} />
-              <Route path="/weekly-exam/results" element={<WeeklyExamResultsPage />} />
-              <Route path="/olympiad" element={<OlympiadPage />} />
-              <Route path="/olympiad/results" element={<OlympiadResultsPage />} />
-              <Route path="/battle" element={<BattleModePage />} />
-              <Route path="/payment-success" element={<PaymentSuccessPage />} />
-              <Route path="/reviews" element={<ReviewsPage />} />
-              <Route path="/screenless" element={<ScreenlessLearningPage />} />
-              <Route path="/report-card" element={<ReportCardPage />} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
-              <Route path="/terms" element={<TermsPage />} />
-              <Route path="/collaborate" element={<CollaboratePage />} />
-              <Route path="/reset-password" element={<ResetPasswordPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
+            <Suspense fallback={<PageLoader />}>
+              <Routes location={location}>
+                <Route path="/"                    element={<LandingPage />} />
+                <Route path="/blog"                element={<BlogListPage />} />
+                <Route path="/blog/:slug"          element={<BlogPostPage />} />
+                <Route path="/reasoning-pilot"     element={<ReasoningPilotPage />} />
+                <Route path="/reasoning"           element={<ReasoningChapterPage />} />
+                <Route path="/reasoning/:chapterId" element={<ReasoningChapterPage />} />
+                <Route path="/my-battles"          element={<MyBattlesPage />} />
+                <Route path="/auth"                element={<AuthPage />} />
+                <Route path="/onboarding"          element={<OnboardingPage />} />
+                <Route path="/dashboard"           element={<DashboardPage />} />
+                <Route path="/progress-report"     element={<ParentDashboardPage />} />
+                <Route path="/live-class/:classId" element={<LiveClassPage />} />
+                <Route path="/life-skills"         element={<LifeSkillsHubPage />} />
+                <Route path="/life-skills/:trackId" element={<LifeSkillsTrackPage />} />
+                <Route path="/knowledge-points"    element={<KnowledgePointsPage />} />
+                <Route path="/profile"             element={<ProfilePage />} />
+                <Route path="/demo"                element={<DemoPage />} />
+                <Route path="/curriculum"          element={<CurriculumPage />} />
+                <Route path="/daily-quiz"          element={<ProfileCompletionGate><DailyQuizPage /></ProfileCompletionGate>} />
+                <Route path="/daily-quiz/results"  element={<DailyQuizResultsPage />} />
+                <Route path="/leaderboard"         element={<LeaderboardPage />} />
+                <Route path="/aptitude"            element={<AptitudeComingSoonPage />} />
+                <Route path="/pricing"             element={<PricingPage />} />
+                <Route path="/weekly-exam"         element={<ProfileCompletionGate><WeeklyExamPage /></ProfileCompletionGate>} />
+                <Route path="/weekly-exam/results" element={<WeeklyExamResultsPage />} />
+                <Route path="/olympiad"            element={<ProfileCompletionGate><OlympiadPage /></ProfileCompletionGate>} />
+                <Route path="/olympiad/results"    element={<OlympiadResultsPage />} />
+                <Route path="/battle"              element={<ProfileCompletionGate><BattleModePage /></ProfileCompletionGate>} />
+                <Route path="/payment-success"     element={<PaymentSuccessPage />} />
+                <Route path="/reviews"             element={<ReviewsPage />} />
+                <Route path="/screenless"          element={<ScreenlessLearningPage />} />
+                <Route path="/report-card"         element={<ReportCardPage />} />
+                <Route path="/forgot-password"     element={<ForgotPassword />} />
+                <Route path="/terms"               element={<TermsPage />} />
+                <Route path="/terms-of-service"    element={<TermsPage />} />
+                <Route path="/privacy"             element={<PrivacyPolicy />} />
+                <Route path="/privacy-policy"      element={<PrivacyPolicy />} />
+                <Route path="/collaborate"         element={<CollaboratePage />} />
+                <Route path="/reset-password"      element={<ResetPasswordPage />} />
+                <Route path="*"                    element={<NotFoundPage />} />
+              </Routes>
+            </Suspense>
           </motion.div>
         </AnimatePresence>
       )}
@@ -167,7 +218,11 @@ function App() {
                 <DarkModeSync />
                 <ScrollToTop />
                 <Routes>
-                  <Route path="/admin-panel" element={<AdminPanel />} />
+                  <Route path="/admin-panel" element={
+                    <Suspense fallback={<PageLoader />}>
+                      <AdminPanel />
+                    </Suspense>
+                  } />
                   <Route path="*" element={
                     <>
                       <MobileAppHeader />
