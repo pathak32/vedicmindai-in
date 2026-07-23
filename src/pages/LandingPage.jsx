@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import LandingNavbar from '@/components/landing/LandingNavbar';
 import HeroSection from '@/components/landing/HeroSection';
 import MindCheckSection from '@/components/landing/MindCheckSection';
@@ -16,6 +17,24 @@ import ContactSection from '@/components/landing/ContactSection';
 import Footer from '@/components/landing/Footer';
 
 export default function LandingPage() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Handles arrival from LandingNavbar's scrollTo() when the click happened
+  // on a different page (e.g. Curriculum) — it navigates here with the
+  // target section id in router state, and this scrolls to it once the
+  // page has actually rendered.
+  useEffect(() => {
+    const targetId = location.state?.scrollTo;
+    if (targetId) {
+      const timer = setTimeout(() => {
+        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+        navigate(location.pathname, { replace: true, state: {} });
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.state]);
+
   return (
     <div className="min-h-screen">
       <LandingNavbar />

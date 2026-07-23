@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageToggle } from '@/components/LanguageToggle';
@@ -10,6 +10,7 @@ export default function LandingNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -17,9 +18,17 @@ export default function LandingNavbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Fixed: previously this only did document.getElementById(id) directly,
+  // which silently did nothing on any page other than the homepage since
+  // those section IDs only exist there. Now it navigates home first (with
+  // the target section passed via router state) if we're elsewhere.
   const scrollTo = (id) => {
     setMobileOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (

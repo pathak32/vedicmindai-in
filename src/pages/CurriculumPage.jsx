@@ -14,6 +14,36 @@ const LEVEL_BG = {
   4: 'linear-gradient(135deg, #0A1628, #1E40AF)',
 };
 
+// Levels 3 and 4 are fully designed (docs/reasoning-aptitude-curriculum.md)
+// but question content isn't built yet — shown here as real planned
+// chapters, locked, with no Preview and no question count (since there's
+// no real content to preview or count).
+const RA_LEVEL3_TITLES = [
+  { en: 'Time, Speed & Distance', hi: 'समय, गति और दूरी' },
+  { en: 'Time & Work', hi: 'समय और कार्य' },
+  { en: 'Compound Interest', hi: 'चक्रवृद्धि ब्याज' },
+  { en: 'Mixture & Alligation', hi: 'मिश्रण और एलिगेशन' },
+  { en: 'HCF & LCM Applications', hi: 'HCF और LCM के अनुप्रयोग' },
+  { en: 'Syllogisms (Basic)', hi: 'न्यायवाक्य (मूल)' },
+  { en: 'Seating Arrangement (Linear)', hi: 'बैठक व्यवस्था (रैखिक)' },
+  { en: 'Data Interpretation (Bar/Pie Basics)', hi: 'डेटा व्याख्या (बार/पाई मूल)' },
+  { en: 'Number System (Divisibility, Remainders)', hi: 'संख्या पद्धति (विभाज्यता, शेषफल)' },
+  { en: 'Statement & Conclusion', hi: 'कथन और निष्कर्ष' },
+];
+const RA_LEVEL4_TITLES = [
+  { en: 'Seating Arrangement (Circular & Complex)', hi: 'बैठक व्यवस्था (वृत्ताकार और जटिल)' },
+  { en: 'Puzzles (Multi-Variable)', hi: 'पहेलियां (बहु-चर)' },
+  { en: 'Permutation & Combination (Basics)', hi: 'क्रमचय और संचय (मूल)' },
+  { en: 'Probability (Basics)', hi: 'प्रायिकता (मूल)' },
+  { en: 'Advanced Data Interpretation', hi: 'उन्नत डेटा व्याख्या' },
+  { en: 'Syllogisms (Advanced)', hi: 'न्यायवाक्य (उन्नत)' },
+  { en: 'Cause & Effect / Critical Reasoning', hi: 'कारण और प्रभाव / क्रिटिकल रीजनिंग' },
+  { en: 'Mensuration (Applied)', hi: 'क्षेत्रमिति (अनुप्रयुक्त)' },
+  { en: 'Algebra-Based Reasoning', hi: 'बीजगणित-आधारित तर्क' },
+  { en: 'Mixed Competitive Aptitude (Capstone)', hi: 'मिश्रित प्रतियोगी एप्टीट्यूड (कैप्स्टोन)' },
+];
+const toChapterShape = (titles, prefix) => titles.map((title, i) => ({ id: `${prefix}-${i}`, title }));
+
 export default function CurriculumPage() {
   const navigate = useNavigate();
   const { t, language } = useLanguage();
@@ -22,6 +52,15 @@ export default function CurriculumPage() {
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
       <LandingNavbar />
+
+      {/* Lesson/chapter grid — always available regardless of which pillar
+          tab is active, since this used to live inside the Vedic-only
+          block and silently had no effect on the Reasoning tab. */}
+      <style>{`
+        .lesson-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        @media (max-width: 767px) { .lesson-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 768px) and (max-width: 1023px) { .lesson-grid { grid-template-columns: repeat(2, 1fr); } }
+      `}</style>
 
       <main style={{ maxWidth: 1100, margin: '0 auto', padding: '96px 16px 60px' }}>
 
@@ -103,11 +142,6 @@ export default function CurriculumPage() {
               </div>
 
               {/* Lesson Grid */}
-              <style>{`
-                .lesson-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-                @media (max-width: 767px) { .lesson-grid { grid-template-columns: 1fr; } }
-                @media (min-width: 768px) and (max-width: 1023px) { .lesson-grid { grid-template-columns: repeat(2, 1fr); } }
-              `}</style>
               <div className="lesson-grid">
                 {level.lessons.map((lesson, idx) => {
                   const num = idx + 1;
@@ -158,12 +192,14 @@ export default function CurriculumPage() {
         </div>
         )}
 
-        {/* Intelligent Reasoning */}
+        {/* Intelligent Reasoning — all 4 levels */}
         {pillar === 'reasoning' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
           {[
-            { level: 1, name: language === 'hi' ? 'फाउंडेशन' : 'Foundation', icon: '🌱', chapters: RA_LEVEL1_CHAPTERS, locked: false },
-            { level: 2, name: language === 'hi' ? 'इंटरमीडिएट' : 'Intermediate', icon: '📈', chapters: RA_LEVEL2_CHAPTERS, locked: true },
+            { level: 1, name: language === 'hi' ? 'फाउंडेशन' : 'Foundation', icon: '🌱', chapters: RA_LEVEL1_CHAPTERS, locked: false, hasContent: true },
+            { level: 2, name: language === 'hi' ? 'इंटरमीडिएट' : 'Intermediate', icon: '📈', chapters: RA_LEVEL2_CHAPTERS, locked: true, hasContent: true },
+            { level: 3, name: language === 'hi' ? 'गहन अभ्यास' : 'Real Depth', icon: '⚡', chapters: toChapterShape(RA_LEVEL3_TITLES, 'l3'), locked: true, hasContent: false },
+            { level: 4, name: language === 'hi' ? 'प्रतियोगी महारत' : 'Competitive Mastery', icon: '👑', chapters: toChapterShape(RA_LEVEL4_TITLES, 'l4'), locked: true, hasContent: false },
           ].map((lvl, li) => (
             <motion.div key={lvl.level} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: li * 0.08 }}>
               <div style={{
@@ -187,7 +223,7 @@ export default function CurriculumPage() {
                       borderRadius: 100, padding: '4px 14px',
                       fontFamily: 'var(--font-body)', fontSize: 12,
                     }}>
-                      {t('curriculumLockedMsg')}
+                      {lvl.hasContent ? t('curriculumLockedMsg') : t('curriculumAptitudeComingSoonTitle')}
                     </span>
                   )}
                 </div>
@@ -210,23 +246,16 @@ export default function CurriculumPage() {
                       {lvl.locked ? '🔒' : idx + 1}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
-                        <span style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628', lineHeight: 1.4 }}>
-                          {chapter.title[language] || chapter.title.en}
-                        </span>
-                        <span style={{
-                          background: '#EDE9FE', borderRadius: 100, padding: '2px 10px',
-                          fontFamily: 'var(--font-body)', fontSize: 12, color: '#5B21B6',
-                          whiteSpace: 'nowrap', flexShrink: 0,
-                        }}>
-                          8 {t('curriculumReasoningQuestions')}
-                        </span>
-                      </div>
+                      <span style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628', lineHeight: 1.4 }}>
+                        {chapter.title[language] || chapter.title.en}
+                      </span>
                       {!lvl.locked && (
-                        <button onClick={() => navigate('/demo')}
-                          style={{ marginTop: 6, background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 12, color: '#3B82F6', padding: 0 }}>
-                          {t('curriculumPreview')}
-                        </button>
+                        <div>
+                          <button onClick={() => navigate('/demo')}
+                            style={{ marginTop: 6, background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 12, color: '#3B82F6', padding: 0 }}>
+                            {t('curriculumPreview')}
+                          </button>
+                        </div>
                       )}
                     </div>
                   </div>
@@ -252,6 +281,8 @@ export default function CurriculumPage() {
             </p>
           </div>
         )}
+
+        {/* Bottom CTA */}
         <div style={{
           background: '#0A1628', borderRadius: 20, padding: '48px 24px',
           textAlign: 'center', margin: '48px 0',
