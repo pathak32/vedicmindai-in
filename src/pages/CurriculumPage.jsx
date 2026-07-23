@@ -44,10 +44,40 @@ const RA_LEVEL4_TITLES = [
 ];
 const toChapterShape = (titles, prefix) => titles.map((title, i) => ({ id: `${prefix}-${i}`, title }));
 
+// Real questions for the inline chapter/lesson preview (Item: "solve it in
+// 3 seconds" for Vedic Maths, no answer shown; worked example with answer
+// highlighted for Reasoning). Pulled directly from the real, verified
+// question banks already used elsewhere in the app — not invented.
+// l1_01 ("Introduction to Vedic Mathematics") intentionally has no entry:
+// an overview lesson doesn't need a preview question.
+const VEDIC_L1_PREVIEW = {
+  l1_02: { question: 'What is 45²?', options: ['1925', '2005', '2025', '2125'] },
+  l1_03: { question: 'Calculate 9 × 8 using Nikhilam', options: ['70', '72', '74', '68'] },
+  l1_04: { question: 'Calculate 93 × 92', options: ['8456', '8556', '8656', '8356'] },
+  l1_05: { question: 'Calculate 993 × 992', options: ['983056', '984056', '985056', '986056'] },
+  l1_06: { question: 'The digit sum of 7654 is?', options: ['4', '13', '22', '7'] },
+  l1_07: { question: 'Calculate 13 × 14 using Urdhva', options: ['172', '182', '192', '162'] },
+  l1_08: { question: 'Calculate 56 × 11', options: ['606', '616', '626', '596'] },
+  l1_09: { question: 'Calculate 34 × 9', options: ['296', '306', '316', '286'] },
+};
+const REASONING_L1_PREVIEW = {
+  'odd-one-out': { question: 'Which one does not belong: Apple, Banana, Carrot, Mango?', options: ['Apple', 'Banana', 'Carrot', 'Mango'], answer: 'Carrot' },
+  'number-series-basic': { question: '2, 4, 6, 8, ?', options: ['9', '10', '11', '12'], answer: '10' },
+  'analogies-basic': { question: 'Hand is to Glove as Foot is to ?', options: ['Shoe', 'Sock', 'Leg', 'Knee'], answer: 'Shoe' },
+  'ranking-ordering': { question: 'Rahul is taller than Priya. Priya is taller than Aman. Who is the shortest?', options: ['Rahul', 'Priya', 'Aman'], answer: 'Aman' },
+  'direction-basic': { question: 'You walk 5m North, then turn right. Which direction are you facing now?', options: ['East', 'West', 'South', 'North'], answer: 'East' },
+  'coding-decoding-basic': { question: 'If CAT is coded as DBU, how is DOG coded?', options: ['EPH', 'EPI', 'FPH', 'DPH'], answer: 'EPH' },
+  'blood-relations-basic': { question: '"This is my father\'s son, but not me." Who is it?', options: ['Brother', 'Uncle', 'Cousin', 'Father'], answer: 'Brother' },
+  'calendar-basics': { question: 'If today is Monday, what day will it be after 10 days?', options: ['Wednesday', 'Thursday', 'Friday'], answer: 'Thursday' },
+  'mirror-images-basic': { question: 'In a mirror, the letter "b" looks like which letter?', options: ['d', 'p', 'q'], answer: 'd' },
+  'pattern-completion': { question: 'A square, then a circle, then a square, then a circle. What comes next?', options: ['Square', 'Circle', 'Triangle'], answer: 'Square' },
+};
+
 export default function CurriculumPage() {
   const navigate = useNavigate();
   const { t, language } = useLanguage();
   const [pillar, setPillar] = useState('vedic'); // vedic | reasoning | aptitude
+  const [previewOpen, setPreviewOpen] = useState(null); // lesson/chapter id with its inline preview expanded
 
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
@@ -150,39 +180,66 @@ export default function CurriculumPage() {
                     <div key={lesson.id} style={{
                       background: 'white', border: '1px solid rgba(30,64,175,0.12)',
                       borderRadius: 12, padding: 16,
-                      display: 'flex', alignItems: 'flex-start', gap: 12,
                       opacity: locked ? 0.75 : 1,
                     }}>
-                      {/* Number circle */}
-                      <div style={{
-                        width: 28, height: 28, borderRadius: '50%', background: '#F0F4FF',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 12,
-                        color: '#0A1628', flexShrink: 0,
-                      }}>
-                        {locked ? '🔒' : num}
-                      </div>
-                      {/* Content */}
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
-                          <span style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628', lineHeight: 1.4 }}>
-                            {lesson.title}
-                          </span>
-                          <span style={{
-                            background: '#FEF3C7', borderRadius: 100, padding: '2px 10px',
-                            fontFamily: 'var(--font-body)', fontSize: 12, color: '#92400E',
-                            whiteSpace: 'nowrap', flexShrink: 0,
-                          }}>
-                            +{lesson.xp} XP
-                          </span>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                        {/* Number circle */}
+                        <div style={{
+                          width: 28, height: 28, borderRadius: '50%', background: '#F0F4FF',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 12,
+                          color: '#0A1628', flexShrink: 0,
+                        }}>
+                          {locked ? '🔒' : num}
                         </div>
-                        {!locked && (
-                          <button onClick={() => navigate('/demo')}
-                            style={{ marginTop: 6, background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 12, color: '#3B82F6', padding: 0 }}>
-                            {t('curriculumPreview')}
-                          </button>
-                        )}
+                        {/* Content */}
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
+                            <span style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628', lineHeight: 1.4 }}>
+                              {lesson.title}
+                            </span>
+                            <span style={{
+                              background: '#FEF3C7', borderRadius: 100, padding: '2px 10px',
+                              fontFamily: 'var(--font-body)', fontSize: 12, color: '#92400E',
+                              whiteSpace: 'nowrap', flexShrink: 0,
+                            }}>
+                              +{lesson.xp} XP
+                            </span>
+                          </div>
+                          {!locked && VEDIC_L1_PREVIEW[lesson.id] && (
+                            <button onClick={() => setPreviewOpen(previewOpen === lesson.id ? null : lesson.id)}
+                              style={{ marginTop: 6, background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 12, color: '#3B82F6', padding: 0 }}>
+                              {previewOpen === lesson.id ? t('curriculumHidePreview') : t('curriculumPreview')}
+                            </button>
+                          )}
+                        </div>
                       </div>
+
+                      {/* Inline "solve it in 3 seconds" challenge — no answer shown */}
+                      {previewOpen === lesson.id && VEDIC_L1_PREVIEW[lesson.id] && (
+                        <div style={{ marginTop: 12, paddingTop: 12, borderTop: '1px dashed rgba(30,64,175,0.15)' }}>
+                          <p style={{ fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 700, color: '#F59E0B', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 6 }}>
+                            {t('curriculumSolveIt')}
+                          </p>
+                          <p style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, color: '#0A1628', marginBottom: 10 }}>
+                            {VEDIC_L1_PREVIEW[lesson.id].question}
+                          </p>
+                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                            {VEDIC_L1_PREVIEW[lesson.id].options.map(opt => (
+                              <span key={opt} style={{
+                                background: '#F0F4FF', border: '1px solid rgba(30,64,175,0.15)',
+                                borderRadius: 8, padding: '6px 12px', fontFamily: 'var(--font-body)',
+                                fontSize: 13, color: '#0A1628',
+                              }}>
+                                {opt}
+                              </span>
+                            ))}
+                          </div>
+                          <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', marginTop: 10, fontStyle: 'italic' }}>
+                            {t('curriculumSignUpForAnswer')}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   );
                 })}
@@ -234,30 +291,61 @@ export default function CurriculumPage() {
                   <div key={chapter.id} style={{
                     background: 'white', border: '1px solid rgba(30,64,175,0.12)',
                     borderRadius: 12, padding: 16,
-                    display: 'flex', alignItems: 'flex-start', gap: 12,
                     opacity: lvl.locked ? 0.75 : 1,
                   }}>
-                    <div style={{
-                      width: 28, height: 28, borderRadius: '50%', background: '#F0F4FF',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 12,
-                      color: '#0A1628', flexShrink: 0,
-                    }}>
-                      {lvl.locked ? '🔒' : idx + 1}
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                      <div style={{
+                        width: 28, height: 28, borderRadius: '50%', background: '#F0F4FF',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 12,
+                        color: '#0A1628', flexShrink: 0,
+                      }}>
+                        {lvl.locked ? '🔒' : idx + 1}
+                      </div>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <span style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628', lineHeight: 1.4 }}>
+                          {chapter.title[language] || chapter.title.en}
+                        </span>
+                        {!lvl.locked && REASONING_L1_PREVIEW[chapter.id] && (
+                          <div>
+                            <button onClick={() => setPreviewOpen(previewOpen === chapter.id ? null : chapter.id)}
+                              style={{ marginTop: 6, background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 12, color: '#3B82F6', padding: 0 }}>
+                              {previewOpen === chapter.id ? t('curriculumHidePreview') : t('curriculumPreview')}
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <span style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628', lineHeight: 1.4 }}>
-                        {chapter.title[language] || chapter.title.en}
-                      </span>
-                      {!lvl.locked && (
-                        <div>
-                          <button onClick={() => navigate('/demo')}
-                            style={{ marginTop: 6, background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 12, color: '#3B82F6', padding: 0 }}>
-                            {t('curriculumPreview')}
-                          </button>
+
+                    {/* Inline worked example — correct answer highlighted so the
+                        chapter's meaning is instantly clear even without knowing
+                        the term "Odd One Out" etc. */}
+                    {previewOpen === chapter.id && REASONING_L1_PREVIEW[chapter.id] && (
+                      <div style={{ marginTop: 12, paddingTop: 12, borderTop: '1px dashed rgba(30,64,175,0.15)' }}>
+                        <p style={{ fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 700, color: '#5B21B6', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 6 }}>
+                          {t('curriculumWorkedExample')}
+                        </p>
+                        <p style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, color: '#0A1628', marginBottom: 10 }}>
+                          {REASONING_L1_PREVIEW[chapter.id].question}
+                        </p>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                          {REASONING_L1_PREVIEW[chapter.id].options.map(opt => {
+                            const isAnswer = opt === REASONING_L1_PREVIEW[chapter.id].answer;
+                            return (
+                              <span key={opt} style={{
+                                background: isAnswer ? '#D1FAE5' : '#F3F4F6',
+                                border: isAnswer ? '1.5px solid #10B981' : '1px solid rgba(30,64,175,0.1)',
+                                color: isAnswer ? '#065F46' : '#4B5563',
+                                fontWeight: isAnswer ? 700 : 400,
+                                borderRadius: 8, padding: '6px 12px', fontFamily: 'var(--font-body)', fontSize: 13,
+                              }}>
+                                {isAnswer ? '✓ ' : ''}{opt}
+                              </span>
+                            );
+                          })}
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
