@@ -1,16 +1,18 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Instagram, Youtube, Play, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Instagram, Youtube, Facebook, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { videoLibraryData } from '@/data/videoLibraryData';
 
 const PLATFORM_GRADIENTS = {
   instagram: 'linear-gradient(135deg, #833AB4, #E1306C, #F77737)',
   youtube: 'linear-gradient(135deg, #FF0000, #990000)',
+  facebook: 'linear-gradient(135deg, #1877F2, #0C5DC7)',
 };
 
 function VideoCard({ video }) {
-  const isInsta = video.platform === 'instagram';
+  const PLATFORM_ICONS = { instagram: Instagram, youtube: Youtube, facebook: Facebook };
+  const PlatformIcon = PLATFORM_ICONS[video.platform] || Instagram;
   return (
     <a
       href={video.url}
@@ -34,7 +36,7 @@ function VideoCard({ video }) {
           <Play size={22} color="white" fill="white" style={{ marginLeft: 3 }} />
         </div>
         <div style={{ position: 'absolute', top: 10, right: 10, background: 'rgba(0,0,0,0.35)', borderRadius: 8, padding: 5 }}>
-          {isInsta ? <Instagram size={16} color="white" /> : <Youtube size={16} color="white" />}
+          <PlatformIcon size={16} color="white" />
         </div>
       </div>
       <p style={{
@@ -130,6 +132,17 @@ export default function VideoLibrarySection() {
               }}
             >
               <Instagram size={16} /> Instagram
+            </a>
+            <a
+              href="https://www.facebook.com/share/1MHabwnNYm/"
+              target="_blank" rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: 6, padding: '10px 20px',
+                background: 'rgba(255,255,255,0.1)', borderRadius: 10, color: 'white',
+                textDecoration: 'none', fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600,
+              }}
+            >
+              <Facebook size={16} /> Facebook
             </a>
             <a
               href="https://youtube.com/@vedicmindai"
