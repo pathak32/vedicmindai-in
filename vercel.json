@@ -1,10 +1,7 @@
 {
   "rewrites": [
-    { "source": "/privacy-policy", "destination": "/privacy-policy.html" },
-    { "source": "/terms", "destination": "/terms.html" },
-    { "source": "/terms-of-service", "destination": "/terms.html" },
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
-    { "source": "/((?!privacy-policy|terms|robots\\.txt|sitemap\\.xml|api/).*)", "destination": "/index.html" }
+    { "source": "/((?!robots\\.txt|sitemap\\.xml|api/).*)", "destination": "/index.html" }
   ],
   "headers": [
     {

@@ -150,7 +150,9 @@ function RouteTransition() {
               <Route path="/report-card" element={<ReportCardPage />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/terms" element={<TermsPage />} />
+              <Route path="/terms-of-service" element={<TermsPage />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/collaborate" element={<CollaboratePage />} />
               <Route path="/reset-password" element={<ResetPasswordPage />} />
               <Route path="*" element={<NotFoundPage />} />

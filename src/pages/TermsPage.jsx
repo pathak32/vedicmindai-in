@@ -87,7 +87,7 @@ export default function TermsPage() {
       <p style={s.p}>VedicMindAI™'s liability is limited to the amount paid by you in the 3 months preceding the claim. We are not liable for indirect, incidental, or consequential damages.</p>
 
       <h2 style={s.h2}>12. Privacy</h2>
-      <p style={s.p}>Your use of the Service is also governed by our <Link to="/privacy-policy" style={{ color: '#1e40af' }}>Privacy Policy</Link>, which is incorporated by reference into these Terms.</p>
+      <p style={s.p}>Your use of the Service is also governed by our <Link to="/privacy" style={{ color: '#1e40af' }}>Privacy Policy</Link>, which is incorporated by reference into these Terms.</p>
 
       <h2 style={s.h2}>13. Account Deletion</h2>
       <p style={s.p}>You may delete your account at any time from Profile → Account Settings → Delete Account. Upon deletion, all your personal data, progress, and quiz history will be permanently removed within 30 days, except where retention is required by law.</p>
