@@ -12,6 +12,7 @@ import VideoLibrarySection from '@/components/landing/VideoLibrarySection';
 import HowItWorksSection from '@/components/landing/HowItWorksSection';
 import TestimonialsSection from '@/components/landing/TestimonialsSection';
 import CommunitySection from '@/components/landing/CommunitySection';
+import BlogTeaserSection from '@/components/landing/BlogTeaserSection';
 import FAQSection from '@/components/landing/FAQSection';
 import ContactSection from '@/components/landing/ContactSection';
 import Footer from '@/components/landing/Footer';
@@ -49,6 +50,7 @@ export default function LandingPage() {
       <HowItWorksSection />
       <TestimonialsSection />
       <CommunitySection />
+      <BlogTeaserSection />
       <FAQSection />
       <ContactSection />
       <Footer />

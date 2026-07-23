@@ -10,6 +10,8 @@ import { useEffect, useState } from 'react';
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { Toaster } from "sonner";
 import LandingPage from '@/pages/LandingPage';
+import BlogListPage from '@/pages/BlogListPage';
+import BlogPostPage from '@/pages/BlogPostPage';
 import ReasoningPilotPage from '@/pages/ReasoningPilotPage';
 import ReasoningChapterPage from '@/pages/reasoning/ReasoningChapterPage';
 import MyBattlesPage from '@/pages/MyBattlesPage';
@@ -115,6 +117,8 @@ function RouteTransition() {
           >
             <Routes location={location}>
               <Route path="/" element={<LandingPage />} />
+              <Route path="/blog" element={<BlogListPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
               <Route path="/reasoning-pilot" element={<ReasoningPilotPage />} />
               <Route path="/reasoning" element={<ReasoningChapterPage />} />
               <Route path="/reasoning/:chapterId" element={<ReasoningChapterPage />} />

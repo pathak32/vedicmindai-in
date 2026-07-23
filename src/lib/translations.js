@@ -711,7 +711,19 @@ export const translations = {
     "communityTitle": "Questions from real students & parents",
     "communitySubtitle": "Answered directly by our team — this is a growing thread, not a script.",
     "communityAskBtn": "Ask Your Own Question →",
-    "communityAnsweredBy": "Answered by the VedicMindAI team"
+    "communityAnsweredBy": "Answered by the VedicMindAI team",
+    "blogPageTitle": "The VedicMindAI Blog",
+    "blogPageSubtitle": "Vedic Maths, Reasoning, and Aptitude — explained clearly, with real worked examples.",
+    "blogEmptyState": "New articles are on the way — check back soon.",
+    "blogNotFoundTitle": "We couldn't find that article.",
+    "blogBackToBlog": "← Back to Blog",
+    "blogForAudience": "For",
+    "blogCtaText": "Want to actually practice this, not just read about it?",
+    "blogCtaBtn": "Try VedicMindAI Free →",
+    "blogTeaserLabel": "From the Blog",
+    "blogTeaserTitle": "Latest articles",
+    "blogViewAll": "View All Articles →",
+    "blogNavLabel": "Blog"
   },
   "hi": {
     "features": "विशेषताएं",
@@ -1421,7 +1433,19 @@ export const translations = {
     "communityTitle": "असली छात्रों और अभिभावकों के सवाल",
     "communitySubtitle": "हमारी टीम द्वारा सीधे जवाब दिए गए — यह एक बढ़ती हुई चर्चा है, कोई स्क्रिप्ट नहीं।",
     "communityAskBtn": "अपना सवाल पूछें →",
-    "communityAnsweredBy": "VedicMindAI टीम द्वारा जवाब दिया गया"
+    "communityAnsweredBy": "VedicMindAI टीम द्वारा जवाब दिया गया",
+    "blogPageTitle": "VedicMindAI Blog",
+    "blogPageSubtitle": "वैदिक गणित, Reasoning, और Aptitude — असली worked examples के साथ, आसान भाषा में समझाया गया।",
+    "blogEmptyState": "नए Articles जल्द आ रहे हैं — कुछ देर बाद फिर देखें।",
+    "blogNotFoundTitle": "यह Article नहीं मिला।",
+    "blogBackToBlog": "← Blog पर वापस जाएं",
+    "blogForAudience": "इनके लिए",
+    "blogCtaText": "सिर्फ पढ़ना नहीं, असल में अभ्यास करना चाहते हैं?",
+    "blogCtaBtn": "VedicMindAI मुफ्त आज़माएं →",
+    "blogTeaserLabel": "Blog से",
+    "blogTeaserTitle": "नवीनतम Articles",
+    "blogViewAll": "सभी Articles देखें →",
+    "blogNavLabel": "Blog"
   }
 };
 
