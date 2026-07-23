@@ -9,52 +9,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState, lazy, Suspense } from 'react';
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { Toaster } from "sonner";
-<<<<<<< HEAD
 import ProfileCompletionGate from '@/components/ProfileCompletionGate';
-=======
-import LandingPage from '@/pages/LandingPage';
-import BlogListPage from '@/pages/BlogListPage';
-import BlogPostPage from '@/pages/BlogPostPage';
-import ReasoningPilotPage from '@/pages/ReasoningPilotPage';
-import ReasoningChapterPage from '@/pages/reasoning/ReasoningChapterPage';
-import MyBattlesPage from '@/pages/MyBattlesPage';
-import AuthPage from '@/pages/AuthPage';
-import OnboardingPage from '@/pages/OnboardingPage';
-import DashboardPage from '@/pages/DashboardPage';
-import ParentDashboardPage from '@/pages/ParentDashboardPage';
-import LiveClassPage from '@/pages/LiveClassPage';
-import LifeSkillsHubPage from '@/pages/LifeSkillsHubPage';
-import KnowledgePointsPage from '@/pages/KnowledgePointsPage';
-import LifeSkillsTrackPage from '@/pages/LifeSkillsTrackPage';
-import LearnPage from '@/pages/LearnPage';
-import PracticePage from '@/pages/PracticePage';
-import ProfilePage from '@/pages/ProfilePage';
-import NotFoundPage from '@/pages/NotFoundPage';
-import DemoPage from '@/pages/DemoPage';
-import CurriculumPage from '@/pages/CurriculumPage';
-import DailyQuizPage from '@/pages/DailyQuizPage';
-import ProfileCompletionGate from '@/components/ProfileCompletionGate';
-import DailyQuizResultsPage from '@/pages/DailyQuizResultsPage';
-import LeaderboardPage from '@/pages/LeaderboardPage';
-import AptitudeZonePage from '@/pages/AptitudeZonePage';
-import AptitudeComingSoonPage from '@/pages/AptitudeComingSoonPage';
-import AdminPanel from '@/pages/AdminPanel';
-import PricingPage from '@/pages/PricingPage';
-import WeeklyExamPage from '@/pages/WeeklyExamPage';
-import WeeklyExamResultsPage from '@/pages/WeeklyExamResultsPage';
-import OlympiadPage from '@/pages/OlympiadPage';
-import OlympiadResultsPage from '@/pages/OlympiadResultsPage';
-import BattleModePage from '@/pages/BattleModePage';
-import PaymentSuccessPage from '@/pages/PaymentSuccessPage';
-import ReviewsPage from '@/pages/ReviewsPage';
-import ScreenlessLearningPage from '@/pages/ScreenlessLearningPage';
-import ReportCardPage from '@/pages/ReportCardPage';
-import ForgotPassword from '@/pages/ForgotPassword';
-import TermsPage from '@/pages/TermsPage';
-import PrivacyPolicy from '@/pages/PrivacyPolicy';
-import CollaboratePage from '@/pages/CollaboratePage';
-import ResetPasswordPage from '@/pages/ResetPasswordPage';
->>>>>>> 34412b0875c117289bf6e62d99306d6f68316417
 import MobileBottomNav from '@/components/MobileLayout';
 import MobileAppHeader from '@/components/MobileAppHeader';
 
@@ -200,7 +155,6 @@ function RouteTransition() {
             transition={{ duration: 0.18, ease: 'easeInOut' }}
             style={{ width: '100%' }}
           >
-<<<<<<< HEAD
             <Suspense fallback={<PageLoader />}>
               <Routes location={location}>
                 <Route path="/"                    element={<LandingPage />} />
@@ -245,50 +199,6 @@ function RouteTransition() {
                 <Route path="*"                    element={<NotFoundPage />} />
               </Routes>
             </Suspense>
-=======
-            <Routes location={location}>
-              <Route path="/" element={<LandingPage />} />
-              <Route path="/blog" element={<BlogListPage />} />
-              <Route path="/blog/:slug" element={<BlogPostPage />} />
-              <Route path="/reasoning-pilot" element={<ReasoningPilotPage />} />
-              <Route path="/reasoning" element={<ReasoningChapterPage />} />
-              <Route path="/reasoning/:chapterId" element={<ReasoningChapterPage />} />
-              <Route path="/my-battles" element={<MyBattlesPage />} />
-              <Route path="/auth" element={<AuthPage />} />
-              <Route path="/onboarding" element={<OnboardingPage />} />
-              <Route path="/dashboard" element={<DashboardPage />} />
-              <Route path="/progress-report" element={<ParentDashboardPage />} />
-              <Route path="/live-class/:classId" element={<LiveClassPage />} />
-              <Route path="/life-skills" element={<LifeSkillsHubPage />} />
-              <Route path="/life-skills/:trackId" element={<LifeSkillsTrackPage />} />
-              <Route path="/knowledge-points" element={<KnowledgePointsPage />} />
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path="/demo" element={<DemoPage />} />
-              <Route path="/curriculum" element={<CurriculumPage />} />
-              <Route path="/daily-quiz" element={<ProfileCompletionGate><DailyQuizPage /></ProfileCompletionGate>} />
-              <Route path="/daily-quiz/results" element={<DailyQuizResultsPage />} />
-              <Route path="/leaderboard" element={<LeaderboardPage />} />
-              <Route path="/aptitude" element={<AptitudeComingSoonPage />} />
-              <Route path="/pricing" element={<PricingPage />} />
-              <Route path="/weekly-exam" element={<ProfileCompletionGate><WeeklyExamPage /></ProfileCompletionGate>} />
-              <Route path="/weekly-exam/results" element={<WeeklyExamResultsPage />} />
-              <Route path="/olympiad" element={<ProfileCompletionGate><OlympiadPage /></ProfileCompletionGate>} />
-              <Route path="/olympiad/results" element={<OlympiadResultsPage />} />
-              <Route path="/battle" element={<ProfileCompletionGate><BattleModePage /></ProfileCompletionGate>} />
-              <Route path="/payment-success" element={<PaymentSuccessPage />} />
-              <Route path="/reviews" element={<ReviewsPage />} />
-              <Route path="/screenless" element={<ScreenlessLearningPage />} />
-              <Route path="/report-card" element={<ReportCardPage />} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
-              <Route path="/terms" element={<TermsPage />} />
-              <Route path="/terms-of-service" element={<TermsPage />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/collaborate" element={<CollaboratePage />} />
-              <Route path="/reset-password" element={<ResetPasswordPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
->>>>>>> 34412b0875c117289bf6e62d99306d6f68316417
           </motion.div>
         </AnimatePresence>
       )}
