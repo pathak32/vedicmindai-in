@@ -24,14 +24,18 @@ ALTER TABLE blog_posts ENABLE ROW LEVEL SECURITY;
 -- The admin panel runs as the anon key (PIN-protected in the UI itself),
 -- and the public blog pages also read as anon — matching the pattern
 -- already used by every other admin-managed table in this app.
+DROP POLICY IF EXISTS "anon can read blog_posts" ON blog_posts;
 CREATE POLICY "anon can read blog_posts" ON blog_posts
   FOR SELECT USING (true);
 
+DROP POLICY IF EXISTS "anon can insert blog_posts" ON blog_posts;
 CREATE POLICY "anon can insert blog_posts" ON blog_posts
   FOR INSERT WITH CHECK (true);
 
+DROP POLICY IF EXISTS "anon can update blog_posts" ON blog_posts;
 CREATE POLICY "anon can update blog_posts" ON blog_posts
   FOR UPDATE USING (true);
 
+DROP POLICY IF EXISTS "anon can delete blog_posts" ON blog_posts;
 CREATE POLICY "anon can delete blog_posts" ON blog_posts
   FOR DELETE USING (true);
