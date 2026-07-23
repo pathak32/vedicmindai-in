@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
 
 export default function FAQSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [openId, setOpenId] = useState(null);
 
   const faqs = [
@@ -21,6 +21,38 @@ export default function FAQSection() {
     { id: 7, q: t('faq7Q'), a: t('faq7A') },
     { id: 8, q: t('faq8Q'), a: t('faq8A') },
   ];
+
+  // FAQPage structured data — gives Google eligibility to show these
+  // Q&As directly in search results, same mechanism as the Article
+  // schema already added to blog posts. Mirrors whatever language is
+  // currently displayed, matching the visible content.
+  useEffect(() => {
+    let ld = document.getElementById('faq-section-jsonld');
+    if (!ld) {
+      ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.id = 'faq-section-jsonld';
+      document.head.appendChild(ld);
+    }
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(faq => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      })),
+    });
+    // Only remove on true unmount (route change away from home), not on
+    // every language-toggle re-render — the id check above already
+    // handles updates in place.
+    return () => {
+      if (!document.getElementById('faq')) {
+        const stale = document.getElementById('faq-section-jsonld');
+        if (stale) stale.remove();
+      }
+    };
+  }, [language]);
 
   return (
     <section id="faq" style={{ background: '#F8FAFF', padding: '80px 0' }}>
