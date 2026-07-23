@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import LandingNavbar from '@/components/landing/LandingNavbar';
 import { CURRICULUM } from '@/components/learn/curriculumData';
+import { RA_LEVEL1_CHAPTERS } from '@/data/reasoningAptitudeLevel1Content';
+import { RA_LEVEL2_CHAPTERS } from '@/data/reasoningAptitudeLevel2Content';
 import { useLanguage } from '@/lib/LanguageContext';
 
 const LEVEL_BG = {
@@ -14,7 +16,8 @@ const LEVEL_BG = {
 
 export default function CurriculumPage() {
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [pillar, setPillar] = useState('vedic'); // vedic | reasoning | aptitude
 
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
@@ -43,7 +46,31 @@ export default function CurriculumPage() {
           </div>
         </div>
 
-        {/* Level Sections */}
+        {/* Pillar Tab Switcher */}
+        <div style={{ display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 32 }}>
+          {[
+            { id: 'vedic', label: t('curriculumTabVedic') },
+            { id: 'reasoning', label: t('curriculumTabReasoning') },
+            { id: 'aptitude', label: t('curriculumTabAptitude') },
+          ].map(p => (
+            <button
+              key={p.id}
+              onClick={() => setPillar(p.id)}
+              style={{
+                padding: '10px 20px', borderRadius: 100,
+                border: pillar === p.id ? 'none' : '1.5px solid rgba(30,64,175,0.15)',
+                background: pillar === p.id ? '#0A1628' : 'white',
+                color: pillar === p.id ? 'white' : '#4B5563',
+                fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer',
+              }}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Vedic Mathematics */}
+        {pillar === 'vedic' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
           {CURRICULUM.map((level, li) => (
             <motion.div key={level.level} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: li * 0.08 }}>
@@ -129,8 +156,102 @@ export default function CurriculumPage() {
             </motion.div>
           ))}
         </div>
+        )}
 
-        {/* Bottom CTA */}
+        {/* Intelligent Reasoning */}
+        {pillar === 'reasoning' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+          {[
+            { level: 1, name: language === 'hi' ? 'फाउंडेशन' : 'Foundation', icon: '🌱', chapters: RA_LEVEL1_CHAPTERS, locked: false },
+            { level: 2, name: language === 'hi' ? 'इंटरमीडिएट' : 'Intermediate', icon: '📈', chapters: RA_LEVEL2_CHAPTERS, locked: true },
+          ].map((lvl, li) => (
+            <motion.div key={lvl.level} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: li * 0.08 }}>
+              <div style={{
+                background: LEVEL_BG[lvl.level], borderRadius: 16, padding: '20px 24px',
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                flexWrap: 'wrap', gap: 12, marginBottom: 16,
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <span style={{ fontSize: 28 }}>{lvl.icon}</span>
+                  <span className="font-heading" style={{ fontSize: 'clamp(18px,3vw,22px)', fontWeight: 700, color: 'white' }}>
+                    {t('curriculumLevelWord')} {lvl.level} — {lvl.name}
+                  </span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.7)' }}>
+                    {lvl.chapters.length} {t('curriculumLessonsCount')}
+                  </span>
+                  {lvl.locked && (
+                    <span style={{
+                      background: 'rgba(255,255,255,0.1)', color: 'white',
+                      borderRadius: 100, padding: '4px 14px',
+                      fontFamily: 'var(--font-body)', fontSize: 12,
+                    }}>
+                      {t('curriculumLockedMsg')}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div className="lesson-grid">
+                {lvl.chapters.map((chapter, idx) => (
+                  <div key={chapter.id} style={{
+                    background: 'white', border: '1px solid rgba(30,64,175,0.12)',
+                    borderRadius: 12, padding: 16,
+                    display: 'flex', alignItems: 'flex-start', gap: 12,
+                    opacity: lvl.locked ? 0.75 : 1,
+                  }}>
+                    <div style={{
+                      width: 28, height: 28, borderRadius: '50%', background: '#F0F4FF',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 12,
+                      color: '#0A1628', flexShrink: 0,
+                    }}>
+                      {lvl.locked ? '🔒' : idx + 1}
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
+                        <span style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628', lineHeight: 1.4 }}>
+                          {chapter.title[language] || chapter.title.en}
+                        </span>
+                        <span style={{
+                          background: '#EDE9FE', borderRadius: 100, padding: '2px 10px',
+                          fontFamily: 'var(--font-body)', fontSize: 12, color: '#5B21B6',
+                          whiteSpace: 'nowrap', flexShrink: 0,
+                        }}>
+                          8 {t('curriculumReasoningQuestions')}
+                        </span>
+                      </div>
+                      {!lvl.locked && (
+                        <button onClick={() => navigate('/demo')}
+                          style={{ marginTop: 6, background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 12, color: '#3B82F6', padding: 0 }}>
+                          {t('curriculumPreview')}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        )}
+
+        {/* Mindful Aptitude — Coming Soon */}
+        {pillar === 'aptitude' && (
+          <div style={{
+            background: 'white', border: '1px dashed rgba(30,64,175,0.25)',
+            borderRadius: 20, padding: '60px 24px', textAlign: 'center',
+          }}>
+            <div style={{ fontSize: 48, marginBottom: 16 }}>🎯</div>
+            <h2 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 10 }}>
+              {t('curriculumAptitudeComingSoonTitle')}
+            </h2>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563', maxWidth: 440, margin: '0 auto' }}>
+              {t('curriculumAptitudeComingSoonDesc')}
+            </p>
+          </div>
+        )}
         <div style={{
           background: '#0A1628', borderRadius: 20, padding: '48px 24px',
           textAlign: 'center', margin: '48px 0',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
@@ -13,6 +13,14 @@ import { useLanguage } from '@/lib/LanguageContext';
 
 export default function FeaturesShowcaseSection() {
   const { t } = useLanguage();
+  const [lifeSkillsTrack, setLifeSkillsTrack] = useState('student');
+
+  const lifeSkillsExamples = {
+    student: { title: t('showcaseLifeSkillsExampleTitle'), body: t('showcaseLifeSkillsExampleBody') },
+    parent: { title: t('showcaseParentExampleTitle'), body: t('showcaseParentExampleBody') },
+    teacher: { title: t('showcaseTeacherExampleTitle'), body: t('showcaseTeacherExampleBody') },
+  };
+  const currentLifeSkillsExample = lifeSkillsExamples[lifeSkillsTrack];
 
   const cards = [
     {
@@ -23,8 +31,9 @@ export default function FeaturesShowcaseSection() {
       link: '/life-skills',
       accent: '#10B981',
       accentBg: '#ECFDF5',
-      exampleTitle: t('showcaseLifeSkillsExampleTitle'),
-      exampleBody: t('showcaseLifeSkillsExampleBody'),
+      isLifeSkills: true,
+      exampleTitle: currentLifeSkillsExample.title,
+      exampleBody: currentLifeSkillsExample.body,
       restNote: t('showcaseLifeSkillsRest'),
     },
     {
@@ -91,6 +100,31 @@ export default function FeaturesShowcaseSection() {
               }}>
                 {card.badge}
               </span>
+
+              {/* Student/Parent/Teacher track selector — Life Skills only */}
+              {card.isLifeSkills && (
+                <div style={{ display: 'flex', gap: 6, marginBottom: 14 }}>
+                  {[
+                    { id: 'student', label: t('showcaseTrackStudent') },
+                    { id: 'parent', label: t('showcaseTrackParent') },
+                    { id: 'teacher', label: t('showcaseTrackTeacher') },
+                  ].map(track => (
+                    <button
+                      key={track.id}
+                      onClick={() => setLifeSkillsTrack(track.id)}
+                      style={{
+                        flex: 1, padding: '6px 8px', borderRadius: 8,
+                        border: lifeSkillsTrack === track.id ? 'none' : '1px solid rgba(16,185,129,0.25)',
+                        background: lifeSkillsTrack === track.id ? '#10B981' : 'white',
+                        color: lifeSkillsTrack === track.id ? 'white' : '#4B5563',
+                        fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 600, cursor: 'pointer',
+                      }}
+                    >
+                      {track.label}
+                    </button>
+                  ))}
+                </div>
+              )}
 
               {/* Real example preview */}
               <div style={{
