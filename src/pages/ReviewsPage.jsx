@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getSupabase } from '@/lib/supabaseClient';
 import { motion, AnimatePresence } from 'framer-motion';
-import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
+import LandingNavbar from '@/components/landing/LandingNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
 
 const glass = {
@@ -284,7 +284,7 @@ export default function ReviewsPage() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
-      <DashboardNavbar />
+      <LandingNavbar />
       <main style={{ maxWidth: 900, margin: '0 auto', padding: '32px 16px 80px' }}>
 
         {/* Header */}
