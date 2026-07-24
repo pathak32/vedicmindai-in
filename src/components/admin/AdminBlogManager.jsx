@@ -20,6 +20,8 @@ export default function AdminBlogManager() {
   const [statusMsg, setStatusMsg] = useState('');
   const [saving, setSaving] = useState(false);
   const [view, setView] = useState('submit'); // submit | drafts | published
+  const [editingId, setEditingId] = useState(null); // null = creating new; set = editing an existing post
+  const [editingSlug, setEditingSlug] = useState(null); // preserve the original slug/URL when editing
 
   const [form, setForm] = useState({
     title: '', category: CATEGORIES[0], subcategory: '',
@@ -42,6 +44,28 @@ export default function AdminBlogManager() {
     }
   }
 
+  function startEdit(post) {
+    setEditingId(post.id);
+    setEditingSlug(post.slug);
+    setForm({
+      title: post.title || '',
+      category: post.category || CATEGORIES[0],
+      subcategory: post.subcategory || '',
+      target_keyword: post.target_keyword || '',
+      target_audience: post.target_audience || '',
+      content: post.content || '',
+    });
+    setStatusMsg('');
+    setView('submit');
+  }
+
+  function cancelEdit() {
+    setEditingId(null);
+    setEditingSlug(null);
+    setForm({ title: '', category: CATEGORIES[0], subcategory: '', target_keyword: '', target_audience: '', content: '' });
+    setStatusMsg('');
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     if (!form.title.trim() || !form.content.trim()) {
@@ -52,6 +76,26 @@ export default function AdminBlogManager() {
     setStatusMsg('');
     try {
       const sb = await getSupabase();
+
+      if (editingId) {
+        // Editing an existing post — keep its original slug and status
+        // (a published article stays published; a draft stays a draft)
+        // untouched. Only the content fields below change.
+        const { error } = await sb.from('blog_posts').update({
+          title: form.title.trim(),
+          category: form.category,
+          subcategory: form.subcategory.trim() || null,
+          target_keyword: form.target_keyword.trim() || null,
+          target_audience: form.target_audience.trim() || null,
+          content: form.content.trim(),
+        }).eq('id', editingId);
+        if (error) throw error;
+        setStatusMsg('✅ Changes saved.');
+        cancelEdit();
+        loadPosts();
+        return;
+      }
+
       const slug = slugify(form.title);
       const { error } = await sb.from('blog_posts').insert({
         title: form.title.trim(),
@@ -98,7 +142,7 @@ export default function AdminBlogManager() {
     <div>
       <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
         {[
-          { id: 'submit', label: '✍️ Submit New Article' },
+          { id: 'submit', label: editingId ? '✏️ Editing Article' : '✍️ Submit New Article' },
           { id: 'drafts', label: `📝 Drafts (${drafts.length})` },
           { id: 'published', label: `✅ Published (${published.length})` },
         ].map(v => (
@@ -117,7 +161,9 @@ export default function AdminBlogManager() {
       {view === 'submit' && (
         <form onSubmit={handleSubmit} style={card}>
           <p style={{ fontSize: 13, color: '#6B7280', marginBottom: 16 }}>
-            Paste your article here. It saves as a <strong>draft</strong> — nothing goes live until you (or Claude, if you ask in chat) review it and hit Publish.
+            {editingId
+              ? <>Editing <strong>{editingSlug}</strong> — changes save immediately to this same article; its status and URL stay unchanged.</>
+              : <>Paste your article here. It saves as a <strong>draft</strong> — nothing goes live until you (or Claude, if you ask in chat) review it and hit Publish.</>}
           </p>
           <div style={{ marginBottom: 14 }}>
             <label style={label}>Title *</label>
@@ -152,9 +198,14 @@ export default function AdminBlogManager() {
               placeholder="Paste the full article text here..."
             />
           </div>
-          <button type="submit" disabled={saving} style={btn('#10B981')}>
-            {saving ? 'Saving…' : 'Save as Draft'}
-          </button>
+          <div style={{ display: 'flex', gap: 10 }}>
+            <button type="submit" disabled={saving} style={btn(editingId ? '#6366F1' : '#10B981')}>
+              {saving ? 'Saving…' : (editingId ? 'Save Changes' : 'Save as Draft')}
+            </button>
+            {editingId && (
+              <button type="button" onClick={cancelEdit} style={btn('#9CA3AF')}>Cancel</button>
+            )}
+          </div>
         </form>
       )}
 
@@ -174,6 +225,7 @@ export default function AdminBlogManager() {
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
+                  <button onClick={() => startEdit(post)} style={btn('#6366F1')}>Edit</button>
                   {view === 'drafts' && <button onClick={() => publishPost(post.id)} style={btn('#10B981')}>Publish</button>}
                   {view === 'published' && <button onClick={() => unpublishPost(post.id)} style={btn('#F59E0B')}>Unpublish</button>}
                   <button onClick={() => deletePost(post.id)} style={btn('#EF4444')}>Delete</button>
