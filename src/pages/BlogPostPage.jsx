@@ -139,7 +139,7 @@ export default function BlogPostPage() {
   const paragraphs = post.content.split(/\n\s*\n/).filter(p => p.trim());
 
   return (
-    <div style={{ minHeight: '100vh', background: 'white' }}>
+    <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
       <LandingNavbar />
       <main style={{ maxWidth: 720, margin: '0 auto', padding: '96px 20px 60px' }}>
         <Link to="/blog" style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#3B82F6', textDecoration: 'none' }}>
