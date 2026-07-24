@@ -12,6 +12,7 @@ import AdminReviewerActivity from '@/components/admin/AdminReviewerActivity';
 import AdminAnalytics from '@/components/admin/AdminAnalytics';
 import AdminLiveActivity from '@/components/admin/AdminLiveActivity';
 import AdminVisitorStats from '@/components/admin/AdminVisitorStats';
+import AdminQuestionReview from '@/components/admin/AdminQuestionReview';
 import AdminFoundingCircleTracker from '@/components/admin/AdminFoundingCircleTracker';
 import AdminLiveClasses from '@/components/admin/AdminLiveClasses';
 
@@ -22,6 +23,7 @@ const SESSION_KEY = 'vm_admin_session';
 const TABS = [
   { id: 'live',      label: '🟢 Live Today' },
   { id: 'traffic',   label: '🌐 Visitor Traffic' },
+  { id: 'qreview',   label: '🧩 Question Review' },
   { id: 'circle',    label: '🎯 Founding Circle' },
   { id: 'liveclass', label: '🔴 Live Classes' },
   { id: 'analytics', label: '📊 Analytics' },
@@ -151,6 +153,7 @@ function AdminDashboard({ onLock }) {
           <motion.div key={activeTab} initial={{ opacity:0, y:8 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0 }} transition={{ duration:0.2 }}>
             {activeTab === 'live'      && <AdminLiveActivity />}
             {activeTab === 'traffic'   && <AdminVisitorStats />}
+            {activeTab === 'qreview'   && <AdminQuestionReview />}
             {activeTab === 'circle'    && <AdminFoundingCircleTracker />}
             {activeTab === 'liveclass' && <AdminLiveClasses />}
             {activeTab === 'analytics' && <AdminAnalytics />}
