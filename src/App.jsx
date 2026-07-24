@@ -5,6 +5,7 @@ import { VedicAuthProvider } from '@/lib/VedicAuthContext';
 import { ProgressProvider } from '@/lib/ProgressContext';
 import { ProfileProvider } from '@/lib/ProfileContext';
 import ScrollToTop from '@/lib/ScrollToTop';
+import VisitorTracker from '@/lib/visitorTracking';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState, lazy, Suspense } from 'react';
 import { LanguageProvider } from "@/lib/LanguageContext";
@@ -217,6 +218,7 @@ function App() {
               <Router>
                 <DarkModeSync />
                 <ScrollToTop />
+                <VisitorTracker />
                 <Routes>
                   <Route path="/admin-panel" element={
                     <Suspense fallback={<PageLoader />}>
