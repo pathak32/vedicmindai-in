@@ -14,6 +14,14 @@ function getOrCreateSessionId() {
   return id;
 }
 
+// The Android TWA (package in.vedicmindai.app) sets document.referrer to
+// "android-app://in.vedicmindai.app" when it launches a page — a regular
+// browser visit never produces this. document.referrer is fixed for the
+// lifetime of the document load, so this only needs to be read once.
+function detectPlatform() {
+  return document.referrer && document.referrer.startsWith('android-app://') ? 'app' : 'web';
+}
+
 // Mounted once at the top of App.jsx. Tracks anonymous site visitors
 // (logged in or not) for the admin panel's Live Visitors / Today's
 // Visitors stats — separate from `profiles`, which only covers accounts
@@ -26,6 +34,7 @@ export default function VisitorTracker() {
     if (location.pathname.startsWith('/admin-panel')) return;
 
     const sessionId = getOrCreateSessionId();
+    const platform = detectPlatform();
 
     async function ping() {
       try {
@@ -35,6 +44,7 @@ export default function VisitorTracker() {
             session_id: sessionId,
             last_seen_at: new Date().toISOString(),
             page_path: window.location.pathname,
+            platform,
           },
           { onConflict: 'session_id' }
         );
