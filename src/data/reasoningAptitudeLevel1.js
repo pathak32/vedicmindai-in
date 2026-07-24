@@ -1,5 +1,5 @@
 // Reasoning & Aptitude — Level 1 (Foundations) Question Bank
-// 10 chapters × 8 questions each = 80 questions total.
+// 10 chapters, question count varies (odd-one-out has extra approved questions merged Jul 24).
 // Structure matches the app's existing question schema pattern:
 // { chapter, prompt, options, answer, difficulty }
 // Ready to be loaded into Supabase `questions` table once reviewed.
@@ -14,6 +14,23 @@ export const RA_LEVEL1_QUESTIONS = [
   { chapter: 'odd-one-out', prompt: 'Which one does not belong: Delhi, Mumbai, India, Chennai?', options: ['India', 'Delhi', 'Chennai'], answer: 'India', difficulty: 'medium' , exp: 'Delhi, Mumbai, and Chennai are all cities. India is a country — it belongs to a different category.' },
   { chapter: 'odd-one-out', prompt: 'Which one does not belong: Guitar, Violin, Flute, Football?', options: ['Football', 'Guitar', 'Violin'], answer: 'Football', difficulty: 'easy' , exp: 'Guitar, Violin, and Flute are all musical instruments. Football is a sport — it doesn\'t belong.' },
   { chapter: 'odd-one-out', prompt: 'Which one does not belong: 2, 4, 7, 8?', options: ['7', '2', '4'], answer: '7', difficulty: 'medium' , exp: '2, 4, and 8 are all even numbers. 7 is an odd number — it doesn\'t belong.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Dog, Cat, Lion, Table?', options: ['Table', 'Dog', 'Lion'], answer: 'Table', difficulty: 'easy' , exp: 'Dog and Lion are animals. Table is furniture — it doesn\'t belong.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Red, Blue, Green, Happy?', options: ['Red', 'Happy', 'Blue'], answer: 'Happy', difficulty: 'easy' , exp: 'Red and Blue are colours. Happy is a feeling, not a colour.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Circle, Square, Triangle, Cloud?', options: ['Circle', 'Square', 'Cloud'], answer: 'Cloud', difficulty: 'easy' , exp: 'Circle and Square are defined geometric shapes. A cloud has no fixed shape.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Monday, Tuesday, January, Friday?', options: ['January', 'Monday', 'Friday'], answer: 'January', difficulty: 'easy' , exp: 'Monday and Friday are days of the week. January is a month.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Rose, Lotus, Sunflower, Mango?', options: ['Rose', 'Mango', 'Sunflower'], answer: 'Mango', difficulty: 'easy' , exp: 'Rose and Sunflower are flowers. Mango is a fruit.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Pen, Pencil, Eraser, Banana?', options: ['Pencil', 'Eraser', 'Banana'], answer: 'Banana', difficulty: 'easy' , exp: 'Pencil and Eraser are stationery items. Banana is a fruit.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Car, Bus, Bicycle, Tree?', options: ['Tree', 'Car', 'Bicycle'], answer: 'Tree', difficulty: 'easy' , exp: 'Car and Bicycle are vehicles used for transport. Tree is a plant.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Cricket, Football, Hockey, Piano?', options: ['Cricket', 'Piano', 'Hockey'], answer: 'Piano', difficulty: 'easy' , exp: 'Cricket and Hockey are sports. Piano is a musical instrument.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Eagle, Sparrow, Crow, Butterfly?', options: ['Eagle', 'Crow', 'Butterfly'], answer: 'Butterfly', difficulty: 'easy' , exp: 'Eagle and Crow are birds. Butterfly is an insect, not a bird.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Milk, Curd, Cheese, Bread?', options: ['Bread', 'Milk', 'Cheese'], answer: 'Bread', difficulty: 'easy' , exp: 'Milk and Cheese are dairy products. Bread is made from wheat flour, not milk.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Doctor, Teacher, Engineer, School?', options: ['Doctor', 'School', 'Engineer'], answer: 'School', difficulty: 'easy' , exp: 'Doctor and Engineer are professions (people). School is a place, not a profession.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Triangle, Rectangle, Square, Sphere?', options: ['Triangle', 'Square', 'Sphere'], answer: 'Sphere', difficulty: 'easy' , exp: 'Triangle and Square are flat, 2D shapes. Sphere is a solid, 3D shape.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Ant, Bee, Spider, Elephant?', options: ['Elephant', 'Ant', 'Bee'], answer: 'Elephant', difficulty: 'easy' , exp: 'Ant and Bee are insects. Elephant is a mammal, much larger and structurally different.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Sun, Moon, Star, River?', options: ['Sun', 'River', 'Star'], answer: 'River', difficulty: 'easy' , exp: 'Sun and Star are objects seen in the sky. River is a landform on Earth\'s surface.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Wheat, Rice, Corn, Cotton?', options: ['Wheat', 'Corn', 'Cotton'], answer: 'Cotton', difficulty: 'easy' , exp: 'Wheat and Corn are food grains people eat. Cotton is a fibre crop, not eaten as food.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Tomato, Potato, Onion, Orange?', options: ['Orange', 'Tomato', 'Onion'], answer: 'Orange', difficulty: 'easy' , exp: 'Tomato and Onion are vegetables commonly used in cooking. Orange is a fruit.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Piano, Guitar, Drum, Painting?', options: ['Piano', 'Painting', 'Drum'], answer: 'Painting', difficulty: 'easy' , exp: 'Piano and Drum are musical instruments. Painting is a visual art form, not an instrument.' },
 
   // ---------------- Chapter 2: Simple Number Series ----------------
   { chapter: 'number-series-basic', prompt: '2, 4, 6, 8, ?', options: ['9', '10', '12'], answer: '10', difficulty: 'easy' , exp: 'Each number increases by 2 (+2, +2...). The next is 8 + 2 = 10.' },
