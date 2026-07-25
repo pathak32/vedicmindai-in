@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { getSupabase } from '@/lib/supabaseClient';
 
 const card = { background: 'rgba(255,255,255,0.9)', border: '1px solid rgba(30,64,175,0.1)', borderRadius: 14, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.05)', marginBottom: 16 };
@@ -12,6 +12,7 @@ export default function AdminQuestionReview() {
   const [statusMsg, setStatusMsg] = useState('');
   const [view, setView] = useState('pending'); // pending | approved | rejected
   const [verticalFilter, setVerticalFilter] = useState('All');
+  const [chapterFilter, setChapterFilter] = useState('All');
 
   const loadQuestions = useCallback(async () => {
     setLoading(true);
@@ -42,15 +43,50 @@ export default function AdminQuestionReview() {
     loadQuestions();
   }
 
+  async function bulkApproveChapter() {
+    if (chapterFilter === 'All') return;
+    const idsToApprove = questions.filter((q) => q.status === 'pending' && `${q.chapter_id}|${q.level}` === chapterFilter).map((q) => q.id);
+    if (idsToApprove.length === 0) return;
+    if (!confirm(`Approve all ${idsToApprove.length} pending questions in this chapter?`)) return;
+    const sb = await getSupabase();
+    await sb.from('pending_questions').update({ status: 'approved', reviewed_at: new Date().toISOString() }).in('id', idsToApprove);
+    loadQuestions();
+  }
+
+  // Build the chapter dropdown options from whatever chapters actually exist in
+  // the currently vertical-filtered data — grouped by chapter_id+level so L1 and
+  // L2 versions of the same chapter name show as separate entries.
+  const chapterOptions = useMemo(() => {
+    const scoped = verticalFilter === 'All' ? questions : questions.filter((q) => q.vertical === verticalFilter);
+    const seen = new Map();
+    scoped.forEach((q) => {
+      const key = `${q.chapter_id}|${q.level}`;
+      if (!seen.has(key)) {
+        seen.set(key, { key, label: `${q.chapter_title} (Level ${q.level})`, chapter_id: q.chapter_id, level: q.level });
+      }
+    });
+    return Array.from(seen.values()).sort((a, b) => a.label.localeCompare(b.label));
+  }, [questions, verticalFilter]);
+
+  // Reset chapter filter if it no longer applies after switching vertical
+  useEffect(() => {
+    if (chapterFilter !== 'All' && !chapterOptions.some((c) => c.key === chapterFilter)) {
+      setChapterFilter('All');
+    }
+  }, [chapterOptions, chapterFilter]);
+
   const filtered = questions
     .filter((q) => q.status === view)
-    .filter((q) => verticalFilter === 'All' || q.vertical === verticalFilter);
+    .filter((q) => verticalFilter === 'All' || q.vertical === verticalFilter)
+    .filter((q) => chapterFilter === 'All' || `${q.chapter_id}|${q.level}` === chapterFilter);
 
   const counts = {
     pending: questions.filter((q) => q.status === 'pending').length,
     approved: questions.filter((q) => q.status === 'approved').length,
     rejected: questions.filter((q) => q.status === 'rejected').length,
   };
+
+  const chapterPendingCount = chapterFilter === 'All' ? 0 : questions.filter((q) => q.status === 'pending' && `${q.chapter_id}|${q.level}` === chapterFilter).length;
 
   return (
     <div>
@@ -62,10 +98,25 @@ export default function AdminQuestionReview() {
         ].map((v) => (
           <button key={v.id} onClick={() => setView(v.id)} style={btn(view === v.id ? '#1e40af' : '#9CA3AF')}>{v.label}</button>
         ))}
+      </div>
+
+      <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap', alignItems: 'center' }}>
         <select value={verticalFilter} onChange={(e) => setVerticalFilter(e.target.value)}
-          style={{ padding: '6px 10px', borderRadius: 8, border: '1px solid rgba(30,64,175,0.2)', fontSize: 12, fontWeight: 600, cursor: 'pointer', marginLeft: 'auto' }}>
+          style={{ padding: '6px 10px', borderRadius: 8, border: '1px solid rgba(30,64,175,0.2)', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
           {VERTICALS.map((v) => <option key={v} value={v}>{v}</option>)}
         </select>
+
+        <select value={chapterFilter} onChange={(e) => setChapterFilter(e.target.value)}
+          style={{ padding: '6px 10px', borderRadius: 8, border: '1px solid rgba(30,64,175,0.2)', fontSize: 12, fontWeight: 600, cursor: 'pointer', minWidth: 220 }}>
+          <option value="All">All Chapters ({chapterOptions.length} available)</option>
+          {chapterOptions.map((c) => <option key={c.key} value={c.key}>{c.label}</option>)}
+        </select>
+
+        {chapterFilter !== 'All' && view === 'pending' && chapterPendingCount > 0 && (
+          <button onClick={bulkApproveChapter} style={btn('#10B981')}>
+            ✅ Approve all {chapterPendingCount} in this chapter
+          </button>
+        )}
       </div>
 
       {statusMsg && <div style={{ ...card, background: '#FEE2E2' }}>{statusMsg}</div>}
