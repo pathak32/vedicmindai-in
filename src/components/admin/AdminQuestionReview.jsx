@@ -126,7 +126,10 @@ export default function AdminQuestionReview() {
       {filtered.map((q) => (
         <div key={q.id} style={card}>
           <div style={{ fontSize: 11, color: '#9CA3AF', marginBottom: 6, fontWeight: 600 }}>
-            {q.vertical} · {q.chapter_title} · Level {q.level}
+            {q.vertical} · {q.chapter_title} · Level {q.level} · <span style={{
+              color: q.difficulty === 'hard' ? '#DC2626' : q.difficulty === 'easy' ? '#059669' : '#D97706',
+              fontWeight: 700, textTransform: 'uppercase',
+            }}>{q.difficulty || 'medium'}</span>
           </div>
           <div style={{ fontWeight: 700, fontSize: 15, color: '#0A1628', marginBottom: 12 }}>{q.question_en}</div>
           <div style={{ display: 'grid', gap: 6, marginBottom: 12 }}>
