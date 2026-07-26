@@ -43,6 +43,7 @@ const DailyQuizPage          = lazy(() => import('@/pages/DailyQuizPage'));
 const DailyQuizResultsPage   = lazy(() => import('@/pages/DailyQuizResultsPage'));
 const LeaderboardPage        = lazy(() => import('@/pages/LeaderboardPage'));
 const AptitudeZonePage       = lazy(() => import('@/pages/AptitudeZonePage'));
+const AptitudeChapterPage    = lazy(() => import('@/pages/AptitudeChapterPage'));
 const AptitudeComingSoonPage = lazy(() => import('@/pages/AptitudeComingSoonPage'));
 const AdminPanel             = lazy(() => import('@/pages/AdminPanel'));
 const PricingPage            = lazy(() => import('@/pages/PricingPage'));
@@ -179,7 +180,8 @@ function RouteTransition() {
                 <Route path="/daily-quiz"          element={<ProfileCompletionGate><DailyQuizPage /></ProfileCompletionGate>} />
                 <Route path="/daily-quiz/results"  element={<DailyQuizResultsPage />} />
                 <Route path="/leaderboard"         element={<LeaderboardPage />} />
-                <Route path="/aptitude"            element={<AptitudeComingSoonPage />} />
+                <Route path="/aptitude"            element={<AptitudeChapterPage />} />
+                <Route path="/aptitude/:chapterId" element={<AptitudeChapterPage />} />
                 <Route path="/pricing"             element={<PricingPage />} />
                 <Route path="/weekly-exam"         element={<ProfileCompletionGate><WeeklyExamPage /></ProfileCompletionGate>} />
                 <Route path="/weekly-exam/results" element={<WeeklyExamResultsPage />} />
