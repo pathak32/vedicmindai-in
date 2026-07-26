@@ -4,6 +4,14 @@ import { getSupabase } from '@/lib/supabaseClient';
 const card = { background: 'rgba(255,255,255,0.9)', border: '1px solid rgba(30,64,175,0.1)', borderRadius: 14, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.05)', marginBottom: 16 };
 const btn = (color = '#1e40af') => ({ padding: '8px 18px', borderRadius: 9, background: color, color: '#fff', border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600 });
 
+// Pre-K / picture-based content (emoji options) needs to render much larger than
+// normal text — small emoji are genuinely hard for young children to see and
+// distinguish. Detects options that are mostly emoji/symbols vs normal words.
+function isVisualOption(opt) {
+  const stripped = opt.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\s]/gu, '');
+  return stripped.length <= 2; // little or no regular text left after stripping emoji
+}
+
 const VERTICALS = ['All', 'Vedic Maths', 'Reasoning', 'Aptitude'];
 
 export default function AdminQuestionReview() {
@@ -133,17 +141,24 @@ export default function AdminQuestionReview() {
           </div>
           <div style={{ fontWeight: 700, fontSize: 15, color: '#0A1628', marginBottom: 12 }}>{q.question_en}</div>
           <div style={{ display: 'grid', gap: 6, marginBottom: 12 }}>
-            {(q.options || []).map((opt, i) => (
-              <div key={i} style={{
-                padding: '8px 12px', borderRadius: 8, fontSize: 13,
-                background: i === q.correct_index ? '#ECFDF5' : '#F9FAFB',
-                border: i === q.correct_index ? '1px solid #10B981' : '1px solid #E5E7EB',
-                color: i === q.correct_index ? '#065F46' : '#374151',
-                fontWeight: i === q.correct_index ? 700 : 400,
-              }}>
-                {String.fromCharCode(65 + i)}. {opt} {i === q.correct_index ? '✓' : ''}
-              </div>
-            ))}
+            {(q.options || []).map((opt, i) => {
+              const visual = isVisualOption(opt);
+              return (
+                <div key={i} style={{
+                  padding: visual ? '16px 12px' : '8px 12px', borderRadius: 8,
+                  fontSize: visual ? 40 : 13,
+                  background: i === q.correct_index ? '#ECFDF5' : '#F9FAFB',
+                  border: i === q.correct_index ? '1px solid #10B981' : '1px solid #E5E7EB',
+                  color: i === q.correct_index ? '#065F46' : '#374151',
+                  fontWeight: i === q.correct_index ? 700 : 400,
+                  display: 'flex', alignItems: 'center', gap: 12,
+                }}>
+                  <span style={{ fontSize: visual ? 14 : 'inherit', fontWeight: 700, opacity: 0.6 }}>{String.fromCharCode(65 + i)}.</span>
+                  <span>{opt}</span>
+                  {i === q.correct_index && <span style={{ fontSize: 16 }}>✓</span>}
+                </div>
+              );
+            })}
           </div>
           <div style={{ fontSize: 13, color: '#4B5563', background: '#F9FAFB', borderRadius: 8, padding: '10px 12px', marginBottom: 14 }}>
             <strong>Explanation:</strong> {q.explanation}
