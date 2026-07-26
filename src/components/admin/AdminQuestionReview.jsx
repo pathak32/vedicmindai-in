@@ -8,6 +8,7 @@ const btn = (color = '#1e40af') => ({ padding: '8px 18px', borderRadius: 9, back
 // normal text — small emoji are genuinely hard for young children to see and
 // distinguish. Detects options that are mostly emoji/symbols vs normal words.
 function isVisualOption(opt) {
+  if (typeof opt !== 'string') return false; // image-object options are never "visual emoji" style
   const stripped = opt.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\s]/gu, '');
   return stripped.length <= 2; // little or no regular text left after stripping emoji
 }
@@ -140,12 +141,20 @@ export default function AdminQuestionReview() {
             }}>{q.difficulty || 'medium'}</span>
           </div>
           <div style={{ fontWeight: 700, fontSize: 15, color: '#0A1628', marginBottom: 12 }}>{q.question_en}</div>
+          {q.display_image && (
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
+              {Array.from({ length: q.display_count || 1 }).map((_, i) => (
+                <img key={i} src={q.display_image} alt="" style={{ width: 70, height: 70, objectFit: 'cover', borderRadius: 8, border: '1px solid #E5E7EB' }} />
+              ))}
+            </div>
+          )}
           <div style={{ display: 'grid', gap: 6, marginBottom: 12 }}>
             {(q.options || []).map((opt, i) => {
-              const visual = isVisualOption(opt);
+              const isImageOption = opt && typeof opt === 'object' && opt.image;
+              const visual = !isImageOption && isVisualOption(opt);
               return (
                 <div key={i} style={{
-                  padding: visual ? '16px 12px' : '8px 12px', borderRadius: 8,
+                  padding: isImageOption ? '10px 12px' : (visual ? '16px 12px' : '8px 12px'), borderRadius: 8,
                   fontSize: visual ? 40 : 13,
                   background: i === q.correct_index ? '#ECFDF5' : '#F9FAFB',
                   border: i === q.correct_index ? '1px solid #10B981' : '1px solid #E5E7EB',
@@ -153,11 +162,19 @@ export default function AdminQuestionReview() {
                   fontWeight: i === q.correct_index ? 700 : 400,
                   display: 'flex', alignItems: 'center', gap: 12,
                 }}>
-                  <span style={{ fontSize: visual ? 14 : 'inherit', fontWeight: 700, opacity: 0.6 }}>{String.fromCharCode(65 + i)}.</span>
-                  <span>{opt}</span>
+                  <span style={{ fontSize: 14, fontWeight: 700, opacity: 0.6 }}>{String.fromCharCode(65 + i)}.</span>
+                  {isImageOption ? (
+                    <>
+                      <img src={opt.image} alt={opt.label} style={{ width: 60, height: 60, objectFit: 'cover', borderRadius: 6 }} />
+                      <span style={{ fontSize: 14 }}>{opt.label}</span>
+                    </>
+                  ) : (
+                    <span>{opt}</span>
+                  )}
                   {i === q.correct_index && <span style={{ fontSize: 16 }}>✓</span>}
                 </div>
               );
+
             })}
           </div>
           <div style={{ fontSize: 13, color: '#4B5563', background: '#F9FAFB', borderRadius: 8, padding: '10px 12px', marginBottom: 14 }}>
