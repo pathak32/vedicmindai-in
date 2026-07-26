@@ -1,30 +1,66 @@
-// Aptitude quiz question bank — matches Reasoning's format (chapter/prompt/
-// options/answer/exp), NOT the older aptitudeQuestions.js format (which uses
-// a different topic/vedic_sutra structure for the pre-existing 46 questions).
+// Aptitude quiz question bank — populated via merge from his approved
+// pending_questions (Jul 26). Matches Reasoning's format (chapter/prompt/
+// options/answer/exp), with Pre-K extensions for image-based options,
+// display_image+display_count (counting), and sequence_images (patterns).
 //
-// STATUS: structure ready, but empty — this needs the same merge pass already
-// used for Reasoning and Vedic Maths: fetch his approved questions from
-// pending_questions (vertical='Aptitude') and populate AITITUDE_QUESTIONS
-// below. Ask Claude to do this merge once ready.
+// Chapter ID note: two chapters were renamed during merge to match the
+// approved Round 2 structure — 'vedic-shortcuts-for-percentages' became
+// 'percentage-puzzles', and 'vedic-speed-tricks' became 'speed-maths-connect'
+// (trimmed from 18 approved down to 6 representative examples, per Round 2's
+// spec that this should be "a few problems," not the dominant chunk of
+// Primary's content).
+//
+// Old Round 1 emoji-based Pre-K chapters (shape-matching, picture-odd-one-out,
+// counting-and-numbers, size-and-sorting, simple-patterns) were intentionally
+// EXCLUDED from this merge — they're superseded by the real-image rebuild
+// (match-the-picture, what-doesnt-belong, count-the-objects, big-or-small,
+// what-comes-next) and still sit approved-but-unused in pending_questions.
 
 export const APTITUDE_QUESTIONS = [
-  // Example shape for a text-based question (Primary/Middle/etc.):
-  // { chapter: 'word-meanings', prompt: "Which word means the same as 'Happy'?", options: ['Sad','Joyful','Angry'], answer: 'Joyful', exp: '...' },
-
-  // Example shape for a Pre-K image-based question:
-  // { chapter: 'match-the-picture', prompt: 'Which picture matches the Apple?',
-  //   options: [{label:'Apple',image:'https://...'}, {label:'Banana',image:'https://...'}],
-  //   answer: 'Apple', exp: '...' },
-
-  // Example shape for a Pre-K counting question:
-  // { chapter: 'count-the-objects', prompt: 'How many Apples are there?',
-  //   options: ['2','3','4'], answer: '3', exp: '...',
-  //   display_image: 'https://...', display_count: 3 },
-
-  // Example shape for a Pre-K pattern question:
-  // { chapter: 'what-comes-next', prompt: 'What comes next in the picture pattern?',
-  //   options: [{label:'Apple',image:'...'}, {label:'Banana',image:'...'}],
-  //   answer: 'Apple', exp: '...', sequence_images: ['url1','url2','url3','url4'] },
+  { chapter: 'match-the-picture', prompt: 'Which picture matches the Apple?', options: [{ image: 'https://cdn.pixabay.com/photo/2019/10/03/01/44/apple-4522286_640.png', label: 'Apple' }, { image: 'https://cdn.pixabay.com/photo/2019/07/11/10/11/banana-4330436_640.png', label: 'Banana' }, { image: 'https://cdn.pixabay.com/photo/2024/07/11/14/32/orange-8888447_640.png', label: 'Orange' }], answer: 'Apple', exp: 'The Apple picture matches the Apple.' },
+  { chapter: 'match-the-picture', prompt: 'Which picture matches the Elephant?', options: [{ image: 'https://cdn.pixabay.com/photo/2016/02/23/10/55/elephant-1217313_640.png', label: 'Elephant' }, { image: 'https://cdn.pixabay.com/photo/2013/07/13/10/16/ant-156893_640.png', label: 'Ant' }, { image: 'https://cdn.pixabay.com/photo/2019/03/03/08/25/rabbit-4031334_640.png', label: 'Rabbit' }], answer: 'Elephant', exp: 'The Elephant picture matches the Elephant.' },
+  { chapter: 'match-the-picture', prompt: 'Which picture matches the Carrot?', options: [{ image: 'https://cdn.pixabay.com/photo/2017/03/26/09/39/tomato-2175133_640.png', label: 'Tomato' }, { image: 'https://cdn.pixabay.com/photo/2022/01/14/00/32/potato-6936229_640.png', label: 'Potato' }, { image: 'https://cdn.pixabay.com/photo/2014/12/21/23/34/carrot-575529_640.png', label: 'Carrot' }], answer: 'Carrot', exp: 'The Carrot picture matches the Carrot.' },
+  { chapter: 'match-the-picture', prompt: 'Which picture matches the Dog?', options: [{ image: 'https://cdn.pixabay.com/photo/2024/08/30/10/14/cat-9009011_640.jpg', label: 'Cat' }, { image: 'https://cdn.pixabay.com/photo/2023/04/20/16/57/pomeranian-7940204_640.png', label: 'Dog' }, { image: 'https://cdn.pixabay.com/photo/2019/03/03/08/25/rabbit-4031334_640.png', label: 'Rabbit' }], answer: 'Dog', exp: 'The Dog picture matches the Dog.' },
+  { chapter: 'what-doesnt-belong', prompt: 'Which one does not belong?', options: [{ image: 'https://cdn.pixabay.com/photo/2019/10/03/01/44/apple-4522286_640.png', label: 'Apple' }, { image: 'https://cdn.pixabay.com/photo/2019/07/11/10/11/banana-4330436_640.png', label: 'Banana' }, { image: 'https://cdn.pixabay.com/photo/2024/07/11/14/32/orange-8888447_640.png', label: 'Orange' }, { image: 'https://cdn.pixabay.com/photo/2013/07/13/01/11/passenger-car-155267_640.png', label: 'Toy Car' }], answer: 'Toy Car', exp: 'Apple, Banana, and Orange are fruits. The toy car is not a fruit.' },
+  { chapter: 'what-doesnt-belong', prompt: 'Which one does not belong?', options: [{ image: 'https://cdn.pixabay.com/photo/2014/12/21/23/34/carrot-575529_640.png', label: 'Carrot' }, { image: 'https://cdn.pixabay.com/photo/2022/01/14/00/32/potato-6936229_640.png', label: 'Potato' }, { image: 'https://cdn.pixabay.com/photo/2017/03/26/09/39/tomato-2175133_640.png', label: 'Tomato' }, { image: 'https://cdn.pixabay.com/photo/2022/02/06/22/12/strawberry-6998178_640.png', label: 'Strawberry' }], answer: 'Strawberry', exp: 'Carrot, Potato, and Tomato are vegetables. Strawberry is a fruit.' },
+  { chapter: 'what-doesnt-belong', prompt: 'Which one does not belong?', options: [{ image: 'https://cdn.pixabay.com/photo/2023/04/20/16/57/pomeranian-7940204_640.png', label: 'Dog' }, { image: 'https://cdn.pixabay.com/photo/2024/08/30/10/14/cat-9009011_640.jpg', label: 'Cat' }, { image: 'https://cdn.pixabay.com/photo/2019/03/03/08/25/rabbit-4031334_640.png', label: 'Rabbit' }, { image: 'https://cdn.pixabay.com/photo/2014/12/21/23/34/carrot-575529_640.png', label: 'Carrot' }], answer: 'Carrot', exp: 'Dog, Cat, and Rabbit are animals. Carrot is a vegetable.' },
+  { chapter: 'what-doesnt-belong', prompt: 'Which one does not belong?', options: [{ image: 'https://cdn.pixabay.com/photo/2016/02/23/10/55/elephant-1217313_640.png', label: 'Elephant' }, { image: 'https://cdn.pixabay.com/photo/2023/04/20/16/57/pomeranian-7940204_640.png', label: 'Dog' }, { image: 'https://cdn.pixabay.com/photo/2024/08/30/10/14/cat-9009011_640.jpg', label: 'Cat' }, { image: 'https://cdn.pixabay.com/photo/2015/05/19/11/28/grapes-773435_640.png', label: 'Grapes' }], answer: 'Grapes', exp: 'Elephant, Dog, and Cat are animals. Grapes is a fruit.' },
+  { chapter: 'count-the-objects', prompt: 'How many Oranges are there?', options: ['3', '4', '5'], answer: '4', exp: 'Counting one by one: there are 4.', display_image: 'https://cdn.pixabay.com/photo/2024/07/11/14/32/orange-8888447_640.png', display_count: 4 },
+  { chapter: 'count-the-objects', prompt: 'How many Grapes are there?', options: ['4', '5', '6'], answer: '5', exp: 'Counting one by one: there are 5.', display_image: 'https://cdn.pixabay.com/photo/2015/05/19/11/28/grapes-773435_640.png', display_count: 5 },
+  { chapter: 'count-the-objects', prompt: 'How many Carrots are there?', options: ['1', '2', '3'], answer: '2', exp: 'Counting one by one: there are 2.', display_image: 'https://cdn.pixabay.com/photo/2014/12/21/23/34/carrot-575529_640.png', display_count: 2 },
+  { chapter: 'count-the-objects', prompt: 'How many Apples are there?', options: ['2', '3', '4'], answer: '3', exp: 'Counting one by one: there are 3.', display_image: 'https://cdn.pixabay.com/photo/2019/10/03/01/44/apple-4522286_640.png', display_count: 3 },
+  { chapter: 'big-or-small', prompt: 'Which one is BIGGER?', options: [{ image: 'https://cdn.pixabay.com/photo/2013/07/13/10/16/ant-156893_640.png', label: 'Ant' }, { image: 'https://cdn.pixabay.com/photo/2016/02/23/10/55/elephant-1217313_640.png', label: 'Elephant' }], answer: 'Elephant', exp: 'An elephant is much bigger than an ant.' },
+  { chapter: 'big-or-small', prompt: 'Which one is SMALLER?', options: [{ image: 'https://cdn.pixabay.com/photo/2023/04/20/16/57/pomeranian-7940204_640.png', label: 'Dog' }, { image: 'https://cdn.pixabay.com/photo/2013/07/13/10/16/ant-156893_640.png', label: 'Ant' }], answer: 'Ant', exp: 'An ant is much smaller than a dog.' },
+  { chapter: 'big-or-small', prompt: 'Which one is SMALLER?', options: [{ image: 'https://cdn.pixabay.com/photo/2016/06/14/02/35/pineapple-1455590_640.png', label: 'Pineapple' }, { image: 'https://cdn.pixabay.com/photo/2022/02/06/22/12/strawberry-6998178_640.png', label: 'Strawberry' }], answer: 'Strawberry', exp: 'A strawberry is much smaller than a pineapple.' },
+  { chapter: 'word-meanings', prompt: 'Which word means the same as \'Happy\'?', options: ['Joyful', 'Sad', 'Angry'], answer: 'Joyful', exp: 'Joyful means the same as Happy -- both describe feeling good.' },
+  { chapter: 'word-meanings', prompt: 'Which word means the same as \'Big\'?', options: ['Small', 'Large', 'Tiny'], answer: 'Large', exp: 'Large means the same as Big -- both describe great size.' },
+  { chapter: 'word-meanings', prompt: 'Which word means the OPPOSITE of \'Hot\'?', options: ['Warm', 'Sunny', 'Cold'], answer: 'Cold', exp: 'Cold is the opposite of Hot.' },
+  { chapter: 'word-meanings', prompt: 'Which word means the OPPOSITE of \'Fast\'?', options: ['Slow', 'Quick', 'Speedy'], answer: 'Slow', exp: 'Slow is the opposite of Fast.' },
+  { chapter: 'word-meanings', prompt: 'Which word does NOT belong: Happy, Joyful, Sad, Glad?', options: ['Happy', 'Sad', 'Glad'], answer: 'Sad', exp: 'Happy, Joyful, and Glad all mean feeling good. Sad means feeling bad -- the opposite.' },
+  { chapter: 'word-meanings', prompt: 'Which word means the same as \'Small\'?', options: ['Huge', 'Wide', 'Tiny'], answer: 'Tiny', exp: 'Tiny means the same as Small -- both describe little size.' },
+  { chapter: 'shape-patterns', prompt: 'Which shape has the MOST sides: Triangle, Square, Pentagon?', options: ['Pentagon', 'Triangle', 'Square'], answer: 'Pentagon', exp: 'A Pentagon has 5 sides, more than a Square (4 sides) or a Triangle (3 sides).' },
+  { chapter: 'shape-patterns', prompt: 'Small circle, medium circle, large circle, ? -- what comes next?', options: ['Small circle', 'Extra-large circle', 'Medium circle'], answer: 'Extra-large circle', exp: 'The circles grow bigger each time. The next is an extra-large circle.' },
+  { chapter: 'shape-patterns', prompt: 'Which shape has NO corners?', options: ['Square', 'Triangle', 'Circle'], answer: 'Circle', exp: 'A Circle is round and has no corners, unlike a Square or Triangle.' },
+  { chapter: 'shape-patterns', prompt: 'Triangle, Square, Pentagon, ? -- following the pattern of adding one side, what comes next?', options: ['Circle', 'Triangle', 'Hexagon'], answer: 'Hexagon', exp: 'Each shape has one more side than the last: 3, 4, 5. The next shape has 6 sides -- a Hexagon.' },
+  { chapter: 'shape-patterns', prompt: 'Which shape does not belong: Circle, Oval, Square, Ellipse?', options: ['Circle', 'Square', 'Oval'], answer: 'Square', exp: 'Circle, Oval, and Ellipse are all curved/round shapes. Square has straight sides.' },
+  { chapter: 'shape-patterns', prompt: 'Square, Circle, Square, Circle, Square, ? -- what comes next?', options: ['Circle', 'Square', 'Triangle'], answer: 'Circle', exp: 'The pattern alternates Square, Circle... Next comes Circle.' },
+  { chapter: 'reasoning-connect', prompt: 'If today is Monday, what day is it 3 days later?', options: ['Wednesday', 'Thursday', 'Friday'], answer: 'Thursday', exp: 'Monday + 3 days = Thursday. (Calendar reasoning like this also appears in the Reasoning section.)' },
+  { chapter: 'reasoning-connect', prompt: 'My father\'s father is my ?', options: ['Uncle', 'Father', 'Grandfather'], answer: 'Grandfather', exp: 'Your father\'s father is your grandfather. (Family relationship logic is covered fully in the Reasoning section\'s Blood Relations chapter.)' },
+  { chapter: 'reasoning-connect', prompt: 'A is taller than B. B is taller than C. Who is the shortest?', options: ['A', 'C', 'B'], answer: 'C', exp: 'Chain: A > B > C. C is at the bottom -- the shortest. (This ranking skill is also covered in the Reasoning section\'s Ranking & Ordering chapter.)' },
+  { chapter: 'reasoning-connect', prompt: 'Which does not belong: Apple, Banana, Carrot, Mango?', options: ['Apple', 'Mango', 'Carrot'], answer: 'Carrot', exp: 'Apple, Banana, and Mango are fruits. Carrot is a vegetable. (This classification skill matches the Reasoning section\'s Odd One Out chapter.)' },
+  { chapter: 'reasoning-connect', prompt: 'Book is to Read as Song is to ?', options: ['Listen', 'Write', 'Watch'], answer: 'Listen', exp: 'A Book is used to Read; a Song is used to Listen to. (This analogy skill is also taught in the Reasoning section.)' },
+  { chapter: 'percentage-puzzles', prompt: 'Using the Vedic ÷4 shortcut, what is 25% of 84?', options: ['21', '20', '22'], answer: '21', exp: '25% means one-quarter. 84 ÷ 4 = 21 -- much faster than long percentage calculation.' },
+  { chapter: 'percentage-puzzles', prompt: 'Using the Vedic ÷4 shortcut, what is 25% of 96?', options: ['23', '24', '25'], answer: '24', exp: '25% means one-quarter. 96 ÷ 4 = 24.' },
+  { chapter: 'percentage-puzzles', prompt: 'Using the Vedic ÷2 shortcut, what is 50% of 148?', options: ['72', '76', '74'], answer: '74', exp: '50% means half. 148 ÷ 2 = 74.' },
+  { chapter: 'percentage-puzzles', prompt: 'Using the Vedic shortcut (÷4, then ×3), what is 75% of 80?', options: ['60', '50', '55'], answer: '60', exp: '75% means three-quarters. 80 ÷ 4 = 20, then 20 × 3 = 60.' },
+  { chapter: 'percentage-puzzles', prompt: 'Using the Vedic ÷10 shortcut, what is 10% of 250?', options: ['20', '25', '30'], answer: '25', exp: '10% means one-tenth. 250 ÷ 10 = 25.' },
+  { chapter: 'percentage-puzzles', prompt: 'Using the Vedic shortcut (10% then double), what is 20% of 150?', options: ['25', '35', '30'], answer: '30', exp: '20% is double 10%. 10% of 150 = 15, so 20% = 15 × 2 = 30.' },
+  { chapter: 'speed-maths-connect', prompt: 'Using the Vedic Maths ×11 trick you learned, what is 82 × 11?', options: ['902', '912', '892'], answer: '902', exp: 'Using the ×11 shortcut from Vedic Maths: 82 × 11 = 82 × 10 + 82 = 820 + 82 = 902.' },
+  { chapter: 'speed-maths-connect', prompt: 'Using the Vedic Maths ×11 trick you learned, what is 55 × 11?', options: ['615', '605', '595'], answer: '605', exp: 'Using the ×11 shortcut from Vedic Maths: 55 × 11 = 55 × 10 + 55 = 550 + 55 = 605.' },
+  { chapter: 'speed-maths-connect', prompt: 'Using the Vedic Maths ×11 trick you learned, what is 40 × 11?', options: ['450', '430', '440'], answer: '440', exp: 'Using the ×11 shortcut from Vedic Maths: 40 × 11 = 40 × 10 + 40 = 400 + 40 = 440.' },
+  { chapter: 'speed-maths-connect', prompt: 'Using the Nikhilam trick (base 100) from Vedic Maths, what is 97 × 96?', options: ['9312', '9412', '9212'], answer: '9312', exp: 'Nikhilam base 100: deviations -3 and -4. Cross: 97-4=93. Product of deviations: -3×-4=12. Combine: 9312.' },
+  { chapter: 'speed-maths-connect', prompt: 'Using the Nikhilam trick (base 100) from Vedic Maths, what is 98 × 95?', options: ['9410', '9310', '9210'], answer: '9310', exp: 'Nikhilam base 100: deviations -2 and -5. Cross: 98-5=93. Product of deviations: -2×-5=10. Combine: 9310.' },
+  { chapter: 'speed-maths-connect', prompt: 'Using the Nikhilam trick (base 100) from Vedic Maths, what is 94 × 97?', options: ['9218', '9018', '9118'], answer: '9118', exp: 'Nikhilam base 100: deviations -6 and -3. Cross: 94-3=91. Product of deviations: -6×-3=18. Combine: 9118.' },
 ];
 
 export function getAptitudeQuestionsByChapter(chapterId) {
