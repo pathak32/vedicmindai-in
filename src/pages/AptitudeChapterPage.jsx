@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Menu, ArrowLeft } from 'lucide-react';
+import { useParams, Link, Navigate } from 'react-router-dom';
+import { Menu, ArrowLeft, Lock } from 'lucide-react';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
 import AptitudeSidebar from '@/components/learn/AptitudeSidebar';
 import { useLanguage } from '@/lib/LanguageContext';
-import { APTITUDE_CHAPTERS, getAptitudeChapterContent } from '@/data/aptitudeContent';
+import { APTITUDE_CHAPTERS, getAptitudeChapterContent, getAptitudeChaptersByLevel } from '@/data/aptitudeContent';
 import { getAptitudeQuestionsByChapter } from '@/data/aptitudeQuizBank';
+import { saveAptitudeChapterResult, isAptitudeChapterUnlocked, isAptitudeLevelUnlocked, getAptitudeScores, APTITUDE_PASS_THRESHOLD } from '@/lib/aptitudeProgress';
+import { isAptitudeChapterFreeAccess, getUserPlan } from '@/lib/planEngine';
 import {
   StepBox, ExampleCard, SectionTitle, OriginBox, WhyItWorksBox, CommonMistakeBox, RealWorldBox,
 } from '@/components/learn/ConceptTab';
@@ -53,6 +55,18 @@ export default function AptitudeChapterPage() {
   const chapter = getAptitudeChapterContent(chapterId);
   const isPreK = chapter?.level === 'PRE_K';
 
+  // Access control: free-plan users only get the one designated free chapter
+  // (planEngine.js). Basic+ users get everything, subject to the 60%
+  // sequential-progression unlock (aptitudeProgress.js) — same model as
+  // Reasoning and Vedic Maths, except Pre-K, which has no score gate.
+  const plan = getUserPlan();
+  const levelChapterIds = chapter ? getAptitudeChaptersByLevel(chapter.level).map((c) => c.id) : [];
+  const primaryChapterIds = getAptitudeChaptersByLevel('PRIMARY').map((c) => c.id);
+  const freeOk = plan !== 'free' || isAptitudeChapterFreeAccess(chapterId);
+  const levelOk = plan === 'free' || isAptitudeLevelUnlocked(chapter?.level, primaryChapterIds);
+  const progressionOk = plan === 'free' || isAptitudeChapterUnlocked(chapterId, levelChapterIds, chapter?.level);
+  const isLocked = chapter && !(freeOk && levelOk && progressionOk);
+
   const [questions, setQuestions] = useState([]);
   useEffect(() => {
     setQuestions(getAptitudeQuestionsByChapter(chapterId) || []);
@@ -60,6 +74,16 @@ export default function AptitudeChapterPage() {
   }, [chapterId]);
 
   const q = questions[qIndex];
+
+  // Save the result once the quiz's last question has been answered —
+  // wires Aptitude into the same progress-tracking every other vertical has.
+  useEffect(() => {
+    if (questions.length > 0 && selected && qIndex === questions.length - 1) {
+      const pct = Math.round((score / questions.length) * 100);
+      saveAptitudeChapterResult(chapterId, pct);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selected, qIndex, questions.length]);
 
   function handleAnswer(label) {
     if (selected) return;
@@ -75,6 +99,31 @@ export default function AptitudeChapterPage() {
   }
 
   if (!chapter) return null;
+
+  if (isLocked) {
+    const reason = !freeOk
+      ? { en: 'This chapter needs a paid plan to unlock.', hi: 'इस अध्याय को अनलॉक करने के लिए एक paid plan चाहिए।' }
+      : { en: `Score ${APTITUDE_PASS_THRESHOLD}%+ on the previous chapter to unlock this one.`, hi: `इसे अनलॉक करने के लिए पिछले अध्याय में ${APTITUDE_PASS_THRESHOLD}%+ स्कोर करें।` };
+    return (
+      <div style={{ minHeight: '100vh', background: '#0A0118', display: 'flex', flexDirection: 'column' }}>
+        <DashboardNavbar />
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
+          <div style={{ background: 'white', borderRadius: 20, padding: '48px 40px', maxWidth: 440, textAlign: 'center' }}>
+            <Lock size={36} color="#9CA3AF" style={{ marginBottom: 16 }} />
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 10 }}>
+              {tr(chapter.title, language)}
+            </h2>
+            <p style={{ color: '#6B7280', marginBottom: 24, lineHeight: 1.6 }}>{tr(reason, language)}</p>
+            {!freeOk && (
+              <Link to="/pricing" style={{ display: 'inline-block', padding: '12px 28px', borderRadius: 10, background: '#10B981', color: 'white', fontWeight: 700, textDecoration: 'none' }}>
+                {language === 'hi' ? 'Subscribe करें' : 'Subscribe Now'}
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={{ minHeight: '100vh', background: '#0A0118', display: 'flex', flexDirection: 'column' }}>
