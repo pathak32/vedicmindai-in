@@ -59,6 +59,8 @@ const PLANS = [
     annualPaise: 499000,
     usdMonthly: '$9',
     usdMonthlyStrike: '$19',
+    usdAnnual: '$89',
+    usdAnnualStrike: '$180',
     highlight: false,
     btnLabel: 'Start Basic',
     btnBg: '#0A1628',
@@ -91,6 +93,8 @@ const PLANS = [
     annualPaise: 999000,
     usdMonthly: '$15',
     usdMonthlyStrike: '$29',
+    usdAnnual: '$149',
+    usdAnnualStrike: '$348',
     highlight: true,
     btnLabel: 'Start Pro',
     btnBg: '#3B82F6',
@@ -121,6 +125,8 @@ const PLANS = [
     annualPaise: 1499000,
     usdMonthly: '$23',
     usdMonthlyStrike: '$39',
+    usdAnnual: '$219',
+    usdAnnualStrike: '$468',
     highlight: false,
     btnLabel: 'Start Family Plan',
     btnBg: '#0A1628',
@@ -140,8 +146,16 @@ const PLAN_DISPLAY_NAMES = {
 };
 
 function PlanCard({
-  plan, isAnnual, onPay, isCurrent, isFree }) {
+  plan, isAnnual, showUSD, onPay, isCurrent, isFree }) {
   const { t } = useLanguage();
+  const mainPrice = showUSD
+    ? (isAnnual ? plan.usdAnnual : plan.usdMonthly) || (isAnnual ? plan.annualPrice : plan.monthlyPrice)
+    : (isAnnual ? plan.annualPrice : plan.monthlyPrice);
+  const strikePrice = showUSD
+    ? (isAnnual ? plan.usdAnnualStrike : plan.usdMonthlyStrike)
+    : (isAnnual ? plan.annualStrike : plan.monthlyStrike);
+  const perLabel = isAnnual ? t('perYear') : t('perMonth');
+  const altPrice = showUSD ? (isAnnual ? plan.annualPrice : plan.monthlyPrice) : (isAnnual ? plan.usdAnnual : plan.usdMonthly);
   return (
     <div style={{ position: 'relative', flex: '1 1 240px', maxWidth: 320 }}>
       {plan.highlight && !isCurrent && (
@@ -177,37 +191,28 @@ function PlanCard({
         </div>
 
         {/* Price */}
-        {isAnnual ? (
-          <div style={{ marginBottom: 4 }}>
-            {plan.annualStrike && (
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#9CA3AF', textDecoration: 'line-through' }}>{plan.annualStrike}/year</div>
+        <div style={{ marginBottom: 4 }}>
+            {strikePrice && (
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#9CA3AF', textDecoration: 'line-through' }}>{strikePrice}{isAnnual ? '/year' : '/month'}</div>
             )}
-            <span className="font-heading" style={{ fontSize: 32, fontWeight: 700, color: '#0A1628' }}>{plan.annualPrice}</span>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>{t('perYear')}</span>
-            {plan.annualSub && (
+            <span className="font-heading" style={{ fontSize: isAnnual ? 32 : 40, fontWeight: 700, color: '#0A1628' }}>{mainPrice || (plan.id === 'free' ? (showUSD ? '$0' : '₹0') : '—')}</span>
+            {mainPrice && <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>{perLabel}</span>}
+            {isAnnual && !showUSD && plan.annualSub && (
               <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#10B981', fontWeight: 600, marginTop: 4 }}>{plan.annualSub}</div>
             )}
-          </div>
-        ) : (
-          <div style={{ marginBottom: 4 }}>
-            {plan.monthlyStrike && (
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#9CA3AF', textDecoration: 'line-through' }}>{plan.monthlyStrike}/month</div>
+            {isAnnual && showUSD && plan.usdAnnual && (
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#10B981', fontWeight: 600, marginTop: 4 }}>= {plan.usdMonthly}/month · 2 months FREE</div>
             )}
-            <span className="font-heading" style={{ fontSize: 40, fontWeight: 700, color: '#0A1628' }}>{plan.monthlyPrice}</span>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>{t('perMonth')}</span>
-            {plan.usdMonthly && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 5 }}>
-                <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', textDecoration: 'line-through' }}>{plan.usdMonthlyStrike}/mo</span>
-                <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#059669', fontWeight: 700 }}>{plan.usdMonthly}/mo</span>
-                <span style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#6B7280' }}>for intl. cards</span>
+            {altPrice && plan.id !== 'free' && (
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF', marginTop: 4 }}>
+                ≈ {altPrice} {showUSD ? 'INR' : 'USD'} · {showUSD ? 'charged in INR, bank converts' : 'for international cards'}
               </div>
             )}
           </div>
-        )}
 
-        {plan.subtext && (
-          <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#6B7280', marginBottom: 8 }}>{plan.subtext}</div>
-        )}
+          {plan.subtext && (
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#6B7280', marginBottom: 8 }}>{plan.subtext}</div>
+          )}
 
         <div style={{ height: 1, background: 'rgba(30,64,175,0.08)', margin: '16px 0' }} />
 
@@ -246,6 +251,7 @@ export default function PricingPage() {
   const { t } = useLanguage();
   const { user } = useVedicAuth();
   const [isAnnual, setIsAnnual] = useState(false);
+  const [showUSD, setShowUSD] = useState(false);
   const [paymentLoading, setPaymentLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -395,8 +401,8 @@ export default function PricingPage() {
           </p>
         </div>
 
-        {/* Billing toggle */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 48 }}>
+        {/* Billing toggle + Currency toggle */}
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16, marginBottom: 48, flexWrap: 'wrap' }}>
           <div style={{ display: 'inline-flex', border: '1px solid rgba(30,64,175,0.15)', borderRadius: 99, padding: 4, background: 'rgba(255,255,255,0.6)' }}>
             {[{ label: 'Monthly', value: false }, { label: 'Annual · Best Value', value: true }].map(opt => (
               <button
@@ -407,6 +413,22 @@ export default function PricingPage() {
                   fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 500,
                   background: isAnnual === opt.value ? '#0A1628' : 'transparent',
                   color: isAnnual === opt.value ? 'white' : '#4B5563',
+                  transition: 'all 0.2s', whiteSpace: 'nowrap',
+                }}
+              >{opt.label}</button>
+            ))}
+          </div>
+          {/* Currency toggle */}
+          <div style={{ display: 'inline-flex', border: '1px solid rgba(30,64,175,0.15)', borderRadius: 99, padding: 4, background: 'rgba(255,255,255,0.6)' }}>
+            {[{ label: '🇮🇳 INR ₹', value: false }, { label: '🌍 USD $', value: true }].map(opt => (
+              <button
+                key={String(opt.value)}
+                onClick={() => setShowUSD(opt.value)}
+                style={{
+                  padding: '8px 18px', borderRadius: 99, border: 'none', cursor: 'pointer',
+                  fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 500,
+                  background: showUSD === opt.value ? '#1E40AF' : 'transparent',
+                  color: showUSD === opt.value ? 'white' : '#4B5563',
                   transition: 'all 0.2s', whiteSpace: 'nowrap',
                 }}
               >{opt.label}</button>
@@ -446,6 +468,7 @@ export default function PricingPage() {
               key={p.id}
               plan={p}
               isAnnual={isAnnual}
+              showUSD={showUSD}
               onPay={() => initiatePayment(p)}
               isCurrent={isCurrentPlan(p.name)}
               isFree={p.id === 'free'}
