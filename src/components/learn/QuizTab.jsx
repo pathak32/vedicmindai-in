@@ -916,7 +916,24 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
                   {language === 'hi' ? `सही उत्तर: ${q.options[q.correct]}` : `Correct answer: ${q.options[q.correct]}`}
                 </p>
               )}
-              <p style={{ margin: 0 }}>💡 {tr(q.exp || (q.q && q.q.exp), language)}</p>
+              {(() => {
+                const rawExp = q.exp || (q.q && q.q.exp) || '';
+                const translated = tr(rawExp, language);
+                if (translated.includes('\n')) {
+                  const steps = translated.split('\n').filter(Boolean);
+                  return (
+                    <div>
+                      <p style={{ margin: '0 0 4px', fontWeight: 600 }}>💡 {language === 'hi' ? 'समाधान:' : 'How to solve it:'}</p>
+                      <ol style={{ margin: 0, paddingLeft: 18 }}>
+                        {steps.map((line, i) => (
+                          <li key={i} style={{ marginBottom: 2 }}>{line.replace(/^Step \d+:\s*/, '')}</li>
+                        ))}
+                      </ol>
+                    </div>
+                  );
+                }
+                return <p style={{ margin: 0 }}>💡 {translated}</p>;
+              })()}
             </div>
           </motion.div>
         )}

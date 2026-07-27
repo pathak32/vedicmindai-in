@@ -178,7 +178,16 @@ export default function AdminQuestionReview() {
             })}
           </div>
           <div style={{ fontSize: 13, color: '#4B5563', background: '#F9FAFB', borderRadius: 8, padding: '10px 12px', marginBottom: 14 }}>
-            <strong>Explanation:</strong> {q.explanation}
+            <strong>Explanation:</strong>
+            {(q.explanation || '').includes('\n') ? (
+              <ol style={{ margin: '6px 0 0', paddingLeft: 20 }}>
+                {q.explanation.split('\n').filter(Boolean).map((line, i) => (
+                  <li key={i} style={{ marginBottom: 3 }}>{line.replace(/^Step \d+:\s*/, '')}</li>
+                ))}
+              </ol>
+            ) : (
+              <span> {q.explanation}</span>
+            )}
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
             {view !== 'approved' && <button onClick={() => setStatus(q.id, 'approved')} style={btn('#10B981')}>Approve</button>}
