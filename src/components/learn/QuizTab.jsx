@@ -925,15 +925,25 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
                     <div>
                       <p style={{ margin: '0 0 4px', fontWeight: 600 }}>💡 {language === 'hi' ? 'समाधान:' : 'How to solve it:'}</p>
                       <ol style={{ margin: 0, paddingLeft: 18 }}>
-                        {steps.map((line, i) => (
-                          <li key={i} style={{ marginBottom: 2 }}>{line.replace(/^Step \d+:\s*/, '')}</li>
-                        ))}
+                        {steps.map((line, i) => {
+                          const m = line.match(/^(Step \d+:)\s*(.*)$/);
+                          return (
+                            <li key={i} style={{ marginBottom: 2 }}>
+                              {m ? <><strong>{m[1]}</strong> {m[2]}</> : line}
+                            </li>
+                          );
+                        })}
                       </ol>
                     </div>
                   );
                 }
                 return <p style={{ margin: 0 }}>💡 {translated}</p>;
               })()}
+              <p style={{ margin: '8px 0 0', fontSize: 12, color: '#6B7280' }}>
+                {language === 'hi'
+                  ? '📘 अभी भी समझ नहीं आया? ऊपर "सिद्धांत" टैब देखें।'
+                  : '📘 Still stuck? Revisit the Concept tab above for the full method.'}
+              </p>
             </div>
           </motion.div>
         )}

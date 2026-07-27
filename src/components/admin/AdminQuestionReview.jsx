@@ -181,9 +181,14 @@ export default function AdminQuestionReview() {
             <strong>Explanation:</strong>
             {(q.explanation || '').includes('\n') ? (
               <ol style={{ margin: '6px 0 0', paddingLeft: 20 }}>
-                {q.explanation.split('\n').filter(Boolean).map((line, i) => (
-                  <li key={i} style={{ marginBottom: 3 }}>{line.replace(/^Step \d+:\s*/, '')}</li>
-                ))}
+                {q.explanation.split('\n').filter(Boolean).map((line, i) => {
+                  const m = line.match(/^(Step \d+:)\s*(.*)$/);
+                  return (
+                    <li key={i} style={{ marginBottom: 3 }}>
+                      {m ? <><strong>{m[1]}</strong> {m[2]}</> : line}
+                    </li>
+                  );
+                })}
               </ol>
             ) : (
               <span> {q.explanation}</span>
