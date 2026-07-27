@@ -1,4 +1,5 @@
 // ─── Trial / Plan helpers ─────────────────────────────────────────────────────
+import { isLessonFreeAccess } from './planEngine';
 
 export function getTrialStatus() {
   // Check vedicmind_plan for paid plan
@@ -45,12 +46,16 @@ export function initTrial() {
 }
 
 /**
- * Returns true if a lesson is accessible given the current trial status.
- * Level 1 (l1_xx) is always free. Levels 2–4 are locked on expired.
+ * Returns true if a lesson is accessible given the current plan.
+ * DEPRECATED standalone logic removed 27-Jul-2026 — this used to check trial
+ * status independently and allow ALL lessons during a 7-day trial window,
+ * which directly conflicted with planEngine.js's fixed 5-lesson free list
+ * (two different answers depending on which function got called). planEngine.js
+ * is now the single source of truth; this just delegates to it.
  */
 export function isLessonAccessible(lessonId) {
-  const status = getTrialStatus();
-  if (status === 'trial' || status === 'paid') return true;
-  // expired → only level 1 is free
-  return lessonId.startsWith('l1_');
+  // Paid plans (checked via planEngine, which reads the real subscription state)
+  // always get full access. Free/trial users get exactly the same 5 lessons
+  // planEngine.js already defines — no separate trial-only unlock window.
+  return isLessonFreeAccess(lessonId);
 }

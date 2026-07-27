@@ -81,3 +81,30 @@ export function isAptitudeLimitReached() {
   return used >= limit;
 }
 
+// ─── Reasoning & Aptitude — one full chapter free (Jul 27 decision) ───────────
+// Different model from Vedic Maths on purpose: instead of many lessons with
+// concept+practice only (no quiz), free users get exactly ONE chapter with
+// FULL access (concept AND quiz), so they experience the complete value once,
+// then see a subscribe prompt for every other chapter. Chosen as each
+// vertical's natural Chapter 1.
+const FREE_REASONING_CHAPTER = 'odd-one-out';       // Level 1, Chapter 1
+const FREE_APTITUDE_CHAPTER = 'word-meanings';      // Primary, Chapter 1
+
+export function isReasoningChapterFreeAccess(chapterId) {
+  const plan = getUserPlan();
+  if (plan === 'free') return chapterId === FREE_REASONING_CHAPTER;
+  return true; // basic+ gets everything
+}
+
+export function isAptitudeChapterFreeAccess(chapterId) {
+  const plan = getUserPlan();
+  if (plan === 'free') return chapterId === FREE_APTITUDE_CHAPTER;
+  return true; // basic+ gets everything
+}
+
+// Quiz access for Reasoning/Aptitude follows the SAME single-chapter rule as
+// concept access (unlike Vedic Maths, where quiz is blocked on every free
+// lesson) — the one free chapter is meant to be a genuinely complete preview.
+export const isReasoningChapterQuizFreeAccess = isReasoningChapterFreeAccess;
+export const isAptitudeChapterQuizFreeAccess = isAptitudeChapterFreeAccess;
+
