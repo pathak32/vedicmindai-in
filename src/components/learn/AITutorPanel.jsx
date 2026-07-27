@@ -77,7 +77,9 @@ export default function AITutorPanel({ lesson, onClose }) {
 
   const userId = user?.id || 'guest';
   const plan = profile?.plan || profile?.subscription_status || 'trial';
-  const [remaining, setRemaining] = useState(null);
+  const PLAN_LIMITS = { free: 1, basic: 5, pro: 20, family: 20, demo: 20, admin: 9999 };
+  const planLimit = PLAN_LIMITS[(plan || 'free').toLowerCase()] ?? 1;
+  const [remaining, setRemaining] = useState(null); // null until first message sent this session
   const [limitReached, setLimitReached] = useState(false);
 
   useEffect(() => {
@@ -199,13 +201,11 @@ export default function AITutorPanel({ lesson, onClose }) {
               {lessonTitle}
             </div>
           </div>
-          {/* Remaining messages badge */}
-          {remaining !== null && (
-            <div style={{ fontSize: 11, color: remaining <= 0 ? '#DC2626' : '#6B7280', fontFamily: 'var(--font-body)', textAlign: 'right', marginRight: 4 }}>
-              <div style={{ fontWeight: 600 }}>{remaining}</div>
-              <div>{language === 'hi' ? 'बचे' : 'left'}</div>
-            </div>
-          )}
+          {/* Remaining messages badge — shows live count after first message, plan limit before */}
+          <div style={{ fontSize: 11, color: (remaining !== null && remaining <= 0) ? '#DC2626' : '#6B7280', fontFamily: 'var(--font-body)', textAlign: 'right', marginRight: 4 }}>
+            <div style={{ fontWeight: 600 }}>{remaining !== null ? remaining : planLimit}</div>
+            <div>{remaining !== null ? (language === 'hi' ? 'बचे' : 'left') : (language === 'hi' ? 'आज उपलब्ध' : 'today')}</div>
+          </div>
           <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4 }}>
             <X size={20} color="#4B5563" />
           </button>
