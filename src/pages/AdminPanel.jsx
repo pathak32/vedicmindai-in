@@ -5,6 +5,7 @@ import AdminStudents from '@/components/admin/AdminStudents';
 import AdminLessons from '@/components/admin/AdminLessons';
 import AdminQuizManager from '@/components/admin/AdminQuizManager';
 import AdminBlogManager from '@/components/admin/AdminBlogManager';
+import AdminSocialExport from '@/components/admin/AdminSocialExport';
 import AdminAptitudeManager from '@/components/admin/AdminAptitudeManager';
 import AdminDemoLogin from '@/components/admin/AdminDemoLogin';
 import AdminReviewerAccess from '@/components/admin/AdminReviewerAccess';
@@ -30,6 +31,7 @@ const TABS = [
   { id: 'students',  label: '👥 Students'  },
   { id: 'quiz',      label: '⚡ Quiz Engine'},
   { id: 'blog',      label: '📰 Blog Manager' },
+  { id: 'social',    label: '📲 Social Export' },
   { id: 'lessons',   label: '📚 Lessons'   },
   { id: 'aptitude',  label: '🎯 Aptitude'  },
   { id: 'demo',      label: '🏫 Demo Logins' },
@@ -160,6 +162,7 @@ function AdminDashboard({ onLock }) {
             {activeTab === 'students'  && <AdminStudents />}
             {activeTab === 'quiz'      && <AdminQuizManager />}
             {activeTab === 'blog'      && <AdminBlogManager />}
+            {activeTab === 'social'    && <AdminSocialExport />}
             {activeTab === 'lessons'   && <AdminLessons />}
             {activeTab === 'aptitude'  && <AdminAptitudeManager />}
           {activeTab === 'demo'      && <AdminDemoLogin />}
