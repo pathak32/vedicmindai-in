@@ -5,6 +5,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { RA_LEVEL1_CHAPTERS } from '@/data/reasoningAptitudeLevel1Content';
 import { RA_LEVEL2_CHAPTERS } from '@/data/reasoningAptitudeLevel2Content';
 import { getReasoningScores, isReasoningChapterUnlocked, isLevel2Unlocked, isLevel2ChapterUnlocked, REASONING_PASS_THRESHOLD } from '@/lib/reasoningProgress';
+import { isReasoningChapterFreeAccess, getUserPlan } from '@/lib/planEngine';
 
 const tr = (field, language) => field?.[language] ?? field?.en ?? '';
 
@@ -55,14 +56,19 @@ export default function ReasoningSidebar({ activeChapterId, onClose, showClose }
 
   const scores = getReasoningScores();
   const l2Unlocked = isLevel2Unlocked(l1Ids);
+  const plan = getUserPlan();
 
   function renderChapterList(chapters, ids, isL2 = false) {
     return chapters.map((c) => {
       const isActive = activeChapterId === c.id;
       const isDone = (scores[c.id] ?? 0) >= REASONING_PASS_THRESHOLD;
-      const unlocked = isL2
+      const progressionUnlocked = isL2
         ? isLevel2ChapterUnlocked(c.id, ids, l1Ids)
         : isReasoningChapterUnlocked(c.id, ids);
+      // Free-plan users: only the one designated free chapter counts as
+      // unlocked, regardless of progression. Basic+ users use the existing
+      // progression check unchanged.
+      const unlocked = plan === 'free' ? isReasoningChapterFreeAccess(c.id) : progressionUnlocked;
 
       const rowStyle = {
         display: 'flex', alignItems: 'center', gap: 8, height: 40, padding: '0 12px',
