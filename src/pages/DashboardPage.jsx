@@ -9,7 +9,7 @@ import TrialBanner from '@/components/dashboard/TrialBanner';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import ReferralCard from '@/components/ReferralCard';
 import RupeeOneOffer from '@/components/RupeeOneOffer';
-import { getUserProfile, getUserProgress, getPlanProfile, reconcileTodayQuizFromServer, isReviewerAccount } from '@/lib/supabaseDataService';
+import { getUserProfile, getUserProgress, getPlanProfile, reconcileTodayQuizFromServer, isReviewerAccount, reconcileProgressFromLedger } from '@/lib/supabaseDataService';
 import { getDailyQuizStatus, getTodayString } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@/lib/leaderboardEngine';
 import { useLanguage, translations } from '@/lib/LanguageContext';
@@ -563,6 +563,11 @@ function DashboardPage() {
           getPlanProfile(auth.id),
           isReviewerAccount(auth.id),
         ]);
+        // Self-heal: if the progress summary looks thinner than the
+        // permanent lesson-completion ledger implies (see incident notes
+        // in supabaseDataService.js), this rebuilds it automatically.
+        const healedLessons = await reconcileProgressFromLedger(auth.id);
+        if (healedLessons) supaProgress.completed_lessons = healedLessons;
         if (supaProfile && Object.keys(supaProfile).length > 0) {
           setProfile(supaProfile);
           localStorage.setItem('vedicmind_profile', JSON.stringify(supaProfile));

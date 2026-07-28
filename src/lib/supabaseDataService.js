@@ -71,11 +71,52 @@ export async function getUserProgress(userId) {
 
 export async function saveUserProgress(userId, progress) {
   const supabase = await getSupabase();
+  const newCompletedLessons = progress.completedLessons || progress.completed_lessons || [];
+
+  // ── Never-shrink guardrail ──────────────────────────────────────────────
+  // Added 28-Jul-2026 after a real incident: a stale/empty local progress
+  // state got saved over a user's real completed-lessons history, silently
+  // destroying weeks of real progress (this table holds ONE row per user
+  // with the full lesson list, unlike reasoning_progress/aptitude_progress
+  // which use one row PER lesson — so any save here fully replaces the
+  // list, and a bad save is unrecoverable without a database backup).
+  // Before writing, compare against what's actually on the server right
+  // now. If the incoming list is missing any lesson the server already has
+  // recorded as complete, refuse the write and keep the server's version —
+  // a legitimate save should only ever ADD completed lessons, never lose
+  // them. This can't distinguish "genuinely reset the account on purpose"
+  // from "bug" — that's intentional; an intentional reset should go through
+  // a separate, explicit admin action, not the normal save path.
+  try {
+    const { data: existing, error: fetchErr } = await supabase
+      .from('progress')
+      .select('completed_lessons')
+      .eq('user_id', userId)
+      .maybeSingle();
+    if (!fetchErr && existing?.completed_lessons?.length > 0) {
+      const missing = existing.completed_lessons.filter(id => !newCompletedLessons.includes(id));
+      if (missing.length > 0) {
+        console.error(
+          `saveUserProgress BLOCKED: would have dropped ${missing.length} previously-completed lesson(s) ` +
+          `(${missing.join(', ')}) for user ${userId}. Merging instead of overwriting.`
+        );
+        // Merge rather than hard-fail — the user's new completions (if any)
+        // still get saved, just unioned with what the server already had,
+        // instead of losing either side.
+        newCompletedLessons.push(...missing);
+      }
+    }
+  } catch (e) {
+    // If the safety check itself fails (e.g. network), don't let that
+    // block a legitimate save — but log it so it's visible, not silent.
+    console.warn('saveUserProgress: pre-save safety check failed, proceeding with save as-is:', e);
+  }
+
   const { error } = await supabase
     .from('progress')
     .upsert({
       user_id: userId,
-      completed_lessons: progress.completedLessons || progress.completed_lessons || [],
+      completed_lessons: newCompletedLessons,
       lesson_scores: progress.lessonScores || progress.lesson_scores || {},
       total_xp: progress.totalXP ?? progress.total_xp ?? 0,
       streak: progress.streak ?? 0,
@@ -304,5 +345,45 @@ export async function migrateLocalStorageToSupabase(userId) {
     console.log('✅ localStorage migrated to Supabase');
   } catch (e) {
     console.error('Migration error:', e);
+  }
+}
+// ─── PROGRESS SELF-HEALING (from the permanent knowledge-points ledger) ──────
+// Mirrors the same idea as reconcileReasoningFromServer in reasoningProgress.js.
+// The knowledge_points_ledger table records one permanent, append-only row
+// per lesson completion (source: 'lesson_completion', reference_id: lesson
+// ID) and is never overwritten — unlike the `progress` row itself, which is
+// a single mutable summary that CAN be wrongly overwritten (see the
+// never-shrink guardrail in saveUserProgress above, added the same day as
+// this function, after a real incident). If the summary ever looks thinner
+// than the ledger implies, this rebuilds it from the ledger and returns the
+// corrected list — call on dashboard/learn load, same spirit as Reasoning's
+// on-chapter-load reconciliation.
+export async function reconcileProgressFromLedger(userId) {
+  if (!userId) return null;
+  try {
+    const supabase = await getSupabase();
+    const [{ data: progressRow }, { data: ledgerRows, error: ledgerErr }] = await Promise.all([
+      supabase.from('progress').select('completed_lessons').eq('user_id', userId).maybeSingle(),
+      supabase.from('knowledge_points_ledger').select('reference_id')
+        .eq('user_id', userId).eq('source', 'lesson_completion'),
+    ]);
+    if (ledgerErr || !ledgerRows) return null;
+
+    const ledgerLessonIds = [...new Set(ledgerRows.map(r => r.reference_id).filter(Boolean))];
+    const currentCompleted = progressRow?.completed_lessons || [];
+    const missing = ledgerLessonIds.filter(id => !currentCompleted.includes(id));
+
+    if (missing.length === 0) return null; // already consistent, nothing to fix
+
+    const rebuilt = [...currentCompleted, ...missing];
+    console.warn(
+      `reconcileProgressFromLedger: found ${missing.length} lesson(s) in the permanent ledger ` +
+      `missing from the progress summary for user ${userId} — self-healing.`
+    );
+    await supabase.from('progress').update({ completed_lessons: rebuilt }).eq('user_id', userId);
+    return rebuilt;
+  } catch (e) {
+    console.warn('reconcileProgressFromLedger failed (non-critical):', e);
+    return null;
   }
 }
