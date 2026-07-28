@@ -37,9 +37,15 @@ async function fetchThumbnail(entry) {
   const apiUrl = `${endpoint}?url=${encodeURIComponent(entry.url)}&omitscript=true`;
 
   const res = await fetch(apiUrl, { signal: AbortSignal.timeout(5000) });
-  if (!res.ok) throw new Error(`oEmbed ${entry.platform} returned ${res.status}`);
-  const data = await res.json();
-  if (!data.thumbnail_url) throw new Error(`oEmbed ${entry.platform} had no thumbnail_url`);
+  const bodyText = await res.text();
+  if (!res.ok) throw new Error(`oEmbed ${entry.platform} returned ${res.status}: ${bodyText.slice(0, 300)}`);
+  let data;
+  try {
+    data = JSON.parse(bodyText);
+  } catch (e) {
+    throw new Error(`oEmbed ${entry.platform} non-JSON response: ${bodyText.slice(0, 300)}`);
+  }
+  if (!data.thumbnail_url) throw new Error(`oEmbed ${entry.platform} had no thumbnail_url, got keys: ${Object.keys(data).join(',')}`);
   return { id: entry.id, thumbnailUrl: data.thumbnail_url };
 }
 
@@ -47,12 +53,14 @@ export default async function handler(req, res) {
   try {
     const results = await Promise.allSettled(ENTRIES.map(fetchThumbnail));
     const thumbnails = {};
+    const errors = [];
     let failures = 0;
     for (const r of results) {
       if (r.status === 'fulfilled') {
         thumbnails[r.value.id] = r.value.thumbnailUrl;
       } else {
         failures += 1;
+        errors.push(r.reason?.message);
         console.warn('Video thumbnail fetch failed:', r.reason?.message);
       }
     }
@@ -60,8 +68,8 @@ export default async function handler(req, res) {
     res.setHeader('Content-Type', 'application/json');
     // Edge-cache for 6 hours -- Meta's signed CDN thumbnail URLs can expire,
     // so we deliberately re-fetch periodically rather than caching forever.
-    res.setHeader('Cache-Control', 's-maxage=21600, stale-while-revalidate');
-    res.status(200).json({ thumbnails, fetched: results.length - failures, failed: failures });
+    res.setHeader('Cache-Control', 'no-store'); // TEMP for debugging, restore s-maxage=21600 after
+    res.status(200).json({ thumbnails, fetched: results.length - failures, failed: failures, errors });
   } catch (err) {
     console.error('Video thumbnails handler error:', err.message);
     // Fail gracefully with an empty map -- frontend falls back to the
