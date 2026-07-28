@@ -121,14 +121,12 @@ export default function OnboardingPage() {
 
   const callClaudeAPI = async (data) => {
     const auth = JSON.parse(localStorage.getItem('vedicmind_auth') || '{}');
-    console.log('Sending profile to Claude API:', JSON.stringify(data));
     const response = await fetch('/api/personalize-onboarding', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ data, authName: auth.name }),
     });
     const result = await response.json();
-    console.log('Claude API raw response:', result);
     const parsed = safeParseJSON(result.content[0].text);
     if (!parsed) throw new Error('Failed to parse Claude response');
     return parsed;
