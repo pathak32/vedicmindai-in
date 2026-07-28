@@ -3,14 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 
-// ⚠️ ACTION NEEDED (Life Skills example only): the excerpt below is a
-// plausible placeholder written to match the real track/structure, NOT
-// verbatim real Module 1 content — Hitesh asked for a clearly-marked
-// placeholder here since the actual lesson text wasn't available. Swap
-// showcaseLifeSkillsExampleTitle / showcaseLifeSkillsExampleBody in
-// translations.js for the real Module 1 excerpt before this is final.
-// The Screenless Learning example IS a real, verified sample question.
-
 export default function FeaturesShowcaseSection() {
   const { t } = useLanguage();
   const [lifeSkillsTrack, setLifeSkillsTrack] = useState('student');
