@@ -41,7 +41,7 @@ function VideoCard({ video }) {
       </div>
       <p style={{
         margin: 0, fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600,
-        color: '#0A1628', lineHeight: 1.4,
+        color: 'white', lineHeight: 1.4,
       }}>
         {video.title}
       </p>
