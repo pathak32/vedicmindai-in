@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Youtube, Facebook, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
@@ -72,25 +72,14 @@ export default function VideoLibrarySection() {
   const { t } = useLanguage();
   const scrollRef = useRef(null);
 
-  // YouTube thumbnails are a stable, unauthenticated URL pattern -- no fetch
-  // needed, computed once up front. Facebook/Instagram thumbnails require
-  // the serverless oEmbed proxy (api/video-thumbnails.js) since their CDN
-  // URLs can expire and Meta's oEmbed API works better called server-side.
-  const [fbIgThumbnails, setFbIgThumbnails] = useState({});
-
-  useEffect(() => {
-    fetch('/api/video-thumbnails')
-      .then((r) => r.json())
-      .then((data) => setFbIgThumbnails(data.thumbnails || {}))
-      .catch(() => {
-        // Network/endpoint failure -- cards just keep their gradient
-        // placeholder, nothing else needs to happen here.
-      });
-  }, []);
-
+  // YouTube thumbnails use a stable, unauthenticated URL pattern (no fetch
+  // needed). Facebook/Instagram don't have an equivalent -- Meta's oEmbed
+  // API only returns a live-JS-rendered embed placeholder for video/reel
+  // content, not a static thumbnail image, so those come from a manually
+  // provided screenshot instead (video.thumbnail in videoLibraryData.js).
   const getThumbnail = (video) => {
     if (video.platform === 'youtube') return getYoutubeThumbnail(video.url);
-    return fbIgThumbnails[video.id] || null;
+    return video.thumbnail || null;
   };
 
   const scroll = (dir) => {

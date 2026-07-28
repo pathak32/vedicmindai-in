@@ -55,53 +55,62 @@ export const videoLibraryData = [
     platform: 'facebook',
     title: 'VedicMindAI — Quick Vedic Maths Trick',
     url: 'https://www.facebook.com/reel/1722853775527101/',
+    thumbnail: null, // TODO: paste real screenshot path once provided, e.g. '/video-thumbnails/v6.jpg'
   },
   {
     id: 'v7',
     platform: 'facebook',
     title: 'VedicMindAI — Quick Vedic Maths Trick',
     url: 'https://www.facebook.com/reel/1050691573949485/',
+    thumbnail: null, // TODO: paste real screenshot path once provided, e.g. '/video-thumbnails/v6.jpg'
   },
   {
     id: 'v8',
     platform: 'facebook',
     title: 'VedicMindAI — Quick Vedic Maths Trick',
     url: 'https://www.facebook.com/reel/1009945865124616/',
+    thumbnail: null, // TODO: paste real screenshot path once provided, e.g. '/video-thumbnails/v6.jpg'
   },
   {
     id: 'v9',
     platform: 'facebook',
     title: 'VedicMindAI — Quick Vedic Maths Trick',
     url: 'https://www.facebook.com/reel/1397257355576954/',
+    thumbnail: null, // TODO: paste real screenshot path once provided, e.g. '/video-thumbnails/v6.jpg'
   },
   {
     id: 'v10',
     platform: 'facebook',
     title: 'VedicMindAI — Quick Vedic Maths Trick',
     url: 'https://www.facebook.com/reel/2074346186838663/',
+    thumbnail: null, // TODO: paste real screenshot path once provided, e.g. '/video-thumbnails/v6.jpg'
   },
   {
     id: 'v11',
     platform: 'facebook',
     title: 'VedicMindAI — Quick Vedic Maths Trick',
     url: 'https://www.facebook.com/reel/4568644570086244/',
+    thumbnail: null, // TODO: paste real screenshot path once provided, e.g. '/video-thumbnails/v6.jpg'
   },
   {
     id: 'v12',
     platform: 'instagram',
     title: 'VedicMindAI — Speed Maths Reel',
     url: 'https://www.instagram.com/vedicmindai/reel/Dat2LggCsir/',
+    thumbnail: null, // TODO: paste real screenshot path once provided, e.g. '/video-thumbnails/v6.jpg'
   },
   {
     id: 'v13',
     platform: 'instagram',
     title: 'VedicMindAI — Speed Maths Reel',
     url: 'https://www.instagram.com/vedicmindai/reel/Dasjx4pAQOK/',
+    thumbnail: null, // TODO: paste real screenshot path once provided, e.g. '/video-thumbnails/v6.jpg'
   },
   {
     id: 'v14',
     platform: 'instagram',
     title: 'VedicMindAI — Speed Maths Reel',
     url: 'https://www.instagram.com/vedicmindai/reel/DaosmFXkfOe/',
+    thumbnail: null, // TODO: paste real screenshot path once provided, e.g. '/video-thumbnails/v6.jpg'
   },
 ];
