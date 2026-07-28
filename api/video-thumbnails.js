@@ -50,6 +50,18 @@ async function fetchThumbnail(entry) {
 }
 
 export default async function handler(req, res) {
+  if (req.query.debug_raw) {
+    const entry = ENTRIES.find(e => e.id === req.query.debug_raw) || ENTRIES[0];
+    const endpoint = entry.platform === 'facebook'
+      ? 'https://graph.facebook.com/v25.0/oembed_video'
+      : 'https://graph.facebook.com/v25.0/instagram_oembed';
+    const apiUrl = `${endpoint}?url=${encodeURIComponent(entry.url)}&omitscript=true`;
+    const r = await fetch(apiUrl);
+    const text = await r.text();
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(text);
+    return;
+  }
   try {
     const results = await Promise.allSettled(ENTRIES.map(fetchThumbnail));
     const thumbnails = {};
