@@ -49,6 +49,7 @@ export default function AptitudeChapterPage() {
   const [qIndex, setQIndex] = useState(0);
   const [selected, setSelected] = useState(null);
   const [score, setScore] = useState(0);
+  const [finalScore, setFinalScore] = useState(null);
 
   const sortedChapters = [...APTITUDE_CHAPTERS].sort((a, b) => a.order - b.order);
   const chapterId = paramChapterId || sortedChapters[0].id;
@@ -66,10 +67,19 @@ export default function AptitudeChapterPage() {
   const progressionOk = plan === 'free' || isAptitudeChapterUnlocked(chapterId, levelChapterIds, chapter?.level);
   const isLocked = chapter && !(freeOk && levelOk && progressionOk);
 
+  const chapterIndex = sortedChapters.findIndex((c) => c.id === chapterId);
+  const nextChapter = sortedChapters[chapterIndex + 1];
+  const nextLevelChapterIds = nextChapter ? getAptitudeChaptersByLevel(nextChapter.level).map((c) => c.id) : [];
+  const nextChapterAccessible = nextChapter && (
+    plan !== 'free'
+      ? isAptitudeLevelUnlocked(nextChapter.level) && isAptitudeChapterUnlocked(nextChapter.id, nextLevelChapterIds, nextChapter.level)
+      : isAptitudeChapterFreeAccess(nextChapter.id)
+  );
+
   const [questions, setQuestions] = useState([]);
   useEffect(() => {
     setQuestions(getAptitudeQuestionsByChapter(chapterId) || []);
-    setQIndex(0); setSelected(null); setScore(0); setTab('concept');
+    setQIndex(0); setSelected(null); setScore(0); setTab('concept'); setFinalScore(null);
   }, [chapterId]);
 
   const q = questions[qIndex];
@@ -80,6 +90,7 @@ export default function AptitudeChapterPage() {
     if (questions.length > 0 && selected && qIndex === questions.length - 1) {
       const pct = Math.round((score / questions.length) * 100);
       saveAptitudeChapterResult(chapterId, pct);
+      setFinalScore(pct);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected, qIndex, questions.length]);
@@ -94,7 +105,7 @@ export default function AptitudeChapterPage() {
     setQIndex((i) => i + 1);
   }
   function restartQuiz() {
-    setSelected(null); setQIndex(0); setScore(0);
+    setSelected(null); setQIndex(0); setScore(0); setFinalScore(null);
   }
 
   if (!chapter) return null;
@@ -240,14 +251,35 @@ export default function AptitudeChapterPage() {
                       {language === 'hi' ? 'अगला प्रश्न →' : 'Next Question →'}
                     </button>
                   )}
-                  {selected && qIndex === questions.length - 1 && (
+                  {selected && qIndex === questions.length - 1 && finalScore !== null && (
                     <div style={{ marginTop: 20 }}>
-                      <p style={{ fontWeight: 700, color: '#059669', marginBottom: 16 }}>
-                        {language === 'hi' ? `पूरा हुआ! स्कोर: ${score}/${questions.length}` : `Done! Score: ${score}/${questions.length}`}
-                      </p>
-                      <button onClick={restartQuiz} style={{ padding: '10px 20px', borderRadius: 10, background: '#E5E7EB', color: '#374151', border: 'none', cursor: 'pointer', fontWeight: 600 }}>
-                        {language === 'hi' ? 'दोबारा करें' : 'Retry Quiz'}
-                      </button>
+                      {(() => {
+                        const passed = finalScore >= APTITUDE_PASS_THRESHOLD;
+                        return (
+                          <>
+                            <p style={{ fontWeight: 700, color: passed ? '#059669' : '#0A1628', marginBottom: 6 }}>
+                              {language === 'hi' ? `पूरा हुआ! अंतिम स्कोर: ${score}/${questions.length} (${finalScore}%)` : `Done! Final score: ${score}/${questions.length} (${finalScore}%)`}
+                            </p>
+                            {nextChapter && chapter?.level !== 'PRE_K' && (
+                              <p style={{ fontSize: 13, color: passed ? '#059669' : '#D97706', marginBottom: 16 }}>
+                                {passed
+                                  ? (language === 'hi' ? `✓ अगला अध्याय अनलॉक हो गया (${APTITUDE_PASS_THRESHOLD}%+ चाहिए था)` : `✓ Next chapter unlocked (needed ${APTITUDE_PASS_THRESHOLD}%+)`)
+                                  : (language === 'hi' ? `अगला अध्याय अनलॉक करने के लिए ${APTITUDE_PASS_THRESHOLD}% चाहिए — दोबारा प्रयास करें` : `Need ${APTITUDE_PASS_THRESHOLD}%+ to unlock the next chapter — try again`)}
+                              </p>
+                            )}
+                          </>
+                        );
+                      })()}
+                      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                        <button onClick={restartQuiz} style={{ padding: '10px 20px', borderRadius: 10, background: '#E5E7EB', color: '#374151', border: 'none', cursor: 'pointer', fontWeight: 600 }}>
+                          {language === 'hi' ? 'दोबारा करें' : 'Retry Quiz'}
+                        </button>
+                        {nextChapter && nextChapterAccessible && (
+                          <Link to={`/aptitude/${nextChapter.id}`} style={{ padding: '10px 20px', borderRadius: 10, background: '#0A1628', color: 'white', border: 'none', cursor: 'pointer', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+                            {language === 'hi' ? 'अगला अध्याय →' : 'Next Chapter →'}
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
