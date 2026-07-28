@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getTrialStatus, getDaysRemaining, getTrialEndDate } from '@/lib/trialEngine';
 import { getUserPlan } from '@/lib/planEngine';
 import { useLanguage } from '@/lib/LanguageContext';
 
@@ -52,38 +51,12 @@ export default function TrialBanner() {
     );
   }
 
-  // Free plan — show trial/upgrade banner
-  const status = getTrialStatus();
-  const days = getDaysRemaining();
-  const endDate = getTrialEndDate();
-
-  if (status !== 'trial' && status !== 'expired') return null;
-
-  const isUrgent = status === 'expired' || days <= 2;
-  const bg = isUrgent ? '#EF4444' : 'linear-gradient(135deg, #0A1628, #0D2252)';
-
-  const formattedEnd = endDate
-    ? endDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
-    : '7 days from signup';
-
-  let heading, subtext, btnLabel;
-  if (status === 'expired') {
-    heading = '⚠️ Your trial has ended';
-    subtext = 'Upgrade to continue learning';
-    btnLabel = 'Choose a Plan →';
-  } else if (days <= 2) {
-    heading = `⚠️ Trial expires in ${days} day${days === 1 ? '' : 's'}!`;
-    subtext = `Full access until ${formattedEnd}. Upgrade to keep learning.`;
-    btnLabel = 'Upgrade Now';
-  } else {
-    heading = `🎁 Free Trial — ${days} days remaining`;
-    subtext = `Full access to all features until ${formattedEnd}`;
-    btnLabel = 'Upgrade Now';
-  }
-
+  // Free plan — honest evergreen message, no fabricated trial countdown.
+  // Free access to a fixed set of chapters (5 Vedic Maths + 1 Reasoning +
+  // 1 Aptitude) never expires; there is no time-limited trial.
   return (
     <div style={{
-      background: bg,
+      background: 'linear-gradient(135deg, #0A1628, #0D2252)',
       borderRadius: 12,
       padding: '14px 20px',
       marginBottom: 16,
@@ -102,10 +75,10 @@ export default function TrialBanner() {
       <div className="trial-banner-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: 12, flexWrap: 'wrap' }}>
         <div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'white', fontWeight: 500 }}>
-            {heading}
+            🎁 You're on the Free Plan
           </div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.75)', marginTop: 2 }}>
-            {subtext}
+            Upgrade for full access to all chapters and features
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
@@ -120,7 +93,7 @@ export default function TrialBanner() {
               whiteSpace: 'nowrap',
             }}
           >
-            {btnLabel}
+            Upgrade Now
           </button>
           <button
             onClick={() => setDismissed(true)}

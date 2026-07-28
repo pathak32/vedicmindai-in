@@ -130,7 +130,7 @@ export default function WelcomeModal({ profile, progress, onClose }) {
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#6B7280', marginTop: 6, marginBottom: 0 }}>
               {isPaid
                 ? 'Your subscription is active. Here\'s how to get the most out of VedicMindAI.'
-                : 'You\'re on a 7-day free trial. Here\'s how to get started.'}
+                : 'You\'re on the Free Plan. Here\'s how to get started.'}
             </p>
           </div>
         )}

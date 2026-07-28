@@ -20,7 +20,7 @@ export default function ReferralCard() {
   const [loading, setLoading] = useState(true);
 
   const referralCode = user ? generateCode(user.id) : '';
-  const shareText = `🧮 Join VedicMind — India's AI-powered Vedic Mathematics app!\nLearn ancient math tricks that make calculations 10x faster.\n\nUse my referral code: *${referralCode}* to get 7 days free trial.\n\n👉 vedicmindai.in`;
+  const shareText = `🧮 Join VedicMind — India's AI-powered Vedic Mathematics app!\nLearn ancient math tricks that make calculations 10x faster.\n\nUse my referral code: *${referralCode}*\n\n👉 vedicmindai.in`;
 
   useEffect(() => {
     if (!user) return;
