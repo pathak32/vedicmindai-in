@@ -12,6 +12,7 @@
 // Intermediate) chapters, same as Reasoning's Level 1/Level 2 model.
 
 import { getSupabase } from './supabaseClient';
+import { getAptitudeChaptersByLevel } from '@/data/aptitudeContent';
 
 export const APTITUDE_PASS_THRESHOLD = 60; // % required to unlock the next chapter — matches Vedic Maths & Reasoning
 const XP_PER_CHAPTER = 50;
@@ -93,13 +94,15 @@ export function isAptitudeChapterUnlocked(chapterId, sortedChapterIds, level) {
 // at >= APTITUDE_PASS_THRESHOLD — same "clear the whole prior level" rule
 // Reasoning uses for Level 2. Pre-K has no prerequisite (entry point).
 
-export function isAptitudeLevelUnlocked(level, primaryChapterIds) {
+export function isAptitudeLevelUnlocked(level) {
   if (level === 'PRE_K' || level === 'PRIMARY') return true;
-  if (level === 'MIDDLE') {
-    const scores = getAptitudeScores();
-    return primaryChapterIds.every((id) => (scores[id] ?? 0) >= APTITUDE_PASS_THRESHOLD);
-  }
-  return true; // Secondary/Intermediate don't exist yet — open by default when built
+  const scores = getAptitudeScores();
+  const allCleared = (priorLevel) =>
+    getAptitudeChaptersByLevel(priorLevel).every((c) => (scores[c.id] ?? 0) >= APTITUDE_PASS_THRESHOLD);
+  if (level === 'MIDDLE') return allCleared('PRIMARY');
+  if (level === 'SECONDARY') return allCleared('MIDDLE');
+  if (level === 'INTERMEDIATE') return allCleared('SECONDARY');
+  return true;
 }
 
 // Pull server-side progress down into localStorage on load, same gap-fix

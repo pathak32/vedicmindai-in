@@ -61,9 +61,8 @@ export default function AptitudeChapterPage() {
   // Reasoning and Vedic Maths, except Pre-K, which has no score gate.
   const plan = getUserPlan();
   const levelChapterIds = chapter ? getAptitudeChaptersByLevel(chapter.level).map((c) => c.id) : [];
-  const primaryChapterIds = getAptitudeChaptersByLevel('PRIMARY').map((c) => c.id);
   const freeOk = plan !== 'free' || isAptitudeChapterFreeAccess(chapterId);
-  const levelOk = plan === 'free' || isAptitudeLevelUnlocked(chapter?.level, primaryChapterIds);
+  const levelOk = plan === 'free' || isAptitudeLevelUnlocked(chapter?.level);
   const progressionOk = plan === 'free' || isAptitudeChapterUnlocked(chapterId, levelChapterIds, chapter?.level);
   const isLocked = chapter && !(freeOk && levelOk && progressionOk);
 
