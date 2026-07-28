@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 // base44 removed
 import { useLanguage } from '@/lib/LanguageContext';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 import {
   getOlympiadLevel,
   getOlympiadLevelLabel,
@@ -672,10 +673,16 @@ function LoadingScreen({ level }) {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function OlympiadPage() {
+  const { user, loading: authLoading } = useVedicAuth();
+  const navigate = useNavigate();
   const profile = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile') || '{}'); } catch { return {}; } })();
   const [level, setLevel] = useState(() => getOlympiadLevel(profile.grade));
   const [status, setStatus] = useState(getOlympiadStatus());
   const [questions, setQuestions] = useState(null);
+
+  useEffect(() => {
+    if (!authLoading && !user) { navigate('/auth'); return; }
+  }, [authLoading, user]);
 
   // Refresh status every 30s
   useEffect(() => {

@@ -12,7 +12,7 @@ export default function MyBattlesPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!user) return;
+    if (!user) { setLoading(false); return; }
     (async () => {
       const supabase = await getSupabase();
       const { data } = await supabase
@@ -45,7 +45,7 @@ export default function MyBattlesPage() {
 
         {!loading && battles.length === 0 && (
           <div style={{ background: 'white', borderRadius: 16, padding: 32, textAlign: 'center', boxShadow: '0 4px 20px rgba(10,22,40,0.06)' }}>
-            <span style={{ fontSize: 40 }}>Battle</span>
+            <span style={{ fontSize: 40 }}>⚔️</span>
             <p style={{ color: '#0A1628', fontWeight: 600, marginTop: 12, marginBottom: 8 }}>{t('myBattlesEmptyTitle')}</p>
             <p style={{ color: '#6B7280', fontSize: 14, marginBottom: 20 }}>{t('myBattlesEmptyDesc')}</p>
             <Link to="/battle" style={{ display: 'inline-block', background: '#0A1628', color: 'white', padding: '10px 24px', borderRadius: 10, textDecoration: 'none', fontWeight: 600 }}>

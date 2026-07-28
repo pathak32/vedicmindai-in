@@ -28,7 +28,7 @@ export default function ParentDashboardPage() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    if (!user?.id) return;
+    if (!user?.id) { setLoading(false); return; }
     (async () => {
       try {
         const sb = await getSupabase();
