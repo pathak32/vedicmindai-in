@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Youtube, Facebook, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
-import { videoLibraryData } from '@/data/videoLibraryData';
+import { videoLibraryData, getYoutubeThumbnail } from '@/data/videoLibraryData';
 
 const PLATFORM_GRADIENTS = {
   instagram: 'linear-gradient(135deg, #833AB4, #E1306C, #F77737)',
@@ -10,9 +10,15 @@ const PLATFORM_GRADIENTS = {
   facebook: 'linear-gradient(135deg, #1877F2, #0C5DC7)',
 };
 
-function VideoCard({ video }) {
+function VideoCard({ video, thumbnailUrl }) {
   const PLATFORM_ICONS = { instagram: Instagram, youtube: Youtube, facebook: Facebook };
   const PlatformIcon = PLATFORM_ICONS[video.platform] || Instagram;
+  // Falls back to the gradient+play-icon placeholder whenever a real
+  // thumbnail isn't available (still loading, fetch failed, or the image
+  // itself 404s) -- a card should never render visibly broken.
+  const [imgFailed, setImgFailed] = useState(false);
+  const showImage = thumbnailUrl && !imgFailed;
+
   return (
     <a
       href={video.url}
@@ -25,17 +31,30 @@ function VideoCard({ video }) {
     >
       <div style={{
         width: '100%', aspectRatio: '9 / 16', borderRadius: 16,
-        background: PLATFORM_GRADIENTS[video.platform] || PLATFORM_GRADIENTS.instagram,
+        background: showImage ? '#000' : (PLATFORM_GRADIENTS[video.platform] || PLATFORM_GRADIENTS.instagram),
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         position: 'relative', marginBottom: 10, boxShadow: '0 8px 24px rgba(10,22,40,0.15)',
+        overflow: 'hidden',
       }}>
+        {showImage && (
+          <img
+            src={thumbnailUrl}
+            alt=""
+            onError={() => setImgFailed(true)}
+            style={{
+              position: 'absolute', inset: 0, width: '100%', height: '100%',
+              objectFit: 'cover', opacity: 0.85,
+            }}
+          />
+        )}
         <div style={{
           width: 52, height: 52, borderRadius: '50%', background: 'rgba(255,255,255,0.25)',
           backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          position: 'relative', zIndex: 1,
         }}>
           <Play size={22} color="white" fill="white" style={{ marginLeft: 3 }} />
         </div>
-        <div style={{ position: 'absolute', top: 10, right: 10, background: 'rgba(0,0,0,0.35)', borderRadius: 8, padding: 5 }}>
+        <div style={{ position: 'absolute', top: 10, right: 10, background: 'rgba(0,0,0,0.35)', borderRadius: 8, padding: 5, zIndex: 1 }}>
           <PlatformIcon size={16} color="white" />
         </div>
       </div>
@@ -52,6 +71,27 @@ function VideoCard({ video }) {
 export default function VideoLibrarySection() {
   const { t } = useLanguage();
   const scrollRef = useRef(null);
+
+  // YouTube thumbnails are a stable, unauthenticated URL pattern -- no fetch
+  // needed, computed once up front. Facebook/Instagram thumbnails require
+  // the serverless oEmbed proxy (api/video-thumbnails.js) since their CDN
+  // URLs can expire and Meta's oEmbed API works better called server-side.
+  const [fbIgThumbnails, setFbIgThumbnails] = useState({});
+
+  useEffect(() => {
+    fetch('/api/video-thumbnails')
+      .then((r) => r.json())
+      .then((data) => setFbIgThumbnails(data.thumbnails || {}))
+      .catch(() => {
+        // Network/endpoint failure -- cards just keep their gradient
+        // placeholder, nothing else needs to happen here.
+      });
+  }, []);
+
+  const getThumbnail = (video) => {
+    if (video.platform === 'youtube') return getYoutubeThumbnail(video.url);
+    return fbIgThumbnails[video.id] || null;
+  };
 
   const scroll = (dir) => {
     scrollRef.current?.scrollBy({ left: dir * 240, behavior: 'smooth' });
@@ -86,7 +126,7 @@ export default function VideoLibrarySection() {
             }}
           >
             {videoLibraryData.map((video) => (
-              <VideoCard key={video.id} video={video} />
+              <VideoCard key={video.id} video={video} thumbnailUrl={getThumbnail(video)} />
             ))}
           </div>
 

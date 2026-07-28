@@ -11,6 +11,14 @@
 //
 // platform: 'youtube' | 'facebook' | 'instagram'
 
+// YouTube thumbnails use a stable, unauthenticated, non-expiring URL
+// pattern (no API call needed) -- https://i.ytimg.com/vi/{videoId}/hqdefault.jpg
+export function getYoutubeThumbnail(url) {
+  const match = url.match(/[?&]v=([^&]+)/);
+  const videoId = match ? match[1] : null;
+  return videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : null;
+}
+
 export const videoLibraryData = [
   {
     id: 'v1',
