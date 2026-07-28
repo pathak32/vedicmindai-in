@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 import AdminStudents from '@/components/admin/AdminStudents';
 import AdminLessons from '@/components/admin/AdminLessons';
 import AdminQuizManager from '@/components/admin/AdminQuizManager';
@@ -177,24 +178,36 @@ function AdminDashboard({ onLock }) {
 
 // ─── Main AdminPanel ─────────────────────────────────────────────────────────
 export default function AdminPanel() {
+  const { user, loading: authLoading } = useVedicAuth();
   const [searchParams] = useSearchParams();
   const [granted, setGranted] = useState(false);
 
+  // Real admin check: is the logged-in Supabase account flagged
+  // role: 'admin' in its (server-verified, non-forgeable) user_metadata?
+  // Same check DashboardNavbar already uses to show the admin nav link.
+  const isRealAdmin = !authLoading && user?.user_metadata?.role === 'admin';
+
   useEffect(() => {
-    // Check 1: Secret URL key
+    // Check 0 (primary, permanent): real Supabase account with admin role
+    if (isRealAdmin) {
+      setGranted(true);
+      return;
+    }
+    // Checks 1 & 2 below are a TEMPORARY fallback (PIN / URL key) kept only
+    // until admin access via a real account is confirmed working. Remove
+    // once confirmed — tracked as a known follow-up, not a permanent gate.
     const urlKey = searchParams.get('key');
     if (urlKey === ADMIN_KEY) {
       sessionStorage.setItem(SESSION_KEY, '1');
       setGranted(true);
       return;
     }
-    // Check 2: Session already active (PIN entered earlier this session)
     if (sessionStorage.getItem(SESSION_KEY) === '1') {
       setGranted(true);
       return;
     }
     // Else: show PIN screen
-  }, []);
+  }, [isRealAdmin]);
 
   const handlePinSuccess = () => {
     sessionStorage.setItem(SESSION_KEY, '1');
