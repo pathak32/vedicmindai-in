@@ -51,7 +51,14 @@ export default function AptitudeChapterPage() {
   const [score, setScore] = useState(0);
   const [finalScore, setFinalScore] = useState(null);
 
-  const sortedChapters = [...APTITUDE_CHAPTERS].sort((a, b) => a.order - b.order);
+  // 'order' is only unique WITHIN a level (each level restarts at 1), so
+  // sorting on it alone interleaves chapters across levels incorrectly —
+  // e.g. PRE_K's chapter 1 and PRIMARY's chapter 1 both have order:1 and
+  // used to land next to each other. Rank by level first, then order.
+  const APTITUDE_LEVEL_RANK = { PRE_K: 0, PRIMARY: 1, MIDDLE: 2, SECONDARY: 3, INTERMEDIATE: 4 };
+  const sortedChapters = [...APTITUDE_CHAPTERS].sort((a, b) =>
+    (APTITUDE_LEVEL_RANK[a.level] - APTITUDE_LEVEL_RANK[b.level]) || (a.order - b.order)
+  );
   const chapterId = paramChapterId || sortedChapters[0].id;
   const chapter = getAptitudeChapterContent(chapterId);
   const isPreK = chapter?.level === 'PRE_K';
