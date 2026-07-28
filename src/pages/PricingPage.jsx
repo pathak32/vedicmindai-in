@@ -4,6 +4,7 @@ import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { loadRazorpayScript } from '@/lib/loadRazorpay';
+import { isRunningInTWA } from '@/lib/isTWA';
 
 const glass = {
   background: 'rgba(255,255,255,0.7)',
@@ -146,7 +147,7 @@ const PLAN_DISPLAY_NAMES = {
 };
 
 function PlanCard({
-  plan, isAnnual, showUSD, onPay, isCurrent, isFree }) {
+  plan, isAnnual, showUSD, onPay, isCurrent, isFree, disablePurchase }) {
   const { t } = useLanguage();
   const mainPrice = showUSD
     ? (isAnnual ? plan.usdAnnual : plan.usdMonthly) || (isAnnual ? plan.annualPrice : plan.monthlyPrice)
@@ -227,21 +228,36 @@ function PlanCard({
           ))}
         </div>
 
-        <button
-          onClick={() => !isCurrent && !isFree && onPay()}
-          disabled={isCurrent}
-          style={{
-            width: '100%', height: 48, border: 'none', borderRadius: 12,
-            background: isCurrent ? '#10B981' : plan.btnBg,
-            color: 'white', fontFamily: 'var(--font-body)',
-            fontSize: 15, fontWeight: 500, cursor: isCurrent ? 'not-allowed' : 'pointer',
-            transition: 'opacity 0.15s',
-          }}
-          onMouseEnter={e => { if (!isCurrent) e.currentTarget.style.opacity = '0.88'; }}
-          onMouseLeave={e => { e.currentTarget.style.opacity = '1'; }}
-        >
-          {isCurrent ? 'Current Plan ✓' : plan.btnLabel}
-        </button>
+        {disablePurchase && !isCurrent && !isFree ? (
+          <div style={{
+            width: '100%', borderRadius: 12, padding: '12px 14px',
+            background: 'rgba(30,64,175,0.06)', border: '1px solid rgba(30,64,175,0.15)',
+            textAlign: 'center',
+          }}>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628', marginBottom: 2 }}>
+              Subscribe on our website
+            </div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#6B7280' }}>
+              Visit vedicmindai.in in your browser to upgrade
+            </div>
+          </div>
+        ) : (
+          <button
+            onClick={() => !isCurrent && !isFree && onPay()}
+            disabled={isCurrent}
+            style={{
+              width: '100%', height: 48, border: 'none', borderRadius: 12,
+              background: isCurrent ? '#10B981' : plan.btnBg,
+              color: 'white', fontFamily: 'var(--font-body)',
+              fontSize: 15, fontWeight: 500, cursor: isCurrent ? 'not-allowed' : 'pointer',
+              transition: 'opacity 0.15s',
+            }}
+            onMouseEnter={e => { if (!isCurrent) e.currentTarget.style.opacity = '0.88'; }}
+            onMouseLeave={e => { e.currentTarget.style.opacity = '1'; }}
+          >
+            {isCurrent ? 'Current Plan ✓' : plan.btnLabel}
+          </button>
+        )}
       </div>
     </div>
   );
@@ -254,6 +270,7 @@ export default function PricingPage() {
   const [showUSD, setShowUSD] = useState(false);
   const [paymentLoading, setPaymentLoading] = useState(false);
   const navigate = useNavigate();
+  const inTWA = isRunningInTWA();
 
   const plan = JSON.parse(localStorage.getItem('vedicmind_plan') || '{}');
   const isPaid = ['basic', 'pro', 'family', 'basic_annual', 'pro_annual', 'family_annual'].includes(plan.planStatus);
@@ -472,6 +489,7 @@ export default function PricingPage() {
               onPay={() => initiatePayment(p)}
               isCurrent={isCurrentPlan(p.name)}
               isFree={p.id === 'free'}
+              disablePurchase={inTWA}
             />
           ))}
         </div>

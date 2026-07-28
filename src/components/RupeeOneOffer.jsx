@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { loadRazorpayScript } from '@/lib/loadRazorpay';
+import { isRunningInTWA } from '@/lib/isTWA';
 
 export default function RupeeOneOffer({ quizStreak = 0 }) {
   const { user } = useVedicAuth();
@@ -15,7 +16,7 @@ export default function RupeeOneOffer({ quizStreak = 0 }) {
     if (d) setDismissed(true);
   }, []);
 
-  if (!eligible || dismissed) return null;
+  if (!eligible || dismissed || isRunningInTWA()) return null;
 
   async function handleClaim() {
     setLoading(true);
