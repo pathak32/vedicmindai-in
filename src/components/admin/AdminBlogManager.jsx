@@ -19,16 +19,50 @@ export default function AdminBlogManager() {
   const [loading, setLoading] = useState(true);
   const [statusMsg, setStatusMsg] = useState('');
   const [saving, setSaving] = useState(false);
-  const [view, setView] = useState('submit'); // submit | drafts | published
+  const [view, setView] = useState('submit'); // submit | drafts | published | comments
   const [editingId, setEditingId] = useState(null); // null = creating new; set = editing an existing post
   const [editingSlug, setEditingSlug] = useState(null); // preserve the original slug/URL when editing
+  const [comments, setComments] = useState([]);
+  const [commentsLoading, setCommentsLoading] = useState(true);
 
   const [form, setForm] = useState({
     title: '', category: CATEGORIES[0], subcategory: '',
     target_keyword: '', target_audience: '', content: '',
   });
 
-  useEffect(() => { loadPosts(); }, []);
+  useEffect(() => { loadPosts(); loadComments(); }, []);
+
+  async function loadComments() {
+    setCommentsLoading(true);
+    try {
+      const sb = await getSupabase();
+      // Join in the post title/slug so the moderation view can show which
+      // article each comment belongs to without a second lookup per row.
+      const { data, error } = await sb.from('blog_comments')
+        .select('*, blog_posts(title, slug)')
+        .order('created_at', { ascending: false });
+      if (error) throw error;
+      setComments(data || []);
+    } catch (e) {
+      // Table may not exist yet if the migration hasn't been run —
+      // fail quietly here, same pattern as loadPosts below.
+    } finally {
+      setCommentsLoading(false);
+    }
+  }
+
+  async function moderateComment(id, status) {
+    const sb = await getSupabase();
+    await sb.from('blog_comments').update({ status }).eq('id', id);
+    loadComments();
+  }
+
+  async function deleteComment(id) {
+    if (!confirm('Delete this comment permanently?')) return;
+    const sb = await getSupabase();
+    await sb.from('blog_comments').delete().eq('id', id);
+    loadComments();
+  }
 
   async function loadPosts() {
     setLoading(true);
@@ -137,14 +171,16 @@ export default function AdminBlogManager() {
 
   const drafts = posts.filter(p => p.status === 'draft');
   const published = posts.filter(p => p.status === 'published');
+  const pendingComments = comments.filter(c => c.status === 'pending');
 
   return (
     <div>
-      <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+      <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
         {[
           { id: 'submit', label: editingId ? '✏️ Editing Article' : '✍️ Submit New Article' },
           { id: 'drafts', label: `📝 Drafts (${drafts.length})` },
           { id: 'published', label: `✅ Published (${published.length})` },
+          { id: 'comments', label: `💬 Comments${pendingComments.length > 0 ? ` (${pendingComments.length} pending)` : ''}` },
         ].map(v => (
           <button key={v.id} onClick={() => setView(v.id)} style={btn(view === v.id ? '#1e40af' : '#9CA3AF')}>
             {v.label}
@@ -234,6 +270,35 @@ export default function AdminBlogManager() {
               <p style={{ fontSize: 13, color: '#4B5563', margin: 0, maxHeight: 60, overflow: 'hidden' }}>
                 {post.content.slice(0, 220)}{post.content.length > 220 ? '…' : ''}
               </p>
+            </div>
+          ))}
+        </div>
+      )}
+      {view === 'comments' && (
+        <div>
+          {commentsLoading && <p style={{ color: '#6B7280' }}>Loading…</p>}
+          {!commentsLoading && comments.length === 0 && (
+            <p style={{ color: '#9CA3AF' }}>No comments yet — has supabase-migrations/002-blog-likes-and-comments.sql been run?</p>
+          )}
+          {comments.map(c => (
+            <div key={c.id} style={{
+              ...card,
+              borderLeft: c.status === 'pending' ? '4px solid #F59E0B' : c.status === 'approved' ? '4px solid #10B981' : '4px solid #EF4444',
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 8 }}>
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: 15, color: '#0A1628' }}>{c.name}</div>
+                  <div style={{ fontSize: 12, color: '#9CA3AF', marginTop: 2 }}>
+                    on {c.blog_posts?.title || '(deleted post)'} · {new Date(c.created_at).toLocaleString()} · {c.status}
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
+                  {c.status !== 'approved' && <button onClick={() => moderateComment(c.id, 'approved')} style={btn('#10B981')}>Approve</button>}
+                  {c.status !== 'rejected' && <button onClick={() => moderateComment(c.id, 'rejected')} style={btn('#F59E0B')}>Reject</button>}
+                  <button onClick={() => deleteComment(c.id)} style={btn('#EF4444')}>Delete</button>
+                </div>
+              </div>
+              <p style={{ fontSize: 14, color: '#374151', margin: 0 }}>{c.comment}</p>
             </div>
           ))}
         </div>

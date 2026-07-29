@@ -27,10 +27,17 @@ function setMetaTag(attr, key, content) {
 export default function BlogPostPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [liked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+  const [comments, setComments] = useState([]);
+  const [commentName, setCommentName] = useState('');
+  const [commentText, setCommentText] = useState('');
+  const [submittingComment, setSubmittingComment] = useState(false);
+  const [commentSubmitted, setCommentSubmitted] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -44,6 +51,14 @@ export default function BlogPostPage() {
           setNotFound(true);
         } else {
           setPost(data);
+          setLikeCount(data.likes || 0);
+          setLiked(localStorage.getItem(`vedicmind_blog_liked_${data.id}`) === '1');
+
+          sb.from('blog_comments').select('*')
+            .eq('post_id', data.id).eq('status', 'approved')
+            .order('created_at', { ascending: false })
+            .then(({ data: c }) => setComments(c || []));
+
           const pageTitle = `${data.title} — VedicMindAI™`;
           const description = data.content.slice(0, 155);
           const canonicalUrl = `https://www.vedicmindai.in/blog/${data.slug}`;
@@ -138,6 +153,42 @@ export default function BlogPostPage() {
   const colors = CATEGORY_COLORS[post.category] || CATEGORY_COLORS['Vedic Maths'];
   const paragraphs = post.content.split(/\n\s*\n/).filter(p => p.trim());
 
+  async function handleLike() {
+    if (liked) return; // one like per browser per post, enforced client-side via localStorage
+    setLiked(true);
+    setLikeCount((c) => c + 1);
+    localStorage.setItem(`vedicmind_blog_liked_${post.id}`, '1');
+    try {
+      const sb = await getSupabase();
+      await sb.rpc('increment_blog_likes', { post_slug: post.slug });
+    } catch (e) {
+      console.warn('Like failed to save (non-critical):', e);
+    }
+  }
+
+  async function handleCommentSubmit(e) {
+    e.preventDefault();
+    if (!commentName.trim() || !commentText.trim()) return;
+    setSubmittingComment(true);
+    try {
+      const sb = await getSupabase();
+      const { error } = await sb.from('blog_comments').insert({
+        post_id: post.id,
+        name: commentName.trim().slice(0, 80),
+        comment: commentText.trim().slice(0, 2000),
+        status: 'pending',
+      });
+      if (error) throw error;
+      setCommentSubmitted(true);
+      setCommentName('');
+      setCommentText('');
+    } catch (e) {
+      console.warn('Comment submit failed:', e);
+    } finally {
+      setSubmittingComment(false);
+    }
+  }
+
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
       <LandingNavbar />
@@ -173,6 +224,26 @@ export default function BlogPostPage() {
             ))}
           </div>
 
+          <div style={{ marginTop: 8, marginBottom: 8 }}>
+            <button
+              onClick={handleLike}
+              disabled={liked}
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                padding: '8px 18px', borderRadius: 100,
+                background: liked ? '#EEF2FF' : 'white',
+                border: `1px solid ${liked ? '#6366F1' : '#E5E7EB'}`,
+                color: liked ? '#4338CA' : '#374151',
+                fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600,
+                cursor: liked ? 'default' : 'pointer',
+              }}
+            >
+              <span>{liked ? '👍' : '🤍'}</span>
+              {liked ? t('blogLikedBtn') : t('blogLikeBtn')}
+              {likeCount > 0 && <span style={{ opacity: 0.7 }}>· {likeCount}</span>}
+            </button>
+          </div>
+
           <div style={{ marginTop: 48, paddingTop: 24, borderTop: '1px solid #F0F4FF', textAlign: 'center' }}>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563', marginBottom: 16 }}>
               {t('blogCtaText')}
@@ -183,6 +254,65 @@ export default function BlogPostPage() {
             }}>
               {t('blogCtaBtn')}
             </button>
+          </div>
+
+          <div style={{ marginTop: 40, paddingTop: 32, borderTop: '1px solid #F0F4FF' }}>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>
+              {t('blogCommentsTitle')} {comments.length > 0 && `(${comments.length})`}
+            </h2>
+
+            {commentSubmitted ? (
+              <div style={{ padding: 16, borderRadius: 12, background: '#ECFDF5', border: '1px solid #A7F3D0', color: '#065F46', fontFamily: 'var(--font-body)', fontSize: 14, marginBottom: 24 }}>
+                {t('blogCommentPendingMsg')}
+              </div>
+            ) : (
+              <form onSubmit={handleCommentSubmit} style={{ marginBottom: 32 }}>
+                <input
+                  value={commentName}
+                  onChange={(e) => setCommentName(e.target.value)}
+                  placeholder={t('blogCommentNamePlaceholder')}
+                  maxLength={80}
+                  style={{ width: '100%', padding: '10px 14px', borderRadius: 10, border: '1px solid #E5E7EB', fontFamily: 'var(--font-body)', fontSize: 14, marginBottom: 10, boxSizing: 'border-box' }}
+                />
+                <textarea
+                  value={commentText}
+                  onChange={(e) => setCommentText(e.target.value)}
+                  placeholder={t('blogCommentTextPlaceholder')}
+                  maxLength={2000}
+                  style={{ width: '100%', minHeight: 90, padding: '10px 14px', borderRadius: 10, border: '1px solid #E5E7EB', fontFamily: 'var(--font-body)', fontSize: 14, resize: 'vertical', boxSizing: 'border-box', marginBottom: 10 }}
+                />
+                <button
+                  type="submit"
+                  disabled={submittingComment || !commentName.trim() || !commentText.trim()}
+                  style={{
+                    padding: '10px 24px', borderRadius: 10, border: 'none',
+                    background: (!commentName.trim() || !commentText.trim()) ? '#D1D5DB' : '#0A1628',
+                    color: 'white', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14,
+                    cursor: (submittingComment || !commentName.trim() || !commentText.trim()) ? 'not-allowed' : 'pointer',
+                  }}
+                >
+                  {submittingComment ? t('blogCommentSubmitting') : t('blogCommentSubmit')}
+                </button>
+              </form>
+            )}
+
+            {comments.length === 0 ? (
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#9CA3AF' }}>{t('blogCommentEmpty')}</p>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                {comments.map((c) => (
+                  <div key={c.id} style={{ padding: 16, borderRadius: 12, background: 'white', border: '1px solid #F0F4FF' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+                      <span style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: '#0A1628' }}>{c.name}</span>
+                      <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#9CA3AF' }}>
+                        {new Date(c.created_at).toLocaleDateString(language === 'hi' ? 'hi-IN' : 'en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      </span>
+                    </div>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', margin: 0, lineHeight: 1.6 }}>{c.comment}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </motion.div>
       </main>
