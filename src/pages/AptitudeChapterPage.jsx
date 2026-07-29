@@ -7,6 +7,7 @@ import AptitudeSidebar from '@/components/learn/AptitudeSidebar';
 import { useLanguage } from '@/lib/LanguageContext';
 import { APTITUDE_CHAPTERS, getAptitudeChapterContent, getAptitudeChaptersByLevel } from '@/data/aptitudeContent';
 import { getAptitudeQuestionsByChapter } from '@/data/aptitudeQuizBank';
+import { pickQuizQuestions } from '@/lib/quizQuestionPicker';
 import { saveAptitudeChapterResult, isAptitudeChapterUnlocked, isAptitudeLevelUnlocked, getAptitudeScores, APTITUDE_PASS_THRESHOLD } from '@/lib/aptitudeProgress';
 import { isAptitudeChapterFreeAccess, getUserPlan } from '@/lib/planEngine';
 import {
@@ -85,7 +86,7 @@ export default function AptitudeChapterPage() {
 
   const [questions, setQuestions] = useState([]);
   useEffect(() => {
-    setQuestions(getAptitudeQuestionsByChapter(chapterId) || []);
+    setQuestions(pickQuizQuestions(getAptitudeQuestionsByChapter(chapterId) || []).questions);
     setQIndex(0); setSelected(null); setScore(0); setTab('concept'); setFinalScore(null);
   }, [chapterId]);
 
@@ -112,6 +113,7 @@ export default function AptitudeChapterPage() {
     setQIndex((i) => i + 1);
   }
   function restartQuiz() {
+    setQuestions(pickQuizQuestions(getAptitudeQuestionsByChapter(chapterId) || []).questions);
     setSelected(null); setQIndex(0); setScore(0); setFinalScore(null);
   }
 

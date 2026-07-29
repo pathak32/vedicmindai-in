@@ -15,6 +15,7 @@ import {
 import { saveReasoningChapterResult, isReasoningChapterUnlocked, isLevel2ChapterUnlocked, getReasoningScores, REASONING_PASS_THRESHOLD, reconcileReasoningFromServer } from '@/lib/reasoningProgress';
 import { awardPoints, recalculateMonthlyStatus, POINTS } from '@/lib/knowledgePoints';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { pickQuizQuestions } from '@/lib/quizQuestionPicker';
 
 const tr = (field, language) => field?.[language] ?? field?.en ?? '';
 
@@ -62,10 +63,10 @@ export default function ReasoningChapterPage() {
   // different question between renders, which is exactly what testers
   // were seeing as repeats/skips mid-quiz.
   const [questions, setQuestions] = useState(() =>
-    isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId)
+    pickQuizQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId)).questions
   );
   useEffect(() => {
-    setQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId));
+    setQuestions(pickQuizQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId)).questions);
   }, [chapterId, isL2Chapter]);
 
   const chapterIndex = allChapters.findIndex((c) => c.id === chapterId);
@@ -138,7 +139,7 @@ export default function ReasoningChapterPage() {
     setQIndex(0);
     setScore(0);
     setFinalScore(null);
-    setQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId));
+    setQuestions(pickQuizQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId)).questions);
   };
 
   return (

@@ -630,12 +630,48 @@ function MasterCelebration({ totalXP, badgeCount, xpEarned, correct, total, shar
   );
 }
 
+import { pickQuizQuestions } from '@/lib/quizQuestionPicker';
+
+// Picks (or restores) a capped, rotating subset of questions for this lesson.
+// QuizTab unmounts every time the Concept/Practice/Quiz tab switches, so a
+// plain useState lazy-initializer alone isn't enough to survive that -- the
+// SPECIFIC subset chosen has to persist in localStorage (like quizInProgress
+// already does for current/selectedAnswers) so navigating away mid-quiz and
+// back doesn't silently swap in a different random set of questions out from
+// under the student's in-progress answers.
+function loadOrPickLessonQuestions(lessonId, fullPool) {
+  try {
+    const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+    const saved = p.quizQuestionSet?.[lessonId];
+    if (Array.isArray(saved) && saved.length > 0 && saved.every((i) => i < fullPool.length)) {
+      return saved.map((i) => fullPool[i]);
+    }
+  } catch { /* fall through to picking a new set */ }
+  return pickNewLessonQuestions(lessonId, fullPool);
+}
+
+function pickNewLessonQuestions(lessonId, fullPool) {
+  const { questions, indices } = pickQuizQuestions(fullPool);
+  try {
+    const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
+    if (!p.quizQuestionSet) p.quizQuestionSet = {};
+    p.quizQuestionSet[lessonId] = indices;
+    localStorage.setItem('vedicmind_progress', JSON.stringify(p));
+  } catch { /* silent -- worst case, a fresh random set gets picked again next mount */ }
+  return questions;
+}
+
 // ─── Main QuizTab ─────────────────────────────────────────────────────────────
 
 export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLessonIds }) {
   const { t, language } = useLanguage();
   const { user } = useVedicAuth();
-  const questions = getQuestions(lesson.id);
+  const fullPool = getQuestions(lesson.id);
+  // Lazy initializer -- runs once per mount, not on every render, matching
+  // the same discipline Reasoning's question loading already follows (a
+  // per-render reshuffle there previously caused questions to silently
+  // change mid-quiz, reported by testers).
+  const [questions, setQuestions] = useState(() => loadOrPickLessonQuestions(lesson.id, fullPool));
 
   // If this lesson was already completed, restore that state on mount instead
   // of always starting blank at Question 1. The score was already being saved
@@ -843,7 +879,13 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
             </button>
           ) : null}
           <button
-            onClick={() => { setCurrent(0); setSelectedAnswers(Array(questions.length).fill(null)); setDone(false); }}
+            onClick={() => {
+              const fresh = pickNewLessonQuestions(lesson.id, fullPool);
+              setQuestions(fresh);
+              setCurrent(0);
+              setSelectedAnswers(Array(fresh.length).fill(null));
+              setDone(false);
+            }}
             style={{ flex: 1, minWidth: 120, minHeight: 44, background: 'transparent', color: '#0A1628', border: '1.5px solid #0A1628', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer' }}
           >
             Retake Quiz
