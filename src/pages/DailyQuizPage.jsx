@@ -10,7 +10,6 @@ import { saveDailyQuizResult, saveUserProgress } from '@/lib/supabaseDataService
 import { awardPoints, recalculateMonthlyStatus, POINTS } from '@/lib/knowledgePoints';
 import { getSupabase } from '@/lib/supabaseClient';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
-import { speakExplanation, buildExplanation } from '@/lib/voiceExplanation';
 import { useLanguage } from '@/lib/LanguageContext';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -235,29 +234,13 @@ function QuizScreen({ questions, onComplete }) {
     answersRef.current.push({ questionId: q.id, selectedIndex: idx, correct: isCorrect, timeMs: Math.round(elapsed), pts });
 
     if (!isCorrect && q.options && q.correctIndex !== undefined) {
-      // Speak explanation on wrong answer — wait for it to finish before advancing
-      const correctAns = q.options[q.correctIndex];
-      const sutra = q.sutra || 'Vedic Mathematics';
-      const exp = q.explanation || '';
-      const msg = `Wrong! As per ${sutra} sutra, the correct answer is ${correctAns}. ${exp}`;
-
-      // Cancel any ongoing speech
-      window.speechSynthesis.cancel();
-      const utter = new SpeechSynthesisUtterance(msg);
-      utter.lang = 'en-US';
-      utter.rate = 0.85;
-      utter.pitch = 1;
-      utter.volume = 1;
-      // Advance ONLY after speech ends
-      utter.onend = () => {
-        nextRef.current = setTimeout(advance, 400);
-      };
-      // Fallback — if speech fails or takes too long (max 8 seconds)
-      nextRef.current = setTimeout(() => {
-        window.speechSynthesis.cancel();
-        advance();
-      }, 8000);
-      window.speechSynthesis.speak(utter);
+      // Previously spoke the explanation aloud via the Web Speech API and
+      // waited for it to finish (or an 8-second fallback) before advancing.
+      // Removed per his request (Jul 29) -- the voice was adding real delay
+      // to daily quiz pacing, and the visual feedback (correct option
+      // highlighted green, wrong/right icons, explanation text) already
+      // shows everything the voice was saying, just without the wait.
+      nextRef.current = setTimeout(advance, 1800);
     } else {
       // Correct answer — advance after short delay
       nextRef.current = setTimeout(advance, 800);
