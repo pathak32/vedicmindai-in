@@ -13,7 +13,7 @@ const CATEGORY_COLORS = {
 };
 
 export default function BlogListPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('All');
@@ -81,6 +81,8 @@ export default function BlogListPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
           {filtered.map((post, i) => {
             const colors = CATEGORY_COLORS[post.category] || CATEGORY_COLORS['Vedic Maths'];
+            const displayTitle = (language === 'hi' && post.title_hi) ? post.title_hi : post.title;
+            const displayContent = (language === 'hi' && post.content_hi) ? post.content_hi : post.content;
             return (
               <motion.div key={post.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.04 }}>
                 <Link to={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
@@ -96,10 +98,10 @@ export default function BlogListPage() {
                       {post.category}{post.subcategory ? ` · ${post.subcategory}` : ''}
                     </span>
                     <h3 className="font-heading" style={{ fontSize: 17, fontWeight: 700, color: '#0A1628', marginBottom: 8, lineHeight: 1.4 }}>
-                      {post.title}
+                      {displayTitle}
                     </h3>
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#6B7280', lineHeight: 1.6, margin: 0 }}>
-                      {post.content.slice(0, 130)}…
+                      {displayContent.slice(0, 130)}…
                     </p>
                   </div>
                 </Link>

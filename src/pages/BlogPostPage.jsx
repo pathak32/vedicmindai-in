@@ -153,7 +153,12 @@ export default function BlogPostPage() {
   }
 
   const colors = CATEGORY_COLORS[post.category] || CATEGORY_COLORS['Vedic Maths'];
-  const paragraphs = post.content.split(/\n\s*\n/).filter(p => p.trim());
+  // Hindi fields are optional -- most posts don't have a translation yet,
+  // so fall back to English automatically whenever content_hi/title_hi
+  // is empty rather than showing a blank page.
+  const displayTitle = (language === 'hi' && post.title_hi) ? post.title_hi : post.title;
+  const displayContent = (language === 'hi' && post.content_hi) ? post.content_hi : post.content;
+  const paragraphs = displayContent.split(/\n\s*\n/).filter(p => p.trim());
 
   async function handleLike() {
     if (liked) return; // one like per browser per post, enforced client-side via localStorage
@@ -169,7 +174,7 @@ export default function BlogPostPage() {
   }
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const shareText = `${post.title} — VedicMindAI`;
+  const shareText = `${displayTitle} — VedicMindAI`;
 
   async function handleNativeShare() {
     // Web Share API pops up the phone's real OS share sheet -- every app
@@ -237,7 +242,7 @@ export default function BlogPostPage() {
           </div>
 
           <h1 className="font-heading" style={{ fontSize: 'clamp(26px,5vw,36px)', fontWeight: 700, color: '#0A1628', marginBottom: 12, lineHeight: 1.3 }}>
-            {post.title}
+            {displayTitle}
           </h1>
 
           {post.target_audience && (

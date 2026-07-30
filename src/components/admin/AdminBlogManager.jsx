@@ -28,6 +28,7 @@ export default function AdminBlogManager() {
   const [form, setForm] = useState({
     title: '', category: CATEGORIES[0], subcategory: '',
     target_keyword: '', target_audience: '', content: '',
+    title_hi: '', content_hi: '',
   });
 
   useEffect(() => { loadPosts(); loadComments(); }, []);
@@ -88,6 +89,8 @@ export default function AdminBlogManager() {
       target_keyword: post.target_keyword || '',
       target_audience: post.target_audience || '',
       content: post.content || '',
+      title_hi: post.title_hi || '',
+      content_hi: post.content_hi || '',
     });
     setStatusMsg('');
     setView('submit');
@@ -96,7 +99,7 @@ export default function AdminBlogManager() {
   function cancelEdit() {
     setEditingId(null);
     setEditingSlug(null);
-    setForm({ title: '', category: CATEGORIES[0], subcategory: '', target_keyword: '', target_audience: '', content: '' });
+    setForm({ title: '', category: CATEGORIES[0], subcategory: '', target_keyword: '', target_audience: '', content: '', title_hi: '', content_hi: '' });
     setStatusMsg('');
   }
 
@@ -122,6 +125,8 @@ export default function AdminBlogManager() {
           target_keyword: form.target_keyword.trim() || null,
           target_audience: form.target_audience.trim() || null,
           content: form.content.trim(),
+          title_hi: form.title_hi.trim() || null,
+          content_hi: form.content_hi.trim() || null,
         }).eq('id', editingId);
         if (error) throw error;
         setStatusMsg('✅ Changes saved.');
@@ -139,11 +144,13 @@ export default function AdminBlogManager() {
         target_keyword: form.target_keyword.trim() || null,
         target_audience: form.target_audience.trim() || null,
         content: form.content.trim(),
+        title_hi: form.title_hi.trim() || null,
+        content_hi: form.content_hi.trim() || null,
         status: 'draft',
       });
       if (error) throw error;
       setStatusMsg('✅ Saved as draft. Review it in the Drafts tab, then Publish when ready.');
-      setForm({ title: '', category: CATEGORIES[0], subcategory: '', target_keyword: '', target_audience: '', content: '' });
+      setForm({ title: '', category: CATEGORIES[0], subcategory: '', target_keyword: '', target_audience: '', content: '', title_hi: '', content_hi: '' });
       loadPosts();
     } catch (err) {
       setStatusMsg('❌ ' + (err.message || 'Something went wrong saving this post.'));
@@ -232,6 +239,20 @@ export default function AdminBlogManager() {
               value={form.content}
               onChange={e => setForm(f => ({ ...f, content: e.target.value }))}
               placeholder="Paste the full article text here..."
+            />
+          </div>
+          <div style={{ marginBottom: 16, padding: 16, borderRadius: 10, background: '#F9FAFB', border: '1px dashed #D1D5DB' }}>
+            <p style={{ fontSize: 12, color: '#6B7280', marginTop: 0, marginBottom: 12 }}>
+              Optional — Hindi version. Leave both blank and readers with Hindi selected will automatically see the English version above instead.
+            </p>
+            <label style={label}>Hindi Title (हिंदी शीर्षक)</label>
+            <input style={{ ...input, marginBottom: 12 }} value={form.title_hi} onChange={e => setForm(f => ({ ...f, title_hi: e.target.value }))} placeholder="हिंदी में शीर्षक (वैकल्पिक)" />
+            <label style={label}>Hindi Content (हिंदी लेख)</label>
+            <textarea
+              style={{ ...input, minHeight: 200, fontFamily: 'monospace', fontSize: 13, resize: 'vertical' }}
+              value={form.content_hi}
+              onChange={e => setForm(f => ({ ...f, content_hi: e.target.value }))}
+              placeholder="हिंदी में पूरा लेख यहाँ पेस्ट करें (वैकल्पिक)..."
             />
           </div>
           <div style={{ display: 'flex', gap: 10 }}>
