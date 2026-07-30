@@ -38,6 +38,8 @@ export default function BlogPostPage() {
   const [commentText, setCommentText] = useState('');
   const [submittingComment, setSubmittingComment] = useState(false);
   const [commentSubmitted, setCommentSubmitted] = useState(false);
+  const [shareMenuOpen, setShareMenuOpen] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -166,6 +168,32 @@ export default function BlogPostPage() {
     }
   }
 
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const shareText = `${post.title} — VedicMindAI`;
+
+  async function handleNativeShare() {
+    // Web Share API pops up the phone's real OS share sheet -- every app
+    // installed (WhatsApp, Instagram DM, Telegram, Email, etc.), not just
+    // the handful we can build explicit buttons for. Falls back to our own
+    // menu on desktop browsers that don't support it.
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: shareText, url: shareUrl });
+      } catch (e) {
+        // User cancelled the share sheet -- not an error, do nothing.
+      }
+    } else {
+      setShareMenuOpen((v) => !v);
+    }
+  }
+
+  function handleCopyLink() {
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      setLinkCopied(true);
+      setTimeout(() => setLinkCopied(false), 2000);
+    });
+  }
+
   async function handleCommentSubmit(e) {
     e.preventDefault();
     if (!commentName.trim() || !commentText.trim()) return;
@@ -224,7 +252,7 @@ export default function BlogPostPage() {
             ))}
           </div>
 
-          <div style={{ marginTop: 8, marginBottom: 8 }}>
+          <div style={{ marginTop: 8, marginBottom: 8, display: 'flex', gap: 10, flexWrap: 'wrap', position: 'relative' }}>
             <button
               onClick={handleLike}
               disabled={liked}
@@ -242,6 +270,85 @@ export default function BlogPostPage() {
               {liked ? t('blogLikedBtn') : t('blogLikeBtn')}
               {likeCount > 0 && <span style={{ opacity: 0.7 }}>· {likeCount}</span>}
             </button>
+
+            <button
+              onClick={handleNativeShare}
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                padding: '8px 18px', borderRadius: 100,
+                background: 'white', border: '1px solid #E5E7EB', color: '#374151',
+                fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600,
+                cursor: 'pointer',
+              }}
+            >
+              <span>📤</span>{t('blogShareBtn')}
+            </button>
+
+            {shareMenuOpen && (
+              <>
+                <div
+                  onClick={() => setShareMenuOpen(false)}
+                  style={{ position: 'fixed', inset: 0, zIndex: 40 }}
+                />
+                <div style={{
+                  position: 'absolute', top: '110%', left: 0, zIndex: 50,
+                  background: 'white', borderRadius: 12, border: '1px solid #E5E7EB',
+                  boxShadow: '0 8px 24px rgba(10,22,40,0.12)', padding: 8, minWidth: 220,
+                }}>
+                  {[
+                    { label: t('blogShareWhatsapp'), icon: '💬', href: `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}` },
+                    { label: t('blogShareFacebook'), icon: '📘', href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}` },
+                    { label: t('blogShareTwitter'), icon: '𝕏', href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}` },
+                    { label: t('blogShareLinkedin'), icon: '💼', href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}` },
+                  ].map((opt) => (
+                    <a
+                      key={opt.label} href={opt.href} target="_blank" rel="noopener noreferrer"
+                      onClick={() => setShareMenuOpen(false)}
+                      style={{
+                        display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px',
+                        borderRadius: 8, textDecoration: 'none', color: '#374151',
+                        fontFamily: 'var(--font-body)', fontSize: 14,
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.background = '#F9FAFB'}
+                      onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+                    >
+                      <span style={{ fontSize: 16 }}>{opt.icon}</span>{opt.label}
+                    </a>
+                  ))}
+                  {/* Instagram has no web link-share intent -- copy-link is the standard workaround every site uses */}
+                  <button
+                    onClick={() => { handleCopyLink(); setShareMenuOpen(false); }}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px',
+                      borderRadius: 8, border: 'none', background: 'transparent', width: '100%', textAlign: 'left',
+                      color: '#374151', fontFamily: 'var(--font-body)', fontSize: 14, cursor: 'pointer',
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.background = '#F9FAFB'}
+                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+                  >
+                    <span style={{ fontSize: 16 }}>📸</span>{t('blogShareInstagram')}
+                  </button>
+                  <button
+                    onClick={() => { handleCopyLink(); setShareMenuOpen(false); }}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px',
+                      borderRadius: 8, border: 'none', background: 'transparent', width: '100%', textAlign: 'left',
+                      color: '#374151', fontFamily: 'var(--font-body)', fontSize: 14, cursor: 'pointer',
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.background = '#F9FAFB'}
+                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+                  >
+                    <span style={{ fontSize: 16 }}>🔗</span>{t('blogCopyLink')}
+                  </button>
+                </div>
+              </>
+            )}
+
+            {linkCopied && (
+              <span style={{ alignSelf: 'center', fontSize: 13, color: '#059669', fontFamily: 'var(--font-body)', fontWeight: 600 }}>
+                {t('blogLinkCopied')}
+              </span>
+            )}
           </div>
 
           <div style={{ marginTop: 48, paddingTop: 24, borderTop: '1px solid #F0F4FF', textAlign: 'center' }}>
