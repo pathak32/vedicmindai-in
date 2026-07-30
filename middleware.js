@@ -95,7 +95,7 @@ async function getBlogPostMeta(slug) {
   if (!rows || !rows[0]) return null;
   return {
     title: `${rows[0].title} — VedicMindAI™`,
-    description: rows[0].content.slice(0, 155).trim(),
+    description: rows[0].content.replace(/\s+/g, ' ').trim().slice(0, 155),
   };
 }
 
