@@ -34,6 +34,7 @@ export default function BlogPostPage() {
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
   const [comments, setComments] = useState([]);
+  const [relatedPosts, setRelatedPosts] = useState([]);
   const [commentName, setCommentName] = useState('');
   const [commentText, setCommentText] = useState('');
   const [submittingComment, setSubmittingComment] = useState(false);
@@ -45,6 +46,7 @@ export default function BlogPostPage() {
     (async () => {
       setLoading(true);
       setNotFound(false);
+      setRelatedPosts([]);
       try {
         const sb = await getSupabase();
         const { data } = await sb.from('blog_posts')
@@ -60,6 +62,20 @@ export default function BlogPostPage() {
             .eq('post_id', data.id).eq('status', 'approved')
             .order('created_at', { ascending: false })
             .then(({ data: c }) => setComments(c || []));
+
+          // Related posts: same category, current post excluded. Same
+          // subcategory ranked first (e.g. another Percentages article
+          // before a general Aptitude one), then filled out with the
+          // rest of the category, capped at 3.
+          sb.from('blog_posts').select('id, title, slug, category, subcategory')
+            .eq('status', 'published').eq('category', data.category).neq('id', data.id)
+            .order('published_at', { ascending: false }).limit(20)
+            .then(({ data: candidates }) => {
+              if (!candidates) return;
+              const sameSubcat = candidates.filter(p => p.subcategory === data.subcategory);
+              const rest = candidates.filter(p => p.subcategory !== data.subcategory);
+              setRelatedPosts([...sameSubcat, ...rest].slice(0, 3));
+            });
 
           const pageTitle = `${data.title} — VedicMindAI™`;
           const description = data.content.slice(0, 155);
@@ -379,6 +395,38 @@ export default function BlogPostPage() {
               {t('blogCtaBtn')}
             </button>
           </div>
+
+          {relatedPosts.length > 0 && (
+            <div style={{ marginTop: 40, paddingTop: 32, borderTop: '1px solid #F0F4FF' }}>
+              <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>
+                {t('blogRelatedTitle')}
+              </h2>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
+                {relatedPosts.map((rp) => {
+                  const rpColors = CATEGORY_COLORS[rp.category] || CATEGORY_COLORS['Vedic Maths'];
+                  return (
+                    <Link key={rp.id} to={`/blog/${rp.slug}`} style={{ textDecoration: 'none' }}>
+                      <div style={{
+                        background: 'white', borderRadius: 14, padding: 18, height: '100%',
+                        border: '1px solid rgba(30,64,175,0.1)', boxShadow: '0 2px 10px rgba(10,22,40,0.04)',
+                      }}>
+                        <span style={{
+                          display: 'inline-block', background: rpColors.bg, color: rpColors.color,
+                          borderRadius: 100, padding: '3px 10px', fontSize: 10, fontWeight: 700,
+                          fontFamily: 'var(--font-body)', marginBottom: 8,
+                        }}>
+                          {rp.category}
+                        </span>
+                        <div style={{ fontFamily: 'var(--font-heading)', fontSize: 15, fontWeight: 700, color: '#0A1628', lineHeight: 1.4 }}>
+                          {rp.title}
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           <div style={{ marginTop: 40, paddingTop: 32, borderTop: '1px solid #F0F4FF' }}>
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>
