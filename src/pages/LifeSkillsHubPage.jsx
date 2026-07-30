@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCanonical } from '@/lib/useCanonical';
 import { Link } from 'react-router-dom';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
@@ -11,6 +12,7 @@ const TRACK_META = {
 };
 
 export default function LifeSkillsHubPage() {
+  useCanonical('/life-skills');
   const { language } = useLanguage();
   const T = (en, hi) => (language === 'hi' ? hi : en);
 

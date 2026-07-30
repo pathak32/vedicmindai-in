@@ -33,6 +33,7 @@ export const config = {
     '/terms',
     '/privacy',
     '/demo',
+    '/life-skills',
   ],
 };
 
@@ -78,6 +79,10 @@ const STATIC_META = {
   '/blog': {
     title: 'Blog — VedicMindAI™',
     description: 'Vedic Mathematics, Reasoning, and Aptitude articles, tips, and shortcuts from VedicMindAI.',
+  },
+  '/life-skills': {
+    title: 'Life Skills — VedicMindAI™',
+    description: 'Practical life skills tracks from VedicMindAI, alongside Vedic Mathematics, Reasoning, and Aptitude.',
   },
 };
 
