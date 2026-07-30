@@ -35,6 +35,7 @@ export default function BlogPostPage() {
   const [likeCount, setLikeCount] = useState(0);
   const [comments, setComments] = useState([]);
   const [relatedPosts, setRelatedPosts] = useState([]);
+  const [relatedLoading, setRelatedLoading] = useState(true);
   const [commentName, setCommentName] = useState('');
   const [commentText, setCommentText] = useState('');
   const [submittingComment, setSubmittingComment] = useState(false);
@@ -47,6 +48,7 @@ export default function BlogPostPage() {
       setLoading(true);
       setNotFound(false);
       setRelatedPosts([]);
+      setRelatedLoading(true);
       try {
         const sb = await getSupabase();
         const { data } = await sb.from('blog_posts')
@@ -71,10 +73,11 @@ export default function BlogPostPage() {
             .eq('status', 'published').eq('category', data.category).neq('id', data.id)
             .order('published_at', { ascending: false }).limit(20)
             .then(({ data: candidates }) => {
-              if (!candidates) return;
+              if (!candidates) { setRelatedLoading(false); return; }
               const sameSubcat = candidates.filter(p => p.subcategory === data.subcategory);
               const rest = candidates.filter(p => p.subcategory !== data.subcategory);
               setRelatedPosts([...sameSubcat, ...rest].slice(0, 3));
+              setRelatedLoading(false);
             });
 
           const pageTitle = `${data.title} — VedicMindAI™`;
@@ -396,7 +399,22 @@ export default function BlogPostPage() {
             </button>
           </div>
 
-          {relatedPosts.length > 0 && (
+          {relatedLoading && (
+            <div style={{ marginTop: 40, paddingTop: 32, borderTop: '1px solid #F0F4FF' }}>
+              <div style={{ height: 24, width: 160, background: '#F0F4FF', borderRadius: 6, marginBottom: 20 }} />
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
+                {[0, 1, 2].map((i) => (
+                  <div key={i} style={{ background: '#F9FAFB', borderRadius: 14, padding: 18, height: 84, border: '1px solid rgba(30,64,175,0.06)' }}>
+                    <div style={{ height: 16, width: 70, background: '#EEF2FF', borderRadius: 100, marginBottom: 10 }} />
+                    <div style={{ height: 14, width: '85%', background: '#EEF2FF', borderRadius: 4, marginBottom: 6 }} />
+                    <div style={{ height: 14, width: '60%', background: '#EEF2FF', borderRadius: 4 }} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {!relatedLoading && relatedPosts.length > 0 && (
             <div style={{ marginTop: 40, paddingTop: 32, borderTop: '1px solid #F0F4FF' }}>
               <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>
                 {t('blogRelatedTitle')}
