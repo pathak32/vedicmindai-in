@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCanonical } from '@/lib/useCanonical';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { getSupabase } from '@/lib/supabaseClient';
@@ -131,6 +132,7 @@ function ScoreSubmitForm({ onSubmitted, classes, t }) {
 }
 
 export default function ScreenlessLearningPage() {
+  useCanonical('/screenless');
   const navigate = useNavigate();
   const { t } = useLanguage();
   const [selectedClass, setSelectedClass] = useState('8');

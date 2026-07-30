@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useCanonical } from '@/lib/useCanonical';
 import { useNavigate } from 'react-router-dom';
 import { getSupabase } from '@/lib/supabaseClient';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -242,6 +243,7 @@ function SubmitReviewForm({ onSubmit, onClose, t }) {
 }
 
 export default function ReviewsPage() {
+  useCanonical('/reviews');
   const navigate = useNavigate();
   const { t } = useLanguage();
   const [reviews, setReviews] = useState([]);

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useCanonical } from '@/lib/useCanonical';
 import { Link } from 'react-router-dom';
 import { getSupabase } from '@/lib/supabaseClient';
 import { useLanguage } from '@/lib/LanguageContext';
 
 export default function CollaboratePage() {
+  useCanonical('/collaborate');
   const { t } = useLanguage();
   const [form, setForm] = useState({
     org_name: '', org_type: 'school', city: '', state: '',

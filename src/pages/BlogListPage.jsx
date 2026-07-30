@@ -5,6 +5,7 @@ import LandingNavbar from '@/components/landing/LandingNavbar';
 import Footer from '@/components/landing/Footer';
 import { getSupabase } from '@/lib/supabaseClient';
 import { useLanguage } from '@/lib/LanguageContext';
+import { useCanonical } from '@/lib/useCanonical';
 
 const CATEGORY_COLORS = {
   'Vedic Maths': { bg: '#DBEAFE', color: '#1E40AF' },
@@ -14,12 +15,44 @@ const CATEGORY_COLORS = {
 
 export default function BlogListPage() {
   const { t, language } = useLanguage();
+  useCanonical('/blog');
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('All');
 
   useEffect(() => {
     document.title = 'Blog — VedicMindAI™';
+
+    // Blog + BreadcrumbList structured data -- helps Google understand
+    // this is a blog index page and can surface breadcrumbs in search
+    // results. Individual posts already carry their own Article schema
+    // (set in BlogPostPage.jsx); this is the equivalent for the list page.
+    let ld = document.getElementById('blog-list-jsonld');
+    if (!ld) {
+      ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.id = 'blog-list-jsonld';
+      document.head.appendChild(ld);
+    }
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Blog',
+          name: 'VedicMindAI Blog',
+          url: 'https://www.vedicmindai.in/blog',
+          publisher: { '@type': 'Organization', name: 'VedicMindAI' },
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.vedicmindai.in' },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.vedicmindai.in/blog' },
+          ],
+        },
+      ],
+    });
+
     (async () => {
       try {
         const sb = await getSupabase();

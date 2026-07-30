@@ -93,17 +93,29 @@ export default function BlogPostPage() {
           }
           ld.textContent = JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: data.title,
-            description: description,
-            datePublished: data.published_at || data.created_at,
-            author: { '@type': 'Organization', name: 'VedicMindAI' },
-            publisher: {
-              '@type': 'Organization',
-              name: 'VedicMindAI',
-              logo: { '@type': 'ImageObject', url: 'https://www.vedicmindai.in/icons/icon-512.png' },
-            },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+            '@graph': [
+              {
+                '@type': 'Article',
+                headline: data.title,
+                description: description,
+                datePublished: data.published_at || data.created_at,
+                author: { '@type': 'Organization', name: 'VedicMindAI' },
+                publisher: {
+                  '@type': 'Organization',
+                  name: 'VedicMindAI',
+                  logo: { '@type': 'ImageObject', url: 'https://www.vedicmindai.in/icons/icon-512.png' },
+                },
+                mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+              },
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.vedicmindai.in' },
+                  { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.vedicmindai.in/blog' },
+                  { '@type': 'ListItem', position: 3, name: data.title, item: canonicalUrl },
+                ],
+              },
+            ],
           });
         }
       } catch (e) {

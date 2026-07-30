@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCanonical } from '@/lib/useCanonical';
 import { Link } from 'react-router-dom';
 
 const s = {
@@ -12,6 +13,7 @@ const s = {
 };
 
 export default function TermsPage() {
+  useCanonical('/terms');
   return (
     <div style={s.wrap}>
       <Link to="/" style={s.back}>← Back to Home</Link>

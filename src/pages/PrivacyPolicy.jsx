@@ -1,7 +1,9 @@
 import React from 'react';
+import { useCanonical } from '@/lib/useCanonical';
 import { Link } from 'react-router-dom';
 
 export default function PrivacyPolicy() {
+  useCanonical('/privacy');
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '40px 24px', fontFamily: 'DM Sans, sans-serif', color: '#0A1628' }}>
       <Link to="/" style={{ display: 'inline-block', marginBottom: 24, color: '#1e40af', textDecoration: 'none', fontSize: 14 }}>← Back to Home</Link>

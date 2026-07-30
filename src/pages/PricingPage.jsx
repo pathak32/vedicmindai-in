@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCanonical } from '@/lib/useCanonical';
 import { useNavigate } from 'react-router-dom';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { useLanguage } from '@/lib/LanguageContext';
@@ -264,6 +265,7 @@ function PlanCard({
 }
 
 export default function PricingPage() {
+  useCanonical('/pricing');
   const { t } = useLanguage();
   const { user } = useVedicAuth();
   const [isAnnual, setIsAnnual] = useState(false);

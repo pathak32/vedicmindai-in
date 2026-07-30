@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useCanonical } from '@/lib/useCanonical';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import LandingNavbar from '@/components/landing/LandingNavbar';
@@ -31,6 +32,7 @@ function Confetti() {
 }
 
 export default function DemoPage() {
+  useCanonical('/demo');
   const navigate = useNavigate();
   const { t } = useLanguage();
   const [current, setCurrent] = useState(0);

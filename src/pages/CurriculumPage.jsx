@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCanonical } from '@/lib/useCanonical';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import LandingNavbar from '@/components/landing/LandingNavbar';
@@ -74,6 +75,7 @@ const REASONING_L1_PREVIEW = {
 };
 
 export default function CurriculumPage() {
+  useCanonical('/curriculum');
   const navigate = useNavigate();
   const { t, language } = useLanguage();
   const [pillar, setPillar] = useState('vedic'); // vedic | reasoning | aptitude
