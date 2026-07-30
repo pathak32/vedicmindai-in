@@ -87,16 +87,60 @@ function escapeHtml(s) {
 
 async function getBlogPostMeta(slug) {
   const res = await fetch(
-    `${SUPABASE_URL}/rest/v1/blog_posts?slug=eq.${encodeURIComponent(slug)}&status=eq.published&select=title,content`,
+    `${SUPABASE_URL}/rest/v1/blog_posts?slug=eq.${encodeURIComponent(slug)}&status=eq.published&select=title,content,published_at,created_at`,
     { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` } }
   );
   if (!res.ok) return null;
   const rows = await res.json();
   if (!rows || !rows[0]) return null;
+  const row = rows[0];
   return {
-    title: `${rows[0].title} — VedicMindAI™`,
-    description: rows[0].content.replace(/\s+/g, ' ').trim().slice(0, 155),
+    title: `${row.title} — VedicMindAI™`,
+    description: row.content.replace(/\s+/g, ' ').trim().slice(0, 155),
+    rawTitle: row.title,
+    publishedAt: row.published_at || row.created_at,
   };
+}
+
+function blogListJsonLd() {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'Blog', name: 'VedicMindAI Blog', url: `${SITE_URL}/blog`, publisher: { '@type': 'Organization', name: 'VedicMindAI' } },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        ],
+      },
+    ],
+  });
+}
+
+function blogPostJsonLd(meta, canonicalUrl) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: meta.rawTitle,
+        description: meta.description,
+        datePublished: meta.publishedAt,
+        author: { '@type': 'Organization', name: 'VedicMindAI' },
+        publisher: { '@type': 'Organization', name: 'VedicMindAI', logo: { '@type': 'ImageObject', url: `${SITE_URL}/icons/icon-512.png` } },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+          { '@type': 'ListItem', position: 3, name: meta.rawTitle, item: canonicalUrl },
+        ],
+      },
+    ],
+  });
 }
 
 export default async function middleware(request) {
@@ -136,6 +180,22 @@ export default async function middleware(request) {
       .replace(/<meta name="twitter:title" content="[^"]*"\s*\/>/, `<meta name="twitter:title" content="${safeTitle}" />`)
       .replace(/<meta name="twitter:description" content="[^"]*"\s*\/>/, `<meta name="twitter:description" content="${safeDesc}" />`)
       .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${canonicalUrl}" />`);
+
+    // Structured data (JSON-LD) -- same schema BlogListPage.jsx/
+    // BlogPostPage.jsx already inject client-side, now also in the raw
+    // HTML for the same non-JS-crawler reason as everything else here.
+    // The </script escaping guards against article content that happens
+    // to contain that literal substring breaking out of the tag.
+    let jsonLd = null;
+    if (path === '/blog') {
+      jsonLd = blogListJsonLd();
+    } else if (path.startsWith('/blog/') && meta.rawTitle) {
+      jsonLd = blogPostJsonLd(meta, canonicalUrl);
+    }
+    if (jsonLd) {
+      const safeJsonLd = jsonLd.replace(/<\/script/gi, '<\\/script');
+      html = html.replace('</head>', `<script type="application/ld+json">${safeJsonLd}</script></head>`);
+    }
 
     return new Response(html, {
       status: 200,
