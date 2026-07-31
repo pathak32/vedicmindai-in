@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, X, ArrowRight, Sparkles, Clock } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
+import { getSupabase } from '@/lib/supabaseClient';
 import { MIND_CHECK_QUESTIONS, shuffleArray } from '@/data/mindCheckQuestions';
 
 const ROUND_SIZE = 3;
@@ -33,6 +34,36 @@ export default function MindCheckSection() {
   const [status, setStatus] = useState('active'); // active | correct | wrong | timeout
   const [roundScore, setRoundScore] = useState(0);
   const timerRef = useRef(null);
+
+  // Cheat-sheet lead capture, shown on the round-end screen
+  const [leadEmail, setLeadEmail] = useState('');
+  const [leadStatus, setLeadStatus] = useState('idle'); // idle | submitting | done | error
+  const [leadErrorMsg, setLeadErrorMsg] = useState('');
+
+  const handleLeadSubmit = async (e) => {
+    e.preventDefault();
+    const email = leadEmail.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailOk) {
+      setLeadStatus('error');
+      setLeadErrorMsg(t('cheatSheetInvalidEmail'));
+      return;
+    }
+    setLeadStatus('submitting');
+    try {
+      const supabase = await getSupabase();
+      const { error } = await supabase.from('leads').insert({
+        email,
+        source: 'mindcheck_cheatsheet',
+      });
+      if (error) throw error;
+      setLeadStatus('done');
+    } catch (err) {
+      console.warn('Lead capture failed:', err);
+      setLeadStatus('error');
+      setLeadErrorMsg(t('cheatSheetError'));
+    }
+  };
 
   const currentQ = round[qIndex];
 
@@ -221,6 +252,46 @@ export default function MindCheckSection() {
                   {roundScore}/{ROUND_SIZE} {t('mindCheckScoreLabel')}
                 </p>
                 <p className="text-blue-200 mb-8">{t('mindCheckEndDesc')}</p>
+
+                <div className="max-w-sm mx-auto mb-8 p-5 rounded-2xl bg-white/5 border border-white/10">
+                  <p className="text-white font-semibold text-sm mb-1">{t('cheatSheetOffer')}</p>
+                  <p className="text-blue-200 text-xs mb-4">{t('cheatSheetOfferDesc')}</p>
+
+                  {leadStatus === 'done' ? (
+                    <>
+                      <p className="text-emerald-300 text-sm font-semibold mb-3">{t('cheatSheetSuccess')}</p>
+                      <a
+                        href="/downloads/vedicmindai-formula-cheatsheet.pdf"
+                        download
+                        className="inline-flex items-center justify-center gap-2 w-full h-11 px-4 rounded-xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition-colors text-sm"
+                      >
+                        {t('cheatSheetDownload')}
+                      </a>
+                    </>
+                  ) : (
+                    <form onSubmit={handleLeadSubmit} className="flex flex-col gap-2">
+                      <input
+                        type="email"
+                        value={leadEmail}
+                        onChange={(e) => { setLeadEmail(e.target.value); if (leadStatus === 'error') setLeadStatus('idle'); }}
+                        placeholder={t('cheatSheetEmailPlaceholder')}
+                        className="h-11 px-4 rounded-xl bg-white/10 border border-white/20 text-white text-sm placeholder-blue-200/60 focus:outline-none focus:border-[#3B82F6]"
+                        disabled={leadStatus === 'submitting'}
+                      />
+                      {leadStatus === 'error' && (
+                        <p className="text-red-300 text-xs">{leadErrorMsg}</p>
+                      )}
+                      <button
+                        type="submit"
+                        disabled={leadStatus === 'submitting'}
+                        className="h-11 px-4 rounded-xl bg-[#3B82F6] text-white font-semibold hover:bg-[#2563EB] transition-colors text-sm disabled:opacity-60"
+                      >
+                        {leadStatus === 'submitting' ? t('cheatSheetSubmitting') : t('cheatSheetSubmit')}
+                      </button>
+                    </form>
+                  )}
+                </div>
+
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <button
                     onClick={handleTryMore}
