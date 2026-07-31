@@ -40,6 +40,7 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
   const scores = progress.lessonScores || {};
   const isReviewer = !!progress.isReviewer;
   const [collapsed, setCollapsed] = useState({});
+  const [lockedTooltip, setLockedTooltip] = useState(null); // lessonId of the tooltip to show
 
   const toggle = (lvl) => setCollapsed(p => ({ ...p, [lvl]: !p[lvl] }));
 
@@ -96,9 +97,17 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
                       const planLocked = !isLessonAccessible(lesson.id);
 
                       return (
+                        <div key={lesson.id} style={{ position: 'relative' }}>
                         <button
                           key={lesson.id}
-                          onClick={() => unlocked && !planLocked && onSelect(lesson.id)}
+                          onClick={() => {
+                            if (!unlocked && !planLocked) {
+                              setLockedTooltip(lockedTooltip === lesson.id ? null : lesson.id);
+                            } else if (unlocked && !planLocked) {
+                              setLockedTooltip(null);
+                              onSelect(lesson.id);
+                            }
+                          }}
                           style={{
                             width: '100%', display: 'flex', alignItems: 'center', gap: 8,
                             height: 40, padding: '0 12px', borderRadius: 8, border: 'none',
@@ -125,6 +134,22 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
                             </span>
                           )}
                         </button>
+                        {lockedTooltip === lesson.id && !unlocked && !planLocked && (
+                          <div style={{
+                            position: 'relative', margin: '0 8px 8px 8px',
+                            background: '#1E1A3A', border: '1px solid rgba(167,139,250,0.3)',
+                            borderRadius: 8, padding: '8px 12px',
+                            fontSize: 12, color: '#C4B5FD', fontFamily: 'var(--font-body)',
+                            lineHeight: 1.5,
+                          }}>
+                            🔒 Complete the previous lesson and score 60% or above on its quiz to unlock this one.
+                            <button
+                              onClick={() => setLockedTooltip(null)}
+                              style={{ position: 'absolute', top: 4, right: 6, background: 'none', border: 'none', color: '#A5A0C4', cursor: 'pointer', fontSize: 14, lineHeight: 1 }}
+                            >✕</button>
+                          </div>
+                        )}
+                        </div>
                       );
                     })
                   )}

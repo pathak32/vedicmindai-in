@@ -1021,10 +1021,12 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
 
     const feedbackColor = pct >= 80 ? '#10B981' : pct >= 60 ? '#F59E0B' : '#EF4444';
     const feedbackText = pct >= 80
-      ? 'Excellent work! You\'ve mastered this lesson. 🌟'
+      ? (language === 'hi' ? 'शानदार! आपने यह पाठ पूरी तरह समझ लिया है। 🌟' : 'Excellent work! You\'ve mastered this lesson. 🌟')
       : pct >= 60
-        ? 'Good job! Keep practicing to strengthen this technique.'
-        : 'Keep going — revisit the concept and try the quiz again.';
+        ? (language === 'hi' ? 'अच्छा! अगला पाठ अनलॉक हो गया है। और अभ्यास करते रहें।' : 'Good job! Next lesson unlocked. Keep practising to strengthen this technique.')
+        : (language === 'hi'
+            ? `अभी अगला पाठ लॉक है। अगला पाठ खोलने के लिए इस क्विज़ में 60% या उससे अधिक अंक प्राप्त करना आवश्यक है।`
+            : `Next lesson is still locked. You need 60% or above on this quiz to unlock it — you scored ${pct}%. Review the Concept tab and try again.`);
 
     const allIds = allLessonIds || [];
     const nextId = allIds[allIds.indexOf(lesson.id) + 1];
