@@ -19,6 +19,7 @@ import AdminFoundingCircleTracker from '@/components/admin/AdminFoundingCircleTr
 import AdminLiveClasses from '@/components/admin/AdminLiveClasses';
 import AdminDataRecovery from '@/components/admin/AdminDataRecovery';
 import AdminSchoolAnalytics from '@/components/admin/AdminSchoolAnalytics';
+import AdminAnnouncements from '@/components/admin/AdminAnnouncements';
 
 const ADMIN_KEY = 'VM@Admin2026';
 const ADMIN_PIN = '271187';
@@ -42,6 +43,7 @@ const TABS = [
   { id: 'reviewerActivity', label: '👀 Reviewer Activity' },
   { id: 'recovery', label: '🩺 Data Recovery' },
   { id: 'school', label: '🏫 School Analytics' },
+  { id: 'announcements', label: '📣 Announcements' },
 ];
 
 // ─── PIN Screen ──────────────────────────────────────────────────────────────
@@ -175,6 +177,7 @@ function AdminDashboard({ onLock }) {
           {activeTab === 'reviewerActivity' && <AdminReviewerActivity />}
           {activeTab === 'recovery' && <AdminDataRecovery />}
           {activeTab === 'school' && <AdminSchoolAnalytics />}
+          {activeTab === 'announcements' && <AdminAnnouncements />}
           </motion.div>
         </AnimatePresence>
       </main>
