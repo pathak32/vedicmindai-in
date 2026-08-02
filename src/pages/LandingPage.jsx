@@ -16,6 +16,7 @@ import CommunitySection from '@/components/landing/CommunitySection';
 import BlogTeaserSection from '@/components/landing/BlogTeaserSection';
 import FAQSection from '@/components/landing/FAQSection';
 import ContactSection from '@/components/landing/ContactSection';
+import SchoolCTASection from '@/components/landing/SchoolCTASection';
 import Footer from '@/components/landing/Footer';
 
 export default function LandingPage() {
@@ -54,6 +55,7 @@ export default function LandingPage() {
       <CommunitySection />
       <BlogTeaserSection />
       <FAQSection />
+      <SchoolCTASection />
       <ContactSection />
       <Footer />
     </div>
