@@ -14,20 +14,22 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Core React runtime — cached aggressively, changes rarely
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          // Animation library — large, shared, rarely changes
-          'vendor-framer': ['framer-motion'],
-          // Supabase client — large, shared, rarely changes
-          'vendor-supabase': ['@supabase/supabase-js'],
-          // Landing page data (FAQ, comparison data, etc.) — separate from app logic
-          'landing-data': [
-            './src/data/faqData.js',
-          ],
+        manualChunks: (id) => {
+          // Only split out React itself -- it's the one library that
+          // truly never changes and benefits most from long-term caching.
+          // Everything else (Supabase, Framer) stays in the main bundle
+          // because splitting them adds extra round trips on mobile that
+          // cost more than the bytes saved.
+          if (id.includes('node_modules/react/') ||
+              id.includes('node_modules/react-dom/') ||
+              id.includes('node_modules/react-router-dom/') ||
+              id.includes('node_modules/scheduler/')) {
+            return 'vendor-react';
+          }
         },
       },
     },
   },
 })
+
 
