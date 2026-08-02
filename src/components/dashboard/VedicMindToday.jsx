@@ -81,7 +81,13 @@ export default function VedicMindToday() {
   };
 
   return (
-    <div style={{ marginBottom: 20 }}>
+    <div style={{
+      marginBottom: 20,
+      background: 'linear-gradient(135deg, #0A1628 0%, #0D2252 100%)',
+      borderRadius: 16,
+      padding: '18px 18px 14px',
+      border: '1px solid rgba(255,255,255,0.08)',
+    }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
         <div style={{
