@@ -1,0 +1,26 @@
+# VedicMindAI
+
+> India's AI-powered Vedic Mathematics, Reasoning & Aptitude learning platform — for school students (Class 1–12) and competitive exam aspirants (SSC, JEE, CAT, UPSC).
+
+VedicMindAI combines 3,000-year-old Vedic Mathematics techniques with modern AI personalisation to help students calculate 10× faster. The platform includes 40 structured Vedic Maths lessons across 4 levels, an AI Personal Tutor, Daily Quiz, Battle Mode, Olympiad, and Reasoning & Aptitude tracks. Available as a web app and on Google Play Store.
+
+## Key Pages
+
+- [Home](https://www.vedicmindai.in/): Landing page with product overview, features, and free demo
+- [Curriculum](https://www.vedicmindai.in/curriculum): Full 40-lesson Vedic Maths curriculum breakdown across 4 levels
+- [Blog](https://www.vedicmindai.in/blog): Articles on Vedic Mathematics, Reasoning, and Aptitude for students and exam aspirants
+- [Pricing](https://www.vedicmindai.in/pricing): Free plan and subscription options
+- [Reviews](https://www.vedicmindai.in/reviews): Student and parent testimonials
+- [Screenless Learning](https://www.vedicmindai.in/screenless): Vedic Maths resources for offline/screenless practice
+- [Collaborate](https://www.vedicmindai.in/collaborate): School and institutional partnership enquiries
+- [Privacy Policy](https://www.vedicmindai.in/privacy): Data collection and privacy practices
+- [Terms & Conditions](https://www.vedicmindai.in/terms): Terms of use
+
+## App
+
+- [Google Play Store](https://play.google.com/store/apps/details?id=in.vedicmindai.app): Android app — free to download
+
+## Contact
+
+- Support: support@vedicmindai.in
+- Business: admin@vedicmindai.in
