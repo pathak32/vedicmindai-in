@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import LandingNavbar from '@/components/landing/LandingNavbar';
 import HeroSection from '@/components/landing/HeroSection';
@@ -6,18 +6,21 @@ import MindCheckSection from '@/components/landing/MindCheckSection';
 import SitePopup from '@/components/landing/SitePopup';
 import PurposeSection from '@/components/landing/PurposeSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
-import FamiliesReviewsSection from '@/components/landing/FamiliesReviewsSection';
-import ComparisonSection from '@/components/landing/ComparisonSection';
-import FeaturesShowcaseSection from '@/components/landing/FeaturesShowcaseSection';
-import VideoLibrarySection from '@/components/landing/VideoLibrarySection';
-import HowItWorksSection from '@/components/landing/HowItWorksSection';
-import TestimonialsSection from '@/components/landing/TestimonialsSection';
-import CommunitySection from '@/components/landing/CommunitySection';
-import BlogTeaserSection from '@/components/landing/BlogTeaserSection';
-import FAQSection from '@/components/landing/FAQSection';
-import ContactSection from '@/components/landing/ContactSection';
-import SchoolCTASection from '@/components/landing/SchoolCTASection';
-import Footer from '@/components/landing/Footer';
+
+// Below-the-fold sections — lazy loaded so the hero and first
+// sections render immediately without waiting for the full bundle
+const FamiliesReviewsSection  = lazy(() => import('@/components/landing/FamiliesReviewsSection'));
+const ComparisonSection       = lazy(() => import('@/components/landing/ComparisonSection'));
+const FeaturesShowcaseSection = lazy(() => import('@/components/landing/FeaturesShowcaseSection'));
+const VideoLibrarySection     = lazy(() => import('@/components/landing/VideoLibrarySection'));
+const HowItWorksSection       = lazy(() => import('@/components/landing/HowItWorksSection'));
+const TestimonialsSection     = lazy(() => import('@/components/landing/TestimonialsSection'));
+const CommunitySection        = lazy(() => import('@/components/landing/CommunitySection'));
+const BlogTeaserSection       = lazy(() => import('@/components/landing/BlogTeaserSection'));
+const FAQSection              = lazy(() => import('@/components/landing/FAQSection'));
+const SchoolCTASection        = lazy(() => import('@/components/landing/SchoolCTASection'));
+const ContactSection          = lazy(() => import('@/components/landing/ContactSection'));
+const Footer                  = lazy(() => import('@/components/landing/Footer'));
 
 export default function LandingPage() {
   const location = useLocation();
@@ -46,18 +49,20 @@ export default function LandingPage() {
       <MindCheckSection />
       <PurposeSection />
       <FeaturesSection />
-      <FamiliesReviewsSection />
-      <ComparisonSection />
-      <FeaturesShowcaseSection />
-      <VideoLibrarySection />
-      <HowItWorksSection />
-      <TestimonialsSection />
-      <CommunitySection />
-      <BlogTeaserSection />
-      <FAQSection />
-      <SchoolCTASection />
-      <ContactSection />
-      <Footer />
+      <Suspense fallback={null}>
+        <FamiliesReviewsSection />
+        <ComparisonSection />
+        <FeaturesShowcaseSection />
+        <VideoLibrarySection />
+        <HowItWorksSection />
+        <TestimonialsSection />
+        <CommunitySection />
+        <BlogTeaserSection />
+        <FAQSection />
+        <SchoolCTASection />
+        <ContactSection />
+        <Footer />
+      </Suspense>
     </div>
   );
 }
