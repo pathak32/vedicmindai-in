@@ -7,6 +7,7 @@ import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import LiveClassBanner from '@/components/dashboard/LiveClassBanner';
 import TrialBanner from '@/components/dashboard/TrialBanner';
 import VedicMindToday from '@/components/dashboard/VedicMindToday';
+import InAppRatingPrompt from '@/components/dashboard/InAppRatingPrompt';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import ReferralCard from '@/components/ReferralCard';
 import RupeeOneOffer from '@/components/RupeeOneOffer';
@@ -955,6 +956,10 @@ function DashboardPage() {
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 16px 80px' }}>
         <RupeeOneOffer quizStreak={profile?.daily_quiz_streak || profile?.dailyQuizStreak || 0} />
         <ReferralCard />
+        <InAppRatingPrompt
+          lessonsCompleted={completed.length}
+          quizzesTaken={progress.dailyQuizStreak || 0}
+        />
       </div>
 
       </main>

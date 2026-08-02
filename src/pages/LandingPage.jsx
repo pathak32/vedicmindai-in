@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import LandingNavbar from '@/components/landing/LandingNavbar';
 import HeroSection from '@/components/landing/HeroSection';
 import MindCheckSection from '@/components/landing/MindCheckSection';
+import SitePopup from '@/components/landing/SitePopup';
 import PurposeSection from '@/components/landing/PurposeSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
 import FamiliesReviewsSection from '@/components/landing/FamiliesReviewsSection';
@@ -38,6 +39,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen">
+      <SitePopup />
       <LandingNavbar />
       <HeroSection />
       <MindCheckSection />
