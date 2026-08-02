@@ -56,6 +56,16 @@ export default function HeroSection() {
                 {t('startLearningFree')}
                 <ArrowRight className="w-4 h-4" />
               </Link>
+              <a
+                href="https://play.google.com/store/apps/details?id=in.vedicmindai.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 h-12 px-5 rounded-xl border-[1.5px] border-white/30 text-white font-semibold hover:bg-white/10 transition-colors"
+                style={{ textDecoration: 'none' }}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.82a1.5 1.5 0 0 0 2.07.56l11.04-6.38-2.9-2.9-10.21 8.72zm17.04-12.74L17.5 9.36 14.6 12.25l2.9 2.9 2.72-1.57a1.5 1.5 0 0 0 0-2.6zM2.5.56A1.5 1.5 0 0 0 .5 2v20a1.5 1.5 0 0 0 2 1.44V.5a1.5 1.5 0 0 0 0-.07zM5.25.62L16.17 7 13.27 9.9 2.87.93 5.25.62z"/></svg>
+                {t('downloadOnAndroid')}
+              </a>
               <button
                 onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-flex items-center gap-2 h-12 px-7 rounded-xl border-[1.5px] border-white/30 text-white font-semibold hover:bg-white/10 transition-colors"
