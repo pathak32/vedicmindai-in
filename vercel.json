@@ -4,7 +4,7 @@
   ],
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
-    { "source": "/((?!robots\\.txt|sitemap\\.xml|api/|downloads/|[^/]+\\.html$).*)", "destination": "/index.html" }
+    { "source": "/((?!robots\\.txt|sitemap\\.xml|api/|downloads/|\\.well-known/|[^/]+\\.html$).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
