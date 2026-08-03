@@ -24,6 +24,7 @@ const BlogListPage           = lazy(() => import('@/pages/BlogListPage'));
 const BlogPostPage           = lazy(() => import('@/pages/BlogPostPage'));
 const ReasoningPilotPage     = lazy(() => import('@/pages/ReasoningPilotPage'));
 const ReasoningChapterPage   = lazy(() => import('@/pages/reasoning/ReasoningChapterPage'));
+const VedicSciencePage       = lazy(() => import('@/pages/VedicSciencePage'));
 const MyBattlesPage          = lazy(() => import('@/pages/MyBattlesPage'));
 const AuthPage               = lazy(() => import('@/pages/AuthPage'));
 const OnboardingPage         = lazy(() => import('@/pages/OnboardingPage'));
@@ -180,6 +181,7 @@ function RouteTransition() {
                 <Route path="/leaderboard"         element={<LeaderboardPage />} />
                 <Route path="/aptitude"            element={<AptitudeChapterPage />} />
                 <Route path="/aptitude/:chapterId" element={<AptitudeChapterPage />} />
+                <Route path="/vedic-science"       element={<VedicSciencePage />} />
                 <Route path="/pricing"             element={<PricingPage />} />
                 <Route path="/weekly-exam"         element={<ProfileCompletionGate><WeeklyExamPage /></ProfileCompletionGate>} />
                 <Route path="/weekly-exam/results" element={<WeeklyExamResultsPage />} />
