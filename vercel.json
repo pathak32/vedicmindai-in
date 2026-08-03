@@ -3,6 +3,7 @@
     { "path": "/api/backup-progress-snapshot", "schedule": "0 20 * * *" }
   ],
   "rewrites": [
+    { "source": "/.well-known/assetlinks.json", "destination": "/api/assetlinks" },
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
     { "source": "/((?!robots\\.txt|sitemap\\.xml|api/|downloads/|\\.well-known/|[^/]+\\.html$).*)", "destination": "/index.html" }
   ],
