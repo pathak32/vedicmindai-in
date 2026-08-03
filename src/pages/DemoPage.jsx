@@ -186,6 +186,11 @@ export default function DemoPage() {
                   style={{ width: '100%', minHeight: 52, background: '#0A1628', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 16, cursor: 'pointer' }}>
                   {t('demoStartLearningBtn')}
                 </button>
+                <a href="https://play.google.com/store/apps/details?id=in.vedicmindai.app"
+                  target="_blank" rel="noopener noreferrer"
+                  style={{ width: '100%', minHeight: 52, background: '#10B981', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, textDecoration: 'none' }}>
+                  📲 {t('downloadOnAndroid')}
+                </a>
                 <button onClick={() => navigate('/curriculum')}
                   style={{ width: '100%', minHeight: 52, background: 'white', color: '#0A1628', border: '1.5px solid #0A1628', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, cursor: 'pointer' }}>
                   {t('demoViewCurriculumBtn')}
