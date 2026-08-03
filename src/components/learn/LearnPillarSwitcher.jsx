@@ -45,7 +45,7 @@ export default function LearnPillarSwitcher({ active, dark }) {
               color: isActive ? (dark ? '#1E0B4B' : 'white') : (dark ? '#B8B2D6' : '#4B5563'),
               border: `1px solid ${isActive ? 'transparent' : border}`,
               opacity: p.comingSoon ? 0.65 : 1,
-              cursor: p.comingSoon ? 'default' : 'pointer',
+              cursor: 'pointer',
               position: 'relative',
               textDecoration: 'none',
             }}
@@ -62,7 +62,9 @@ export default function LearnPillarSwitcher({ active, dark }) {
             )}
           </span>
         );
-        return p.comingSoon ? pill : (
+        return p.comingSoon ? (
+          <Link key={p.id} to={p.path} style={{ textDecoration: 'none' }}>{pill}</Link>
+        ) : (
           <Link key={p.id} to={p.path} style={{ textDecoration: 'none' }}>{pill}</Link>
         );
       })}

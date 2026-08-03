@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { Menu, ArrowLeft, Lock } from 'lucide-react';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
@@ -43,6 +43,7 @@ function OptionButton({ opt, isCorrect, selected, onClick, disabled }) {
 }
 
 export default function AptitudeChapterPage() {
+  const navigate = useNavigate();
   const { chapterId: paramChapterId } = useParams();
   const { language } = useLanguage();
   const [sidebarOpen, setSidebarOpen] = useState(false);
