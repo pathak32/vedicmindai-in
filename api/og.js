@@ -1,26 +1,20 @@
-// api/og.js — Dynamic Open Graph image generator
+// api/og.js — Dynamic OG image generator (Node.js serverless, not Edge)
+// Uses satori (HTML→SVG) + @resvg/resvg-js (SVG→PNG)
 // Usage: /api/og?slug=some-blog-slug
-// Returns a 1200x630 PNG image optimized for social sharing
-// Works for WhatsApp, Facebook, Twitter/X, LinkedIn, Instagram (link in bio)
-//
-// Design: dark navy card with category color accent, large hook title,
-// 2-line excerpt, VedicMindAI branding, and a CTA strip at bottom.
 
-import { ImageResponse } from '@vercel/og';
-
-export const config = { runtime: 'edge' };
+const { default: satori } = require('satori');
+const { Resvg } = require('@resvg/resvg-js');
 
 const SUPABASE_URL = 'https://xlyfyqjmzwyyoqurvuzx.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhseWZ5cWptend5eW9xdXJ2dXp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA3MjgxOTQsImV4cCI6MjA5NjMwNDE5NH0.4CXU3ksfCGfIA77-sFXebWi-hjDVjCsT-UdrMXYFLEM';
 
 const CATEGORY_COLORS = {
-  'Vedic Maths':    { accent: '#3B82F6', badge: '#1D4ED8', emoji: '🧮' },
-  'Reasoning':      { accent: '#8B5CF6', badge: '#6D28D9', emoji: '🧠' },
-  'Aptitude':       { accent: '#F59E0B', badge: '#B45309', emoji: '📊' },
-  'Vedic Science':  { accent: '#10B981', badge: '#047857', emoji: '🔬' },
+  'Vedic Maths':   { accent: '#3B82F6', emoji: '🧮' },
+  'Reasoning':     { accent: '#8B5CF6', emoji: '🧠' },
+  'Aptitude':      { accent: '#F59E0B', emoji: '📊' },
+  'Vedic Science': { accent: '#10B981', emoji: '🔬' },
 };
-
-const DEFAULT = { accent: '#6366F1', badge: '#4338CA', emoji: '✨' };
+const DEFAULT_COLOR = { accent: '#6366F1', emoji: '✨' };
 
 function truncate(str, max) {
   if (!str) return '';
@@ -28,180 +22,195 @@ function truncate(str, max) {
   return clean.length <= max ? clean : clean.slice(0, max - 1) + '…';
 }
 
-export default async function handler(req) {
+module.exports = async (req, res) => {
   try {
-    const { searchParams } = new URL(req.url);
-    const slug = searchParams.get('slug');
-
+    const slug = req.query?.slug || '';
     let title = 'VedicMindAI — Ancient Wisdom. Modern Speed.';
     let excerpt = 'Learn Vedic Mathematics, Reasoning & Aptitude with AI personalisation.';
     let category = 'Vedic Maths';
 
-    // Fetch post data from Supabase if slug provided
     if (slug) {
-      const res = await fetch(
+      const r = await fetch(
         `${SUPABASE_URL}/rest/v1/blog_posts?slug=eq.${encodeURIComponent(slug)}&status=eq.published&select=title,content,category`,
         { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` } }
       );
-      if (res.ok) {
-        const rows = await res.json();
+      if (r.ok) {
+        const rows = await r.json();
         if (rows?.[0]) {
           title = rows[0].title || title;
-          excerpt = rows[0].content?.replace(/\s+/g, ' ').trim().slice(0, 120) || excerpt;
+          excerpt = rows[0].content?.replace(/\s+/g, ' ').trim().slice(0, 110) || excerpt;
           category = rows[0].category || category;
         }
       }
     }
 
-    const colors = CATEGORY_COLORS[category] || DEFAULT;
-    const displayTitle = truncate(title, 72);
-    const displayExcerpt = truncate(excerpt, 120);
+    const colors = CATEGORY_COLORS[category] || DEFAULT_COLOR;
+    const displayTitle = truncate(title, 68);
+    const displayExcerpt = truncate(excerpt, 110);
 
-    return new ImageResponse(
-      <div
-        style={{
-          width: '1200px',
-          height: '630px',
-          display: 'flex',
-          flexDirection: 'column',
-          background: 'linear-gradient(135deg, #0A1628 0%, #0D1F3C 60%, #111827 100%)',
-          fontFamily: 'system-ui, sans-serif',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
-        {/* Background decorative circles */}
-        <div style={{
-          position: 'absolute', top: '-80px', right: '-80px',
-          width: '400px', height: '400px', borderRadius: '50%',
-          background: `${colors.accent}18`,
-          display: 'flex',
-        }} />
-        <div style={{
-          position: 'absolute', bottom: '-60px', left: '-60px',
-          width: '300px', height: '300px', borderRadius: '50%',
-          background: `${colors.accent}10`,
-          display: 'flex',
-        }} />
+    // Fetch font for satori (required — satori needs at least one font)
+    const fontRes = await fetch('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff');
+    const fontData = await fontRes.arrayBuffer();
 
-        {/* Top accent bar */}
-        <div style={{
-          width: '100%', height: '6px',
-          background: `linear-gradient(90deg, ${colors.accent}, ${colors.badge})`,
-          display: 'flex',
-        }} />
-
-        {/* Main content area */}
-        <div style={{
-          flex: 1, display: 'flex', flexDirection: 'column',
-          padding: '40px 56px 32px',
-          position: 'relative',
-        }}>
-
-          {/* Brand + Category row */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '32px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{
-                width: '44px', height: '44px', borderRadius: '10px',
-                background: 'linear-gradient(135deg, #6366F1, #3B82F6)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '24px',
-              }}>V</div>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span style={{ color: 'white', fontSize: '20px', fontWeight: '800', lineHeight: 1 }}>
-                  VedicMindAI™
-                </span>
-                <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: '13px', marginTop: '2px' }}>
-                  vedicmindai.in
-                </span>
-              </div>
-            </div>
-            <div style={{
-              display: 'flex', alignItems: 'center', gap: '8px',
-              background: `${colors.badge}44`,
-              border: `1px solid ${colors.accent}66`,
-              borderRadius: '100px', padding: '8px 18px',
-            }}>
-              <span style={{ fontSize: '18px' }}>{colors.emoji}</span>
-              <span style={{ color: colors.accent, fontSize: '15px', fontWeight: '700' }}>
-                {category}
-              </span>
-            </div>
-          </div>
-
-          {/* Main title */}
-          <div style={{
-            fontSize: displayTitle.length > 50 ? '36px' : '42px',
-            fontWeight: '800',
-            color: 'white',
-            lineHeight: '1.2',
-            marginBottom: '20px',
-            maxWidth: '900px',
-            display: 'flex',
-          }}>
-            {displayTitle}
-          </div>
-
-          {/* Excerpt */}
-          <div style={{
-            fontSize: '19px',
-            color: 'rgba(255,255,255,0.62)',
-            lineHeight: '1.5',
-            maxWidth: '820px',
-            display: 'flex',
-            flex: 1,
-          }}>
-            {displayExcerpt}
-          </div>
-
-          {/* Bottom CTA strip */}
-          <div style={{
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-            marginTop: '24px',
-            paddingTop: '20px',
-            borderTop: '1px solid rgba(255,255,255,0.10)',
-          }}>
-            <div style={{ display: 'flex', gap: '24px' }}>
-              {['📱 Free App on Google Play', '🌐 vedicmindai.in'].map(text => (
-                <span key={text} style={{
-                  color: 'rgba(255,255,255,0.5)',
-                  fontSize: '14px',
-                  display: 'flex',
-                }}>
-                  {text}
-                </span>
-              ))}
-            </div>
-            <div style={{
-              background: `linear-gradient(135deg, ${colors.accent}, ${colors.badge})`,
-              borderRadius: '10px', padding: '10px 24px',
-              color: 'white', fontSize: '15px', fontWeight: '700',
-              display: 'flex',
-            }}>
-              Read Full Article →
-            </div>
-          </div>
-        </div>
-      </div>,
+    const svg = await satori(
       {
-        width: 1200,
-        height: 630,
+        type: 'div',
+        props: {
+          style: {
+            width: '1200px', height: '630px',
+            display: 'flex', flexDirection: 'column',
+            background: 'linear-gradient(135deg, #0A1628 0%, #0D1F3C 100%)',
+            fontFamily: 'Inter',
+            position: 'relative',
+            overflow: 'hidden',
+          },
+          children: [
+            // Top accent line
+            {
+              type: 'div',
+              props: {
+                style: { width: '100%', height: '6px', background: colors.accent, display: 'flex' },
+              },
+            },
+            // Content
+            {
+              type: 'div',
+              props: {
+                style: {
+                  flex: 1, display: 'flex', flexDirection: 'column',
+                  padding: '40px 56px 36px',
+                },
+                children: [
+                  // Brand row
+                  {
+                    type: 'div',
+                    props: {
+                      style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '30px' },
+                      children: [
+                        {
+                          type: 'div',
+                          props: {
+                            style: { display: 'flex', alignItems: 'center', gap: '12px' },
+                            children: [
+                              {
+                                type: 'div',
+                                props: {
+                                  style: {
+                                    width: '42px', height: '42px', borderRadius: '10px',
+                                    background: '#6366F1', display: 'flex',
+                                    alignItems: 'center', justifyContent: 'center',
+                                    color: 'white', fontSize: '22px', fontWeight: '900',
+                                  },
+                                  children: 'V',
+                                },
+                              },
+                              {
+                                type: 'div',
+                                props: {
+                                  style: { display: 'flex', flexDirection: 'column' },
+                                  children: [
+                                    { type: 'span', props: { style: { color: 'white', fontSize: '19px', fontWeight: '800' }, children: 'VedicMindAI' } },
+                                    { type: 'span', props: { style: { color: 'rgba(255,255,255,0.4)', fontSize: '13px' }, children: 'vedicmindai.in' } },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                        // Category badge
+                        {
+                          type: 'div',
+                          props: {
+                            style: {
+                              display: 'flex', alignItems: 'center', gap: '8px',
+                              border: `1.5px solid ${colors.accent}`,
+                              borderRadius: '100px', padding: '8px 20px',
+                            },
+                            children: [
+                              { type: 'span', props: { style: { fontSize: '16px' }, children: colors.emoji } },
+                              { type: 'span', props: { style: { color: colors.accent, fontSize: '15px', fontWeight: '700' }, children: category } },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  // Title
+                  {
+                    type: 'div',
+                    props: {
+                      style: {
+                        fontSize: displayTitle.length > 55 ? '34px' : '40px',
+                        fontWeight: '800', color: 'white',
+                        lineHeight: '1.25', marginBottom: '18px',
+                        maxWidth: '1000px', display: 'flex',
+                      },
+                      children: displayTitle,
+                    },
+                  },
+                  // Excerpt
+                  {
+                    type: 'div',
+                    props: {
+                      style: {
+                        fontSize: '18px', color: 'rgba(255,255,255,0.6)',
+                        lineHeight: '1.55', maxWidth: '900px',
+                        display: 'flex', flex: 1,
+                      },
+                      children: displayExcerpt,
+                    },
+                  },
+                  // Bottom strip
+                  {
+                    type: 'div',
+                    props: {
+                      style: {
+                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                        paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.1)',
+                        marginTop: '20px',
+                      },
+                      children: [
+                        {
+                          type: 'span',
+                          props: {
+                            style: { color: 'rgba(255,255,255,0.4)', fontSize: '14px' },
+                            children: 'Free on Google Play · vedicmindai.in',
+                          },
+                        },
+                        {
+                          type: 'div',
+                          props: {
+                            style: {
+                              background: colors.accent, borderRadius: '10px',
+                              padding: '10px 24px', color: 'white',
+                              fontSize: '15px', fontWeight: '700', display: 'flex',
+                            },
+                            children: 'Read Article →',
+                          },
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      },
+      {
+        width: 1200, height: 630,
+        fonts: [{ name: 'Inter', data: fontData, weight: 400, style: 'normal' }],
       }
     );
+
+    const resvg = new Resvg(svg, { fitTo: { mode: 'width', value: 1200 } });
+    const png = resvg.render().asPng();
+
+    res.setHeader('Content-Type', 'image/png');
+    res.setHeader('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
+    res.end(png);
   } catch (e) {
-    // Fallback — return a simple branded image if anything fails
-    return new ImageResponse(
-      <div style={{
-        width: '1200px', height: '630px',
-        background: '#0A1628',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontFamily: 'system-ui, sans-serif',
-      }}>
-        <span style={{ color: 'white', fontSize: '48px', fontWeight: '800' }}>
-          VedicMindAI™
-        </span>
-      </div>,
-      { width: 1200, height: 630 }
-    );
+    console.error('OG image error:', e);
+    res.status(500).json({ error: e.message });
   }
-}
+};
