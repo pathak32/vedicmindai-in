@@ -2,12 +2,6 @@
   "crons": [
     { "path": "/api/backup-progress-snapshot", "schedule": "0 20 * * *" }
   ],
-  "functions": {
-    "api/og.js": {
-      "maxDuration": 30,
-      "memory": 1024
-    }
-  },
   "rewrites": [
     { "source": "/.well-known/assetlinks.json", "destination": "/api/assetlinks" },
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
