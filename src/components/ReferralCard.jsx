@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getSupabase } from '@/lib/supabaseClient';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { useLanguage } from '@/lib/LanguageContext';
 
 function generateCode(userId) {
   // Generate deterministic 8-char code from userId
@@ -15,13 +16,17 @@ function generateCode(userId) {
 
 export default function ReferralCard() {
   const { user } = useVedicAuth();
+  const { language } = useLanguage();
   const [stats, setStats] = useState({ referrals: 0, converted: 0 });
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const referralCode = user ? generateCode(user.id) : '';
   const referralUrl = `https://www.vedicmindai.in/ref/${referralCode}`;
-  const shareText = `🧮 Can you solve this in 3 seconds?\n\nTry this free Vedic Maths challenge — 3 questions, no sign-up needed.\n\n👉 ${referralUrl}\n\nI've been using VedicMindAI to calculate 10x faster with ancient Indian techniques. You'll be surprised how easy it is!`;
+  // Hinglish — casual, hook-driven, feels like a friend sharing not an ad
+  const shareTextHi = `🧮 Bhai/Didi, ek baar try karo!\n\nKya tum 35² mentally 3 second mein solve kar sakte ho? Vedic Maths se main karta hoon — aur yeh FREE hai!\n\n👉 ${referralUrl}\n\nKoi sign-up nahi, direct challenge shuru karo. Ancient Indian technique — genuinely kaam karta hai! 🔥`;
+  const shareTextEn = `🧮 Can you solve this in 3 seconds?\n\nTry this free Vedic Maths challenge — no sign-up, just pure mental math!\n\n👉 ${referralUrl}\n\nAncient Indian technique that makes calculations 10x faster. You'll be amazed! 🔥`;
+  const shareText = language === 'hi' ? shareTextHi : shareTextEn;
 
   useEffect(() => {
     if (!user) return;
