@@ -20,7 +20,8 @@ export default function ReferralCard() {
   const [loading, setLoading] = useState(true);
 
   const referralCode = user ? generateCode(user.id) : '';
-  const shareText = `🧮 Join VedicMind — India's AI-powered Vedic Mathematics app!\nLearn ancient math tricks that make calculations 10x faster.\n\nUse my referral code: *${referralCode}*\n\n👉 vedicmindai.in`;
+  const referralUrl = `https://www.vedicmindai.in/ref/${referralCode}`;
+  const shareText = `Join VedicMindAI — India's AI-powered Vedic Maths app!\nLearn ancient calculation tricks 10x faster.\n\n👉 ${referralUrl}\n\nFree to start. No credit card needed.`;
 
   useEffect(() => {
     if (!user) return;
@@ -55,7 +56,7 @@ export default function ReferralCard() {
   }
 
   function copyCode() {
-    navigator.clipboard.writeText(referralCode).then(() => {
+    navigator.clipboard.writeText(referralUrl).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
@@ -82,8 +83,8 @@ export default function ReferralCard() {
       {/* Referral Code */}
       <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: 12, padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, border: '1px solid rgba(255,255,255,0.2)' }}>
         <div>
-          <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.6)', marginBottom: 2 }}>YOUR REFERRAL CODE</div>
-          <div style={{ fontFamily: 'monospace', fontSize: 22, fontWeight: 700, letterSpacing: 3 }}>{referralCode}</div>
+          <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.6)', marginBottom: 2 }}>YOUR REFERRAL LINK</div>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#93C5FD', wordBreak: 'break-all' }}>vedicmindai.in/ref/{referralCode}</div>
         </div>
         <button onClick={copyCode} style={{ background: copied ? '#059669' : 'white', color: copied ? 'white' : '#0A1628', border: 'none', borderRadius: 8, padding: '8px 14px', fontWeight: 700, fontSize: 13, cursor: 'pointer', transition: 'all 0.2s' }}>
           {copied ? '✅ Copied!' : '📋 Copy'}

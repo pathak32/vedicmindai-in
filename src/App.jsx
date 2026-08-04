@@ -20,6 +20,7 @@ import MobileAppHeader from '@/components/MobileAppHeader';
 // reducing the initial JS payload that was causing the 6 s mobile LCP.
 // ---------------------------------------------------------------------------
 const LandingPage            = lazy(() => import('@/pages/LandingPage'));
+const ReferralLandingPage    = lazy(() => import('@/pages/ReferralLandingPage'));
 const BlogListPage           = lazy(() => import('@/pages/BlogListPage'));
 const BlogPostPage           = lazy(() => import('@/pages/BlogPostPage'));
 const ReasoningPilotPage     = lazy(() => import('@/pages/ReasoningPilotPage'));
@@ -159,6 +160,7 @@ function RouteTransition() {
             <Suspense fallback={<PageLoader />}>
               <Routes location={location}>
                 <Route path="/"                    element={<LandingPage />} />
+                <Route path="/ref/:code"           element={<ReferralLandingPage />} />
                 <Route path="/blog"                element={<BlogListPage />} />
                 <Route path="/blog/:slug"          element={<BlogPostPage />} />
                 <Route path="/reasoning-pilot"     element={<ReasoningPilotPage />} />
