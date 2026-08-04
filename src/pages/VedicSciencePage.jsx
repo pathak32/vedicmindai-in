@@ -13,11 +13,11 @@ const SECTIONS = [
     color: '#3B82F6',
     bg: 'rgba(59,130,246,0.12)',
     chapters: [
-      { id: 1, title: { en: 'The First Atomic Theory', hi: 'प्रथम परमाणु सिद्धांत' }, sub: { en: 'Rishi Kanada — 600 BCE', hi: 'ऋषि कणाद — 600 ईसा पूर्व' }, ready: true },
-      { id: 2, title: { en: 'Gravity Before Newton', hi: 'न्यूटन से पहले गुरुत्वाकर्षण' }, sub: { en: 'Bhaskaracharya — 1114 CE', hi: 'भास्कराचार्य — 1114 ई.' }, ready: true },
-      { id: 3, title: { en: 'Speed of Light in the Rig Veda', hi: 'ऋग्वेद में प्रकाश की गति' }, sub: { en: 'Sayana\'s Commentary — 14th century', hi: 'सायण की टीका — 14वीं सदी' }, ready: true },
-      { id: 4, title: { en: 'Seven Colors of Sunlight', hi: 'सूर्यप्रकाश के सात रंग' }, sub: { en: 'Yajurveda, Samaveda & Atharva Veda', hi: 'यजुर्वेद, सामवेद और अथर्ववेद' }, ready: true },
-      { id: 5, title: { en: 'The World\'s First Electric Battery', hi: 'विश्व की प्रथम विद्युत बैटरी' }, sub: { en: 'Agastya Samhita', hi: 'अगस्त्य संहिता' }, ready: true },
+      { id: 'kanada-atomic-theory', title: { en: 'The First Atomic Theory', hi: 'प्रथम परमाणु सिद्धांत' }, sub: { en: 'Rishi Kanada — 600 BCE', hi: 'ऋषि कणाद — 600 ईसा पूर्व' }, ready: true },
+      { id: 'bhaskara-gravity', title: { en: 'Gravity Before Newton', hi: 'न्यूटन से पहले गुरुत्वाकर्षण' }, sub: { en: 'Bhaskaracharya — 1114 CE', hi: 'भास्कराचार्य — 1114 ई.' }, ready: true },
+      { id: 'speed-of-light', title: { en: 'Speed of Light in the Rig Veda', hi: 'ऋग्वेद में प्रकाश की गति' }, sub: { en: 'Sayana\'s Commentary — 14th century', hi: 'सायण की टीका — 14वीं सदी' }, ready: true },
+      { id: 'seven-colors-sunlight', title: { en: 'Seven Colors of Sunlight', hi: 'सूर्यप्रकाश के सात रंग' }, sub: { en: 'Yajurveda, Samaveda & Atharva Veda', hi: 'यजुर्वेद, सामवेद और अथर्ववेद' }, ready: true },
+      { id: 'agastya-battery', title: { en: 'The World\'s First Electric Battery', hi: 'विश्व की प्रथम विद्युत बैटरी' }, sub: { en: 'Agastya Samhita', hi: 'अगस्त्य संहिता' }, ready: true },
       { id: 6, title: { en: 'Quantum Consciousness', hi: 'क्वांटम चेतना' }, sub: { en: 'Vedanta & Modern Physics', hi: 'वेदांत और आधुनिक भौतिकी' }, ready: false },
       { id: 7, title: { en: 'Kerala School Calculus', hi: 'केरल विद्यालय कैलकुलस' }, sub: { en: 'Madhava — 300 years before Newton', hi: 'माधव — न्यूटन से 300 साल पहले' }, ready: false },
       { id: 8, title: { en: 'Binary Numbers — Pingala', hi: 'बाइनरी संख्याएँ — पिंगल' }, sub: { en: 'Pingala — 300 BCE', hi: 'पिंगल — 300 ईसा पूर्व' }, ready: false },
@@ -165,8 +165,8 @@ export default function VedicSciencePage() {
                   <div
                     key={ch.id}
                     onClick={() => ch.ready && !section.sectionComingSoon
-                      ? alert('Chapter viewer coming soon — content is being built!')
-                      : null}
+                ? navigate(`/vedic-science/${section.id}/${ch.id}`)
+                : null}
                     style={{
                       background: 'rgba(255,255,255,0.04)',
                       border: `1px solid ${ch.ready && !section.sectionComingSoon ? section.color + '44' : 'rgba(255,255,255,0.08)'}`,
