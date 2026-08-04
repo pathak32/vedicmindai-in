@@ -1,5 +1,8 @@
-// api/og.js — Dynamic OG image generator using @vercel/og
+// api/og.js — Dynamic OG image generator
+// Font is bundled in public/fonts/ to avoid runtime fetch failures
 import { ImageResponse } from '@vercel/og';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 
 const SUPABASE_URL = 'https://xlyfyqjmzwyyoqurvuzx.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhseWZ5cWptend5eW9xdXJ2dXp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA3MjgxOTQsImV4cCI6MjA5NjMwNDE5NH0.4CXU3ksfCGfIA77-sFXebWi-hjDVjCsT-UdrMXYFLEM';
@@ -11,9 +14,21 @@ const COLORS = {
   'Vedic Science': '#10B981',
 };
 
-function truncate(str, max) {
-  const clean = (str || '').replace(/\s+/g, ' ').trim();
-  return clean.length <= max ? clean : clean.slice(0, max - 1) + '\u2026';
+function trunc(str, max) {
+  const s = (str || '').replace(/\s+/g, ' ').trim();
+  return s.length <= max ? s : s.slice(0, max - 1) + '\u2026';
+}
+
+// Load font once at module level so it's cached across warm invocations
+let _font = null;
+async function getFont() {
+  if (_font) return _font;
+  try {
+    _font = await readFile(join(process.cwd(), 'public', 'fonts', 'Inter-Regular.woff'));
+    return _font;
+  } catch {
+    return null;
+  }
 }
 
 export default async function handler(req, res) {
@@ -42,19 +57,15 @@ export default async function handler(req, res) {
       } catch (_) {}
     }
 
-    const accent = COLORS[category] || '#6366F1';
-    const t = truncate(title, 68);
-    const e = truncate(excerpt, 120);
-
-    // Fetch a font — required by satori (bundled inside @vercel/og)
-    const fontData = await fetch(
-      'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2'
-    ).then(r => r.arrayBuffer()).catch(() => null);
-
+    const fontData = await getFont();
     if (!fontData) {
-      res.status(500).send('Font fetch failed');
+      res.status(500).send('Font not found at public/fonts/Inter-Regular.woff');
       return;
     }
+
+    const accent = COLORS[category] || '#6366F1';
+    const t = trunc(title, 68);
+    const e = trunc(excerpt, 120);
 
     const ir = new ImageResponse(
       {
@@ -69,16 +80,13 @@ export default async function handler(req, res) {
                 { type: 'div', props: {
                   style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '28px' },
                   children: [
-                    { type: 'div', props: {
-                      style: { display: 'flex', alignItems: 'center', gap: '10px' },
-                      children: [
-                        { type: 'div', props: { style: { width: '40px', height: '40px', borderRadius: '8px', background: '#6366F1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '22px', fontWeight: '900' }, children: 'V' } },
-                        { type: 'div', props: { style: { display: 'flex', flexDirection: 'column' }, children: [
-                          { type: 'span', props: { style: { color: 'white', fontSize: '18px', fontWeight: '800' }, children: 'VedicMindAI' } },
-                          { type: 'span', props: { style: { color: 'rgba(255,255,255,0.4)', fontSize: '12px' }, children: 'vedicmindai.in' } },
-                        ]}},
-                      ]
-                    }},
+                    { type: 'div', props: { style: { display: 'flex', alignItems: 'center', gap: '10px' }, children: [
+                      { type: 'div', props: { style: { width: '40px', height: '40px', borderRadius: '8px', background: '#6366F1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '22px', fontWeight: '900' }, children: 'V' } },
+                      { type: 'div', props: { style: { display: 'flex', flexDirection: 'column' }, children: [
+                        { type: 'span', props: { style: { color: 'white', fontSize: '18px', fontWeight: '800' }, children: 'VedicMindAI' } },
+                        { type: 'span', props: { style: { color: 'rgba(255,255,255,0.4)', fontSize: '12px' }, children: 'vedicmindai.in' } },
+                      ]}},
+                    ]}},
                     { type: 'div', props: { style: { borderRadius: '100px', padding: '8px 18px', display: 'flex', border: `1px solid ${accent}88`, background: accent + '22' },
                       children: { type: 'span', props: { style: { color: accent, fontSize: '14px', fontWeight: '700' }, children: category } }
                     }},
