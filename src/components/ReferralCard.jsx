@@ -21,7 +21,7 @@ export default function ReferralCard() {
 
   const referralCode = user ? generateCode(user.id) : '';
   const referralUrl = `https://www.vedicmindai.in/ref/${referralCode}`;
-  const shareText = `Join VedicMindAI — India's AI-powered Vedic Maths app!\nLearn ancient calculation tricks 10x faster.\n\n👉 ${referralUrl}\n\nFree to start. No credit card needed.`;
+  const shareText = `🧮 Can you solve this in 3 seconds?\n\nTry this free Vedic Maths challenge — 3 questions, no sign-up needed.\n\n👉 ${referralUrl}\n\nI've been using VedicMindAI to calculate 10x faster with ancient Indian techniques. You'll be surprised how easy it is!`;
 
   useEffect(() => {
     if (!user) return;
