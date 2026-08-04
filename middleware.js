@@ -133,7 +133,7 @@ function blogPostJsonLd(meta, canonicalUrl) {
         description: meta.description,
         datePublished: meta.publishedAt,
         author: { '@type': 'Organization', name: 'VedicMindAI' },
-        publisher: { '@type': 'Organization', name: 'VedicMindAI', logo: { '@type': 'ImageObject', url: `${SITE_URL}/icons/icon-512.png` } },
+        publisher: { '@type': 'Organization', name: 'VedicMindAI', logo: { '@type': 'ImageObject', url: `${SITE_URL}/api/og?slug=${encodeURIComponent(path.replace("/blog/", ""))}` } },
         mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
       },
       {
