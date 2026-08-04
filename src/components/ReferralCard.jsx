@@ -23,9 +23,8 @@ export default function ReferralCard() {
 
   const referralCode = user ? generateCode(user.id) : '';
   const referralUrl = `https://www.vedicmindai.in/ref/${referralCode}`;
-  // Hinglish — casual, hook-driven, feels like a friend sharing not an ad
-  const shareTextHi = `🧮 Bhai/Didi, ek baar try karo!\n\nKya tum 35² mentally 3 second mein solve kar sakte ho? Vedic Maths se main karta hoon — aur yeh FREE hai!\n\n👉 ${referralUrl}\n\nKoi sign-up nahi, direct challenge shuru karo. Ancient Indian technique — genuinely kaam karta hai! 🔥`;
   const shareTextEn = `🧮 Can you solve this in 3 seconds?\n\nTry this free Vedic Maths challenge — no sign-up, just pure mental math!\n\n👉 ${referralUrl}\n\nAncient Indian technique that makes calculations 10x faster. You'll be amazed! 🔥`;
+  const shareTextHi = `🧮 क्या आप इसे 3 सेकंड में हल कर सकते हैं?\n\nयह Free Vedic Maths Challenge try करें — कोई sign-up नहीं, सिर्फ mental math!\n\n👉 ${referralUrl}\n\nएक प्राचीन भारतीय तकनीक जो calculation को 10x तेज़ बनाती है। आप चौंक जाएंगे! 🔥`;
   const shareText = language === 'hi' ? shareTextHi : shareTextEn;
 
   useEffect(() => {
