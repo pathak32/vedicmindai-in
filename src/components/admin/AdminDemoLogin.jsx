@@ -27,7 +27,7 @@ export default function AdminDemoLogin() {
       const email = randEmail(form.school);
       const password = randPass();
 
-      const response = await fetch('/api/admin-create-demo', {
+      const response = await fetch('/api/admin?action=create-demo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -56,7 +56,7 @@ export default function AdminDemoLogin() {
 
   async function loadList() {
     try {
-      const res = await fetch('/api/admin-list-demo-logins');
+      const res = await fetch('/api/admin?action=list-demo-logins');
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to load demo logins');
       setList(data.demoLogins || []);

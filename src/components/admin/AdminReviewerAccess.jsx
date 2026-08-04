@@ -230,7 +230,7 @@ export default function AdminReviewerAccess() {
     setResettingPw(true);
     setError('');
     try {
-      const res = await fetch('/api/admin-reset-password', {
+      const res = await fetch('/api/admin?action=reset-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: existingAccount.id, newPassword: form.password }),
