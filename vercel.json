@@ -3,10 +3,32 @@
     { "path": "/api/backup-progress-snapshot", "schedule": "0 20 * * *" }
   ],
   "rewrites": [
+    { "source": "/.well-known/assetlinks.json", "destination": "/api/assetlinks" },
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
-    { "source": "/((?!robots\\.txt|sitemap\\.xml|api/|downloads/|[^/]+\\.html$).*)", "destination": "/index.html" }
+    { "source": "/((?!robots\\.txt|sitemap\\.xml|api/|downloads/|\\.well-known/|[^/]+\\.html$).*)", "destination": "/index.html" }
   ],
   "headers": [
+    {
+      "source": "/.well-known/assetlinks.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/.well-known/(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/blog/:path*",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [

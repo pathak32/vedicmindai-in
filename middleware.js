@@ -20,6 +20,18 @@
 // origin response. A Supabase fetch failing, a slug not found, a
 // malformed regex match, anything -- worst case is "meta tags stay as
 // they were," never a broken or unavailable page.
+//
+// BUG FIXED (Aug 2026): blogPostJsonLd() was referencing `path` from
+// the outer middleware() scope — but as a top-level function it can't
+// close over that variable. In Edge strict mode this threw a
+// ReferenceError on every blog post request, which the try/catch caught
+// silently and returned undefined, causing Vercel to fall through to the
+// raw index.html. That response got CDN-cached with x-vercel-cache:HIT,
+// so ALL blog posts were being served with homepage meta. Fixed by
+// passing the slug directly into blogPostJsonLd() instead.
+// Also added: no-store cache headers on all middleware responses (belt-
+// and-suspenders), and a 3-second AbortController timeout on the
+// Supabase fetch so a slow DB response never hangs the edge function.
 
 export const config = {
   matcher: [
@@ -62,7 +74,7 @@ const STATIC_META = {
   },
   '/screenless': {
     title: 'Screenless Learning — VedicMindAI™',
-    description: 'VedicMindAI\'s screenless learning resources — Vedic Mathematics practice without screen time.',
+    description: "VedicMindAI's screenless learning resources — Vedic Mathematics practice without screen time.",
   },
   '/terms': {
     title: 'Terms & Conditions — VedicMindAI™',
@@ -74,7 +86,7 @@ const STATIC_META = {
   },
   '/demo': {
     title: 'Try the Demo — VedicMindAI™',
-    description: 'Try VedicMindAI\'s interactive Vedic Mathematics demo — no signup required.',
+    description: "Try VedicMindAI's interactive Vedic Mathematics demo — no signup required.",
   },
   '/blog': {
     title: 'Blog — VedicMindAI™',
@@ -91,20 +103,31 @@ function escapeHtml(s) {
 }
 
 async function getBlogPostMeta(slug) {
-  const res = await fetch(
-    `${SUPABASE_URL}/rest/v1/blog_posts?slug=eq.${encodeURIComponent(slug)}&status=eq.published&select=title,content,published_at,created_at`,
-    { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` } }
-  );
-  if (!res.ok) return null;
-  const rows = await res.json();
-  if (!rows || !rows[0]) return null;
-  const row = rows[0];
-  return {
-    title: `${row.title} — VedicMindAI™`,
-    description: row.content.replace(/\s+/g, ' ').trim().slice(0, 155),
-    rawTitle: row.title,
-    publishedAt: row.published_at || row.created_at,
-  };
+  // 3-second timeout -- if Supabase is slow, fall through rather than
+  // hanging the edge function until Vercel's own timeout kills it.
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 3000);
+  try {
+    const res = await fetch(
+      `${SUPABASE_URL}/rest/v1/blog_posts?slug=eq.${encodeURIComponent(slug)}&status=eq.published&select=title,content,published_at,created_at`,
+      {
+        headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` },
+        signal: controller.signal,
+      }
+    );
+    if (!res.ok) return null;
+    const rows = await res.json();
+    if (!rows || !rows[0]) return null;
+    const row = rows[0];
+    return {
+      title: `${row.title} — VedicMindAI™`,
+      description: row.content.replace(/\s+/g, ' ').trim().slice(0, 155),
+      rawTitle: row.title,
+      publishedAt: row.published_at || row.created_at,
+    };
+  } finally {
+    clearTimeout(timeoutId);
+  }
 }
 
 function blogListJsonLd() {
@@ -123,7 +146,10 @@ function blogListJsonLd() {
   });
 }
 
-function blogPostJsonLd(meta, canonicalUrl) {
+// FIX: slug is now passed as an explicit parameter instead of reading
+// the outer-scope `path` variable, which was never accessible here and
+// caused a ReferenceError (silently caught, middleware fell through).
+function blogPostJsonLd(meta, canonicalUrl, slug) {
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -133,7 +159,12 @@ function blogPostJsonLd(meta, canonicalUrl) {
         description: meta.description,
         datePublished: meta.publishedAt,
         author: { '@type': 'Organization', name: 'VedicMindAI' },
-        publisher: { '@type': 'Organization', name: 'VedicMindAI', logo: { '@type': 'ImageObject', url: `${SITE_URL}/icons/icon-512.png` } },
+        publisher: {
+          '@type': 'Organization',
+          name: 'VedicMindAI',
+          logo: { '@type': 'ImageObject', url: `${SITE_URL}/icons/icon-192.png` },
+        },
+        image: `${SITE_URL}/api/og?slug=${encodeURIComponent(slug)}`,
         mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
       },
       {
@@ -155,10 +186,11 @@ export default async function middleware(request) {
 
     let meta = null;
     let canonicalPath = path;
+    let blogSlug = null;
 
     if (path.startsWith('/blog/') && path.length > 6) {
-      const slug = path.slice('/blog/'.length);
-      meta = await getBlogPostMeta(slug);
+      blogSlug = path.slice('/blog/'.length);
+      meta = await getBlogPostMeta(blogSlug);
       // Unknown/unpublished slug -- let the app's own client-side
       // "not found" handling take over, don't inject anything.
       if (!meta) return;
@@ -182,8 +214,10 @@ export default async function middleware(request) {
       .replace(/<meta property="og:title" content="[^"]*"\s*\/>/, `<meta property="og:title" content="${safeTitle}" />`)
       .replace(/<meta property="og:description" content="[^"]*"\s*\/>/, `<meta property="og:description" content="${safeDesc}" />`)
       .replace(/<meta property="og:url" content="[^"]*"\s*\/>/, `<meta property="og:url" content="${canonicalUrl}" />`)
+      .replace(/<meta property="og:image" content="[^"]*"\s*\/>/, `<meta property="og:image" content="${SITE_URL}/icons/icon-512.png" />`)
       .replace(/<meta name="twitter:title" content="[^"]*"\s*\/>/, `<meta name="twitter:title" content="${safeTitle}" />`)
       .replace(/<meta name="twitter:description" content="[^"]*"\s*\/>/, `<meta name="twitter:description" content="${safeDesc}" />`)
+      .replace(/<meta name="twitter:image" content="[^"]*"\s*\/>/, `<meta name="twitter:image" content="${SITE_URL}/icons/icon-512.png" />`)
       .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${canonicalUrl}" />`);
 
     // Structured data (JSON-LD) -- same schema BlogListPage.jsx/
@@ -194,17 +228,29 @@ export default async function middleware(request) {
     let jsonLd = null;
     if (path === '/blog') {
       jsonLd = blogListJsonLd();
-    } else if (path.startsWith('/blog/') && meta.rawTitle) {
-      jsonLd = blogPostJsonLd(meta, canonicalUrl);
+    } else if (blogSlug && meta.rawTitle) {
+      // FIX: pass blogSlug explicitly -- the old call passed nothing for
+      // the third argument, so blogPostJsonLd read an outer `path` that
+      // was out of scope, threw ReferenceError, and the catch returned
+      // undefined on every single blog post request.
+      jsonLd = blogPostJsonLd(meta, canonicalUrl, blogSlug);
     }
     if (jsonLd) {
       const safeJsonLd = jsonLd.replace(/<\/script/gi, '<\\/script');
       html = html.replace('</head>', `<script type="application/ld+json">${safeJsonLd}</script></head>`);
     }
 
+    // no-store: prevent Vercel CDN from caching this middleware-modified
+    // response. Each blog post has unique meta fetched live from Supabase;
+    // caching would serve one post's meta for a different post's URL.
+    // Belt-and-suspenders alongside the vercel.json /blog/* header rule.
     return new Response(html, {
       status: 200,
-      headers: { 'content-type': 'text/html; charset=utf-8' },
+      headers: {
+        'content-type': 'text/html; charset=utf-8',
+        'cache-control': 'no-store, no-cache, must-revalidate',
+        'x-middleware-injected': 'true',
+      },
     });
   } catch (e) {
     // Anything at all going wrong -- fall through to the normal,
