@@ -57,24 +57,24 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
 const STATIC_META = {
   '/pricing': {
-    title: 'Pricing — VedicMindAI™',
-    description: 'Simple, transparent pricing for VedicMindAI. Start free, upgrade anytime. Plans for individuals and families.',
+    title: 'Vedic Maths App Pricing — Free Plan + ₹499/mo | VedicMindAI',
+    description: 'VedicMindAI plans start at ₹499/month. Free tier available forever. Vedic Maths, Reasoning & Aptitude for Class 1–12 students and JEE/SSC/CAT aspirants.',
   },
   '/curriculum': {
-    title: 'Curriculum — VedicMindAI™',
-    description: "Explore VedicMindAI's full curriculum: Vedic Mathematics, Reasoning, and Aptitude, structured for Class 1 to 12 and competitive exams.",
+    title: 'Vedic Maths Curriculum — 40 Lessons for Class 1–12 & JEE/SSC | VedicMindAI',
+    description: '40 structured Vedic Maths lessons across 4 levels, plus Reasoning & Aptitude tracks. Mapped to Class 1–12 syllabus, JEE, SSC, CAT, and UPSC preparation.',
   },
   '/reviews': {
-    title: 'Reviews — VedicMindAI™',
-    description: 'See what students, parents, and educators say about learning Vedic Mathematics with VedicMindAI.',
+    title: 'Student Reviews — VedicMindAI | Real Results from Vedic Maths Learners',
+    description: 'See how students across India are calculating 10× faster with VedicMindAI. Real reviews from Class 6–12 students, parents, and competitive exam aspirants.',
   },
   '/collaborate': {
-    title: 'Collaborate With Us — VedicMindAI™',
-    description: 'Partner with VedicMindAI — for educators, institutions, and organizations interested in Vedic Mathematics education.',
+    title: 'School & Educator Partnerships — VedicMindAI | Vedic Maths for Schools',
+    description: 'Partner with VedicMindAI for school programmes, educator collaborations, and institutional Vedic Mathematics training across India.',
   },
   '/screenless': {
-    title: 'Screenless Learning — VedicMindAI™',
-    description: "VedicMindAI's screenless learning resources — Vedic Mathematics practice without screen time.",
+    title: 'Screenless Vedic Maths Learning — Practice Without a Screen | VedicMindAI',
+    description: 'Printable Vedic Maths worksheets and offline practice bundles for students who need screen-free learning. Ideal for parents and teachers.',
   },
   '/terms': {
     title: 'Terms & Conditions — VedicMindAI™',
@@ -85,12 +85,12 @@ const STATIC_META = {
     description: "VedicMindAI's privacy policy — how we collect, use, and protect your data.",
   },
   '/demo': {
-    title: 'Try the Demo — VedicMindAI™',
-    description: "Try VedicMindAI's interactive Vedic Mathematics demo — no signup required.",
+    title: 'Free Vedic Maths Demo — Try 32 Questions, No Signup | VedicMindAI',
+    description: 'Take VedicMindAI\'s free interactive demo — 32 questions across Vedic Maths, Reasoning and Aptitude. No signup needed. See how fast you can calculate.',
   },
   '/blog': {
-    title: 'Blog — VedicMindAI™',
-    description: 'Vedic Mathematics, Reasoning, and Aptitude articles, tips, and shortcuts from VedicMindAI.',
+    title: 'Vedic Maths Blog — Shortcuts, Tricks & Study Tips | VedicMindAI',
+    description: '200+ articles on Vedic Mathematics tricks, Reasoning shortcuts, and Aptitude tips for Class 6–12 students and JEE/SSC/CAT/UPSC aspirants.',
   },
   '/life-skills': {
     title: 'Life Skills — VedicMindAI™',
