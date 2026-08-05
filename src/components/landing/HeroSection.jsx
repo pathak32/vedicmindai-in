@@ -86,6 +86,13 @@ export default function HeroSection() {
               >
                 {t('seeHowItWorks')}
               </button>
+              <Link
+                to="/demo"
+                className="inline-flex items-center gap-2 h-12 px-7 rounded-xl border-[1.5px] border-yellow-400/60 text-yellow-300 font-semibold hover:bg-yellow-400/10 transition-colors"
+                style={{ textDecoration: 'none' }}
+              >
+                ⚡ {t('tryFreeDemo')}
+              </Link>
             </div>
 
             <div className="mt-12 flex items-center gap-3">

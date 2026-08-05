@@ -462,14 +462,14 @@ export default function BlogPostPage() {
                   onChange={(e) => setCommentName(e.target.value)}
                   placeholder={t('blogCommentNamePlaceholder')}
                   maxLength={80}
-                  style={{ width: '100%', padding: '10px 14px', borderRadius: 10, border: '1px solid #E5E7EB', fontFamily: 'var(--font-body)', fontSize: 14, marginBottom: 10, boxSizing: 'border-box' }}
+                  style={{ width: '100%', padding: '10px 14px', borderRadius: 10, border: '1px solid #E5E7EB', fontFamily: 'var(--font-body)', fontSize: 14, marginBottom: 10, boxSizing: 'border-box', color: '#0A1628', background: 'white' }}
                 />
                 <textarea
                   value={commentText}
                   onChange={(e) => setCommentText(e.target.value)}
                   placeholder={t('blogCommentTextPlaceholder')}
                   maxLength={2000}
-                  style={{ width: '100%', minHeight: 90, padding: '10px 14px', borderRadius: 10, border: '1px solid #E5E7EB', fontFamily: 'var(--font-body)', fontSize: 14, resize: 'vertical', boxSizing: 'border-box', marginBottom: 10 }}
+                  style={{ width: '100%', minHeight: 90, padding: '10px 14px', borderRadius: 10, border: '1px solid #E5E7EB', fontFamily: 'var(--font-body)', fontSize: 14, resize: 'vertical', boxSizing: 'border-box', marginBottom: 10, color: '#0A1628', background: 'white' }}
                 />
                 <button
                   type="submit"

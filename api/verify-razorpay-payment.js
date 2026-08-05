@@ -67,6 +67,26 @@ export default async function handler(req, res) {
       });
     }
 
+    // ── Referral crediting (same logic as webhook) ─────────────────────
+    try {
+      const { data: profile } = await sb.from('profiles').select('referral_code').eq('id', userId).maybeSingle();
+      if (profile?.referral_code) {
+        const { data: referrer } = await sb.from('referrals').select('user_id, converted_count, referral_count').eq('referral_code', profile.referral_code).maybeSingle();
+        if (referrer && referrer.user_id !== userId) {
+          const newConverted = (referrer.converted_count || 0) + 1;
+          await sb.from('referrals').update({ converted_count: newConverted, referral_count: (referrer.referral_count || 0) + 1 }).eq('user_id', referrer.user_id);
+          if (newConverted >= 5 && newConverted % 5 === 0) {
+            const { data: rp } = await sb.from('profiles').select('plan, plan_expires_at').eq('id', referrer.user_id).maybeSingle();
+            if (rp?.plan && rp.plan !== 'free') {
+              const newExpiry = new Date(Math.max(new Date(rp.plan_expires_at || 0).getTime(), Date.now()) + 30 * 86400000);
+              await sb.from('profiles').update({ plan_expires_at: newExpiry.toISOString() }).eq('id', referrer.user_id);
+            }
+          }
+        }
+      }
+    } catch (_) { /* non-critical */ }
+    // ── End referral crediting ──────────────────────────────────────────
+
     return res.status(200).json({
       success: true,
       plan: basePlan,

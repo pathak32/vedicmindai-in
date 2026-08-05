@@ -20,10 +20,13 @@ import MobileAppHeader from '@/components/MobileAppHeader';
 // reducing the initial JS payload that was causing the 6 s mobile LCP.
 // ---------------------------------------------------------------------------
 const LandingPage            = lazy(() => import('@/pages/LandingPage'));
+const ReferralLandingPage    = lazy(() => import('@/pages/ReferralLandingPage'));
 const BlogListPage           = lazy(() => import('@/pages/BlogListPage'));
 const BlogPostPage           = lazy(() => import('@/pages/BlogPostPage'));
 const ReasoningPilotPage     = lazy(() => import('@/pages/ReasoningPilotPage'));
 const ReasoningChapterPage   = lazy(() => import('@/pages/reasoning/ReasoningChapterPage'));
+const VedicSciencePage        = lazy(() => import('@/pages/VedicSciencePage'));
+const VedicScienceChapterPage = lazy(() => import('@/pages/VedicScienceChapterPage'));
 const MyBattlesPage          = lazy(() => import('@/pages/MyBattlesPage'));
 const AuthPage               = lazy(() => import('@/pages/AuthPage'));
 const OnboardingPage         = lazy(() => import('@/pages/OnboardingPage'));
@@ -158,6 +161,7 @@ function RouteTransition() {
             <Suspense fallback={<PageLoader />}>
               <Routes location={location}>
                 <Route path="/"                    element={<LandingPage />} />
+                <Route path="/ref/:code"           element={<ReferralLandingPage />} />
                 <Route path="/blog"                element={<BlogListPage />} />
                 <Route path="/blog/:slug"          element={<BlogPostPage />} />
                 <Route path="/reasoning-pilot"     element={<ReasoningPilotPage />} />
@@ -180,6 +184,8 @@ function RouteTransition() {
                 <Route path="/leaderboard"         element={<LeaderboardPage />} />
                 <Route path="/aptitude"            element={<AptitudeChapterPage />} />
                 <Route path="/aptitude/:chapterId" element={<AptitudeChapterPage />} />
+                <Route path="/vedic-science"                        element={<VedicSciencePage />} />
+                <Route path="/vedic-science/:sectionId/:chapterId"  element={<VedicScienceChapterPage />} />
                 <Route path="/pricing"             element={<PricingPage />} />
                 <Route path="/weekly-exam"         element={<ProfileCompletionGate><WeeklyExamPage /></ProfileCompletionGate>} />
                 <Route path="/weekly-exam/results" element={<WeeklyExamResultsPage />} />

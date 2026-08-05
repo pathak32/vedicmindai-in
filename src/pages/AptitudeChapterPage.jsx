@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { Menu, ArrowLeft, Lock } from 'lucide-react';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
@@ -43,6 +43,7 @@ function OptionButton({ opt, isCorrect, selected, onClick, disabled }) {
 }
 
 export default function AptitudeChapterPage() {
+  const navigate = useNavigate();
   const { chapterId: paramChapterId } = useParams();
   const { language } = useLanguage();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -134,10 +135,25 @@ export default function AptitudeChapterPage() {
             </h2>
             <p style={{ color: '#6B7280', marginBottom: 24, lineHeight: 1.6 }}>{tr(reason, language)}</p>
             {!freeOk && (
-              <Link to="/pricing" style={{ display: 'inline-block', padding: '12px 28px', borderRadius: 10, background: '#10B981', color: 'white', fontWeight: 700, textDecoration: 'none' }}>
+              <Link to="/pricing" style={{ display: 'inline-block', padding: '12px 28px', borderRadius: 10, background: '#10B981', color: 'white', fontWeight: 700, textDecoration: 'none', marginBottom: 12 }}>
                 {language === 'hi' ? 'Subscribe करें' : 'Subscribe Now'}
               </Link>
             )}
+            <div style={{ marginTop: 16 }}>
+              <button
+                onClick={() => navigate('/aptitude')}
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 8,
+                  padding: '10px 22px', borderRadius: 10,
+                  background: 'transparent', border: '1px solid #E5E7EB',
+                  color: '#374151', fontFamily: 'var(--font-body)',
+                  fontWeight: 600, fontSize: 14, cursor: 'pointer',
+                }}
+              >
+                <ArrowLeft size={15} />
+                {language === 'hi' ? 'पाठ्यक्रम पर वापस जाएं' : 'Back to Curriculum'}
+              </button>
+            </div>
           </div>
         </div>
       </div>

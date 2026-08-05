@@ -403,10 +403,13 @@ export default function DashboardNavbar() {
             </button>
           </div>
 
-          {/* Mobile hamburger */}
-          <button onClick={() => setMobileOpen(prev => !prev)} className="show-mobile hamburger-btn" style={{ width: 48, height: 48, padding: 12, background: 'none', border: 'none', cursor: 'pointer', alignItems: 'center', justifyContent: 'center' }}>
-            {mobileOpen ? <X size={24} color="#0A1628" /> : <Menu size={24} color="#0A1628" />}
-          </button>
+          {/* Mobile: language toggle + hamburger */}
+          <div className="show-mobile" style={{ display: 'none', alignItems: 'center', gap: 4 }}>
+            <LanguageToggle size="sm" />
+            <button onClick={() => setMobileOpen(prev => !prev)} className="hamburger-btn" style={{ width: 48, height: 48, padding: 12, background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {mobileOpen ? <X size={24} color="#0A1628" /> : <Menu size={24} color="#0A1628" />}
+            </button>
+          </div>
         </div>
       </nav>
 

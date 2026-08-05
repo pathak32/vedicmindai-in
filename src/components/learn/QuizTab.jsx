@@ -1125,7 +1125,7 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
         {q.options.map((opt, i) => (
           <OptionButton
             key={i}
-            label={opt}
+            label={tr(opt, language)}
             idx={i}
             selected={selected}
             correct={q.correct}

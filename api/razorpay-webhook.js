@@ -171,6 +171,72 @@ export default async function handler(req, res) {
       }
 
       console.log(`razorpay-webhook: plan '${plan}' activated for user ${userId}`);
+
+      // ── Referral crediting ─────────────────────────────────────────────
+      // If this user signed up via a referral link, credit the referrer.
+      // Check the user's profile for a referral_code field set at signup.
+      try {
+        const { data: profile } = await sb
+          .from('profiles')
+          .select('referral_code')
+          .eq('id', userId)
+          .maybeSingle();
+
+        if (profile?.referral_code) {
+          const refCode = profile.referral_code;
+
+          // Find the referrer by their code
+          const { data: referrer } = await sb
+            .from('referrals')
+            .select('user_id, converted_count, referral_count')
+            .eq('referral_code', refCode)
+            .maybeSingle();
+
+          if (referrer && referrer.user_id !== userId) {
+            const newConverted = (referrer.converted_count || 0) + 1;
+
+            // Update referrer's converted count
+            await sb
+              .from('referrals')
+              .update({
+                converted_count: newConverted,
+                referral_count: (referrer.referral_count || 0) + 1,
+              })
+              .eq('user_id', referrer.user_id);
+
+            // If referrer has reached 5 conversions, give them 1 month free
+            if (newConverted >= 5 && newConverted % 5 === 0) {
+              const { data: referrerProfile } = await sb
+                .from('profiles')
+                .select('plan, plan_expires_at')
+                .eq('id', referrer.user_id)
+                .maybeSingle();
+
+              if (referrerProfile?.plan && referrerProfile.plan !== 'free') {
+                // Extend their current plan by 30 days
+                const currentExpiry = referrerProfile.plan_expires_at
+                  ? new Date(referrerProfile.plan_expires_at)
+                  : new Date();
+                const newExpiry = new Date(Math.max(currentExpiry.getTime(), Date.now()) + 30 * 86400000);
+
+                await sb
+                  .from('profiles')
+                  .update({ plan_expires_at: newExpiry.toISOString() })
+                  .eq('id', referrer.user_id);
+
+                console.log(`razorpay-webhook: referral reward — 1 month free added for user ${referrer.user_id}`);
+              }
+            }
+
+            console.log(`razorpay-webhook: referral credited — code ${refCode}, referrer ${referrer.user_id}, total conversions: ${newConverted}`);
+          }
+        }
+      } catch (refErr) {
+        // Referral crediting is non-critical — log but don't fail the payment
+        console.warn('razorpay-webhook: referral crediting failed (non-critical):', refErr.message);
+      }
+      // ── End referral crediting ──────────────────────────────────────────
+
       return res.status(200).json({ received: true, action: 'plan_activated', plan, userId });
 
     } catch (e) {

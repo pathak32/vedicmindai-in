@@ -38,7 +38,10 @@ function SignUpForm({ onSwitchTab }) {
   const [whatsappCustomCountryCode, setWhatsappCustomCountryCode] = useState("");
   const [dob, setDob]         = useState('');
   const [email, setEmail]     = useState('');
-  const [referralCode, setReferralCode] = useState('');
+  const [referralCode, setReferralCode] = useState(() => {
+    // Auto-fill from referral URL if user came via /ref/:code
+    return localStorage.getItem('vedicmind_ref') || '';
+  });
   const [password, setPassword] = useState('');
   const [secQ, setSecQ]       = useState('');
   const [secA, setSecA]       = useState('');
@@ -112,6 +115,7 @@ function SignUpForm({ onSwitchTab }) {
         grade: grade === 'other' ? customGrade.trim() : grade,
       });
       toast.success(t('authToastAccountCreated'));
+      localStorage.removeItem('vedicmind_ref');
       navigate(redirectTo || '/dashboard');
     } catch (err) {
       toast.error(err.message || t('authToastSignupFailed'));

@@ -40,7 +40,7 @@ export default function AdminStudents() {
 
     setDeletingId(u.id);
     try {
-      const res = await fetch('/api/admin-delete-user', {
+      const res = await fetch('/api/admin?action=delete-user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: u.id }),
@@ -62,7 +62,7 @@ export default function AdminStudents() {
 
   async function deleteOneSilently(userId) {
     try {
-      const res = await fetch('/api/admin-delete-user', {
+      const res = await fetch('/api/admin?action=delete-user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId }),

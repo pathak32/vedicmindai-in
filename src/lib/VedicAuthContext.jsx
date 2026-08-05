@@ -158,6 +158,9 @@ export function VedicAuthProvider({ children }) {
       if (referralErr) {
         console.error('Referral attribution error (non-blocking):', referralErr.message);
       }
+      // Also save referral_code directly on the profile so the payment
+      // webhook can credit the referrer when this user subscribes
+      await supabase.from('profiles').update({ referral_code: referralCode.trim() }).eq('id', userId).catch(() => {});
     }
 
     return data;
