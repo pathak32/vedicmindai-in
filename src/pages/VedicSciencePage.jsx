@@ -32,11 +32,11 @@ const SECTIONS = [
     subtitle: { en: 'Ancient metallurgy, alchemy and material science', hi: 'प्राचीन धातुकर्म, कीमिया और पदार्थ विज्ञान' },
     color: '#10B981',
     bg: 'rgba(16,185,129,0.12)',
-    sectionComingSoon: true,
+    sectionComingSoon: false,
     chapters: [
-      { id: 1, title: { en: 'Delhi Iron Pillar — No Rust in 1,600 Years', hi: 'दिल्ली लौह स्तंभ — 1,600 वर्षों में कोई जंग नहीं' }, sub: { en: 'Gupta Empire — 4th-5th century CE', hi: 'गुप्त साम्राज्य — 4-5वीं सदी ई.' }, ready: false },
-      { id: 2, title: { en: 'Wootz / Damascus Steel', hi: 'वूट्ज / दमिश्क स्टील' }, sub: { en: 'South India — 300 BCE', hi: 'दक्षिण भारत — 300 ईसा पूर्व' }, ready: false },
-      { id: 3, title: { en: 'Ayurvedic Nanoparticles — Bhasmas', hi: 'आयुर्वेदिक नैनोकण — भस्म' }, sub: { en: 'Confirmed by TEM/SEM analysis', hi: 'TEM/SEM विश्लेषण द्वारा पुष्टि' }, ready: false },
+      { id: 'delhi-iron-pillar', title: { en: 'Delhi Iron Pillar — No Rust in 1,600 Years', hi: 'दिल्ली लौह स्तंभ — 1,600 वर्षों में कोई जंग नहीं' }, sub: { en: 'Gupta Empire — 4th-5th century CE', hi: 'गुप्त साम्राज्य — 4-5वीं सदी ई.' }, ready: true },
+      { id: 'wootz-steel', title: { en: 'Wootz / Damascus Steel', hi: 'वूट्ज / दमिश्क स्टील' }, sub: { en: 'South India — 300 BCE', hi: 'दक्षिण भारत — 300 ईसा पूर्व' }, ready: true },
+      { id: 'ayurvedic-bhasmas', title: { en: 'Ayurvedic Nanoparticles — Bhasmas', hi: 'आयुर्वेदिक नैनोकण — भस्म' }, sub: { en: 'Confirmed by TEM/SEM analysis', hi: 'TEM/SEM विश्लेषण द्वारा पुष्टि' }, ready: true },
       { id: 4, title: { en: 'Nagarjuna\'s Alchemy — Rasayana', hi: 'नागार्जुन की कीमिया — रसायन' }, sub: { en: 'Nagarjuna — 8th-9th century CE', hi: 'नागार्जुन — 8-9वीं सदी ई.' }, ready: false },
       { id: 5, title: { en: 'Zinc Distillation — Zawar Mines', hi: 'जस्ता आसवन — ज़ावर खदानें' }, sub: { en: 'Rajasthan — predates Europe by 1,300 years', hi: 'राजस्थान — यूरोप से 1,300 साल पहले' }, ready: false },
       { id: 6, title: { en: 'Copper & Antimicrobial Science', hi: 'तांबा और रोगाणुरोधी विज्ञान' }, sub: { en: 'Tamra Jal — confirmed by modern studies', hi: 'तांबा जल — आधुनिक अध्ययनों द्वारा पुष्टि' }, ready: false },
@@ -53,10 +53,11 @@ const SECTIONS = [
     subtitle: { en: 'Ancient medicine, surgery and life sciences', hi: 'प्राचीन चिकित्सा, शल्य चिकित्सा और जीव विज्ञान' },
     color: '#8B5CF6',
     bg: 'rgba(139,92,246,0.12)',
-    sectionComingSoon: true,
+    sectionComingSoon: false,
     chapters: [
-      { id: 1, title: { en: 'Sushruta — World\'s First Plastic Surgeon', hi: 'सुश्रुत — विश्व के प्रथम प्लास्टिक सर्जन' }, sub: { en: 'Sushruta Samhita — 600 BCE', hi: 'सुश्रुत संहिता — 600 ईसा पूर्व' }, ready: false },
-      { id: 2, title: { en: 'Charaka Samhita — 1,120 Illnesses', hi: 'चरक संहिता — 1,120 रोग' }, sub: { en: 'Charaka — 700 BCE', hi: 'चरक — 700 ईसा पूर्व' }, ready: false },
+      { id: 'sushruta-surgery', title: { en: 'Sushruta — World\'s First Plastic Surgeon', hi: 'सुश्रुत — विश्व के प्रथम प्लास्टिक सर्जन' }, sub: { en: 'Sushruta Samhita — 600 BCE', hi: 'सुश्रुत संहिता — 600 ईसा पूर्व' }, ready: true },
+      { id: 'charaka-medicine', title: { en: 'Charaka Samhita — 1,120 Diseases', hi: 'चरक संहिता — 1,120 रोग' }, sub: { en: 'Charaka — 700 BCE', hi: 'चरक — 700 ईसा पूर्व' }, ready: true },
+      { id: 'jc-bose-plant-intelligence', title: { en: 'J.C. Bose & Plant Intelligence', hi: 'जे.सी. बोस और पादप बुद्धिमत्ता' }, sub: { en: 'Jagadish Chandra Bose — 1900 CE', hi: 'जगदीश चंद्र बोस — 1900 ई.' }, ready: true },
       { id: 3, title: { en: 'Tridosha & Greek Medicine', hi: 'त्रिदोष और ग्रीक चिकित्सा' }, sub: { en: 'Ayurveda → Greek medicine derivation', hi: 'आयुर्वेद → ग्रीक चिकित्सा व्युत्पत्ति' }, ready: false },
       { id: 4, title: { en: 'Ayurvedic Genetics — Before Mendel', hi: 'आयुर्वेदिक आनुवंशिकता — मेंडल से पहले' }, sub: { en: '2,000 years before Mendel\'s genetics', hi: 'मेंडल की आनुवंशिकता से 2,000 साल पहले' }, ready: false },
       { id: 5, title: { en: 'Plant Intelligence — Prana & Science', hi: 'पादप बुद्धिमत्ता — प्राण और विज्ञान' }, sub: { en: 'J.C. Bose\'s Vedic-inspired research', hi: 'जे.सी. बोस का वैदिक-प्रेरित शोध' }, ready: false },
@@ -113,7 +114,7 @@ export default function VedicSciencePage() {
             {[
               { n: '30', label: language === 'hi' ? 'कुल अध्याय' : 'Total Chapters' },
               { n: '3', label: language === 'hi' ? 'विषय खंड' : 'Subject Sections' },
-              { n: '5', label: language === 'hi' ? 'अभी उपलब्ध' : 'Available Now' },
+              { n: '11', label: language === 'hi' ? 'अभी उपलब्ध' : 'Available Now' },
             ].map(s => (
               <div key={s.label} style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: 22, fontWeight: 800, color: '#A78BFA' }}>{s.n}</div>

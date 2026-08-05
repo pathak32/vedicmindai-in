@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
 import { useLanguage } from '@/lib/LanguageContext';
-import { VEDIC_PHYSICS_CHAPTERS } from '@/data/vedicScienceContent';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { VEDIC_PHYSICS_CHAPTERS, VEDIC_CHEMISTRY_CHAPTERS, VEDIC_BIOLOGY_CHAPTERS } from '@/data/vedicScienceContent';
+
+// Only chapter 1 of each section is free — rest require subscription
+const FREE_CHAPTER_IDS = ['kanada-atomic-theory', 'delhi-iron-pillar', 'sushruta-surgery'];
 
 const tr = (f, lang) => {
   if (!f) return '';
@@ -13,7 +17,9 @@ const tr = (f, lang) => {
 };
 
 const SECTION_META = {
-  physics: { emoji: '⚛️', color: '#3B82F6', bg: 'rgba(59,130,246,0.12)' },
+  physics:   { emoji: '⚛️', color: '#3B82F6', bg: 'rgba(59,130,246,0.12)',  label: { en: 'VEDIC PHYSICS',    hi: 'वैदिक भौतिकी' } },
+  chemistry: { emoji: '🧪', color: '#10B981', bg: 'rgba(16,185,129,0.12)',  label: { en: 'VEDIC CHEMISTRY',  hi: 'वैदिक रसायन' } },
+  biology:   { emoji: '🌿', color: '#8B5CF6', bg: 'rgba(139,92,246,0.12)', label: { en: 'VEDIC BIOLOGY',    hi: 'वैदिक जीव विज्ञान' } },
 };
 
 // ── CONCEPT TAB ───────────────────────────────────────────────────────────
@@ -282,12 +288,22 @@ export default function VedicScienceChapterPage() {
   const { sectionId, chapterId } = useParams();
   const navigate = useNavigate();
   const { language } = useLanguage();
+  const { user, profile } = useVedicAuth();
   const [tab, setTab] = useState('concept');
 
   // Get chapters for this section
-  const allChapters = sectionId === 'physics' ? VEDIC_PHYSICS_CHAPTERS : [];
+  const allChapters =
+    sectionId === 'physics'   ? VEDIC_PHYSICS_CHAPTERS :
+    sectionId === 'chemistry' ? VEDIC_CHEMISTRY_CHAPTERS :
+    sectionId === 'biology'   ? VEDIC_BIOLOGY_CHAPTERS : [];
+
   const chapter = allChapters.find(c => c.id === chapterId);
   const meta = SECTION_META[sectionId] || SECTION_META.physics;
+
+  // Subscription gating — only chapter 1 of each section is free
+  const isFree = FREE_CHAPTER_IDS.includes(chapterId);
+  const hasPlan = profile?.plan && profile.plan !== 'free';
+  const isLocked = !isFree && !hasPlan;
 
   if (!chapter) {
     return (
@@ -299,6 +315,41 @@ export default function VedicScienceChapterPage() {
             <div style={{ fontWeight: 700, marginBottom: 8 }}>Chapter not found</div>
             <button onClick={() => navigate('/vedic-science')} style={{ color: meta.color, background: 'none', border: 'none', cursor: 'pointer', fontSize: 14 }}>
               ← Back to Vedic Science
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Subscription gate
+  if (isLocked) {
+    return (
+      <div style={{ minHeight: '100vh', background: '#0A0F1E', display: 'flex', flexDirection: 'column' }}>
+        <DashboardNavbar />
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
+          <div style={{ background: 'white', borderRadius: 20, padding: '40px 32px', maxWidth: 420, textAlign: 'center' }}>
+            <div style={{ fontSize: 44, marginBottom: 12 }}>🔒</div>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 800, color: '#0A1628', marginBottom: 8 }}>
+              {language === 'hi' ? 'Subscription आवश्यक है' : 'Subscription Required'}
+            </h2>
+            <p style={{ color: '#6B7280', fontSize: 14, lineHeight: 1.6, marginBottom: 6 }}>
+              <strong>{language === 'hi' ? tr(chapter.title, 'hi') : tr(chapter.title, 'en')}</strong>
+            </p>
+            <p style={{ color: '#6B7280', fontSize: 14, lineHeight: 1.6, marginBottom: 24 }}>
+              {language === 'hi'
+                ? 'इस अध्याय को खोलने के लिए Basic या Pro plan subscribe करें। Chapter 1 हर section का Free है।'
+                : 'Subscribe to Basic or Pro to unlock this chapter. Chapter 1 of every section is free.'}
+            </p>
+            <Link to="/pricing" style={{ display: 'block', padding: '12px 24px', borderRadius: 12, background: meta.color, color: 'white', fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 10 }}>
+              {language === 'hi' ? 'Subscribe करें' : 'Subscribe Now'}
+            </Link>
+            <button onClick={() => navigate('/vedic-science')} style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, width: '100%',
+              padding: '10px 20px', borderRadius: 12, background: 'transparent', border: '1px solid #E5E7EB',
+              color: '#374151', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, cursor: 'pointer',
+            }}>
+              ← {language === 'hi' ? 'वैदिक विज्ञान पर वापस' : 'Back to Vedic Science'}
             </button>
           </div>
         </div>
@@ -335,7 +386,7 @@ export default function VedicScienceChapterPage() {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
             <span style={{ fontSize: 10, fontWeight: 800, color: meta.color, letterSpacing: 1 }}>
-              ⚛️ {language === 'hi' ? 'वैदिक भौतिकी' : 'VEDIC PHYSICS'} · {language === 'hi' ? `अध्याय ${chapter.order}` : `CHAPTER ${chapter.order}`}
+              {meta.emoji} {language === 'hi' ? tr(meta.label, 'hi') : tr(meta.label, 'en')} · {language === 'hi' ? `अध्याय ${chapter.order}` : `CHAPTER ${chapter.order}`}
             </span>
           </div>
           <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 22, fontWeight: 800, color: 'white', margin: '0 0 6px' }}>
