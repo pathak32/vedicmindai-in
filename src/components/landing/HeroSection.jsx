@@ -107,6 +107,18 @@ export default function HeroSection() {
                 Trusted by <span className="text-white font-semibold">1,000+</span> students across CBSE, ICSE, UP Board &amp; State Boards
               </p>
             </div>
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <a href="https://play.google.com/store/apps/details?id=in.vedicmindai.app" target="_blank" rel="noopener noreferrer" style={{ display:"inline-flex", alignItems:"center", gap:6, background:"rgba(255,255,255,0.10)", border:"1px solid rgba(255,255,255,0.20)", borderRadius:30, padding:"5px 12px", textDecoration:"none" }}>
+                <span style={{ color:"#FBBF24", fontSize:13 }}>★★★★★</span>
+                <span style={{ color:"white", fontSize:13, fontWeight:700 }}>5.0</span>
+                <span style={{ color:"rgba(255,255,255,0.55)", fontSize:12 }}>on Google Play · 5 reviews</span>
+              </a>
+            </div>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {["CBSE","ICSE","IB","UP Board","Olympiad"].map(b => (
+                <span key={b} style={{ fontSize:11, fontWeight:600, padding:"3px 9px", borderRadius:20, background:"rgba(255,255,255,0.08)", border:"1px solid rgba(255,255,255,0.15)", color:"rgba(255,255,255,0.75)" }}>{b}</span>
+              ))}
+            </div>
           </motion.div>
 
           {/* Right - floating cards */}
