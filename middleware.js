@@ -46,6 +46,7 @@ export const config = {
     '/privacy',
     '/demo',
     '/about',
+    '/for-schools',
     '/vedic-science',
     '/life-skills',
   ],
@@ -93,6 +94,10 @@ const STATIC_META = {
   '/blog': {
     title: 'Vedic Maths Blog — Shortcuts, Tricks & Study Tips | VedicMindAI',
     description: '200+ articles on Vedic Mathematics tricks, Reasoning shortcuts, and Aptitude tips for Class 6–12 students and JEE/SSC/CAT/UPSC aspirants.',
+  },
+  '/for-schools': {
+    title: 'VedicMindAI for Schools — Vedic Maths Lab for CBSE, ICSE & Olympiad',
+    description: '30-day free pilot for schools. AI-powered Vedic Mathematics, Reasoning & Aptitude for Class 1–12. CBSE, ICSE, IB, Olympiad aligned. Request a demo today.',
   },
   '/about': {
     title: 'About VedicMindAI — Built by Hitesh Pathak | Founder Story',

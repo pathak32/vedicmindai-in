@@ -62,6 +62,7 @@ const TermsPage              = lazy(() => import('@/pages/TermsPage'));
 const PrivacyPolicy          = lazy(() => import('@/pages/PrivacyPolicy'));
 const CollaboratePage        = lazy(() => import('@/pages/CollaboratePage'));
 const AboutPage              = lazy(() => import('@/pages/AboutPage'));
+const ForSchoolsPage         = lazy(() => import('@/pages/ForSchoolsPage'));
 const ResetPasswordPage      = lazy(() => import('@/pages/ResetPasswordPage'));
 
 // ---------------------------------------------------------------------------
@@ -201,6 +202,7 @@ function RouteTransition() {
                 <Route path="/terms"               element={<TermsPage />} />
                 <Route path="/terms-of-service"    element={<TermsPage />} />
                 <Route path="/about"               element={<AboutPage />} />
+                <Route path="/for-schools"          element={<ForSchoolsPage />} />
                 <Route path="/privacy"             element={<PrivacyPolicy />} />
                 <Route path="/privacy-policy"      element={<PrivacyPolicy />} />
                 <Route path="/collaborate"         element={<CollaboratePage />} />
