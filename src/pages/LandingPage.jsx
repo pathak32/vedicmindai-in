@@ -6,6 +6,7 @@ import MindCheckSection from '@/components/landing/MindCheckSection';
 import SitePopup from '@/components/landing/SitePopup';
 import PurposeSection from '@/components/landing/PurposeSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
+import VedicAITutorWidget from '@/components/landing/VedicAITutorWidget';
 
 // Below-the-fold sections — lazy loaded so the hero and first
 // sections render immediately without waiting for the full bundle
@@ -49,6 +50,7 @@ export default function LandingPage() {
       <MindCheckSection />
       <PurposeSection />
       <FeaturesSection />
+      <VedicAITutorWidget />
       <Suspense fallback={null}>
         <FamiliesReviewsSection />
         <ComparisonSection />
