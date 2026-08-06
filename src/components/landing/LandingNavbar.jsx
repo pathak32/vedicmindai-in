@@ -9,6 +9,13 @@ export default function LandingNavbar() {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [bannerDismissed, setBannerDismissed] = useState(
+    () => typeof window !== 'undefined' && localStorage.getItem('playBannerDismissed') === '1'
+  );
+  const dismissBanner = () => {
+    setBannerDismissed(true);
+    localStorage.setItem('playBannerDismissed', '1');
+  };
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -70,6 +77,25 @@ export default function LandingNavbar() {
 
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <LanguageToggle size="xs" />
+
+            <a
+              href="https://play.google.com/store/apps/details?id=in.vedicmindai.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:flex items-center gap-2 h-9 px-3 rounded-xl border border-[#0A1628]/20 hover:border-[#0A1628]/50 hover:bg-[#F0F4FF] transition-colors flex-shrink-0"
+              title="Get VedicMindAI on Google Play"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.18 23.76c.3.17.64.24.99.2L14.9 12 11.1 8.2 3.18 23.76z" fill="#EA4335"/>
+                <path d="M20.64 10.35l-2.86-1.64L14.9 12l2.88 2.89 2.86-1.64a1.7 1.7 0 000-2.9z" fill="#FBBC04"/>
+                <path d="M3.18.24A1.7 1.7 0 001.5 2v20a1.7 1.7 0 001.68 1.76L14.9 12 3.18.24z" fill="#4285F4"/>
+                <path d="M3.18 23.76L14.9 12 11.1 8.2 3.18.24 14.9 12 3.18 23.76z" fill="#34A853"/>
+              </svg>
+              <div className="flex flex-col leading-none">
+                <span style={{fontSize:'8px',color:'#6B7280',letterSpacing:'0.3px',textTransform:'uppercase'}}>GET IT ON</span>
+                <span style={{fontSize:'11px',fontWeight:'700',color:'#0A1628'}}>Google Play</span>
+              </div>
+            </a>
             <Link
               to="/auth"
               className="hidden md:inline-flex items-center justify-center h-11 px-6 rounded-xl bg-[#0A1628] text-white text-sm font-semibold hover:bg-[#0D2252] transition-colors"
@@ -112,6 +138,7 @@ export default function LandingNavbar() {
               <Link to="/reviews" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>{t('reviews')}</Link>
               <button onClick={() => scrollTo('faq')} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]">{t('faqSectionLabel')}</button>
               <Link to="/blog" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>{t('blogNavLabel')}</Link>
+              <Link to="/about" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#0A1628] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>About</Link>
               <Link to="/demo" onClick={() => setMobileOpen(false)} className="text-left py-4 text-lg font-medium text-[#3B82F6] border-b border-[#F0F4FF]" style={{ textDecoration: 'none' }}>{t('tryFreeDemo')}</Link>
               <Link
                 to="/auth"
@@ -126,5 +153,31 @@ export default function LandingNavbar() {
         )}
       </AnimatePresence>
     </>
+
+      {/* Mobile sticky Play Store banner — patch-navbar-applied */}
+      {!bannerDismissed && (
+        <div className="md:hidden fixed bottom-0 left-0 right-0 z-[90] bg-white border-t border-[#E5E7EB] shadow-lg px-4 py-3 flex items-center gap-3">
+          <img src="/icons/icon-64.png" alt="VedicMindAI" className="w-10 h-10 rounded-xl flex-shrink-0" />
+          <div className="flex-1 min-w-0">
+            <div style={{fontSize:'13px',fontWeight:'700',color:'#0A1628'}}>Learn 10× faster on the App</div>
+            <div style={{fontSize:'11px',color:'#6B7280'}}>Free download · Vedic Maths + Reasoning</div>
+          </div>
+          <a
+            href="https://play.google.com/store/apps/details?id=in.vedicmindai.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 h-9 px-4 rounded-xl bg-[#0A1628] text-white flex items-center"
+            style={{fontSize:'13px',fontWeight:'700',textDecoration:'none'}}
+          >
+            Install
+          </a>
+          <button
+            onClick={dismissBanner}
+            className="flex-shrink-0 p-1 text-[#9CA3AF] hover:text-[#374151]"
+            aria-label="Dismiss"
+            style={{fontSize:'18px',lineHeight:1}}
+          >×</button>
+        </div>
+      )}
   );
 }
