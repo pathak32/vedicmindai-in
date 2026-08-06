@@ -45,6 +45,7 @@ export const config = {
     '/terms',
     '/privacy',
     '/demo',
+    '/about',
     '/life-skills',
   ],
 };
@@ -91,6 +92,10 @@ const STATIC_META = {
   '/blog': {
     title: 'Vedic Maths Blog — Shortcuts, Tricks & Study Tips | VedicMindAI',
     description: '200+ articles on Vedic Mathematics tricks, Reasoning shortcuts, and Aptitude tips for Class 6–12 students and JEE/SSC/CAT/UPSC aspirants.',
+  },
+  '/about': {
+    title: 'About VedicMindAI — Built by Hitesh Pathak | Founder Story',
+    description: 'Meet Hitesh Pathak, the telecom engineer who built VedicMindAI from scratch. Watch the founder video and learn why he created India\'s first AI-powered Vedic Mathematics platform.',
   },
   '/life-skills': {
     title: 'Life Skills — VedicMindAI™',
