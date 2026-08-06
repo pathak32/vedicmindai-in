@@ -97,6 +97,10 @@ const STATIC_META = {
     title: 'About VedicMindAI — Built by Hitesh Pathak | Founder Story',
     description: 'Meet Hitesh Pathak, the telecom engineer who built VedicMindAI from scratch. Watch the founder video and learn why he created India\'s first AI-powered Vedic Mathematics platform.',
   },
+  '/vedic-science': {
+    title: 'Vedic Science — Ancient Physics, Chemistry & Biology | VedicMindAI',
+    description: 'Explore how ancient Vedic knowledge maps to modern science. Vedic Physics, Vedic Chemistry, and Vedic Biology — explained through AI-powered lessons on VedicMindAI.',
+  },
   '/life-skills': {
     title: 'Life Skills — VedicMindAI™',
     description: 'Practical life skills tracks from VedicMindAI, alongside Vedic Mathematics, Reasoning, and Aptitude.',
