@@ -49,6 +49,7 @@ export const config = {
     '/for-schools',
     '/tools/vedic-square-calculator',
     '/tools/speed-math-test',
+    '/sat-math-tricks',
     '/vedic-science',
     '/life-skills',
   ],
@@ -100,6 +101,10 @@ const STATIC_META = {
   '/tools/vedic-square-calculator': {
     title: 'Free Vedic Square Calculator — Square Any Number in Seconds | VedicMindAI',
     description: 'Square any number instantly using Vedic Maths. See the exact sutra (Nikhilam, Ekadhikena, Duplex) with step-by-step working. Free tool — no signup.',
+  },
+  '/sat-math-tricks': {
+    title: 'Vedic Maths for SAT — Master No-Calculator Section | VedicMindAI',
+    description: 'Use Vedic Mathematics to ace the SAT no-calculator section. Ancient Indian speed-math techniques for SAT, ACT, GRE, GCSE. Free demo available.',
   },
   '/tools/speed-math-test': {
     title: 'Free Online Speed Maths Test — Vedic Maths + Reasoning + Aptitude | VedicMindAI',

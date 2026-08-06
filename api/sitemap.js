@@ -23,6 +23,7 @@ const STATIC_ROUTES = [
   { path: '/life-skills', priority: '0.6', changefreq: 'monthly' },
   { path: '/screenless', priority: '0.6', changefreq: 'monthly' },
   { path: '/tools/vedic-square-calculator', priority: '0.8', changefreq: 'monthly' },
+  { path: '/sat-math-tricks', priority: '0.8', changefreq: 'monthly' },
   { path: '/tools/speed-math-test', priority: '0.8', changefreq: 'monthly' },
   { path: '/for-schools', priority: '0.8', changefreq: 'monthly' },
   { path: '/about', priority: '0.8', changefreq: 'monthly' },
