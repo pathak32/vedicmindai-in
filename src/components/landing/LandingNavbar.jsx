@@ -152,7 +152,6 @@ export default function LandingNavbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
 
       {/* Mobile sticky Play Store banner — patch-navbar-applied */}
       {!bannerDismissed && (
@@ -179,5 +178,6 @@ export default function LandingNavbar() {
           >×</button>
         </div>
       )}
+    </>
   );
 }
