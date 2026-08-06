@@ -47,10 +47,29 @@ export default function LandingPage() {
       <SitePopup />
       <LandingNavbar />
       <HeroSection />
-      <MindCheckSection />
+      {/* ── Brain vs AI — two-column challenge ── */}
+      <div style={{ background: '#0A1628' }}>
+        <div style={{ textAlign: 'center', padding: '48px 20px 0', background: 'linear-gradient(to bottom, #0A1628, #0D1E3D)' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(245,158,11,0.12)', border: '1px solid rgba(245,158,11,0.25)', borderRadius: 30, padding: '6px 16px', marginBottom: 14 }}>
+            <span style={{ fontSize: 14 }}>⚡</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: '#F59E0B', letterSpacing: '0.5px', textTransform: 'uppercase' }}>The Challenge</span>
+          </div>
+          <h2 style={{ fontSize: 'clamp(22px,4vw,34px)', fontWeight: 800, color: 'white', margin: '0 0 10px' }}>
+            Brain vs AI — Who Solves It Faster?
+          </h2>
+          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', maxWidth: 500, margin: '0 auto' }}>
+            Test your mental speed on the left. Then watch Vedic AI break down the same problem on the right.
+          </p>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+          <MindCheckSection />
+          <div style={{ borderLeft: '1px solid rgba(255,255,255,0.08)' }}>
+            <VedicAITutorWidget />
+          </div>
+        </div>
+      </div>
       <PurposeSection />
       <FeaturesSection />
-      <VedicAITutorWidget />
       <Suspense fallback={null}>
         <FamiliesReviewsSection />
         <ComparisonSection />
