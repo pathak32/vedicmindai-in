@@ -46,6 +46,7 @@ export const config = {
     '/privacy',
     '/demo',
     '/about',
+    '/vedic-science',
     '/life-skills',
   ],
 };
@@ -100,6 +101,10 @@ const STATIC_META = {
   '/vedic-science': {
     title: 'Vedic Science — Ancient Physics, Chemistry & Biology | VedicMindAI',
     description: 'Explore how ancient Vedic knowledge maps to modern science. Vedic Physics, Vedic Chemistry, and Vedic Biology — explained through AI-powered lessons on VedicMindAI.',
+  },
+  '/vedic-science': {
+    title: 'Vedic Science — Ancient Physics, Chemistry \u0026 Biology | VedicMindAI',
+    description: 'Explore how ancient Vedic knowledge maps to modern science. Vedic Physics, Chemistry, and Biology explained through AI-powered lessons.',
   },
   '/life-skills': {
     title: 'Life Skills — VedicMindAI™',
