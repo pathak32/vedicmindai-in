@@ -63,6 +63,8 @@ const PrivacyPolicy          = lazy(() => import('@/pages/PrivacyPolicy'));
 const CollaboratePage        = lazy(() => import('@/pages/CollaboratePage'));
 const AboutPage              = lazy(() => import('@/pages/AboutPage'));
 const ForSchoolsPage         = lazy(() => import('@/pages/ForSchoolsPage'));
+const VedicSquareCalculatorPage = lazy(() => import('@/pages/VedicSquareCalculatorPage'));
+const SpeedMathTestPage        = lazy(() => import('@/pages/SpeedMathTestPage'));
 const ResetPasswordPage      = lazy(() => import('@/pages/ResetPasswordPage'));
 
 // ---------------------------------------------------------------------------
@@ -203,6 +205,8 @@ function RouteTransition() {
                 <Route path="/terms-of-service"    element={<TermsPage />} />
                 <Route path="/about"               element={<AboutPage />} />
                 <Route path="/for-schools"          element={<ForSchoolsPage />} />
+                <Route path="/tools/vedic-square-calculator" element={<VedicSquareCalculatorPage />} />
+                <Route path="/tools/speed-math-test"         element={<SpeedMathTestPage />} />
                 <Route path="/privacy"             element={<PrivacyPolicy />} />
                 <Route path="/privacy-policy"      element={<PrivacyPolicy />} />
                 <Route path="/collaborate"         element={<CollaboratePage />} />

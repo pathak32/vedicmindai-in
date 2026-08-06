@@ -47,6 +47,8 @@ export const config = {
     '/demo',
     '/about',
     '/for-schools',
+    '/tools/vedic-square-calculator',
+    '/tools/speed-math-test',
     '/vedic-science',
     '/life-skills',
   ],
@@ -94,6 +96,14 @@ const STATIC_META = {
   '/blog': {
     title: 'Vedic Maths Blog — Shortcuts, Tricks & Study Tips | VedicMindAI',
     description: '200+ articles on Vedic Mathematics tricks, Reasoning shortcuts, and Aptitude tips for Class 6–12 students and JEE/SSC/CAT/UPSC aspirants.',
+  },
+  '/tools/vedic-square-calculator': {
+    title: 'Free Vedic Square Calculator — Square Any Number in Seconds | VedicMindAI',
+    description: 'Square any number instantly using Vedic Maths. See the exact sutra (Nikhilam, Ekadhikena, Duplex) with step-by-step working. Free tool — no signup.',
+  },
+  '/tools/speed-math-test': {
+    title: 'Free Online Speed Maths Test — Vedic Maths + Reasoning + Aptitude | VedicMindAI',
+    description: 'Test your mental math speed free online. 3 questions, 5 seconds each. Vedic Maths, Reasoning & Aptitude. No signup required. Instant result.',
   },
   '/for-schools': {
     title: 'VedicMindAI for Schools — Vedic Maths Lab for CBSE, ICSE & Olympiad',
