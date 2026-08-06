@@ -1,35 +1,40 @@
-// api/vedic-tutor.js — Vercel Serverless Function
-// Proxies Claude API for the homepage AI Tutor Demo widget.
-// ANTHROPIC_API_KEY must be set in Vercel → Settings → Environment Variables.
+// api/vedic-tutor.js — Edge Function (Vercel Edge Runtime)
+export const config = { runtime: 'edge' };
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+export default async function handler(request) {
+  if (request.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405, headers: { 'Content-Type': 'application/json' },
+    });
   }
 
-  const { problem } = req.body || {};
-  if (!problem || typeof problem !== 'string' || problem.trim().length < 3) {
-    return res.status(400).json({ error: 'Please enter a valid math problem.' });
+  let problem;
+  try {
+    const body = await request.json();
+    problem = (body.problem || '').trim();
+  } catch {
+    return new Response(JSON.stringify({ error: 'Invalid request body.' }), {
+      status: 400, headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  if (!problem || problem.length < 3) {
+    return new Response(JSON.stringify({ error: 'Please enter a valid math problem.' }), {
+      status: 400, headers: { 'Content-Type': 'application/json' },
+    });
   }
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({ error: 'API key not configured.' });
+    return new Response(JSON.stringify({ error: 'API key not configured.' }), {
+      status: 500, headers: { 'Content-Type': 'application/json' },
+    });
   }
 
-  const systemPrompt = `You are a Vedic Mathematics expert tutor. Given a math problem, identify the single best Vedic sutra and show the working step by step.
-
-Respond ONLY with valid JSON — no markdown, no extra text, no backticks. Use this exact format:
-{
-  "sutra": "Nikhilam Navatashcaramam Dashatah",
-  "sutra_meaning": "All from 9, last from 10",
-  "why": "One sentence: why this sutra fits this problem",
-  "steps": ["Step 1 description", "Step 2 description", "...up to 6 steps max"],
-  "answer": 9312,
-  "speed_note": "One short sentence on how fast this is vs traditional method"
-}
-
-Keep steps concise and clear. Use × for multiplication. Numbers only in "answer" field.`;
+  const systemPrompt = `You are a Vedic Mathematics expert tutor. Given a math problem, identify the single best Vedic sutra and show step-by-step working.
+Respond ONLY with valid JSON — no markdown, no extra text, no backticks:
+{"sutra":"Nikhilam Navatashcaramam Dashatah","sutra_meaning":"All from 9, last from 10","why":"One sentence why this sutra fits","steps":["Step 1","Step 2","up to 6 steps"],"answer":9312,"speed_note":"One short sentence on speed vs traditional method"}
+Keep steps concise. Use x for multiplication. Numbers only in answer field.`;
 
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
@@ -43,31 +48,31 @@ Keep steps concise and clear. Use × for multiplication. Numbers only in "answer
         model: 'claude-sonnet-4-6',
         max_tokens: 700,
         system: systemPrompt,
-        messages: [{ role: 'user', content: `Solve using Vedic Maths: ${problem.trim()}` }],
+        messages: [{ role: 'user', content: 'Solve using Vedic Maths: ' + problem }],
       }),
     });
 
     if (!response.ok) {
-      const err = await response.text();
-      console.error('Anthropic API error:', err);
-      return res.status(502).json({ error: 'AI service error. Please try again.' });
+      return new Response(JSON.stringify({ error: 'AI service error. Please try again.' }), {
+        status: 502, headers: { 'Content-Type': 'application/json' },
+      });
     }
 
     const data = await response.json();
-    const raw = data.content?.[0]?.text || '';
+    const raw = (data.content?.[0]?.text || '').replace(/```json|```/g, '').trim();
 
     let parsed;
-    try {
-      // Strip accidental markdown fences if any
-      const clean = raw.replace(/```json|```/g, '').trim();
-      parsed = JSON.parse(clean);
-    } catch {
-      return res.status(502).json({ error: 'Could not parse AI response. Try a simpler problem.' });
-    }
+    try { parsed = JSON.parse(raw); }
+    catch { return new Response(JSON.stringify({ error: 'Could not parse AI response.' }), {
+      status: 502, headers: { 'Content-Type': 'application/json' },
+    }); }
 
-    return res.status(200).json(parsed);
+    return new Response(JSON.stringify(parsed), {
+      status: 200, headers: { 'Content-Type': 'application/json' },
+    });
   } catch (err) {
-    console.error('vedic-tutor error:', err);
-    return res.status(500).json({ error: 'Something went wrong. Please try again.' });
+    return new Response(JSON.stringify({ error: 'Something went wrong. Please try again.' }), {
+      status: 500, headers: { 'Content-Type': 'application/json' },
+    });
   }
 }
