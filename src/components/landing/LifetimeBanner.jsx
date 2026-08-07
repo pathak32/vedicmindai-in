@@ -1,20 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { supabase } from '@/lib/supabaseClient';
+import React from 'react';
+
+// Lifetime seats counter — updates when Razorpay lifetime flow is built
+// Starting display: 199 seats available
+const LIFETIME_SEATS_LEFT = 199;
+const LIFETIME_TOTAL = 200;
 
 export default function LifetimeBanner({ showUSD }) {
-  const [claimed, setClaimed] = useState(0);
-
-  useEffect(() => {
-    supabase
-      .from('subscriptions')
-      .select('id', { count: 'exact', head: true })
-      .eq('plan', 'basic_lifetime')
-      .then(({ count }) => { if (count) setClaimed(count); })
-      .catch(() => {});
-  }, []);
-
-  const seatsLeft = Math.max(0, 199 - claimed);
-  const pct = Math.min(100, Math.round((claimed / 200) * 100));
+  const seatsLeft = LIFETIME_SEATS_LEFT;
+  const pct = Math.round(((LIFETIME_TOTAL - seatsLeft) / LIFETIME_TOTAL) * 100);
   const bar = pct > 80 ? '#EF4444' : pct > 50 ? '#F59E0B' : '#22C55E';
 
   return (
@@ -30,8 +23,8 @@ export default function LifetimeBanner({ showUSD }) {
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 13, margin: '0 0 14px', lineHeight: 1.55 }}>One-time payment. No monthly charges. Basic features permanently. Limited to 200 founding members only.</p>
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 5 }}>
-              <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.45)' }}>{claimed} of 200 seats claimed</span>
-              <span style={{ fontSize: 11, color: seatsLeft === 0 ? '#9CA3AF' : '#FCA5A5', fontWeight: 600 }}>{seatsLeft === 0 ? 'All taken' : seatsLeft + ' remaining'}</span>
+              <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.45)' }}>{LIFETIME_TOTAL - seatsLeft} of {LIFETIME_TOTAL} seats claimed</span>
+              <span style={{ fontSize: 11, color: '#FCA5A5', fontWeight: 600 }}>{seatsLeft} remaining</span>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: 99, height: 6 }}>
               <div style={{ height: 6, borderRadius: 99, background: bar, width: pct + '%' }} />
@@ -43,10 +36,9 @@ export default function LifetimeBanner({ showUSD }) {
           <div style={{ color: '#F59E0B', fontSize: 34, fontWeight: 800, lineHeight: 1 }}>{showUSD ? '$499' : 'Rs.9,999'}</div>
           <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: 11, marginBottom: 14 }}>one-time payment</div>
           <button
-            disabled={seatsLeft === 0}
             onClick={() => alert('Lifetime plan launching soon! Email support@vedicmindai.in to reserve your spot.')}
-            style={{ background: seatsLeft === 0 ? '#374151' : '#F59E0B', color: seatsLeft === 0 ? '#9CA3AF' : '#0A1628', border: 'none', borderRadius: 10, padding: '11px 24px', fontWeight: 700, fontSize: 14, cursor: seatsLeft === 0 ? 'not-allowed' : 'pointer' }}>
-            {seatsLeft === 0 ? 'Sold Out' : 'Get Lifetime Access'}
+            style={{ background: '#F59E0B', color: '#0A1628', border: 'none', borderRadius: 10, padding: '11px 24px', fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>
+            Get Lifetime Access
           </button>
         </div>
       </div>
