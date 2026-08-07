@@ -111,7 +111,7 @@ const PLANS = [
       { text: 'Priority Support', included: true },
     ],
   }
-];];
+];
 
 const PLAN_DISPLAY_NAMES = {
   basic: 'Basic', pro: 'Pro', family: 'Family',
