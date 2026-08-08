@@ -38,7 +38,9 @@ export default async function handler(req, res) {
     const data = await response.json();
     if (!response.ok) return { ok: false, error: { status: response.status, detail: data } };
     const raw = (data.content?.[0]?.text || '').replace(/```json|```/g, '').trim();
-    try { return { ok: true, json: JSON.parse(raw) }; }
+    const match = raw.match(/\{[\s\S]*\}/);
+    const jsonText = match ? match[0] : raw;
+    try { return { ok: true, json: JSON.parse(jsonText) }; }
     catch { return { ok: true, json: null, raw }; }
   }
 
