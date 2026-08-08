@@ -305,8 +305,8 @@ export default function PricingPage() {
       return;
     }
 
-    const planId = isAnnual ? `${planObj.id}_annual` : planObj.id;
-    const planLabel = isAnnual ? `${planObj.name} (Annual)` : planObj.name;
+    const planId = planObj.id === 'basic_lifetime' ? 'basic_lifetime' : (isAnnual ? `${planObj.id}_annual` : planObj.id);
+    const planLabel = planObj.id === 'basic_lifetime' ? 'Basic (Lifetime)' : (isAnnual ? `${planObj.name} (Annual)` : planObj.name);
 
     setPaymentLoading(true);
     try {
@@ -497,7 +497,7 @@ export default function PricingPage() {
           ))}
         </div>
 
-        <LifetimeBanner showUSD={showUSD} />
+        <LifetimeBanner showUSD={showUSD} onBuy={() => initiatePayment({ id: 'basic_lifetime', name: 'Basic Lifetime', highlight: false })} />
         {/* Value comparison footer */}
         <div style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(30,64,175,0.12)', borderRadius: 16, padding: '24px 28px', marginTop: 40, textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#0A1628', fontWeight: 500, marginBottom: 6 }}>

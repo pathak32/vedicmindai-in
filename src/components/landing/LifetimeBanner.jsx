@@ -5,7 +5,7 @@ import React from 'react';
 const LIFETIME_SEATS_LEFT = 199;
 const LIFETIME_TOTAL = 200;
 
-export default function LifetimeBanner({ showUSD }) {
+export default function LifetimeBanner({ showUSD, onBuy }) {
   const seatsLeft = LIFETIME_SEATS_LEFT;
   const pct = Math.round(((LIFETIME_TOTAL - seatsLeft) / LIFETIME_TOTAL) * 100);
   const bar = pct > 80 ? '#EF4444' : pct > 50 ? '#F59E0B' : '#22C55E';
@@ -36,7 +36,7 @@ export default function LifetimeBanner({ showUSD }) {
           <div style={{ color: '#F59E0B', fontSize: 34, fontWeight: 800, lineHeight: 1 }}>{showUSD ? '$499' : 'Rs.9,999'}</div>
           <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: 11, marginBottom: 14 }}>one-time payment</div>
           <button
-            onClick={() => alert('Lifetime plan launching soon! Email support@vedicmindai.in to reserve your spot.')}
+            onClick={onBuy}
             style={{ background: '#F59E0B', color: '#0A1628', border: 'none', borderRadius: 10, padding: '11px 24px', fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>
             Get Lifetime Access
           </button>
