@@ -30,7 +30,9 @@ const PLAN_AMOUNTS = {
   basic_annual: 399900,    // ₹3,999/year
   pro: 99900,              // ₹999/month
   pro_annual: 799900,      // ₹7,999/year
-  basic_lifetime: 999900,  // ₹9,999 one-time
+  basic_lifetime: 999900,    // ₹9,999 one-time
+  basic_founding: 12500,       // ₹125 — Founding 500 early bird (months 1 & 2)
+  basic_founding_reduced: 25000, // ₹250 — Founding member loyalty (XP >= 200)
 
 };
 
@@ -118,6 +120,7 @@ export default async function handler(req, res) {
 
     // Look up Knowledge Points discount — server-side only, never from browser
     const isAnnual = plan.includes('_annual');
+    const isFounding = plan.startsWith('basic_founding');
     const discountPct = await getEarnedDiscountPct(userId, isAnnual);
     const discountedAmount = discountPct > 0
       ? Math.round(baseAmount * (1 - discountPct / 100))

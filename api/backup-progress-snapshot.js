@@ -32,6 +32,61 @@
 
 import { createClient } from '@supabase/supabase-js';
 
+
+// ── Founding 500 Monthly XP Check ───────────────────────────────────────────
+async function checkFoundingMemberXP(sb) {
+  const thirtyDaysAgo = new Date(Date.now() - 30 * 86400000).toISOString();
+  // Get founding members due for XP check (last check > 30 days ago, billing_month >= 2)
+  const { data: members } = await sb
+    .from('founding_members')
+    .select('user_id, billing_month, last_xp_check')
+    .eq('is_active', true)
+    .gte('billing_month', 2)
+    .or(`last_xp_check.is.null,last_xp_check.lt.${thirtyDaysAgo}`);
+
+  if (!members || members.length === 0) return { checked: 0 };
+
+  let checked = 0;
+  for (const member of members) {
+    try {
+      const since = new Date(Date.now() - 30 * 86400000).toISOString();
+      // Sum XP earned in last 30 days from xp_transactions table
+      const { data: xpData } = await sb
+        .from('xp_transactions')
+        .select('amount')
+        .eq('user_id', member.user_id)
+        .gte('created_at', since);
+
+      const totalXP = (xpData || []).reduce((sum, r) => sum + (r.amount || 0), 0);
+      const qualifies = totalXP >= 200;
+
+      if (!qualifies) {
+        // XP too low — exit from founding programme
+        await sb.from('founding_members').update({
+          is_active: false,
+          exited_reason: 'low_xp',
+          exited_at: new Date().toISOString(),
+          last_month_xp: totalXP,
+        }).eq('user_id', member.user_id);
+
+        // Downgrade to regular basic plan
+        await sb.from('profiles').update({ planStatus: 'basic' }).eq('id', member.user_id);
+      } else {
+        // XP qualifies — update last check
+        await sb.from('founding_members').update({
+          last_xp_check: new Date().toISOString(),
+          last_month_xp: totalXP,
+          billing_month: member.billing_month + 1,
+        }).eq('user_id', member.user_id);
+      }
+      checked++;
+    } catch (e) {
+      console.error('XP check failed for', member.user_id, e.message);
+    }
+  }
+  return { checked };
+}
+
 export default async function handler(req, res) {
   // Vercel Cron sends a GET request with this header — reject anything else
   // so this endpoint can't be triggered by a random public request.
