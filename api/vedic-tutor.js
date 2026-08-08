@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const problem = (req.body?.problem || '').trim();
   if (!problem || problem.length < 3) return res.status(400).json({ error: 'Please enter a valid math problem.' });
 
-  const MATH_ONLY = /^[\d+\-×÷*/^%√().\s]+$/;
+  const MATH_ONLY = /^[\dxX+\-×÷*/^%√().\s]+$/;
   if (!MATH_ONLY.test(problem)) {
     return res.status(400).json({ error: 'Please enter only numbers and math symbols (+ - × ÷ ^ %).' });
   }

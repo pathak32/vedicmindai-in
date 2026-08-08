@@ -115,7 +115,7 @@ export default function VedicAITutorWidget() {
             </div>
           </div>
           <div style={{ display:'flex', gap:10 }}>
-            <input value={input} onChange={e=>{const v=e.target.value; if(/^[\d+\-×÷*/^%√().\s]*$/.test(v)) setInput(v);}} onKeyDown={e=>e.key==='Enter'&&solve()} placeholder='e.g. 97 x 96 or type your own...' style={{ flex:1, background:'rgba(255,255,255,0.08)', border:'1.5px solid rgba(255,255,255,0.18)', borderRadius:12, padding:'12px 16px', color:'white', fontSize:16, outline:'none' }} />
+            <input value={input} onChange={e=>{const v=e.target.value; if(/^[\dxX+\-×÷*/^%√().\s]*$/.test(v)) setInput(v);}} onKeyDown={e=>e.key==='Enter'&&solve()} placeholder='e.g. 97 x 96 or type your own...' style={{ flex:1, background:'rgba(255,255,255,0.08)', border:'1.5px solid rgba(255,255,255,0.18)', borderRadius:12, padding:'12px 16px', color:'white', fontSize:16, outline:'none' }} />
             <button onClick={()=>solve()} disabled={loading||!input.trim()} style={{ background:loading?'rgba(245,158,11,0.4)':SAFFRON, color:DARK_BLUE, border:'none', borderRadius:12, padding:'12px 22px', fontWeight:700, fontSize:14, cursor:loading?'not-allowed':'pointer' }}>
               {loading ? '✨ Solving…' : '⚡ Solve'}
             </button>
