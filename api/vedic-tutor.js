@@ -38,10 +38,24 @@ export default async function handler(req, res) {
     const data = await response.json();
     if (!response.ok) return { ok: false, error: { status: response.status, detail: data } };
     const raw = (data.content?.[0]?.text || '').replace(/```json|```/g, '').trim();
-    const match = raw.match(/\{[\s\S]*\}/);
-    const jsonText = match ? match[0] : raw;
-    try { return { ok: true, json: JSON.parse(jsonText) }; }
-    catch { return { ok: true, json: null, raw }; }
+    function extractLastJson(text) {
+      const end = text.lastIndexOf('}');
+      if (end === -1) return null;
+      let depth = 0;
+      for (let i = end; i >= 0; i--) {
+        if (text[i] === '}') depth++;
+        else if (text[i] === '{') {
+          depth--;
+          if (depth === 0) {
+            try { return JSON.parse(text.slice(i, end + 1)); } catch { return null; }
+          }
+        }
+      }
+      return null;
+    }
+    const parsed = extractLastJson(raw);
+    if (parsed) return { ok: true, json: parsed };
+    return { ok: true, json: null, raw };
   }
 
   try {
