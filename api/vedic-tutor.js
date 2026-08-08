@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 700,
+      body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 1000, temperature: 0.2,
         system: systemPrompt,
         messages: [{ role: 'user', content: 'Solve with Vedic Maths: ' + problem }] }),
     });
