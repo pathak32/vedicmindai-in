@@ -27,11 +27,11 @@ function getSupabaseAdmin() {
 
 const PLAN_AMOUNTS = {
   basic: 49900,            // ₹499/month
-  basic_annual: 499000,    // ₹4,990/year
+  basic_annual: 399900,    // ₹3,999/year
   pro: 99900,              // ₹999/month
-  pro_annual: 999000,      // ₹9,990/year
-  family: 149900,          // ₹1,499/month
-  family_annual: 1499000,  // ₹14,990/year
+  pro_annual: 799900,      // ₹7,999/year
+  basic_lifetime: 999900,  // ₹9,999 one-time
+
 };
 
 // Maximum discount allowed — 50%. Even if a user has earned 50% in the
