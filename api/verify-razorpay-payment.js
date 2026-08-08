@@ -45,7 +45,9 @@ export default async function handler(req, res) {
     const basePlan = plan.replace('_annual', '');
     const isAnnual = plan.includes('_annual');
     const periodMs = isAnnual ? 365 * 86400000 : 30 * 86400000;
-    const expiresAt = new Date(Date.now() + periodMs).toISOString();
+    const expiresAt = isLifetime
+      ? new Date('2099-12-31T23:59:59.000Z').toISOString()
+      : new Date(Date.now() + periodMs).toISOString();
 
     const { error: profileErr } = await supabase
       .from('profiles')
