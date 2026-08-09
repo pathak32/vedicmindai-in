@@ -14,7 +14,7 @@ from pathlib import Path
 SURL="https://xlyfyqjmzwyyoqurvuzx.supabase.co"
 SKEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhseWZ5cWptend5eW9xdXJ2dXp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA3MjgxOTQsImV4cCI6MjA5NjMwNDE5NH0.4CXU3ksfCGfIA77-sFXebWi-hjDVjCsT-UdrMXYFLEM"
 W,H,FPS=1080,1920,30
-SECS=[3,2,5]
+SECS=[3,4,5]
 OUT=Path("video_output")
 AUD=Path("assets/95bpm_beat.mp3")
 WAV=Path("assets/_beat_v3.wav")
