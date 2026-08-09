@@ -239,7 +239,7 @@ export default function AdminSocialExport() {
 
   const filtered = useMemo(() => posts.filter(p => {
     const mSearch = !search.trim() || p.title.toLowerCase().includes(search.toLowerCase()) || (p.category||'').toLowerCase().includes(search.toLowerCase());
-    const mCat = cat==='All' || p.category===cat;
+    const mCat = cat==='All' || (cat==='Vedic vs Abacus' ? (p.subcategory||'')===cat : p.category===cat && (p.subcategory||'')!=='Vedic vs Abacus');
     const isPosted = postedIds.has(p.id);
     const mFilter = filter==='all'?true:filter==='posted'?isPosted:!isPosted;
     return mSearch && mCat && mFilter;
@@ -395,6 +395,22 @@ export default function AdminSocialExport() {
               <div style={{ display:'flex', gap:13, flexWrap:'wrap' }}>
                 <div style={{ flex:'0 0 190px' }}><VideoPlayer cd={cd} category={sel.category}/></div>
                 <div style={{ flex:1 }}>
+                  <div style={{ background:'rgba(34,197,94,0.07)', border:'1px solid rgba(34,197,94,0.18)', borderRadius:9, padding:'12px 12px', marginBottom:12 }}>
+                    <p style={{ color:'#4ADE80', fontSize:12, fontWeight:700, margin:'0 0 8px' }}>🎬 How to Export 10s Video</p>
+                    <div style={{ display:'flex', flexDirection:'column', gap:5 }}>
+                      {[
+                        {step:'1', text:'Click ▶ Play — video starts automatically'},
+                        {step:'2', text:'Windows: Press Win+Alt+R to start screen recording'},
+                        {step:'3', text:'Let the 10s play fully → Win+Alt+R again to stop'},
+                        {step:'4', text:'File saves to Videos folder → upload to Instagram Reels / WhatsApp Status'},
+                      ].map(s=>(
+                        <div key={s.step} style={{ display:'flex', gap:8 }}>
+                          <span style={{ width:18, height:18, borderRadius:'50%', background:'rgba(34,197,94,0.2)', color:'#4ADE80', fontSize:10, fontWeight:800, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>{s.step}</span>
+                          <span style={{ color:'#9CA3AF', fontSize:11, lineHeight:1.4 }}>{s.text}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                   {[{t:'Format',v:'9:16 · Reels/Stories/Shorts'},{t:'Duration',v:'10 seconds'},{t:'Slide 1',v:'0–3s · Hook · Navy'},{t:'Slide 2',v:'3–5s · Proof · Cream'},{t:'Slide 3',v:'5–10s · CTA · Purple-Pink'},{t:'Transition',v:'Fade 0.15s'}].map(r=>(
                     <div key={r.t} style={{ display:'flex', gap:9, padding:'6px 0', borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
                       <span style={{ color:'#6B7280', fontSize:11, width:80, flexShrink:0 }}>{r.t}</span>
