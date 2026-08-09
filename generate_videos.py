@@ -30,12 +30,13 @@ except ImportError:
 # ── HOOK QUESTION ENGINE ──────────────────────────────────────────────────────
 def make_hook_question(post):
     """Generate a curiosity-gap question hook based on article type."""
-    title = post.get("title","").lower()
-    cat   = post.get("category","").lower()
-    sub   = (post.get("subcategory") or "").lower()
+    title    = post.get("title","").lower()
+    cat      = post.get("category","").lower()
+    sub      = (post.get("subcategory") or "").lower()
+    cat_code = (post.get("cat_code") or "").upper()
 
-    # Template 1: Abacus vs Vedic comparison
-    if "abacus" in title or "abacus" in sub:
+    # Template 1: Abacus vs Vedic — VA articles OR abacus in title/sub
+    if cat_code=="VA" or "abacus" in title or "abacus" in sub:
         if "class 5" in title or "retention" in title:
             return "Did you know abacus training\nbecomes useless after Class 5?"
         if "cost" in title or "price" in title or "lakh" in title:
