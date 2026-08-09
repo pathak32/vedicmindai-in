@@ -38,7 +38,7 @@ function getPlatformCopy(post, d) {
   const tags = genHashtags(post);
   const bul = d.bullets.map(b=>`${b.icon} ${b.text}`).join('\n');
   return [
-    {key:'instagram',label:'Instagram',color:'#E1306C',text:`${d.hook} 🤯\n\n${d.hookSub}\n\n${bul}\n\n👉 FREE demo → Link in bio\n.\n.\n.\n${tags}`},
+    {key:'instagram',label:'Instagram',color:'#E1306C',text:`[${post.serial_id||''}] ${d.hook} 🤯\n\n${d.hookSub}\n\n${bul}\n\n👉 FREE demo → Link in bio\n.\n.\n.\n${tags}`},
     {key:'facebook',label:'Facebook',color:'#1877F2',text:`${post.title}\n\n${d.hookSub}\n\n${bul}\n\n🚀 Try FREE: vedicmindai.in/demo\n\n${tags}`},
     {key:'whatsapp',label:'WhatsApp',color:'#25D366',text:`*${d.hook}*\n_${d.hookSub}_\n\n${bul}\n\n🔗 Free demo: vedicmindai.in/demo`},
     {key:'twitter',label:'Twitter/X',color:'#1DA1F2',text:`${d.hook}\n\n${d.bullets.slice(0,2).map(b=>`${b.icon} ${b.text}`).join(' | ')}\n\nFREE → vedicmindai.in/demo\n#VedicMaths #SpeedMaths`},
@@ -272,7 +272,7 @@ export default function AdminSocialExport(){
     (async()=>{
       try{
         const sb=await getSupabase();
-        const{data,error}=await sb.from('blog_posts').select('id,title,slug,category,subcategory,content,status,published_at').order('published_at',{ascending:false});
+        const{data,error}=await sb.from('blog_posts').select('id,title,slug,category,subcategory,content,status,published_at,serial_id,cat_code,cat_num').order('published_at',{ascending:false});
         if(error)throw error;
         setPosts(data||[]);
         if(data?.length)setSelId(data[0].id);
@@ -288,7 +288,7 @@ export default function AdminSocialExport(){
   const copy=(text,key)=>{navigator.clipboard.writeText(text).then(()=>{setCopied(key);setTimeout(()=>setCopied(null),2000);});};
 
   const filtered=useMemo(()=>posts.filter(p=>{
-    const ms=!search.trim()||p.title.toLowerCase().includes(search.toLowerCase())||(p.category||'').toLowerCase().includes(search.toLowerCase());
+    const ms=!search.trim()||p.title.toLowerCase().includes(search.toLowerCase())||(p.category||'').toLowerCase().includes(search.toLowerCase())||(p.serial_id||'').toLowerCase().includes(search.toLowerCase());
     const mc=cat==='All'||(cat==='Vedic vs Abacus'?(p.subcategory||'')===cat:p.category===cat&&(p.subcategory||'')||cat==='Vedic Maths'?p.category==='Vedic Maths':p.category===cat);
     const ip=postedIds.has(p.id);
     const mf=filter==='all'?true:filter==='posted'?ip:!ip;
@@ -347,7 +347,7 @@ export default function AdminSocialExport(){
                   style={{padding:'8px 9px',borderRadius:9,cursor:'pointer',marginBottom:4,position:'relative',background:selId===p.id?'rgba(245,158,11,0.10)':'rgba(255,255,255,0.03)',border:selId===p.id?`1px solid rgba(245,158,11,0.3)`:'1px solid rgba(255,255,255,0.05)'}}>
                   {done&&<span style={{position:'absolute',top:5,right:5,background:'rgba(34,197,94,0.15)',border:'1px solid rgba(34,197,94,0.3)',borderRadius:5,padding:'1px 5px',fontSize:8,fontWeight:700,color:'#4ADE80'}}>✓</span>}
                   <p style={{color:selId===p.id?S:W,fontWeight:600,fontSize:11,margin:'0 0 2px',lineHeight:1.3,paddingRight:done?28:0}}>{p.title}</p>
-                  <p style={{color:'#6B7280',fontSize:9,margin:0}}>{p.category||'—'}</p>
+                  <div style={{display:'flex',gap:5,alignItems:'center',marginTop:2}}><span style={{background:'rgba(245,158,11,0.15)',border:'1px solid rgba(245,158,11,0.25)',borderRadius:5,padding:'1px 6px',fontSize:9,fontWeight:800,color:'#F59E0B',letterSpacing:'0.3px'}}>{p.serial_id||'—'}</span><span style={{color:'#6B7280',fontSize:9}}>{p.category||'—'}</span></div>
                 </div>
               );
             })}
@@ -359,7 +359,7 @@ export default function AdminSocialExport(){
           <div style={{flex:1,minWidth:280}}>
             <div style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.07)',borderRadius:11,padding:'11px 13px',marginBottom:11,display:'flex',justifyContent:'space-between',alignItems:'flex-start',flexWrap:'wrap',gap:8}}>
               <div style={{flex:1}}>
-                <span style={{fontSize:10,fontWeight:700,color:S,textTransform:'uppercase',letterSpacing:'0.5px'}}>{sel.category}</span>
+                <div style={{display:'flex',alignItems:'center',gap:8}}><span style={{background:'rgba(245,158,11,0.15)',border:'1px solid rgba(245,158,11,0.3)',borderRadius:6,padding:'2px 8px',fontSize:11,fontWeight:900,color:'#F59E0B',letterSpacing:'0.5px'}}>{sel.serial_id||''}</span><span style={{fontSize:10,fontWeight:700,color:S,textTransform:'uppercase',letterSpacing:'0.5px'}}>{sel.category}</span></div>
                 <p style={{color:W,fontWeight:700,fontSize:12,margin:'2px 0 0',lineHeight:1.3}}>{sel.title}</p>
               </div>
               <button onClick={()=>markPosted(sel.id)} disabled={isPosted}
