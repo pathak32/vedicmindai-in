@@ -4,6 +4,123 @@ import { getSupabase } from '@/lib/supabaseClient';
 // ── Constants ────────────────────────────────────────────────────────────────
 const S = '#F59E0B', N = '#0A1628', W = '#FFFFFF';
 const CTA_A = '#6D28D9', CTA_B = '#DB2777';
+
+// ── Canvas-based slide downloader ────────────────────────────────────────────
+async function loadH2C() {
+  if (window.html2canvas) return window.html2canvas;
+  return new Promise(res => {
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+    s.onload = () => res(window.html2canvas);
+    document.head.appendChild(s);
+  });
+}
+
+async function downloadSlides(refs, title) {
+  const h2c = await loadH2C();
+  const names = ['1-Hook','2-Proof','3-CTA'];
+  for (let i = 0; i < 3; i++) {
+    if (!refs[i] || !refs[i].current) continue;
+    const canvas = await h2c(refs[i].current, { scale:2, useCORS:true, logging:false, backgroundColor:null });
+    const a = document.createElement('a');
+    a.download = title.slice(0,25).replace(/[^a-z0-9]/gi,'_') + '_Slide' + names[i] + '.png';
+    a.href = canvas.toDataURL('image/png');
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    await new Promise(r => setTimeout(r, 600));
+  }
+}
+
+function drawRoundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath(); ctx.moveTo(x+r,y);
+  ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y); ctx.closePath();
+}
+
+function paintHook(ctx, W, H, hook, hookSub) {
+  const g = ctx.createLinearGradient(0,0,W,H);
+  g.addColorStop(0,'#0A1628'); g.addColorStop(1,'#1E3A5F');
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+  ctx.font='bold '+(W*0.06)+'px system-ui'; ctx.fillStyle='rgba(255,255,255,0.35)';
+  ctx.textAlign='center'; ctx.fillText('DID YOU KNOW?',W/2,H*0.38);
+  ctx.font='bold '+(W*0.09)+'px system-ui'; ctx.fillStyle='#F59E0B';
+  const words=hook.split(' '); let line='',y=H*0.46,lh=W*0.11;
+  for(const w of words){const t=line?line+' '+w:w;
+    if(ctx.measureText(t).width>W*0.85&&line){ctx.fillText(line,W/2,y);line=w;y+=lh;}else{line=t;}}
+  ctx.fillText(line,W/2,y);
+  ctx.font=(W*0.055)+'px system-ui'; ctx.fillStyle='rgba(255,255,255,0.65)';
+  ctx.fillText(hookSub.slice(0,55),W/2,y+lh*1.1);
+  ctx.font='bold '+(W*0.04)+'px system-ui'; ctx.fillStyle='rgba(255,255,255,0.4)';
+  ctx.fillText('VedicMindAI',W/2,H*0.9);
+}
+
+function paintProof(ctx, W, H, bullets) {
+  ctx.fillStyle='#F8F6F0'; ctx.fillRect(0,0,W,H);
+  ctx.font='bold '+(W*0.065)+'px system-ui'; ctx.fillStyle='#0A1628'; ctx.textAlign='center';
+  ctx.fillText("Here's the truth",W/2,H*0.22);
+  ctx.fillStyle='#F59E0B'; ctx.fillRect(W*0.42,H*0.255,W*0.16,4);
+  bullets.slice(0,3).forEach((b,i)=>{
+    const by=H*(0.35+i*0.18);
+    ctx.fillStyle='#FFFFFF'; drawRoundRect(ctx,W*0.06,by,W*0.88,H*0.14,10); ctx.fill();
+    ctx.shadowColor='rgba(10,22,40,0.08)'; ctx.shadowBlur=8;
+    ctx.shadowColor='transparent'; ctx.shadowBlur=0;
+    ctx.font=(W*0.07)+'px system-ui'; ctx.textAlign='left';
+    ctx.fillText(b.icon,W*0.1,by+H*0.09);
+    ctx.font='bold '+(W*0.05)+'px system-ui'; ctx.fillStyle='#0A1628';
+    ctx.fillText(b.text.slice(0,38),W*0.22,by+H*0.09);
+  });
+  ctx.textAlign='center'; ctx.font='bold '+(W*0.04)+'px system-ui'; ctx.fillStyle='#9CA3AF';
+  ctx.fillText('VedicMindAI',W/2,H*0.9);
+}
+
+function paintCTA(ctx, W, H) {
+  const g=ctx.createLinearGradient(0,0,W,H);
+  g.addColorStop(0,'#6D28D9'); g.addColorStop(1,'#DB2777');
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+  ctx.font=(W*0.055)+'px system-ui'; ctx.fillStyle='rgba(255,255,255,0.55)'; ctx.textAlign='center';
+  ctx.fillText('TRY IT YOURSELF →',W/2,H*0.3);
+  ctx.font='bold '+(W*0.085)+'px system-ui'; ctx.fillStyle='#FFFFFF';
+  ctx.fillText('Ancient wisdom.',W/2,H*0.42);
+  ctx.fillStyle='#FDE68A'; ctx.fillText('Modern speed.',W/2,H*0.52);
+  ctx.fillStyle='rgba(255,255,255,0.15)'; drawRoundRect(ctx,W*0.15,H*0.6,W*0.7,H*0.14,12); ctx.fill();
+  ctx.font='bold '+(W*0.065)+'px system-ui'; ctx.fillStyle='#FFFFFF';
+  ctx.fillText('🚀 FREE Demo',W/2,H*0.685);
+  ctx.font=(W*0.045)+'px system-ui'; ctx.fillStyle='rgba(255,255,255,0.6)';
+  ctx.fillText('vedicmindai.in/demo',W/2,H*0.74);
+  ctx.font='bold '+(W*0.04)+'px system-ui'; ctx.fillStyle='rgba(255,255,255,0.4)';
+  ctx.fillText('@vedicmindai',W/2,H*0.9);
+}
+
+async function downloadVideo(hook, hookSub, bullets) {
+  const CW=540, CH=960;
+  const cnv=document.createElement('canvas'); cnv.width=CW; cnv.height=CH;
+  const ctx=cnv.getContext('2d');
+  const mimeType = MediaRecorder.isTypeSupported('video/webm;codecs=vp9') ? 'video/webm;codecs=vp9' : 'video/webm';
+  const stream=cnv.captureStream(30);
+  const rec=new MediaRecorder(stream,{mimeType, videoBitsPerSecond:2500000});
+  const chunks=[];
+  rec.ondataavailable=e=>{ if(e.data.size>0) chunks.push(e.data); };
+  rec.onstop=()=>{
+    const blob=new Blob(chunks,{type:'video/webm'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a'); a.href=url; a.download='VedicMindAI_Slide.webm';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+  rec.start(100);
+  // Slide 1: 3s
+  paintHook(ctx,CW,CH,hook,hookSub);
+  await new Promise(r=>setTimeout(r,3000));
+  // Slide 2: 2s
+  paintProof(ctx,CW,CH,bullets);
+  await new Promise(r=>setTimeout(r,2000));
+  // Slide 3: 5s
+  paintCTA(ctx,CW,CH);
+  await new Promise(r=>setTimeout(r,5000));
+  rec.stop();
+}
+
 const CATS = ['All','Vedic Maths','Vedic vs Abacus','Reasoning','Aptitude'];
 const SITE = 'https://www.vedicmindai.in/blog';
 
@@ -74,6 +191,14 @@ function HookSlide({ hook, hookSub, category, compact:c }) {
         </div>
         <span style={{ fontSize:c?6:10, color:'rgba(255,255,255,0.3)', fontWeight:600 }}>VedicMindAI</span>
       </div>
+      {/* Hidden slides for PNG capture */}
+      {sel && cd && (
+        <div style={{ position:'fixed', left:'-9999px', top:0, pointerEvents:'none', zIndex:-1 }}>
+          <div ref={slideRef0} style={{ width:360, height:640 }}><HookSlide hook={cd.hook} hookSub={cd.hookSub} category={sel.category} compact={false}/></div>
+          <div ref={slideRef1} style={{ width:360, height:640 }}><ProofSlide bullets={cd.bullets} category={sel.category} compact={false}/></div>
+          <div ref={slideRef2} style={{ width:360, height:640 }}><CTASlide category={sel.category} compact={false}/></div>
+        </div>
+      )}
     </div>
   );
 }
@@ -209,6 +334,8 @@ export default function AdminSocialExport() {
   const [tab, setTab]         = useState('carousel');
   const [copied, setCopied]   = useState(null);
   const [postedIds, setPostedIds] = useState(getPostedIds);
+  const [dlStatus, setDlStatus] = useState('');
+  const slideRef0 = useRef(null), slideRef1 = useRef(null), slideRef2 = useRef(null);
   const [statusMsg, setStatusMsg] = useState('');
 
   useEffect(() => {
@@ -387,8 +514,18 @@ export default function AdminSocialExport() {
                     <p style={{ color:'#6B7280', fontSize:11, margin:0, lineHeight:1.5 }}>High contrast white text. Scroll-stopper on Instagram. Proven Gen-Z colour for social media.</p>
                   </div>
                 </div>
-                  <div style={{ background:'rgba(34,197,94,0.07)', border:'1px solid rgba(34,197,94,0.18)', borderRadius:9, padding:'12px', marginTop:10 }}>
-                    <p style={{ color:'#4ADE80', fontSize:12, fontWeight:700, margin:'0 0 8px' }}>📸 How to Save & Share Slides</p>
+                  <div style={{ marginTop:10 }}>
+                    <button
+                      onClick={async()=>{ setDlStatus('Generating PNGs…'); await downloadSlides([slideRef0,slideRef1,slideRef2], sel.title); setDlStatus('✅ 3 PNGs downloaded!'); setTimeout(()=>setDlStatus(''),3000); }}
+                      style={{ width:'100%', padding:'12px', borderRadius:10, border:'none', cursor:'pointer',
+                        background:'linear-gradient(135deg,#22C55E,#16A34A)', color:'#fff', fontWeight:700, fontSize:13, marginBottom:8 }}>
+                      ⬇️ Download All 3 Slides (PNG)
+                    </button>
+                    {dlStatus && <p style={{ color:'#4ADE80', fontSize:12, textAlign:'center', margin:0 }}>{dlStatus}</p>}
+                    <p style={{ color:'#4B5563', fontSize:11, textAlign:'center', margin:'6px 0 0' }}>3 PNG files save to your Downloads folder — upload directly to Instagram/Facebook/WhatsApp</p>
+                  </div>
+                  <div style={{ background:'rgba(34,197,94,0.07)', border:'1px solid rgba(34,197,94,0.18)', borderRadius:9, padding:'10px 12px', marginTop:8 }}>
+                    <p style={{ color:'#4ADE80', fontSize:12, fontWeight:700, margin:'0 0 8px' }}>📸 How to Save & Share Slides
                     <div style={{ display:'flex', flexDirection:'column', gap:6 }}>
                       <div style={{ display:'flex', gap:8 }}><span style={{ minWidth:18, height:18, borderRadius:'50%', background:'rgba(34,197,94,0.2)', color:'#4ADE80', fontSize:10, fontWeight:800, display:'flex', alignItems:'center', justifyContent:'center' }}>1</span><span style={{ color:'#9CA3AF', fontSize:11, lineHeight:1.4 }}>Windows: Press Win + Shift + S → drag to crop just the slide on the phone screen</span></div>
                       <div style={{ display:'flex', gap:8 }}><span style={{ minWidth:18, height:18, borderRadius:'50%', background:'rgba(34,197,94,0.2)', color:'#4ADE80', fontSize:10, fontWeight:800, display:'flex', alignItems:'center', justifyContent:'center' }}>2</span><span style={{ color:'#9CA3AF', fontSize:11, lineHeight:1.4 }}>Saved to clipboard → paste in WhatsApp, Instagram, or any app</span></div>
