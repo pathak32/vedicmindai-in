@@ -29,54 +29,60 @@ except ImportError:
 
 # ── HOOK QUESTION ENGINE ──────────────────────────────────────────────────────
 def make_hook_question(post):
-    """Generate a curiosity-gap question hook based on article type."""
+    """Pick from a pool of hooks per category — guaranteed variety."""
     title    = post.get("title","").lower()
-    cat      = post.get("category","").lower()
-    sub      = (post.get("subcategory") or "").lower()
     cat_code = (post.get("cat_code") or "").upper()
+    cat_num  = int(post.get("cat_num") or 1)
 
-    # Template 1: Abacus vs Vedic — VA articles OR abacus in title/sub
-    if cat_code=="VA" or "abacus" in title or "abacus" in sub:
-        if "class 5" in title or "retention" in title:
-            return "Did you know abacus training\nbecomes useless after Class 5?"
-        if "cost" in title or "price" in title or "lakh" in title:
-            return "Are you paying lakhs for\nabacus when this costs less?"
-        if "algebra" in title or "struggle" in title:
-            return "Why do abacus students\nstruggle in Class 8 algebra?"
-        return "Is your child learning the\nwrong maths tool for their future?"
+    # Hook pools — 8 per category, rotated by article number
+    VA_HOOKS=[
+        "Is your child learning the\nwrong maths tool for their future?",
+        "Did you know abacus training\nstops helping after Class 5?",
+        "Are you paying lakhs for abacus\nwhen Vedic Maths costs less?",
+        "Why do abacus students\nstruggle with Class 8 algebra?",
+        "Can your child multiply 97x96\nin 4 seconds without an abacus?",
+        "What happens to maths speed\nafter Class 5 abacus ends?",
+        "Is abacus making your child\nslower at the maths that matters?",
+        "Which tool actually prepares\nyour child for JEE and SSC?",
+    ]
+    VM_HOOKS=[
+        "What ancient Indian secret\nare top rankers using right now?",
+        "Can your child solve 997x998\nmentally in under 5 seconds?",
+        "Did India invent the world's\nfastest mental maths system?",
+        "Are classmates using calculation\ntricks your child doesn't know?",
+        "What if maths took 5 seconds\ninstead of 50 — every time?",
+        "Why do JEE toppers calculate\n3x faster than other students?",
+        "Is there a shortcut your child's\nteacher never told them about?",
+        "What if your child solved this\ninstantly without a calculator?",
+    ]
+    R_HOOKS=[
+        "Can you solve this logic puzzle\nin under 10 seconds?",
+        "Are you missing marks in\nevery reasoning exam?",
+        "What pattern do toppers see\nin reasoning that others miss?",
+        "Is there one rule that cracks\ncoded inequality questions?",
+        "Why do reasoning experts\nsolve puzzles in seconds?",
+        "Are you spending 3 minutes\non questions that take 30 seconds?",
+        "What is the fastest technique\nfor direction sense questions?",
+        "Can one pattern unlock\nevery seating arrangement question?",
+    ]
+    A_HOOKS=[
+        "Are you leaving marks behind\nin every aptitude exam?",
+        "What calculation trick do\nSSC toppers use that you don't?",
+        "Can your exam speed be doubled\nwith just one technique?",
+        "Are JEE toppers using a\ncalculation secret you don't know?",
+        "What if percentages took\n3 seconds instead of 30?",
+        "Why do banking exam toppers\nfinish quant 15 minutes early?",
+        "Is there a Vedic shortcut\nfor every aptitude question type?",
+        "What do CAT 99 percentilers\ncalculate differently from you?",
+    ]
 
-    # Template 2: Speed / Calculation tricks
-    if any(w in title for w in ["trick","fast","second","instant","quick","multiply","speed"]):
-        nums = re.findall(r"\d+",title)
-        if nums:
-            return f"Can your child calculate\n{nums[0]}x faster than classmates?"
-        return "What if maths calculations\ntook 5 seconds instead of 50?"
+    pool=VM_HOOKS  # default
+    if cat_code=="VA": pool=VA_HOOKS
+    elif cat_code=="R":  pool=R_HOOKS
+    elif cat_code=="A":  pool=A_HOOKS
 
-    # Template 3: Exam specific
-    if any(w in title for w in ["jee","ssc","cat","upsc","ntse","bank","clat","nda","cgl"]):
-        exam = next((w.upper() for w in ["JEE","SSC","CAT","UPSC","NTSE","NDA","CLAT"] if w.lower() in title),"Exam")
-        return f"Are {exam} toppers using\na calculation secret you don't know?"
-
-    # Template 4: Parent / Child decisions
-    if any(w in title for w in ["parent","child","kid","school","class","student","your"]):
-        return "Are you making the right\nmaths decision for your child?"
-
-    # Template 5: Myth busting
-    if any(w in title for w in ["myth","wrong","real","truth","lie","actually","honest"]):
-        return "What if everything you believed\nabout maths speed training is wrong?"
-
-    # Template 6: Time / Age specific
-    if any(w in title for w in ["class 3","class 4","class 5","class 6","age","year","late"]):
-        return "What is the right age to start\nVedic Maths for maximum impact?"
-
-    # Template 7: Reasoning / Aptitude
-    if cat == "reasoning":
-        return "Can you solve this logical puzzle\nin under 10 seconds?"
-    if cat == "aptitude":
-        return "Are you leaving marks on the\ntable in every aptitude exam?"
-
-    # Default — curiosity gap
-    return "What ancient Indian secret\nare top rankers using right now?"
+    # Rotate through pool based on article number
+    return pool[(cat_num-1)%len(pool)]
 
 
 def make_proof_points(post, d):
