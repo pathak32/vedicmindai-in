@@ -155,29 +155,25 @@ def gen_3part_audio(path, s1=3, s2=2, s3=5):
         if i>total-fi: return (total-i)/fi
         return 1.0
 
-    # ── PART 1: HIGH ENERGY HOOK (0 to s1*sr) ──────────────────────────────
-    bpm1=128; beat1=int(sr*60/bpm1)
+    # ── PART 1: ATTENTION HOOK — smooth rising energy ────────────────────────
+    bpm1=105; beat1=int(sr*60/bpm1)
     for i in range(s1*sr):
-        t=i/sr
-        v=0
-        bp=i%beat1
-        # Heavy kick drum — deep bass 55Hz
-        if bp<int(sr*0.06):
-            v+=clamp(26000*sine(55,bp/sr)*decay(bp,int(sr*0.06)))
-        # Snare on beat 2 and 4
-        eighth=beat1//2
-        sp=i%eighth
-        if sp<int(sr*0.025) and (i//eighth)%2==1:
-            v+=clamp(9000*sine(180,sp/sr)*decay(sp,int(sr*0.025)))
-        # Hi-hat sixteenth notes
-        sixteenth=beat1//4
-        hp=i%sixteenth
-        if hp<int(sr*0.012):
-            v+=clamp(5000*sine(6000,hp/sr)*decay(hp,int(sr*0.012)))
-        # Bass synth 55Hz pulse
-        v+=clamp(4000*sine(55,t)*0.5)
-        # Rise synth — builds tension
-        v+=clamp(2500*sine(220+i*0.008,t))
+        t=i/sr; v=0; bp=i%beat1
+        # Moderate kick — punchy not harsh
+        if bp<int(sr*0.05):
+            v+=clamp(18000*sine(65,bp/sr)*decay(bp,int(sr*0.05)))
+        # Soft snare on offbeat
+        eighth=beat1//2; sp=i%eighth
+        if sp<int(sr*0.02) and (i//eighth)%2==1:
+            v+=clamp(5000*sine(200,sp/sr)*decay(sp,int(sr*0.02)))
+        # Rising build tone -- creates anticipation
+        rise_freq=150+int(i*(250/(s1*sr)))
+        v+=clamp(3500*sine(rise_freq,t)*(i/(s1*sr)))
+        # Warm bass pulse
+        v+=clamp(5000*sine(82,t)*0.6)
+        # Bright chime on beat 1
+        if bp<int(sr*0.03):
+            v+=clamp(8000*sine(660,bp/sr)*decay(bp,int(sr*0.03)))
         data[i]=clamp(v*fade(i,s1*sr))
 
     # ── PART 2: INFORMATIONAL PROOF (s1*sr to (s1+s2)*sr) ──────────────────
