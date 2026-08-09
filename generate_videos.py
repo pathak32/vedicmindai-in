@@ -1,350 +1,266 @@
 #!/usr/bin/env python3
 """
-VedicMindAI — Blog to Video Generator
+VedicMindAI Blog to Video Generator v2
 Usage:
-  python generate_videos.py VM-001:VM-010     # range
-  python generate_videos.py VA-001,VA-005,VA-010  # specific
-  python generate_videos.py VM-013            # single
-  python generate_videos.py --all VM          # all Vedic Maths
-  python generate_videos.py --all VA          # all Vedic vs Abacus
-
-Requirements:
-  pip install Pillow requests python-dotenv
-  FFmpeg must be installed (https://ffmpeg.org/download.html)
-
-Output: ./video_output/<serial_id>_<title>.mp4
+  python generate_videos.py VM-001
+  python generate_videos.py VM-013:VM-017
+  python generate_videos.py VA-001,VA-005,VA-010
+  python generate_videos.py --all VA
+Output: video_output/ folder (auto-created)
 """
-
-import os, sys, json, re, math, subprocess, textwrap, requests
+import os,sys,re,subprocess,requests,tempfile,wave,struct,math,array
 from pathlib import Path
-from datetime import datetime
 
-# ── Config ────────────────────────────────────────────────────────────────────
-SUPABASE_URL = "https://xlyfyqjmzwyyoqurvuzx.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhseWZ5cWptend5eW9xdXJ2dXp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA3MjgxOTQsImV4cCI6MjA5NjMwNDE5NH0.4CXU3ksfCGfIA77-sFXebWi-hjDVjCsT-UdrMXYFLEM"
-
-W, H     = 1080, 1920          # 9:16 vertical
-FPS      = 30
-SLIDE_TIMES = [3, 2, 5]        # seconds per slide
-TOTAL_S  = sum(SLIDE_TIMES)    # 10s
-
-# Colors
-NAVY    = (10, 22, 40)
-BLUE    = (30, 58, 95)
-SAFFRON = (245, 158, 11)
-WHITE   = (255, 255, 255)
-CREAM   = (248, 246, 240)
-PURPLE  = (109, 40, 217)
-PINK    = (219, 39, 119)
-
-OUTPUT_DIR = Path("video_output")
-AUDIO_FILE = Path("assets/95bpm_beat.mp3")  # your existing audio file
+SURL="https://xlyfyqjmzwyyoqurvuzx.supabase.co"
+SKEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhseWZ5cWptend5eW9xdXJ2dXp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA3MjgxOTQsImV4cCI6MjA5NjMwNDE5NH0.4CXU3ksfCGfIA77-sFXebWi-hjDVjCsT-UdrMXYFLEM"
+W,H,FPS=1080,1920,30
+SECS=[3,2,5]
+OUT=Path("video_output")
+AUD=Path("assets/95bpm_beat.mp3")
+WAV=Path("assets/_beat.wav")
+NAVY=(10,22,40);BLUE=(30,58,95);SAFFRON=(245,158,11)
+WHITE=(255,255,255);CREAM=(248,246,240);PURPLE=(109,40,217);PINK=(219,39,119)
 
 try:
-    from PIL import Image, ImageDraw, ImageFont
+    from PIL import Image,ImageDraw,ImageFont
 except ImportError:
-    print("Install Pillow: pip install Pillow")
-    sys.exit(1)
+    os.system("pip install Pillow -q")
+    from PIL import Image,ImageDraw,ImageFont
 
-# ── Supabase helpers ──────────────────────────────────────────────────────────
-def fetch_articles(serial_ids):
-    headers = {"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}"}
-    ids_str = ",".join(f'"{s}"' for s in serial_ids)
-    url = f"{SUPABASE_URL}/rest/v1/blog_posts?serial_id=in.({ids_str})&select=id,title,slug,category,subcategory,content,serial_id,cat_code,cat_num"
-    r = requests.get(url, headers=headers)
-    return r.json()
-
-def fetch_range(code, start, end):
-    headers = {"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}"}
-    url = (f"{SUPABASE_URL}/rest/v1/blog_posts"
-           f"?cat_code=eq.{code}&cat_num=gte.{start}&cat_num=lte.{end}"
-           f"&select=id,title,slug,category,subcategory,content,serial_id,cat_code,cat_num"
-           f"&order=cat_num.asc")
-    r = requests.get(url, headers=headers)
-    return r.json()
-
-def fetch_all_in_code(code):
-    headers = {"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}"}
-    url = (f"{SUPABASE_URL}/rest/v1/blog_posts"
-           f"?cat_code=eq.{code}"
-           f"&select=id,title,slug,category,subcategory,content,serial_id,cat_code,cat_num"
-           f"&order=cat_num.asc")
-    r = requests.get(url, headers=headers)
-    return r.json()
-
-# ── Content extraction ────────────────────────────────────────────────────────
-def extract_data(post):
-    raw = (post.get("content") or "").replace("\n", " ")
-    sentences = [s.strip() for s in re.split(r"[.!?]+", raw) if len(s.strip()) > 20]
-    title = post.get("title", "")
-    hook = title if len(title) < 55 else (sentences[0] if sentences else title)
-    hook_sub = next((s for s in sentences if re.search(r"second|faster|%|times|vs", s, re.I)), sentences[1] if len(sentences)>1 else "")
-    icons = ["⚡", "✅", "🎯"]
-    bullets = [s[:52]+"…" if len(s)>52 else s
-               for s in sentences if re.search(r":|[0-9]|vedic|faster|exam", s, re.I)][:3]
-    while len(bullets) < 3: bullets.append("Learn more inside")
-    return {
-        "hook": hook[:55],
-        "hook_sub": hook_sub[:65],
-        "bullets": [{"icon": icons[i], "text": bullets[i]} for i in range(3)]
-    }
+# ── Audio generator (no external file needed) ─────────────────────────────────
+def gen_audio(path,duration=15,bpm=95):
+    sr=44100
+    n=sr*duration
+    data=array.array('h',[0]*n)
+    beat=int(sr*60/bpm)
+    for i in range(n):
+        t=i/sr
+        # Melody tone
+        v=int(1800*math.sin(2*math.pi*180*t))
+        # Kick drum on beat
+        bp=i%beat
+        if bp<int(sr*0.07):
+            dec=1.0-(bp/(sr*0.07))
+            v+=int(13000*math.sin(2*math.pi*55*bp/sr)*dec)
+        # Hi-hat on offbeat
+        offbeat=int(beat/2)
+        hp=(i+offbeat//2)%offbeat
+        if hp<int(sr*0.015):
+            dec2=1.0-(hp/(sr*0.015))
+            v+=int(4000*math.sin(2*math.pi*8000*hp/sr)*dec2)
+        # Fade in/out
+        if i<sr*0.5: v=int(v*i/(sr*0.5))
+        if i>n-sr*0.5: v=int(v*(n-i)/(sr*0.5))
+        data[i]=max(-32767,min(32767,v))
+    Path(path).parent.mkdir(exist_ok=True)
+    with wave.open(str(path),'w') as wf:
+        wf.setnchannels(1);wf.setsampwidth(2)
+        wf.setframerate(sr);wf.writeframes(data.tobytes())
+    print(f"    Beat audio generated: {path}")
 
 # ── Font loader ───────────────────────────────────────────────────────────────
-def get_font(size, bold=False):
-    paths = [
-        "C:/Windows/Fonts/calibrib.ttf" if bold else "C:/Windows/Fonts/calibri.ttf",
-        "C:/Windows/Fonts/arialbd.ttf" if bold else "C:/Windows/Fonts/arial.ttf",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-    ]
-    for p in paths:
+def fnt(sz,b=False):
+    bold=["C:/Windows/Fonts/calibrib.ttf","C:/Windows/Fonts/arialbd.ttf",
+          "C:/Windows/Fonts/ariblk.ttf","C:/Windows/Fonts/verdanab.ttf",
+          "C:/Windows/Fonts/Impact.ttf","C:/Windows/Fonts/trebucbd.ttf",
+          "C:/Windows/Fonts/georgiab.ttf"]
+    reg=["C:/Windows/Fonts/calibri.ttf","C:/Windows/Fonts/arial.ttf",
+         "C:/Windows/Fonts/verdana.ttf","C:/Windows/Fonts/tahoma.ttf",
+         "C:/Windows/Fonts/georgia.ttf","C:/Windows/Fonts/trebuc.ttf"]
+    for p in(bold if b else reg):
         if os.path.exists(p):
-            try: return ImageFont.truetype(p, size)
+            try: return ImageFont.truetype(p,sz)
             except: pass
-    return ImageFont.load_default()
+    try: return ImageFont.load_default(size=max(sz,10))
+    except: return ImageFont.load_default()
 
-def draw_text_wrapped(draw, text, x, y, max_width, font, fill, line_height=None):
-    lh = line_height or (font.size + 10)
-    words = text.split()
-    line = ""
-    for w in words:
-        test = (line + " " + w).strip()
-        bbox = draw.textbbox((0,0), test, font=font)
-        if bbox[2] - bbox[0] > max_width and line:
-            draw.text((x, y), line, font=font, fill=fill)
-            y += lh; line = w
-        else: line = test
-    if line: draw.text((x, y), line, font=font, fill=fill)
-    return y + lh
+# ── Gradient helper ───────────────────────────────────────────────────────────
+def grad(img,top,bot):
+    d=ImageDraw.Draw(img)
+    for r in range(img.height):
+        t=r/img.height
+        d.line([(0,r),(img.width,r)],fill=tuple(int(top[i]*(1-t)+bot[i]*t) for i in range(3)))
 
-def draw_rounded_rect(draw, xy, radius, fill):
-    x0,y0,x1,y1 = xy
-    draw.rounded_rectangle([x0,y0,x1,y1], radius=radius, fill=fill)
+# ── Text wrap helper ──────────────────────────────────────────────────────────
+def wt(dr,txt,x,y,mw,f,fill,lh=None):
+    lh=lh or f.size+16
+    ln=""
+    for w in txt.split():
+        ts=(ln+" "+w).strip()
+        bb=dr.textbbox((0,0),ts,font=f)
+        if bb[2]-bb[0]>mw and ln:
+            dr.text((x,y),ln,font=f,fill=fill);y+=lh;ln=w
+        else: ln=ts
+    if ln: dr.text((x,y),ln,font=f,fill=fill)
+    return y+lh
 
-# ── Slide renderers ───────────────────────────────────────────────────────────
-def render_hook(d, category, serial_id):
-    img = Image.new("RGB", (W,H), NAVY)
-    draw = ImageDraw.Draw(img)
-    # Gradient overlay
-    for row in range(H):
-        t = row/H
-        r_val = int(NAVY[0]*(1-t) + BLUE[0]*t)
-        g_val = int(NAVY[1]*(1-t) + BLUE[1]*t)
-        b_val = int(NAVY[2]*(1-t) + BLUE[2]*t)
-        draw.line([(0,row),(W,row)], fill=(r_val,g_val,b_val))
+# ── Content extractor ─────────────────────────────────────────────────────────
+def extract(post):
+    raw=(post.get("content") or "").replace("\n"," ")
+    ss=[s.strip() for s in re.split(r"[.!?]+",raw) if len(s.strip())>20]
+    t=post.get("title","")
+    hook=t[:55] if len(t)<=55 else (ss[0][:55] if ss else t[:55])
+    sub=next((s for s in ss if re.search(r"second|faster|%|times|vs",s,re.I)),
+             ss[1] if len(ss)>1 else "")[:65]
+    bl=[s[:50] for s in ss if re.search(r":|[0-9]|vedic|faster|exam",s,re.I)][:3]
+    while len(bl)<3: bl.append("Learn more at vedicmindai.in")
+    return {"hook":hook,"sub":sub,"bullets":bl}
 
+# ── Slide 1: HOOK (Navy gradient) ─────────────────────────────────────────────
+def mk_hook(d,cat,sid):
+    img=Image.new("RGB",(W,H));grad(img,NAVY,BLUE)
+    dr=ImageDraw.Draw(img)
     # Serial badge
-    f_sm = get_font(36, bold=True)
-    draw_rounded_rect(draw, (60, 80, 280, 140), 20, (245,158,11,40))
-    draw.text((80, 90), serial_id, font=f_sm, fill=SAFFRON)
-    # Category chip
-    draw.text((300, 90), category.upper()[:20], font=f_sm, fill=(255,255,255,100))
-
-    # "DID YOU KNOW?" label
-    f_label = get_font(38, bold=True)
-    draw.text((W//2 - 140, H*2//5 - 60), "DID YOU KNOW?",
-              font=f_label, fill=(255,255,255,100))
-
-    # Hook (big saffron text)
-    f_hook = get_font(int(W*0.075), bold=True)
-    y = draw_text_wrapped(draw, d["hook"], 80, H*2//5, W-160, f_hook,
-                          SAFFRON, line_height=int(W*0.085))
-
+    dr.rounded_rectangle([60,75,290,148],radius=18,fill=(50,38,8))
+    dr.text((80,88),sid,font=fnt(40,True),fill=SAFFRON)
+    # Category
+    dr.text((310,90),cat.upper()[:16],font=fnt(36),fill=(160,160,160))
+    # Did you know label
+    dr.text((80,int(H*0.36)),"DID YOU KNOW?",font=fnt(44,True),fill=(140,140,140))
+    # Hook text (large saffron)
+    y=wt(dr,d["hook"],80,int(H*0.41),W-160,fnt(int(W*0.074),True),SAFFRON,lh=int(W*0.092))
     # Subtext
-    if d["hook_sub"]:
-        f_sub = get_font(42)
-        draw_text_wrapped(draw, d["hook_sub"], 80, y+20, W-160, f_sub,
-                          (200,200,200), line_height=54)
-
+    if d["sub"]:
+        wt(dr,d["sub"],80,y+20,W-160,fnt(44),(195,195,195),lh=60)
     # Footer
-    f_foot = get_font(38, bold=True)
-    draw.text((W//2 - 120, H - 100), "VedicMindAI", font=f_foot,
-              fill=(255,255,255,90))
+    dr.text((W//2-130,H-108),"VedicMindAI",font=fnt(40,True),fill=(110,110,110))
     return img
 
-def render_proof(d, category, serial_id):
-    img = Image.new("RGB", (W,H), CREAM)
-    draw = ImageDraw.Draw(img)
-
-    # Header chip
-    f_chip = get_font(34, bold=True)
-    draw_rounded_rect(draw, (60, 80, 60+len(serial_id)*22+20, 135), 15, NAVY)
-    draw.text((75, 87), serial_id, font=f_chip, fill=SAFFRON)
-
+# ── Slide 2: PROOF (Cream background) ────────────────────────────────────────
+def mk_proof(d,cat,sid):
+    img=Image.new("RGB",(W,H),CREAM)
+    dr=ImageDraw.Draw(img)
+    # Serial chip
+    dr.rounded_rectangle([60,78,60+len(sid)*25+22,148],radius=16,fill=NAVY)
+    dr.text((78,88),sid,font=fnt(36,True),fill=SAFFRON)
     # Title
-    f_title = get_font(72, bold=True)
-    draw.text((80, 200), "Here's the truth", font=f_title, fill=NAVY)
-    draw.rectangle([80, 285, 280, 292], fill=SAFFRON)
-
-    # Bullets
-    f_bull = get_font(48, bold=True)
-    f_text = get_font(44)
-    y_start = 380
-    for i, b in enumerate(d["bullets"]):
-        y_box = y_start + i * 220
-        draw_rounded_rect(draw, (60, y_box, W-60, y_box+180), 18, WHITE)
-        # Shadow
-        draw.text((92, y_box+52), b["icon"], font=get_font(70), fill=NAVY)
-        draw.text((185, y_box+45), b["text"][:38], font=f_bull, fill=NAVY)
-
+    dr.text((80,200),"Here's the truth",font=fnt(74,True),fill=NAVY)
+    # Underline
+    dr.rectangle([80,292,310,302],fill=SAFFRON)
+    # Bullets - NO EMOJI, plain text with colored prefix
+    prefixes=["01.","02.","03."]
+    for i,bl in enumerate(d["bullets"]):
+        by=395+i*232
+        dr.rounded_rectangle([60,by,W-60,by+192],radius=18,fill=WHITE)
+        # Colored number prefix
+        dr.rounded_rectangle([80,by+56,148,by+136],radius=12,fill=NAVY)
+        dr.text((92,by+64),prefixes[i],font=fnt(38,True),fill=SAFFRON)
+        # Bullet text
+        wt(dr,bl[:42],168,by+58,W-240,fnt(48,True),NAVY,lh=58)
     # Footer
-    draw.text((W//2 - 120, H - 100), "VedicMindAI", font=get_font(38,True),
-              fill=(100,100,100))
+    dr.text((W//2-130,H-108),"VedicMindAI",font=fnt(40,True),fill=(140,140,140))
     return img
 
-def render_cta(category, serial_id):
-    img = Image.new("RGB", (W,H), PURPLE)
-    draw = ImageDraw.Draw(img)
-    # Gradient: purple to pink
-    for row in range(H):
-        t = row/H
-        r_val = int(PURPLE[0]*(1-t) + PINK[0]*t)
-        g_val = int(PURPLE[1]*(1-t) + PINK[1]*t)
-        b_val = int(PURPLE[2]*(1-t) + PINK[2]*t)
-        draw.line([(0,row),(W,row)], fill=(r_val,g_val,b_val))
-
-    # Serial
-    f_chip = get_font(34, bold=True)
-    draw_rounded_rect(draw, (60,80,260,135), 15, (255,255,255,50))
-    draw.text((75,87), serial_id, font=f_chip, fill=WHITE)
-
-    # Label
-    draw.text((W//2 - 180, H*3//10), "TRY IT YOURSELF →",
-              font=get_font(38,True), fill=(255,255,255,140))
-
-    # Main text
-    f_big = get_font(int(W*0.08), bold=True)
-    draw.text((80, H*2//5), "Ancient wisdom.", font=f_big, fill=WHITE)
-    draw.text((80, H*2//5 + 110), "Modern speed.", font=f_big,
-              fill=(253,230,138))   # warm yellow
-
-    # CTA box
-    box_y = H*3//5
-    draw_rounded_rect(draw, (80, box_y, W-80, box_y+200), 24,
-                      (255,255,255,40))
-    draw.text((W//2 - 190, box_y+30), "🚀  FREE Demo",
-              font=get_font(70,True), fill=WHITE)
-    draw.text((W//2 - 230, box_y+120), "vedicmindai.in/demo",
-              font=get_font(46), fill=(255,255,255,180))
-
+# ── Slide 3: CTA (Purple to Pink) ────────────────────────────────────────────
+def mk_cta(cat,sid):
+    img=Image.new("RGB",(W,H));grad(img,PURPLE,PINK)
+    dr=ImageDraw.Draw(img)
+    # Serial chip top left
+    dr.rounded_rectangle([60,78,270,150],radius=16,fill=(255,255,255,55))
+    dr.text((78,90),sid,font=fnt(38,True),fill=WHITE)
+    # Top label
+    dr.text((80,int(H*0.26)),">> TRY IT FREE",font=fnt(48,True),fill=(230,200,255))
+    # Main headline lines
+    dr.text((80,int(H*0.34)),"Ancient wisdom.",font=fnt(int(W*0.083),True),fill=WHITE)
+    dr.text((80,int(H*0.34)+134),"Modern speed.",font=fnt(int(W*0.083),True),fill=(253,230,138))
+    # WHITE CTA BOX — guaranteed visible
+    by=int(H*0.575)
+    dr.rounded_rectangle([65,by,W-65,by+248],radius=26,fill=WHITE)
+    # CTA text in purple on white — maximum contrast
+    dr.text((W//2-292,by+22),"FREE  DEMO",font=fnt(92,True),fill=PURPLE)
+    dr.text((W//2-300,by+144),"vedicmindai.in/demo",font=fnt(56,True),fill=(90,15,110))
+    # Divider
+    dr.rectangle([120,by+210,W-120,by+213],fill=(200,160,240))
+    # Exam boards row
+    bx=120; by2=by+222
+    for tag in ["CBSE","ICSE","JEE","SSC","CAT"]:
+        tw=len(tag)*30+28
+        dr.rounded_rectangle([bx,by2,bx+tw,by2+46],radius=10,fill=(200,160,240))
+        dr.text((bx+10,by2+7),tag,font=fnt(30,True),fill=PURPLE)
+        bx+=tw+16
     # Footer
-    draw.text((W//2 - 120, H - 100), "@vedicmindai",
-              font=get_font(38,True), fill=(255,255,255,120))
+    dr.text((W//2-148,H-106),"@vedicmindai",font=fnt(44,True),fill=(230,210,255))
     return img
 
-# ── Frame assembler ───────────────────────────────────────────────────────────
-def frames_for_slide(slide_img, n_frames):
-    return [slide_img] * n_frames
-
-def build_video(post, output_path):
-    d = extract_data(post)
-    sid = post.get("serial_id","???")
-    cat = post.get("category","")
-
-    print(f"  Rendering slides for {sid}…")
-    slides = [
-        render_hook(d, cat, sid),
-        render_proof(d, cat, sid),
-        render_cta(cat, sid),
-    ]
-
-    # Write frames as PNG sequence to temp dir
-    import tempfile
+# ── Video builder ─────────────────────────────────────────────────────────────
+def build(post):
+    d=extract(post)
+    sid=post.get("serial_id","???")
+    slug=re.sub(r"[^a-zA-Z0-9]+","_",post.get("title","")[:28])
+    out=OUT/f"{sid}_{slug}.mp4"
+    cat=post.get("category","")
+    print(f"  [{sid}] {post.get('title','')[:52]}")
+    slides=[mk_hook(d,cat,sid),mk_proof(d,cat,sid),mk_cta(cat,sid)]
     with tempfile.TemporaryDirectory() as tmp:
-        frame_num = 0
-        for slide_idx, (img, secs) in enumerate(zip(slides, SLIDE_TIMES)):
-            n = secs * FPS
-            for _ in range(n):
-                fp = os.path.join(tmp, f"frame_{frame_num:05d}.png")
-                img.save(fp)
-                frame_num += 1
-
-        print(f"  Encoding video {sid}…")
-        cmd = [
-            "ffmpeg", "-y",
-            "-framerate", str(FPS),
-            "-i", os.path.join(tmp, "frame_%05d.png"),
-        ]
-
-        if AUDIO_FILE.exists():
-            cmd += ["-i", str(AUDIO_FILE),
-                    "-c:a", "aac", "-shortest"]
+        n=0
+        for img,sec in zip(slides,SECS):
+            for _ in range(sec*FPS):
+                img.save(os.path.join(tmp,f"f{n:05d}.png"));n+=1
+        print(f"    {n} frames rendered — encoding...")
+        cmd=["ffmpeg","-y","-framerate",str(FPS),"-i",os.path.join(tmp,"f%05d.png")]
+        # Audio: use mp3 if available, else generate wav
+        if AUD.exists():
+            cmd+=["-i",str(AUD),"-c:a","aac","-shortest"]
         else:
-            # silent
-            cmd += ["-an"]
-
-        cmd += [
-            "-c:v", "libx264",
-            "-pix_fmt", "yuv420p",
-            "-preset", "fast",
-            str(output_path)
-        ]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        if result.returncode != 0:
-            print(f"  FFmpeg error: {result.stderr[-300:]}")
+            if not WAV.exists():
+                print("    Generating 95BPM beat...")
+                gen_audio(WAV,duration=15)
+            cmd+=["-i",str(WAV),"-c:a","aac","-shortest"]
+        cmd+=["-c:v","libx264","-pix_fmt","yuv420p","-preset","fast",str(out)]
+        r=subprocess.run(cmd,capture_output=True,text=True)
+        if r.returncode!=0:
+            print(f"    FFmpeg error: {r.stderr[-200:]}")
             return False
-
-    print(f"  ✅ Saved: {output_path.name}")
+    sz=os.path.getsize(out)/1024/1024
+    print(f"    Saved: {out.name} ({sz:.1f} MB)")
     return True
 
-# ── CLI argument parser ───────────────────────────────────────────────────────
-def parse_args(args):
-    """Returns list of serial_ids to process."""
-    if not args:
-        print(__doc__); sys.exit(0)
+# ── Supabase helpers ──────────────────────────────────────────────────────────
+def sb(path):
+    h={"apikey":SKEY,"Authorization":f"Bearer {SKEY}"}
+    return requests.get(SURL+path,headers=h).json()
 
-    arg = " ".join(args)
+def fetch(ids):
+    q=",".join(f'"{x}"' for x in ids)
+    return sb(f"/rest/v1/blog_posts?serial_id=in.({q})&select=*")
 
-    # --all VM / --all VA etc
-    if "--all" in arg:
-        code = arg.split()[-1].upper()
-        print(f"Fetching all {code} articles…")
-        return fetch_all_in_code(code)
+def fetch_range(c,s,e):
+    return sb(f"/rest/v1/blog_posts?cat_code=eq.{c}&cat_num=gte.{s}&cat_num=lte.{e}&select=*&order=cat_num.asc")
 
-    # Range: VM-013:VM-017
-    m = re.match(r"([A-Z]+)-(\d+):([A-Z]+)-(\d+)", arg.strip())
+def fetch_all(c):
+    return sb(f"/rest/v1/blog_posts?cat_code=eq.{c}&select=*&order=cat_num.asc")
+
+# ── Argument parser ───────────────────────────────────────────────────────────
+def parse(args):
+    if not args: print(__doc__);sys.exit(0)
+    a=" ".join(args)
+    if "--all" in a:
+        code=a.split()[-1].upper()
+        print(f"Fetching ALL {code} articles...")
+        return fetch_all(code)
+    m=re.match(r"([A-Z]+)-(\d+):([A-Z]+)-(\d+)",a.strip())
     if m:
-        code1, start, code2, end = m.group(1), int(m.group(2)), m.group(3), int(m.group(4))
-        if code1 != code2:
-            print("Range must be within same category (e.g. VM-013:VM-017)"); sys.exit(1)
-        print(f"Fetching {code1}-{start:03d} to {code1}-{end:03d}…")
-        return fetch_range(code1, start, end)
-
-    # List: VA-001,VA-005
-    if "," in arg:
-        ids = [x.strip().upper() for x in arg.split(",")]
-        print(f"Fetching {len(ids)} articles: {ids}…")
-        return fetch_articles(ids)
-
-    # Single: VM-013
-    m2 = re.match(r"([A-Z]+-\d+)", arg.strip())
-    if m2:
-        sid = m2.group(1).upper()
-        print(f"Fetching {sid}…")
-        return fetch_articles([sid])
-
-    print(f"Could not parse argument: {arg}"); sys.exit(1)
+        c,s,e=m.group(1),int(m.group(2)),int(m.group(4))
+        print(f"Fetching {c}-{s:03d} to {c}-{e:03d}...")
+        return fetch_range(c,s,e)
+    if "," in a:
+        ids=[x.strip().upper() for x in a.split(",")]
+        print(f"Fetching {len(ids)} articles...")
+        return fetch(ids)
+    sid=a.strip().upper()
+    print(f"Fetching {sid}...")
+    return fetch([sid])
 
 # ── Main ──────────────────────────────────────────────────────────────────────
-if __name__ == "__main__":
-    OUTPUT_DIR.mkdir(exist_ok=True)
-    articles = parse_args(sys.argv[1:])
-
-    if not articles:
-        print("No articles found for that range."); sys.exit(1)
-    if isinstance(articles, dict) and "message" in articles:
-        print(f"Supabase error: {articles}"); sys.exit(1)
-
-    print(f"\n📹 Generating {len(articles)} video(s)…\n")
-    success, fail = 0, 0
-
-    for post in articles:
-        sid = post.get("serial_id","???")
-        title_slug = re.sub(r"[^a-zA-Z0-9]+","_", post.get("title","")[:30])
-        out = OUTPUT_DIR / f"{sid}_{title_slug}.mp4"
-        print(f"[{sid}] {post.get('title','')[:55]}")
-        ok = build_video(post, out)
-        if ok: success += 1
-        else: fail += 1
-
-    print(f"\n✅ Done: {success} videos generated, {fail} failed")
-    print(f"📁 Output folder: {OUTPUT_DIR.absolute()}")
+if __name__=="__main__":
+    OUT.mkdir(exist_ok=True)
+    posts=parse(sys.argv[1:])
+    if not posts or isinstance(posts,dict):
+        print("No articles found.");sys.exit(1)
+    print(f"\nGenerating {len(posts)} video(s)...\n")
+    ok=fail=0
+    for p in posts:
+        if build(p): ok+=1
+        else: fail+=1
+    print(f"\nDone: {ok} generated, {fail} failed")
+    print(f"Folder: {OUT.absolute()}")
