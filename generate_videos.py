@@ -86,57 +86,88 @@ def make_hook_question(post):
 
 
 def make_proof_points(post, d):
-    """3 clean complete bullets — no truncation, meaningful defaults."""
+    """3 punchy bullets — category defaults + high-quality content sentences."""
     raw      = (post.get("content") or "").replace("\n"," ")
     cat_code = (post.get("cat_code") or "").upper()
+    cat_num  = int(post.get("cat_num") or 1)
 
-    # Get all sentences
-    all_s = [s.strip().rstrip(".,;") for s in re.split(r"[.!?]+", raw) if len(s.strip())>20]
+    # Category defaults — always meaningful, rotate by article number
+    all_defaults={
+        "VA":[
+            ["Abacus stops helping after Class 5",
+             "Vedic Maths scales from Class 3 to JEE",
+             "Try FREE at vedicmindai.in/demo"],
+            ["Abacus cannot do multiplication or algebra",
+             "Vedic Maths covers every exam from NTSE to CAT",
+             "Start FREE at vedicmindai.in/demo"],
+            ["Abacus peaks at Class 4 — Vedic has no ceiling",
+             "Toppers use Vedic Maths — not abacus",
+             "Learn FREE at vedicmindai.in/demo"],
+            ["Abacus: addition only. Vedic: everything.",
+             "Class 5 onwards — only Vedic Maths works",
+             "Try FREE at vedicmindai.in/demo"],
+        ],
+        "VM":[
+            ["Ancient sutras solve modern exam problems",
+             "Multiplication in under 5 seconds — no calculator",
+             "Try FREE at vedicmindai.in/demo"],
+            ["16 sutras cover every calculation type",
+             "JEE toppers calculate 3x faster using Vedic Maths",
+             "Start FREE at vedicmindai.in/demo"],
+            ["Works for Class 3 student and JEE aspirant alike",
+             "Each sutra is a proved algebraic identity",
+             "Learn FREE at vedicmindai.in/demo"],
+            ["Vedic Maths reduces exam calculation time by 60 percent",
+             "No calculator needed — pure mental speed",
+             "Try FREE at vedicmindai.in/demo"],
+        ],
+        "R":[
+            ["One pattern solves every coded inequality question",
+             "Reasoning speed decides your competitive exam rank",
+             "Try FREE at vedicmindai.in/demo"],
+            ["Circular seating solved in under 30 seconds",
+             "Blood relation questions have just 3 patterns",
+             "Start FREE at vedicmindai.in/demo"],
+            ["Direction sense questions solved in 10 seconds",
+             "Syllogism has exactly 4 valid conclusion rules",
+             "Learn FREE at vedicmindai.in/demo"],
+            ["Puzzle sets become easy with grid method",
+             "Scoring in reasoning is pure speed and pattern",
+             "Try FREE at vedicmindai.in/demo"],
+        ],
+        "A":[
+            ["Calculation speed means extra marks every exam",
+             "Vedic tricks cover 80 percent of SSC Quant",
+             "Try FREE at vedicmindai.in/demo"],
+            ["Percentage questions solved in under 4 seconds",
+             "Ratio and proportion in 2 mental steps",
+             "Start FREE at vedicmindai.in/demo"],
+            ["Time and work solved without LCM in 5 seconds",
+             "Data interpretation with Vedic approximation",
+             "Learn FREE at vedicmindai.in/demo"],
+            ["SSC CGL Quant: 6 Vedic tricks cover 80 percent",
+             "CAT DI solved 3x faster with mental calculation",
+             "Try FREE at vedicmindai.in/demo"],
+        ],
+    }
+    pool=all_defaults.get(cat_code, all_defaults.get("VM"))
+    base=pool[(cat_num-1)%len(pool)]
 
-    # Only keep naturally short complete sentences (no cutting needed)
-    short_s = [s for s in all_s if len(s)<=62]
+    # Try to find ONE high-quality sentence from content to replace bullet 1
+    all_s=[s.strip().rstrip(".,;") for s in re.split(r"[.!?]+",raw) if len(s.strip())>25]
+    def is_great(s):
+        if len(s)>62: return False
+        score=0
+        if re.search(r"\d+.*second|second.*\d+",s,re.I): score+=5
+        if re.search(r"\d+x|\d+ times|\d+ percent|\d+%",s,re.I): score+=5
+        if re.search(r"(class|exam|jee|ssc|cat).*(vedic|maths|faster|speed)",s,re.I): score+=4
+        if re.search(r"(vedic|maths).*(class|exam|faster|speed)",s,re.I): score+=4
+        return score>=4
 
-    def score(s):
-        pts=0
-        if re.search(r"\d+",s): pts+=4
-        if re.search(r"faster|speed|second|minute",s,re.I): pts+=4
-        if re.search(r"student|child|class|exam",s,re.I): pts+=3
-        if re.search(r"vedic|abacus|maths",s,re.I): pts+=3
-        if re.search(r"jee|ssc|cat|upsc|board|ntse",s,re.I): pts+=3
-        if re.search(r"never|always|every|most|best",s,re.I): pts+=2
-        if re.search(r"^(this|it|there|they) ",s,re.I): pts-=3
-        return pts
-
-    ranked = sorted(short_s, key=score, reverse=True)
-    bullets=[]; used=set()
-    for s in ranked:
-        key=s[:16]
-        if key not in used and len(bullets)<3:
-            bullets.append(s); used.add(key)
-
-    # Category-specific defaults — always punchy and complete
-    defaults={
-        "VA":["Abacus stops helping after Class 5",
-              "Vedic Maths scales from Class 3 to JEE",
-              "Try FREE at vedicmindai.in/demo"],
-        "VM":["Ancient sutras solve modern exam problems",
-              "Multiplication done in under 5 seconds",
-              "Try FREE at vedicmindai.in/demo"],
-        "R": ["One rule solves every coded inequality",
-              "Reasoning speed decides your final rank",
-              "Try FREE at vedicmindai.in/demo"],
-        "A": ["Calculation speed means extra marks every exam",
-              "Vedic tricks cover 80 percent of SSC Quant",
-              "Try FREE at vedicmindai.in/demo"],
-    }.get(cat_code, ["Vedic Maths works from Class 3 to JEE",
-                     "Used by toppers in SSC CAT and UPSC",
-                     "Try FREE at vedicmindai.in/demo"])
-
-    while len(bullets)<3:
-        for d in defaults:
-            if d not in bullets and len(bullets)<3:
-                bullets.append(d)
-    return bullets[:3]
+    great=[s for s in all_s if is_great(s)]
+    if great:
+        return [great[0], base[1], base[2]]
+    return base
 
 def extract(post):
     """Full content extraction with question hook."""
