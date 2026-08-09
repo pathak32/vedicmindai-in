@@ -311,6 +311,12 @@ function VideoPlayer({ cd, category }) {
             background:playing?'#374151':`linear-gradient(135deg,${CTA_A},${CTA_B})`, color:W, fontWeight:700, fontSize:12 }}>
           {playing?'⏹ Stop':t>0?'🔄 Replay':'▶ Play 10s'}
         </button>
+      <button
+        onClick={()=>{ if(typeof downloadVideo==='function') downloadVideo(a.hook||cd&&cd.hook||'', a.hookSub||cd&&cd.hookSub||'', a.bullets||cd&&cd.bullets||[]); }}
+        style={{ flex:1, padding:'9px', borderRadius:9, border:'none', cursor:'pointer',
+          background:'linear-gradient(135deg,#6D28D9,#DB2777)', color:'#fff', fontWeight:700, fontSize:11 }}>
+        ⬇️ Video
+      </button>
       </div>
       <p style={{ color:'#4B5563', fontSize:10, textAlign:'center', margin:'5px 0 0' }}>Screen-record → post as Reel/Story</p>
     </div>
@@ -539,7 +545,7 @@ export default function AdminSocialExport() {
             {/* VIDEO */}
             {tab==='video'&&(
               <div style={{ display:'flex', gap:13, flexWrap:'wrap' }}>
-                <div style={{ flex:'0 0 190px' }}><VideoPlayer cd={cd} category={sel.category}/></div>
+                <div style={{ flex:'0 0 190px' }}><VideoPlayer cd={cd} category={sel.category} hook={cd.hook} hookSub={cd.hookSub} bullets={cd.bullets}/></div>
                 <div style={{ flex:1 }}>
                   <div style={{ background:'rgba(34,197,94,0.07)', border:'1px solid rgba(34,197,94,0.18)', borderRadius:9, padding:'12px 12px', marginBottom:12 }}>
                     <p style={{ color:'#4ADE80', fontSize:12, fontWeight:700, margin:'0 0 8px' }}>🎬 How to Export 10s Video</p>
