@@ -22,7 +22,7 @@ function extractCarouselData(post) {
 // ── Hashtag generator (preserved from original) ──────────────────────────────
 function genHashtags(post) {
   const tags = new Set(['#VedicMindAI','#MathTricks','#EdTech','#StudyMotivation']);
-  const c = post.category||''; const sub = (post.subcategory||'').toLowerCase(); const aud = (post.audience||'').toLowerCase();
+  const c = post.category||''; const sub = (post.subcategory||'').toLowerCase(); const aud = '';
   if(c==='Vedic Maths'||sub.includes('vedic')) { tags.add('#VedicMaths'); tags.add('#MentalMath'); tags.add('#SpeedMaths'); }
   if(c==='Reasoning') { tags.add('#Reasoning'); tags.add('#LogicalReasoning'); }
   if(c==='Aptitude') { tags.add('#Aptitude'); tags.add('#QuantAptitude'); }
@@ -216,7 +216,7 @@ export default function AdminSocialExport() {
       try {
         const sb = await getSupabase();
         const { data, error } = await sb.from('blog_posts')
-          .select('id,title,slug,category,subcategory,content,audience,status,published_at')
+          .select('id,title,slug,category,subcategory,content,status,published_at')
           .order('published_at', { ascending: false });
         if (error) throw error;
         setPosts(data || []);
