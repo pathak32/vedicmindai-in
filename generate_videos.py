@@ -439,11 +439,20 @@ def build(post):
     d=extract(post)
     sid=post.get("serial_id","???")
     slug=re.sub(r"[^a-zA-Z0-9]+","_",post.get("title","")[:28])
-    out=OUT/f"{sid}_{slug}.mp4"
+    # Category subfolder
+    cat_dir=OUT/cat_code if cat_code else OUT
+    cat_dir.mkdir(parents=True,exist_ok=True)
+    out=cat_dir/f"{sid}_{slug}.mp4"
+    png_dir=cat_dir/f"{sid}_slides"
+    png_dir.mkdir(exist_ok=True)
     cat=post.get("category","")
+    cat_code=(post.get("cat_code") or "").upper()
     print(f"  [{sid}] {post.get('title','')[:54]}")
     print(f"  Hook: {d['hook'][:60].replace(chr(10),' ')}")
     slides=[mk_hook(d,cat,sid),mk_proof(d,cat,sid),mk_cta(cat,sid)]
+    # Save PNG slides
+    for si,(img,nm) in enumerate(zip(slides,["1-Hook","2-Proof","3-CTA"])):
+        img.save(str(png_dir/f"{sid}_Slide{nm}.png"))
     with tempfile.TemporaryDirectory() as tmp:
         n=0
         for img,sec in zip(slides,SECS):
