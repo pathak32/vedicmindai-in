@@ -86,45 +86,43 @@ def make_hook_question(post):
 
 
 def make_proof_points(post, d):
-    """Generate 3 punchy proof bullets from article content."""
-    raw  = (post.get("content") or "").replace("\n"," ")
+    """Generate 3 complete, meaningful proof bullets."""
+    raw   = (post.get("content") or "").replace("\n"," ")
     title = post.get("title","")
-    ss   = [s.strip() for s in re.split(r"[.!?]+",raw) if 25<len(s.strip())<90]
+    # Split into complete sentences — keep only 30-75 char ones (short + complete)
+    ss = [s.strip().rstrip(".,;") for s in re.split(r"[.!?]+",raw)
+          if 30<=len(s.strip())<=75]
 
-    # Priority: sentences with numbers, comparisons, or strong claims
-    priority = [s for s in ss if re.search(
-        r"\d+|faster|slower|never|always|every|most|best|worst|can|cannot|without",s,re.I)]
+    # Score sentences — prefer ones with strong impact words
+    def score(s):
+        pts=0
+        if re.search(r"\d+",s): pts+=3          # has numbers
+        if re.search(r"faster|speed|second",s,re.I): pts+=3
+        if re.search(r"student|child|class",s,re.I): pts+=2
+        if re.search(r"exam|jee|ssc|cat|board",s,re.I): pts+=2
+        if re.search(r"vedic|abacus",s,re.I): pts+=2
+        if re.search(r"never|always|every|most",s,re.I): pts+=1
+        return pts
 
-    bullets = []
-    used = set()
-    for s in priority:
-        key = s[:20]
+    ranked=sorted(ss,key=score,reverse=True)
+    bullets=[]
+    used=set()
+    for s in ranked:
+        key=s[:18]
         if key not in used and len(bullets)<3:
-            clean = s.strip().rstrip(".,;")
-            # Ensure it ends properly
-            if len(clean)>52: clean = clean[:50]+"..."
+            # Complete the sentence cleanly
+            clean=s.strip()
+            if len(clean)>65: clean=clean[:63]+"..."
             bullets.append(clean)
             used.add(key)
 
-    # Fill remaining slots with general sentences
-    for s in ss:
-        if len(bullets)>=3: break
-        key = s[:20]
-        if key not in used:
-            clean = s.strip().rstrip(".,;")
-            if len(clean)>52: clean = clean[:50]+"..."
-            bullets.append(clean)
-            used.add(key)
-
-    # Guarantee 3 bullets
-    defaults = [
-        "Vedic Maths works from Class 3 to JEE level",
+    defaults=[
+        "Vedic Maths works from Class 3 to JEE",
         "Used by toppers in SSC, CAT and UPSC",
-        "Learn free at vedicmindai.in/demo",
+        "Try FREE at vedicmindai.in/demo",
     ]
     while len(bullets)<3:
         bullets.append(defaults[len(bullets)])
-
     return bullets[:3]
 
 
@@ -334,8 +332,8 @@ def mk_proof(d,cat,sid):
     # 3 Bullets with colored number prefix
     colors=[(10,22,40),(20,80,150),(80,40,150)]
     for i,bl in enumerate(d["bullets"]):
-        by=390+i*240
-        dr.rounded_rectangle([58,by,W-58,by+200],radius=18,fill=WHITE)
+        by=385+i*248
+        dr.rounded_rectangle([58,by,W-58,by+220],radius=18,fill=WHITE)
         # Number badge
         dr.rounded_rectangle([78,by+58,148,by+142],radius=12,fill=colors[i])
         num=str(i+1)
@@ -343,8 +341,8 @@ def mk_proof(d,cat,sid):
         nx=78+(70-(nbb[2]-nbb[0]))//2
         ny=by+58+(84-(nbb[3]-nbb[1]))//2
         dr.text((nx,ny),num,font=fnt(46,True),fill=SAFFRON)
-        # Bullet text
-        wt(dr,bl[:44],170,by+68,W-250,fnt(46,True),NAVY,lh=56)
+        # Bullet text — full sentence, smaller font fits 2 lines
+        wt(dr,bl,170,by+62,W-240,fnt(40,True),NAVY,lh=52)
 
     dr.text((W//2-130,H-100),"VedicMindAI",font=fnt(40,True),fill=(140,140,140))
     return img
