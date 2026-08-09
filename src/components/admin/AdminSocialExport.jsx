@@ -387,6 +387,15 @@ export default function AdminSocialExport() {
                     <p style={{ color:'#6B7280', fontSize:11, margin:0, lineHeight:1.5 }}>High contrast white text. Scroll-stopper on Instagram. Proven Gen-Z colour for social media.</p>
                   </div>
                 </div>
+                  <div style={{ background:'rgba(34,197,94,0.07)', border:'1px solid rgba(34,197,94,0.18)', borderRadius:9, padding:'12px', marginTop:10 }}>
+                    <p style={{ color:'#4ADE80', fontSize:12, fontWeight:700, margin:'0 0 8px' }}>📸 How to Save & Share Slides</p>
+                    <div style={{ display:'flex', flexDirection:'column', gap:6 }}>
+                      <div style={{ display:'flex', gap:8 }}><span style={{ minWidth:18, height:18, borderRadius:'50%', background:'rgba(34,197,94,0.2)', color:'#4ADE80', fontSize:10, fontWeight:800, display:'flex', alignItems:'center', justifyContent:'center' }}>1</span><span style={{ color:'#9CA3AF', fontSize:11, lineHeight:1.4 }}>Windows: Press Win + Shift + S → drag to crop just the slide on the phone screen</span></div>
+                      <div style={{ display:'flex', gap:8 }}><span style={{ minWidth:18, height:18, borderRadius:'50%', background:'rgba(34,197,94,0.2)', color:'#4ADE80', fontSize:10, fontWeight:800, display:'flex', alignItems:'center', justifyContent:'center' }}>2</span><span style={{ color:'#9CA3AF', fontSize:11, lineHeight:1.4 }}>Saved to clipboard → paste in WhatsApp, Instagram, or any app</span></div>
+                      <div style={{ display:'flex', gap:8 }}><span style={{ minWidth:18, height:18, borderRadius:'50%', background:'rgba(34,197,94,0.2)', color:'#4ADE80', fontSize:10, fontWeight:800, display:'flex', alignItems:'center', justifyContent:'center' }}>3</span><span style={{ color:'#9CA3AF', fontSize:11, lineHeight:1.4 }}>Switch to Slide 2 and 3 → repeat → post all 3 as Instagram Carousel for best reach</span></div>
+                      <div style={{ display:'flex', gap:8 }}><span style={{ minWidth:18, height:18, borderRadius:'50%', background:'rgba(34,197,94,0.2)', color:'#4ADE80', fontSize:10, fontWeight:800, display:'flex', alignItems:'center', justifyContent:'center' }}>4</span><span style={{ color:'#9CA3AF', fontSize:11, lineHeight:1.4 }}>Or right-click the slide image → Save as PNG → upload directly</span></div>
+                    </div>
+                  </div>
               </div>
             )}
 
