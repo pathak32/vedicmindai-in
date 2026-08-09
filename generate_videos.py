@@ -86,78 +86,57 @@ def make_hook_question(post):
 
 
 def make_proof_points(post, d):
-    """Generate 3 complete meaningful bullets — smart extraction."""
-    raw   = (post.get("content") or "").replace("\n"," ")
-    title = post.get("title","")
-    cat_code=(post.get("cat_code") or "").upper()
+    """3 clean complete bullets — no truncation, meaningful defaults."""
+    raw      = (post.get("content") or "").replace("\n"," ")
+    cat_code = (post.get("cat_code") or "").upper()
 
-    # Step 1: Split all sentences
-    all_sents=[s.strip().rstrip(".,;") for s in re.split(r"[.!?]+",raw) if len(s.strip())>25]
+    # Get all sentences
+    all_s = [s.strip().rstrip(".,;") for s in re.split(r"[.!?]+", raw) if len(s.strip())>20]
 
-    # Step 2: Shorten long sentences at natural break points
-    def shorten(s):
-        if len(s)<=68: return s
-        # Try splitting at " — " or ": " or ", " or " and " or " but "
-        for sep in [" — "," – ",": ",", which",", and "," but "," because "]:
-            if sep in s:
-                part=s.split(sep)[0].strip().rstrip(".,;")
-                if 28<=len(part)<=68: return part
-        # Hard cut at word boundary
-        words=s.split()
-        out=""
-        for w in words:
-            if len(out+" "+w)>65: break
-            out=(out+" "+w).strip()
-        return out+"..." if out else s[:65]+"..."
+    # Only keep naturally short complete sentences (no cutting needed)
+    short_s = [s for s in all_s if len(s)<=62]
 
-    # Step 3: Score for impact
     def score(s):
         pts=0
         if re.search(r"\d+",s): pts+=4
-        if re.search(r"faster|speed|second|minute|time",s,re.I): pts+=4
+        if re.search(r"faster|speed|second|minute",s,re.I): pts+=4
         if re.search(r"student|child|class|exam",s,re.I): pts+=3
-        if re.search(r"vedic|abacus|maths|math",s,re.I): pts+=3
-        if re.search(r"never|always|every|most|best",s,re.I): pts+=2
+        if re.search(r"vedic|abacus|maths",s,re.I): pts+=3
         if re.search(r"jee|ssc|cat|upsc|board|ntse",s,re.I): pts+=3
-        # Penalise very generic sentences
-        if re.search(r"this is|it is|there is|this means",s,re.I): pts-=2
+        if re.search(r"never|always|every|most|best",s,re.I): pts+=2
+        if re.search(r"^(this|it|there|they) ",s,re.I): pts-=3
         return pts
 
-    ranked=sorted(all_sents,key=score,reverse=True)
-    bullets=[]
-    used=set()
+    ranked = sorted(short_s, key=score, reverse=True)
+    bullets=[]; used=set()
     for s in ranked:
         key=s[:16]
         if key not in used and len(bullets)<3:
-            short=shorten(s)
-            if len(short)>=20:
-                bullets.append(short)
-                used.add(key)
+            bullets.append(s); used.add(key)
 
-    # Step 4: Title-based fallbacks (always meaningful)
-    cat_defaults={
+    # Category-specific defaults — always punchy and complete
+    defaults={
         "VA":["Abacus stops helping after Class 5",
-              "Vedic Maths works Class 3 to JEE",
-              "Try FREE — vedicmindai.in/demo"],
+              "Vedic Maths scales from Class 3 to JEE",
+              "Try FREE at vedicmindai.in/demo"],
         "VM":["Ancient sutras solve modern exam problems",
-              "Multiplication in under 5 seconds",
-              "Try FREE — vedicmindai.in/demo"],
-        "R": ["One rule cracks every coded inequality",
-              "Reasoning speed decides your rank",
-              "Try FREE — vedicmindai.in/demo"],
-        "A": ["Calculation speed = extra marks every exam",
-              "Vedic tricks cover 80% of SSC Quant",
-              "Try FREE — vedicmindai.in/demo"],
-    }
-    defaults=cat_defaults.get(cat_code,[
-        "Vedic Maths works from Class 3 to JEE",
-        "Used by toppers in SSC, CAT and UPSC",
-        "Try FREE — vedicmindai.in/demo",
-    ])
-    while len(bullets)<3:
-        bullets.append(defaults[len(bullets)])
-    return bullets[:3]
+              "Multiplication done in under 5 seconds",
+              "Try FREE at vedicmindai.in/demo"],
+        "R": ["One rule solves every coded inequality",
+              "Reasoning speed decides your final rank",
+              "Try FREE at vedicmindai.in/demo"],
+        "A": ["Calculation speed means extra marks every exam",
+              "Vedic tricks cover 80 percent of SSC Quant",
+              "Try FREE at vedicmindai.in/demo"],
+    }.get(cat_code, ["Vedic Maths works from Class 3 to JEE",
+                     "Used by toppers in SSC CAT and UPSC",
+                     "Try FREE at vedicmindai.in/demo"])
 
+    while len(bullets)<3:
+        for d in defaults:
+            if d not in bullets and len(bullets)<3:
+                bullets.append(d)
+    return bullets[:3]
 
 def extract(post):
     """Full content extraction with question hook."""
