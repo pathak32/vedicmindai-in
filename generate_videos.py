@@ -307,7 +307,7 @@ def mk_hook(d,cat,sid):
 
     # "Full answer in our blog" prompt
     if y < int(H*0.85):
-        dr.text((80,int(H*0.86)),"Full answer at vedicmindai.in",font=fnt(36),(100,130,180))
+        dr.text((80,int(H*0.86)),"Full answer at vedicmindai.in",font=fnt(36),fill=(100,130,180))
 
     # Footer
     dr.text((W//2-130,H-100),"VedicMindAI",font=fnt(40,True),fill=(100,100,100))
