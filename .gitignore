@@ -32,3 +32,4 @@ dist-ssr
 *.bak
 FETCH_HEAD
 /main
+video_output/
