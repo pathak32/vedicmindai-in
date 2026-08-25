@@ -42,8 +42,10 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Invalid payment signature — payment could not be verified' });
     }
 
-    const basePlan = plan.replace('_annual', '');
+    const basePlan = plan.replace('_annual', '').replace('_lifetime', '').replace('_founding', '');
     const isAnnual = plan.includes('_annual');
+    const isLifetime = plan.includes('_lifetime');
+    const isLifetime = plan.includes('_annual');
     const periodMs = isAnnual ? 365 * 86400000 : 30 * 86400000;
     const expiresAt = isLifetime
       ? new Date('2099-12-31T23:59:59.000Z').toISOString()
@@ -71,17 +73,17 @@ export default async function handler(req, res) {
 
     // ── Referral crediting (same logic as webhook) ─────────────────────
     try {
-      const { data: profile } = await sb.from('profiles').select('referral_code').eq('id', userId).maybeSingle();
+      const { data: profile } = await supabase.from('profiles').select('referral_code').eq('id', userId).maybeSingle();
       if (profile?.referral_code) {
-        const { data: referrer } = await sb.from('referrals').select('user_id, converted_count, referral_count').eq('referral_code', profile.referral_code).maybeSingle();
+        const { data: referrer } = await supabase.from('referrals').select('user_id, converted_count, referral_count').eq('referral_code', profile.referral_code).maybeSingle();
         if (referrer && referrer.user_id !== userId) {
           const newConverted = (referrer.converted_count || 0) + 1;
-          await sb.from('referrals').update({ converted_count: newConverted, referral_count: (referrer.referral_count || 0) + 1 }).eq('user_id', referrer.user_id);
+          await supabase.from('referrals').update({ converted_count: newConverted, referral_count: (referrer.referral_count || 0) + 1 }).eq('user_id', referrer.user_id);
           if (newConverted >= 5 && newConverted % 5 === 0) {
-            const { data: rp } = await sb.from('profiles').select('plan, plan_expires_at').eq('id', referrer.user_id).maybeSingle();
+            const { data: rp } = await supabase.from('profiles').select('plan, plan_expires_at').eq('id', referrer.user_id).maybeSingle();
             if (rp?.plan && rp.plan !== 'free') {
               const newExpiry = new Date(Math.max(new Date(rp.plan_expires_at || 0).getTime(), Date.now()) + 30 * 86400000);
-              await sb.from('profiles').update({ plan_expires_at: newExpiry.toISOString() }).eq('id', referrer.user_id);
+              await supabase.from('profiles').update({ plan_expires_at: newExpiry.toISOString() }).eq('id', referrer.user_id);
             }
           }
         }
