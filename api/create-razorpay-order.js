@@ -153,6 +153,9 @@ export default async function handler(req, res) {
     });
   } catch (error) {
     console.error('create-razorpay-order error:', error);
-    return res.status(500).json({ error: error.message });
+    return res.status(500).json({
+      error: error.message || "Unknown error",
+      errorDetail: typeof error === "object" ? JSON.parse(JSON.stringify(error, Object.getOwnPropertyNames(error))) : String(error),
+    });
   }
 }
