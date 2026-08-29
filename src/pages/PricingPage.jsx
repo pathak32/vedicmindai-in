@@ -502,10 +502,6 @@ export default function PricingPage() {
           ))}
         </div>
 
-        <FoundingSection
-          onJoin={() => initiatePayment({ id: 'basic_founding', name: 'Founding 500' })}
-          currentUser={user}
-        />
         <LifetimeBanner showUSD={showUSD} onBuy={() => initiatePayment({ id: 'basic_lifetime', name: 'Basic Lifetime', highlight: false })} />
         {/* Value comparison footer */}
         <div style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(30,64,175,0.12)', borderRadius: 16, padding: '24px 28px', marginTop: 40, textAlign: 'center' }}>
