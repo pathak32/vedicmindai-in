@@ -37,7 +37,7 @@ export default function VedicMindToday() {
       ] = await Promise.all([
         sb.from('site_visits')
           .select('*', { count: 'exact', head: true })
-          .gte('visited_at', todayStart.toISOString()),
+          .gte('visited_at', weekAgo.toISOString()),
         sb.from('daily_quiz_results')
           .select('*', { count: 'exact', head: true })
           .gte('created_at', todayStart.toISOString()),
@@ -105,8 +105,8 @@ export default function VedicMindToday() {
       {stats && (
         <div style={{ display: 'flex', gap: 10, marginBottom: 14, flexWrap: 'wrap' }}>
           {[
-            { icon: '👥', value: stats.activeToday, label: 'Active today' },
-            { icon: '⚡', value: stats.quizzesToday, label: 'Quizzes taken today' },
+            { icon: '👥', value: stats.activeToday, label: 'Active this week' },
+            { icon: '⚡', value: stats.quizzesToday, label: 'Quizzes this week' },
             { icon: '📝', value: stats.blogsThisWeek, label: 'New blogs this week' },
           ].map(({ icon, value, label }) => (
             <div key={label} style={{

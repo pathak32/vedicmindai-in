@@ -483,6 +483,10 @@ export default function PricingPage() {
         </div>
 
         {/* Plan cards */}
+        <FoundingSection
+          onJoin={() => initiatePayment({ id: 'basic_founding', name: 'Founding 500' })}
+        />
+
         <div style={{ display: 'flex', gap: 20, alignItems: 'stretch', justifyContent: 'center', flexWrap: 'wrap' }}>
           {PLANS.map(p => (
             <PlanCard
