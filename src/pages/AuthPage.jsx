@@ -512,14 +512,14 @@ export default function AuthPage() {
       {/* Right panel */}
       <div className="auth-right" style={{ width:'50%', background:'white', display:'flex', alignItems:'flex-start', justifyContent:'center', padding:'32px 24px', minHeight:'100vh', boxSizing:'border-box', overflowY:'auto' }}>
         <div className="w-full max-w-md">
-          {/* Home navigation */
+          {/* Home navigation */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
         <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: '#0A1628', fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, textDecoration: 'none', opacity: 0.75 }} onMouseEnter={e => e.currentTarget.style.opacity=1} onMouseLeave={e => e.currentTarget.style.opacity=0.75}>
           ← Back to Home
         </Link>
         <span style={{ fontFamily: 'Playfair Display, serif', fontWeight: 700, fontSize: 16, color: '#0A1628' }}>VedicMind</span>
       </div>
-            className="glass-card auth-card" style={{ padding:'28px 24px' }}>
+            <div className="glass-card auth-card" style={{ padding:'28px 24px' }}>
             {/* Tabs */}
             <div style={{ display:'flex', background:'#F0F4FF', borderRadius:12, padding:4, marginBottom:24 }}>
               <button type="button" style={tabBtn('signin')} onClick={() => setTab('signin')}>{t('signIn')}</button>
