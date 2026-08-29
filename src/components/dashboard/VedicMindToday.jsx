@@ -40,7 +40,7 @@ export default function VedicMindToday() {
           .gte('visited_at', weekAgo.toISOString()),
         sb.from('daily_quiz_results')
           .select('*', { count: 'exact', head: true })
-          .gte('created_at', todayStart.toISOString()),
+          .gte('created_at', weekAgo.toISOString()),
         sb.from('blog_posts')
           .select('*', { count: 'exact', head: true })
           .eq('status', 'published')
