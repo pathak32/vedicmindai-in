@@ -78,7 +78,7 @@ export default function TrialBanner() {
             🎁 You're on the Free Plan
           </div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.75)', marginTop: 2 }}>
-            Upgrade for full access to all chapters and features
+            Unlock all 40 lessons, Daily Quiz & Leaderboard
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
