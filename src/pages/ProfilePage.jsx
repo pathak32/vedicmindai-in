@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import BadgeGrid from '@/components/profile/BadgeGrid';
+import ReferralSection from '@/components/profile/ReferralSection';
 import EditProfileForm from '@/components/profile/EditProfileForm';
 import ResetConfirmModal from '@/components/profile/ResetConfirmModal';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
@@ -292,6 +293,7 @@ export default function ProfilePage() {
             <h2 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>All Badges</h2>
             <BadgeGrid badges={progress.badges || []} />
           </div>
+          <ReferralSection />
 
           {/* ── PRACTICE HISTORY ── */}
           <div style={{ ...glass, padding: 24, marginBottom: 20 }}>
