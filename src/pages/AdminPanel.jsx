@@ -20,6 +20,7 @@ import AdminLiveClasses from '@/components/admin/AdminLiveClasses';
 import AdminDataRecovery from '@/components/admin/AdminDataRecovery';
 import AdminSchoolAnalytics from '@/components/admin/AdminSchoolAnalytics';
 import AdminAnnouncements from '@/components/admin/AdminAnnouncements';
+import AdminReferrals from '@/components/admin/AdminReferrals';
 
 const ADMIN_KEY = 'VM@Admin2026';
 const ADMIN_PIN = '271187';
@@ -44,6 +45,7 @@ const TABS = [
   { id: 'recovery', label: '🩺 Data Recovery' },
   { id: 'school', label: '🏫 School Analytics' },
   { id: 'announcements', label: '📣 Announcements' },
+  { id: 'referrals', label: '🎁 Referrals' },
 ];
 
 // ─── PIN Screen ──────────────────────────────────────────────────────────────
@@ -178,6 +180,7 @@ function AdminDashboard({ onLock }) {
           {activeTab === 'recovery' && <AdminDataRecovery />}
           {activeTab === 'school' && <AdminSchoolAnalytics />}
           {activeTab === 'announcements' && <AdminAnnouncements />}
+          {activeTab === 'referrals' && <AdminReferrals />}
           </motion.div>
         </AnimatePresence>
       </main>
