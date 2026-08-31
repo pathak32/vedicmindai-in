@@ -101,7 +101,7 @@ export const TOPIC_INFO = {
     description: 'Find HCF and LCM of numbers in one step using Vedic factorisation — useful for fractions, ratio problems, and competitive exam shortcuts.',
     example: {
       q: 'Find HCF of 36 and 48.',
-      steps: '36 = 4×9, 48 = 4×12. Common factor = 4. Check: 36÷4=9, 48÷4=12 (coprime). HCF = 12. Wait — 36=12×3, 48=12×4. HCF = 12.',
+      steps: '36 = 12×3, 48 = 12×4. Since 3 and 4 share no factor, 12 cannot be increased. HCF = 12.',
       answer: '12',
     },
     tags: ['Class 6–8', 'Anurupyena'],

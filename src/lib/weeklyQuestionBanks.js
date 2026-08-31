@@ -95,10 +95,10 @@ export const QUESTION_BANKS = {
   ],
 
   open: [
-    { q: '11³ + 12³ = ?', options: ['3061','3071','3081','3091'], correct: 1, hint: '1331+1728=3059 — wait: 1331+1728=3059. Closest: 3061? Recalc: 1331+1728=3059. Select: none match — use 3059 nearest: 3061', difficulty: 'hard', topic: 'Cubing Speed', sutra: 'Anurupyena' },
+    { q: '11³ + 12³ = ?', options: ['3049','3059','3069','3079'], correct: 1, hint: '11³ = 1331, 12³ = 1728. 1331 + 1728 = 3059', difficulty: 'hard', topic: 'Cubing Speed', sutra: 'Anurupyena' },
     { q: 'What day was 1 Jan 2000?', options: ['Friday','Saturday','Sunday','Monday'], correct: 1, hint: 'd=1,m=1,y=0,c(2000s)=6. Total=8 mod 7=1=Saturday', difficulty: 'hard', topic: 'Calendar Calculations', sutra: 'Vilokanam' },
     { q: '√10 ≈ ?', options: ['3.062','3.162','3.262','3.362'], correct: 1, hint: '√10 ≈ 3.162', difficulty: 'hard', topic: 'Imperfect Square Roots', sutra: 'Vilokanam' },
-    { q: 'Calculate 987 × 13 rapidly', options: ['12731','12831','12931','12631'], correct: 0, hint: '987×13=987×10+987×3=9870+2961=12831', difficulty: 'hard', topic: 'Speed Multiplication', sutra: 'Urdhva Tiryagbhyam' },
+    { q: 'Calculate 987 × 13 rapidly', options: ['12731','12831','12931','12631'], correct: 1, hint: '987×13=987×10+987×3=9870+2961=12831', difficulty: 'hard', topic: 'Speed Multiplication', sutra: 'Urdhva Tiryagbhyam' },
     { q: '∛103823 = ?', options: ['45','47','49','51'], correct: 1, hint: 'Groups: 103|823. First: 4. Last 3 → ends 7. Answer: 47', difficulty: 'hard', topic: 'Cube Roots Large', sutra: 'Vilokanam' },
     { q: 'Factors of x²+13x+42 = ?', options: ['(x+6)(x+7)','(x+3)(x+14)','(x+2)(x+21)','(x+7)(x+6)'], correct: 0, hint: '6×7=42, 6+7=13', difficulty: 'hard', topic: 'Factorisation Speed', sutra: 'Adyamadyena' },
     { q: 'Calculate 9998 × 9997', options: ['99950006','99960006','99970006','99940006'], correct: 0, hint: 'Base 10000. Deficits 2,3. Cross: 9995. Product: 0006 → 99950006', difficulty: 'hard', topic: 'Nikhilam Speed', sutra: 'Nikhilam' },
@@ -106,7 +106,7 @@ export const QUESTION_BANKS = {
     { q: 'Is 1001 divisible by 7?', options: ['Yes','No'], correct: 0, hint: '1001=7×143 ✓', difficulty: 'hard', topic: 'Divisibility', sutra: 'Ekanyunena Purvena' },
     { q: 'Ekadhikena of 29 = ?', options: ['2','3','4','5'], correct: 1, hint: 'Digit before 9 in 29 is 2, Ekadhikena = 3', difficulty: 'hard', topic: 'Auxiliary Fractions', sutra: 'Ekadhikena Purvena' },
     { q: 'Calculate 212² using Duplex', options: ['44844','44944','45044','45144'], correct: 1, hint: 'D:4|4|9|4|4 → 44944', difficulty: 'hard', topic: 'Duplex Squaring', sutra: 'Dwandwa Yoga' },
-    { q: 'Calculate 33 × 34 × 35 (use 34³ trick)', options: ['39270','39270','39270','39270'], correct: 0, hint: '33×35=(34−1)(34+1)=34²−1=1155. 1155×34=39270', difficulty: 'hard', topic: 'Speed Arithmetic', sutra: 'Anurupyena' },
+    { q: 'Calculate 33 × 34 × 35 (use 34³ trick)', options: ['39270','39720','38250','40290'], correct: 0, hint: '33×35=(34−1)(34+1)=34²−1=1155. 1155×34=39270', difficulty: 'hard', topic: 'Speed Arithmetic', sutra: 'Anurupyena' },
     { q: 'Month code for August = ?', options: ['2','3','5','6'], correct: 1, hint: 'August month code = 3', difficulty: 'hard', topic: 'Calendar Calculations', sutra: 'Vilokanam' },
     { q: '1/99 = ?', options: ['0.0101...','0.1111...','0.0011...','0.1001...'], correct: 0, hint: '1/99=0.010101... repeating', difficulty: 'hard', topic: 'Auxiliary Fractions', sutra: 'Ekadhikena Purvena' },
     { q: '2, 6, 12, 20, 30, ?', options: ['40','42','36'], correct: 1, hint: 'The gaps between numbers grow by 2 each time: +4, +6, +8, +10 — so the next gap is +12, giving 30 + 12 = 42. (You can also see it as 1×2, 2×3, 3×4, 4×5, 5×6 → 6×7 = 42.)', difficulty: 'hard', topic: 'number-series-l2', sutra: 'Reasoning' },
