@@ -29,7 +29,7 @@ export const DEMO_QUESTIONS = [
   { id: 'vm_m1', subject: 'Vedic Maths', difficulty: 'medium', emoji: '🧮',
     topic: 'Urdhva Tiryagbhyam', question: 'What is 23 × 47?',
     hint: 'Cross-multiply: (2×4) | (2×7 + 3×4) | (3×7)',
-    options: ['1071', '1081', '1091', '1061'], correct: 2 },
+    options: ['1071', '1081', '1091', '1061'], correct: 1 },
 
   { id: 'vm_m2', subject: 'Vedic Maths', difficulty: 'medium', emoji: '🧮',
     topic: 'Squaring', question: 'What is 64²?',
@@ -86,8 +86,8 @@ export const DEMO_QUESTIONS = [
 
   { id: 're_m3', subject: 'Reasoning', difficulty: 'medium', emoji: '🧠',
     topic: 'Blood Relations', question: 'A is the father of B. B is the sister of C. C is the son of D. How is A related to D?',
-    hint: 'A→B→C→D. A is father of B(female), C is B\'s sibling (son of D)',
-    options: ['Father-in-law', 'Brother', 'Son-in-law', 'Uncle'], correct: 0 },
+    hint: 'B is C\'s sister, so A is C\'s father too. C is D\'s son, so D is C\'s other parent — the mother. Both are C\'s parents, so A is D\'s husband',
+    options: ['Husband', 'Brother', 'Father-in-law', 'Uncle'], correct: 0 },
 
   // ── REASONING — HARD ─────────────────────────────────────────────────────
   { id: 're_h1', subject: 'Reasoning', difficulty: 'hard', emoji: '🧠',
