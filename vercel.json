@@ -3,6 +3,7 @@
     {
       "source": "/((?!\\.well-known).*)",
       "has": [{ "type": "host", "value": "vedicmindai.in" }],
+      "missing": [{ "type": "header", "key": "referer", "value": "android-app://in\\.vedicmindai\\.app" }],
       "destination": "https://www.vedicmindai.in/$1",
       "permanent": true
     }
