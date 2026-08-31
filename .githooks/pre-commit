@@ -1,0 +1,13 @@
+#!/bin/sh
+# Blocks a commit that would ship a question with a wrong or impossible answer key.
+# Enable once per clone:  git config core.hooksPath .githooks
+# Skip a single commit:   git commit --no-verify
+
+if git diff --cached --name-only | grep -qE '^(src/data/|src/lib/(olympiad|weekly|aptitude)).*\.js$'; then
+  echo "Question bank changed — running audit..."
+  npm run --silent audit:questions || {
+    echo ""
+    echo "Commit blocked: fix the errors above, or use --no-verify to override."
+    exit 1
+  }
+fi
