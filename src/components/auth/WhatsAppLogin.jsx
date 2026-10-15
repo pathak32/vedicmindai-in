@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { toast } from 'sonner';
-import { checkLoginPhone, sendLoginOtp, verifyLoginOtp, verifyLoginPin, setLoginPin } from '@/lib/phoneAuth';
+import { checkLoginPhone, sendLoginOtp, verifyLoginOtp, verifyLoginPin, setLoginPin, redeemLoginSession } from '@/lib/phoneAuth';
 
 // Phone-first login. Steps:
 //   phone  → enter number
@@ -30,7 +30,9 @@ const linkBtn = {
 
 const onlyDigits = (v, max) => v.replace(/\D/g, '').slice(0, max);
 
-export default function WhatsAppLogin({ onBack }) {
+// onPinSetupChange(true) tells the auth page to stay on this screen while the PIN is set.
+// Without it, the page redirects as soon as the session exists, skipping the PIN step.
+export default function WhatsAppLogin({ onBack, onPinSetupChange }) {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const redirectTo = searchParams.get('redirect');
@@ -54,6 +56,7 @@ export default function WhatsAppLogin({ onBack }) {
   }, [cooldown]);
 
   const done = () => {
+    onPinSetupChange?.(false);
     toast.success('Welcome back!');
     navigate(redirectTo || '/dashboard');
   };
@@ -120,8 +123,19 @@ export default function WhatsAppLogin({ onBack }) {
       const r = await verifyLoginOtp(phone, otp);
       if (!r.ok) { setError(r.error || 'Incorrect code.'); return; }
       if (r.newUser) { setError('No account with this number yet. Please sign up first.'); setNoAccount(true); return; }
-      // Signed in. Ask for a PIN if they don't have one yet, or if they are resetting it.
-      if (resetting || !r.hasPin) { setStep('setPin'); setNewPin(''); setConfirmPin(''); return; }
+
+      // Ask for a PIN if they don't have one yet, or if they are resetting it.
+      // Hold the auth page first, then start the session, so the PIN step is not skipped.
+      if (resetting || !r.hasPin) {
+        onPinSetupChange?.(true);
+        const session = await redeemLoginSession(r.tokenHash);
+        if (!session.ok) { onPinSetupChange?.(false); setError(session.error); return; }
+        setStep('setPin'); setNewPin(''); setConfirmPin('');
+        return;
+      }
+
+      const session = await redeemLoginSession(r.tokenHash);
+      if (!session.ok) { setError(session.error); return; }
       return done();
     } finally {
       setBusy(false);

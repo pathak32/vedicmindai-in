@@ -36,11 +36,17 @@ export function checkLoginPhone(phone) {
 }
 
 // Redeems the one-time token from the server and starts the normal Supabase session.
+export async function redeemLoginSession(tokenHash) {
+  const supabase = await getSupabase();
+  const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: 'magiclink' });
+  if (error) return { ok: false, error: 'Could not sign you in. Please try again.' };
+  return { ok: true };
+}
+
 async function startSession(result) {
   if (!result.ok || result.newUser) return result;
-  const supabase = await getSupabase();
-  const { error } = await supabase.auth.verifyOtp({ token_hash: result.tokenHash, type: 'magiclink' });
-  if (error) return { ok: false, error: 'Could not sign you in. Please try again.' };
+  const session = await redeemLoginSession(result.tokenHash);
+  if (!session.ok) return session;
   return { ok: true, hasPin: result.hasPin };
 }
 
@@ -48,8 +54,10 @@ export function sendLoginOtp(phone) {
   return post('send-otp', { phone });
 }
 
-export async function verifyLoginOtp(phone, code) {
-  return startSession(await post('verify-otp', { phone, code }));
+// Verifies the code but does NOT start the session yet. The caller decides when to
+// redeem it, so the PIN setup step can be shown before the auth page redirects.
+export function verifyLoginOtp(phone, code) {
+  return post('verify-otp', { phone, code });
 }
 
 export async function verifyLoginPin(phone, pin) {

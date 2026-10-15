@@ -355,7 +355,7 @@ function SignUpForm({ onSwitchTab }) {
 }
 
 // ─── Sign In Form ────────────────────────────────────────────────────────────
-function SignInForm({ onSwitchTab }) {
+function SignInForm({ onSwitchTab, onPinSetupChange }) {
   const { t } = useLanguage();
   const { signInWithPassword } = useVedicAuth();
   const navigate = useNavigate();
@@ -398,6 +398,7 @@ function SignInForm({ onSwitchTab }) {
     return (
       <WhatsAppLogin
         onBack={(target) => (target === 'signup' ? onSwitchTab() : setShowWhatsApp(false))}
+        onPinSetupChange={onPinSetupChange}
       />
     );
   }
@@ -460,17 +461,19 @@ const Err = ({ children }) => <p style={{ color:'#EF4444', fontSize:12, margin:'
 export default function AuthPage() {
   const { t } = useLanguage();
   const [tab, setTab] = useState('signin');
+  // True while a WhatsApp login is choosing a PIN. Keeps the page here until it's saved.
+  const [pinSetupPending, setPinSetupPending] = useState(false);
   const { user, loading } = useVedicAuth();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const redirectTo = searchParams.get('redirect');
 
   useEffect(() => {
-    if (!loading && user) navigate(redirectTo || '/dashboard', { replace: true });
-  }, [user, loading]);
+    if (!loading && user && !pinSetupPending) navigate(redirectTo || '/dashboard', { replace: true });
+  }, [user, loading, pinSetupPending]);
 
   if (loading) return null;
-  if (user) return null;
+  if (user && !pinSetupPending) return null;
 
   const tabBtn = (t) => ({
     flex:1, minHeight:44, border:'none', cursor:'pointer', borderRadius:8, padding:'10px 16px',
@@ -543,7 +546,7 @@ export default function AuthPage() {
             </div>
 
             {tab === 'signin'
-              ? <SignInForm onSwitchTab={() => setTab('signup')} />
+              ? <SignInForm onSwitchTab={() => setTab('signup')} onPinSetupChange={setPinSetupPending} />
               : <SignUpForm onSwitchTab={() => setTab('signin')} />
             }
           </div>
