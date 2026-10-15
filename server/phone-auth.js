@@ -156,7 +156,7 @@ async function sendOtp(res, phone) {
   }
 
   const since = new Date(Date.now() - 60 * 60 * 1000).toISOString();
-  const { data: recent } = await admin
+  const { data: recent } = await db()
     .from('phone_otps')
     .select('created_at')
     .eq('phone', phone)
@@ -209,7 +209,7 @@ async function verifyOtp(res, phone, code) {
     return send(res, 400, { success: false, error: 'Enter the 6-digit code.' });
   }
 
-  const { data: pending } = await admin
+  const { data: pending } = await db()
     .from('phone_otps')
     .select('*')
     .eq('phone', phone)
@@ -233,7 +233,7 @@ async function verifyOtp(res, phone, code) {
 
   // Consume the code only if nobody else has. Stops two simultaneous requests
   // from both using one code.
-  const { data: consumed } = await admin
+  const { data: consumed } = await db()
     .from('phone_otps')
     .update({ consumed_at: new Date().toISOString() })
     .eq('id', pending.id)
@@ -272,7 +272,7 @@ async function verifyPin(res, phone, pin) {
   const genericError = { success: false, error: 'Incorrect number or PIN.' };
   if (!profile) return send(res, 401, genericError);
 
-  const { data: row } = await admin
+  const { data: row } = await db()
     .from('user_pins')
     .select('pin_hash, failed_attempts')
     .eq('user_id', profile.id)
