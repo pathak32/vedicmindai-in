@@ -54,7 +54,7 @@ export function VedicAuthProvider({ children }) {
   const signUpWithPassword = async ({
     name, mobile, countryCode, countryName, dob, email, password, referralCode,
     securityQuestion, securityAnswer,
-    whatsapp, passwordHint, userType, grade,
+    whatsapp, userType, grade,
   }) => {
     const supabase = await getSupabase();
     const fakeEmail = mobileToEmail(mobile);
@@ -126,7 +126,6 @@ export function VedicAuthProvider({ children }) {
       date_of_birth: dob,
       email: email || null,
       whatsapp,
-      password_hint: passwordHint,
       security_question: securityQuestion,
       security_answer: securityAnswer,
       user_type: userType || null,
@@ -198,7 +197,7 @@ export function VedicAuthProvider({ children }) {
     const supabase = await getSupabase();
     const { data, error } = await supabase
       .from('profiles')
-      .select('password_hint, security_question, name')
+      .select('security_question, name')
       .eq('mobile', `${countryCode}${mobile}`)
       .single();
     if (error || !data) throw new Error('Mobile number not registered');
@@ -209,14 +208,15 @@ export function VedicAuthProvider({ children }) {
     const supabase = await getSupabase();
     const { data, error } = await supabase
       .from('profiles')
-      .select('security_answer, password_hint')
+      .select('security_answer')
       .eq('mobile', `${countryCode}${mobile}`)
       .single();
     if (error || !data) throw new Error('Account not found');
     if (data.security_answer !== answer.trim().toLowerCase()) {
       throw new Error('Incorrect answer');
     }
-    return data.password_hint;
+    // Never return a password or hint from here. Recovery is done by support.
+    return true;
   };
   // ── Reset Password ─────────────────────────────────────────────────────────
   const resetPassword = async (mobile, newPassword, countryCode = '+91') => {
@@ -226,9 +226,8 @@ export function VedicAuthProvider({ children }) {
     // Instead we use password reset via email (fakeEmail)
     const { error } = await supabase.auth.updateUser({ password: newPassword });
     if (error) throw new Error(error.message);
-    // Update hint too
-    const parts = newPassword.match(/^([A-Z]{1,2})(\d{2})@(\d{4})$/);
-    await supabase.from('profiles').update({ password_hint: newPassword }).eq('mobile', `${countryCode}${mobile}`);
+    // Do not write the new password into profiles.password_hint: that column
+    // is readable by the forgot-password flow and must never hold a password.
   };
 
   return (

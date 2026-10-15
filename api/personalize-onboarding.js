@@ -3,7 +3,13 @@
 // Replaces the OLD insecure direct-from-browser fetch() in src/pages/OnboardingPage.jsx
 // that exposed the key via VITE_ANTHROPIC_API_KEY (bundled into public JS by Vite).
 
+import phoneAuthHandler from '../server/phone-auth.js';
+
 export default async function handler(req, res) {
+  // ?action= routes to WhatsApp OTP / PIN login (server/phone-auth.js).
+  // Shares this function to stay under the Vercel Hobby limit of 12.
+  if (req.query?.action) return phoneAuthHandler(req, res);
+
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');

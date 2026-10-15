@@ -50,11 +50,10 @@ export default function AdminFoundingCircleTracker() {
       const mobiles = testers.map((t) => t.mobile).filter(Boolean);
       const normalize = (m) => (m || '').replace(/\D/g, '').slice(-10); // last 10 digits, ignore +91/spaces/dashes
 
-      const [profilesRes, progressRes, dailyQuizRes, lessonQuizRes, weeklyExamRes, battlesRes, reasoningRes] = await Promise.all([
+      const [profilesRes, progressRes, dailyQuizRes, weeklyExamRes, battlesRes, reasoningRes] = await Promise.all([
         sb.from('profiles').select('id, mobile, full_name'), // fetch all — normalized matching happens client-side below
         sb.from('progress').select('user_id, completed_lessons, last_activity_date'),
         sb.from('daily_quiz_results').select('user_id').eq('quiz_date', today),
-        sb.from('quiz_results').select('user_id').gte('created_at', todayStartISO),
         sb.from('weekly_exam_results').select('user_id').gte('created_at', todayStartISO),
         sb.from('battle_rooms').select('creator_id, opponent_id, status').gte('created_at', todayStartISO),
         sb.from('reasoning_progress').select('user_id, chapter_id, completed'),
@@ -65,7 +64,6 @@ export default function AdminFoundingCircleTracker() {
       if (profilesRes.error) queryErrors.push(`profiles: ${profilesRes.error.message}`);
       if (progressRes.error) queryErrors.push(`progress: ${progressRes.error.message}`);
       if (dailyQuizRes.error) queryErrors.push(`daily_quiz_results: ${dailyQuizRes.error.message}`);
-      if (lessonQuizRes.error) queryErrors.push(`quiz_results: ${lessonQuizRes.error.message}`);
       if (weeklyExamRes.error) queryErrors.push(`weekly_exam_results: ${weeklyExamRes.error.message}`);
       if (battlesRes.error) queryErrors.push(`battle_rooms: ${battlesRes.error.message}`);
       if (reasoningRes.error) queryErrors.push(`reasoning_progress: ${reasoningRes.error.message} (have you run supabase/reasoning_progress_schema.sql yet?)`);
@@ -74,7 +72,9 @@ export default function AdminFoundingCircleTracker() {
       }
       const progress = progressRes.data || [];
       const dailyQuizUserIds = new Set((dailyQuizRes.data || []).map((r) => r.user_id));
-      const lessonQuizUserIds = new Set((lessonQuizRes.data || []).map((r) => r.user_id));
+      // quiz_results is never written by the app, so "lesson quiz today" is
+      // taken from progress rows with lesson activity today instead.
+      const lessonQuizUserIds = new Set(progress.filter((p) => p.last_activity_date === today).map((p) => p.user_id));
       const weeklyExamUserIds = new Set((weeklyExamRes.data || []).map((r) => r.user_id));
       const battleUserIds = new Set();
       (battlesRes.data || []).forEach((b) => {

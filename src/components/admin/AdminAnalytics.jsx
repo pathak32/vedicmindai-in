@@ -24,7 +24,7 @@ export default function AdminAnalytics() {
         // boolean column. The old select('lesson_id, completed, user_id')
         // asked for columns that don't exist and silently 400'd every load.
         sb.from('progress').select('completed_lessons, user_id'),
-        sb.from('quiz_results').select('score, user_id, created_at').order('created_at', { ascending:false }).limit(50),
+        sb.from('daily_quiz_results').select('score, user_id, created_at').order('created_at', { ascending:false }).limit(50),
       ]);
 
       const users = usersRes.data || [];

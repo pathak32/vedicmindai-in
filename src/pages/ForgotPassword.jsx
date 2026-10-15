@@ -25,10 +25,8 @@ export default function ForgotPassword() {
   const [mobile, setMobile] = useState('');
   const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY.code);
   const [customCountryCode, setCustomCountryCode] = useState('');
-  const [hint, setHint]     = useState('');
   const [secQ, setSecQ]     = useState('');
   const [answer, setAnswer] = useState('');
-  const [revealedHint, setRevealedHint] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError]   = useState('');
 
@@ -41,7 +39,6 @@ export default function ForgotPassword() {
     try {
       const info = resolveCountryInfo(countryCode, customCountryCode);
       const data = await getPasswordHint(mobile, info.code);
-      setHint(data.password_hint);
       setSecQ(data.security_question);
       setStep(2);
     } catch (e) {
@@ -57,8 +54,7 @@ export default function ForgotPassword() {
     setLoading(true);
     try {
       const info = resolveCountryInfo(countryCode, customCountryCode);
-      const fullHint = await verifySecurityAnswer(mobile, answer, info.code);
-      setRevealedHint(fullHint);
+      await verifySecurityAnswer(mobile, answer, info.code);
       setStep(4);
     } catch (e) {
       setError(e.message);
@@ -109,14 +105,9 @@ export default function ForgotPassword() {
           </div>
         )}
 
-        {/* Step 2 — Show hint */}
+        {/* Step 2 — Security question */}
         {step === 2 && (
           <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
-            <div style={{ background:'#F0F4FF', borderRadius:12, padding:'16px', border:'1px solid rgba(59,130,246,0.2)' }}>
-              <p style={{ fontSize:13, color:'#374151', margin:'0 0 6px', fontWeight:600 }}>Your Password Hint:</p>
-              <p style={{ fontSize:20, fontFamily:'var(--font-mono)', color:'#0A1628', margin:0, fontWeight:700 }}>{hint}</p>
-              <p style={{ fontSize:11, color:'#9CA3AF', margin:'6px 0 0' }}>Format: Name initials + Day + @ + Year of birth</p>
-            </div>
             <p style={{ fontSize:13, color:'#6B7280', textAlign:'center', margin:0 }}>
               Remembered it?{' '}
               <button onClick={() => navigate('/auth')}
@@ -126,7 +117,7 @@ export default function ForgotPassword() {
             </p>
             <div style={{ borderTop:'1px solid #E5E7EB', paddingTop:16 }}>
               <p style={{ fontSize:13, color:'#374151', marginBottom:12, textAlign:'center' }}>
-                Still can't remember? Answer your security question:
+                Answer your security question to verify your identity:
               </p>
               <p style={{ fontSize:14, fontWeight:600, color:'#0A1628', background:'#F9FAFB', padding:'10px 14px', borderRadius:10, marginBottom:12 }}>
                 {secQ}
@@ -159,20 +150,16 @@ export default function ForgotPassword() {
           </div>
         )}
 
-        {/* Step 4 — Reveal */}
+        {/* Step 4 — Identity verified, no password is shown; support resets it */}
         {step === 4 && (
           <div style={{ display:'flex', flexDirection:'column', gap:16, textAlign:'center' }}>
-            <div style={{ fontSize:48 }}>🎉</div>
-            <p style={{ fontSize:14, color:'#374151' }}>Identity verified! Your password is:</p>
-            <div style={{ background:'#F0FDF4', border:'2px solid #22C55E', borderRadius:12, padding:'16px' }}>
-              <p style={{ fontSize:24, fontFamily:'var(--font-mono)', color:'#15803D', fontWeight:700, margin:0, letterSpacing:2 }}>
-                {revealedHint}
-              </p>
-            </div>
-            <p style={{ fontSize:12, color:'#9CA3AF' }}>Please change your password after logging in.</p>
+            <div style={{ fontSize:48 }}>✅</div>
+            <p style={{ fontSize:14, color:'#374151' }}>
+              Identity verified. To set a new password, please contact VedicMindAI support and they will help you reset it.
+            </p>
             <button onClick={() => navigate('/auth')}
               style={{ height:44, background:'#0A1628', color:'white', border:'none', borderRadius:12, fontSize:15, fontWeight:700, cursor:'pointer' }}>
-              Go to Login →
+              Back to Login →
             </button>
           </div>
         )}

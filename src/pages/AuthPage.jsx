@@ -6,6 +6,7 @@ import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { useLanguage } from '@/lib/LanguageContext';
 import { validateMobileForCountry, validateCustomCountryCode, resolveCountryInfo, DEFAULT_COUNTRY } from '@/lib/countryCodes';
 import MobileNumberInput from '@/components/MobileNumberInput';
+import WhatsAppLogin from '@/components/auth/WhatsAppLogin';
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
 function validateMobile(m, countryCode) {
@@ -110,7 +111,6 @@ function SignUpForm({ onSwitchTab }) {
         securityQuestion: secQ.trim(),
         securityAnswer: secA.trim().toLowerCase(),
         whatsapp: sameNum ? `${mobileCountryInfo.code}${mobile}` : `${whatsappCountryInfo.code}${whatsapp}`,
-        passwordHint: hint,
         userType,
         grade: grade === 'other' ? customGrade.trim() : grade,
       });
@@ -368,6 +368,7 @@ function SignInForm({ onSwitchTab }) {
   const [showPass, setShowPass] = useState(false);
   const [errors, setErrors]   = useState({});
   const [loading, setLoading] = useState(false);
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
   const handleSignIn = async () => {
     const e = {};
     if (!validateMobile(mobile, countryCode)) e.mobile = t('authErrValidMobile');
@@ -393,6 +394,14 @@ function SignInForm({ onSwitchTab }) {
     fontSize:15, outline:'none', fontFamily:'var(--font-body)',
     color:'#0A1628', background:'white', boxSizing:'border-box',
   });
+  if (showWhatsApp) {
+    return (
+      <WhatsAppLogin
+        onBack={(target) => (target === 'signup' ? onSwitchTab() : setShowWhatsApp(false))}
+      />
+    );
+  }
+
   return (
     <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
       <div>
@@ -432,6 +441,13 @@ function SignInForm({ onSwitchTab }) {
       <button type="button" onClick={handleSignIn} disabled={loading}
         style={{ width:'100%', height:46, background: loading?'#6B7280':'#0A1628', color:'white', border:'none', borderRadius:12, fontSize:15, fontWeight:700, cursor: loading?'not-allowed':'pointer' }}>
         {loading ? t('authSigningIn') : t('authSignInSubmit')}
+      </button>
+      <div style={{ display:'flex', alignItems:'center', gap:10, color:'#9CA3AF', fontSize:12 }}>
+        <span style={{ flex:1, height:1, background:'#E5E7EB' }} />or<span style={{ flex:1, height:1, background:'#E5E7EB' }} />
+      </div>
+      <button type="button" onClick={() => setShowWhatsApp(true)}
+        style={{ width:'100%', height:46, background:'white', color:'#0A1628', border:'2px solid #0A1628', borderRadius:12, fontSize:15, fontWeight:700, cursor:'pointer' }}>
+        Login with WhatsApp OTP
       </button>
     </div>
   );

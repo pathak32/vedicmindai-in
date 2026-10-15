@@ -31,19 +31,16 @@ export default function AdminLiveActivity() {
     try {
       const sb = await getSupabase();
       const today = todayString();
-      const todayStartISO = new Date(new Date().setHours(0, 0, 0, 0)).toISOString();
 
-      const [profilesRes, progressRes, dailyQuizRes, lessonQuizRes] = await Promise.all([
+      const [profilesRes, progressRes, dailyQuizRes] = await Promise.all([
         sb.from('profiles').select('id, full_name, mobile, created_at'),
         sb.from('progress').select('user_id, completed_lessons, last_activity_date, updated_at, daily_quiz_streak'),
         sb.from('daily_quiz_results').select('user_id, quiz_date, score, total_possible, created_at').eq('quiz_date', today),
-        sb.from('quiz_results').select('user_id, score, created_at').gte('created_at', todayStartISO),
       ]);
 
       const profiles = profilesRes.data || [];
       const progress = progressRes.data || [];
       const dailyQuiz = dailyQuizRes.data || [];
-      const lessonQuiz = lessonQuizRes.data || [];
 
       const nameById = {};
       profiles.forEach((p) => { nameById[p.id] = p.full_name || p.mobile || p.id?.slice(0, 8); });
@@ -56,7 +53,6 @@ export default function AdminLiveActivity() {
         ...newSignupsToday.map((p) => p.id),
         ...activeProgressToday.map((p) => p.user_id),
         ...dailyQuiz.map((q) => q.user_id),
-        ...lessonQuiz.map((q) => q.user_id),
       ]);
 
       setStats({
@@ -74,9 +70,6 @@ export default function AdminLiveActivity() {
         })),
         ...dailyQuiz.map((q) => ({
           type: 'dailyquiz', time: q.created_at, label: `🎯 ${nameById[q.user_id] || 'Someone'} completed Daily Quiz — ${q.score}/${q.total_possible}`,
-        })),
-        ...lessonQuiz.map((q) => ({
-          type: 'lessonquiz', time: q.created_at, label: `📖 ${nameById[q.user_id] || 'Someone'} scored ${q.score}% on a lesson quiz`,
         })),
       ].filter((e) => e.time).sort((a, b) => new Date(b.time) - new Date(a.time));
 
