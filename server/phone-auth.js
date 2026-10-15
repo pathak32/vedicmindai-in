@@ -108,13 +108,15 @@ async function sendWhatsAppCode(phone, code) {
   }
 
   const components = [{ type: 'body', parameters: [{ type: 'text', text: code }] }];
-  // Only for templates created with a "Copy code" button. URL buttons aren't supported here.
+  // Only for templates created with a "Copy code" button. Meta sends authentication
+  // "Copy code" buttons as URL-type buttons whose parameter is the code itself.
+  // Meta's error for the other shape: "Button at index 0 must be of type Url".
   if (WA_BUTTON === 'COPY_CODE') {
     components.push({
       type: 'button',
-      sub_type: 'copy_code',
+      sub_type: 'url',
       index: '0',
-      parameters: [{ type: 'coupon_code', coupon_code: code }],
+      parameters: [{ type: 'text', text: code }],
     });
   }
 
