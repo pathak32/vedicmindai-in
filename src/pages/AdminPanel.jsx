@@ -56,6 +56,10 @@ function AdminDashboard() {
           <span style={{ color:'white', fontWeight:700, fontSize:16 }}>VedicMind Admin</span>
           <span style={{ background:'#1E40AF', color:'white', fontSize:11, padding:'2px 8px', borderRadius:20, fontWeight:600 }}>LIVE</span>
         </div>
+        <button type="button" onClick={async () => { await signOut(); window.location.href = '/auth'; }}
+          style={{ background:'transparent', color:'white', border:'1px solid rgba(255,255,255,0.35)', borderRadius:8, padding:'6px 14px', fontSize:13, fontWeight:600, cursor:'pointer' }}>
+          Sign out
+        </button>
       </div>
 
       <main style={{ maxWidth:1200, margin:'0 auto', padding:'24px 16px 80px' }}>
@@ -102,7 +106,7 @@ function AdminDashboard() {
 
 // ─── Main AdminPanel ─────────────────────────────────────────────────────────
 export default function AdminPanel() {
-  const { user, loading: authLoading } = useVedicAuth();
+  const { user, loading: authLoading, signOut } = useVedicAuth();
 
   // Real admin check: is the logged-in Supabase account flagged
   // role: 'admin' in app_metadata. Only the server (service role / SQL) can set

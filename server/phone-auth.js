@@ -299,6 +299,27 @@ async function verifyPin(res, phone, pin) {
   return issueSession(res, phone, profile.id);
 }
 
+// Signup duplicate check. Accepts the full number with country code, so it works
+// for non-Indian numbers too. Returns only exists: true/false.
+async function mobileExists(res, raw) {
+  const m = String(raw || '').trim();
+  if (!/^\+?\d{8,15}$/.test(m)) return send(res, 400, { success: false, error: 'Invalid mobile number.' });
+  const { data } = await db().from('profiles').select('id').eq('mobile', m).maybeSingle();
+  return send(res, 200, { success: true, exists: !!data });
+}
+
+// Returns the security question and display name for the forgot-password screen.
+// Only these two fields are sent, never the answer.
+async function securityQuestion(res, phone) {
+  const { data } = await db()
+    .from('profiles')
+    .select('name, security_question')
+    .eq('mobile', e164(phone))
+    .maybeSingle();
+  if (!data) return send(res, 404, { success: false, error: 'Mobile number not registered' });
+  return send(res, 200, { success: true, name: data.name || null, security_question: data.security_question || null });
+}
+
 // Checks a forgot-password security answer on the server. The stored answer is
 // never sent to the browser. Answers are compared case-insensitively.
 async function verifySecurityAnswer(res, phone, answer) {
@@ -333,12 +354,14 @@ export default async function handler(req, res) {
 
   try {
     if (action === 'set-pin') return await setPin(req, res, body.pin);
+    if (action === 'mobile-exists') return await mobileExists(res, body.mobile);
 
     const phone = normalizePhone(body.phone);
     if (!phone) return send(res, 400, { success: false, error: 'Enter a valid 10-digit Indian mobile number.' });
 
     if (action === 'status') return await status(res, phone);
     if (action === 'verify-security') return await verifySecurityAnswer(res, phone, body.answer);
+    if (action === 'security-question') return await securityQuestion(res, phone);
     if (action === 'send-otp') return await sendOtp(res, phone);
     if (action === 'verify-otp') return await verifyOtp(res, phone, body.code);
     if (action === 'verify-pin') return await verifyPin(res, phone, body.pin);

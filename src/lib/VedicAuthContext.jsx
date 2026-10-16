@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { getSupabase } from './supabaseClient';
-import { checkSecurityAnswer } from './phoneAuth';
+import { checkSecurityAnswer, getSecurityQuestion, checkMobileRegistered } from './phoneAuth';
 
 const VedicAuthContext = createContext(null);
 export const useVedicAuth = () => useContext(VedicAuthContext);
@@ -67,13 +67,9 @@ export function VedicAuthProvider({ children }) {
     // saving new user", which is confusing and unhelpful if shown raw.
     // Checking profiles directly means we never have to guess which error
     // message Supabase feels like returning this time.
-    const { data: preExisting } = await supabase
-      .from('profiles')
-      .select('id, mobile')
-      .eq('mobile', mobile)
-      .maybeSingle();
+    const registered = await checkMobileRegistered(mobile);
 
-    if (preExisting) {
+    if (registered.ok && registered.exists) {
       throw new Error('An account with this mobile number already exists. Please sign in instead, or use "Forgot Password" if needed.');
     }
 
@@ -195,14 +191,9 @@ export function VedicAuthProvider({ children }) {
 
   // ── Forgot Password — get hint ─────────────────────────────────────────────
   const getPasswordHint = async (mobile, countryCode = '+91') => {
-    const supabase = await getSupabase();
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('security_question, name')
-      .eq('mobile', `${countryCode}${mobile}`)
-      .single();
-    if (error || !data) throw new Error('Mobile number not registered');
-    return data;
+    const r = await getSecurityQuestion(`${countryCode}${mobile}`);
+    if (!r.ok) throw new Error(r.error || 'Mobile number not registered');
+    return { security_question: r.securityQuestion, name: r.name };
   };
   // ── Forgot Password — verify security answer ───────────────────────────────
   // The answer is checked on the server. The stored answer never reaches the browser.

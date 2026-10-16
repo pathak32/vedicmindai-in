@@ -27,7 +27,21 @@ async function post(action, body, { token } = {}) {
     hasPin: !!data.hasPin,
     exists: !!data.exists,
     tokenHash: data.token_hash,
+    name: data.name || null,
+    securityQuestion: data.security_question || null,
   };
+}
+
+// Signup pre-check: is this full mobile number (with country code) already registered?
+export async function checkMobileRegistered(mobile) {
+  const r = await post('mobile-exists', { mobile });
+  return r.ok ? { ok: true, exists: r.exists } : { ok: false, error: r.error };
+}
+
+// Forgot-password step 1: the question and name only. The answer is never returned.
+export async function getSecurityQuestion(phone) {
+  const r = await post('security-question', { phone });
+  return r.ok ? { ok: true, name: r.name, securityQuestion: r.securityQuestion } : { ok: false, error: r.error };
 }
 
 // Forgot-password check. The server compares the answer; the stored answer is never returned.
