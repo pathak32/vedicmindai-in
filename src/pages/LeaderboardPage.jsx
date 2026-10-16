@@ -180,6 +180,9 @@ const auth     = (() => { try { return JSON.parse(localStorage.getItem('vedicmin
             <div>
               <h1 className="font-heading" style={{ fontSize: 32, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>🏆 Leaderboard</h1>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#4B5563', margin: '0 0 8px' }}>See how you rank against other students</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#92400E', background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: 8, padding: '6px 10px', margin: '0 0 8px', display: 'inline-block' }}>
+                Practice ranking: most competitors are simulated, so positions are for fun and not official results.
+              </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                 <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>🔒 Names shown as First + Last Initial only</span>
                 <button onClick={() => navigate('/profile')} style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 12, color: '#3B82F6', padding: 0 }}>
