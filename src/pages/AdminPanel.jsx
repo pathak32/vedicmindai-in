@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import AdminStudents from '@/components/admin/AdminStudents';
@@ -21,10 +20,6 @@ import AdminDataRecovery from '@/components/admin/AdminDataRecovery';
 import AdminSchoolAnalytics from '@/components/admin/AdminSchoolAnalytics';
 import AdminAnnouncements from '@/components/admin/AdminAnnouncements';
 import AdminReferrals from '@/components/admin/AdminReferrals';
-
-const ADMIN_KEY = 'VM@Admin2026';
-const ADMIN_PIN = '271187';
-const SESSION_KEY = 'vm_admin_session';
 
 const TABS = [
   { id: 'live',      label: '🟢 Live Today' },
@@ -48,87 +43,8 @@ const TABS = [
   { id: 'referrals', label: '🎁 Referrals' },
 ];
 
-// ─── PIN Screen ──────────────────────────────────────────────────────────────
-function PinScreen({ onSuccess }) {
-  const [pin, setPin]       = useState('');
-  const [shake, setShake]   = useState(false);
-  const [error, setError]   = useState('');
-
-  const handleDigit = (d) => {
-    if (pin.length >= 6) return;
-    const next = pin + d;
-    setPin(next);
-    if (next.length === 6) {
-      setTimeout(() => {
-        if (next === ADMIN_PIN) {
-          onSuccess();
-        } else {
-          setShake(true);
-          setError('Wrong PIN. Try again.');
-          setTimeout(() => { setPin(''); setShake(false); setError(''); }, 900);
-        }
-      }, 120);
-    }
-  };
-
-  const digits = ['1','2','3','4','5','6','7','8','9','','0','⌫'];
-
-  return (
-    <div style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0A1628,#0D2252,#1E40AF)', display:'flex', alignItems:'center', justifyContent:'center', padding:16 }}>
-      <motion.div
-        animate={shake ? { x:[-12,12,-10,10,-6,6,0] } : { x:0 }}
-        transition={{ duration:0.5 }}
-        style={{ background:'rgba(255,255,255,0.06)', backdropFilter:'blur(20px)', borderRadius:24, padding:'36px 28px', width:'100%', maxWidth:340, border:'1px solid rgba(255,255,255,0.12)', textAlign:'center' }}
-      >
-        <div style={{ fontSize:40, marginBottom:8 }}>🛡️</div>
-        <h2 style={{ color:'white', fontSize:22, fontWeight:700, marginBottom:4 }}>Admin Access</h2>
-        <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, marginBottom:28 }}>Enter your 6-digit PIN</p>
-
-        {/* PIN dots */}
-        <div style={{ display:'flex', justifyContent:'center', gap:12, marginBottom:32 }}>
-          {[0,1,2,3,4,5].map(i => (
-            <div key={i} style={{
-              width:14, height:14, borderRadius:'50%',
-              background: i < pin.length ? 'white' : 'rgba(255,255,255,0.2)',
-              transition:'background 0.15s',
-              boxShadow: i < pin.length ? '0 0 8px rgba(255,255,255,0.6)' : 'none'
-            }} />
-          ))}
-        </div>
-
-        {/* Numpad */}
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:12 }}>
-          {digits.map((d, i) => (
-            <button key={i} onClick={() => {
-              if (d === '⌫') setPin(p => p.slice(0,-1));
-              else if (d !== '') handleDigit(d);
-            }}
-              style={{
-                height:56, borderRadius:14, border:'1px solid rgba(255,255,255,0.1)',
-                background: d==='' ? 'transparent' : 'rgba(255,255,255,0.08)',
-                color:'white', fontSize:20, fontWeight:600, cursor: d==='' ? 'default' : 'pointer',
-                transition:'all 0.1s',
-                visibility: d==='' ? 'hidden' : 'visible',
-              }}
-              onMouseDown={e => e.currentTarget.style.background='rgba(255,255,255,0.18)'}
-              onMouseUp={e => e.currentTarget.style.background='rgba(255,255,255,0.08)'}
-            >
-              {d}
-            </button>
-          ))}
-        </div>
-
-        {error && <p style={{ color:'#FCA5A5', fontSize:13, marginTop:16 }}>{error}</p>}
-        <p style={{ color:'rgba(255,255,255,0.25)', fontSize:11, marginTop:20 }}>
-          Tip: You can also use the secret URL to skip PIN
-        </p>
-      </motion.div>
-    </div>
-  );
-}
-
 // ─── Admin Dashboard ─────────────────────────────────────────────────────────
-function AdminDashboard({ onLock }) {
+function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('live');
 
   return (
@@ -140,10 +56,6 @@ function AdminDashboard({ onLock }) {
           <span style={{ color:'white', fontWeight:700, fontSize:16 }}>VedicMind Admin</span>
           <span style={{ background:'#1E40AF', color:'white', fontSize:11, padding:'2px 8px', borderRadius:20, fontWeight:600 }}>LIVE</span>
         </div>
-        <button onClick={onLock}
-          style={{ background:'rgba(255,255,255,0.1)', border:'1px solid rgba(255,255,255,0.2)', color:'white', padding:'6px 14px', borderRadius:8, cursor:'pointer', fontSize:13 }}>
-          🔒 Lock
-        </button>
       </div>
 
       <main style={{ maxWidth:1200, margin:'0 auto', padding:'24px 16px 80px' }}>
@@ -191,46 +103,29 @@ function AdminDashboard({ onLock }) {
 // ─── Main AdminPanel ─────────────────────────────────────────────────────────
 export default function AdminPanel() {
   const { user, loading: authLoading } = useVedicAuth();
-  const [searchParams] = useSearchParams();
-  const [granted, setGranted] = useState(false);
 
   // Real admin check: is the logged-in Supabase account flagged
-  // role: 'admin' in its (server-verified, non-forgeable) user_metadata?
-  // Same check DashboardNavbar already uses to show the admin nav link.
-  const isRealAdmin = !authLoading && user?.user_metadata?.role === 'admin';
+  // role: 'admin' in app_metadata. Only the server (service role / SQL) can set
+  // app_metadata, so users cannot grant it to themselves. user_metadata is editable
+  // by the user and must not be used for authorization.
+  // Same check DashboardNavbar uses to show the admin nav link.
+  const isRealAdmin = !authLoading && user?.app_metadata?.role === 'admin';
 
-  useEffect(() => {
-    // Check 0 (primary, permanent): real Supabase account with admin role
-    if (isRealAdmin) {
-      setGranted(true);
-      return;
-    }
-    // Checks 1 & 2 below are a TEMPORARY fallback (PIN / URL key) kept only
-    // until admin access via a real account is confirmed working. Remove
-    // once confirmed — tracked as a known follow-up, not a permanent gate.
-    const urlKey = searchParams.get('key');
-    if (urlKey === ADMIN_KEY) {
-      sessionStorage.setItem(SESSION_KEY, '1');
-      setGranted(true);
-      return;
-    }
-    if (sessionStorage.getItem(SESSION_KEY) === '1') {
-      setGranted(true);
-      return;
-    }
-    // Else: show PIN screen
-  }, [isRealAdmin]);
+  if (authLoading) return null;
 
-  const handlePinSuccess = () => {
-    sessionStorage.setItem(SESSION_KEY, '1');
-    setGranted(true);
-  };
+  if (!isRealAdmin) {
+    return (
+      <div style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0A1628,#0D2252,#1E40AF)', display:'flex', alignItems:'center', justifyContent:'center', padding:16 }}>
+        <div style={{ background:'rgba(255,255,255,0.06)', backdropFilter:'blur(20px)', borderRadius:24, padding:'36px 28px', width:'100%', maxWidth:340, border:'1px solid rgba(255,255,255,0.12)', textAlign:'center' }}>
+          <div style={{ fontSize:40, marginBottom:8 }}>🔒</div>
+          <h2 style={{ color:'white', fontSize:22, fontWeight:700, marginBottom:4 }}>Admin Access Only</h2>
+          <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13 }}>
+            This account isn't authorized for the admin panel.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
-  const handleLock = () => {
-    sessionStorage.removeItem(SESSION_KEY);
-    setGranted(false);
-  };
-
-  if (!granted) return <PinScreen onSuccess={handlePinSuccess} />;
-  return <AdminDashboard onLock={handleLock} />;
+  return <AdminDashboard />;
 }

@@ -26,11 +26,11 @@ const AFTER_QUIZ_LINKS = [
 function AdminNavLink({
   mobile, onClick }) {
   const { user } = useVedicAuth();
-  if (!user || user.user_metadata?.role !== 'admin') return null;
-  const active = window.location.pathname === '/admin';
+  if (!user || user.app_metadata?.role !== 'admin') return null;
+  const active = window.location.pathname === '/admin-panel';
   if (mobile) {
     return (
-      <Link to="/admin" onClick={onClick} style={{
+      <Link to="/admin-panel" onClick={onClick} style={{
         padding: '16px 0', fontSize: 18, fontWeight: 500,
         borderBottom: '1px solid #F0F4FF', textDecoration: 'none',
         color: active ? '#3B82F6' : '#7C3AED',
@@ -39,7 +39,7 @@ function AdminNavLink({
     );
   }
   return (
-    <Link to="/admin" style={{
+    <Link to="/admin-panel" style={{
       padding: '6px 16px', borderRadius: 8, fontSize: 14, fontWeight: 600, minHeight: 44,
       display: 'flex', alignItems: 'center', gap: 4,
       background: active ? '#EDE9FE' : 'transparent',
@@ -453,13 +453,13 @@ export default function DashboardNavbar() {
               </Link>
             );
           })}
-          {(() => { if (user && user.user_metadata?.role === 'admin') { return (
-            <Link to="/admin" onClick={() => setMobileOpen(false)} style={{
+          {(() => { if (user && user.app_metadata?.role === 'admin') { return (
+            <Link to="/admin-panel" onClick={() => setMobileOpen(false)} style={{
               display: 'flex', alignItems: 'center', height: 56, padding: '0 16px',
               fontSize: 15, fontFamily: 'var(--font-body)',
               color: '#FFFFFF', textDecoration: 'none',
-              borderLeft: location.pathname === '/admin' ? '3px solid #3B82F6' : '3px solid transparent',
-              background: location.pathname === '/admin' ? 'rgba(255,255,255,0.08)' : 'transparent',
+              borderLeft: location.pathname === '/admin-panel' ? '3px solid #3B82F6' : '3px solid transparent',
+              background: location.pathname === '/admin-panel' ? 'rgba(255,255,255,0.08)' : 'transparent',
               borderBottom: '1px solid rgba(255,255,255,0.1)',
             }}>🛡️ Admin Panel</Link>
           ); } return null; })()}
