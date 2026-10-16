@@ -276,7 +276,7 @@ export async function isReviewerAccount(userId) {
   const supabase = await getSupabase();
   const { data, error } = await supabase
     .from('reviewer_accounts')
-    .select('id')
+    .select('user_id')
     .eq('user_id', userId)
     .eq('is_active', true)
     .maybeSingle();
