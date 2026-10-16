@@ -238,13 +238,10 @@ export default function BattleModePage() {
     try {
       const supabase = await getSupabase();
       const code = rawCode.trim().toUpperCase();
-      const { data: found, error: findErr } = await supabase
-        .from('battle_rooms')
-        .select('*')
-        .eq('code', code)
-        .eq('status', 'waiting')
-        .is('opponent_id', null)
-        .maybeSingle();
+      // Lookup goes through a database function that returns only the open
+      // room's public fields, so the browser can't list other players' rooms.
+      const { data: rows, error: findErr } = await supabase.rpc('battle_find_by_code', { p_code: code });
+      const found = rows?.[0];
       if (findErr || !found) {
         setError('Battle not found, already started, or already full.');
         setBusy(false);
@@ -265,18 +262,14 @@ export default function BattleModePage() {
     try {
       const supabase = await getSupabase();
       const startsAt = new Date(Date.now() + COUNTDOWN_SECONDS * 1000).toISOString();
-      const { data: updated, error: acceptErr } = await supabase
-        .from('battle_rooms')
-        .update({
-          opponent_id: user.id,
-          opponent_name: myName,
-          status: 'starting',
-          battle_starts_at: startsAt,
-        })
-        .eq('id', room.id)
-        .is('opponent_id', null)
-        .select()
-        .single();
+      // The function sets the opponent only if the room is still open and not
+      // the caller's own, so two players can't both claim it.
+      const { data: rows, error: acceptErr } = await supabase.rpc('battle_accept', {
+        p_room: room.id,
+        p_name: myName,
+        p_starts: startsAt,
+      });
+      const updated = rows?.[0];
       if (acceptErr || !updated) {
         setError('Someone just accepted this battle first — try another code.');
         setPhase('menu');
