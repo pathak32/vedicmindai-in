@@ -30,6 +30,12 @@ async function post(action, body, { token } = {}) {
   };
 }
 
+// Forgot-password check. The server compares the answer; the stored answer is never returned.
+export async function checkSecurityAnswer(phone, answer) {
+  const r = await post('verify-security', { phone, answer });
+  return r.ok ? { ok: true } : { ok: false, error: r.error || 'Incorrect answer' };
+}
+
 // First step of the login screen: decides between PIN entry and a WhatsApp code.
 export function checkLoginPhone(phone) {
   return post('status', { phone });

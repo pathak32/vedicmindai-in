@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { getSupabase } from './supabaseClient';
+import { checkSecurityAnswer } from './phoneAuth';
 
 const VedicAuthContext = createContext(null);
 export const useVedicAuth = () => useContext(VedicAuthContext);
@@ -204,17 +205,10 @@ export function VedicAuthProvider({ children }) {
     return data;
   };
   // ── Forgot Password — verify security answer ───────────────────────────────
+  // The answer is checked on the server. The stored answer never reaches the browser.
   const verifySecurityAnswer = async (mobile, answer, countryCode = '+91') => {
-    const supabase = await getSupabase();
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('security_answer')
-      .eq('mobile', `${countryCode}${mobile}`)
-      .single();
-    if (error || !data) throw new Error('Account not found');
-    if (data.security_answer !== answer.trim().toLowerCase()) {
-      throw new Error('Incorrect answer');
-    }
+    const result = await checkSecurityAnswer(`${countryCode}${mobile}`, answer);
+    if (!result.ok) throw new Error(result.error);
     // Never return a password or hint from here. Recovery is done by support.
     return true;
   };

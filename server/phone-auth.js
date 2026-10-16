@@ -299,6 +299,22 @@ async function verifyPin(res, phone, pin) {
   return issueSession(res, phone, profile.id);
 }
 
+// Checks a forgot-password security answer on the server. The stored answer is
+// never sent to the browser. Answers are compared case-insensitively.
+async function verifySecurityAnswer(res, phone, answer) {
+  if (!answer || !String(answer).trim()) return send(res, 400, { success: false, error: 'Please enter your answer.' });
+
+  const profile = await findProfileByPhone(phone);
+  if (!profile) return send(res, 404, { success: false, error: 'Account not found.' });
+
+  const { data } = await db().from('profiles').select('security_answer').eq('id', profile.id).maybeSingle();
+  const stored = (data?.security_answer || '').trim().toLowerCase();
+  if (!stored || stored !== String(answer).trim().toLowerCase()) {
+    return send(res, 401, { success: false, error: 'Incorrect answer' });
+  }
+  return send(res, 200, { success: true });
+}
+
 // ── entry point ──────────────────────────────────────────────────────────────
 
 export default async function handler(req, res) {
@@ -322,6 +338,7 @@ export default async function handler(req, res) {
     if (!phone) return send(res, 400, { success: false, error: 'Enter a valid 10-digit Indian mobile number.' });
 
     if (action === 'status') return await status(res, phone);
+    if (action === 'verify-security') return await verifySecurityAnswer(res, phone, body.answer);
     if (action === 'send-otp') return await sendOtp(res, phone);
     if (action === 'verify-otp') return await verifyOtp(res, phone, body.code);
     if (action === 'verify-pin') return await verifyPin(res, phone, body.pin);
