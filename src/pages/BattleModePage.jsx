@@ -502,7 +502,7 @@ export default function BattleModePage() {
                 }}
               />
               <button
-                onClick={handlePreview}
+                onClick={() => handlePreview()}
                 disabled={busy}
                 style={{
                   width: '100%', height: 48, borderRadius: 12, background: 'transparent',
