@@ -15,10 +15,13 @@ if (SENTRY_DSN) {
     // Never send personal data: no IPs, no cookies, no request bodies.
     sendDefaultPii: false,
   })
-  // Diagnostic: visit /?sentrytest=1 to send one test event. Normal visitors never trigger it.
+  // Diagnostic: visit /?sentrytest=1 to send one test exception. Normal visitors never trigger it.
   if (new URLSearchParams(window.location.search).has('sentrytest')) {
-    Sentry.captureMessage('Sentry init test from VedicMind')
+    Sentry.captureException(new Error('Sentry exception test from VedicMind'))
   }
+  // Uncaught errors and unhandled promise rejections, reported explicitly.
+  window.addEventListener('error', (e) => Sentry.captureException(e.error || new Error(e.message)))
+  window.addEventListener('unhandledrejection', (e) => Sentry.captureException(e.reason instanceof Error ? e.reason : new Error(String(e.reason))))
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
