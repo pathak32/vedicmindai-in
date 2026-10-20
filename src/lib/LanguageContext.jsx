@@ -12,6 +12,8 @@ export function LanguageProvider({ children }) {
 
   useEffect(() => {
     localStorage.setItem("vedicmind_language", language);
+    // Keep the page's language tag in step with the toggle (screen readers, search, hyphenation).
+    document.documentElement.lang = language;
     // Update html lang attribute
     document.documentElement.lang = language;
   }, [language]);

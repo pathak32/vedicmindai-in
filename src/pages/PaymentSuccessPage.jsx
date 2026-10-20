@@ -107,13 +107,17 @@ export default function PaymentSuccessPage() {
   const navigate = useNavigate();
   const autoRedirected = useRef(false);
 
-  // Determine plan from URL params or localStorage
+  // The plan is only trusted when the pricing page saved a verified payment record
+  // (written after the server confirmed the Razorpay signature). The URL alone is
+  // never enough: anyone can type /payment-success?plan=pro.
   const urlParams = new URLSearchParams(window.location.search);
   const paymentId = urlParams.get('payment_id') || urlParams.get('razorpay_payment_id');
-  const urlPlan = urlParams.get('plan');
+
+  const verified = JSON.parse(localStorage.getItem('vedicmind_verified_payment') || 'null');
+  const confirmed = !!(paymentId && verified && verified.paymentId === paymentId && verified.plan);
 
   const plan = JSON.parse(localStorage.getItem('vedicmind_plan') || '{}');
-  const planStatus = urlPlan || plan.planStatus || 'basic';
+  const planStatus = confirmed ? verified.plan : (plan.planStatus || 'basic');
   const planName = PLAN_DISPLAY[planStatus] || planStatus;
   const features = PLAN_FEATURES[planStatus] || PLAN_FEATURES['basic'];
 
@@ -123,6 +127,8 @@ export default function PaymentSuccessPage() {
 
   // On mount: activate plan and set up auto-redirect
   useEffect(() => {
+    // Without a verified payment, change nothing: no plan, progress or profile updates.
+    if (!confirmed) return undefined;
     const basePlan = planStatus.replace('_annual', '');
 
     // Update vedicmind_plan with payment info

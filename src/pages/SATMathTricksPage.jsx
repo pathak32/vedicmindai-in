@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const SAFFRON='#F59E0B',DARK='#0A1628',BLUE='#1E40AF';
 
 const TRICKS=[
-  { q:'1998 × 1997 = ?', vedic:'Base 2000: deficits -2,-3 → Left: 1998-3=1995, Right: 2×3=006 → 1995006', time:'3 sec', sat:'No-Calculator Grid-In' },
+  { q:'998 × 997 = ?', vedic:'Base 1000: deficits -2,-3 → Left: 998-3=995, Right: 2×3=006 → 995006', time:'3 sec', sat:'No-Calculator Grid-In' },
   { q:'97² = ?', vedic:'Base 100: deficit -3 → Left: 97-3=94, Right: 3²=09 → 9409', time:'2 sec', sat:'Multiple Choice' },
   { q:'45 × 45 = ?', vedic:'Ends in 5: 4×5|25 = 2025', time:'1 sec', sat:'No-Calculator Section' },
   { q:'998 + 997 + 996 = ?', vedic:'3×1000 - (2+3+4) = 3000-9 = 2991', time:'2 sec', sat:'Heart of Algebra' },

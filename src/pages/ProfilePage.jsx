@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 // navigate already imported above
 import { motion, AnimatePresence } from 'framer-motion';
+import { TOTAL_VEDIC_LESSONS } from '@/components/learn/curriculumData';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import BadgeGrid from '@/components/profile/BadgeGrid';
 import ReferralSection from '@/components/profile/ReferralSection';
@@ -194,7 +195,7 @@ export default function ProfilePage() {
             {[
               { emoji: '⭐', label: 'Total XP', value: xpVal, mono: true },
               { emoji: '🔥', label: 'Day Streak', value: `${progress.streak || 0}`, sub: 'days', mono: true },
-              { emoji: '📚', label: 'Lessons Done', value: `${completed.length}/40`, mono: true },
+              { emoji: '📚', label: 'Lessons Done', value: `${completed.length}/${TOTAL_VEDIC_LESSONS}`, mono: true },
               { emoji: '🎯', label: 'Avg Accuracy', value: avgAccuracy !== null ? `${avgAccuracy}%` : '—', mono: true },
               { emoji: '🔥', label: 'Quiz Streak', value: `${progress.dailyQuizStreak || 0}`, sub: 'days', mono: true },
             ].map((s) => (

@@ -1,9 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { TOTAL_VEDIC_LESSONS } from './curriculumData';
 
 export default function LessonLockOverlay({
   title = 'Upgrade to Continue',
-  message = 'This lesson is part of the paid plan. Upgrade to unlock all 40 lessons.',
+  message = `This lesson is part of the paid plan. Upgrade to unlock all ${TOTAL_VEDIC_LESSONS} lessons.`,
   icon = '🔒',
 }) {
   const navigate = useNavigate();

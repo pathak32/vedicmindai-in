@@ -73,3 +73,6 @@ export const CURRICULUM = [
     ],
   },
 ];
+// Total Vedic Maths lessons, computed from the curriculum above. Use this everywhere
+// a lesson total is shown, so the number cannot drift between pages.
+export const TOTAL_VEDIC_LESSONS = CURRICULUM.reduce((n, lv) => n + lv.lessons.length, 0);

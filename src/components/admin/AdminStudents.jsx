@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getSupabase } from '@/lib/supabaseClient';
+import { TOTAL_VEDIC_LESSONS } from '@/components/learn/curriculumData';
 import { useLanguage } from '@/lib/LanguageContext';
 
 const card = { background: 'rgba(255,255,255,0.9)', border: '1px solid rgba(30,64,175,0.1)', borderRadius: 14, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.05)' };
@@ -191,7 +192,7 @@ export default function AdminStudents() {
                     <td style={{ padding:'10px 14px', borderBottom:'1px solid #F3F4F6', fontFamily:'monospace' }}>{u.mobile || '—'}</td>
                     <td style={{ padding:'10px 14px', borderBottom:'1px solid #F3F4F6' }}><span style={tag(u.plan||'free')}>{u.plan||'Free'}</span></td>
                     <td style={{ padding:'10px 14px', borderBottom:'1px solid #F3F4F6', fontWeight:600, color:'#7C3AED' }}>{u.xp||0}</td>
-                    <td style={{ padding:'10px 14px', borderBottom:'1px solid #F3F4F6' }}>{u.lessons_completed||0}/40</td>
+                    <td style={{ padding:'10px 14px', borderBottom:'1px solid #F3F4F6' }}>{u.lessons_completed||0}/{TOTAL_VEDIC_LESSONS}</td>
                     <td style={{ padding:'10px 14px', borderBottom:'1px solid #F3F4F6', color:'#6B7280' }}>{u.created_at ? new Date(u.created_at).toLocaleDateString('en-IN') : '—'}</td>
                     <td style={{ padding:'10px 14px', borderBottom:'1px solid #F3F4F6', textAlign:'center' }}>
                       <button

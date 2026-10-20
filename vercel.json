@@ -1,5 +1,8 @@
 {
   "redirects": [
+    { "source": "/faq", "destination": "/", "permanent": true },
+    { "source": "/login", "destination": "/auth", "permanent": true },
+    { "source": "/refund", "destination": "/terms", "permanent": true },
     {
       "source": "/((?!\\.well-known).*)",
       "has": [{ "type": "host", "value": "vedicmindai.in" }],

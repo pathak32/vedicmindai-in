@@ -361,6 +361,12 @@ export default function PricingPage() {
             const verifyData = await verifyRes.json();
             if (!verifyRes.ok) throw new Error(verifyData.error || 'Payment verification failed.');
 
+            // Record the verified payment so /payment-success can trust it.
+            localStorage.setItem('vedicmind_verified_payment', JSON.stringify({
+              paymentId: response.razorpay_payment_id,
+              plan: planId,
+            }));
+
             // Step 4 — only navigate to success after server confirms
             window.location.href = `/payment-success?plan=${planId}&razorpay_payment_id=${response.razorpay_payment_id}`;
           } catch (err) {

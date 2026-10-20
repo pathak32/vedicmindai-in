@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
+import { TOTAL_VEDIC_LESSONS } from '@/components/learn/curriculumData';
 
 const ALL_BADGES = [
   { id: 'first_lesson',     emoji: '🥇', name: 'First Lesson',         condition: 'Complete your first lesson' },
@@ -9,7 +10,7 @@ const ALL_BADGES = [
   { id: 'all_beginner',     emoji: '🌱', name: 'Beginner Complete',     condition: 'Complete all Level 1 lessons' },
   { id: 'all_intermediate', emoji: '📈', name: 'Intermediate Complete', condition: 'Complete all Level 2 lessons' },
   { id: 'all_advanced',     emoji: '⚡', name: 'Advanced Complete',     condition: 'Complete all Level 3 lessons' },
-  { id: 'master_complete',  emoji: '👑', name: 'Master',                condition: 'Complete all 40 lessons' },
+  { id: 'master_complete',  emoji: '👑', name: 'Master',                condition: `Complete all ${TOTAL_VEDIC_LESSONS} lessons` },
   { id: 'streak_3',         emoji: '🔥', name: '3-Day Streak',          condition: 'Study 3 days in a row' },
   { id: 'streak_7',         emoji: '💪', name: '7-Day Streak',          condition: 'Study 7 days in a row' },
   { id: 'streak_14',        emoji: '🏅', name: '2-Week Streak',         condition: 'Study 14 days in a row' },

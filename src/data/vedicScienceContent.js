@@ -140,7 +140,6 @@ export const VEDIC_PHYSICS_CHAPTERS = [
       { difficulty: 'hard', q: { en: 'The speed of light being constant is fundamental to Special Relativity. Which Indian philosophical concept most closely parallels the idea that the speed of light is an absolute universal constant?', hi: 'प्रकाश की गति का स्थिर होना विशेष सापेक्षता के लिए मूलभूत है। कौन सी भारतीय दार्शनिक अवधारणा इस विचार के सबसे करीब है कि प्रकाश की गति एक पूर्ण सार्वभौमिक स्थिरांक है?' }, options: [{ en: 'Brahman — the unchanging, absolute foundation of all existence', hi: 'ब्रह्मन् — सभी अस्तित्व की अपरिवर्तनीय, पूर्ण नींव' }, { en: 'Karma — the law of cause and effect', hi: 'कर्म — कारण और प्रभाव का नियम' }, { en: 'Dharma — the universal moral order', hi: 'धर्म — सार्वभौमिक नैतिक व्यवस्था' }], answer: { en: 'Brahman — the unchanging, absolute foundation of all existence', hi: 'ब्रह्मन् — सभी अस्तित्व की अपरिवर्तनीय, पूर्ण नींव' }, exp: { en: 'In Vedanta philosophy, Brahman is the one unchanging, absolute reality that underlies all of existence — it does not vary with observer or circumstance. This philosophically parallels Einstein\'s insight that c is an absolute constant that does not change regardless of the observer\'s motion — a radical break from classical physics where all measurements were relative.', hi: 'वेदांत दर्शन में, ब्रह्मन् एकमात्र अपरिवर्तनीय, पूर्ण वास्तविकता है जो सभी अस्तित्व के अंतर्गत है — यह प्रेक्षक या परिस्थिति के साथ नहीं बदलती। यह दार्शनिक रूप से आइंस्टाइन की अंतर्दृष्टि के समानांतर है कि c एक पूर्ण स्थिरांक है।' } },
     ],
   },
-,
 // CHAPTER 4: Seven Colors of Sunlight
 {
     id: 'seven-colors-sunlight',
@@ -187,7 +186,6 @@ export const VEDIC_PHYSICS_CHAPTERS = [
   },
 
 // CHAPTER 5: Agastya's Electric Battery
-,
 {
     id: 'agastya-battery',
     section: 'physics',
