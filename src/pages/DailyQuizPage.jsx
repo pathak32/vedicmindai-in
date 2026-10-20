@@ -85,10 +85,10 @@ function WaitingScreen() {
         style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 24, padding: 40, maxWidth: 400, width: '100%', textAlign: 'center' }}>
         <div style={{ fontSize: 56, marginBottom: 20 }}>🕗</div>
         <h2 className="font-heading" style={{ fontSize: 26, fontWeight: 700, color: 'white', marginBottom: 8 }}>
-          Next quiz drops at 8:00 AM
+          {language === "hi" ? "अगली क्विज़ सुबह 8:00 बजे आएगी" : "Next quiz drops at 8:00 AM"}
         </h2>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.6)', marginBottom: 24 }}>
-          Come back in the morning for today's challenge
+          {language === "hi" ? "आज की चुनौती के लिए सुबह वापस आएँ" : "Come back in the morning for today's challenge"}
         </p>
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 40, fontWeight: 700, color: '#3B82F6', marginBottom: 28, letterSpacing: 2 }}>
           {countdown}
@@ -98,7 +98,7 @@ function WaitingScreen() {
           border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)',
           fontWeight: 700, fontSize: 16, cursor: 'pointer',
         }}>
-          ← Back to Dashboard
+          {language === "hi" ? "← डैशबोर्ड पर वापस" : "← Back to Dashboard"}
         </button>
 
         {/* Aptitude Daily Quiz teaser */}
@@ -111,10 +111,10 @@ function WaitingScreen() {
             <span style={{ fontSize: 22 }}>🧠</span>
             <div>
               <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 700, color: 'white' }}>
-                Aptitude Daily Quiz — Coming Soon
+                {language === "hi" ? "एप्टीट्यूड डेली क्विज़ — जल्द आ रहा है" : "Aptitude Daily Quiz — Coming Soon"}
               </div>
               <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(255,255,255,0.5)' }}>
-                A second daily quiz for Reasoning & Aptitude
+                {language === "hi" ? "रीज़निंग और एप्टीट्यूड के लिए दूसरी दैनिक क्विज़" : "A second daily quiz for Reasoning & Aptitude"}
               </div>
             </div>
             <span style={{ marginLeft: 'auto', background: '#3B82F6', color: 'white', fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 99, whiteSpace: 'nowrap' }}>
@@ -550,6 +550,7 @@ function DailyQuizPageInner() {
 }
 
 export default function DailyQuizPage() {
+  const { language } = useLanguage();
   return (
     <QuizErrorBoundary>
       <DailyQuizPageInner />

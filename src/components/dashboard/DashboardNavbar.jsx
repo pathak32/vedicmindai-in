@@ -8,6 +8,7 @@ import { generateLeaderboard, getUserEntry } from '@/lib/leaderboardEngine';
 import { getWeeklyExamStatus } from '@/lib/weeklyExamEngine';
 import { getOlympiadStatus } from '@/lib/olympiadEngine';
 import { useLanguage } from '@/lib/LanguageContext';
+import { navLabel } from '@/lib/navLabels';
 import { LanguageToggle } from '@/components/LanguageToggle';
 
 const REGULAR_LINKS = [
@@ -220,6 +221,7 @@ const MORE_LINKS = [
 ];
 
 function MoreDropdown({ weeklyLive, olympiadLive }) {
+  const { language } = useLanguage();
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const anyActive = MORE_LINKS.some(l => location.pathname === l.path);
@@ -244,7 +246,7 @@ function MoreDropdown({ weeklyLive, olympiadLive }) {
         {anyLive && (
           <span style={{ width: 7, height: 7, borderRadius: '50%', background: weeklyLive ? '#EF4444' : '#F59E0B', flexShrink: 0, animation: 'quizPulse 1.5s ease-in-out infinite' }} />
         )}
-        More
+        {navLabel("More", language)}
         <span style={{ fontSize: 10, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.15s' }}>▾</span>
       </button>
       {open && (
@@ -266,7 +268,7 @@ function MoreDropdown({ weeklyLive, olympiadLive }) {
                 {isLive && (
                   <span style={{ width: 7, height: 7, borderRadius: '50%', background: link.path === '/weekly-exam' ? '#EF4444' : '#F59E0B', flexShrink: 0 }} />
                 )}
-                {link.label}
+                {navLabel(link.label, language)}
                 {link.badge && (
                   <span style={{ marginLeft: 'auto', background: '#F59E0B', color: 'white', borderRadius: 99, padding: '1px 6px', fontSize: 9, fontWeight: 700 }}>{link.badge}</span>
                 )}
@@ -280,7 +282,7 @@ function MoreDropdown({ weeklyLive, olympiadLive }) {
 }
 
 export default function DashboardNavbar() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -358,7 +360,7 @@ export default function DashboardNavbar() {
                   textUnderlineOffset: 4,
                   fontFamily: 'var(--font-body)', transition: 'color 0.15s',
                 }}>
-                  {link.label}
+                  {navLabel(link.label, language)}
                 </Link>
               );
             })}
@@ -381,7 +383,7 @@ export default function DashboardNavbar() {
                   textUnderlineOffset: 4,
                   fontFamily: 'var(--font-body)', transition: 'color 0.15s',
                 }}>
-                  {link.label}
+                  {navLabel(link.label, language)}
                   {link.path === '/leaderboard' && <RankBadge rank={lbRank} />}
                 </Link>
               );
@@ -399,7 +401,7 @@ export default function DashboardNavbar() {
               border: '1px solid rgba(239,68,68,0.3)', cursor: 'pointer',
               fontFamily: 'var(--font-body)', transition: 'background 0.15s',
             }}>
-              Sign Out
+              {navLabel("Sign Out", language)}
             </button>
           </div>
 
@@ -445,7 +447,7 @@ export default function DashboardNavbar() {
                 background: active ? 'rgba(255,255,255,0.08)' : 'transparent',
                 borderBottom: '1px solid rgba(255,255,255,0.1)',
               }}>
-                {link.label}
+                {navLabel(link.label, language)}
                 {link.badge && (
                   <span style={{ marginLeft: 6, background: '#F59E0B', color: 'white', borderRadius: 99, padding: '1px 6px', fontFamily: 'var(--font-body)', fontSize: 9, fontWeight: 700, lineHeight: 1.4 }}>{link.badge}</span>
                 )}
@@ -469,7 +471,7 @@ export default function DashboardNavbar() {
             color: '#EF4444', background: 'transparent', border: 'none', cursor: 'pointer',
             textAlign: 'left',
           }}>
-            Sign Out
+            {navLabel("Sign Out", language)}
           </button>
           {/* Language Toggle in mobile menu */}
           <div style={{ padding: '16px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
