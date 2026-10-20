@@ -8,7 +8,8 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { APTITUDE_CHAPTERS, getAptitudeChapterContent, getAptitudeChaptersByLevel } from '@/data/aptitudeContent';
 import { getAptitudeQuestionsByChapter } from '@/data/aptitudeQuizBank';
 import { pickQuizQuestions } from '@/lib/quizQuestionPicker';
-import { saveAptitudeChapterResult, isAptitudeChapterUnlocked, isAptitudeLevelUnlocked, getAptitudeScores, APTITUDE_PASS_THRESHOLD } from '@/lib/aptitudeProgress';
+import { saveAptitudeChapterResult, isAptitudeChapterUnlocked, isAptitudeLevelUnlocked, getAptitudeScores, APTITUDE_PASS_THRESHOLD, reconcileAptitudeFromServer } from '@/lib/aptitudeProgress';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { isAptitudeChapterFreeAccess, getUserPlan } from '@/lib/planEngine';
 import {
   StepBox, ExampleCard, SectionTitle, OriginBox, WhyItWorksBox, CommonMistakeBox, RealWorldBox,
