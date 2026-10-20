@@ -19,6 +19,10 @@ const glass = {
   padding: '28px 24px',
 };
 
+// Percentage saved on the annual plan, from the real prices. Replaces hardcoded text
+// (e.g. "67% off") that did not match the numbers beside it.
+const annualDiscountLabel = (strike, price) => Math.round((1 - price / strike) * 100) + '% off';
+
 const PLANS = [
   {
     id: 'free',
@@ -50,15 +54,15 @@ const PLANS = [
   {
     id: 'basic',
     name: 'Basic',
-    badge: '67% off launch price',
+    badge: 'Launch price',
     badgeBg: '#ECFDF5',
     badgeColor: '#065F46',
     monthlyPrice: '₹499',
     monthlyStrike: '₹1,500',
     annualPrice: '₹3,999',
     annualStrike: '₹5,988',
-    annualSub: '= ₹333/month · Save ₹1,989/year',
-    discount: '67% off',
+    annualSub: '= ₹333/month · Save ₹' + (5988 - 3999).toLocaleString('en-IN') + '/year',
+    discount: annualDiscountLabel(5988, 3999),
     monthlyPaise: 49900,
     annualPaise: 399900,
     usdMonthly: '$9',
@@ -84,15 +88,15 @@ const PLANS = [
   {
     id: 'pro',
     name: 'Pro',
-    badge: '67% off launch price',
+    badge: 'Launch price',
     badgeBg: '#ECFDF5',
     badgeColor: '#065F46',
     monthlyPrice: '₹999',
     monthlyStrike: '₹3,000',
     annualPrice: '₹7,999',
     annualStrike: '₹11,988',
-    annualSub: '= ₹666/month · Save ₹3,989/year',
-    discount: '67% off',
+    annualSub: '= ₹666/month · Save ₹' + (11988 - 7999).toLocaleString('en-IN') + '/year',
+    discount: annualDiscountLabel(5988, 3999),
     monthlyPaise: 99900,
     annualPaise: 799900,
     usdMonthly: '$15',
@@ -116,7 +120,7 @@ const PLANS = [
   {
     id: 'family',
     name: 'Family',
-    badge: '70% off launch price',
+    badge: 'Launch price',
     badgeBg: '#ECFDF5',
     badgeColor: '#065F46',
     monthlyPrice: '₹1,499',
@@ -124,7 +128,7 @@ const PLANS = [
     annualPrice: '₹14,990',
     annualStrike: '₹60,000',
     annualSub: '= ₹1,249/month · 2 months FREE',
-    discount: '70% off',
+    discount: annualDiscountLabel(60000, 14990),
     monthlyPaise: 149900,
     annualPaise: 1499000,
     usdMonthly: '$23',

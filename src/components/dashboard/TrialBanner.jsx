@@ -33,7 +33,7 @@ export default function TrialBanner() {
         flexWrap: 'wrap',
       }}>
         <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#065F46', fontWeight: 600 }}>
-          ✅ {label} Plan Active
+          ✅ {label.charAt(0).toUpperCase() + label.slice(1)} Plan Active
         </div>
         <button
           onClick={() => navigate('/pricing')}
