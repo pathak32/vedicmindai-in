@@ -47,7 +47,19 @@ export default function AptitudeChapterPage() {
   const navigate = useNavigate();
   const { chapterId: paramChapterId } = useParams();
   const { language } = useLanguage();
+  const { user } = useVedicAuth();
+  const [, setSyncTick] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  // Unlock checks read local scores. Merge the server's saved scores in first,
+  // otherwise a new browser shows every chapter after the first as locked, even
+  // though the server has them passed.
+  useEffect(() => {
+    if (!user?.id) return;
+    reconcileAptitudeFromServer(user.id).then((changed) => {
+      if (changed) setSyncTick((n) => n + 1);
+    });
+  }, [user?.id]);
   const [tab, setTab] = useState('concept');
   const [qIndex, setQIndex] = useState(0);
   const [selected, setSelected] = useState(null);
