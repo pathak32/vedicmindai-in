@@ -7,7 +7,7 @@
 export const RA_LEVEL1_QUESTIONS = [
   // ---------------- Chapter 1: Odd One Out (Classification) ----------------
   { chapter: 'odd-one-out', prompt: 'Which one does not belong: Apple, Banana, Carrot, Mango?', options: ['Apple', 'Carrot', 'Mango'], answer: 'Carrot', difficulty: 'easy' , exp: 'Apple, Banana, and Mango are all fruits. Carrot is a vegetable — it doesn\'t belong.' },
-  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Dog, Cat, Cow, Table?', options: ['Cow', 'Table', 'Dog'], answer: 'Table', difficulty: 'easy' , exp: 'Dog, Cat, and Cow are all animals. Table is furniture — it doesn\'t belong.' },
+  { chapter: 'odd-one-out', prompt: 'Which one does not belong: Dog, Cat, Cow, Table?', options: ['Cow', 'Table', 'Dog', 'Cat'], answer: 'Table', difficulty: 'easy' , exp: 'Dog, Cat, and Cow are all animals. Table is furniture — it doesn\'t belong.' },
   { chapter: 'odd-one-out', prompt: 'Which one does not belong: Circle, Square, Triangle, Red?', options: ['Red', 'Circle', 'Square'], answer: 'Red', difficulty: 'easy' , exp: 'Circle, Square, and Triangle are all shapes. Red is a colour — not a shape, so it doesn\'t belong.' },
   { chapter: 'odd-one-out', prompt: 'Which one does not belong: Pen, Pencil, Eraser, Apple?', options: ['Apple', 'Pen', 'Eraser'], answer: 'Apple', difficulty: 'easy' , exp: 'Pen, Pencil, and Eraser are all stationery items. Apple is a fruit — it doesn\'t belong.' },
   { chapter: 'odd-one-out', prompt: 'Which one does not belong: Rose, Lily, Lotus, Mango?', options: ['Mango', 'Rose', 'Lily'], answer: 'Mango', difficulty: 'easy' , exp: 'Rose, Lily, and Lotus are all flowers. Mango is a fruit — it doesn\'t belong.' },
