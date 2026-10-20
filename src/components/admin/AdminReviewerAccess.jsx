@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { maskPhone } from '@/lib/maskPhone';
 import { getSupabase } from '@/lib/supabaseClient';
 
 // ─── Reviewer Accounts ───────────────────────────────────────────────────────
@@ -393,7 +394,7 @@ Login at: vedicmindai.in`);
                   {list.map((d, i) => (
                     <tr key={d.user_id || i} style={{ background: i % 2 === 0 ? '#fff' : '#F9FAFB' }}>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6', fontWeight: 600 }}>{d.name}</td>
-                      <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6', fontFamily: 'monospace', fontSize: 11 }}>{d.mobile}</td>
+                      <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6', fontFamily: 'monospace', fontSize: 11 }}>{maskPhone(d.mobile)}</td>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6', fontFamily: 'monospace', fontWeight: 700 }}>{d.password_plain ? 'Set' : 'Not set'}</td>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6', color: '#6B7280' }}>{d.notes || '—'}</td>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6' }}>{d.created_at ? new Date(d.created_at).toLocaleDateString('en-IN') : '—'}</td>

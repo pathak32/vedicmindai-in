@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { maskPhone } from '@/lib/maskPhone';
 import { getSupabase } from '@/lib/supabaseClient';
 import { getUserProgress, getDailyQuizHistory, getQuizResultsByUser, getWeeklyExamResultsByUser } from '@/lib/supabaseDataService';
 
@@ -84,7 +85,7 @@ export default function AdminReviewerActivity() {
         >
           <option value="">— Choose a reviewer —</option>
           {reviewers.map(r => (
-            <option key={r.user_id} value={r.user_id}>{r.name} ({r.mobile})</option>
+            <option key={r.user_id} value={r.user_id}>{r.name} ({maskPhone(r.mobile)})</option>
           ))}
         </select>
         {reviewers.length === 0 && (

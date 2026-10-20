@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { maskPhone } from '@/lib/maskPhone';
 import { getSupabase } from '@/lib/supabaseClient';
 import { reconcileProgressFromLedger } from '@/lib/supabaseDataService';
 
@@ -129,7 +130,7 @@ export default function AdminDataRecovery() {
       {result && (
         <div style={{ border: '1px solid #E5E7EB', borderRadius: 12, padding: 20 }}>
           <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 2 }}>
-            {result.user.full_name || '(no name)'} — {result.user.mobile}
+            {result.user.full_name || '(no name)'} — {maskPhone(result.user.mobile)}
           </div>
           <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 16 }}>
             Plan: {result.user.plan || 'free'} · User ID: {result.user.id}
