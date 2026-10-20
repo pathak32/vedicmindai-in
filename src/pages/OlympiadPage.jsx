@@ -14,6 +14,7 @@ import {
   saveOlympiadResult,
 } from '@/lib/olympiadEngine';
 import { OLYMPIAD_BANKS } from '@/lib/olympiadQuestionBanks';
+import { getSupabase } from '@/lib/supabaseClient';
 
 function seededShuffle(arr, seed) {
   let s = seed;
@@ -234,6 +235,40 @@ function UpcomingView({ level, onLevelChange, status }) {
               {days} day{days !== 1 ? 's' : ''} away
             </div>
           )}
+        </div>
+
+        {/* What to expect: makes the event's rules and the next step explicit */}
+        <div style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 14, padding: '16px 18px', marginBottom: 20, textAlign: 'left' }}>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'white', fontWeight: 700, marginBottom: 8 }}>
+            {status === 'today_waiting' ? 'Olympiad is on today' : 'What to expect'}
+          </div>
+          <ul style={{ margin: 0, paddingLeft: 18, fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7 }}>
+            <li>30 questions, 60 minutes, one attempt.</li>
+            <li>Scores are saved to your profile and ranked against other students.</li>
+            <li>Results and certificates are shown after the exam closes.</li>
+          </ul>
+          {status !== 'today_waiting' && user && (
+            <button
+              type="button"
+              disabled={remindState !== 'idle'}
+              onClick={async () => {
+                setRemindState('saving');
+                try {
+                  const sb = await getSupabase();
+                  // Records interest only. There is no registration step yet.
+                  const { error } = await sb.from('leads').insert({ email: user.email, source: `olympiad_reminder:${user.id}` });
+                  if (error) throw error;
+                  setRemindState('done');
+                } catch {
+                  setRemindState('error');
+                }
+              }}
+              style={{ marginTop: 12, height: 40, padding: '0 16px', borderRadius: 10, border: '1px solid rgba(245,158,11,0.6)', background: 'transparent', color: '#F59E0B', fontWeight: 700, fontSize: 13, cursor: 'pointer' }}
+            >
+              {remindState === 'done' ? 'We will remind you ✓' : remindState === 'saving' ? 'Saving…' : 'Remind me before the next Olympiad'}
+            </button>
+          )}
+          {remindState === 'error' && <div style={{ marginTop: 8, fontSize: 12, color: '#FCA5A5' }}>Could not save your reminder. Please try again.</div>}
         </div>
 
         {/* Info pills */}
@@ -674,6 +709,7 @@ function LoadingScreen({ level }) {
 
 export default function OlympiadPage() {
   const { user, loading: authLoading } = useVedicAuth();
+  const [remindState, setRemindState] = useState("idle");
   const navigate = useNavigate();
   const profile = (() => { try { return JSON.parse(localStorage.getItem('vedicmind_profile') || '{}'); } catch { return {}; } })();
   const [level, setLevel] = useState(() => getOlympiadLevel(profile.grade));
