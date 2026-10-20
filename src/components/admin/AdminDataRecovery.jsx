@@ -76,6 +76,7 @@ export default function AdminDataRecovery() {
 
   async function handleRecover() {
     if (!result?.user?.id) return;
+    if (!window.confirm('Rebuild this student\'s progress from the old record? Their current progress will be overwritten.')) return;
     setRecovering(true);
     setRecoverMsg('');
     try {

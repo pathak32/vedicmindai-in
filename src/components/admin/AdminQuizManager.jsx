@@ -74,6 +74,7 @@ export default function AdminQuizManager() {
   }
 
   async function deleteQuestion(id) {
+    if (!window.confirm('Delete this question permanently? This cannot be undone.')) return;
     const sb = await getSupabase();
     await sb.from('questions').delete().eq('id', id);
     setStatusMsg('🗑️ Question deleted.');
