@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
-import { TOTAL_VEDIC_LESSONS } from '@/components/learn/curriculumData';
+import { CURRICULUM, TOTAL_VEDIC_LESSONS } from '@/components/learn/curriculumData';
 
 const ALL_BADGES = [
   { id: 'first_lesson',     emoji: '🥇', name: 'First Lesson',         condition: 'Complete your first lesson' },
@@ -25,14 +25,38 @@ const ALL_BADGES = [
   { id: 'top_10_class',     emoji: '🏅', name: 'Top 10',                condition: 'Coming in Phase 2' },
 ];
 
-export default function BadgeGrid({
-  badges }) {
+// A badge counts as earned if it was stored, or if the progress itself meets it.
+// The stored list can lag behind the real progress, which made completed students
+// see "First Lesson" earned but "5 Lessons" locked.
+function isEarned(id, badges, progress) {
+  if (badges.includes(id)) return true;
+  const done = (progress?.completedLessons || []).length;
+  const xp = progress?.totalXP || 0;
+  const level = (lvl) => CURRICULUM.find((lv) => lv.level === lvl)?.lessons || [];
+  const levelDone = (lvl) => level(lvl).every((l) => (progress?.completedLessons || []).includes(l.id));
+  switch (id) {
+    case 'first_lesson': return done >= 1;
+    case 'five_lessons': return done >= 5;
+    case 'ten_lessons': return done >= 10;
+    case 'twenty_lessons': return done >= 20;
+    case 'all_beginner': return levelDone(1);
+    case 'all_intermediate': return levelDone(2);
+    case 'all_advanced': return levelDone(3);
+    case 'master_complete': return done >= TOTAL_VEDIC_LESSONS;
+    case 'xp_500': return xp >= 500;
+    case 'xp_1000': return xp >= 1000;
+    case 'xp_5000': return xp >= 5000;
+    default: return false;
+  }
+}
+
+export default function BadgeGrid({ badges = [], progress = {} }) {
   const [tooltip, setTooltip] = useState(null);
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))', gap: 16 }}>
       {ALL_BADGES.map((b) => {
-        const earned = badges.includes(b.id);
+        const earned = isEarned(b.id, badges, progress);
         return (
           <div
             key={b.id}

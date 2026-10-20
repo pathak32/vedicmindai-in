@@ -312,7 +312,7 @@ export default function ProfilePage() {
           {/* ── BADGES ── */}
           <div style={{ ...glass, padding: 24, marginBottom: 20 }}>
             <h2 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>All Badges</h2>
-            <BadgeGrid badges={progress.badges || []} />
+            <BadgeGrid badges={progress.badges || []} progress={progress} />
           </div>
           <ReferralSection />
 
