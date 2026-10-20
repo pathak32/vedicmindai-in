@@ -16,6 +16,7 @@ import { getDailyQuizStatus, getTodayString } from '@/lib/dailyQuizEngine';
 import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@/lib/leaderboardEngine';
 import { useLanguage, translations } from '@/lib/LanguageContext';
 import { recalculateMonthlyStatus, pointsToNextTier } from '@/lib/knowledgePoints';
+import { TOTAL_VEDIC_LESSONS } from '@/components/learn/curriculumData';
 // ─── helpers ────────────────────────────────────────────────────────────────
 
 function greeting(auth, profile, t) {
@@ -629,7 +630,7 @@ function DashboardPage() {
   const aiAnalysis = profile.aiAnalysis || {};
   const levelName  = getLevelName(progress.currentLevel ?? 1, t);
 
-  const overallPct = Math.round((completed.length / 40) * 100);
+  const overallPct = Math.min(100, Math.round((completed.length / TOTAL_VEDIC_LESSONS) * 100));
 
   const allLessonIds = [
     'l1_01','l1_02','l1_03','l1_04','l1_05','l1_06','l1_07','l1_08','l1_09','l1_10',
@@ -717,7 +718,7 @@ function DashboardPage() {
           <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>📚</div>
             <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 500 }}>{t('dbLessonsCompleted')}</span>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>{completed.length} / 40</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700, color: '#0A1628', lineHeight: 1 }}>{completed.length} / {TOTAL_VEDIC_LESSONS}</span>
           </div>
           {/* 4. Current Level */}
           <div style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(30,64,175,0.15)', boxShadow: '0 8px 32px rgba(10,22,40,0.08)', borderRadius: 16, padding: 20, display: 'flex', flexDirection: 'column', gap: 8 }}>
