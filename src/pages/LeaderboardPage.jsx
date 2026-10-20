@@ -508,7 +508,7 @@ const auth     = (() => { try { return JSON.parse(localStorage.getItem('vedicmin
                       {userEntry.name.charAt(0)}
                     </div>
                     <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: '#0A1628' }}>
-                      {userEntry.name}<span style={{ color: '#3B82F6' }}> (You)</span>
+                      {userEntry.name}<span style={{ color: '#3B82F6' }}> · you</span>
                     </div>
                   </div>
                   <div className="lb-hide-mobile" style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>{userEntry.grade}</div>

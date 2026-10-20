@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 // navigate already imported above
 import { motion, AnimatePresence } from 'framer-motion';
+import { CURRICULUM } from '@/components/learn/curriculumData';
 import { TOTAL_VEDIC_LESSONS } from '@/components/learn/curriculumData';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import BadgeGrid from '@/components/profile/BadgeGrid';
@@ -43,6 +44,17 @@ const INITIAL_PROGRESS = {
   studyDates: [], badges: [], practiceHistory: [], dailyQuizHistory: [],
   aptitudeProgress: {}, leaderboardOptOut: false,
 };
+
+// Highest level whose lessons are all completed (or the level being worked on).
+// Reads the completed lessons, not the stored currentLevel, which can go stale.
+function levelFromProgress(progress) {
+  const done = new Set(progress?.completedLessons || []);
+  let level = 1;
+  for (const lv of CURRICULUM) {
+    if (lv.lessons.some((l) => done.has(l.id))) level = lv.level ?? level;
+  }
+  return level;
+}
 
 export default function ProfilePage() {
   const { t } = useLanguage();
@@ -153,7 +165,7 @@ export default function ProfilePage() {
                 <span className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: 'white' }}>{initials}</span>
               </div>
               <span style={{ background: '#DBEAFE', color: '#1E40AF', borderRadius: 100, padding: '4px 12px', fontSize: 12, fontWeight: 600, fontFamily: 'var(--font-body)', whiteSpace: 'nowrap' }}>
-                Level {progress.currentLevel || 1}
+                Level {levelFromProgress(progress)}
               </span>
             </div>
             <div style={{ flex: 1, minWidth: 200 }}>
