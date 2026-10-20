@@ -153,7 +153,8 @@ export default function AdminReviewerAccess() {
         user_id: userId,
         name: form.name,
         mobile: `+91${form.mobile.trim()}`,
-        password_plain: form.password,
+        // Stored passwords are never saved in plain text. Sign-in uses Supabase Auth.
+        password_plain: null,
         notes: form.notes,
         created_at: new Date().toISOString(),
         is_active: true,
@@ -196,7 +197,7 @@ export default function AdminReviewerAccess() {
         user_id: existingAccount.id,
         name: existingAccount.requestedName || existingAccount.name || existingAccount.full_name,
         mobile: existingAccount.mobile || `+91${existingAccount.mobileEntered}`,
-        password_plain: '(existing password unchanged — ask user or use Forgot Password)',
+        password_plain: null,
         notes: existingAccount.requestedNotes,
         created_at: new Date().toISOString(),
         is_active: true,
@@ -393,7 +394,7 @@ Login at: vedicmindai.in`);
                     <tr key={d.user_id || i} style={{ background: i % 2 === 0 ? '#fff' : '#F9FAFB' }}>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6', fontWeight: 600 }}>{d.name}</td>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6', fontFamily: 'monospace', fontSize: 11 }}>{d.mobile}</td>
-                      <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6', fontFamily: 'monospace', fontWeight: 700 }}>{d.password_plain}</td>
+                      <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6', fontFamily: 'monospace', fontWeight: 700 }}>{d.password_plain ? 'Set' : 'Not set'}</td>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6', color: '#6B7280' }}>{d.notes || '—'}</td>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6' }}>{d.created_at ? new Date(d.created_at).toLocaleDateString('en-IN') : '—'}</td>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid #F3F4F6' }}>
