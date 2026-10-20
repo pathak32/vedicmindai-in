@@ -45,6 +45,14 @@ const INITIAL_PROGRESS = {
   aptitudeProgress: {}, leaderboardOptOut: false,
 };
 
+// Shows the first 2 characters and the domain only, e.g. "91••••••@vedicmindai.in".
+// Login emails here are built from the phone number, so they must not show in full.
+function maskEmail(email) {
+  if (!email || !email.includes('@')) return '—';
+  const [local, domain] = email.split('@');
+  return `${local.slice(0, 2)}${'•'.repeat(Math.max(local.length - 2, 3))}@${domain}`;
+}
+
 // Highest level whose lessons are all completed (or the level being worked on).
 // Reads the completed lessons, not the stored currentLevel, which can go stale.
 function levelFromProgress(progress) {
@@ -172,7 +180,7 @@ export default function ProfilePage() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 8 }}>
                 <div>
                   <h1 className="font-heading" style={{ fontSize: 26, fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>{name}</h1>
-                  <p style={{ fontSize: 14, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 4 }}>{auth?.email || '—'}</p>
+                  <p style={{ fontSize: 14, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 4 }}>{maskEmail(auth?.email)}</p>
                   <p style={{ fontSize: 13, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 6 }}>Member since {memberSince}</p>
                   <span style={{ background: '#F0F4FF', borderRadius: 100, padding: '4px 12px', fontSize: 13, fontFamily: 'var(--font-body)', color: '#0A1628' }}>
                     {roleTag}

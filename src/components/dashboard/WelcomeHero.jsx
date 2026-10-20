@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
+import { CURRICULUM } from '@/components/learn/curriculumData';
 
 function useCountUp(target, duration = 1200) {
   const { t } = useLanguage();
@@ -33,6 +34,17 @@ const LEVEL_INFO_STATIC = {
   3: { emoji: '🔥' },
   4: { emoji: '👑' },
 };
+
+// Opens the first lesson the student has not completed, in curriculum order.
+// Falls back to the Learn page when everything is complete.
+function nextLessonPath(progress) {
+  const done = new Set(progress?.completedLessons || []);
+  for (const lv of CURRICULUM) {
+    const next = lv.lessons.find((l) => !done.has(l.id));
+    if (next) return `/learn?lesson=${next.id}`;
+  }
+  return '/learn';
+}
 
 export default function WelcomeHero({ user, progress }) {
   const { t } = useLanguage();
@@ -88,7 +100,7 @@ export default function WelcomeHero({ user, progress }) {
       </div>
 
       <Link
-        to="/learn"
+        to={nextLessonPath(progress)}
         className="inline-flex items-center gap-2 h-11 px-6 rounded-xl bg-white text-[#0A1628] font-semibold text-sm hover:bg-blue-50 transition-colors"
       >
         Continue Learning →

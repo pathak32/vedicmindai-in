@@ -31,8 +31,12 @@ export default function LearnPage() {
 
   // Determine current lesson
   const allIds = CURRICULUM.flatMap(lv => lv.lessons.map(l => l.id));
+  // A ?lesson=<id> link (e.g. from "Continue Learning") wins over the saved position.
+  const requestedLesson = new URLSearchParams(window.location.search).get('lesson');
   const savedCurrent = progress.currentLesson || 'l1_01';
-  const defaultLesson = allIds.includes(savedCurrent) ? savedCurrent : 'l1_01';
+  const defaultLesson = allIds.includes(requestedLesson)
+    ? requestedLesson
+    : allIds.includes(savedCurrent) ? savedCurrent : 'l1_01';
   const [activeLessonId, setActiveLessonId] = useState(defaultLesson);
 
   const activeLesson = CURRICULUM.flatMap(lv => lv.lessons).find(l => l.id === activeLessonId);
