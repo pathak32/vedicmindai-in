@@ -21,6 +21,9 @@ function generateRoomCode() {
   return code;
 }
 
+// First name only on screen, so full names of other students are not shown.
+const firstName = (name) => (name || 'Opponent').trim().split(/\s+/)[0];
+
 export default function BattleModePage() {
   const { t } = useLanguage();
   const { user, profile, loading: authLoading } = useVedicAuth();
@@ -230,7 +233,7 @@ export default function BattleModePage() {
   const handlePreview = async (codeOverride) => {
     const rawCode = codeOverride ?? joinCode;
     if (!user || rawCode.trim().length < 4) {
-      setError('Enter a valid battle code');
+      setError('Codes are 6 letters, e.g. ABCDEF. Ask your friend for their code.');
       return;
     }
     setBusy(true);
@@ -404,6 +407,12 @@ export default function BattleModePage() {
         <h1 className="font-heading" style={{ fontSize: 36, fontWeight: 700, color: 'white', marginTop: 16 }}>
           {t('liveBattleMode') || 'Live Battle Mode'}
         </h1>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "rgba(255,255,255,0.75)", margin: "10px 0 0" }}>
+          Each battle has 5 questions, 30 seconds each. First to 5 wins.
+        </p>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.55)", margin: "6px 0 0" }}>
+          Battles are for practising the Vedic methods, not just for winning.
+        </p>
 
         <div
           style={{
@@ -552,7 +561,7 @@ export default function BattleModePage() {
             <div>
               <span style={{ fontSize: 40 }}>⚔️</span>
               <h2 style={{ color: 'white', fontSize: 20, fontWeight: 700, margin: '12px 0 4px' }}>
-                {room.creator_name} has challenged you!
+                {firstName(room.creator_name)} has challenged you!
               </h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 4 }}>Topic: <strong style={{ color: 'white' }}>{room.topic}</strong></p>
               <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 4 }}>
@@ -583,7 +592,7 @@ export default function BattleModePage() {
           {phase === 'starting' && room && (
             <div>
               <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 8 }}>
-                {isCreator ? `${room.opponent_name} accepted!` : 'Battle accepted!'}
+                {isCreator ? `${firstName(room.opponent_name)} accepted!` : 'Battle accepted!'}
               </p>
               <p style={{ color: 'white', fontSize: 18, fontWeight: 700, marginBottom: 20 }}>Get ready — {room.topic}</p>
               <div style={{
@@ -637,7 +646,7 @@ export default function BattleModePage() {
               </div>
               {room.round_winner_id && (
                 <p style={{ marginTop: 16, fontWeight: 600, color: room.round_winner_id === user.id ? '#6EE7B7' : '#FCA5A5' }}>
-                  {room.round_winner_id === user.id ? 'You won this round! 🎉' : `${opponentName} won this round`}
+                  {room.round_winner_id === user.id ? 'You won this round! 🎉' : `${firstName(opponentName)} won this round`}
                 </p>
               )}
               {!room.round_winner_id && room.creator_answered && room.opponent_answered && (
@@ -655,7 +664,7 @@ export default function BattleModePage() {
             <div>
               <span style={{ fontSize: 48 }}>{room.match_winner_id === user.id ? '🏆' : '🥈'}</span>
               <h2 style={{ color: 'white', fontSize: 24, fontWeight: 700, margin: '16px 0' }}>
-                {room.match_winner_id === user.id ? 'You are the Battle Champion!' : `${opponentName} won this match`}
+                {room.match_winner_id === user.id ? 'You are the Battle Champion!' : `${firstName(opponentName)} won this match`}
               </h2>
               <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: 20 }}>Final score: {myScore} - {opponentScore}</p>
               <button
