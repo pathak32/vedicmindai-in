@@ -24,7 +24,7 @@ export default function AdminAnalytics() {
         // boolean column. The old select('lesson_id, completed, user_id')
         // asked for columns that don't exist and silently 400'd every load.
         sb.from('progress').select('completed_lessons, user_id'),
-        sb.from('daily_quiz_results').select('score, user_id, created_at').order('created_at', { ascending:false }).limit(50),
+        sb.from('daily_quiz_results').select('score, total_possible, user_id, created_at').order('created_at', { ascending:false }).limit(50),
       ]);
 
       const users = usersRes.data || [];
@@ -33,7 +33,8 @@ export default function AdminAnalytics() {
 
       const totalXP = users.reduce((a,u)=>a+(u.xp||0), 0);
       const completedLessons = progress.reduce((a,p)=>a+((p.completed_lessons||[]).length), 0);
-      const avgScore = quiz.length > 0 ? Math.round(quiz.reduce((a,q)=>a+(q.score||0),0)/quiz.length) : 0;
+      const pctOf = (q) => (q.total_possible ? Math.min(100, Math.round(((q.score || 0) / q.total_possible) * 100)) : Math.min(100, q.score || 0));
+      const avgScore = quiz.length > 0 ? Math.round(quiz.reduce((a,q)=>a+pctOf(q),0)/quiz.length) : 0;
 
       setStats({
         totalUsers: users.length,
@@ -71,6 +72,9 @@ export default function AdminAnalytics() {
 
   return (
     <div>
+      <p style={{ fontSize:12, color:'#6B7280', margin:'0 0 12px' }}>
+        Live from Supabase. Totals are all time; quiz scores are percentages of each attempt's total.
+      </p>
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:12, marginBottom:20 }}>
         {metrics.map((m,i) => (
           <div key={i} style={card}>
@@ -98,7 +102,7 @@ export default function AdminAnalytics() {
               {quizResults.map((q,i)=>(
                 <tr key={i} style={{ background:i%2===0?'#fff':'#F9FAFB' }}>
                   <td style={{ padding:'8px 12px', borderBottom:'1px solid #F3F4F6', fontFamily:'monospace', fontSize:11, color:'#6B7280' }}>{q.user_id?.slice(0,8)}...</td>
-                  <td style={{ padding:'8px 12px', borderBottom:'1px solid #F3F4F6', fontWeight:700, color: q.score>=80?'#059669':q.score>=50?'#D97706':'#DC2626' }}>{q.score}%</td>
+                  <td style={{ padding:'8px 12px', borderBottom:'1px solid #F3F4F6', fontWeight:700, color: pctOf(q)>=80?'#059669':pctOf(q)>=50?'#D97706':'#DC2626' }}>{pctOf(q)}%</td>
                   <td style={{ padding:'8px 12px', borderBottom:'1px solid #F3F4F6', color:'#6B7280' }}>{new Date(q.created_at).toLocaleDateString('en-IN')}</td>
                 </tr>
               ))}
