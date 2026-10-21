@@ -8,13 +8,15 @@ import { sendParentConsentCode, verifyParentConsentCode } from '@/lib/phoneAuth'
 export default function ConsentPage() {
   const { user, profile, loading } = useVedicAuth();
   const [step, setStep] = useState('intro');
+  const [parentMobile, setParentMobile] = useState('');
+  const hasParentNumber = !!profile?.parent_mobile;
   const [code, setCode] = useState('');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
 
   if (loading) return null;
   if (!user) return <Navigate to="/auth" replace />;
-  if (!profile?.consent_required || profile?.parental_consent_at) return <Navigate to="/dashboard" replace />;
+  if (profile?.parental_consent_at) return <Navigate to="/dashboard" replace />;
 
   const run = async (fn, next) => {
     setBusy(true);
@@ -37,9 +39,19 @@ export default function ConsentPage() {
         </p>
 
         {step === 'intro' && (
-          <button type="button" disabled={busy} style={btn} onClick={() => run(sendParentConsentCode, () => setStep('code'))}>
-            {busy ? 'Sending…' : 'Send code to parent on WhatsApp'}
-          </button>
+          <>
+            {!hasParentNumber && (
+              <div style={{ marginBottom: 14 }}>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Parent or guardian mobile number</label>
+                <input inputMode="numeric" value={parentMobile} onChange={(e) => setParentMobile(e.target.value.replace(/\D/g, '').slice(0, 10))}
+                  placeholder="10-digit number" style={{ height: 48, width: '100%', borderRadius: 12, border: '1.5px solid rgba(30,64,175,0.2)', fontSize: 15, padding: '0 14px', boxSizing: 'border-box' }} />
+              </div>
+            )}
+            <button type="button" disabled={busy || (!hasParentNumber && !/^[6-9]\d{9}$/.test(parentMobile))} style={btn}
+              onClick={() => run(() => sendParentConsentCode(hasParentNumber ? undefined : parentMobile), () => setStep('code'))}>
+              {busy ? 'Sending…' : 'Send code to parent on WhatsApp'}
+            </button>
+          </>
         )}
 
         {step === 'code' && (

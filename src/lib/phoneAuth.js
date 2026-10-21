@@ -94,11 +94,12 @@ export async function setLoginPin(pin) {
 
 // Parental consent for accounts of users under 18. The code goes to the parent's
 // number saved at signup. The request must come from the signed-in child's account.
-export async function sendParentConsentCode() {
+export async function sendParentConsentCode(parentMobile) {
   const supabase = await getSupabase();
   const { data: { session } } = await supabase.auth.getSession();
   if (!session?.access_token) return { ok: false, error: 'Please sign in again.' };
-  return post('consent-send', {}, { token: session.access_token });
+  const body = parentMobile !== undefined ? { parentMobile } : {};
+  return post('consent-send', body, { token: session.access_token });
 }
 
 export async function verifyParentConsentCode(code) {

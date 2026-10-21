@@ -376,7 +376,7 @@ async function consentSend(req, res) {
     .select('parent_mobile, consent_required, parental_consent_at')
     .eq('id', user.id)
     .maybeSingle();
-  if (!profile?.consent_required || profile.parental_consent_at) {
+  if (profile?.parental_consent_at) {
     return send(res, 200, { success: true, notRequired: true });
   }
   const parent = normalizePhone(profile.parent_mobile);
@@ -394,7 +394,7 @@ async function consentVerify(req, res, code) {
     .select('parent_mobile, consent_required, parental_consent_at')
     .eq('id', user.id)
     .maybeSingle();
-  if (!profile?.consent_required || profile.parental_consent_at) {
+  if (profile?.parental_consent_at) {
     return send(res, 200, { success: true, notRequired: true });
   }
   const parent = normalizePhone(profile.parent_mobile);
@@ -453,7 +453,18 @@ export default async function handler(req, res) {
     if (action === 'set-pin') return await setPin(req, res, body.pin);
     if (action === 'mobile-exists') return await mobileExists(res, body.mobile);
 
-    if (action === 'consent-send') return await consentSend(req, res);
+    if (action === 'consent-send') {
+      // Optional: the parent's number can be saved here for accounts that don't have one yet.
+      if (body.parentMobile !== undefined) {
+        const user = await userFromBearer(req);
+        if (!user) return send(res, 401, { success: false, error: 'Please sign in again.' });
+        const parent = normalizePhone(body.parentMobile);
+        if (!parent) return send(res, 400, { success: false, error: 'Enter a valid 10-digit parent or guardian mobile number.' });
+        const { error } = await db().from('profiles').update({ parent_mobile: parent }).eq('id', user.id);
+        if (error) return send(res, 500, { success: false, error: 'Could not save the parent number. Please try again.' });
+      }
+      return await consentSend(req, res);
+    }
     if (action === 'consent-verify') return await consentVerify(req, res, body.code);
 
     const phone = normalizePhone(body.phone);
