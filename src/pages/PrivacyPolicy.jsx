@@ -36,15 +36,27 @@ export default function PrivacyPolicy() {
       <h2>4. Data Storage</h2>
       <p>Your data is stored securely on Supabase servers in Mumbai, India. All transmission is encrypted using SSL/TLS.</p>
       <h2>5. Children's Privacy</h2>
-      <p>VedicMindAI™ is designed for students including children. Parents may contact us to review or delete their child's data.</p>
+      <p>Users under 18 are children for the purposes of this policy. For a child, we collect only what is needed to run the learning service: name, date of birth, class or grade, and the account's mobile number.</p>
+      <p>Before a child's account is activated, a parent or guardian must confirm consent. We send a one-time code by WhatsApp to the parent's mobile number, and the account is activated only after that code is entered. We do not profile children, show them advertising, or sell their data.</p>
+      <p>Parents can review, correct, or delete their child's data at any time by contacting support@vedicmindai.in or from the Profile page.</p>
       <h2>6. Data Sharing</h2>
-      <p>We do not sell your personal information. We share data only with Razorpay (payments) and Anthropic Claude API (AI tutoring), or when required by law.</p>
+      <p>We do not sell your personal information. We share data only with these service providers, and only to provide the service:</p>
+      <ul>
+        <li>Razorpay: payment processing</li>
+        <li>Anthropic (Claude API): AI tutor questions. Do not type personal details into the AI tutor.</li>
+        <li>Sentry: error monitoring. Error reports contain technical details, not your personal information.</li>
+        <li>Meta (WhatsApp): sends one-time login codes to your mobile number.</li>
+        <li>Supabase: stores your account and learning data.</li>
+      </ul>
+      <p>We also share data when required by law.</p>
       <h2>7. Leaderboard Privacy</h2>
       <p>Your name is shown as "First name + Last initial" only. You can opt out in Profile Settings.</p>
-      <h2>8. Data Deletion</h2>
-      <p>Delete your account anytime from Profile page or email us at <a href="mailto:admin@vedicmindai.in">admin@vedicmindai.in</a>.</p>
+      <h2>8. Data Retention and Deletion</h2>
+      <p>We keep your data until your account is deleted, and for 30 days after deletion, after which it is permanently removed.</p>
+      <p>Delete your account anytime from Profile page or email us at <a href="mailto:support@vedicmindai.in">support@vedicmindai.in</a>.</p>
       <h2>9. Contact Us</h2>
-      <p><strong>Email:</strong> admin@vedicmindai.in<br/>
+      <p><strong>Support:</strong> support@vedicmindai.in, +91 85730 00191<br/>
+      <strong>Grievance Officer:</strong> VedicMind Support Team, support@vedicmindai.in<br/>
       <strong>Website:</strong> https://vedicmindai.in<br/>
       <strong>Address:</strong> Lucknow, Uttar Pradesh, India</p>
     </div>

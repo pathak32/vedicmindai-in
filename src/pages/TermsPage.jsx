@@ -43,7 +43,7 @@ export default function TermsPage() {
       </ul>
 
       <h2 style={s.h2}>3. Eligibility</h2>
-      <p style={s.p}>The Service is intended for users of all ages. Users under 13 must have parental consent. By registering, you confirm you meet these requirements or have parental/guardian approval.</p>
+      <p style={s.p}>The Service is intended for users of all ages. Users under 18 must have verified parental or guardian consent, given by a one-time code sent to the parent's mobile number. By registering, you confirm you meet these requirements or have parental/guardian approval.</p>
 
       <h2 style={s.h2}>4. Account Registration</h2>
       <ul>
