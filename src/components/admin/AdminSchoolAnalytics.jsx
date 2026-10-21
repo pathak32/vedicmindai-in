@@ -170,8 +170,7 @@ export default function AdminSchoolAnalytics() {
       </h2>
       <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#6B7280', marginBottom: 20 }}>
         Enter a school's code to view class-level progress. Use this during school sales visits to
-        show a principal how their students are performing in real time. Phase 2 (teacher self-login
-        portal) will be built after the first school pilot signs up.
+        show a principal how their students are performing in real time.
       </p>
 
       {/* Search */}

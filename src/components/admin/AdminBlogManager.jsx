@@ -185,8 +185,8 @@ export default function AdminBlogManager() {
       <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
         {[
           { id: 'submit', label: editingId ? '✏️ Editing Article' : '✍️ Submit New Article' },
-          { id: 'drafts', label: `📝 Drafts (${drafts.length})` },
-          { id: 'published', label: `✅ Published (${published.length})` },
+          { id: 'drafts', label: `📝 Drafts (${loading ? '…' : drafts.length})` },
+          { id: "published", label: `✅ Published (${loading ? "…" : published.length})` },
           { id: 'comments', label: `💬 Comments${pendingComments.length > 0 ? ` (${pendingComments.length} pending)` : ''}` },
         ].map(v => (
           <button key={v.id} onClick={() => setView(v.id)} style={btn(view === v.id ? '#1e40af' : '#9CA3AF')}>
