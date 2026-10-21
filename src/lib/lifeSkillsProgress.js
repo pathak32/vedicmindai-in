@@ -5,7 +5,7 @@
 
 import { getSupabase } from './supabaseClient';
 
-const UNLOCK_DAYS = 7;
+const UNLOCK_DAYS = 3;
 
 function readProgress() {
   try { return JSON.parse(localStorage.getItem('vedicmind_progress') || '{}'); }

@@ -7,6 +7,8 @@
 // (Taittiriya Upanishad, Shiksha Valli, Anuvaka 11), not paraphrased loosely.
 // Everything else is practical guidance, clearly not scripture.
 
+import { PARENT_EXTRA_MODULES } from './lifeSkillsParentExtra.js';
+
 export const LIFE_SKILLS_TRACKS = {
   parent: {
     label: { en: 'Parent Guide', hi: 'माता-पिता के लिए मार्गदर्शन' },
@@ -898,3 +900,6 @@ export function mapGradeToTier(grade) {
   if (n <= 9) return 'secondary';
   return 'teen';
 }
+
+// Additional parent modules (3 onward), appended after the original set.
+LIFE_SKILLS_TRACKS.parent.modules.push(...PARENT_EXTRA_MODULES);
