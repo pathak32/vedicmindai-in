@@ -60,7 +60,7 @@ export default function SATMathTricksPage() {
           ))}
         </div>
 
-        <h2 style={{fontSize:20,fontWeight:800,color:DARK,textAlign:'center',marginBottom:6}}>Used by Students Across 6 Countries</h2>
+        <h2 style={{fontSize:20,fontWeight:800,color:DARK,textAlign:'center',marginBottom:6}}>Practise Vedic Maths for Exam Speed</h2>
         <p style={{textAlign:'center',color:'#6B7280',fontSize:14,marginBottom:24}}>Vedic Maths has no language barrier — it's pure calculation speed.</p>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:12,marginBottom:56}}>
           {COUNTRIES.map(c=>(
@@ -80,7 +80,7 @@ export default function SATMathTricksPage() {
           {[
             ['No Calculator Needed','The SAT Math No-Calculator section tests pure mental speed. Vedic techniques were designed for exactly this — no tools, pure mental arithmetic.'],
             ['Works for ALL Number Types','Multiplication, division, squares, square roots, fractions — every SAT math operation has a Vedic shortcut.'],
-            ['Scientifically Structured','Not tricks or hacks — these are systematic algorithms from ancient Indian mathematical tradition, proven over thousands of years.'],
+            ['Scientifically Structured','Not tricks or hacks — these are systematic algorithms from ancient Indian mathematical tradition.'],
             ['Faster than Conventional Methods','A student using conventional long multiplication for 997 × 998 takes ~45 seconds. Vedic method: 8 seconds.'],
           ].map(([title,desc])=>(
             <div key={title} style={{display:'flex',gap:12,marginBottom:14}}>

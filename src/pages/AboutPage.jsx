@@ -56,7 +56,7 @@ export default function AboutPage() {
           Founder se Seedha
         </h1>
         <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.75)', maxWidth: 480, margin: '0 auto', lineHeight: 1.6 }}>
-          Why a telecom engineer left his career to build India's first AI-powered Vedic Mathematics platform — in his own words.
+          Why a telecom engineer left his career to build an AI-powered Vedic Mathematics platform — in his own words.
         </p>
         <div style={{ marginTop: 20, display: 'inline-flex', alignItems: 'center', gap: 8,
           background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.18)',

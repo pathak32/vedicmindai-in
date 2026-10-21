@@ -23,7 +23,7 @@ export const communityQAData = [
     id: 'q1',
     question: "How do you make sure the math and explanations are actually correct?",
     askedBy: 'A Question We Get Often',
-    answer: "Every lesson is checked by a real Vedic Maths instructor, not just our internal team — someone who verifies each calculation down to the sutra level and flags anything even slightly off, including subtle errors most people would never catch. That kind of scrutiny has genuinely caught and fixed real mistakes before they ever reached students.",
+    answer: "Lessons are written and reviewed by our team, and every answer key is checked by a script before it goes live. We fix errors when we find them.",
   },
   {
     id: 'q2',
@@ -41,6 +41,6 @@ export const communityQAData = [
     id: 'q4',
     question: "My child gets visibly anxious during math tests, even when they know the material — does Vedic Maths actually help with that, or is that just marketing?",
     askedBy: 'A Question We Get Often',
-    answer: "It's a real, well-documented phenomenon — research shows math anxiety affects working memory and performance independent of actual ability. Published studies on Vedic Maths specifically have found it helps by giving students early, achievable wins with mental calculation, which builds real confidence before the anxiety response takes over. It's not a replacement for addressing anxiety directly if it's severe, but it's a genuinely evidence-backed part of the picture, not just a claim we're making up.",
+    answer: "It's a real, well-documented phenomenon — research shows math anxiety affects working memory and performance independent of actual ability. Practising mental calculation can give students early, achievable wins, which many find builds confidence. It's not a replacement for addressing anxiety directly if it's severe, but it's a genuinely evidence-backed part of the picture, not just a claim we're making up.",
   },
 ];
