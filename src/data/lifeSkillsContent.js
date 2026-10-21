@@ -80,7 +80,7 @@ export const LIFE_SKILLS_TRACKS = {
           },
           teen: {
             concept: {
-              en: 'At this age, the pressure is real and specific — board exams, competitive exams, college admissions — and dismissing that pressure as "not a big deal" usually backfires, because it *is* a big deal to them, and pretending otherwise reads as not understanding their actual life. The reframe here isn\'t "this doesn\'t matter" — it\'s "this is one important thing, not the only thing that will ever determine your life."',
+              en: 'At this age, the pressure is real and specific — board exams, competitive exams, college admissions — and dismissing that pressure as "not a big deal" usually backfires, because it is a big deal to them, and pretending otherwise reads as not understanding their actual life. The reframe here isn\'t "this doesn\'t matter" — it\'s "this is one important thing, not the only thing that will ever determine your life."',
               hi: 'इस उम्र में, दबाव असली और खास होता है — बोर्ड परीक्षा, प्रतियोगी परीक्षा, कॉलेज दाखिला — और इस दबाव को "बड़ी बात नहीं" कहकर नकारना आमतौर पर उल्टा असर करता है, क्योंकि उनके लिए यह वाकई एक बड़ी बात है। यहां पुनर्विचार यह नहीं है कि "यह मायने नहीं रखता" — बल्कि यह है कि "यह एक महत्वपूर्ण चीज़ है, पर यह अकेली चीज़ नहीं जो आपकी पूरी ज़िंदगी तय करेगी।"',
             },
             steps: [

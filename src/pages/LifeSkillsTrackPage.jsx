@@ -99,7 +99,8 @@ export default function LifeSkillsTrackPage() {
                   ? T('Class 11-12 & Coaching', 'कक्षा 11-12 एवं कोचिंग')
                   : T('Class 10-12', 'कक्षा 10-12')}
               </button>
-            ))}\n          </div>
+            ))}
+          </div>
         )}
 
         {/* Module list */}
@@ -121,7 +122,7 @@ export default function LifeSkillsTrackPage() {
                   fontSize: 12, fontFamily: 'var(--font-body)', color: '#44403C', whiteSpace: 'nowrap',
                 }}
               >
-                {isDone ? '✓ ' : mUnlocked ? '' : '🔒 '}{m.order}. {(m.title[language] || m.title.en).slice(0, 24)}
+                {isDone ? '✓ ' : mUnlocked ? '' : '🔒 '}{m.order}. {(m.title[language] || m.title.en)}
               </button>
             );
           })}
@@ -160,7 +161,7 @@ export default function LifeSkillsTrackPage() {
             {tab === 'concept' && (
               <>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#44403C', lineHeight: 1.8 }}>
-                  {content.concept[language] || content.concept.en}
+                  <span style={{ whiteSpace: 'pre-line' }}>{content.concept[language] || content.concept.en}</span>
                 </p>
                 {!state && (
                   <button onClick={handleStart} style={{ marginTop: 20, padding: '12px 24px', borderRadius: 10, background: meta.color, color: 'white', border: 'none', fontWeight: 700, cursor: 'pointer', fontFamily: 'var(--font-body)' }}>
