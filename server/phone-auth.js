@@ -336,6 +336,103 @@ async function verifySecurityAnswer(res, phone, answer) {
   return send(res, 200, { success: true });
 }
 
+// ── parental consent (accounts for users under 18) ───────────────────────────
+
+// Sends a consent code to the parent's number. Same cooldown and hourly cap as
+// login codes, but it does not need an account for that number.
+async function sendParentCode(res, parentPhone) {
+  const since = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+  const { data: recent } = await db()
+    .from('phone_otps')
+    .select('created_at')
+    .eq('phone', parentPhone)
+    .gte('created_at', since)
+    .order('created_at', { ascending: false });
+  if (recent?.length) {
+    if (Date.now() - new Date(recent[0].created_at).getTime() < OTP_RESEND_COOLDOWN_MS) {
+      return send(res, 429, { success: false, error: 'Please wait a moment before requesting another code.' });
+    }
+    if (recent.length >= OTP_MAX_SENDS_PER_HOUR) {
+      return send(res, 429, { success: false, error: 'Too many codes requested. Please try again in an hour.' });
+    }
+  }
+  const code = String(randomInt(0, 1_000_000)).padStart(6, '0');
+  const { error } = await db().from('phone_otps').insert({
+    phone: parentPhone,
+    code_hash: hashOtp(code, parentPhone),
+    expires_at: new Date(Date.now() + OTP_TTL_MS).toISOString(),
+  });
+  if (error) return send(res, 500, { success: false, error: 'Could not create a code. Please try again.' });
+  const sent = await sendWhatsAppCode(parentPhone, code);
+  if (!sent.ok) return send(res, 502, { success: false, error: sent.error });
+  return send(res, 200, { success: true });
+}
+
+async function consentSend(req, res) {
+  const user = await userFromBearer(req);
+  if (!user) return send(res, 401, { success: false, error: 'Please sign in again.' });
+  const { data: profile } = await db()
+    .from('profiles')
+    .select('parent_mobile, consent_required, parental_consent_at')
+    .eq('id', user.id)
+    .maybeSingle();
+  if (!profile?.consent_required || profile.parental_consent_at) {
+    return send(res, 200, { success: true, notRequired: true });
+  }
+  const parent = normalizePhone(profile.parent_mobile);
+  if (!parent) return send(res, 400, { success: false, error: 'No parent mobile number is saved on this account.' });
+  return sendParentCode(res, parent);
+}
+
+async function consentVerify(req, res, code) {
+  const user = await userFromBearer(req);
+  if (!user) return send(res, 401, { success: false, error: 'Please sign in again.' });
+  if (!/^\d{6}$/.test(String(code || ''))) return send(res, 400, { success: false, error: 'Enter the 6-digit code.' });
+
+  const { data: profile } = await db()
+    .from('profiles')
+    .select('parent_mobile, consent_required, parental_consent_at')
+    .eq('id', user.id)
+    .maybeSingle();
+  if (!profile?.consent_required || profile.parental_consent_at) {
+    return send(res, 200, { success: true, notRequired: true });
+  }
+  const parent = normalizePhone(profile.parent_mobile);
+  if (!parent) return send(res, 400, { success: false, error: 'No parent mobile number is saved on this account.' });
+
+  const { data: pending } = await db()
+    .from('phone_otps')
+    .select('*')
+    .eq('phone', parent)
+    .is('consumed_at', null)
+    .order('created_at', { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (!pending) return send(res, 400, { success: false, error: 'No pending code. Request a new one.' });
+  if (new Date(pending.expires_at) < new Date()) return send(res, 400, { success: false, error: 'This code has expired. Request a new one.' });
+  if (pending.attempts >= OTP_MAX_ATTEMPTS) return send(res, 429, { success: false, error: 'Too many incorrect attempts. Request a new code.' });
+
+  if (!safeEqualHex(hashOtp(code, parent), pending.code_hash)) {
+    await db().from('phone_otps').update({ attempts: pending.attempts + 1 }).eq('id', pending.id);
+    return send(res, 400, { success: false, error: 'Incorrect code.' });
+  }
+
+  const { data: consumed } = await db()
+    .from('phone_otps')
+    .update({ consumed_at: new Date().toISOString() })
+    .eq('id', pending.id)
+    .is('consumed_at', null)
+    .select('id');
+  if (!consumed?.length) return send(res, 400, { success: false, error: 'This code was already used. Request a new one.' });
+
+  const { error } = await db()
+    .from('profiles')
+    .update({ parental_consent_at: new Date().toISOString() })
+    .eq('id', user.id);
+  if (error) return send(res, 500, { success: false, error: 'Could not record consent. Please try again.' });
+  return send(res, 200, { success: true });
+}
+
 // ── entry point ──────────────────────────────────────────────────────────────
 
 export default async function handler(req, res) {
@@ -355,6 +452,9 @@ export default async function handler(req, res) {
   try {
     if (action === 'set-pin') return await setPin(req, res, body.pin);
     if (action === 'mobile-exists') return await mobileExists(res, body.mobile);
+
+    if (action === 'consent-send') return await consentSend(req, res);
+    if (action === 'consent-verify') return await consentVerify(req, res, body.code);
 
     const phone = normalizePhone(body.phone);
     if (!phone) return send(res, 400, { success: false, error: 'Enter a valid 10-digit Indian mobile number.' });

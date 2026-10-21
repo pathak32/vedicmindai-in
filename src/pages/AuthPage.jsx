@@ -13,6 +13,15 @@ function validateMobile(m, countryCode) {
   return validateMobileForCountry(m, countryCode || DEFAULT_COUNTRY.code);
 }
 function validateDOB(d) { return /^\d{2}\/\d{2}\/\d{4}$/.test(d); }
+// True when a DD/MM/YYYY date of birth makes the person under 18 today.
+function isUnder18(dob) {
+  if (!validateDOB(dob)) return false;
+  const [d, m, y] = dob.split('/').map(Number);
+  const birth = new Date(y, m - 1, d);
+  const eighteen = new Date(y + 18, m - 1, d);
+  return eighteen > new Date() && birth <= new Date();
+}
+
 
 function generatePasswordHint(name, dob) {
   // hint: DDMM + first 4 UPPERCASE letters of name (e.g. 0506HITE)
@@ -47,6 +56,7 @@ function SignUpForm({ onSwitchTab }) {
   const [secQ, setSecQ]       = useState('');
   const [secA, setSecA]       = useState('');
   const [whatsapp, setWhatsapp] = useState('');
+  const [parentMobile, setParentMobile] = useState('');
   const [sameNum, setSameNum] = useState(true);
   const [showPass, setShowPass] = useState(false);
   const [userType, setUserType] = useState(''); // 'student' or 'parent'
@@ -74,6 +84,7 @@ function SignUpForm({ onSwitchTab }) {
   const validateStep2 = () => {
     const e = {};
     if (!validateDOB(dob))      e.dob    = t('authErrDobFormat');
+    if (validateDOB(dob) && isUnder18(dob) && !/^[6-9]\d{9}$/.test(parentMobile)) e.parentMobile = 'Students under 18 need a parent or guardian mobile number (10 digits).';
     if (!secQ.trim())           e.secQ   = t('authErrSecQRequired');
     if (!secA.trim())           e.secA   = t('authErrSecARequired');
     if (!sameNum && !validateMobile(whatsapp, whatsappCountryCode)) e.whatsapp = t('authErrValidWhatsapp');
@@ -113,6 +124,7 @@ function SignUpForm({ onSwitchTab }) {
         whatsapp: sameNum ? `${mobileCountryInfo.code}${mobile}` : `${whatsappCountryInfo.code}${whatsapp}`,
         userType,
         grade: grade === 'other' ? customGrade.trim() : grade,
+        parentMobile: isUnder18(dob) ? parentMobile : null,
       });
       toast.success(t('authToastAccountCreated'));
       localStorage.removeItem('vedicmind_ref');
@@ -303,6 +315,17 @@ function SignUpForm({ onSwitchTab }) {
           placeholder="15/06/1985" style={inp(errors.dob)} maxLength={10} autoFocus />
         {errors.dob && <Err>{errors.dob}</Err>}
       </div>
+
+      {/* Parent or guardian mobile, required only for users under 18 */}
+      {validateDOB(dob) && isUnder18(dob) && (
+        <div>
+          <label style={lbl}>Parent or guardian mobile number (for approval)</label>
+          <input value={parentMobile}
+            onChange={e => setParentMobile(e.target.value.replace(/\D/g, '').slice(0, 10))}
+            inputMode="numeric" placeholder="10-digit number" style={inp(errors.parentMobile)} />
+          {errors.parentMobile && <Err>{errors.parentMobile}</Err>}
+        </div>
+      )}
 
       {/* Email (optional) */}
       <div>

@@ -55,7 +55,7 @@ export function VedicAuthProvider({ children }) {
   const signUpWithPassword = async ({
     name, mobile, countryCode, countryName, dob, email, password, referralCode,
     securityQuestion, securityAnswer,
-    whatsapp, userType, grade,
+    whatsapp, userType, grade, parentMobile,
   }) => {
     const supabase = await getSupabase();
     const fakeEmail = mobileToEmail(mobile);
@@ -127,6 +127,10 @@ export function VedicAuthProvider({ children }) {
       security_answer: securityAnswer,
       user_type: userType || null,
       grade: grade || null,
+      // Under-18 accounts need a parent's consent before use (see ConsentPage).
+      parent_mobile: parentMobile || null,
+      consent_required: !!parentMobile,
+      parental_consent_at: null,
       plan: 'trial',
       plan_type: 'trial',
       subscription_status: 'trial',

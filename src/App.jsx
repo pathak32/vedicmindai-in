@@ -30,6 +30,7 @@ const VedicScienceChapterPage = lazy(() => import('@/pages/VedicScienceChapterPa
 const MyBattlesPage          = lazy(() => import('@/pages/MyBattlesPage'));
 const AuthPage               = lazy(() => import('@/pages/AuthPage'));
 const OnboardingPage         = lazy(() => import('@/pages/OnboardingPage'));
+const ConsentPage           = lazy(() => import('@/pages/ConsentPage'));
 const DashboardPage          = lazy(() => import('@/pages/DashboardPage'));
 const ParentDashboardPage    = lazy(() => import('@/pages/ParentDashboardPage'));
 const LiveClassPage          = lazy(() => import('@/pages/LiveClassPage'));
@@ -175,6 +176,7 @@ function RouteTransition() {
                 <Route path="/my-battles"          element={<MyBattlesPage />} />
                 <Route path="/auth"                element={<AuthPage />} />
                 <Route path="/onboarding"          element={<OnboardingPage />} />
+                <Route path="/consent"             element={<ConsentPage />} />
                 <Route path="/dashboard"           element={<DashboardPage />} />
                 <Route path="/progress-report"     element={<ParentDashboardPage />} />
                 <Route path="/live-class/:classId" element={<LiveClassPage />} />
