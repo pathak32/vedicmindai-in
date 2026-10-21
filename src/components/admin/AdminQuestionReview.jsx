@@ -71,7 +71,8 @@ export default function AdminQuestionReview() {
     scoped.forEach((q) => {
       const key = `${q.chapter_id}|${q.level}`;
       if (!seen.has(key)) {
-        seen.set(key, { key, label: `${q.chapter_title} (Level ${q.level})`, chapter_id: q.chapter_id, level: q.level });
+        const hasLevel = /\(Level \d\)/.test(q.chapter_title || '');
+        seen.set(key, { key, label: hasLevel ? q.chapter_title : `${q.chapter_title} (Level ${q.level})`, chapter_id: q.chapter_id, level: q.level });
       }
     });
     return Array.from(seen.values()).sort((a, b) => a.label.localeCompare(b.label));
