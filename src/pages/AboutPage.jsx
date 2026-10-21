@@ -174,33 +174,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* ── MORE VIDEOS (placeholder) ── */}
-        <div style={{
-          marginTop: 28, background: CARD_BG, borderRadius: 20, padding: '24px 24px',
-          boxShadow: '0 2px 12px rgba(10,22,40,0.07)', border: '1px solid #E5E7EB',
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-            <span style={{ fontSize: 22 }}>🎥</span>
-            <div style={{ fontWeight: 700, fontSize: 15, color: DARK_BLUE }}>More from Hitesh — Coming Soon</div>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 }}>
-            {[
-              { title: 'A Message to Parents', icon: '👨‍👩‍👧' },
-              { title: 'How We Built the AI', icon: '🤖' },
-              { title: 'Vedic Maths — The Real Story', icon: '📖' },
-            ].map(v => (
-              <div key={v.title} style={{
-                background: '#F9FAFB', borderRadius: 12, padding: '18px 14px',
-                border: '1.5px dashed #D1D5DB', textAlign: 'center', opacity: 0.7,
-              }}>
-                <div style={{ fontSize: 28, marginBottom: 8 }}>{v.icon}</div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: TEXT, marginBottom: 4 }}>{v.title}</div>
-                <div style={{ fontSize: 11, color: TEXT_DIM }}>Uploading soon</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* ── CREDENTIALS ── */}
         <div style={{ marginTop: 28 }}>
           <h2 style={{ fontSize: 18, fontWeight: 800, color: DARK_BLUE, marginBottom: 16, textAlign: 'center' }}>
