@@ -85,10 +85,17 @@ export default function AdminQuestionReview() {
     }
   }, [chapterOptions, chapterFilter]);
 
-  const filtered = questions
+  // Pages of 50 so the approved list (1,000+ items) does not render at once.
+  const PAGE_SIZE = 50;
+  const [page, setPage] = useState(0);
+  useEffect(() => { setPage(0); }, [view, verticalFilter, chapterFilter]);
+
+  const filteredAll = questions
     .filter((q) => q.status === view)
     .filter((q) => verticalFilter === 'All' || q.vertical === verticalFilter)
     .filter((q) => chapterFilter === 'All' || `${q.chapter_id}|${q.level}` === chapterFilter);
+  const pageCount = Math.max(1, Math.ceil(filteredAll.length / PAGE_SIZE));
+  const filtered = filteredAll.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 
   const counts = {
     pending: questions.filter((q) => q.status === 'pending').length,
@@ -203,6 +210,14 @@ export default function AdminQuestionReview() {
           </div>
         </div>
       ))}
+
+      {filteredAll.length > PAGE_SIZE && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'center', margin: '16px 0' }}>
+          <button type="button" disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))} style={btn('#1E40AF')}>← Previous</button>
+          <span style={{ fontSize: 13, color: '#4B5563' }}>Page {page + 1} of {pageCount} · {filteredAll.length} items</span>
+          <button type="button" disabled={page + 1 >= pageCount} onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))} style={btn('#1E40AF')}>Next →</button>
+        </div>
+      )}
 
       <div style={{ ...card, background: 'rgba(30,64,175,0.05)', border: '1px solid rgba(30,64,175,0.15)' }}>
         <p style={{ fontSize: 12, color: '#4B5563', margin: 0, lineHeight: 1.6 }}>
