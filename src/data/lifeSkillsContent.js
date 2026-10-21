@@ -8,6 +8,8 @@
 // Everything else is practical guidance, clearly not scripture.
 
 import { PARENT_EXTRA_MODULES } from './lifeSkillsParentExtra.js';
+import { STUDENT_EXTRA_MODULES } from './lifeSkillsStudentExtra.js';
+import { TEACHER_TIER_CONTENT } from './lifeSkillsTeacherExtra.js';
 
 export const LIFE_SKILLS_TRACKS = {
   parent: {
@@ -903,3 +905,18 @@ export function mapGradeToTier(grade) {
 
 // Additional parent modules (3 onward), appended after the original set.
 LIFE_SKILLS_TRACKS.parent.modules.push(...PARENT_EXTRA_MODULES);
+LIFE_SKILLS_TRACKS.student.modules.push(...STUDENT_EXTRA_MODULES);
+
+// Teacher modules 1 and 2 were written flat (no tiers), which made
+// getModuleContent crash on the tiered track. Give them the same content for
+// every tier, then layer the per-tier concept, practice and test text on top.
+for (const mod of LIFE_SKILLS_TRACKS.teacher.modules) {
+  if (!mod.tiers) {
+    const body = { concept: mod.concept, steps: mod.steps, practiceSet: mod.practiceSet };
+    mod.tiers = { primary: body, secondary: body, senior: body };
+  }
+  const extra = TEACHER_TIER_CONTENT[mod.id] || {};
+  for (const tierKey of Object.keys(extra)) {
+    mod.tiers[tierKey] = { ...mod.tiers[tierKey], ...extra[tierKey] };
+  }
+}

@@ -407,4 +407,404 @@ export const PARENT_EXTRA_MODULES = [
       },
     },
   },
+  {
+    id: 'parent_m7',
+    order: 7,
+    title: { en: 'When Your Child Says "I Hate Maths"', hi: 'जब बच्चा कहे "मुझे गणित से नफ़रत है"' },
+    tiers: {
+      primary: {
+        concept: {
+          en: 'A young child who says "I hate maths" usually means "this feels hard and I feel bad." Hatred is often a protection against feeling stupid. Show them that maths can be playful and that mistakes are part of learning.',
+          hi: 'छोटा बच्चा जब कहता है "मुझे गणित से नफ़रत है," तो अक्सर उसका मतलब होता है "यह मुश्किल लगता है और मुझे बुरा लगता है।" नफ़रत अक्सर खुद को बेवकूफ़ महसूस करने से बचने का तरीका होती है। उसे दिखाएँ कि गणित खेल जैसा भी हो सकता है और गलतियाँ सीखने का हिस्सा हैं।',
+        },
+        steps: [
+          { en: 'Ask what part feels hardest, then pick only that part to practise.', hi: 'पूछें कि कौन सा हिस्सा सबसे मुश्किल लगता है, फिर सिर्फ़ उसी का अभ्यास करें।' },
+          { en: 'Use everyday counting: coins, steps, or cooking amounts.', hi: 'रोज़मर्रा की गिनती इस्तेमाल करें: सिक्के, कदम या खाना बनाने की मात्रा।' },
+          { en: 'Celebrate one small win each session.', hi: 'हर सत्र में एक छोटी जीत का जश्न मनाएँ।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'Your child says, "I hate maths." What is the best first step?', hi: 'बच्चा कहता है, "मुझे गणित से नफ़रत है।" पहला सबसे अच्छा कदम क्या है?' },
+            options: [
+              { en: '"Maths is important, you must like it."', hi: '"गणित ज़रूरी है, तुम्हें यह पसंद करना होगा।"' },
+              { en: '"What part feels hardest for you?"', hi: '"तुम्हें सबसे मुश्किल कौन सा हिस्सा लगता है?"' },
+            ],
+            correct: 1,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'What does "I hate maths" often really mean for a young child?', hi: 'छोटे बच्चे के लिए "मुझे गणित से नफ़रत है" का असली मतलब अक्सर क्या होता है?' },
+            options: [
+              { en: 'This feels hard and I feel bad.', hi: 'यह मुश्किल लगता है और मुझे बुरा लगता है।' },
+              { en: 'I have finished all my maths.', hi: 'मैंने अपना सारा गणित पूरा कर लिया है।' },
+            ],
+            correct: 0,
+          },
+        ],
+      },
+      secondary: {
+        concept: {
+          en: 'Students aged 11 to 15 may dislike maths after a few hard years. Avoid arguing about whether they should like it. Instead, find the gap they are stuck on and show how it connects to things they care about, such as sports statistics or money.',
+          hi: 'ग्यारह से पंद्रह साल के बच्चे कुछ मुश्किल सालों के बाद गणित से दूर हो सकते हैं। इस बात पर बहस न करें कि उन्हें इसे पसंद करना चाहिए या नहीं। इसकी जगह वह कमी ढूँढें जहाँ वे अटके हैं, और दिखाएँ कि यह उन चीज़ों से कैसे जुड़ता है जो उन्हें पसंद हैं, जैसे खेल के आँकड़े या पैसा।',
+        },
+        steps: [
+          { en: 'Ask which topic they dislike and when the dislike started.', hi: 'पूछें कि उन्हें कौन सा विषय पसंद नहीं और यह नापसंदगी कब शुरू हुई।' },
+          { en: 'Connect one topic to something they enjoy, such as cricket averages.', hi: 'एक विषय को किसी ऐसी चीज़ से जोड़ें जो उन्हें पसंद है, जैसे क्रिकेट के औसत।' },
+          { en: 'Agree on a short, focused practice plan for the weak topic only.', hi: 'सिर्फ़ कमज़ोर विषय के लिए एक छोटी और केंद्रित अभ्यास योजना पर सहमत हों।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'Your child dislikes maths after failing a unit on fractions. What helps most?', hi: 'आपका बच्चा भिन्न वाली इकाई में फेल होने के बाद गणित से नफ़रत करता है। सबसे ज़्यादा क्या मदद करता है?' },
+            options: [
+              { en: 'Reteach only the fractions they missed, in small steps.', hi: 'सिर्फ़ वे भिन्न दोबारा छोटे-छोटे कदमों में पढ़ाएँ जो छूट गए थे।' },
+              { en: 'Give them the whole syllabus again at once.', hi: 'पूरा सिलेबस एक साथ फिर से दे दें।' },
+            ],
+            correct: 0,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'What is a good way to reconnect a teen with maths?', hi: 'किशोर को गणित से दोबारा जोड़ने का अच्छा तरीका क्या है?' },
+            options: [
+              { en: 'Show how maths connects to something they already enjoy.', hi: 'दिखाएँ कि गणित उस चीज़ से कैसे जुड़ता है जो उन्हें पहले से पसंद है।' },
+              { en: 'Tell them maths is the only subject that matters.', hi: 'कहें कि गणित ही एकमात्र विषय है जो मायने रखता है।' },
+            ],
+            correct: 0,
+          },
+        ],
+      },
+      teen: {
+        concept: {
+          en: 'A Class 10 to 12 student who hates maths may feel the subject is a gate to their future, which raises the stakes and the fear. Acknowledge the pressure honestly, separate the exam from their worth, and plan a realistic path that uses their strengths.',
+          hi: 'कक्षा 10 से 12 का छात्र जो गणित से नफ़रत करता है, शायद यह महसूस करता है कि यह विषय उसके भविष्य का दरवाज़ा है, जिससे दबाव और डर बढ़ जाता है। दबाव को ईमानदारी से स्वीकार करें, परीक्षा को उसकी कीमत से अलग करें, और ऐसी यथार्थवादी योजना बनाएँ जो उसकी ताकत का इस्तेमाल करे।',
+        },
+        steps: [
+          { en: 'Name the fear directly: "Are you worried that maths will decide your future?"', hi: 'डर का सीधे नाम लें: "क्या तुम्हें डर है कि गणित तुम्हारा भविष्य तय करेगा?"' },
+          { en: 'Review the marks and find the chapters that gain the most with least effort.', hi: 'अंकों की समीक्षा करें और वे अध्याय ढूँढें जिनमें सबसे कम मेहनत में सबसे ज़्यादा अंक मिलें।' },
+          { en: 'Consider a tutor for one or two topics, not the whole subject.', hi: 'पूरे विषय के लिए नहीं, बल्कि एक-दो विषयों के लिए ट्यूटर पर विचार करें।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'Your 16-year-old says maths will ruin their chances for college. What is the best response?', hi: 'आपका 16 साल का बच्चा कहता है कि गणित उसके कॉलेज के मौकों को बर्बाद कर देगा। सबसे अच्छा जवाब क्या है?' },
+            options: [
+              { en: '"Stop worrying, it will be fine."', hi: '"चिंता मत करो, सब ठीक हो जाएगा।"' },
+              { en: '"Let us look at which chapters give you the most marks for the effort, and plan from there."', hi: '"चलो देखते हैं कि कौन से अध्याय कम मेहनत में ज़्यादा अंक देते हैं, फिर उसी से योजना बनाते हैं।"' },
+            ],
+            correct: 1,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'What separates a student\'s worth from an exam result?', hi: 'छात्र की कीमत को परीक्षा के नतीजे से क्या अलग करता है?' },
+            options: [
+              { en: 'Nothing, the result is the whole measure.', hi: 'कुछ नहीं, नतीजा ही पूरा पैमाना है।' },
+              { en: 'Recognising that one exam measures one set of skills on one day.', hi: 'यह समझना कि एक परीक्षा एक दिन में एक तरह के कौशल को मापती है।' },
+            ],
+            correct: 1,
+          },
+        ],
+      },
+    },
+  },
+  {
+    id: 'parent_m8',
+    order: 8,
+    title: { en: 'Talking About Exams Without Fear', hi: 'डर के बिना परीक्षा के बारे में बात करना' },
+    tiers: {
+      primary: {
+        concept: {
+          en: 'Young children pick up fear from how adults talk about tests. Words like "this is very important" or "don\'t make mistakes" can make a child freeze. Describe exams as a chance to show what they have learned, and keep the tone calm.',
+          hi: 'छोटे बच्चे परीक्षा के बारे में बड़ों की बातों से डर सीख लेते हैं। "यह बहुत ज़रूरी है" या "गलती मत करना" जैसे शब्द बच्चे को जमा सकते हैं। परीक्षा को यह दिखाने का मौका बताएँ कि उन्होंने क्या सीखा है, और लहज़ा शांत रखें।',
+        },
+        steps: [
+          { en: 'Describe a test as "a way to see what you have learned", not as a judgement.', hi: 'परीक्षा को "यह देखने का तरीका कि तुमने क्या सीखा है" बताएँ, फैसला नहीं।' },
+          { en: 'Avoid saying "don\'t get it wrong" before a test.', hi: 'परीक्षा से पहले "गलत मत करना" कहने से बचें।' },
+          { en: 'After the test, ask what they enjoyed solving, before asking about marks.', hi: 'परीक्षा के बाद अंकों के बारे में पूछने से पहले पूछें कि उन्हें हल करने में क्या अच्छा लगा।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'Before a test, which sentence reduces fear the most?', hi: 'परीक्षा से पहले कौन सा वाक्य डर सबसे ज़्यादा कम करता है?' },
+            options: [
+              { en: '"Do not make any mistakes today."', hi: '"आज कोई गलती मत करना।"' },
+              { en: '"Show me what you have learned, I am curious."', hi: '"मुझे दिखाओ तुमने क्या सीखा है, मुझे उत्सुकता है।"' },
+            ],
+            correct: 1,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'How should a test be described to a young child?', hi: 'छोटे बच्चे को परीक्षा का वर्णन कैसे करना चाहिए?' },
+            options: [
+              { en: 'As a judgement of their worth.', hi: 'उनकी कीमत के फैसले के रूप में।' },
+              { en: 'As a way to see what they have learned.', hi: 'यह देखने के तरीके के रूप में कि उन्होंने क्या सीखा है।' },
+            ],
+            correct: 1,
+          },
+        ],
+      },
+      secondary: {
+        concept: {
+          en: 'Students aged 11 to 15 notice how a parent talks about exams, and they often carry worry from those words. Keep the focus on preparation and effort, and avoid making every test feel like a turning point.',
+          hi: 'ग्यारह से पंद्रह साल के छात्र ध्यान देते हैं कि माता-पिता परीक्षा के बारे में कैसे बात करते हैं, और अक्सर उन शब्दों से चिंता ले जाते हैं। ध्यान तैयारी और मेहनत पर रखें, और हर परीक्षा को निर्णायक मोड़ की तरह महसूस न कराएँ।',
+        },
+        steps: [
+          { en: 'Ask what they need to feel ready, such as a plan, a practice test, or quiet time.', hi: 'पूछें कि तैयार महसूस करने के लिए उन्हें क्या चाहिए, जैसे योजना, अभ्यास टेस्ट या शांत समय।' },
+          { en: 'Talk about the preparation plan, not the expected score.', hi: 'अपेक्षित स्कोर की नहीं, तैयारी की योजना पर बात करें।' },
+          { en: 'Agree on a simple check-in after the exam, separate from the marks.', hi: 'परीक्षा के बाद एक सरल बातचीत तय करें, जो अंकों से अलग हो।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'Your 14-year-old is anxious before a test. What helps most?', hi: 'आपका 14 साल का बच्चा परीक्षा से पहले घबराया हुआ है। सबसे ज़्यादा क्या मदद करता है?' },
+            options: [
+              { en: 'Repeating that the test is the most important thing ever.', hi: 'बार-बार कहना कि यह परीक्षा अब तक की सबसे ज़रूरी चीज़ है।' },
+              { en: 'Going through a simple preparation plan together.', hi: 'साथ मिलकर एक सरल तैयारी योजना पर चलना।' },
+            ],
+            correct: 1,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'What should the talk after an exam focus on?', hi: 'परीक्षा के बाद की बातचीत किस पर केंद्रित होनी चाहिए?' },
+            options: [
+              { en: 'Only the marks they got.', hi: 'सिर्फ़ उन्हें मिले अंक।' },
+              { en: 'How they prepared and how they felt.', hi: 'उन्होंने कैसे तैयारी की और उन्हें कैसा लगा।' },
+            ],
+            correct: 1,
+          },
+        ],
+      },
+      teen: {
+        concept: {
+          en: 'Teenagers in Class 10 to 12 may hide their exam fear behind irritation or silence. Make it safe to say "I am scared", and treat the fear as information about what they need, not as a weakness.',
+          hi: 'कक्षा 10 से 12 के किशोर परीक्षा के डर को चिढ़ या चुप्पी के पीछे छिपा सकते हैं। यह कहना सुरक्षित बनाएँ कि "मुझे डर लग रहा है", और डर को कमज़ोरी नहीं, बल्कि इस बात की जानकारी मानें कि उन्हें क्या चाहिए।',
+        },
+        steps: [
+          { en: 'Ask: "What is the scariest part of this exam for you?"', hi: 'पूछें: "इस परीक्षा का सबसे डरावना हिस्सा तुम्हारे लिए कौन सा है?"' },
+          { en: 'Support rest and sleep before the exam, and keep the last day light.', hi: 'परीक्षा से पहले आराम और नींद का समर्थन करें, और आखिरी दिन हल्का रखें।' },
+          { en: 'Give space: "I am here if you want to talk. You do not have to."', hi: 'जगह दें: "अगर बात करनी हो तो मैं यहाँ हूँ। ज़रूरी नहीं है।"' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'Your 17-year-old snaps at you before boards. What is the most helpful response?', hi: 'आपका 17 साल का बच्चा बोर्ड से पहले आप पर चिढ़ जाता है। सबसे मददगार प्रतिक्रिया क्या है?' },
+            options: [
+              { en: 'Snap back and remind them of the rules.', hi: 'पलटकर जवाब देना और नियम याद दिलाना।' },
+              { en: '"This is a lot of pressure. Do you want quiet time, or a chat?"', hi: '"इस पर बहुत दबाव है। तुम्हें शांत समय चाहिए, या बात करनी है?"' },
+            ],
+            correct: 1,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'What makes it safe for a teen to say they are scared?', hi: 'किशोर के लिए यह कहना सुरक्षित कब होता है कि उसे डर लग रहा है?' },
+            options: [
+              { en: 'Being told fear is not allowed.', hi: 'यह सुनना कि डर की अनुमति नहीं है।' },
+              { en: 'Being met with calm and without judgement.', hi: 'शांति और बिना फैसले के सामना होना।' },
+            ],
+            correct: 1,
+          },
+        ],
+      },
+    },
+  },
+  {
+    id: 'parent_m9',
+    order: 9,
+    title: { en: 'Supporting a Child Who Is Stuck', hi: 'ऐसे बच्चे का साथ देना जो अटका हुआ है' },
+    tiers: {
+      primary: {
+        concept: {
+          en: 'When a young child is stuck, they often freeze or give up. Help by breaking the task into one small step and showing the first step together. Then step back so they can try the next one on their own.',
+          hi: 'जब छोटा बच्चा अटक जाता है, तो अक्सर वह जम जाता है या हार मान लेता है। काम को एक छोटे कदम में बाँटकर पहला कदम साथ में दिखाकर मदद करें। फिर पीछे हट जाएँ ताकि वे अगला कदम खुद आज़मा सकें।',
+        },
+        steps: [
+          { en: 'Ask "Which part is stuck?" before you help.', hi: 'मदद करने से पहले पूछें "कौन सा हिस्सा अटक रहा है?"' },
+          { en: 'Show the first step, then let them do the second.', hi: 'पहला कदम दिखाएँ, फिर दूसरा कदम उन्हें करने दें।' },
+          { en: 'Praise the attempt, even if it is not correct yet.', hi: 'कोशिश की प्रशंसा करें, भले ही वह अभी सही न हो।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'Your child is stuck on a counting problem and starts to cry. What should you do first?', hi: 'आपका बच्चा गिनती के सवाल पर अटक गया है और रोने लगता है। आपको पहले क्या करना चाहिए?' },
+            options: [
+              { en: 'Give the full answer so they can stop crying.', hi: 'पूरा जवाब दे दें ताकि वे रोना बंद कर दें।' },
+              { en: 'Ask which part is stuck, and help with just the first step.', hi: 'पूछें कौन सा हिस्सा अटक रहा है, और सिर्फ़ पहले कदम में मदद करें।' },
+            ],
+            correct: 1,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'What helps a stuck young child most?', hi: 'अटके हुए छोटे बच्चे की सबसे ज़्यादा मदद क्या करता है?' },
+            options: [
+              { en: 'Doing the whole task for them.', hi: 'उनके लिए पूरा काम कर देना।' },
+              { en: 'Showing one small step and letting them try the next.', hi: 'एक छोटा कदम दिखाना और अगला उन्हें आज़माने देना।' },
+            ],
+            correct: 1,
+          },
+        ],
+      },
+      secondary: {
+        concept: {
+          en: 'Students aged 11 to 15 who are stuck often hide it, because asking for help feels like admitting failure. Make help feel normal by sitting alongside them and asking them to explain their thinking, which reveals exactly where the gap is.',
+          hi: 'ग्यारह से पंद्रह साल के छात्र जब अटकते हैं, तो अक्सर इसे छिपाते हैं, क्योंकि मदद माँगना असफलता मानने जैसा लगता है। उनके बगल में बैठकर और उनसे अपनी सोच समझाने को कहकर मदद को सामान्य बनाएँ। इससे ठीक पता चलता है कि कमी कहाँ है।',
+        },
+        steps: [
+          { en: 'Ask them to explain how they started, step by step.', hi: 'उनसे कहें कि वे शुरुआत कैसे करते हैं, कदम-दर-कदम समझाएँ।' },
+          { en: 'Point to the exact line where the thinking changes direction.', hi: 'ठीक उस पंक्ति की ओर इशारा करें जहाँ सोच की दिशा बदलती है।' },
+          { en: 'Let them redo the step themselves before you move on.', hi: 'आगे बढ़ने से पहले उन्हें वह कदम खुद दोबारा करने दें।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'Your 12-year-old is stuck on algebra and says "I just don\'t get it." What is the best next step?', hi: 'आपका 12 साल का बच्चा बीजगणित में अटका है और कहता है "मुझे बस समझ नहीं आता।" अगला सबसे अच्छा कदम क्या है?' },
+            options: [
+              { en: '"Okay, just watch the video and it will click."', hi: '"ठीक है, बस वीडियो देख लो, समझ आ जाएगा।"' },
+              { en: '"Show me how you started, step by step."', hi: '"मुझे दिखाओ तुमने शुरुआत कैसे की, कदम-दर-कदम।"' },
+            ],
+            correct: 1,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'Why ask a stuck student to explain their thinking?', hi: 'अटके हुए छात्र से उनकी सोच समझाने को क्यों कहें?' },
+            options: [
+              { en: 'It reveals exactly where the gap is.', hi: 'इससे ठीक पता चलता है कि कमी कहाँ है।' },
+              { en: 'It gives you time to do something else.', hi: 'इससे आपको कुछ और करने का समय मिलता है।' },
+            ],
+            correct: 0,
+          },
+        ],
+      },
+      teen: {
+        concept: {
+          en: 'A Class 10 to 12 student who is stuck may already feel overwhelmed. Rather than solving the problem for them, help them plan which topic to tackle first, which resource to use, and when to ask a teacher. Independence grows when they make these decisions.',
+          hi: 'कक्षा 10 से 12 का छात्र जो अटका है, शायद पहले ही बोझ महसूस कर रहा हो। समस्या को उनके लिए हल करने की जगह, यह तय करने में मदद करें कि पहले कौन सा विषय लें, कौन सा संसाधन इस्तेमाल करें, और शिक्षक से कब पूछें। ये फैसले वे खुद लेते हैं तो आत्मनिर्भरता बढ़ती है।',
+        },
+        steps: [
+          { en: 'Ask them to list the three topics that feel most blocked, then rank them.', hi: 'उनसे तीन सबसे अटकाने वाले विषयों की सूची बनाने को कहें, फिर उन्हें क्रम दें।' },
+          { en: 'Agree on one resource and one time to ask a teacher this week.', hi: 'इस हफ्ते के लिए एक संसाधन और शिक्षक से पूछने का एक समय तय करें।' },
+          { en: 'Check in after the plan, not during every step.', hi: 'हर कदम के दौरान नहीं, बल्कि योजना के बाद बात करें।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'Your 16-year-old is stuck on several topics at once. What is the most useful help?', hi: 'आपका 16 साल का बच्चा एक साथ कई विषयों में अटका है। सबसे उपयोगी मदद क्या है?' },
+            options: [
+              { en: 'Solve each problem for them so they catch up quickly.', hi: 'हर सवाल उनके लिए हल कर दें ताकि वे जल्दी आगे बढ़ें।' },
+              { en: 'Help them rank the topics and plan one step at a time.', hi: 'उन्हें विषयों को क्रम देने और एक-एक कदम की योजना बनाने में मदद करें।' },
+            ],
+            correct: 1,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'Why should a teen make decisions about their own study plan?', hi: 'किशोर को अपनी पढ़ाई की योजना के फैसले खुद क्यों लेने चाहिए?' },
+            options: [
+              { en: 'Because independence grows when they make these decisions.', hi: 'क्योंकि ये फैसले लेने से आत्मनिर्भरता बढ़ती है।' },
+              { en: 'Because adults should never be involved in study.', hi: 'क्योंकि बड़ों को पढ़ाई में कभी शामिल नहीं होना चाहिए।' },
+            ],
+            correct: 0,
+          },
+        ],
+      },
+    },
+  },
+  {
+    id: 'parent_m10',
+    order: 10,
+    title: { en: 'Looking After Your Own Stress', hi: 'अपने तनाव का ख्याल रखना' },
+    tiers: {
+      primary: {
+        concept: {
+          en: 'Children read their parents\' stress closely. When you are calm, your child feels safer to learn and make mistakes. Looking after your own stress is part of helping your child, not a separate task.',
+          hi: 'बच्चे अपने माता-पिता के तनाव को गौर से पढ़ते हैं। जब आप शांत होते हैं, तो बच्चा सीखने और गलतियाँ करने में ज़्यादा सुरक्षित महसूस करता है। अपने तनाव का ख्याल रखना बच्चे की मदद का ही हिस्सा है, अलग काम नहीं।',
+        },
+        steps: [
+          { en: 'Notice your own tension before you speak to your child about marks.', hi: 'बच्चे से अंकों की बात करने से पहले अपने तनाव को पहचानें।' },
+          { en: 'Take three slow breaths before you respond to a low score.', hi: 'कम अंक पर प्रतिक्रिया देने से पहले तीन धीमी साँसें लें।' },
+          { en: 'Tell your child calmly when you need a break, so they learn it is healthy.', hi: 'जब आपको ब्रेक चाहिए, तो बच्चे को शांति से बताएँ, ताकि वह सीखे कि यह स्वस्थ है।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'You are stressed about your child\'s low score. What is the best first step?', hi: 'आप बच्चे के कम अंकों से परेशान हैं। पहला सबसे अच्छा कदम क्या है?' },
+            options: [
+              { en: 'Discuss the score immediately while you are upset.', hi: 'परेशान होते हुए तुरंत अंकों पर बात करना।' },
+              { en: 'Take a few slow breaths, then talk when you are calm.', hi: 'कुछ धीमी साँसें लें, फिर शांत होकर बात करें।' },
+            ],
+            correct: 1,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'Why does a parent\'s calm help a child learn?', hi: 'माता-पिता की शांति बच्चे को सीखने में कैसे मदद करती है?' },
+            options: [
+              { en: 'The child feels safer to learn and make mistakes.', hi: 'बच्चा सीखने और गलतियाँ करने में ज़्यादा सुरक्षित महसूस करता है।' },
+              { en: 'The child stops needing any help at all.', hi: 'बच्चे को किसी भी मदद की ज़रूरत नहीं रहती।' },
+            ],
+            correct: 0,
+          },
+        ],
+      },
+      secondary: {
+        concept: {
+          en: 'Parents of students aged 11 to 15 often carry worry about school, money, and the future. That stress leaks into conversations about marks. Name your own stress, find a small outlet, and avoid making your child responsible for managing your feelings.',
+          hi: 'ग्यारह से पंद्रह साल के बच्चों के माता-पिता अक्सर स्कूल, पैसे और भविष्य की चिंता लिए रहते हैं। वह तनाव अंकों की बातचीत में आ जाता है। अपने तनाव को पहचानें, उसके लिए कोई छोटा सहारा ढूँढें, और अपने बच्चे पर अपनी भावनाएँ संभालने की ज़िम्मेदारी न डालें।',
+        },
+        steps: [
+          { en: 'Notice when you start comparing your child\'s marks with your own worries.', hi: 'ध्यान दें कि आप कब बच्चे के अंकों को अपनी चिंताओं से जोड़ने लगते हैं।' },
+          { en: 'Find one small outlet this week: a walk, a call with a friend, or a quiet cup of tea.', hi: 'इस हफ्ते एक छोटा सहारा ढूँढें: टहलना, किसी दोस्त से बात, या शांति से एक कप चाय।' },
+          { en: 'Ask a partner, friend, or counsellor for help when stress lasts for weeks.', hi: 'जब तनाव हफ्तों तक रहे, तो साथी, दोस्त या काउंसलर से मदद लें।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'You snap at your child after a bad day at work. What is the best repair?', hi: 'काम पर बुरे दिन के बाद आप बच्चे पर चिढ़ जाते हैं। सबसे अच्छा सुधार क्या है?' },
+            options: [
+              { en: 'Ignore it, children forget quickly.', hi: 'इसे नज़रअंदाज़ करें, बच्चे जल्दी भूल जाते हैं।' },
+              { en: '"I was stressed earlier and I shouldn\'t have snapped. I am sorry."', hi: '"मैं पहले तनाव में था और मुझे इस तरह नहीं चिढ़ना चाहिए था। मुझे माफ़ करना।"' },
+            ],
+            correct: 1,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'What should a parent avoid?', hi: 'माता-पिता को किससे बचना चाहिए?' },
+            options: [
+              { en: 'Making the child responsible for managing the parent\'s feelings.', hi: 'बच्चे पर माता-पिता की भावनाएँ संभालने की ज़िम्मेदारी डालना।' },
+              { en: 'Taking a short break to recover.', hi: 'ठीक होने के लिए एक छोटा ब्रेक लेना।' },
+            ],
+            correct: 0,
+          },
+        ],
+      },
+      teen: {
+        concept: {
+          en: 'Parents of teenagers in Class 10 to 12 may feel powerless as their child faces boards and big choices. Your stress is real, and it helps to keep a steady routine for yourself, share the load with your partner, and remember that your teen learns how to handle pressure by watching you.',
+          hi: 'कक्षा 10 से 12 के किशोरों के माता-पिता को बोर्ड और बड़े फैसलों के दौर में लाचार महसूस हो सकता है। आपका तनाव वास्तविक है, और अपने लिए एक स्थिर दिनचर्या रखना, साथी के साथ बोझ बाँटना मददगार होता है। याद रखें कि किशोर दबाव कैसे संभालें, यह आपको देखकर भी सीखता है।',
+        },
+        steps: [
+          { en: 'Keep one routine for yourself, such as sleep, a walk, or a hobby, even during exam season.', hi: 'परीक्षा के मौसम में भी अपने लिए एक दिनचर्या रखें, जैसे नींद, टहलना या कोई शौक।' },
+          { en: 'Share the load with a partner or relative so one person is not carrying it all.', hi: 'बोझ साथी या रिश्तेदार के साथ बाँटें, ताकि एक ही व्यक्ति सब न उठाए।' },
+          { en: 'Model healthy coping: say out loud how you are handling stress, calmly.', hi: 'स्वस्थ तरीके से सामना करने का उदाहरण बनें: शांति से बताएँ कि आप तनाव कैसे संभाल रहे हैं।' },
+        ],
+        practiceSet: [
+          {
+            q: { en: 'During boards, you feel constantly anxious. What is the most helpful thing you can do for your teen and yourself?', hi: 'बोर्ड के दौरान आप लगातार बेचैन रहते हैं। अपने किशोर और अपने लिए सबसे मददगार काम क्या है?' },
+            options: [
+              { en: 'Keep your own worry to yourself and hope it passes.', hi: 'अपनी चिंता अपने तक रखें और उम्मीद करें कि गुज़र जाएगी।' },
+              { en: 'Keep a steady routine for yourself and share the load with a partner.', hi: 'अपने लिए एक स्थिर दिनचर्या रखें और साथी के साथ बोझ बाँटें।' },
+            ],
+            correct: 1,
+          },
+        ],
+        test: [
+          {
+            q: { en: 'How does a teen learn to handle pressure?', hi: 'किशोर दबाव संभालना कैसे सीखता है?' },
+            options: [
+              { en: 'Partly by watching how their parents handle stress.', hi: 'कुछ हद तक यह देखकर कि उनके माता-पिता तनाव कैसे संभालते हैं।' },
+              { en: 'Only from lectures about stress.', hi: 'सिर्फ़ तनाव पर भाषण सुनकर।' },
+            ],
+            correct: 0,
+          },
+        ],
+      },
+    },
+  },
 ];
