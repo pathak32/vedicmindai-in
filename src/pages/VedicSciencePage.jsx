@@ -35,8 +35,8 @@ const SECTIONS = [
     sectionComingSoon: false,
     chapters: [
       { id: 'delhi-iron-pillar', title: { en: 'Delhi Iron Pillar — No Rust in 1,600 Years', hi: 'दिल्ली लौह स्तंभ — 1,600 वर्षों में कोई जंग नहीं' }, sub: { en: 'Gupta Empire — 4th-5th century CE', hi: 'गुप्त साम्राज्य — 4-5वीं सदी ई.' }, ready: true },
-      { id: 'wootz-steel', title: { en: 'Wootz / Damascus Steel', hi: 'वूट्ज / दमिश्क स्टील' }, sub: { en: 'South India — 300 BCE', hi: 'दक्षिण भारत — 300 ईसा पूर्व' }, ready: true },
-      { id: 'ayurvedic-bhasmas', title: { en: 'Ayurvedic Nanoparticles — Bhasmas', hi: 'आयुर्वेदिक नैनोकण — भस्म' }, sub: { en: 'Confirmed by TEM/SEM analysis', hi: 'TEM/SEM विश्लेषण द्वारा पुष्टि' }, ready: true },
+      { id: 'wootz-steel', title: { en: "Wootz Steel — World's First High-Carbon Steel", hi: 'वूट्ज स्टील — विश्व का प्रथम उच्च-कार्बन स्टील' }, sub: { en: 'South India — 300 BCE', hi: 'दक्षिण भारत — 300 ईसा पूर्व' }, ready: true },
+      { id: 'ayurvedic-bhasmas', title: { en: 'Ayurvedic Bhasmas — Ancient Nanoparticle Medicine', hi: 'आयुर्वेदिक भस्म — प्राचीन नैनोकण चिकित्सा' }, sub: { en: 'Confirmed by TEM/SEM analysis', hi: 'TEM/SEM विश्लेषण द्वारा पुष्टि' }, ready: true },
       { id: 4, title: { en: 'Nagarjuna\'s Alchemy — Rasayana', hi: 'नागार्जुन की कीमिया — रसायन' }, sub: { en: 'Nagarjuna — 8th-9th century CE', hi: 'नागार्जुन — 8-9वीं सदी ई.' }, ready: false },
       { id: 5, title: { en: 'Zinc Distillation — Zawar Mines', hi: 'जस्ता आसवन — ज़ावर खदानें' }, sub: { en: 'Rajasthan — predates Europe by 1,300 years', hi: 'राजस्थान — यूरोप से 1,300 साल पहले' }, ready: false },
       { id: 6, title: { en: 'Copper & Antimicrobial Science', hi: 'तांबा और रोगाणुरोधी विज्ञान' }, sub: { en: 'Tamra Jal — confirmed by modern studies', hi: 'तांबा जल — आधुनिक अध्ययनों द्वारा पुष्टि' }, ready: false },
@@ -56,8 +56,8 @@ const SECTIONS = [
     sectionComingSoon: false,
     chapters: [
       { id: 'sushruta-surgery', title: { en: 'Sushruta — World\'s First Plastic Surgeon', hi: 'सुश्रुत — विश्व के प्रथम प्लास्टिक सर्जन' }, sub: { en: 'Sushruta Samhita — 600 BCE', hi: 'सुश्रुत संहिता — 600 ईसा पूर्व' }, ready: true },
-      { id: 'charaka-medicine', title: { en: 'Charaka Samhita — 1,120 Diseases', hi: 'चरक संहिता — 1,120 रोग' }, sub: { en: 'Charaka — 700 BCE', hi: 'चरक — 700 ईसा पूर्व' }, ready: true },
-      { id: 'jc-bose-plant-intelligence', title: { en: 'J.C. Bose & Plant Intelligence', hi: 'जे.सी. बोस और पादप बुद्धिमत्ता' }, sub: { en: 'Jagadish Chandra Bose — 1900 CE', hi: 'जगदीश चंद्र बोस — 1900 ई.' }, ready: true },
+      { id: 'charaka-medicine', title: { en: 'Charaka Samhita — 1,120 Diseases & the First Clinical Trials', hi: 'चरक संहिता — 1,120 रोग और प्रथम नैदानिक परीक्षण' }, sub: { en: 'Charaka — 700 BCE', hi: 'चरक — 700 ईसा पूर्व' }, ready: true },
+      { id: 'jc-bose-plant-intelligence', title: { en: 'J.C. Bose & Plant Intelligence — Vedic Science Meets Modern Biology', hi: 'जे.सी. बोस और पादप बुद्धिमत्ता — वैदिक विज्ञान और आधुनिक जीव विज्ञान' }, sub: { en: 'Jagadish Chandra Bose — 1900 CE', hi: 'जगदीश चंद्र बोस — 1900 ई.' }, ready: true },
       { id: 3, title: { en: 'Tridosha & Greek Medicine', hi: 'त्रिदोष और ग्रीक चिकित्सा' }, sub: { en: 'Ayurveda → Greek medicine derivation', hi: 'आयुर्वेद → ग्रीक चिकित्सा व्युत्पत्ति' }, ready: false },
       { id: 4, title: { en: 'Ayurvedic Genetics — Before Mendel', hi: 'आयुर्वेदिक आनुवंशिकता — मेंडल से पहले' }, sub: { en: '2,000 years before Mendel\'s genetics', hi: 'मेंडल की आनुवंशिकता से 2,000 साल पहले' }, ready: false },
       { id: 5, title: { en: 'Plant Intelligence — Prana & Science', hi: 'पादप बुद्धिमत्ता — प्राण और विज्ञान' }, sub: { en: 'J.C. Bose\'s Vedic-inspired research', hi: 'जे.सी. बोस का वैदिक-प्रेरित शोध' }, ready: false },
