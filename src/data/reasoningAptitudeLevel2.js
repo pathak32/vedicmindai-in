@@ -3,6 +3,8 @@
 // 10 chapters × 8 questions each = 80 questions total.
 // Unlocked once the user passes ALL Level 1 chapters (≥ 60% each).
 
+import { RA_EXTRA_L2_QUESTIONS } from './raAptitudeExtra.js';
+
 export const RA_LEVEL2_QUESTIONS = [
 
   // ── Chapter 1: Odd One Out (Level 2 — abstract/tricky categories) ──
@@ -305,6 +307,9 @@ export const RA_LEVEL2_QUESTIONS = [
   { chapter: 'mirror-images-l2', prompt: 'In a mirror, the letter "p" appears as ?', options: ['q', 'b', 'd'], answer: 'q', difficulty: 'hard', exp: 'Same rule as b/d: the stroke in "p" is on the left -- flipped, it moves to the right, which is exactly what "q" looks like.' },
   { chapter: 'mirror-images-l2', prompt: 'Which pair are TRUE left-right mirror images of each other: "b and d" or "b and p"?', options: ['b and d', 'b and p', 'Both pairs'], answer: 'b and d', difficulty: 'hard', exp: 'b and d are the same shape flipped left-right. b and p are actually the same shape flipped upside-down (top-to-bottom), which is a different kind of flip, not a left-right mirror.' },
 ];
+
+// Extra 20 questions per chapter, generated and checked in raAptitudeExtra.js.
+RA_LEVEL2_QUESTIONS.push(...RA_EXTRA_L2_QUESTIONS);
 
 export function getLevel2QuestionsByChapter(chapterId) {
   const qs = RA_LEVEL2_QUESTIONS.filter((q) => q.chapter === chapterId);

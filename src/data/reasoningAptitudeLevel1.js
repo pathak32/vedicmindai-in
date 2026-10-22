@@ -4,6 +4,8 @@
 // { chapter, prompt, options, answer, difficulty }
 // Ready to be loaded into Supabase `questions` table once reviewed.
 
+import { RA_EXTRA_L1_QUESTIONS } from './raAptitudeExtra.js';
+
 export const RA_LEVEL1_QUESTIONS = [
   // ---------------- Chapter 1: Odd One Out (Classification) ----------------
   { chapter: 'odd-one-out', prompt: 'Which one does not belong: Apple, Banana, Carrot, Mango?', options: ['Apple', 'Carrot', 'Mango'], answer: 'Carrot', difficulty: 'easy' , exp: 'Apple, Banana, and Mango are all fruits. Carrot is a vegetable — it doesn\'t belong.' },
@@ -303,6 +305,9 @@ export const RA_LEVEL1_QUESTIONS = [
   { chapter: 'mirror-images-basic', prompt: 'Which letter looks the same in a mirror: U, R, or G?', options: ['U', 'R', 'G'], answer: 'U', difficulty: 'medium' , exp: 'U is vertically symmetric — its left and right halves mirror each other exactly. R and G are not symmetric this way.' },
   { chapter: 'mirror-images-basic', prompt: 'In a mirror, the letter "q" looks like which letter?', options: ['b', 'p', 'd'], answer: 'p', difficulty: 'medium' , exp: 'A mirror flips left and right. The stroke in "q" is on the right — flipped, it moves to the left, which is exactly "p".' },
 ];
+
+// Extra 20 questions per chapter, generated and checked in raAptitudeExtra.js.
+RA_LEVEL1_QUESTIONS.push(...RA_EXTRA_L1_QUESTIONS);
 
 export function getQuestionsByChapter(chapterId) {
   const qs = RA_LEVEL1_QUESTIONS.filter((q) => q.chapter === chapterId);

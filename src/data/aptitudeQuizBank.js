@@ -16,6 +16,9 @@
 // (match-the-picture, what-doesnt-belong, count-the-objects, big-or-small,
 // what-comes-next) and still sit approved-but-unused in pending_questions.
 
+import { APTITUDE_PREK_EXTRA_QUESTIONS } from './aptitudePrekExtra.js';
+import { APTITUDE_EXTRA_QUESTIONS } from './aptitudeExtra.js';
+
 export const APTITUDE_QUESTIONS = [
   { chapter: 'match-the-picture', prompt: 'Which picture matches the Apple?', options: [{ image: 'https://cdn.pixabay.com/photo/2019/10/03/01/44/apple-4522286_640.png', label: 'Apple' }, { image: 'https://cdn.pixabay.com/photo/2019/07/11/10/11/banana-4330436_640.png', label: 'Banana' }, { image: 'https://cdn.pixabay.com/photo/2024/07/11/14/32/orange-8888447_640.png', label: 'Orange' }], answer: 'Apple', exp: 'The Apple picture matches the Apple.' },
   { chapter: 'match-the-picture', prompt: 'Which picture matches the Elephant?', options: [{ image: 'https://cdn.pixabay.com/photo/2016/02/23/10/55/elephant-1217313_640.png', label: 'Elephant' }, { image: 'https://cdn.pixabay.com/photo/2013/07/13/10/16/ant-156893_640.png', label: 'Ant' }, { image: 'https://cdn.pixabay.com/photo/2019/03/03/08/25/rabbit-4031334_640.png', label: 'Rabbit' }], answer: 'Elephant', exp: 'The Elephant picture matches the Elephant.' },
@@ -375,6 +378,17 @@ export const APTITUDE_QUESTIONS = [
   { chapter: 'data-sufficiency', prompt: 'Is |x| < 5? (1) x > -5 (2) x < 5', options: ['BOTH statements together are needed (neither alone is enough)', 'Statement 1 ALONE is sufficient, Statement 2 is not', 'NOT sufficient, even using both statements together'], answer: 'BOTH statements together are needed (neither alone is enough)', exp: 'Testing statement 1 alone: not sufficient. Testing statement 2 alone: not sufficient.' },
   { chapter: 'data-sufficiency', prompt: 'Is x a multiple of both 2 and 3? (1) x is a multiple of 6 (2) x is a multiple of 12', options: ['Statement 1 ALONE is sufficient, Statement 2 is not', 'Each statement ALONE is sufficient', 'NOT sufficient, even using both statements together'], answer: 'Each statement ALONE is sufficient', exp: 'Testing statement 1 alone: sufficient. Testing statement 2 alone: sufficient.' },
 ];
+
+// Pre-K questions in emoji text, added so each Pre-K chapter reaches 20.
+// Add the extra questions first, then the Pre-K set, skipping any exact repeat.
+const bankKey = (q) => `${q.chapter}|${q.prompt}|${q.options.map((o) => (typeof o === 'object' ? o.label : String(o))).join(',')}`;
+const seenKeys = new Set(APTITUDE_QUESTIONS.map(bankKey));
+for (const q of [...APTITUDE_EXTRA_QUESTIONS, ...APTITUDE_PREK_EXTRA_QUESTIONS]) {
+  const key = bankKey(q);
+  if (seenKeys.has(key)) continue;
+  seenKeys.add(key);
+  APTITUDE_QUESTIONS.push(q);
+}
 
 export function getAptitudeQuestionsByChapter(chapterId) {
   return APTITUDE_QUESTIONS.filter((q) => q.chapter === chapterId);
