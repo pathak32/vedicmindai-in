@@ -27,7 +27,7 @@ function getScreenlessPDF(grade) {
   const g = parseInt(grade, 10);
   if (g >= 6 && g <= 10) {
     return {
-      url: `/screenless/VedicMind_Screenless_Class${g}_June2026.pdf`,
+      url: `/screenless/VedicMind_Screenless_Class${g}_October2026.pdf`,
       label: `Class ${g} — Vedic Maths & Aptitude`,
       available: true,
     };

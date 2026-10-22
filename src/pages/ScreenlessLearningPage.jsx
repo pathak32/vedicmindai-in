@@ -17,7 +17,7 @@ const glass = {
   borderRadius: 16,
 };
 
-const MONTH_LABEL = 'June 2026';
+const MONTH_LABEL = 'October 2026';
 
 function ClassCard({ cls, onSelect, selected }) {
   return (
@@ -146,7 +146,7 @@ export default function ScreenlessLearningPage() {
     { id: '10', label: `${t('authClassWord')} 10`, tagline: t('slClass10Tagline') },
   ];
 
-  const pdfUrl = `/screenless/VedicMind_Screenless_Class${selectedClass}_June2026.pdf`;
+  const pdfUrl = `/screenless/VedicMind_Screenless_Class${selectedClass}_October2026.pdf`;
 
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
