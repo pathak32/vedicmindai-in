@@ -314,6 +314,11 @@ const LESSON_QUESTIONS = {
     { q: { en: 'Using the Vedic squaring method, find 97².', hi: 'वैदिक वर्ग विधि का उपयोग करते हुए, 97² ज्ञात करें।' , exp: 'Step 1: Units: 7×7 = 49 Step 2: Cross (double): 2×9×7 = 126 Step 3: Tens: 9×9 = 81 Step 4: Combine with carries: 9409 (check: 97²=9409)' }, options: ['9409', '9408', '9410', '9509'], correct: 0 },
     { q: { en: 'Using the Vedic squaring method, find 65².', hi: 'वैदिक वर्ग विधि का उपयोग करते हुए, 65² ज्ञात करें।' , exp: 'Step 1: Units: 5×5 = 25 Step 2: Cross (double): 2×6×5 = 60 Step 3: Tens: 6×6 = 36 Step 4: Combine with carries: 4225 (check: 65²=4225)' }, options: ['4225', '4235', '4325', '4226'], correct: 0 },
   ],
+  l2_14: [
+    { q: { en: 'Solve x + y = 20 and x − y = 6. What is x?', hi: 'x + y = 20 और x − y = 6 हल करें। x क्या है?', exp: 'Add: 2x = 26, so x = 13' }, options: ['11', '12', '13', '14'], correct: 2 },
+    { q: { en: 'Solve x + y = 15 and x − y = 3. What is y?', hi: 'x + y = 15 और x − y = 3 हल करें। y क्या है?', exp: 'Subtract: 2y = 12, so y = 6' }, options: ['5', '6', '7', '8'], correct: 1 },
+    { q: { en: 'Solve 2x + 5y = 21 and 2x − 5y = 11. What is y?', hi: '2x + 5y = 21 और 2x − 5y = 11 हल करें। y क्या है?', exp: 'Subtract: 10y = 10, so y = 1' }, options: ['0', '1', '2', '3'], correct: 1 },
+  ],
   l2_04: [
     { q: { en: 'Using the Vedic cubing method, find 83³.', hi: 'वैदिक घन विधि का उपयोग करते हुए, 83³ ज्ञात करें।' , exp: 'Step 1: Four terms: 8³=512, 3×8²×3=576, 3×8×3²=216, 3³=27 Step 2: Combine right-to-left with carries: 571787 (check: 83³=571787)' }, options: ['571787', '571788', '572787', '571887'], correct: 0 },
     { q: { en: 'Using the Vedic cubing method, find 31³.', hi: 'वैदिक घन विधि का उपयोग करते हुए, 31³ ज्ञात करें।' , exp: 'Step 1: Four terms: 3³=27, 3×3²×1=27, 3×3×1²=9, 1³=1 Step 2: Combine right-to-left with carries: 29791 (check: 31³=29791)' }, options: ['29790', '29891', '29791', '30791'], correct: 2 },

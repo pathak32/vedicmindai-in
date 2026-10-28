@@ -1589,6 +1589,62 @@ const L2_11_CONTENT = (
   </>
 );
 
+// ── L2_14 — Sankalana-Vyavakalanabhyam ──────────────────────────────────────
+
+const L2_14_CONTENT = (
+  <>
+    <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Sankalana-Vyavakalanabhyam</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>By addition and by subtraction</div>
+    </div>
+
+    <SectionTitle>When to Use This Sutra</SectionTitle>
+    <div style={{ background: '#F0F4FF', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#0A1628', margin: 0, lineHeight: 1.7 }}>
+        Use it to solve two equations in two unknowns when one variable has the same coefficient in both. Adding the equations removes one variable, subtracting removes the other.
+      </p>
+    </div>
+
+    <SectionTitle>The Method</SectionTitle>
+    <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9 }}>
+        <div>1. Add the two equations to find the variable whose terms cancel when subtracted.</div>
+        <div>2. Subtract the two equations to find the variable whose terms cancel when added.</div>
+        <div>3. Substitute the value back into either original equation to check.</div>
+      </div>
+    </div>
+
+    <SectionTitle>Worked Examples</SectionTitle>
+    <ExampleCard
+      title="Example 1: x + y = 10, x − y = 4"
+      lines={['Add: 2x = 14, so x = 7', 'Subtract: 2y = 6, so y = 3', 'Check: 7 + 3 = 10 ✓, 7 − 3 = 4 ✓']}
+      result="x = 7, y = 3"
+    />
+    <ExampleCard
+      title="Example 2: 3x + 2y = 16, 3x − 2y = 8"
+      lines={['Add: 6x = 24, so x = 4', 'Subtract: 4y = 8, so y = 2', 'Check: 12 + 4 = 16 ✓, 12 − 4 = 8 ✓']}
+      result="x = 4, y = 2"
+    />
+
+    <SectionTitle>⚠️ Common Mistake</SectionTitle>
+    <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#B91C1C', margin: '0 0 8px 0', fontWeight: 600 }}>
+        Keep the signs when you subtract one equation from the other.
+      </p>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', margin: 0 }}>
+        For (x + y) − (x − y): the x-terms cancel, and y − (−y) = 2y. Writing it as y − y = 0 is wrong.
+      </p>
+    </div>
+
+    <SectionTitle>Why It Works</SectionTitle>
+    <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 16, marginBottom: 8 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#065F46', margin: 0, lineHeight: 1.7 }}>
+        Adding equal quantities keeps them equal. Adding (x + y) + (x − y) gives 2x, so 2x = 10 + 4 = 14.
+      </p>
+    </div>
+  </>
+);
+
 // ── L2_12 — Calendar Calculations ────────────────────────────────────────────
 
 const L2_12_CONTENT = (
@@ -2407,6 +2463,7 @@ const LESSON_CONTENT = {
   l2_09: () => L2_09_CONTENT,
   l2_10: () => L2_10_CONTENT,
   l2_11: () => L2_11_CONTENT,
+  l2_14: () => L2_14_CONTENT,
   l2_12: () => L2_12_CONTENT,
   l3_01: () => L3_01_CONTENT,
   l3_02: () => L3_02_CONTENT,

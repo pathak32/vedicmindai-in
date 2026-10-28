@@ -97,6 +97,13 @@ const LESSON_PROBLEMS = {
     { q: 'Calculate 51²', options: ['2501','2601','2701','2401'], correct: 1, exp: 'd=1. First: 25+1=26. Second: 01 → 2601' },
     { q: 'Calculate 49²', options: ['2301','2401','2501','2201'], correct: 1, exp: 'd=−1. First: 25+(−1)=24. Second: 01 → 2401' },
   ],
+  l2_14: [
+    { q: 'Solve x + y = 10 and x − y = 4. What is x?', options: ['5','6','7','8'], correct: 2, exp: 'Add: 2x = 14, so x = 7' },
+    { q: 'Solve x + y = 12 and x − y = 2. What is y?', options: ['4','5','6','7'], correct: 1, exp: 'Subtract: 2y = 10, so y = 5' },
+    { q: 'Solve x + y = 9 and x − y = 1. What is x?', options: ['3','4','5','6'], correct: 2, exp: 'Add: 2x = 10, so x = 5' },
+    { q: 'Solve 3x + 2y = 16 and 3x − 2y = 8. What is y?', options: ['1','2','3','4'], correct: 1, exp: 'Subtract: 4y = 8, so y = 2' },
+    { q: 'Solve 5x + 3y = 29 and 5x − 3y = 11. What is x?', options: ['3','4','5','6'], correct: 1, exp: 'Add: 10x = 40, so x = 4' },
+  ],
   l2_04: [
     { q: 'Calculate 12³ using Anurupyena', options: ['1528','1628','1728','1828'], correct: 2, exp: '1|6|12|8 → with carries → 1728' },
     { q: 'Calculate 11³', options: ['1231','1331','1431','1531'], correct: 1, exp: '1|3|3|1 → 1331' },

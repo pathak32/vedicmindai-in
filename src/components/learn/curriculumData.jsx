@@ -35,6 +35,7 @@ export const CURRICULUM = [
       { id: 'l2_10', title: 'Fractions — Vedic Addition & Subtraction',              xp: 80,  isAssessment: false, youtube_video_id: '' },
       { id: 'l2_11', title: 'Antyayor Dashakepi — Same Tens, Units Add to 10',       xp: 80,  isAssessment: false, youtube_video_id: '' },
       { id: 'l2_12', title: 'Calendar Calculations — Day of Any Date',               xp: 100, isAssessment: false, youtube_video_id: '' },
+      { id: 'l2_14', title: 'Sankalana-Vyavakalanabhyam — Solve by Adding and Subtracting', xp: 80,  isAssessment: false, youtube_video_id: '' },
       { id: 'l2_13', title: 'Level 2 Assessment — Intermediate Mastery Quiz',        xp: 150, isAssessment: true,  youtube_video_id: '' },
     ],
   },
