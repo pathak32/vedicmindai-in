@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
+import { PRACTICE_EXTRA } from '../../data/vedicExtraQuestions';
 
 // Resolves a field that may be a plain string (older English-only practice
 // sets) or a { en, hi } bilingual object (new sets). Falls back to English.
@@ -96,6 +97,61 @@ const LESSON_PROBLEMS = {
     { q: 'Calculate 38² using duplex', options: ['1344','1444','1544','1244'], correct: 1, exp: '3²|2×3×8|8²=9|48|64 → with carries → 1444' },
     { q: 'Calculate 51²', options: ['2501','2601','2701','2401'], correct: 1, exp: 'd=1. First: 25+1=26. Second: 01 → 2601' },
     { q: 'Calculate 49²', options: ['2301','2401','2501','2201'], correct: 1, exp: 'd=−1. First: 25+(−1)=24. Second: 01 → 2401' },
+  ],
+  l2_15: [
+    { q: 'Calculate 8² using Yavadunam.', options: ['54','64','74','84'], correct: 1, exp: 'Deficiency 2: 8 − 2 = 6, 2² = 4, so 64' },
+    { q: 'Calculate 96² using Yavadunam.', options: ['9016','9116','9216','9316'], correct: 2, exp: 'Deficiency 4: 96 − 4 = 92, 4² = 16, so 9216' },
+    { q: 'Calculate 13² using Yavadunam.', options: ['149','159','169','179'], correct: 2, exp: 'Surplus 3: 13 + 3 = 16, 3² = 9, so 169' },
+    { q: 'Calculate 103² using Yavadunam.', options: ['10509','10609','10709','10809'], correct: 1, exp: 'Surplus 3: 103 + 3 = 106, 3² = 09, so 10609' },
+    { q: 'Calculate 98² using Yavadunam.', options: ['9504','9604','9704','9404'], correct: 1, exp: 'Deficiency 2: 98 − 2 = 96, 2² = 04, so 9604' },
+  ],
+  l3_15: [
+    { q: 'Expand (x + 2)(x + 3).', options: ['x²+6x+5','x²+5x+6','x²+4x+6','x²+5x+5'], correct: 1, exp: 'First x², cross 3x + 2x = 5x, last 6' },
+    { q: 'Expand (2x + 1)(x + 4).', options: ['2x²+7x+4','2x²+9x+1','2x²+5x+4','2x²+9x+4'], correct: 3, exp: 'First 2x², cross 8x + x = 9x, last 4' },
+    { q: 'Expand (3x + 2)(2x + 5).', options: ['6x²+16x+10','6x²+19x+10','6x²+19x+7','5x²+19x+10'], correct: 1, exp: 'First 6x², cross 15x + 4x = 19x, last 10' },
+    { q: 'Expand (x + 6)(x − 2).', options: ['x²−4x−12','x²+4x+12','x²+8x−12','x²+4x−12'], correct: 3, exp: 'First x², cross −2x + 6x = 4x, last −12' },
+    { q: 'Expand (2x − 1)(x + 3).', options: ['2x²+7x−3','2x²+5x+3','2x²−5x−3','2x²+5x−3'], correct: 3, exp: 'First 2x², cross 6x − x = 5x, last −3' },
+  ],
+  l3_16: [
+    { q: 'Calculate 7 × 142857.', options: ['999998','999999','1000000','999990'], correct: 1, exp: '142857 × 7 = 999999' },
+    { q: 'Calculate 2 × 142857.', options: ['285714','285741','285704','286714'], correct: 0, exp: 'The digits rotate: 285714' },
+    { q: 'Calculate 3 × 142857.', options: ['428517','428571','428751','438571'], correct: 1, exp: 'The digits rotate: 428571' },
+    { q: 'Calculate 6 × 142857.', options: ['857142','857124','858142','857241'], correct: 0, exp: 'The digits rotate: 857142' },
+    { q: 'Calculate 14 × 142857.', options: ['1999998','1999999','2000000','1999990'], correct: 0, exp: '2 × 999999 = 1999998' },
+  ],
+  l4_09: [
+    { q: 'Which of these is divisible by 11?', options: ['123','4321','1331','2345'], correct: 2, exp: '1 − 3 + 3 − 1 = 0, so 1331 is divisible' },
+    { q: 'Is 4321 divisible by 11?', options: ['Yes','No'], correct: 1, exp: '1 − 2 + 3 − 4 = −2, not a multiple of 11' },
+    { q: 'Is 2728 divisible by 11?', options: ['Yes','No'], correct: 0, exp: '8 − 2 + 7 − 2 = 11' },
+    { q: 'What is the alternating sum of 2728, starting from the units digit?', options: ['11','9','2','13'], correct: 0, exp: '8 − 2 + 7 − 2 = 11' },
+    { q: 'Is 123 divisible by 11?', options: ['Yes','No'], correct: 1, exp: '3 − 2 + 1 = 2' },
+  ],
+  l3_11: [
+    { q: 'Solve 1/(x + 1) + 1/(x + 3) = 0. What is x?', options: ['-1','-2','-3','-4'], correct: 1, exp: 'Add denominators: 2x + 4 = 0, so x = -2' },
+    { q: 'Solve 1/(x + 2) + 1/(x + 6) = 0. What is x?', options: ['-2','-3','-4','-6'], correct: 2, exp: 'Add denominators: 2x + 8 = 0, so x = -4' },
+    { q: 'Solve 1/(x - 1) + 1/(x - 5) = 0. What is x?', options: ['1','2','3','5'], correct: 2, exp: 'Add denominators: 2x - 6 = 0, so x = 3' },
+    { q: 'Solve 1/(3x - 1) + 1/(4x - 1) = 0. What is x?', options: ['1/7','2/7','3/7','4/7'], correct: 1, exp: 'Add denominators: 7x - 2 = 0, so x = 2/7' },
+    { q: 'Solve 1/(x + 1) + 1/(x + 5) = 0. What is x?', options: ['-2','-3','-4','-5'], correct: 1, exp: 'Add denominators: 2x + 6 = 0, so x = -3' },
+  ],
+  l3_12: [
+    { q: 'In 1/7 = 0.142857..., what is the 2nd digit after the decimal point?', options: ['1','2','4','8'], correct: 2, exp: 'Digits are 1, 4, 2, 8, 5, 7' },
+    { q: 'In 1/7 = 0.142857..., what is the 4th digit after the decimal point?', options: ['2','4','5','8'], correct: 3, exp: 'Digits are 1, 4, 2, 8, 5, 7' },
+    { q: 'How many digits repeat in the decimal of 1/7?', options: ['3','6','7','9'], correct: 1, exp: '142857 repeats every 6 digits' },
+    { q: 'In 1/7 = 0.142857..., what is the first digit after the decimal point?', options: ['1','2','4','7'], correct: 0, exp: 'First digit is 1' },
+    { q: 'In 1/7 = 0.142857..., what is the 3rd digit after the decimal point?', options: ['2','4','5','8'], correct: 0, exp: 'Digits are 1, 4, 2, 8, 5, 7' },
+  ],
+  l3_13: [
+    { q: 'Solve x² + 4x + 3 = 0. What is the larger root?', options: ['-1','-2','-3','1'], correct: 0, exp: '(x + 2)² = 1, so x = -1 or -3' },
+    { q: 'Solve x² + 6x + 5 = 0. What is the smaller root?', options: ['-1','-3','-5','5'], correct: 2, exp: '(x + 3)² = 4, so x = -1 or -5' },
+    { q: 'Solve x² - 2x - 3 = 0. What is the larger root?', options: ['-1','1','2','3'], correct: 3, exp: '(x - 1)² = 4, so x = 3 or -1' },
+    { q: 'Solve x² + 2x - 8 = 0. What is the smaller root?', options: ['2','-2','-4','4'], correct: 2, exp: '(x + 1)² = 9, so x = 2 or -4' },
+  ],
+  l3_14: [
+    { q: 'Factorise x² + 5x + 6.', options: ['(x+1)(x+6)','(x+2)(x+3)','(x+1)(x+5)','(x+2)(x+4)'], correct: 1, exp: 'Factors of 6 that add to 5: 2 and 3' },
+    { q: 'What is the sum of the coefficients of x² + 5x + 6?', options: ['6','9','12','15'], correct: 2, exp: '1 + 5 + 6 = 12' },
+    { q: 'What is the sum of the coefficients of x² + 7x + 12?', options: ['12','16','20','24'], correct: 2, exp: '1 + 7 + 12 = 20 = (1 + 3)(1 + 4) = 4 × 5' },
+    { q: 'Factorise x² + 3x + 2.', options: ['(x+1)(x+2)','(x+2)(x+3)','(x+1)(x+3)','(x+3)(x+4)'], correct: 0, exp: 'Factors of 2 that add to 3: 1 and 2' },
+    { q: 'What is the sum of the coefficients of x² + 8x + 15?', options: ['15','20','24','30'], correct: 2, exp: '1 + 8 + 15 = 24 = (1 + 3)(1 + 5) = 4 × 6' },
   ],
   l2_14: [
     { q: 'Solve x + y = 10 and x − y = 4. What is x?', options: ['5','6','7','8'], correct: 2, exp: 'Add: 2x = 14, so x = 7' },
@@ -311,6 +367,11 @@ LESSON_PROBLEMS.l4_08 = [
   { q: '√7 to 3 decimal places ≈ ?', options: ['2.536','2.646','2.746','2.846'], correct: 1, exp: '√7 ≈ 2.646' },
   { q: 'Factors of 2x² + 7x + 6 = ?', options: ['(2x+3)(x+2)','(2x+2)(x+3)','(x+2)(2x+1)','(2x+6)(x+1)'], correct: 0, exp: 'Expand (2x+3)(x+2) = 2x²+4x+3x+6 = 2x²+7x+6 ✓' },
 ];
+
+// Extra questions bring every lesson up to 10 (see src/data/vedicExtraQuestions.js).
+for (const [id, items] of Object.entries(PRACTICE_EXTRA)) {
+  LESSON_PROBLEMS[id] = [...(LESSON_PROBLEMS[id] || []), ...items];
+}
 
 // Default fallback for lessons without custom problems
 function getProblems(lessonId) {

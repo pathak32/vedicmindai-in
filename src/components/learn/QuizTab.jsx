@@ -4,6 +4,7 @@ import confetti from 'canvas-confetti';
 import { useLanguage } from '@/lib/LanguageContext';
 import { awardPoints, recalculateMonthlyStatus, POINTS } from '@/lib/knowledgePoints';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
+import { QUIZ_EXTRA } from '../../data/vedicExtraQuestions';
 
 // Resolves a field that may be a plain string (older English-only question
 // banks) or a { en, hi } bilingual object (new banks). Falls back to English.
@@ -313,6 +314,46 @@ const LESSON_QUESTIONS = {
     { q: { en: 'Using the Vedic squaring method, find 80².', hi: 'वैदिक वर्ग विधि का उपयोग करते हुए, 80² ज्ञात करें।' , exp: 'Step 1: Units: 0×0 = 0 Step 2: Cross (double): 2×8×0 = 0 Step 3: Tens: 8×8 = 64 Step 4: Combine with carries: 6400 (check: 80²=6400)' }, options: ['6500', '6400', '6399', '6390'], correct: 1 },
     { q: { en: 'Using the Vedic squaring method, find 97².', hi: 'वैदिक वर्ग विधि का उपयोग करते हुए, 97² ज्ञात करें।' , exp: 'Step 1: Units: 7×7 = 49 Step 2: Cross (double): 2×9×7 = 126 Step 3: Tens: 9×9 = 81 Step 4: Combine with carries: 9409 (check: 97²=9409)' }, options: ['9409', '9408', '9410', '9509'], correct: 0 },
     { q: { en: 'Using the Vedic squaring method, find 65².', hi: 'वैदिक वर्ग विधि का उपयोग करते हुए, 65² ज्ञात करें।' , exp: 'Step 1: Units: 5×5 = 25 Step 2: Cross (double): 2×6×5 = 60 Step 3: Tens: 6×6 = 36 Step 4: Combine with carries: 4225 (check: 65²=4225)' }, options: ['4225', '4235', '4325', '4226'], correct: 0 },
+  ],
+  l2_15: [
+    { q: { en: 'Calculate 9² using Yavadunam.', hi: 'यवदूनम से 9² निकालें।', exp: 'Deficiency 1: 9 − 1 = 8, 1² = 1, so 81' }, options: ['71', '81', '91', '61'], correct: 1 },
+    { q: { en: 'Calculate 107² using Yavadunam.', hi: 'यवदूनम से 107² निकालें।', exp: 'Surplus 7: 107 + 7 = 114, 7² = 49, so 11449' }, options: ['11349', '11449', '11549', '11249'], correct: 1 },
+    { q: { en: 'Calculate 94² using Yavadunam.', hi: 'यवदूनम से 94² निकालें।', exp: 'Deficiency 6: 94 − 6 = 88, 6² = 36, so 8836' }, options: ['8736', '8836', '8936', '8636'], correct: 1 },
+  ],
+  l3_15: [
+    { q: { en: 'Expand (x + 4)(x + 7).', hi: '(x + 4)(x + 7) का विस्तार करें।', exp: 'First x², cross 7x + 4x = 11x, last 28' }, options: ['x²+10x+28', 'x²+11x+28', 'x²+11x+21', 'x²+12x+28'], correct: 1 },
+    { q: { en: 'Expand (3x + 1)(x + 2).', hi: '(3x + 1)(x + 2) का विस्तार करें।', exp: 'First 3x², cross 6x + x = 7x, last 2' }, options: ['3x²+5x+2', '3x²+7x+1', '3x²+6x+2', '3x²+7x+2'], correct: 3 },
+    { q: { en: 'Expand (2x + 3)(2x + 5).', hi: '(2x + 3)(2x + 5) का विस्तार करें।', exp: 'First 4x², cross 10x + 6x = 16x, last 15' }, options: ['4x²+16x+8', '4x²+15x+15', '4x²+11x+15', '4x²+16x+15'], correct: 3 },
+  ],
+  l3_16: [
+    { q: { en: 'Calculate 5 × 142857.', hi: '5 × 142857 निकालें।', exp: 'The digits rotate: 714285' }, options: ['714285', '714258', '715285', '704285'], correct: 0 },
+    { q: { en: 'Calculate 4 × 142857.', hi: '4 × 142857 निकालें।', exp: 'The digits rotate: 571428' }, options: ['571482', '561428', '571428', '572428'], correct: 2 },
+    { q: { en: 'Calculate 7 × 142857.', hi: '7 × 142857 निकालें।', exp: '142857 × 7 = 999999' }, options: ['998999', '1000000', '999099', '999999'], correct: 3 },
+  ],
+  l4_09: [
+    { q: { en: 'Which of these is divisible by 11?', hi: 'इनमें से कौन 11 से विभाज्य है?', exp: '5 − 0 + 0 − 5 = 0, so 5005 is divisible' }, options: ['2345', '4321', '5005', '123'], correct: 2 },
+    { q: { en: 'Is 913 divisible by 11?', hi: 'क्या 913, 11 से विभाज्य है?', exp: '3 − 1 + 9 = 11, so yes' }, options: ['Yes', 'No'], correct: 0 },
+    { q: { en: 'What is the alternating sum of 2345, starting from the units digit?', hi: '2345 का एकांतर योग (इकाई से) क्या है?', exp: '5 − 4 + 3 − 2 = 2' }, options: ['2', '4', '11', '0'], correct: 0 },
+  ],
+  l3_11: [
+    { q: { en: 'Solve 1/(x + 1) + 1/(x + 5) = 0. What is x?', hi: '1/(x + 1) + 1/(x + 5) = 0 हल करें। x क्या है?', exp: 'Add denominators: 2x + 6 = 0, so x = -3' }, options: ['-2', '-3', '-4', '-5'], correct: 1 },
+    { q: { en: 'Solve 1/(x - 2) + 1/(x - 4) = 0. What is x?', hi: '1/(x - 2) + 1/(x - 4) = 0 हल करें। x क्या है?', exp: 'Add denominators: 2x - 6 = 0, so x = 3' }, options: ['1', '2', '3', '4'], correct: 2 },
+    { q: { en: 'Solve 1/(x + 3) + 1/(x + 7) = 0. What is x?', hi: '1/(x + 3) + 1/(x + 7) = 0 हल करें। x क्या है?', exp: 'Add denominators: 2x + 10 = 0, so x = -5' }, options: ['-3', '-4', '-5', '-7'], correct: 2 },
+  ],
+  l3_12: [
+    { q: { en: 'What is the 5th digit after the decimal point in 1/7?', hi: '1/7 में दशमलव के बाद 5वाँ अंक क्या है?', exp: 'Digits are 1, 4, 2, 8, 5, 7' }, options: ['2', '5', '7', '8'], correct: 1 },
+    { q: { en: 'What is the 6th digit after the decimal point in 1/7?', hi: '1/7 में दशमलव के बाद 6वाँ अंक क्या है?', exp: 'Digits are 1, 4, 2, 8, 5, 7' }, options: ['4', '5', '6', '7'], correct: 3 },
+    { q: { en: 'What is the 3rd digit after the decimal point in 2/7 (0.285714...)?', hi: '2/7 (0.285714...) में दशमलव के बाद 3रा अंक क्या है?', exp: 'Digits are 2, 8, 5, 7, 1, 4' }, options: ['2', '5', '7', '8'], correct: 1 },
+  ],
+  l3_13: [
+    { q: { en: 'Solve x² - 4x - 5 = 0. What is the larger root?', hi: 'x² - 4x - 5 = 0 हल करें। बड़ा मूल क्या है?', exp: '(x - 2)² = 9, so x = 5 or -1' }, options: ['1', '3', '5', '-1'], correct: 2 },
+    { q: { en: 'Solve x² + 8x + 7 = 0. What is the smaller root?', hi: 'x² + 8x + 7 = 0 हल करें। छोटा मूल क्या है?', exp: '(x + 4)² = 9, so x = -1 or -7' }, options: ['-1', '-3', '-5', '-7'], correct: 3 },
+    { q: { en: 'Solve x² - 6x + 8 = 0. What is the smaller root?', hi: 'x² - 6x + 8 = 0 हल करें। छोटा मूल क्या है?', exp: '(x - 3)² = 1, so x = 2 or 4' }, options: ['1', '2', '3', '4'], correct: 1 },
+  ],
+  l3_14: [
+    { q: { en: 'Factorise x² + 9x + 14.', hi: 'x² + 9x + 14 के गुणनखंड करें।', exp: 'Factors of 14 that add to 9: 2 and 7' }, options: ['(x+2)(x+7)', '(x+1)(x+14)', '(x+3)(x+6)', '(x+2)(x+6)'], correct: 0 },
+    { q: { en: 'Factorise x² + 6x + 8.', hi: 'x² + 6x + 8 के गुणनखंड करें।', exp: 'Factors of 8 that add to 6: 2 and 4' }, options: ['(x+1)(x+8)', '(x+2)(x+4)', '(x+3)(x+3)', '(x+2)(x+3)'], correct: 1 },
+    { q: { en: 'What is the sum of the coefficients of x² + 7x + 10?', hi: 'x² + 7x + 10 के गुणांकों का योग क्या है?', exp: '1 + 7 + 10 = 18 = (1+2)(1+5) = 3 × 6' }, options: ['10', '16', '18', '20'], correct: 2 },
   ],
   l2_14: [
     { q: { en: 'Solve x + y = 20 and x − y = 6. What is x?', hi: 'x + y = 20 और x − y = 6 हल करें। x क्या है?', exp: 'Add: 2x = 26, so x = 13' }, options: ['11', '12', '13', '14'], correct: 2 },
@@ -680,6 +721,11 @@ const LESSON_QUESTIONS = {
     { q: { en: 'Calculate 67 × 11 using the Vedic method', hi: 'वैदिक विधि से 67 × 11 निकालें' }, options: ['727','737','747','717'], correct: 1, exp: 'Rule: A|(A+B)|B. For 67: 6|(6+7)|7 = 6|13|7 → carry the 1: 737.' },
   ],
 };
+
+// Extra questions bring every lesson up to 10 (see src/data/vedicExtraQuestions.js).
+for (const [id, items] of Object.entries(QUIZ_EXTRA)) {
+  LESSON_QUESTIONS[id] = [...(LESSON_QUESTIONS[id] || []), ...items];
+}
 
 function getQuestions(lessonId) {
   return LESSON_QUESTIONS[lessonId] || Array.from({ length: 5 }, (_, i) => ({

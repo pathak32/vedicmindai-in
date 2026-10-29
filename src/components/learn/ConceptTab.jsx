@@ -1531,8 +1531,7 @@ const L2_11_CONTENT = (
         Use Antyayor Dashakepi when <strong>two numbers share the same tens digit</strong> and their <strong>units digits add to 10</strong>.
       </p>
       <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: '#1E40AF' }}>
-        <div>48 × 52 → tens: 4 = 5? No — but 48+52=100, both near 50 ✓</div>
-        <div style={{ marginTop: 6 }}>63 × 67 → tens: 6 = 6 ✓ and 3+7=10 ✓</div>
+        <div>63 × 67 → tens: 6 = 6 ✓ and 3+7=10 ✓</div>
         <div style={{ marginTop: 6 }}>24 × 26 → tens: 2 = 2 ✓ and 4+6=10 ✓</div>
       </div>
     </div>
@@ -1584,6 +1583,347 @@ const L2_11_CONTENT = (
         This is the algebraic identity <strong>(10T + A)(10T + B)</strong> where A+B=10.<br />
         Expanding: 100T² + 10T(A+B) + AB = 100T² + 100T + AB = 100T(T+1) + AB.<br />
         That's exactly T×(T+1) in the hundreds + AB in the units — what the formula gives you.
+      </p>
+    </div>
+  </>
+);
+
+// ── L3_11 — Shunyam Saamyasamuccaye ────────────────────────────────────────
+
+const L3_11_CONTENT = (
+  <>
+    <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Shunyam Saamyasamuccaye</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>When the sums are the same, that sum is zero</div>
+    </div>
+
+    <SectionTitle>When to Use This Sutra</SectionTitle>
+    <div style={{ background: '#F0F4FF', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#0A1628', margin: 0, lineHeight: 1.7 }}>
+        Use it when two fractions have the same numerator and the equation is 1/A + 1/B = 0.
+      </p>
+    </div>
+
+    <SectionTitle>The Method</SectionTitle>
+    <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9 }}>
+        <div>1. Combine: 1/A + 1/B = (A + B) / (AB).</div>
+        <div>2. The fraction is zero only when its numerator is zero, so A + B = 0.</div>
+        <div>3. Solve the simple equation A + B = 0.</div>
+      </div>
+    </div>
+
+    <SectionTitle>Worked Examples</SectionTitle>
+    <ExampleCard
+      title="Example 1: 1/(x + 1) + 1/(x + 3) = 0"
+      lines={['Add the denominators: (x + 1) + (x + 3) = 2x + 4', 'Set to zero: 2x + 4 = 0', 'x = −2', 'Check: 1/(−1) + 1/1 = 0 ✓']}
+      result="x = −2"
+    />
+    <ExampleCard
+      title="Example 2: 1/(3x − 1) + 1/(4x − 1) = 0"
+      lines={['Add the denominators: 7x − 2 = 0', 'x = 2/7', 'Check: 3x − 1 = −1/7 gives −7; 4x − 1 = 1/7 gives 7; sum 0 ✓']}
+      result="x = 2/7"
+    />
+
+    <SectionTitle>⚠️ Common Mistake</SectionTitle>
+    <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#B91C1C', margin: '0 0 8px 0', fontWeight: 600 }}>
+        Add the denominators, not the numerators.
+      </p>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', margin: 0 }}>
+        1 + 1 = 2 is not zero. The equation is about the denominators summing to zero.
+      </p>
+    </div>
+
+    <SectionTitle>Why It Works</SectionTitle>
+    <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 16, marginBottom: 8 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#065F46', margin: 0, lineHeight: 1.7 }}>
+        A fraction (A + B)/(AB) equals zero only when A + B = 0, as long as AB is not zero.
+      </p>
+    </div>
+  </>
+);
+
+// ── L3_12 — Shesanyankena Charamena ────────────────────────────────────────
+
+const L3_12_CONTENT = (
+  <>
+    <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Shesanyankena Charamena</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>The remainders, by the last digit</div>
+    </div>
+
+    <SectionTitle>The Remainder Method for 1/7</SectionTitle>
+    <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9 }}>
+        <div>1. Start with remainder 1. Multiply the remainder by 10 and divide by 7.</div>
+        <div>2. The quotient digit is the next decimal digit. The new remainder carries on.</div>
+        <div>3. Repeat until the remainder returns to 1.</div>
+      </div>
+    </div>
+
+    <SectionTitle>Worked Example</SectionTitle>
+    <ExampleCard
+      title="1/7 step by step"
+      lines={['10 ÷ 7 = 1 remainder 3 → digit 1', '30 ÷ 7 = 4 remainder 2 → digit 4', '20 ÷ 7 = 2 remainder 6 → digit 2', '60 ÷ 7 = 8 remainder 4 → digit 8', '40 ÷ 7 = 5 remainder 5 → digit 5', '50 ÷ 7 = 7 remainder 1 → digit 7']}
+      result="1/7 = 0.142857… (repeats every 6 digits)"
+    />
+
+    <SectionTitle>⚠️ Common Mistake</SectionTitle>
+    <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#B91C1C', margin: '0 0 8px 0', fontWeight: 600 }}>
+        Multiply the remainder by 10 before dividing.
+      </p>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', margin: 0 }}>
+        Dividing 1 by 7 directly gives the wrong digit. The decimal digits come from the remainders.
+      </p>
+    </div>
+  </>
+);
+
+// ── L3_13 — Puranapuranabhyam ─────────────────────────────────────────────
+
+const L3_13_CONTENT = (
+  <>
+    <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Puranapuranabhyam</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>By the completion or non-completion</div>
+    </div>
+
+    <SectionTitle>The Method</SectionTitle>
+    <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9 }}>
+        <div>1. Take half of the x coefficient and square it: (4 ÷ 2)² = 4.</div>
+        <div>2. Add and subtract that value so the quadratic becomes a perfect square minus a number.</div>
+        <div>3. Solve the square equals a number, then find x.</div>
+      </div>
+    </div>
+
+    <SectionTitle>Worked Examples</SectionTitle>
+    <ExampleCard
+      title="Example 1: x² + 4x + 3 = 0"
+      lines={['x² + 4x + 4 − 1 = 0', '(x + 2)² = 1', 'x + 2 = ±1', 'x = −1 or x = −3']}
+      result="Roots: −1 and −3"
+    />
+    <ExampleCard
+      title="Example 2: x² − 4x − 5 = 0"
+      lines={['x² − 4x + 4 − 9 = 0', '(x − 2)² = 9', 'x − 2 = ±3', 'x = 5 or x = −1']}
+      result="Roots: 5 and −1"
+    />
+
+    <SectionTitle>⚠️ Common Mistake</SectionTitle>
+    <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#B91C1C', margin: '0 0 8px 0', fontWeight: 600 }}>
+        When you add a number, you must also subtract it.
+      </p>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', margin: 0 }}>
+        Adding 4 to x² + 4x + 3 changes its value. Adding 4 and subtracting 4 keeps the equation the same.
+      </p>
+    </div>
+  </>
+);
+
+// ── L3_14 — Gunakasamuccayah ─────────────────────────────────────────────
+
+const L3_14_CONTENT = (
+  <>
+    <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Gunakasamuccayah</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>The factors of the sum</div>
+    </div>
+
+    <SectionTitle>The Check</SectionTitle>
+    <div style={{ background: '#F0F4FF', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#0A1628', margin: 0, lineHeight: 1.7 }}>
+        The sum of the coefficients of a product equals the product of the sums of the coefficients of its factors. For a polynomial p(x), this sum is p(1).
+      </p>
+    </div>
+
+    <SectionTitle>Worked Example</SectionTitle>
+    <ExampleCard
+      title="x² + 5x + 6"
+      lines={['Find factors with product 6 and sum 5: 2 and 3', 'Factorised: (x + 2)(x + 3)', 'Check: sum of coefficients of x² + 5x + 6 = 12', 'Factor sums: (1 + 2)(1 + 3) = 3 × 4 = 12 ✓']}
+      result="x² + 5x + 6 = (x + 2)(x + 3)"
+    />
+
+    <SectionTitle>⚠️ Common Mistake</SectionTitle>
+    <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#B91C1C', margin: '0 0 8px 0', fontWeight: 600 }}>
+        Check the factors before you finish.
+      </p>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', margin: 0 }}>
+        If the check fails, the factors are wrong. Recheck the product and the sum.
+      </p>
+    </div>
+  </>
+);
+
+// ── L2_15 — Yavadunam ─────────────────────────────────────────────────────
+
+const L2_15_CONTENT = (
+  <>
+    <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Yavadunam</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>Whatever the extent of its deficiency, lessen it that much</div>
+    </div>
+
+    <SectionTitle>The Method</SectionTitle>
+    <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9 }}>
+        <div>1. Find how far the number is from the base (10, 100, 1000): the deficiency d.</div>
+        <div>2. Left part: the number minus d (or plus d if it is above the base).</div>
+        <div>3. Right part: d squared, padded to the same number of digits as the base's zeros.</div>
+      </div>
+    </div>
+
+    <SectionTitle>Worked Examples</SectionTitle>
+    <ExampleCard
+      title="Example 1: 8² (base 10, deficiency 2)"
+      lines={['Left: 8 − 2 = 6', 'Right: 2² = 4', 'Join: 6|4']}
+      result="8² = 64"
+    />
+    <ExampleCard
+      title="Example 2: 96² (base 100, deficiency 4)"
+      lines={['Left: 96 − 4 = 92', 'Right: 4² = 16', 'Join: 92|16']}
+      result="96² = 9216"
+    />
+    <ExampleCard
+      title="Example 3: 103² (base 100, surplus 3)"
+      lines={['Left: 103 + 3 = 106', 'Right: 3² = 9, padded to 09', 'Join: 106|09']}
+      result="103² = 10609"
+    />
+
+    <SectionTitle>⚠️ Common Mistake</SectionTitle>
+    <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#B91C1C', margin: '0 0 8px 0', fontWeight: 600 }}>
+        Pad the right part to the number of zeros in the base.
+      </p>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', margin: 0 }}>
+        For 98² (deficiency 2): the right part is 2² = 4, written as 04, so 98² = 9604, not 964.
+      </p>
+    </div>
+  </>
+);
+
+// ── L3_15 — Adyamadyenantyamantyena ────────────────────────────────────────
+
+const L3_15_CONTENT = (
+  <>
+    <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Adyamadyenantyamantyena</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>The first by the first and the last by the last</div>
+    </div>
+
+    <SectionTitle>The Method</SectionTitle>
+    <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9 }}>
+        <div>(ax + b)(cx + d) = ac·x² + (ad + bc)·x + bd</div>
+        <div>1. First by first: ac, the x² term.</div>
+        <div>2. Cross: ad + bc, the x term.</div>
+        <div>3. Last by last: bd, the constant.</div>
+      </div>
+    </div>
+
+    <SectionTitle>Worked Examples</SectionTitle>
+    <ExampleCard
+      title="Example 1: (3x + 2)(2x + 5)"
+      lines={['First: 3 × 2 = 6x²', 'Cross: 3 × 5 + 2 × 2 = 19x', 'Last: 2 × 5 = 10']}
+      result="6x² + 19x + 10"
+    />
+    <ExampleCard
+      title="Example 2: (2x − 1)(x + 3)"
+      lines={['First: 2 × 1 = 2x²', 'Cross: 2 × 3 + (−1) × 1 = 5x', 'Last: (−1) × 3 = −3']}
+      result="2x² + 5x − 3"
+    />
+
+    <SectionTitle>⚠️ Common Mistake</SectionTitle>
+    <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#B91C1C', margin: '0 0 8px 0', fontWeight: 600 }}>
+        Keep the sign of the last term.
+      </p>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', margin: 0 }}>
+        In (2x − 1)(x + 3) the last term is −3, not +3.
+      </p>
+    </div>
+  </>
+);
+
+// ── L3_16 — Kevalaih Saptakam Gunyat ───────────────────────────────────────
+
+const L3_16_CONTENT = (
+  <>
+    <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Kevalaih Saptakam Gunyat</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>For seven, multiply by the combined value</div>
+    </div>
+
+    <SectionTitle>The Pattern</SectionTitle>
+    <div style={{ background: '#F0F4FF', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#0A1628', margin: 0, lineHeight: 1.7 }}>
+        142857 is the repeating block of 1/7. Its multiples by 1 to 6 are the same six digits in a different order, and 7 × 142857 = 999999.
+      </p>
+    </div>
+
+    <SectionTitle>Worked Examples</SectionTitle>
+    <ExampleCard
+      title="Example 1: 5 × 142857"
+      lines={['142857 × 5 = 714285', 'The digits rotate: 1 4 2 8 5 7 becomes 7 1 4 2 8 5']}
+      result="714285"
+    />
+    <ExampleCard
+      title="Example 2: 7 × 142857"
+      lines={['Multiply 142857 by 7', 'Every digit is 9']}
+      result="999999"
+    />
+
+    <SectionTitle>⚠️ Common Mistake</SectionTitle>
+    <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#B91C1C', margin: '0 0 8px 0', fontWeight: 600 }}>
+        The rotation works only for 142857.
+      </p>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', margin: 0 }}>
+        Other numbers do not rotate this way. Use this only for multiples of 142857.
+      </p>
+    </div>
+  </>
+);
+
+// ── L4_09 — Ekanyunena Purvena (divisibility by 11) ──────────────────────
+
+const L4_09_CONTENT = (
+  <>
+    <div style={{ background: '#DBEAFE', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontStyle: 'italic', color: '#1E40AF', marginBottom: 4 }}>Ekanyunena Purvena</div>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#4B5563' }}>By one less than the previous one</div>
+    </div>
+
+    <SectionTitle>The Divisibility Test</SectionTitle>
+    <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 20 }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9 }}>
+        <div>1. Starting from the units digit, alternate + and − across the digits.</div>
+        <div>2. If the result is 0 or a multiple of 11, the number is divisible by 11.</div>
+      </div>
+    </div>
+
+    <SectionTitle>Worked Examples</SectionTitle>
+    <ExampleCard
+      title="Example 1: 418"
+      lines={['8 − 1 + 4 = 11', '11 is a multiple of 11']}
+      result="418 = 11 × 38, divisible"
+    />
+    <ExampleCard
+      title="Example 2: 123"
+      lines={['3 − 2 + 1 = 2', '2 is not a multiple of 11']}
+      result="123 is not divisible by 11"
+    />
+
+    <SectionTitle>⚠️ Common Mistake</SectionTitle>
+    <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#B91C1C', margin: '0 0 8px 0', fontWeight: 600 }}>
+        Use alternating signs, not the plain digit sum.
+      </p>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#374151', margin: 0 }}>
+        For 418, the plain sum is 4 + 1 + 8 = 13, which tells you nothing. The alternating sum 8 − 1 + 4 = 11 is the test that matters.
       </p>
     </div>
   </>
@@ -2464,6 +2804,14 @@ const LESSON_CONTENT = {
   l2_10: () => L2_10_CONTENT,
   l2_11: () => L2_11_CONTENT,
   l2_14: () => L2_14_CONTENT,
+  l3_11: () => L3_11_CONTENT,
+  l3_12: () => L3_12_CONTENT,
+  l3_13: () => L3_13_CONTENT,
+  l3_14: () => L3_14_CONTENT,
+  l2_15: () => L2_15_CONTENT,
+  l3_15: () => L3_15_CONTENT,
+  l3_16: () => L3_16_CONTENT,
+  l4_09: () => L4_09_CONTENT,
   l2_12: () => L2_12_CONTENT,
   l3_01: () => L3_01_CONTENT,
   l3_02: () => L3_02_CONTENT,

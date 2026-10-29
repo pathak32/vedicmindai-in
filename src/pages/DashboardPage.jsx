@@ -52,6 +52,14 @@ const LESSON_META = (t) => ({
   l1_04: { title: t('lessonL104Title'), desc: t('lessonL104Desc') },
   l1_05: { title: t('lessonL105Title'), desc: t('lessonL105Desc') },
   l2_14: { title: 'Sankalana-Vyavakalanabhyam', desc: 'Solve two equations by adding and subtracting' },
+  l3_11: { title: 'Shunyam Saamyasamuccaye', desc: 'When the numerators are equal, the sum of the denominators is zero' },
+  l3_12: { title: 'Shesanyankena Charamena', desc: 'Find decimal digits of 1/7 by the remainder method' },
+  l3_13: { title: 'Puranapuranabhyam', desc: 'Solve quadratics by completing the square' },
+  l3_14: { title: 'Gunakasamuccayah', desc: 'Factorise quadratics and check with the sum of coefficients' },
+  l2_15: { title: 'Yavadunam', desc: 'Square numbers near 10, 100 or 1000 using the deficiency' },
+  l3_15: { title: 'Adyamadyenantyamantyena', desc: 'Multiply two binomials: first, cross, last' },
+  l3_16: { title: 'Kevalaih Saptakam Gunyat', desc: 'Multiply 142857 to find the sevens pattern' },
+  l4_09: { title: 'Ekanyunena Purvena', desc: 'Test divisibility by 11 with alternating digit sums' },
 });
 
 const getLevelName = (level, t) => ({ 1: t('levelBeginner'), 2: t('levelIntermediate'), 3: t('levelAdvanced'), 4: t('levelMaster') })[level] || `${t('curriculumLevelWord')} ${level}`;
@@ -636,11 +644,11 @@ function DashboardPage() {
 
   const allLessonIds = [
     'l1_01','l1_02','l1_03','l1_04','l1_05','l1_06','l1_07','l1_08','l1_09','l1_10',
-    'l2_01','l2_02','l2_03','l2_04','l2_05','l2_06','l2_07','l2_08','l2_09','l2_10','l2_11','l2_12','l2_14',
-    'l3_01','l3_02','l3_03','l3_04','l3_05','l3_06','l3_07','l3_08','l3_09','l3_10',
-    'l4_01','l4_02','l4_03','l4_04','l4_05','l4_06','l4_07','l4_08',
+    'l2_01','l2_02','l2_03','l2_04','l2_05','l2_06','l2_07','l2_08','l2_09','l2_10','l2_11','l2_12','l2_14','l2_15',
+    'l3_01','l3_02','l3_03','l3_04','l3_05','l3_06','l3_07','l3_08','l3_09','l3_11','l3_12','l3_13','l3_14','l3_15','l3_16','l3_10',
+    'l4_01','l4_02','l4_03','l4_04','l4_05','l4_06','l4_07','l4_09','l4_08',
   ];
-  // (10 + 13 + 10 + 8 = 41 total lessons, incl. assessments)
+  // Order used to find the next lesson. Keep in curriculum order.
   const nextLessonId = allLessonIds.find(id => !completed.includes(id)) || allLessonIds[0];
   const nextMeta = LESSON_META(t)[nextLessonId] || { title: t('lessonL101Title'), desc: t('dbBeginJourney') };
   const nextLevel = LEVELS(t).find(l => nextLessonId.startsWith(l.prefix.slice(0, 2)));
