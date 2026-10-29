@@ -85,3 +85,12 @@ export const CURRICULUM = [
 // Total Vedic Maths lessons, computed from the curriculum above. Use this everywhere
 // a lesson total is shown, so the number cannot drift between pages.
 export const TOTAL_VEDIC_LESSONS = CURRICULUM.reduce((n, lv) => n + lv.lessons.length, 0);
+
+
+// Every Vedic Maths lesson mixes easy, medium and hard questions. Within each lesson
+// the questions are spread across the three tiers in turn, so each level has all three.
+// A question can still set its own `difficulty` to override this spread.
+export const DIFFICULTY_LEVELS = ["easy", "medium", "hard"];
+export function difficultyAt(index) {
+  return DIFFICULTY_LEVELS[index % DIFFICULTY_LEVELS.length];
+}

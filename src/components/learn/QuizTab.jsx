@@ -5,6 +5,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { awardPoints, recalculateMonthlyStatus, POINTS } from '@/lib/knowledgePoints';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { QUIZ_EXTRA } from '../../data/vedicExtraQuestions';
+import { difficultyAt } from './curriculumData';
 
 // Resolves a field that may be a plain string (older English-only question
 // banks) or a { en, hi } bilingual object (new banks). Falls back to English.
@@ -725,6 +726,11 @@ const LESSON_QUESTIONS = {
 // Extra questions bring every lesson up to 10 (see src/data/vedicExtraQuestions.js).
 for (const [id, items] of Object.entries(QUIZ_EXTRA)) {
   LESSON_QUESTIONS[id] = [...(LESSON_QUESTIONS[id] || []), ...items];
+}
+
+// Every quiz question gets easy, medium or hard, spread across each lesson.
+for (const [id, items] of Object.entries(LESSON_QUESTIONS)) {
+  LESSON_QUESTIONS[id] = items.map((q, i) => ({ difficulty: difficultyAt(i), ...q }));
 }
 
 function getQuestions(lessonId) {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { PRACTICE_EXTRA } from '../../data/vedicExtraQuestions';
+import { difficultyAt } from './curriculumData';
 
 // Resolves a field that may be a plain string (older English-only practice
 // sets) or a { en, hi } bilingual object (new sets). Falls back to English.
@@ -371,6 +372,11 @@ LESSON_PROBLEMS.l4_08 = [
 // Extra questions bring every lesson up to 10 (see src/data/vedicExtraQuestions.js).
 for (const [id, items] of Object.entries(PRACTICE_EXTRA)) {
   LESSON_PROBLEMS[id] = [...(LESSON_PROBLEMS[id] || []), ...items];
+}
+
+// Every practice question gets easy, medium or hard, spread across each lesson.
+for (const [id, items] of Object.entries(LESSON_PROBLEMS)) {
+  LESSON_PROBLEMS[id] = items.map((q, i) => ({ difficulty: difficultyAt(i), ...q }));
 }
 
 // Default fallback for lessons without custom problems
