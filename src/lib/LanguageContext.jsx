@@ -3,7 +3,7 @@ import { translations } from "./translations";
 
 export { translations };
 
-const LanguageContext = createContext();
+export const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState(() => {

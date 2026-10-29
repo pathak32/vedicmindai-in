@@ -5,325 +5,29 @@
 export const PRACTICE_EXTRA = {
   "l1_01": [
     {
-      "q": "What is the digit sum of 89599?",
+      "q": "Calculate 53 × 41 using Urdhva-Tiryagbhyam.",
       "options": [
-        "40",
-        "41",
-        "39",
-        "42"
-      ],
-      "correct": 0,
-      "exp": "8 + 9 + 5 + 9 + 9 = 40."
-    },
-    {
-      "q": "Calculate 40 × 60 using Urdhva-Tiryagbhyam.",
-      "options": [
-        "2401",
-        "2399",
-        "2400",
-        "2402"
-      ],
-      "correct": 2,
-      "exp": "Units: 0 × 0 = 0. Cross: 4 × 0 + 0 × 6 = 0. Tens: 4 × 6 = 24. Combine with carries: 2400."
-    },
-    {
-      "q": "What is 24 × 11?",
-      "options": [
-        "265",
-        "263",
-        "264",
-        "266"
-      ],
-      "correct": 2,
-      "exp": "Write 2, then 2 + 4 = 6, then 4. Answer: 264."
-    },
-    {
-      "q": "What is the digit sum of 58286?",
-      "options": [
-        "30",
-        "29",
-        "28",
-        "31"
-      ],
-      "correct": 1,
-      "exp": "5 + 8 + 2 + 8 + 6 = 29."
-    },
-    {
-      "q": "What is 39 × 11?",
-      "options": [
-        "430",
-        "428",
-        "429",
-        "431"
-      ],
-      "correct": 2,
-      "exp": "Write 3, then 3 + 9 = 12, then 9. Carry the 1 into the first digit. Answer: 429."
-    }
-  ],
-  "l1_02": [
-    {
-      "q": "What is 55²?",
-      "options": [
-        "3025",
-        "3026",
-        "3024",
-        "3027"
-      ],
-      "correct": 0,
-      "exp": "Ekadhikena Purvena: 5 × 6 = 30, then append 25 → 3025."
-    },
-    {
-      "q": "What is 45²?",
-      "options": [
-        "2026",
-        "2025",
-        "2024",
-        "2027"
-      ],
-      "correct": 1,
-      "exp": "Ekadhikena Purvena: 4 × 5 = 20, then append 25 → 2025."
-    },
-    {
-      "q": "What is 85²?",
-      "options": [
-        "7226",
-        "7224",
-        "7227",
-        "7225"
+        "2174",
+        "2172",
+        "2175",
+        "2173"
       ],
       "correct": 3,
-      "exp": "Ekadhikena Purvena: 8 × 9 = 72, then append 25 → 7225."
+      "exp": "Units: 3 × 1 = 3. Cross: 5 × 1 + 3 × 4 = 17. Tens: 5 × 4 = 20. Combine with carries: 2173."
     },
     {
-      "q": "What is 95²?",
+      "q": "What is the digit sum of 37645?",
       "options": [
-        "9026",
-        "9024",
-        "9027",
-        "9025"
-      ],
-      "correct": 3,
-      "exp": "Ekadhikena Purvena: 9 × 10 = 90, then append 25 → 9025."
-    },
-    {
-      "q": "What is 65²?",
-      "options": [
-        "4226",
-        "4224",
-        "4225",
-        "4227"
+        "26",
+        "24",
+        "25",
+        "27"
       ],
       "correct": 2,
-      "exp": "Ekadhikena Purvena: 6 × 7 = 42, then append 25 → 4225."
-    }
-  ],
-  "l1_03": [
-    {
-      "q": "Calculate 7 × 8 using Nikhilam (base 10).",
-      "options": [
-        "57",
-        "56",
-        "55",
-        "58"
-      ],
-      "correct": 1,
-      "exp": "Deficits from 10: −3 and −2. Cross: 7 − 2 = 5. Deficit product: −3 × −2 = 6. Answer: 5 × 10 + 6 = 56."
+      "exp": "3 + 7 + 6 + 4 + 5 = 25."
     },
     {
-      "q": "Calculate 8 × 11 using Nikhilam (base 10).",
-      "options": [
-        "89",
-        "87",
-        "88",
-        "90"
-      ],
-      "correct": 2,
-      "exp": "Deficits from 10: −2 and 1. Cross: 8 + 1 = 9. Deficit product: −2 × 1 = −2. Answer: 9 × 10 − 2 = 88."
-    },
-    {
-      "q": "Calculate 11 × 11 using Nikhilam (base 10).",
-      "options": [
-        "122",
-        "120",
-        "121",
-        "123"
-      ],
-      "correct": 2,
-      "exp": "Deficits from 10: 1 and 1. Cross: 11 + 1 = 12. Deficit product: 1 × 1 = 1. Answer: 12 × 10 + 1 = 121."
-    },
-    {
-      "q": "Calculate 7 × 11 using Nikhilam (base 10).",
-      "options": [
-        "78",
-        "76",
-        "77",
-        "79"
-      ],
-      "correct": 2,
-      "exp": "Deficits from 10: −3 and 1. Cross: 7 + 1 = 8. Deficit product: −3 × 1 = −3. Answer: 8 × 10 − 3 = 77."
-    },
-    {
-      "q": "Calculate 7 × 9 using Nikhilam (base 10).",
-      "options": [
-        "64",
-        "62",
-        "63",
-        "65"
-      ],
-      "correct": 2,
-      "exp": "Deficits from 10: −3 and −1. Cross: 7 − 1 = 6. Deficit product: −3 × −1 = 3. Answer: 6 × 10 + 3 = 63."
-    }
-  ],
-  "l1_04": [
-    {
-      "q": "Calculate 98 × 99 using Nikhilam (base 100).",
-      "options": [
-        "9703",
-        "9702",
-        "9701",
-        "9704"
-      ],
-      "correct": 1,
-      "exp": "Deficits from 100: −2 and −1. Cross: 98 − 1 = 97. Deficit product: −2 × −1 = 2. Answer: 97 × 100 + 2 = 9702."
-    },
-    {
-      "q": "Calculate 97 × 97 using Nikhilam (base 100).",
-      "options": [
-        "9410",
-        "9408",
-        "9409",
-        "9411"
-      ],
-      "correct": 2,
-      "exp": "Deficits from 100: −3 and −3. Cross: 97 − 3 = 94. Deficit product: −3 × −3 = 9. Answer: 94 × 100 + 9 = 9409."
-    },
-    {
-      "q": "Calculate 101 × 108 using Nikhilam (base 100).",
-      "options": [
-        "10908",
-        "10909",
-        "10907",
-        "10910"
-      ],
-      "correct": 0,
-      "exp": "Deficits from 100: 1 and 8. Cross: 101 + 8 = 109. Deficit product: 1 × 8 = 8. Answer: 109 × 100 + 8 = 10908."
-    },
-    {
-      "q": "Calculate 107 × 105 using Nikhilam (base 100).",
-      "options": [
-        "11236",
-        "11235",
-        "11234",
-        "11237"
-      ],
-      "correct": 1,
-      "exp": "Deficits from 100: 7 and 5. Cross: 107 + 5 = 112. Deficit product: 7 × 5 = 35. Answer: 112 × 100 + 35 = 11235."
-    },
-    {
-      "q": "Calculate 94 × 101 using Nikhilam (base 100).",
-      "options": [
-        "9494",
-        "9495",
-        "9493",
-        "9496"
-      ],
-      "correct": 0,
-      "exp": "Deficits from 100: −6 and 1. Cross: 94 + 1 = 95. Deficit product: −6 × 1 = −6. Answer: 95 × 100 − 6 = 9494."
-    }
-  ],
-  "l1_05": [
-    {
-      "q": "Calculate 1064 × 986 using Nikhilam (base 1000).",
-      "options": [
-        "1049105",
-        "1049103",
-        "1049104",
-        "1049106"
-      ],
-      "correct": 2,
-      "exp": "Deficits from 1000: 64 and −14. Cross: 1064 − 14 = 1050. Deficit product: 64 × −14 = −896. Answer: 1050 × 1000 − 896 = 1049104."
-    },
-    {
-      "q": "Calculate 1071 × 1019 using Nikhilam (base 1000).",
-      "options": [
-        "1091349",
-        "1091350",
-        "1091348",
-        "1091351"
-      ],
-      "correct": 0,
-      "exp": "Deficits from 1000: 71 and 19. Cross: 1071 + 19 = 1090. Deficit product: 71 × 19 = 1349. Answer: 1090 × 1000 + 1349 = 1091349."
-    },
-    {
-      "q": "Calculate 936 × 953 using Nikhilam (base 1000).",
-      "options": [
-        "892008",
-        "892009",
-        "892007",
-        "892010"
-      ],
-      "correct": 0,
-      "exp": "Deficits from 1000: −64 and −47. Cross: 936 − 47 = 889. Deficit product: −64 × −47 = 3008. Answer: 889 × 1000 + 3008 = 892008."
-    },
-    {
-      "q": "Calculate 925 × 1024 using Nikhilam (base 1000).",
-      "options": [
-        "947201",
-        "947199",
-        "947200",
-        "947202"
-      ],
-      "correct": 2,
-      "exp": "Deficits from 1000: −75 and 24. Cross: 925 + 24 = 949. Deficit product: −75 × 24 = −1800. Answer: 949 × 1000 − 1800 = 947200."
-    },
-    {
-      "q": "Calculate 988 × 1078 using Nikhilam (base 1000).",
-      "options": [
-        "1065064",
-        "1065065",
-        "1065063",
-        "1065066"
-      ],
-      "correct": 0,
-      "exp": "Deficits from 1000: −12 and 78. Cross: 988 + 78 = 1066. Deficit product: −12 × 78 = −936. Answer: 1066 × 1000 − 936 = 1065064."
-    }
-  ],
-  "l1_06": [
-    {
-      "q": "What is the digit sum of 49675?",
-      "options": [
-        "31",
-        "32",
-        "30",
-        "33"
-      ],
-      "correct": 0,
-      "exp": "4 + 9 + 6 + 7 + 5 = 31."
-    },
-    {
-      "q": "What is the digit sum of 59578?",
-      "options": [
-        "35",
-        "33",
-        "36",
-        "34"
-      ],
-      "correct": 3,
-      "exp": "5 + 9 + 5 + 7 + 8 = 34."
-    },
-    {
-      "q": "Check 34 × 25 = 850 by casting out nines. What is the digital root of 850?",
-      "options": [
-        "3",
-        "4",
-        "2",
-        "5"
-      ],
-      "correct": 1,
-      "exp": "Digit sum of 850 reduces to 4. Check: digital roots of 34 and 25 are 7 and 7, and 7 × 7 reduces to 4."
-    },
-    {
-      "q": "What is the digit sum of 36234?",
+      "q": "What is the digit sum of 27216?",
       "options": [
         "19",
         "18",
@@ -331,1913 +35,922 @@ export const PRACTICE_EXTRA = {
         "20"
       ],
       "correct": 1,
-      "exp": "3 + 6 + 2 + 3 + 4 = 18."
+      "exp": "2 + 7 + 2 + 1 + 6 = 18."
     },
     {
-      "q": "What is the digit sum of 52415?",
+      "q": "Calculate 72 × 96 using Urdhva-Tiryagbhyam.",
       "options": [
-        "18",
-        "16",
-        "19",
-        "17"
-      ],
-      "correct": 3,
-      "exp": "5 + 2 + 4 + 1 + 5 = 17."
-    }
-  ],
-  "l1_07": [
-    {
-      "q": "Calculate 33 × 59 using Urdhva-Tiryagbhyam.",
-      "options": [
-        "1948",
-        "1946",
-        "1949",
-        "1947"
-      ],
-      "correct": 3,
-      "exp": "Units: 3 × 9 = 27. Cross: 3 × 9 + 3 × 5 = 42. Tens: 3 × 5 = 15. Combine with carries: 1947."
-    },
-    {
-      "q": "Calculate 79 × 49 using Urdhva-Tiryagbhyam.",
-      "options": [
-        "3872",
-        "3870",
-        "3871",
-        "3873"
+        "6913",
+        "6911",
+        "6912",
+        "6914"
       ],
       "correct": 2,
-      "exp": "Units: 9 × 9 = 81. Cross: 7 × 9 + 9 × 4 = 99. Tens: 7 × 4 = 28. Combine with carries: 3871."
+      "exp": "Units: 2 × 6 = 12. Cross: 7 × 6 + 2 × 9 = 60. Tens: 7 × 9 = 63. Combine with carries: 6912."
     },
     {
-      "q": "Calculate 55 × 90 using Urdhva-Tiryagbhyam.",
+      "q": "Calculate 47 × 84 using Urdhva-Tiryagbhyam.",
       "options": [
-        "4951",
-        "4949",
-        "4950",
-        "4952"
+        "3949",
+        "3947",
+        "3948",
+        "3950"
       ],
       "correct": 2,
-      "exp": "Units: 5 × 0 = 0. Cross: 5 × 0 + 5 × 9 = 45. Tens: 5 × 9 = 45. Combine with carries: 4950."
+      "exp": "Units: 7 × 4 = 28. Cross: 4 × 4 + 7 × 8 = 72. Tens: 4 × 8 = 32. Combine with carries: 3948."
     },
     {
-      "q": "Calculate 54 × 81 using Urdhva-Tiryagbhyam.",
+      "q": "What is the digit sum of 51339?",
       "options": [
-        "4375",
-        "4374",
-        "4373",
-        "4376"
-      ],
-      "correct": 1,
-      "exp": "Units: 4 × 1 = 4. Cross: 5 × 1 + 4 × 8 = 37. Tens: 5 × 8 = 40. Combine with carries: 4374."
-    },
-    {
-      "q": "Calculate 53 × 49 using Urdhva-Tiryagbhyam.",
-      "options": [
-        "2598",
-        "2596",
-        "2597",
-        "2599"
-      ],
-      "correct": 2,
-      "exp": "Units: 3 × 9 = 27. Cross: 5 × 9 + 3 × 4 = 57. Tens: 5 × 4 = 20. Combine with carries: 2597."
-    }
-  ],
-  "l1_08": [
-    {
-      "q": "What is 62 × 12?",
-      "options": [
-        "745",
-        "744",
-        "743",
-        "746"
-      ],
-      "correct": 1,
-      "exp": "62 × 10 = 620, and 2 × 62 = 124. Sum: 744."
-    },
-    {
-      "q": "What is 71 × 11?",
-      "options": [
-        "782",
-        "780",
-        "781",
-        "783"
-      ],
-      "correct": 2,
-      "exp": "Write 7, then 7 + 1 = 8, then 1. Answer: 781."
-    },
-    {
-      "q": "What is 44 × 11?",
-      "options": [
-        "485",
-        "483",
-        "484",
-        "486"
-      ],
-      "correct": 2,
-      "exp": "Write 4, then 4 + 4 = 8, then 4. Answer: 484."
-    },
-    {
-      "q": "What is 20 × 12?",
-      "options": [
-        "241",
-        "240",
-        "239",
-        "242"
-      ],
-      "correct": 1,
-      "exp": "20 × 10 = 200, and 2 × 20 = 40. Sum: 240."
-    },
-    {
-      "q": "What is 79 × 11?",
-      "options": [
-        "870",
-        "868",
-        "869",
-        "871"
-      ],
-      "correct": 2,
-      "exp": "Write 7, then 7 + 9 = 16, then 9. Carry the 1 into the first digit. Answer: 869."
-    }
-  ],
-  "l1_09": [
-    {
-      "q": "What is 46 × 99?",
-      "options": [
-        "4554",
-        "4555",
-        "4553",
-        "4556"
-      ],
-      "correct": 0,
-      "exp": "46 × 100 − 46 = 4600 − 46 = 4554."
-    },
-    {
-      "q": "What is 36 × 99?",
-      "options": [
-        "3565",
-        "3563",
-        "3566",
-        "3564"
-      ],
-      "correct": 3,
-      "exp": "36 × 100 − 36 = 3600 − 36 = 3564."
-    },
-    {
-      "q": "What is 38 × 99?",
-      "options": [
-        "3763",
-        "3761",
-        "3762",
-        "3764"
-      ],
-      "correct": 2,
-      "exp": "38 × 100 − 38 = 3800 − 38 = 3762."
-    },
-    {
-      "q": "What is 72 × 99?",
-      "options": [
-        "7129",
-        "7127",
-        "7128",
-        "7130"
-      ],
-      "correct": 2,
-      "exp": "72 × 100 − 72 = 7200 − 72 = 7128."
-    },
-    {
-      "q": "What is 59 × 999?",
-      "options": [
-        "58942",
-        "58940",
-        "58943",
-        "58941"
-      ],
-      "correct": 3,
-      "exp": "59 × 1000 − 59 = 59000 − 59 = 58941."
-    }
-  ],
-  "l1_10": [
-    {
-      "q": "What is the digit sum of 7584?",
-      "options": [
-        "25",
-        "23",
-        "26",
-        "24"
-      ],
-      "correct": 3,
-      "exp": "7 + 5 + 8 + 4 = 24."
-    },
-    {
-      "q": "Calculate 74 × 75 using Urdhva-Tiryagbhyam.",
-      "options": [
-        "5550",
-        "5551",
-        "5549",
-        "5552"
-      ],
-      "correct": 0,
-      "exp": "Units: 4 × 5 = 20. Cross: 7 × 5 + 4 × 7 = 63. Tens: 7 × 7 = 49. Combine with carries: 5550."
-    },
-    {
-      "q": "Calculate 53 × 88 using Urdhva-Tiryagbhyam.",
-      "options": [
-        "4665",
-        "4663",
-        "4666",
-        "4664"
-      ],
-      "correct": 3,
-      "exp": "Units: 3 × 8 = 24. Cross: 5 × 8 + 3 × 8 = 64. Tens: 5 × 8 = 40. Combine with carries: 4664."
-    },
-    {
-      "q": "What is 45²?",
-      "options": [
-        "2026",
-        "2024",
-        "2025",
-        "2027"
-      ],
-      "correct": 2,
-      "exp": "Ekadhikena Purvena: 4 × 5 = 20, then append 25 → 2025."
-    },
-    {
-      "q": "What is 12 × 999?",
-      "options": [
-        "11989",
-        "11987",
-        "11988",
-        "11990"
-      ],
-      "correct": 2,
-      "exp": "12 × 1000 − 12 = 12000 − 12 = 11988."
-    },
-    {
-      "q": "Calculate 7 × 7 using Nikhilam (base 10).",
-      "options": [
-        "49",
-        "50",
-        "48",
-        "51"
-      ],
-      "correct": 0,
-      "exp": "Deficits from 10: −3 and −3. Cross: 7 − 3 = 4. Deficit product: −3 × −3 = 9. Answer: 4 × 10 + 9 = 49."
-    },
-    {
-      "q": "Calculate 97 × 62 using Urdhva-Tiryagbhyam.",
-      "options": [
-        "6015",
-        "6014",
-        "6013",
-        "6016"
-      ],
-      "correct": 1,
-      "exp": "Units: 7 × 2 = 14. Cross: 9 × 2 + 7 × 6 = 60. Tens: 9 × 6 = 54. Combine with carries: 6014."
-    }
-  ],
-  "l2_01": [
-    {
-      "q": "What is 1662 ÷ 29? Give the quotient and remainder.",
-      "options": [
-        "Q:58 R:9",
-        "Q:56 R:38",
-        "Q:57 R:9",
-        "Q:57 R:10"
-      ],
-      "correct": 2,
-      "exp": "29 × 57 = 1653, remainder 1662 − 1653 = 9."
-    },
-    {
-      "q": "What is 7442 ÷ 16? Give the quotient and remainder.",
-      "options": [
-        "Q:466 R:2",
-        "Q:464 R:18",
-        "Q:465 R:3",
-        "Q:465 R:2"
-      ],
-      "correct": 3,
-      "exp": "16 × 465 = 7440, remainder 7442 − 7440 = 2."
-    },
-    {
-      "q": "What is 5783 ÷ 62? Give the quotient and remainder.",
-      "options": [
-        "Q:94 R:17",
-        "Q:92 R:79",
-        "Q:93 R:18",
-        "Q:93 R:17"
-      ],
-      "correct": 3,
-      "exp": "62 × 93 = 5766, remainder 5783 − 5766 = 17."
-    },
-    {
-      "q": "What is 8175 ÷ 47? Give the quotient and remainder.",
-      "options": [
-        "Q:174 R:44",
-        "Q:172 R:91",
-        "Q:173 R:45",
-        "Q:173 R:44"
-      ],
-      "correct": 3,
-      "exp": "47 × 173 = 8131, remainder 8175 − 8131 = 44."
-    },
-    {
-      "q": "What is 9023 ÷ 39? Give the quotient and remainder.",
-      "options": [
-        "Q:232 R:14",
-        "Q:231 R:14",
-        "Q:230 R:53",
-        "Q:231 R:15"
-      ],
-      "correct": 1,
-      "exp": "39 × 231 = 9009, remainder 9023 − 9009 = 14."
-    }
-  ],
-  "l2_02": [
-    {
-      "q": "Calculate 736 × 153 using Urdhva-Tiryagbhyam (vertically and crosswise).",
-      "options": [
-        "112609",
-        "112607",
-        "112610",
-        "112608"
-      ],
-      "correct": 3,
-      "exp": "Column sums from the right: 18, 39, 42, 38, 7. Carrying from the right gives 112608."
-    },
-    {
-      "q": "Calculate 215 × 353 using Urdhva-Tiryagbhyam (vertically and crosswise).",
-      "options": [
-        "75896",
-        "75894",
-        "75895",
-        "75897"
-      ],
-      "correct": 2,
-      "exp": "Column sums from the right: 15, 28, 26, 13, 6. Carrying from the right gives 75895."
-    },
-    {
-      "q": "Calculate 317 × 971 using Urdhva-Tiryagbhyam (vertically and crosswise).",
-      "options": [
-        "307807",
-        "307808",
-        "307806",
-        "307809"
-      ],
-      "correct": 0,
-      "exp": "Column sums from the right: 7, 50, 73, 30, 27. Carrying from the right gives 307807."
-    },
-    {
-      "q": "Calculate 766 × 495 using Urdhva-Tiryagbhyam (vertically and crosswise).",
-      "options": [
-        "379171",
-        "379169",
-        "379170",
-        "379172"
-      ],
-      "correct": 2,
-      "exp": "Column sums from the right: 30, 84, 113, 87, 28. Carrying from the right gives 379170."
-    },
-    {
-      "q": "Calculate 188 × 363 using Urdhva-Tiryagbhyam (vertically and crosswise).",
-      "options": [
-        "68245",
-        "68243",
-        "68246",
-        "68244"
-      ],
-      "correct": 3,
-      "exp": "Column sums from the right: 24, 72, 75, 30, 3. Carrying from the right gives 68244."
-    }
-  ],
-  "l2_03": [
-    {
-      "q": "What is 41²?",
-      "options": [
-        "1682",
-        "1681",
-        "1680",
-        "1683"
-      ],
-      "correct": 1,
-      "exp": "4² = 16, 2 × 4 × 1 = 8, 1² = 1. Combine with place values: 1681."
-    },
-    {
-      "q": "What is 96²?",
-      "options": [
-        "9217",
-        "9216",
-        "9215",
-        "9218"
-      ],
-      "correct": 1,
-      "exp": "9² = 81, 2 × 9 × 6 = 108, 6² = 36. Combine with place values: 9216."
-    },
-    {
-      "q": "What is 58²?",
-      "options": [
-        "3365",
-        "3364",
-        "3363",
-        "3366"
-      ],
-      "correct": 1,
-      "exp": "5² = 25, 2 × 5 × 8 = 80, 8² = 64. Combine with place values: 3364."
-    },
-    {
-      "q": "What is 73²?",
-      "options": [
-        "5330",
-        "5328",
-        "5329",
-        "5331"
-      ],
-      "correct": 2,
-      "exp": "7² = 49, 2 × 7 × 3 = 42, 3² = 9. Combine with place values: 5329."
-    },
-    {
-      "q": "What is 64²?",
-      "options": [
-        "4097",
-        "4095",
-        "4096",
-        "4098"
-      ],
-      "correct": 2,
-      "exp": "6² = 36, 2 × 6 × 4 = 48, 4² = 16. Combine with place values: 4096."
-    }
-  ],
-  "l2_04": [
-    {
-      "q": "What is 16³?",
-      "options": [
-        "4096",
-        "4097",
-        "4095",
-        "4098"
-      ],
-      "correct": 0,
-      "exp": "Four terms: 1³ = 1, 3 × 1² × 6 = 18, 3 × 1 × 6² = 108, 6³ = 216. Combine with carries: 4096."
-    },
-    {
-      "q": "What is 48³?",
-      "options": [
-        "110593",
-        "110591",
-        "110592",
-        "110594"
-      ],
-      "correct": 2,
-      "exp": "Four terms: 4³ = 64, 3 × 4² × 8 = 384, 3 × 4 × 8² = 768, 8³ = 512. Combine with carries: 110592."
-    },
-    {
-      "q": "What is 21³?",
-      "options": [
-        "9261",
-        "9262",
-        "9260",
-        "9263"
-      ],
-      "correct": 0,
-      "exp": "Four terms: 2³ = 8, 3 × 2² × 1 = 12, 3 × 2 × 1² = 6, 1³ = 1. Combine with carries: 9261."
-    },
-    {
-      "q": "What is 20³?",
-      "options": [
-        "8001",
-        "7999",
-        "8000",
-        "8002"
-      ],
-      "correct": 2,
-      "exp": "Four terms: 2³ = 8, 3 × 2² × 0 = 0, 3 × 2 × 0² = 0, 0³ = 0. Combine with carries: 8000."
-    },
-    {
-      "q": "What is 23³?",
-      "options": [
-        "12167",
-        "12168",
-        "12166",
-        "12169"
-      ],
-      "correct": 0,
-      "exp": "Four terms: 2³ = 8, 3 × 2² × 3 = 36, 3 × 2 × 3² = 54, 3³ = 27. Combine with carries: 12167."
-    }
-  ],
-  "l2_05": [
-    {
-      "q": "What is √3721?",
-      "options": [
-        "62",
-        "60",
-        "61",
-        "63"
-      ],
-      "correct": 2,
-      "exp": "61² = 3721, so √3721 = 61."
-    },
-    {
-      "q": "What is √2704?",
-      "options": [
-        "53",
-        "52",
-        "51",
-        "54"
-      ],
-      "correct": 1,
-      "exp": "52² = 2704, so √2704 = 52."
-    },
-    {
-      "q": "What is √5041?",
-      "options": [
-        "72",
-        "70",
-        "73",
-        "71"
-      ],
-      "correct": 3,
-      "exp": "71² = 5041, so √5041 = 71."
-    },
-    {
-      "q": "What is √3025?",
-      "options": [
-        "56",
-        "54",
-        "55",
-        "57"
-      ],
-      "correct": 2,
-      "exp": "55² = 3025, so √3025 = 55."
-    },
-    {
-      "q": "What is √1024?",
-      "options": [
-        "33",
-        "31",
-        "34",
-        "32"
-      ],
-      "correct": 3,
-      "exp": "32² = 1024, so √1024 = 32."
-    }
-  ],
-  "l2_06": [
-    {
-      "q": "What is the cube root of 287496?",
-      "options": [
-        "67",
-        "66",
-        "65",
-        "68"
-      ],
-      "correct": 1,
-      "exp": "66³ = 287496, so the cube root is 66. Last digit check: 6³ ends in 6, matching the last digit 6 of 287496."
-    },
-    {
-      "q": "What is the cube root of 614125?",
-      "options": [
-        "85",
-        "86",
-        "84",
-        "87"
-      ],
-      "correct": 0,
-      "exp": "85³ = 614125, so the cube root is 85. Last digit check: 5³ ends in 5, matching the last digit 5 of 614125."
-    },
-    {
-      "q": "What is the cube root of 857375?",
-      "options": [
-        "96",
-        "95",
-        "94",
-        "97"
-      ],
-      "correct": 1,
-      "exp": "95³ = 857375, so the cube root is 95. Last digit check: 5³ ends in 5, matching the last digit 5 of 857375."
-    },
-    {
-      "q": "What is the cube root of 274625?",
-      "options": [
-        "65",
-        "66",
-        "64",
-        "67"
-      ],
-      "correct": 0,
-      "exp": "65³ = 274625, so the cube root is 65. Last digit check: 5³ ends in 5, matching the last digit 5 of 274625."
-    },
-    {
-      "q": "What is the cube root of 456533?",
-      "options": [
-        "78",
-        "76",
-        "77",
-        "79"
-      ],
-      "correct": 2,
-      "exp": "77³ = 456533, so the cube root is 77. Last digit check: 7³ ends in 3, matching the last digit 3 of 456533."
-    }
-  ],
-  "l2_07": [
-    {
-      "q": "Check 95 × 79 = 7505 by casting out nines. What is the digital root of 7505?",
-      "options": [
-        "8",
-        "2",
-        "5",
-        "4"
-      ],
-      "correct": 0,
-      "exp": "Digit sum of 7505 reduces to 8. Check: digital roots of 95 and 79 are 5 and 7, and 5 × 7 reduces to 8."
-    },
-    {
-      "q": "Check 57 × 62 = 3534 by casting out nines. What is the digital root of 3534?",
-      "options": [
-        "7",
-        "6",
-        "3",
-        "4"
-      ],
-      "correct": 1,
-      "exp": "Digit sum of 3534 reduces to 6. Check: digital roots of 57 and 62 are 3 and 8, and 3 × 8 reduces to 6."
-    },
-    {
-      "q": "Check 67 × 66 = 4422 by casting out nines. What is the digital root of 4422?",
-      "options": [
-        "4",
-        "2",
-        "3",
-        "8"
-      ],
-      "correct": 2,
-      "exp": "Digit sum of 4422 reduces to 3. Check: digital roots of 67 and 66 are 4 and 3, and 4 × 3 reduces to 3."
-    },
-    {
-      "q": "Check 96 × 41 = 3936 by casting out nines. What is the digital root of 3936?",
-      "options": [
-        "4",
-        "6",
-        "3",
-        "9"
-      ],
-      "correct": 2,
-      "exp": "Digit sum of 3936 reduces to 3. Check: digital roots of 96 and 41 are 6 and 5, and 6 × 5 reduces to 3."
-    },
-    {
-      "q": "Check 73 × 65 = 4745 by casting out nines. What is the digital root of 4745?",
-      "options": [
-        "1",
-        "3",
-        "2",
-        "9"
-      ],
-      "correct": 2,
-      "exp": "Digit sum of 4745 reduces to 2. Check: digital roots of 73 and 65 are 1 and 2, and 1 × 2 reduces to 2."
-    }
-  ],
-  "l2_08": [
-    {
-      "q": "What is 59 × 25?",
-      "options": [
-        "1476",
-        "1474",
-        "1475",
-        "1477"
-      ],
-      "correct": 2,
-      "exp": "59 × 100 = 5900, then ÷ 4 = 1475."
-    },
-    {
-      "q": "What is 163 × 5?",
-      "options": [
-        "816",
-        "814",
-        "817",
-        "815"
-      ],
-      "correct": 3,
-      "exp": "163 × 10 = 1630, then ÷ 2 = 815."
-    },
-    {
-      "q": "What is 88 × 125?",
-      "options": [
-        "11001",
-        "10999",
-        "11000",
-        "11002"
-      ],
-      "correct": 2,
-      "exp": "88 × 1000 = 88000, then ÷ 8 = 11000."
-    },
-    {
-      "q": "What is 146 × 25?",
-      "options": [
-        "3650",
-        "3651",
-        "3649",
-        "3652"
-      ],
-      "correct": 0,
-      "exp": "146 × 100 = 14600, then ÷ 4 = 3650."
-    },
-    {
-      "q": "What is 32 × 125?",
-      "options": [
-        "4001",
-        "3999",
-        "4000",
-        "4002"
-      ],
-      "correct": 2,
-      "exp": "32 × 1000 = 32000, then ÷ 8 = 4000."
-    }
-  ],
-  "l2_09": [
-    {
-      "q": "What is 7535 ÷ 34? Give the quotient and remainder.",
-      "options": [
-        "Q:221 R:21",
-        "Q:222 R:21",
-        "Q:220 R:55",
-        "Q:221 R:22"
-      ],
-      "correct": 0,
-      "exp": "34 × 221 = 7514, remainder 7535 − 7514 = 21."
-    },
-    {
-      "q": "What is 4450 ÷ 75? Give the quotient and remainder.",
-      "options": [
-        "Q:60 R:25",
-        "Q:59 R:25",
-        "Q:58 R:100",
-        "Q:59 R:26"
-      ],
-      "correct": 1,
-      "exp": "75 × 59 = 4425, remainder 4450 − 4425 = 25."
-    },
-    {
-      "q": "What is 6393 ÷ 41? Give the quotient and remainder.",
-      "options": [
-        "Q:156 R:38",
-        "Q:155 R:38",
-        "Q:154 R:79",
-        "Q:155 R:39"
-      ],
-      "correct": 1,
-      "exp": "41 × 155 = 6355, remainder 6393 − 6355 = 38."
-    },
-    {
-      "q": "What is 2834 ÷ 80? Give the quotient and remainder.",
-      "options": [
-        "Q:35 R:34",
-        "Q:36 R:34",
-        "Q:34 R:114",
-        "Q:35 R:35"
-      ],
-      "correct": 0,
-      "exp": "80 × 35 = 2800, remainder 2834 − 2800 = 34."
-    },
-    {
-      "q": "What is 2892 ÷ 12? Give the quotient and remainder.",
-      "options": [
-        "Q:242 R:0",
-        "Q:240 R:12",
-        "Q:241 R:1",
-        "Q:241 R:0"
-      ],
-      "correct": 3,
-      "exp": "12 × 241 = 2892, remainder 2892 − 2892 = 0."
-    }
-  ],
-  "l2_10": [
-    {
-      "q": "Add 7/8 + 1/5. Give your answer in lowest terms.",
-      "options": [
-        "44/40",
-        "43/40",
-        "8/13",
-        "43/41"
-      ],
-      "correct": 1,
-      "exp": "(7 × 5 + 1 × 8) / (8 × 5) = 43/40."
-    },
-    {
-      "q": "Add 1/2 + 5/7. Give your answer in lowest terms.",
-      "options": [
-        "18/14",
-        "6/9",
-        "17/14",
-        "17/15"
-      ],
-      "correct": 2,
-      "exp": "(1 × 7 + 5 × 2) / (2 × 7) = 17/14."
-    },
-    {
-      "q": "Add 3/6 + 3/5. Give your answer in lowest terms.",
-      "options": [
-        "33/30",
-        "11/10",
-        "6/11",
-        "12/10"
-      ],
-      "correct": 1,
-      "exp": "(3 × 5 + 3 × 6) / (6 × 5) = 33/30, which simplifies to 11/10."
-    },
-    {
-      "q": "Add 2/3 + 1/4. Give your answer in lowest terms.",
-      "options": [
-        "11/12",
-        "12/12",
-        "3/7",
-        "11/13"
-      ],
-      "correct": 0,
-      "exp": "(2 × 4 + 1 × 3) / (3 × 4) = 11/12."
-    },
-    {
-      "q": "Add 1/3 + 7/8. Give your answer in lowest terms.",
-      "options": [
-        "30/24",
-        "8/11",
-        "29/24",
-        "29/25"
-      ],
-      "correct": 2,
-      "exp": "(1 × 8 + 7 × 3) / (3 × 8) = 29/24."
-    }
-  ],
-  "l2_11": [
-    {
-      "q": "What is 65 × 65?",
-      "options": [
-        "4226",
-        "4224",
-        "4227",
-        "4225"
-      ],
-      "correct": 3,
-      "exp": "Same tens digit 6, and units 5 + 5 = 10. Tens: 6 × 7 = 42, followed by units 5 × 5 = 25. Answer: 4225."
-    },
-    {
-      "q": "What is 51 × 59?",
-      "options": [
-        "3010",
-        "3009",
-        "3008",
-        "3011"
-      ],
-      "correct": 1,
-      "exp": "Same tens digit 5, and units 1 + 9 = 10. Tens: 5 × 6 = 30, followed by units 1 × 9 = 09. Answer: 3009."
-    },
-    {
-      "q": "What is 44 × 46?",
-      "options": [
-        "2025",
-        "2024",
-        "2023",
-        "2026"
-      ],
-      "correct": 1,
-      "exp": "Same tens digit 4, and units 4 + 6 = 10. Tens: 4 × 5 = 20, followed by units 4 × 6 = 24. Answer: 2024."
-    },
-    {
-      "q": "What is 87 × 83?",
-      "options": [
-        "7221",
-        "7222",
-        "7220",
-        "7223"
-      ],
-      "correct": 0,
-      "exp": "Same tens digit 8, and units 7 + 3 = 10. Tens: 8 × 9 = 72, followed by units 7 × 3 = 21. Answer: 7221."
-    },
-    {
-      "q": "What is 61 × 69?",
-      "options": [
-        "4210",
-        "4208",
-        "4209",
-        "4211"
-      ],
-      "correct": 2,
-      "exp": "Same tens digit 6, and units 1 + 9 = 10. Tens: 6 × 7 = 42, followed by units 1 × 9 = 09. Answer: 4209."
-    }
-  ],
-  "l2_12": [
-    {
-      "q": "What day of the week does 16 June 2000 fall on?",
-      "options": [
-        "Friday",
-        "Tuesday",
-        "Wednesday",
-        "Monday"
-      ],
-      "correct": 0,
-      "exp": "The day-of-the-week calculation gives Friday, checked against the standard calendar."
-    },
-    {
-      "q": "What day of the week does 7 November 2016 fall on?",
-      "options": [
-        "Monday",
-        "Saturday",
-        "Tuesday",
-        "Friday"
-      ],
-      "correct": 0,
-      "exp": "The day-of-the-week calculation gives Monday, checked against the standard calendar."
-    },
-    {
-      "q": "What day of the week does 26 January 2008 fall on?",
-      "options": [
-        "Wednesday",
-        "Tuesday",
-        "Thursday",
-        "Saturday"
-      ],
-      "correct": 3,
-      "exp": "The day-of-the-week calculation gives Saturday, checked against the standard calendar."
-    },
-    {
-      "q": "What day of the week does 1 October 2014 fall on?",
-      "options": [
-        "Sunday",
-        "Saturday",
-        "Monday",
-        "Wednesday"
-      ],
-      "correct": 3,
-      "exp": "The day-of-the-week calculation gives Wednesday, checked against the standard calendar."
-    },
-    {
-      "q": "What day of the week does 4 April 2013 fall on?",
-      "options": [
-        "Monday",
-        "Thursday",
-        "Tuesday",
-        "Friday"
-      ],
-      "correct": 1,
-      "exp": "The day-of-the-week calculation gives Thursday, checked against the standard calendar."
-    }
-  ],
-  "l2_13": [
-    {
-      "q": "What is 62 × 68?",
-      "options": [
-        "4216",
-        "4217",
-        "4215",
-        "4218"
-      ],
-      "correct": 0,
-      "exp": "Same tens digit 6, and units 2 + 8 = 10. Tens: 6 × 7 = 42, followed by units 2 × 8 = 16. Answer: 4216."
-    },
-    {
-      "q": "Add 2/3 + 2/3. Give your answer in lowest terms.",
-      "options": [
-        "12/9",
-        "4/3",
-        "4/6",
-        "5/3"
-      ],
-      "correct": 1,
-      "exp": "(2 × 3 + 2 × 3) / (3 × 3) = 12/9, which simplifies to 4/3."
-    },
-    {
-      "q": "Add 4/6 + 1/2. Give your answer in lowest terms.",
-      "options": [
-        "14/12",
-        "5/8",
-        "7/6",
-        "8/6"
-      ],
-      "correct": 2,
-      "exp": "(4 × 2 + 1 × 6) / (6 × 2) = 14/12, which simplifies to 7/6."
-    },
-    {
-      "q": "Calculate 98 × 80 using Urdhva-Tiryagbhyam.",
-      "options": [
-        "7841",
-        "7839",
-        "7842",
-        "7840"
-      ],
-      "correct": 3,
-      "exp": "Units: 8 × 0 = 0. Cross: 9 × 0 + 8 × 8 = 64. Tens: 9 × 8 = 72. Combine with carries: 7840."
-    },
-    {
-      "q": "Add 2/3 + 7/8. Give your answer in lowest terms.",
-      "options": [
-        "38/24",
-        "37/24",
-        "9/11",
-        "37/25"
-      ],
-      "correct": 1,
-      "exp": "(2 × 8 + 7 × 3) / (3 × 8) = 37/24."
-    },
-    {
-      "q": "What is 83 × 87?",
-      "options": [
-        "7221",
-        "7222",
-        "7220",
-        "7223"
-      ],
-      "correct": 0,
-      "exp": "Same tens digit 8, and units 3 + 7 = 10. Tens: 8 × 9 = 72, followed by units 3 × 7 = 21. Answer: 7221."
-    },
-    {
-      "q": "What is 9921 ÷ 13? Give the quotient and remainder.",
-      "options": [
-        "Q:763 R:2",
-        "Q:764 R:2",
-        "Q:762 R:15",
-        "Q:763 R:3"
-      ],
-      "correct": 0,
-      "exp": "13 × 763 = 9919, remainder 9921 − 9919 = 2."
-    }
-  ],
-  "l2_14": [
-    {
-      "q": "Solve 3x + 3y = 48 and 3x − 3y = -6. What is x?",
-      "options": [
-        "8",
-        "6",
-        "9",
-        "7"
-      ],
-      "correct": 3,
-      "exp": "Add: 6x = 42, so x = 7. Subtract: 6y = 54, so y = 9."
-    },
-    {
-      "q": "Solve x + y = 6 and x − y = 2. What is y?",
-      "options": [
-        "3",
-        "2",
-        "1",
-        "4"
-      ],
-      "correct": 1,
-      "exp": "Add: 2x = 8, so x = 4. Subtract: 2y = 4, so y = 2."
-    },
-    {
-      "q": "Solve x + y = 7 and x − y = 1. What is y?",
-      "options": [
-        "3",
-        "4",
-        "2",
-        "5"
-      ],
-      "correct": 0,
-      "exp": "Add: 2x = 8, so x = 4. Subtract: 2y = 6, so y = 3."
-    },
-    {
-      "q": "Solve 5x + 3y = 29 and 5x − 3y = 11. What is y?",
-      "options": [
-        "3",
-        "4",
-        "2",
-        "5"
-      ],
-      "correct": 0,
-      "exp": "Add: 10x = 40, so x = 4. Subtract: 6y = 18, so y = 3."
-    },
-    {
-      "q": "Solve 4x + 3y = 29 and 4x − 3y = 11. What is x?",
-      "options": [
-        "6",
-        "4",
-        "7",
-        "5"
-      ],
-      "correct": 3,
-      "exp": "Add: 8x = 40, so x = 5. Subtract: 6y = 18, so y = 3."
-    }
-  ],
-  "l2_15": [
-    {
-      "q": "Calculate 109² using Yavadunam (base 100).",
-      "options": [
-        "11882",
-        "11880",
-        "11881",
-        "11883"
-      ],
-      "correct": 2,
-      "exp": "109 is 9 above 100. Left: 109 + 9 = 118. Right: 9² = 81, written as 81. Join: 118|81 = 11881."
-    },
-    {
-      "q": "Calculate 98² using Yavadunam (base 100).",
-      "options": [
-        "9604",
-        "9605",
-        "9603",
-        "9606"
-      ],
-      "correct": 0,
-      "exp": "98 is 2 below 100. Left: 98 − 2 = 96. Right: 2² = 4, written as 04. Join: 96|04 = 9604."
-    },
-    {
-      "q": "Calculate 92² using Yavadunam (base 100).",
-      "options": [
-        "8465",
-        "8464",
-        "8463",
-        "8466"
-      ],
-      "correct": 1,
-      "exp": "92 is 8 below 100. Left: 92 − 8 = 84. Right: 8² = 64, written as 64. Join: 84|64 = 8464."
-    },
-    {
-      "q": "Calculate 97² using Yavadunam (base 100).",
-      "options": [
-        "9410",
-        "9409",
-        "9408",
-        "9411"
-      ],
-      "correct": 1,
-      "exp": "97 is 3 below 100. Left: 97 − 3 = 94. Right: 3² = 9, written as 09. Join: 94|09 = 9409."
-    },
-    {
-      "q": "Calculate 9² using Yavadunam (base 10).",
-      "options": [
-        "82",
-        "80",
-        "81",
-        "83"
-      ],
-      "correct": 2,
-      "exp": "9 is 1 below 10. Left: 9 − 1 = 8. Right: 1² = 1, written as 1. Join: 8|1 = 81."
-    }
-  ],
-  "l3_01": [
-    {
-      "q": "Calculate 378 × 828 using Urdhva-Tiryagbhyam (vertically and crosswise).",
-      "options": [
-        "312984",
-        "312985",
-        "312983",
-        "312986"
-      ],
-      "correct": 0,
-      "exp": "Column sums from the right: 64, 72, 102, 62, 24. Carrying from the right gives 312984."
-    },
-    {
-      "q": "Calculate 65 × 95 using Urdhva-Tiryagbhyam.",
-      "options": [
-        "6176",
-        "6174",
-        "6175",
-        "6177"
-      ],
-      "correct": 2,
-      "exp": "Units: 5 × 5 = 25. Cross: 6 × 5 + 5 × 9 = 75. Tens: 6 × 9 = 54. Combine with carries: 6175."
-    },
-    {
-      "q": "Calculate 67 × 80 using Urdhva-Tiryagbhyam.",
-      "options": [
-        "5361",
-        "5359",
-        "5360",
-        "5362"
-      ],
-      "correct": 2,
-      "exp": "Units: 7 × 0 = 0. Cross: 6 × 0 + 7 × 8 = 56. Tens: 6 × 8 = 48. Combine with carries: 5360."
-    },
-    {
-      "q": "Calculate 43 × 46 using Urdhva-Tiryagbhyam.",
-      "options": [
-        "1979",
-        "1977",
-        "1980",
-        "1978"
-      ],
-      "correct": 3,
-      "exp": "Units: 3 × 6 = 18. Cross: 4 × 6 + 3 × 4 = 36. Tens: 4 × 4 = 16. Combine with carries: 1978."
-    },
-    {
-      "q": "Calculate 718 × 756 using Urdhva-Tiryagbhyam (vertically and crosswise).",
-      "options": [
-        "542809",
-        "542807",
-        "542810",
-        "542808"
-      ],
-      "correct": 3,
-      "exp": "Column sums from the right: 48, 46, 103, 42, 49. Carrying from the right gives 542808."
-    }
-  ],
-  "l3_02": [
-    {
-      "q": "Calculate 9848 × 9493 using Nikhilam (base 10000).",
-      "options": [
-        "93487065",
-        "93487063",
-        "93487066",
-        "93487064"
-      ],
-      "correct": 3,
-      "exp": "Deficits from 10000: −152 and −507. Cross: 9848 − 507 = 9341. Deficit product: −152 × −507 = 77064. Answer: 9341 × 10000 + 77064 = 93487064."
-    },
-    {
-      "q": "Calculate 936 × 974 using Nikhilam (base 1000).",
-      "options": [
-        "911665",
-        "911664",
-        "911663",
-        "911666"
-      ],
-      "correct": 1,
-      "exp": "Deficits from 1000: −64 and −26. Cross: 936 − 26 = 910. Deficit product: −64 × −26 = 1664. Answer: 910 × 1000 + 1664 = 911664."
-    },
-    {
-      "q": "Calculate 962 × 1039 using Nikhilam (base 1000).",
-      "options": [
-        "999519",
-        "999518",
-        "999517",
-        "999520"
-      ],
-      "correct": 1,
-      "exp": "Deficits from 1000: −38 and 39. Cross: 962 + 39 = 1001. Deficit product: −38 × 39 = −1482. Answer: 1001 × 1000 − 1482 = 999518."
-    },
-    {
-      "q": "Calculate 924 × 982 using Nikhilam (base 1000).",
-      "options": [
-        "907369",
-        "907367",
-        "907368",
-        "907370"
-      ],
-      "correct": 2,
-      "exp": "Deficits from 1000: −76 and −18. Cross: 924 − 18 = 906. Deficit product: −76 × −18 = 1368. Answer: 906 × 1000 + 1368 = 907368."
-    },
-    {
-      "q": "Calculate 9136 × 10524 using Nikhilam (base 10000).",
-      "options": [
-        "96147265",
-        "96147263",
-        "96147266",
-        "96147264"
-      ],
-      "correct": 3,
-      "exp": "Deficits from 10000: −864 and 524. Cross: 9136 + 524 = 9660. Deficit product: −864 × 524 = −452736. Answer: 9660 × 10000 − 452736 = 96147264."
-    }
-  ],
-  "l3_03": [
-    {
-      "q": "Calculate 36 × 48 using Anurupyena (proportional scaling).",
-      "options": [
-        "1729",
-        "1727",
-        "1730",
-        "1728"
-      ],
-      "correct": 3,
-      "exp": "36 : 48 = 6 : 8, both scaled by 6. So 36 × 48 = 6² × 6 × 8 = 36 × 48 = 1728."
-    },
-    {
-      "q": "Calculate 10 × 8 using Anurupyena (proportional scaling).",
-      "options": [
-        "81",
-        "79",
-        "80",
-        "82"
-      ],
-      "correct": 2,
-      "exp": "10 : 8 = 5 : 4, both scaled by 2. So 10 × 8 = 2² × 5 × 4 = 4 × 20 = 80."
-    },
-    {
-      "q": "Calculate 63 × 54 using Anurupyena (proportional scaling).",
-      "options": [
-        "3403",
-        "3401",
-        "3402",
-        "3404"
-      ],
-      "correct": 2,
-      "exp": "63 : 54 = 7 : 6, both scaled by 9. So 63 × 54 = 9² × 7 × 6 = 81 × 42 = 3402."
-    },
-    {
-      "q": "Calculate 16 × 48 using Anurupyena (proportional scaling).",
-      "options": [
-        "769",
-        "768",
-        "767",
-        "770"
-      ],
-      "correct": 1,
-      "exp": "16 : 48 = 2 : 6, both scaled by 8. So 16 × 48 = 8² × 2 × 6 = 64 × 12 = 768."
-    },
-    {
-      "q": "Calculate 64 × 32 using Anurupyena (proportional scaling).",
-      "options": [
-        "2048",
-        "2049",
-        "2047",
-        "2050"
-      ],
-      "correct": 0,
-      "exp": "64 : 32 = 8 : 4, both scaled by 8. So 64 × 32 = 8² × 8 × 4 = 64 × 32 = 2048."
-    }
-  ],
-  "l3_04": [
-    {
-      "q": "Calculate 99 × 93 using the vinculum (complement) method.",
-      "options": [
-        "9208",
-        "9206",
-        "9209",
-        "9207"
-      ],
-      "correct": 3,
-      "exp": "Complements from 100: 1 and 7. Cross: 99 − 7 = 92. Product of complements: 1 × 7 = 07. Answer: 9207 = 9207."
-    },
-    {
-      "q": "Calculate 94 × 99 using the vinculum (complement) method.",
-      "options": [
-        "9307",
-        "9305",
-        "9306",
-        "9308"
-      ],
-      "correct": 2,
-      "exp": "Complements from 100: 6 and 1. Cross: 94 − 1 = 93. Product of complements: 6 × 1 = 06. Answer: 9306 = 9306."
-    },
-    {
-      "q": "Calculate 95 × 95 using the vinculum (complement) method.",
-      "options": [
-        "9025",
-        "9026",
-        "9024",
-        "9027"
-      ],
-      "correct": 0,
-      "exp": "Complements from 100: 5 and 5. Cross: 95 − 5 = 90. Product of complements: 5 × 5 = 25. Answer: 9025 = 9025."
-    },
-    {
-      "q": "Calculate 97 × 93 using the vinculum (complement) method.",
-      "options": [
-        "9022",
-        "9021",
-        "9020",
-        "9023"
-      ],
-      "correct": 1,
-      "exp": "Complements from 100: 3 and 7. Cross: 97 − 7 = 90. Product of complements: 3 × 7 = 21. Answer: 9021 = 9021."
-    },
-    {
-      "q": "Calculate 92 × 96 using the vinculum (complement) method.",
-      "options": [
-        "8833",
-        "8832",
-        "8831",
-        "8834"
-      ],
-      "correct": 1,
-      "exp": "Complements from 100: 8 and 4. Cross: 92 − 4 = 88. Product of complements: 8 × 4 = 32. Answer: 8832 = 8832."
-    }
-  ],
-  "l3_05": [
-    {
-      "q": "Find 2197² using the Duplex method.",
-      "options": [
-        "4826810",
-        "4826808",
-        "4826809",
-        "4826811"
-      ],
-      "correct": 2,
-      "exp": "Duplex (column) sums from the right: 49, 126, 95, 46, 37, 4, 4. Carrying gives 4826809."
-    },
-    {
-      "q": "Find 1960² using the Duplex method.",
-      "options": [
-        "3841600",
-        "3841601",
-        "3841599",
-        "3841602"
-      ],
-      "correct": 0,
-      "exp": "Duplex (column) sums from the right: 0, 0, 36, 108, 93, 18, 1. Carrying gives 3841600."
-    },
-    {
-      "q": "Find 530² using the Duplex method.",
-      "options": [
-        "280901",
-        "280900",
-        "280899",
-        "280902"
-      ],
-      "correct": 1,
-      "exp": "Duplex (column) sums from the right: 0, 0, 9, 30, 25. Carrying gives 280900."
-    },
-    {
-      "q": "Find 5463² using the Duplex method.",
-      "options": [
-        "29844370",
-        "29844368",
-        "29844371",
-        "29844369"
-      ],
-      "correct": 3,
-      "exp": "Duplex (column) sums from the right: 9, 36, 60, 78, 76, 40, 25. Carrying gives 29844369."
-    },
-    {
-      "q": "Find 2431² using the Duplex method.",
-      "options": [
-        "5909762",
-        "5909760",
-        "5909763",
-        "5909761"
-      ],
-      "correct": 3,
-      "exp": "Duplex (column) sums from the right: 1, 6, 17, 28, 28, 16, 4. Carrying gives 5909761."
-    }
-  ],
-  "l3_06": [
-    {
-      "q": "What is the cube root of 729?",
-      "options": [
-        "9",
-        "10",
-        "8",
-        "11"
-      ],
-      "correct": 0,
-      "exp": "9 × 9 × 9 = 729, so the cube root is 9."
-    },
-    {
-      "q": "What is the cube root of 8000?",
-      "options": [
-        "21",
-        "19",
+        "22",
         "20",
-        "22"
+        "23",
+        "21"
       ],
-      "correct": 2,
-      "exp": "20 × 20 × 20 = 8000, so the cube root is 20."
+      "correct": 3,
+      "exp": "5 + 1 + 3 + 3 + 9 = 21."
     },
     {
-      "q": "What is the cube root of 19683?",
+      "q": "What is the digit sum of 3875?",
       "options": [
-        "27",
-        "28",
-        "26",
-        "29"
+        "23",
+        "24",
+        "22",
+        "25"
       ],
       "correct": 0,
-      "exp": "27 × 27 × 27 = 19683, so the cube root is 27."
+      "exp": "3 + 8 + 7 + 5 = 23."
     },
     {
-      "q": "What is the cube root of 17576?",
+      "q": "What is 54 × 11?",
       "options": [
+        "595",
+        "593",
+        "594",
+        "596"
+      ],
+      "correct": 2,
+      "exp": "Write 5, then 5 + 4 = 9, then 4. Answer: 594."
+    },
+    {
+      "q": "What is 68 × 11?",
+      "options": [
+        "749",
+        "747",
+        "750",
+        "748"
+      ],
+      "correct": 3,
+      "exp": "Write 6, then 6 + 8 = 14, then 8. Carry the 1 into the first digit. Answer: 748."
+    },
+    {
+      "q": "What is 50 × 11?",
+      "options": [
+        "551",
+        "550",
+        "549",
+        "552"
+      ],
+      "correct": 1,
+      "exp": "Write 5, then 5 + 0 = 5, then 0. Answer: 550."
+    },
+    {
+      "q": "Calculate 83 × 17 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "1412",
+        "1411",
+        "1410",
+        "1413"
+      ],
+      "correct": 1,
+      "exp": "Units: 3 × 7 = 21. Cross: 8 × 7 + 3 × 1 = 59. Tens: 8 × 1 = 8. Combine with carries: 1411."
+    },
+    {
+      "q": "What is the digit sum of 49019?",
+      "options": [
+        "24",
+        "22",
+        "23",
+        "25"
+      ],
+      "correct": 2,
+      "exp": "4 + 9 + 0 + 1 + 9 = 23."
+    },
+    {
+      "q": "What is 37 × 11?",
+      "options": [
+        "408",
+        "407",
+        "406",
+        "409"
+      ],
+      "correct": 1,
+      "exp": "Write 3, then 3 + 7 = 10, then 7. Carry the 1 into the first digit. Answer: 407."
+    },
+    {
+      "q": "What is the digit sum of 90586?",
+      "options": [
+        "29",
         "27",
-        "25",
-        "26",
+        "30",
         "28"
       ],
-      "correct": 2,
-      "exp": "26 × 26 × 26 = 17576, so the cube root is 26."
+      "correct": 3,
+      "exp": "9 + 0 + 5 + 8 + 6 = 28."
     },
     {
-      "q": "What is the cube root of 2744?",
+      "q": "What is the digit sum of 37185?",
       "options": [
-        "14",
+        "25",
+        "24",
+        "23",
+        "26"
+      ],
+      "correct": 1,
+      "exp": "3 + 7 + 1 + 8 + 5 = 24."
+    }
+  ],
+  "l1_02": [
+    {
+      "q": "What is 535²?",
+      "options": [
+        "286225",
+        "286226",
+        "286224",
+        "286227"
+      ],
+      "correct": 0,
+      "exp": "Ekadhikena Purvena: 53 × 54 = 2862, then append 25 → 286225."
+    },
+    {
+      "q": "What is 745²?",
+      "options": [
+        "555026",
+        "555024",
+        "555025",
+        "555027"
+      ],
+      "correct": 2,
+      "exp": "Ekadhikena Purvena: 74 × 75 = 5550, then append 25 → 555025."
+    },
+    {
+      "q": "What is 765²?",
+      "options": [
+        "585225",
+        "585226",
+        "585224",
+        "585227"
+      ],
+      "correct": 0,
+      "exp": "Ekadhikena Purvena: 76 × 77 = 5852, then append 25 → 585225."
+    },
+    {
+      "q": "What is 435²?",
+      "options": [
+        "189226",
+        "189224",
+        "189227",
+        "189225"
+      ],
+      "correct": 3,
+      "exp": "Ekadhikena Purvena: 43 × 44 = 1892, then append 25 → 189225."
+    },
+    {
+      "q": "What is 855²?",
+      "options": [
+        "731026",
+        "731025",
+        "731024",
+        "731027"
+      ],
+      "correct": 1,
+      "exp": "Ekadhikena Purvena: 85 × 86 = 7310, then append 25 → 731025."
+    },
+    {
+      "q": "What is 465²?",
+      "options": [
+        "216226",
+        "216224",
+        "216227",
+        "216225"
+      ],
+      "correct": 3,
+      "exp": "Ekadhikena Purvena: 46 × 47 = 2162, then append 25 → 216225."
+    },
+    {
+      "q": "What is 275²?",
+      "options": [
+        "75626",
+        "75625",
+        "75624",
+        "75627"
+      ],
+      "correct": 1,
+      "exp": "Ekadhikena Purvena: 27 × 28 = 756, then append 25 → 75625."
+    },
+    {
+      "q": "What is 135²?",
+      "options": [
+        "18226",
+        "18224",
+        "18225",
+        "18227"
+      ],
+      "correct": 2,
+      "exp": "Ekadhikena Purvena: 13 × 14 = 182, then append 25 → 18225."
+    },
+    {
+      "q": "What is 545²?",
+      "options": [
+        "297026",
+        "297024",
+        "297025",
+        "297027"
+      ],
+      "correct": 2,
+      "exp": "Ekadhikena Purvena: 54 × 55 = 2970, then append 25 → 297025."
+    },
+    {
+      "q": "What is 895²?",
+      "options": [
+        "801026",
+        "801024",
+        "801027",
+        "801025"
+      ],
+      "correct": 3,
+      "exp": "Ekadhikena Purvena: 89 × 90 = 8010, then append 25 → 801025."
+    },
+    {
+      "q": "What is 495²?",
+      "options": [
+        "245026",
+        "245025",
+        "245024",
+        "245027"
+      ],
+      "correct": 1,
+      "exp": "Ekadhikena Purvena: 49 × 50 = 2450, then append 25 → 245025."
+    },
+    {
+      "q": "What is 595²?",
+      "options": [
+        "354026",
+        "354024",
+        "354025",
+        "354027"
+      ],
+      "correct": 2,
+      "exp": "Ekadhikena Purvena: 59 × 60 = 3540, then append 25 → 354025."
+    },
+    {
+      "q": "What is 265²?",
+      "options": [
+        "70226",
+        "70224",
+        "70225",
+        "70227"
+      ],
+      "correct": 2,
+      "exp": "Ekadhikena Purvena: 26 × 27 = 702, then append 25 → 70225."
+    },
+    {
+      "q": "What is 385²?",
+      "options": [
+        "148226",
+        "148224",
+        "148225",
+        "148227"
+      ],
+      "correct": 2,
+      "exp": "Ekadhikena Purvena: 38 × 39 = 1482, then append 25 → 148225."
+    },
+    {
+      "q": "What is 455²?",
+      "options": [
+        "207026",
+        "207025",
+        "207024",
+        "207027"
+      ],
+      "correct": 1,
+      "exp": "Ekadhikena Purvena: 45 × 46 = 2070, then append 25 → 207025."
+    }
+  ],
+  "l1_03": [
+    {
+      "q": "Calculate 13 × 7 using Nikhilam (base 10).",
+      "options": [
+        "92",
+        "90",
+        "91",
+        "93"
+      ],
+      "correct": 2,
+      "exp": "Deficits from 10: 3 and −3. Cross: 13 − 3 = 10. Deficit product: 3 × −3 = −9. Answer: 10 × 10 − 9 = 91."
+    },
+    {
+      "q": "Calculate 11 × 13 using Nikhilam (base 10).",
+      "options": [
+        "144",
+        "143",
+        "142",
+        "145"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 10: 1 and 3. Cross: 11 + 3 = 14. Deficit product: 1 × 3 = 3. Answer: 14 × 10 + 3 = 143."
+    },
+    {
+      "q": "Calculate 15 × 12 using Nikhilam (base 10).",
+      "options": [
+        "180",
+        "181",
+        "179",
+        "182"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 10: 5 and 2. Cross: 15 + 2 = 17. Deficit product: 5 × 2 = 10. Answer: 17 × 10 + 10 = 180."
+    },
+    {
+      "q": "Calculate 13 × 12 using Nikhilam (base 10).",
+      "options": [
+        "157",
+        "155",
+        "158",
+        "156"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 10: 3 and 2. Cross: 13 + 2 = 15. Deficit product: 3 × 2 = 6. Answer: 15 × 10 + 6 = 156."
+    },
+    {
+      "q": "Calculate 11 × 12 using Nikhilam (base 10).",
+      "options": [
+        "132",
+        "133",
+        "131",
+        "134"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 10: 1 and 2. Cross: 11 + 2 = 13. Deficit product: 1 × 2 = 2. Answer: 13 × 10 + 2 = 132."
+    },
+    {
+      "q": "Calculate 14 × 11 using Nikhilam (base 10).",
+      "options": [
+        "155",
+        "153",
+        "154",
+        "156"
+      ],
+      "correct": 2,
+      "exp": "Deficits from 10: 4 and 1. Cross: 14 + 1 = 15. Deficit product: 4 × 1 = 4. Answer: 15 × 10 + 4 = 154."
+    },
+    {
+      "q": "Calculate 12 × 9 using Nikhilam (base 10).",
+      "options": [
+        "109",
+        "108",
+        "107",
+        "110"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 10: 2 and −1. Cross: 12 − 1 = 11. Deficit product: 2 × −1 = −2. Answer: 11 × 10 − 2 = 108."
+    },
+    {
+      "q": "Calculate 15 × 6 using Nikhilam (base 10).",
+      "options": [
+        "91",
+        "90",
+        "89",
+        "92"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 10: 5 and −4. Cross: 15 − 4 = 11. Deficit product: 5 × −4 = −20. Answer: 11 × 10 − 20 = 90."
+    },
+    {
+      "q": "Calculate 13 × 9 using Nikhilam (base 10).",
+      "options": [
+        "117",
+        "118",
+        "116",
+        "119"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 10: 3 and −1. Cross: 13 − 1 = 12. Deficit product: 3 × −1 = −3. Answer: 12 × 10 − 3 = 117."
+    },
+    {
+      "q": "Calculate 9 × 8 using Nikhilam (base 10).",
+      "options": [
+        "72",
+        "73",
+        "71",
+        "74"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 10: −1 and −2. Cross: 9 − 2 = 7. Deficit product: −1 × −2 = 2. Answer: 7 × 10 + 2 = 72."
+    },
+    {
+      "q": "Calculate 5 × 12 using Nikhilam (base 10).",
+      "options": [
+        "61",
+        "59",
+        "62",
+        "60"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 10: −5 and 2. Cross: 5 + 2 = 7. Deficit product: −5 × 2 = −10. Answer: 7 × 10 − 10 = 60."
+    },
+    {
+      "q": "Calculate 9 × 9 using Nikhilam (base 10).",
+      "options": [
+        "81",
+        "82",
+        "80",
+        "83"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 10: −1 and −1. Cross: 9 − 1 = 8. Deficit product: −1 × −1 = 1. Answer: 8 × 10 + 1 = 81."
+    },
+    {
+      "q": "Calculate 15 × 5 using Nikhilam (base 10).",
+      "options": [
+        "76",
+        "74",
+        "75",
+        "77"
+      ],
+      "correct": 2,
+      "exp": "Deficits from 10: 5 and −5. Cross: 15 − 5 = 10. Deficit product: 5 × −5 = −25. Answer: 10 × 10 − 25 = 75."
+    },
+    {
+      "q": "Calculate 5 × 5 using Nikhilam (base 10).",
+      "options": [
+        "26",
+        "24",
+        "25",
+        "27"
+      ],
+      "correct": 2,
+      "exp": "Deficits from 10: −5 and −5. Cross: 5 − 5 = 0. Deficit product: −5 × −5 = 25. Answer: 0 × 10 + 25 = 25."
+    },
+    {
+      "q": "Calculate 11 × 15 using Nikhilam (base 10).",
+      "options": [
+        "166",
+        "164",
+        "167",
+        "165"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 10: 1 and 5. Cross: 11 + 5 = 16. Deficit product: 1 × 5 = 5. Answer: 16 × 10 + 5 = 165."
+    }
+  ],
+  "l1_04": [
+    {
+      "q": "Calculate 95 × 93 using Nikhilam (base 100).",
+      "options": [
+        "8836",
+        "8835",
+        "8834",
+        "8837"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 100: −5 and −7. Cross: 95 − 7 = 88. Deficit product: −5 × −7 = 35. Answer: 88 × 100 + 35 = 8835."
+    },
+    {
+      "q": "Calculate 97 × 105 using Nikhilam (base 100).",
+      "options": [
+        "10186",
+        "10185",
+        "10184",
+        "10187"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 100: −3 and 5. Cross: 97 + 5 = 102. Deficit product: −3 × 5 = −15. Answer: 102 × 100 − 15 = 10185."
+    },
+    {
+      "q": "Calculate 93 × 101 using Nikhilam (base 100).",
+      "options": [
+        "9393",
+        "9394",
+        "9392",
+        "9395"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 100: −7 and 1. Cross: 93 + 1 = 94. Deficit product: −7 × 1 = −7. Answer: 94 × 100 − 7 = 9393."
+    },
+    {
+      "q": "Calculate 107 × 106 using Nikhilam (base 100).",
+      "options": [
+        "11342",
+        "11343",
+        "11341",
+        "11344"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 100: 7 and 6. Cross: 107 + 6 = 113. Deficit product: 7 × 6 = 42. Answer: 113 × 100 + 42 = 11342."
+    },
+    {
+      "q": "Calculate 99 × 108 using Nikhilam (base 100).",
+      "options": [
+        "10693",
+        "10692",
+        "10691",
+        "10694"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 100: −1 and 8. Cross: 99 + 8 = 107. Deficit product: −1 × 8 = −8. Answer: 107 × 100 − 8 = 10692."
+    },
+    {
+      "q": "Calculate 95 × 104 using Nikhilam (base 100).",
+      "options": [
+        "9880",
+        "9881",
+        "9879",
+        "9882"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 100: −5 and 4. Cross: 95 + 4 = 99. Deficit product: −5 × 4 = −20. Answer: 99 × 100 − 20 = 9880."
+    },
+    {
+      "q": "Calculate 93 × 93 using Nikhilam (base 100).",
+      "options": [
+        "8650",
+        "8648",
+        "8649",
+        "8651"
+      ],
+      "correct": 2,
+      "exp": "Deficits from 100: −7 and −7. Cross: 93 − 7 = 86. Deficit product: −7 × −7 = 49. Answer: 86 × 100 + 49 = 8649."
+    },
+    {
+      "q": "Calculate 94 × 95 using Nikhilam (base 100).",
+      "options": [
+        "8931",
+        "8930",
+        "8929",
+        "8932"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 100: −6 and −5. Cross: 94 − 5 = 89. Deficit product: −6 × −5 = 30. Answer: 89 × 100 + 30 = 8930."
+    },
+    {
+      "q": "Calculate 101 × 92 using Nikhilam (base 100).",
+      "options": [
+        "9293",
+        "9291",
+        "9294",
+        "9292"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 100: 1 and −8. Cross: 101 − 8 = 93. Deficit product: 1 × −8 = −8. Answer: 93 × 100 − 8 = 9292."
+    },
+    {
+      "q": "Calculate 103 × 97 using Nikhilam (base 100).",
+      "options": [
+        "9992",
+        "9990",
+        "9993",
+        "9991"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 100: 3 and −3. Cross: 103 − 3 = 100. Deficit product: 3 × −3 = −9. Answer: 100 × 100 − 9 = 9991."
+    },
+    {
+      "q": "Calculate 109 × 93 using Nikhilam (base 100).",
+      "options": [
+        "10138",
+        "10137",
+        "10136",
+        "10139"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 100: 9 and −7. Cross: 109 − 7 = 102. Deficit product: 9 × −7 = −63. Answer: 102 × 100 − 63 = 10137."
+    },
+    {
+      "q": "Calculate 109 × 104 using Nikhilam (base 100).",
+      "options": [
+        "11337",
+        "11335",
+        "11336",
+        "11338"
+      ],
+      "correct": 2,
+      "exp": "Deficits from 100: 9 and 4. Cross: 109 + 4 = 113. Deficit product: 9 × 4 = 36. Answer: 113 × 100 + 36 = 11336."
+    },
+    {
+      "q": "Calculate 102 × 102 using Nikhilam (base 100).",
+      "options": [
+        "10405",
+        "10403",
+        "10406",
+        "10404"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 100: 2 and 2. Cross: 102 + 2 = 104. Deficit product: 2 × 2 = 4. Answer: 104 × 100 + 4 = 10404."
+    },
+    {
+      "q": "Calculate 104 × 109 using Nikhilam (base 100).",
+      "options": [
+        "11337",
+        "11336",
+        "11335",
+        "11338"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 100: 4 and 9. Cross: 104 + 9 = 113. Deficit product: 4 × 9 = 36. Answer: 113 × 100 + 36 = 11336."
+    },
+    {
+      "q": "Calculate 109 × 94 using Nikhilam (base 100).",
+      "options": [
+        "10247",
+        "10245",
+        "10248",
+        "10246"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 100: 9 and −6. Cross: 109 − 6 = 103. Deficit product: 9 × −6 = −54. Answer: 103 × 100 − 54 = 10246."
+    }
+  ],
+  "l1_05": [
+    {
+      "q": "Calculate 1083 × 947 using Nikhilam (base 1000).",
+      "options": [
+        "1025602",
+        "1025600",
+        "1025601",
+        "1025603"
+      ],
+      "correct": 2,
+      "exp": "Deficits from 1000: 83 and −53. Cross: 1083 − 53 = 1030. Deficit product: 83 × −53 = −4399. Answer: 1030 × 1000 − 4399 = 1025601."
+    },
+    {
+      "q": "Calculate 962 × 1063 using Nikhilam (base 1000).",
+      "options": [
+        "1022607",
+        "1022605",
+        "1022608",
+        "1022606"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 1000: −38 and 63. Cross: 962 + 63 = 1025. Deficit product: −38 × 63 = −2394. Answer: 1025 × 1000 − 2394 = 1022606."
+    },
+    {
+      "q": "Calculate 992 × 961 using Nikhilam (base 1000).",
+      "options": [
+        "953313",
+        "953311",
+        "953314",
+        "953312"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 1000: −8 and −39. Cross: 992 − 39 = 953. Deficit product: −8 × −39 = 312. Answer: 953 × 1000 + 312 = 953312."
+    },
+    {
+      "q": "Calculate 1017 × 937 using Nikhilam (base 1000).",
+      "options": [
+        "952929",
+        "952930",
+        "952928",
+        "952931"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 1000: 17 and −63. Cross: 1017 − 63 = 954. Deficit product: 17 × −63 = −1071. Answer: 954 × 1000 − 1071 = 952929."
+    },
+    {
+      "q": "Calculate 1066 × 901 using Nikhilam (base 1000).",
+      "options": [
+        "960467",
+        "960465",
+        "960468",
+        "960466"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 1000: 66 and −99. Cross: 1066 − 99 = 967. Deficit product: 66 × −99 = −6534. Answer: 967 × 1000 − 6534 = 960466."
+    },
+    {
+      "q": "Calculate 975 × 1047 using Nikhilam (base 1000).",
+      "options": [
+        "1020825",
+        "1020826",
+        "1020824",
+        "1020827"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 1000: −25 and 47. Cross: 975 + 47 = 1022. Deficit product: −25 × 47 = −1175. Answer: 1022 × 1000 − 1175 = 1020825."
+    },
+    {
+      "q": "Calculate 1016 × 1083 using Nikhilam (base 1000).",
+      "options": [
+        "1100329",
+        "1100327",
+        "1100328",
+        "1100330"
+      ],
+      "correct": 2,
+      "exp": "Deficits from 1000: 16 and 83. Cross: 1016 + 83 = 1099. Deficit product: 16 × 83 = 1328. Answer: 1099 × 1000 + 1328 = 1100328."
+    },
+    {
+      "q": "Calculate 972 × 946 using Nikhilam (base 1000).",
+      "options": [
+        "919513",
+        "919512",
+        "919511",
+        "919514"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 1000: −28 and −54. Cross: 972 − 54 = 918. Deficit product: −28 × −54 = 1512. Answer: 918 × 1000 + 1512 = 919512."
+    },
+    {
+      "q": "Calculate 1068 × 1088 using Nikhilam (base 1000).",
+      "options": [
+        "1161985",
+        "1161984",
+        "1161983",
+        "1161986"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 1000: 68 and 88. Cross: 1068 + 88 = 1156. Deficit product: 68 × 88 = 5984. Answer: 1156 × 1000 + 5984 = 1161984."
+    },
+    {
+      "q": "Calculate 1089 × 995 using Nikhilam (base 1000).",
+      "options": [
+        "1083556",
+        "1083555",
+        "1083554",
+        "1083557"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 1000: 89 and −5. Cross: 1089 − 5 = 1084. Deficit product: 89 × −5 = −445. Answer: 1084 × 1000 − 445 = 1083555."
+    },
+    {
+      "q": "Calculate 913 × 975 using Nikhilam (base 1000).",
+      "options": [
+        "890176",
+        "890174",
+        "890177",
+        "890175"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 1000: −87 and −25. Cross: 913 − 25 = 888. Deficit product: −87 × −25 = 2175. Answer: 888 × 1000 + 2175 = 890175."
+    },
+    {
+      "q": "Calculate 1016 × 996 using Nikhilam (base 1000).",
+      "options": [
+        "1011937",
+        "1011935",
+        "1011938",
+        "1011936"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 1000: 16 and −4. Cross: 1016 − 4 = 1012. Deficit product: 16 × −4 = −64. Answer: 1012 × 1000 − 64 = 1011936."
+    },
+    {
+      "q": "Calculate 1003 × 1015 using Nikhilam (base 1000).",
+      "options": [
+        "1018046",
+        "1018045",
+        "1018044",
+        "1018047"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 1000: 3 and 15. Cross: 1003 + 15 = 1018. Deficit product: 3 × 15 = 45. Answer: 1018 × 1000 + 45 = 1018045."
+    },
+    {
+      "q": "Calculate 1084 × 973 using Nikhilam (base 1000).",
+      "options": [
+        "1054732",
+        "1054733",
+        "1054731",
+        "1054734"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 1000: 84 and −27. Cross: 1084 − 27 = 1057. Deficit product: 84 × −27 = −2268. Answer: 1057 × 1000 − 2268 = 1054732."
+    },
+    {
+      "q": "Calculate 956 × 955 using Nikhilam (base 1000).",
+      "options": [
+        "912980",
+        "912981",
+        "912979",
+        "912982"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 1000: −44 and −45. Cross: 956 − 45 = 911. Deficit product: −44 × −45 = 1980. Answer: 911 × 1000 + 1980 = 912980."
+    }
+  ],
+  "l1_06": [
+    {
+      "q": "Check 17 × 56 = 952 by casting out nines. What is the digital root of 952?",
+      "options": [
+        "7",
+        "1",
+        "2",
+        "9"
+      ],
+      "correct": 0,
+      "exp": "Digit sum of 952 reduces to 7. Check: digital roots of 17 and 56 are 8 and 2, and 8 × 2 reduces to 7."
+    },
+    {
+      "q": "What is the digit sum of 50099?",
+      "options": [
+        "24",
+        "22",
+        "25",
+        "23"
+      ],
+      "correct": 3,
+      "exp": "5 + 0 + 0 + 9 + 9 = 23."
+    },
+    {
+      "q": "What is the digit sum of 26655?",
+      "options": [
+        "25",
+        "24",
+        "23",
+        "26"
+      ],
+      "correct": 1,
+      "exp": "2 + 6 + 6 + 5 + 5 = 24."
+    },
+    {
+      "q": "Check 85 × 82 = 6970 by casting out nines. What is the digital root of 6970?",
+      "options": [
+        "4",
+        "3",
+        "9",
+        "1"
+      ],
+      "correct": 0,
+      "exp": "Digit sum of 6970 reduces to 4. Check: digital roots of 85 and 82 are 4 and 1, and 4 × 1 reduces to 4."
+    },
+    {
+      "q": "What is the digit sum of 85396?",
+      "options": [
+        "31",
+        "32",
+        "30",
+        "33"
+      ],
+      "correct": 0,
+      "exp": "8 + 5 + 3 + 9 + 6 = 31."
+    },
+    {
+      "q": "What is the digit sum of 75354?",
+      "options": [
+        "24",
+        "25",
+        "23",
+        "26"
+      ],
+      "correct": 0,
+      "exp": "7 + 5 + 3 + 5 + 4 = 24."
+    },
+    {
+      "q": "What is the digit sum of 13073?",
+      "options": [
         "15",
         "13",
-        "16"
-      ],
-      "correct": 0,
-      "exp": "14 × 14 × 14 = 2744, so the cube root is 14."
-    }
-  ],
-  "l3_07": [
-    {
-      "q": "What is 1858 ÷ 44? Give the quotient and remainder.",
-      "options": [
-        "Q:43 R:10",
-        "Q:42 R:10",
-        "Q:41 R:54",
-        "Q:42 R:11"
-      ],
-      "correct": 1,
-      "exp": "44 × 42 = 1848, remainder 1858 − 1848 = 10."
-    },
-    {
-      "q": "What is 9737 ÷ 70? Give the quotient and remainder.",
-      "options": [
-        "Q:140 R:7",
-        "Q:138 R:77",
-        "Q:139 R:8",
-        "Q:139 R:7"
+        "16",
+        "14"
       ],
       "correct": 3,
-      "exp": "70 × 139 = 9730, remainder 9737 − 9730 = 7."
+      "exp": "1 + 3 + 0 + 7 + 3 = 14."
     },
     {
-      "q": "What is 3447 ÷ 10? Give the quotient and remainder.",
+      "q": "What is the digit sum of 74989?",
       "options": [
-        "Q:345 R:7",
-        "Q:343 R:17",
-        "Q:344 R:7",
-        "Q:344 R:8"
-      ],
-      "correct": 2,
-      "exp": "10 × 344 = 3440, remainder 3447 − 3440 = 7."
-    },
-    {
-      "q": "What is 9672 ÷ 99? Give the quotient and remainder.",
-      "options": [
-        "Q:98 R:69",
-        "Q:97 R:69",
-        "Q:96 R:168",
-        "Q:97 R:70"
-      ],
-      "correct": 1,
-      "exp": "99 × 97 = 9603, remainder 9672 − 9603 = 69."
-    },
-    {
-      "q": "What is 9771 ÷ 32? Give the quotient and remainder.",
-      "options": [
-        "Q:306 R:11",
-        "Q:304 R:43",
-        "Q:305 R:12",
-        "Q:305 R:11"
-      ],
-      "correct": 3,
-      "exp": "32 × 305 = 9760, remainder 9771 − 9760 = 11."
-    }
-  ],
-  "l3_08": [
-    {
-      "q": "Expand (2x − 4)(x − 6).",
-      "options": [
-        "2x² − 16x + 24",
-        "2x² − 8x + 24",
-        "2x² − 16x − 24",
-        "2x² − 15x + 24"
+        "37",
+        "38",
+        "36",
+        "39"
       ],
       "correct": 0,
-      "exp": "First: 2 × 1 = 2x². Cross: 2 × -6 + -4 × 1 = -16x. Last: -4 × -6 = 24."
+      "exp": "7 + 4 + 9 + 8 + 9 = 37."
     },
     {
-      "q": "Expand (3x − 2)(4x − 6).",
-      "options": [
-        "12x² − 10x + 12",
-        "12x² − 26x − 12",
-        "12x² − 25x + 12",
-        "12x² − 26x + 12"
-      ],
-      "correct": 3,
-      "exp": "First: 3 × 4 = 12x². Cross: 3 × -6 + -2 × 4 = -26x. Last: -2 × -6 = 12."
-    },
-    {
-      "q": "Expand (2x − 4)(x − 5).",
-      "options": [
-        "2x² − 6x + 20",
-        "2x² − 14x − 20",
-        "2x² − 13x + 20",
-        "2x² − 14x + 20"
-      ],
-      "correct": 3,
-      "exp": "First: 2 × 1 = 2x². Cross: 2 × -5 + -4 × 1 = -14x. Last: -4 × -5 = 20."
-    },
-    {
-      "q": "Expand (x + 4)(2x − 3).",
-      "options": [
-        "2x² + 5x − 12",
-        "2x² − 11x − 12",
-        "2x² + 5x + 12",
-        "2x² + 6x − 12"
-      ],
-      "correct": 0,
-      "exp": "First: 1 × 2 = 2x². Cross: 1 × -3 + 4 × 2 = 5x. Last: 4 × -3 = -12."
-    },
-    {
-      "q": "Expand (2x + 6)(3x − 1).",
-      "options": [
-        "6x² + 16x − 6",
-        "6x² − 20x − 6",
-        "6x² + 16x + 6",
-        "6x² + 17x − 6"
-      ],
-      "correct": 0,
-      "exp": "First: 2 × 3 = 6x². Cross: 2 × -1 + 6 × 3 = 16x. Last: 6 × -1 = -6."
-    }
-  ],
-  "l3_09": [
-    {
-      "q": "Solve 2x + 4y = 18 and 4x + 2y = 30. What is y?",
-      "options": [
-        "1",
-        "2",
-        "0",
-        "3"
-      ],
-      "correct": 0,
-      "exp": "Check: 2(7) + 4(1) = 18 ✓ and 4(7) + 2(1) = 30 ✓. So x = 7 and y = 1."
-    },
-    {
-      "q": "Solve 3x + 4y = 57 and 3x + 2y = 39. What is x?",
-      "options": [
-        "7",
-        "8",
-        "6",
-        "9"
-      ],
-      "correct": 0,
-      "exp": "Check: 3(7) + 4(9) = 57 ✓ and 3(7) + 2(9) = 39 ✓. So x = 7 and y = 9."
-    },
-    {
-      "q": "Solve 3x + 3y = 15 and 1x + 4y = 29. What is x?",
-      "options": [
-        "−3",
-        "−2",
-        "−4",
-        "−1"
-      ],
-      "correct": 0,
-      "exp": "Check: 3(-3) + 3(8) = 15 ✓ and 1(-3) + 4(8) = 29 ✓. So x = -3 and y = 8."
-    },
-    {
-      "q": "Solve 4x + 4y = 4 and 4x + 3y = 3. What is x?",
-      "options": [
-        "1",
-        "−1",
-        "2",
-        "0"
-      ],
-      "correct": 3,
-      "exp": "Check: 4(0) + 4(1) = 4 ✓ and 4(0) + 3(1) = 3 ✓. So x = 0 and y = 1."
-    },
-    {
-      "q": "Solve 4x + 3y = -23 and 3x + 2y = -16. What is x?",
-      "options": [
-        "−2",
-        "−1",
-        "−3",
-        "0"
-      ],
-      "correct": 0,
-      "exp": "Check: 4(-2) + 3(-5) = -23 ✓ and 3(-2) + 2(-5) = -16 ✓. So x = -2 and y = -5."
-    }
-  ],
-  "l3_10": [
-    {
-      "q": "Calculate 146 × 576 using Urdhva-Tiryagbhyam (vertically and crosswise).",
-      "options": [
-        "84097",
-        "84095",
-        "84096",
-        "84098"
-      ],
-      "correct": 2,
-      "exp": "Column sums from the right: 36, 66, 64, 27, 5. Carrying from the right gives 84096."
-    },
-    {
-      "q": "Solve 1/(x + 3) + 1/(x + 1) = 0. What is x?",
-      "options": [
-        "2",
-        "−3",
-        "−2",
-        "−1"
-      ],
-      "correct": 2,
-      "exp": "Add the denominators: (x + 3) + (x + 1) = 2x + 4 = 0, so x = -2."
-    },
-    {
-      "q": "What is 7 × 142857?",
-      "options": [
-        "1000000",
-        "999998",
-        "999999",
-        "1000001"
-      ],
-      "correct": 2,
-      "exp": "7 × 142857 = 999999, every digit is 9."
-    },
-    {
-      "q": "Solve 1x + 4y = 23 and 2x + 3y = 26. What is x?",
-      "options": [
-        "7",
-        "8",
-        "6",
-        "9"
-      ],
-      "correct": 0,
-      "exp": "Check: 1(7) + 4(4) = 23 ✓ and 2(7) + 3(4) = 26 ✓. So x = 7 and y = 4."
-    },
-    {
-      "q": "Calculate 54 × 18 using Anurupyena (proportional scaling).",
-      "options": [
-        "972",
-        "973",
-        "971",
-        "974"
-      ],
-      "correct": 0,
-      "exp": "54 : 18 = 9 : 3, both scaled by 6. So 54 × 18 = 6² × 9 × 3 = 36 × 27 = 972."
-    },
-    {
-      "q": "Find 7965² using the Duplex method.",
-      "options": [
-        "63441225",
-        "63441226",
-        "63441224",
-        "63441227"
-      ],
-      "correct": 0,
-      "exp": "Duplex (column) sums from the right: 25, 60, 126, 178, 165, 126, 49. Carrying gives 63441225."
-    },
-    {
-      "q": "Solve x² − 2x − 63 = 0. What is the larger root?",
-      "options": [
-        "−7",
-        "−9",
-        "10",
-        "9"
-      ],
-      "correct": 3,
-      "exp": "Complete the square: (x − 1)² = 64, so x − 1 = ±8. Roots: -7 and 9."
-    }
-  ],
-  "l3_11": [
-    {
-      "q": "Solve 1/(x + 6) + 1/(x + 4) = 0. What is x?",
-      "options": [
-        "5",
-        "−5",
-        "−6",
-        "−4"
-      ],
-      "correct": 1,
-      "exp": "Add the denominators: (x + 6) + (x + 4) = 2x + 10 = 0, so x = -5."
-    },
-    {
-      "q": "Solve 1/(x + 4) + 1/(x + 2) = 0. What is x?",
+      "q": "Check 67 × 46 = 3082 by casting out nines. What is the digital root of 3082?",
       "options": [
         "3",
-        "−4",
-        "−3",
-        "−2"
-      ],
-      "correct": 2,
-      "exp": "Add the denominators: (x + 4) + (x + 2) = 2x + 6 = 0, so x = -3."
-    },
-    {
-      "q": "Solve 1/(x + 1) + 1/(x + 7) = 0. What is x?",
-      "options": [
         "4",
-        "−4",
-        "−1",
-        "−7"
-      ],
-      "correct": 1,
-      "exp": "Add the denominators: (x + 1) + (x + 7) = 2x + 8 = 0, so x = -4."
-    },
-    {
-      "q": "Solve 1/(x + 3) + 1/(x + 1) = 0. What is x?",
-      "options": [
-        "−2",
-        "2",
-        "−3",
-        "−1"
-      ],
-      "correct": 0,
-      "exp": "Add the denominators: (x + 3) + (x + 1) = 2x + 4 = 0, so x = -2."
-    },
-    {
-      "q": "Solve 1/(x + 7) + 1/(x + 5) = 0. What is x?",
-      "options": [
-        "6",
-        "−7",
-        "−6",
-        "−5"
-      ],
-      "correct": 2,
-      "exp": "Add the denominators: (x + 7) + (x + 5) = 2x + 12 = 0, so x = -6."
-    }
-  ],
-  "l3_12": [
-    {
-      "q": "In 4/7 = 0.571428…, what is the 4th digit after the decimal point?",
-      "options": [
-        "0",
-        "1",
-        "4",
-        "2"
-      ],
-      "correct": 2,
-      "exp": "Remainder method: the digits of 4/7 repeat every 6 places as 571428, so digit 4 is 4."
-    },
-    {
-      "q": "In 1/7 = 0.142857…, what is the 11th digit after the decimal point?",
-      "options": [
-        "0",
-        "4",
-        "7",
-        "5"
-      ],
-      "correct": 3,
-      "exp": "Remainder method: the digits of 1/7 repeat every 6 places as 142857, so digit 11 is 5."
-    },
-    {
-      "q": "In 2/7 = 0.285714…, what is the 2nd digit after the decimal point?",
-      "options": [
-        "8",
-        "1",
-        "0",
+        "5",
         "7"
       ],
-      "correct": 0,
-      "exp": "Remainder method: the digits of 2/7 repeat every 6 places as 285714, so digit 2 is 8."
+      "correct": 1,
+      "exp": "Digit sum of 3082 reduces to 4. Check: digital roots of 67 and 46 are 4 and 1, and 4 × 1 reduces to 4."
     },
     {
-      "q": "In 6/7 = 0.857142…, what is the 11th digit after the decimal point?",
+      "q": "What is the digit sum of 97151?",
       "options": [
-        "4",
-        "7",
-        "8",
-        "3"
+        "24",
+        "23",
+        "22",
+        "25"
       ],
-      "correct": 0,
-      "exp": "Remainder method: the digits of 6/7 repeat every 6 places as 857142, so digit 11 is 4."
+      "correct": 1,
+      "exp": "9 + 7 + 1 + 5 + 1 = 23."
     },
     {
-      "q": "In 1/7 = 0.142857…, what is the 9th digit after the decimal point?",
-      "options": [
-        "1",
-        "0",
-        "2",
-        "8"
-      ],
-      "correct": 2,
-      "exp": "Remainder method: the digits of 1/7 repeat every 6 places as 142857, so digit 9 is 2."
-    }
-  ],
-  "l3_13": [
-    {
-      "q": "Solve x² + 6x − 27 = 0. What is the larger root?",
-      "options": [
-        "3",
-        "−9",
-        "−3",
-        "4"
-      ],
-      "correct": 0,
-      "exp": "Complete the square: (x + 3)² = 36, so x + 3 = ±6. Roots: -9 and 3."
-    },
-    {
-      "q": "Solve x² − 8x − 9 = 0. What is the larger root?",
-      "options": [
-        "−1",
-        "−9",
-        "10",
-        "9"
-      ],
-      "correct": 3,
-      "exp": "Complete the square: (x − 4)² = 25, so x − 4 = ±5. Roots: -1 and 9."
-    },
-    {
-      "q": "Solve x² + 14x + 45 = 0. What is the larger root?",
-      "options": [
-        "−9",
-        "5",
-        "−5",
-        "−4"
-      ],
-      "correct": 2,
-      "exp": "Complete the square: (x + 7)² = 4, so x + 7 = ±2. Roots: -9 and -5."
-    },
-    {
-      "q": "Solve x² + 12x + 32 = 0. What is the larger root?",
-      "options": [
-        "−4",
-        "−8",
-        "4",
-        "−3"
-      ],
-      "correct": 0,
-      "exp": "Complete the square: (x + 6)² = 4, so x + 6 = ±2. Roots: -8 and -4."
-    },
-    {
-      "q": "Solve x² − 8x + 7 = 0. What is the larger root?",
-      "options": [
-        "7",
-        "1",
-        "−7",
-        "8"
-      ],
-      "correct": 0,
-      "exp": "Complete the square: (x − 4)² = 9, so x − 4 = ±3. Roots: 1 and 7."
-    }
-  ],
-  "l3_14": [
-    {
-      "q": "What is the sum of the coefficients of x² + 6x + 5?",
+      "q": "What is the digit sum of 13143?",
       "options": [
         "13",
         "12",
@@ -2245,21 +958,1959 @@ export const PRACTICE_EXTRA = {
         "14"
       ],
       "correct": 1,
-      "exp": "1 + 6 + 5 = 12 = (1 + 1)(1 + 5) = 12."
+      "exp": "1 + 3 + 1 + 4 + 3 = 12."
     },
     {
-      "q": "Factorise x² + 12x + 35.",
+      "q": "What is the digit sum of 63678?",
       "options": [
-        "(x−5)(x−7)",
-        "(x+5)(x−7)",
-        "(x+5)(x+7)",
-        "(x+6)(x+6)"
+        "31",
+        "29",
+        "30",
+        "32"
       ],
       "correct": 2,
-      "exp": "Factors of 35 that add to 12: 5 and 7. So x² + 12x + 35 = (x + 5)(x + 7)."
+      "exp": "6 + 3 + 6 + 7 + 8 = 30."
     },
     {
-      "q": "What is the sum of the coefficients of x² + 15x + 54?",
+      "q": "What is the digit sum of 80971?",
+      "options": [
+        "26",
+        "24",
+        "27",
+        "25"
+      ],
+      "correct": 3,
+      "exp": "8 + 0 + 9 + 7 + 1 = 25."
+    },
+    {
+      "q": "Check 61 × 46 = 2806 by casting out nines. What is the digital root of 2806?",
+      "options": [
+        "2",
+        "6",
+        "9",
+        "7"
+      ],
+      "correct": 3,
+      "exp": "Digit sum of 2806 reduces to 7. Check: digital roots of 61 and 46 are 7 and 1, and 7 × 1 reduces to 7."
+    },
+    {
+      "q": "What is the digit sum of 85957?",
+      "options": [
+        "35",
+        "33",
+        "34",
+        "36"
+      ],
+      "correct": 2,
+      "exp": "8 + 5 + 9 + 5 + 7 = 34."
+    }
+  ],
+  "l1_07": [
+    {
+      "q": "Calculate 89 × 21 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "1870",
+        "1868",
+        "1869",
+        "1871"
+      ],
+      "correct": 2,
+      "exp": "Units: 9 × 1 = 9. Cross: 8 × 1 + 9 × 2 = 26. Tens: 8 × 2 = 16. Combine with carries: 1869."
+    },
+    {
+      "q": "Calculate 59 × 79 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "4662",
+        "4661",
+        "4660",
+        "4663"
+      ],
+      "correct": 1,
+      "exp": "Units: 9 × 9 = 81. Cross: 5 × 9 + 9 × 7 = 108. Tens: 5 × 7 = 35. Combine with carries: 4661."
+    },
+    {
+      "q": "Calculate 16 × 69 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "1105",
+        "1103",
+        "1104",
+        "1106"
+      ],
+      "correct": 2,
+      "exp": "Units: 6 × 9 = 54. Cross: 1 × 9 + 6 × 6 = 45. Tens: 1 × 6 = 6. Combine with carries: 1104."
+    },
+    {
+      "q": "Calculate 41 × 66 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "2706",
+        "2707",
+        "2705",
+        "2708"
+      ],
+      "correct": 0,
+      "exp": "Units: 1 × 6 = 6. Cross: 4 × 6 + 1 × 6 = 30. Tens: 4 × 6 = 24. Combine with carries: 2706."
+    },
+    {
+      "q": "Calculate 41 × 99 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "4060",
+        "4058",
+        "4059",
+        "4061"
+      ],
+      "correct": 2,
+      "exp": "Units: 1 × 9 = 9. Cross: 4 × 9 + 1 × 9 = 45. Tens: 4 × 9 = 36. Combine with carries: 4059."
+    },
+    {
+      "q": "Calculate 71 × 60 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "4261",
+        "4259",
+        "4260",
+        "4262"
+      ],
+      "correct": 2,
+      "exp": "Units: 1 × 0 = 0. Cross: 7 × 0 + 1 × 6 = 6. Tens: 7 × 6 = 42. Combine with carries: 4260."
+    },
+    {
+      "q": "Calculate 14 × 25 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "351",
+        "349",
+        "350",
+        "352"
+      ],
+      "correct": 2,
+      "exp": "Units: 4 × 5 = 20. Cross: 1 × 5 + 4 × 2 = 13. Tens: 1 × 2 = 2. Combine with carries: 350."
+    },
+    {
+      "q": "Calculate 55 × 60 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "3301",
+        "3299",
+        "3302",
+        "3300"
+      ],
+      "correct": 3,
+      "exp": "Units: 5 × 0 = 0. Cross: 5 × 0 + 5 × 6 = 30. Tens: 5 × 6 = 30. Combine with carries: 3300."
+    },
+    {
+      "q": "Calculate 17 × 11 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "188",
+        "186",
+        "187",
+        "189"
+      ],
+      "correct": 2,
+      "exp": "Units: 7 × 1 = 7. Cross: 1 × 1 + 7 × 1 = 8. Tens: 1 × 1 = 1. Combine with carries: 187."
+    },
+    {
+      "q": "Calculate 12 × 92 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "1105",
+        "1103",
+        "1104",
+        "1106"
+      ],
+      "correct": 2,
+      "exp": "Units: 2 × 2 = 4. Cross: 1 × 2 + 2 × 9 = 20. Tens: 1 × 9 = 9. Combine with carries: 1104."
+    },
+    {
+      "q": "Calculate 90 × 30 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "2700",
+        "2701",
+        "2699",
+        "2702"
+      ],
+      "correct": 0,
+      "exp": "Units: 0 × 0 = 0. Cross: 9 × 0 + 0 × 3 = 0. Tens: 9 × 3 = 27. Combine with carries: 2700."
+    },
+    {
+      "q": "Calculate 16 × 66 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "1056",
+        "1057",
+        "1055",
+        "1058"
+      ],
+      "correct": 0,
+      "exp": "Units: 6 × 6 = 36. Cross: 1 × 6 + 6 × 6 = 42. Tens: 1 × 6 = 6. Combine with carries: 1056."
+    },
+    {
+      "q": "Calculate 92 × 76 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "6993",
+        "6991",
+        "6992",
+        "6994"
+      ],
+      "correct": 2,
+      "exp": "Units: 2 × 6 = 12. Cross: 9 × 6 + 2 × 7 = 68. Tens: 9 × 7 = 63. Combine with carries: 6992."
+    },
+    {
+      "q": "Calculate 14 × 91 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "1275",
+        "1273",
+        "1276",
+        "1274"
+      ],
+      "correct": 3,
+      "exp": "Units: 4 × 1 = 4. Cross: 1 × 1 + 4 × 9 = 37. Tens: 1 × 9 = 9. Combine with carries: 1274."
+    },
+    {
+      "q": "Calculate 35 × 33 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "1155",
+        "1156",
+        "1154",
+        "1157"
+      ],
+      "correct": 0,
+      "exp": "Units: 5 × 3 = 15. Cross: 3 × 3 + 5 × 3 = 24. Tens: 3 × 3 = 9. Combine with carries: 1155."
+    }
+  ],
+  "l1_08": [
+    {
+      "q": "What is 92 × 12?",
+      "options": [
+        "1104",
+        "1105",
+        "1103",
+        "1106"
+      ],
+      "correct": 0,
+      "exp": "92 × 10 = 920, and 2 × 92 = 184. Sum: 1104."
+    },
+    {
+      "q": "What is 52 × 11?",
+      "options": [
+        "573",
+        "571",
+        "572",
+        "574"
+      ],
+      "correct": 2,
+      "exp": "Write 5, then 5 + 2 = 7, then 2. Answer: 572."
+    },
+    {
+      "q": "What is 11 × 12?",
+      "options": [
+        "133",
+        "131",
+        "134",
+        "132"
+      ],
+      "correct": 3,
+      "exp": "11 × 10 = 110, and 2 × 11 = 22. Sum: 132."
+    },
+    {
+      "q": "What is 56 × 12?",
+      "options": [
+        "673",
+        "672",
+        "671",
+        "674"
+      ],
+      "correct": 1,
+      "exp": "56 × 10 = 560, and 2 × 56 = 112. Sum: 672."
+    },
+    {
+      "q": "What is 95 × 12?",
+      "options": [
+        "1141",
+        "1140",
+        "1139",
+        "1142"
+      ],
+      "correct": 1,
+      "exp": "95 × 10 = 950, and 2 × 95 = 190. Sum: 1140."
+    },
+    {
+      "q": "What is 36 × 11?",
+      "options": [
+        "397",
+        "395",
+        "398",
+        "396"
+      ],
+      "correct": 3,
+      "exp": "Write 3, then 3 + 6 = 9, then 6. Answer: 396."
+    },
+    {
+      "q": "What is 56 × 11?",
+      "options": [
+        "617",
+        "615",
+        "616",
+        "618"
+      ],
+      "correct": 2,
+      "exp": "Write 5, then 5 + 6 = 11, then 6. Carry the 1 into the first digit. Answer: 616."
+    },
+    {
+      "q": "What is 19 × 12?",
+      "options": [
+        "229",
+        "227",
+        "228",
+        "230"
+      ],
+      "correct": 2,
+      "exp": "19 × 10 = 190, and 2 × 19 = 38. Sum: 228."
+    },
+    {
+      "q": "What is 49 × 11?",
+      "options": [
+        "540",
+        "538",
+        "539",
+        "541"
+      ],
+      "correct": 2,
+      "exp": "Write 4, then 4 + 9 = 13, then 9. Carry the 1 into the first digit. Answer: 539."
+    },
+    {
+      "q": "What is 75 × 11?",
+      "options": [
+        "826",
+        "824",
+        "825",
+        "827"
+      ],
+      "correct": 2,
+      "exp": "Write 7, then 7 + 5 = 12, then 5. Carry the 1 into the first digit. Answer: 825."
+    },
+    {
+      "q": "What is 75 × 12?",
+      "options": [
+        "901",
+        "899",
+        "900",
+        "902"
+      ],
+      "correct": 2,
+      "exp": "75 × 10 = 750, and 2 × 75 = 150. Sum: 900."
+    },
+    {
+      "q": "What is 63 × 12?",
+      "options": [
+        "757",
+        "755",
+        "756",
+        "758"
+      ],
+      "correct": 2,
+      "exp": "63 × 10 = 630, and 2 × 63 = 126. Sum: 756."
+    },
+    {
+      "q": "What is 81 × 11?",
+      "options": [
+        "892",
+        "890",
+        "891",
+        "893"
+      ],
+      "correct": 2,
+      "exp": "Write 8, then 8 + 1 = 9, then 1. Answer: 891."
+    },
+    {
+      "q": "What is 33 × 11?",
+      "options": [
+        "364",
+        "362",
+        "363",
+        "365"
+      ],
+      "correct": 2,
+      "exp": "Write 3, then 3 + 3 = 6, then 3. Answer: 363."
+    },
+    {
+      "q": "What is 80 × 12?",
+      "options": [
+        "961",
+        "959",
+        "960",
+        "962"
+      ],
+      "correct": 2,
+      "exp": "80 × 10 = 800, and 2 × 80 = 160. Sum: 960."
+    }
+  ],
+  "l1_09": [
+    {
+      "q": "What is 23 × 999?",
+      "options": [
+        "22978",
+        "22976",
+        "22977",
+        "22979"
+      ],
+      "correct": 2,
+      "exp": "23 × 1000 − 23 = 23000 − 23 = 22977."
+    },
+    {
+      "q": "What is 90 × 999?",
+      "options": [
+        "89911",
+        "89909",
+        "89910",
+        "89912"
+      ],
+      "correct": 2,
+      "exp": "90 × 1000 − 90 = 90000 − 90 = 89910."
+    },
+    {
+      "q": "What is 33 × 999?",
+      "options": [
+        "32967",
+        "32968",
+        "32966",
+        "32969"
+      ],
+      "correct": 0,
+      "exp": "33 × 1000 − 33 = 33000 − 33 = 32967."
+    },
+    {
+      "q": "What is 21 × 999?",
+      "options": [
+        "20980",
+        "20978",
+        "20979",
+        "20981"
+      ],
+      "correct": 2,
+      "exp": "21 × 1000 − 21 = 21000 − 21 = 20979."
+    },
+    {
+      "q": "What is 52 × 999?",
+      "options": [
+        "51949",
+        "51947",
+        "51948",
+        "51950"
+      ],
+      "correct": 2,
+      "exp": "52 × 1000 − 52 = 52000 − 52 = 51948."
+    },
+    {
+      "q": "What is 30 × 99?",
+      "options": [
+        "2971",
+        "2969",
+        "2972",
+        "2970"
+      ],
+      "correct": 3,
+      "exp": "30 × 100 − 30 = 3000 − 30 = 2970."
+    },
+    {
+      "q": "What is 37 × 99?",
+      "options": [
+        "3664",
+        "3662",
+        "3663",
+        "3665"
+      ],
+      "correct": 2,
+      "exp": "37 × 100 − 37 = 3700 − 37 = 3663."
+    },
+    {
+      "q": "What is 56 × 999?",
+      "options": [
+        "55945",
+        "55944",
+        "55943",
+        "55946"
+      ],
+      "correct": 1,
+      "exp": "56 × 1000 − 56 = 56000 − 56 = 55944."
+    },
+    {
+      "q": "What is 45 × 99?",
+      "options": [
+        "4456",
+        "4455",
+        "4454",
+        "4457"
+      ],
+      "correct": 1,
+      "exp": "45 × 100 − 45 = 4500 − 45 = 4455."
+    },
+    {
+      "q": "What is 95 × 999?",
+      "options": [
+        "94905",
+        "94906",
+        "94904",
+        "94907"
+      ],
+      "correct": 0,
+      "exp": "95 × 1000 − 95 = 95000 − 95 = 94905."
+    },
+    {
+      "q": "What is 53 × 99?",
+      "options": [
+        "5248",
+        "5246",
+        "5247",
+        "5249"
+      ],
+      "correct": 2,
+      "exp": "53 × 100 − 53 = 5300 − 53 = 5247."
+    },
+    {
+      "q": "What is 57 × 999?",
+      "options": [
+        "56943",
+        "56944",
+        "56942",
+        "56945"
+      ],
+      "correct": 0,
+      "exp": "57 × 1000 − 57 = 57000 − 57 = 56943."
+    },
+    {
+      "q": "What is 80 × 999?",
+      "options": [
+        "79921",
+        "79919",
+        "79920",
+        "79922"
+      ],
+      "correct": 2,
+      "exp": "80 × 1000 − 80 = 80000 − 80 = 79920."
+    },
+    {
+      "q": "What is 83 × 999?",
+      "options": [
+        "82918",
+        "82917",
+        "82916",
+        "82919"
+      ],
+      "correct": 1,
+      "exp": "83 × 1000 − 83 = 83000 − 83 = 82917."
+    },
+    {
+      "q": "What is 14 × 999?",
+      "options": [
+        "13987",
+        "13986",
+        "13985",
+        "13988"
+      ],
+      "correct": 1,
+      "exp": "14 × 1000 − 14 = 14000 − 14 = 13986."
+    }
+  ],
+  "l1_10": [
+    {
+      "q": "What is 38 × 999?",
+      "options": [
+        "37963",
+        "37961",
+        "37962",
+        "37964"
+      ],
+      "correct": 2,
+      "exp": "38 × 1000 − 38 = 38000 − 38 = 37962."
+    },
+    {
+      "q": "What is 43 × 11?",
+      "options": [
+        "474",
+        "472",
+        "473",
+        "475"
+      ],
+      "correct": 2,
+      "exp": "Write 4, then 4 + 3 = 7, then 3. Answer: 473."
+    },
+    {
+      "q": "What is 97 × 11?",
+      "options": [
+        "1068",
+        "1067",
+        "1066",
+        "1069"
+      ],
+      "correct": 1,
+      "exp": "Write 9, then 9 + 7 = 16, then 7. Carry the 1 into the first digit. Answer: 1067."
+    },
+    {
+      "q": "What is the digit sum of 73232?",
+      "options": [
+        "18",
+        "16",
+        "17",
+        "19"
+      ],
+      "correct": 2,
+      "exp": "7 + 3 + 2 + 3 + 2 = 17."
+    },
+    {
+      "q": "What is 48 × 99?",
+      "options": [
+        "4753",
+        "4751",
+        "4752",
+        "4754"
+      ],
+      "correct": 2,
+      "exp": "48 × 100 − 48 = 4800 − 48 = 4752."
+    },
+    {
+      "q": "What is 705²?",
+      "options": [
+        "497025",
+        "497026",
+        "497024",
+        "497027"
+      ],
+      "correct": 0,
+      "exp": "Ekadhikena Purvena: 70 × 71 = 4970, then append 25 → 497025."
+    },
+    {
+      "q": "What is 77 × 11?",
+      "options": [
+        "848",
+        "846",
+        "849",
+        "847"
+      ],
+      "correct": 3,
+      "exp": "Write 7, then 7 + 7 = 14, then 7. Carry the 1 into the first digit. Answer: 847."
+    },
+    {
+      "q": "Calculate 13 × 5 using Nikhilam (base 10).",
+      "options": [
+        "66",
+        "64",
+        "67",
+        "65"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 10: 3 and −5. Cross: 13 − 5 = 8. Deficit product: 3 × −5 = −15. Answer: 8 × 10 − 15 = 65."
+    },
+    {
+      "q": "Calculate 63 × 82 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "5166",
+        "5167",
+        "5165",
+        "5168"
+      ],
+      "correct": 0,
+      "exp": "Units: 3 × 2 = 6. Cross: 6 × 2 + 3 × 8 = 36. Tens: 6 × 8 = 48. Combine with carries: 5166."
+    },
+    {
+      "q": "What is 35 × 11?",
+      "options": [
+        "386",
+        "384",
+        "387",
+        "385"
+      ],
+      "correct": 3,
+      "exp": "Write 3, then 3 + 5 = 8, then 5. Answer: 385."
+    },
+    {
+      "q": "What is the digit sum of 94526?",
+      "options": [
+        "27",
+        "25",
+        "26",
+        "28"
+      ],
+      "correct": 2,
+      "exp": "9 + 4 + 5 + 2 + 6 = 26."
+    },
+    {
+      "q": "Calculate 56 × 67 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "3752",
+        "3753",
+        "3751",
+        "3754"
+      ],
+      "correct": 0,
+      "exp": "Units: 6 × 7 = 42. Cross: 5 × 7 + 6 × 6 = 71. Tens: 5 × 6 = 30. Combine with carries: 3752."
+    },
+    {
+      "q": "What is the digit sum of 3353?",
+      "options": [
+        "15",
+        "13",
+        "14",
+        "16"
+      ],
+      "correct": 2,
+      "exp": "3 + 3 + 5 + 3 = 14."
+    },
+    {
+      "q": "Calculate 69 × 88 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "6073",
+        "6071",
+        "6072",
+        "6074"
+      ],
+      "correct": 2,
+      "exp": "Units: 9 × 8 = 72. Cross: 6 × 8 + 9 × 8 = 120. Tens: 6 × 8 = 48. Combine with carries: 6072."
+    },
+    {
+      "q": "What is the digit sum of 33400?",
+      "options": [
+        "11",
+        "10",
+        "9",
+        "12"
+      ],
+      "correct": 1,
+      "exp": "3 + 3 + 4 + 0 + 0 = 10."
+    },
+    {
+      "q": "Calculate 96 × 33 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "3169",
+        "3167",
+        "3168",
+        "3170"
+      ],
+      "correct": 2,
+      "exp": "Units: 6 × 3 = 18. Cross: 9 × 3 + 6 × 3 = 45. Tens: 9 × 3 = 27. Combine with carries: 3168."
+    },
+    {
+      "q": "Calculate 40 × 96 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "3840",
+        "3841",
+        "3839",
+        "3842"
+      ],
+      "correct": 0,
+      "exp": "Units: 0 × 6 = 0. Cross: 4 × 6 + 0 × 9 = 24. Tens: 4 × 9 = 36. Combine with carries: 3840."
+    }
+  ],
+  "l2_01": [
+    {
+      "q": "What is 4670 ÷ 50? Give the quotient and remainder.",
+      "options": [
+        "Q:94 R:20",
+        "Q:93 R:20",
+        "Q:92 R:70",
+        "Q:93 R:21"
+      ],
+      "correct": 1,
+      "exp": "50 × 93 = 4650, remainder 4670 − 4650 = 20."
+    },
+    {
+      "q": "What is 7002 ÷ 28? Give the quotient and remainder.",
+      "options": [
+        "Q:251 R:2",
+        "Q:250 R:2",
+        "Q:249 R:30",
+        "Q:250 R:3"
+      ],
+      "correct": 1,
+      "exp": "28 × 250 = 7000, remainder 7002 − 7000 = 2."
+    },
+    {
+      "q": "What is 2202 ÷ 59? Give the quotient and remainder.",
+      "options": [
+        "Q:38 R:19",
+        "Q:36 R:78",
+        "Q:37 R:19",
+        "Q:37 R:20"
+      ],
+      "correct": 2,
+      "exp": "59 × 37 = 2183, remainder 2202 − 2183 = 19."
+    },
+    {
+      "q": "What is 9508 ÷ 15? Give the quotient and remainder.",
+      "options": [
+        "Q:633 R:13",
+        "Q:634 R:13",
+        "Q:632 R:28",
+        "Q:633 R:14"
+      ],
+      "correct": 0,
+      "exp": "15 × 633 = 9495, remainder 9508 − 9495 = 13."
+    },
+    {
+      "q": "What is 9479 ÷ 12? Give the quotient and remainder.",
+      "options": [
+        "Q:789 R:11",
+        "Q:790 R:11",
+        "Q:788 R:23",
+        "Q:789 R:12"
+      ],
+      "correct": 0,
+      "exp": "12 × 789 = 9468, remainder 9479 − 9468 = 11."
+    },
+    {
+      "q": "What is 3557 ÷ 48? Give the quotient and remainder.",
+      "options": [
+        "Q:75 R:5",
+        "Q:73 R:53",
+        "Q:74 R:5",
+        "Q:74 R:6"
+      ],
+      "correct": 2,
+      "exp": "48 × 74 = 3552, remainder 3557 − 3552 = 5."
+    },
+    {
+      "q": "What is 7037 ÷ 50? Give the quotient and remainder.",
+      "options": [
+        "Q:141 R:37",
+        "Q:140 R:37",
+        "Q:139 R:87",
+        "Q:140 R:38"
+      ],
+      "correct": 1,
+      "exp": "50 × 140 = 7000, remainder 7037 − 7000 = 37."
+    },
+    {
+      "q": "What is 7631 ÷ 17? Give the quotient and remainder.",
+      "options": [
+        "Q:448 R:15",
+        "Q:449 R:15",
+        "Q:447 R:32",
+        "Q:448 R:16"
+      ],
+      "correct": 0,
+      "exp": "17 × 448 = 7616, remainder 7631 − 7616 = 15."
+    },
+    {
+      "q": "What is 2729 ÷ 25? Give the quotient and remainder.",
+      "options": [
+        "Q:109 R:4",
+        "Q:110 R:4",
+        "Q:108 R:29",
+        "Q:109 R:5"
+      ],
+      "correct": 0,
+      "exp": "25 × 109 = 2725, remainder 2729 − 2725 = 4."
+    },
+    {
+      "q": "What is 4783 ÷ 88? Give the quotient and remainder.",
+      "options": [
+        "Q:54 R:31",
+        "Q:55 R:31",
+        "Q:53 R:119",
+        "Q:54 R:32"
+      ],
+      "correct": 0,
+      "exp": "88 × 54 = 4752, remainder 4783 − 4752 = 31."
+    },
+    {
+      "q": "What is 8301 ÷ 38? Give the quotient and remainder.",
+      "options": [
+        "Q:219 R:17",
+        "Q:217 R:55",
+        "Q:218 R:18",
+        "Q:218 R:17"
+      ],
+      "correct": 3,
+      "exp": "38 × 218 = 8284, remainder 8301 − 8284 = 17."
+    },
+    {
+      "q": "What is 4110 ÷ 19? Give the quotient and remainder.",
+      "options": [
+        "Q:217 R:6",
+        "Q:216 R:6",
+        "Q:215 R:25",
+        "Q:216 R:7"
+      ],
+      "correct": 1,
+      "exp": "19 × 216 = 4104, remainder 4110 − 4104 = 6."
+    },
+    {
+      "q": "What is 278 ÷ 97? Give the quotient and remainder.",
+      "options": [
+        "Q:3 R:84",
+        "Q:2 R:84",
+        "Q:1 R:181",
+        "Q:2 R:85"
+      ],
+      "correct": 1,
+      "exp": "97 × 2 = 194, remainder 278 − 194 = 84."
+    },
+    {
+      "q": "What is 5053 ÷ 35? Give the quotient and remainder.",
+      "options": [
+        "Q:144 R:13",
+        "Q:145 R:13",
+        "Q:143 R:48",
+        "Q:144 R:14"
+      ],
+      "correct": 0,
+      "exp": "35 × 144 = 5040, remainder 5053 − 5040 = 13."
+    },
+    {
+      "q": "What is 3280 ÷ 96? Give the quotient and remainder.",
+      "options": [
+        "Q:35 R:16",
+        "Q:33 R:112",
+        "Q:34 R:17",
+        "Q:34 R:16"
+      ],
+      "correct": 3,
+      "exp": "96 × 34 = 3264, remainder 3280 − 3264 = 16."
+    }
+  ],
+  "l2_02": [
+    {
+      "q": "Calculate 177 × 979 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "173284",
+        "173282",
+        "173283",
+        "173285"
+      ],
+      "correct": 2,
+      "exp": "Column sums from the right: 63, 112, 121, 70, 9. Carrying from the right gives 173283."
+    },
+    {
+      "q": "Calculate 363 × 539 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "195658",
+        "195656",
+        "195657",
+        "195659"
+      ],
+      "correct": 2,
+      "exp": "Column sums from the right: 27, 63, 60, 39, 15. Carrying from the right gives 195657."
+    },
+    {
+      "q": "Calculate 292 × 124 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "36209",
+        "36207",
+        "36210",
+        "36208"
+      ],
+      "correct": 3,
+      "exp": "Column sums from the right: 8, 40, 28, 13, 2. Carrying from the right gives 36208."
+    },
+    {
+      "q": "Calculate 600 × 797 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "478201",
+        "478199",
+        "478200",
+        "478202"
+      ],
+      "correct": 2,
+      "exp": "Column sums from the right: 0, 0, 42, 54, 42. Carrying from the right gives 478200."
+    },
+    {
+      "q": "Calculate 132 × 400 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "52801",
+        "52799",
+        "52800",
+        "52802"
+      ],
+      "correct": 2,
+      "exp": "Column sums from the right: 0, 0, 8, 12, 4. Carrying from the right gives 52800."
+    },
+    {
+      "q": "Calculate 159 × 268 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "42612",
+        "42613",
+        "42611",
+        "42614"
+      ],
+      "correct": 0,
+      "exp": "Column sums from the right: 72, 94, 56, 16, 2. Carrying from the right gives 42612."
+    },
+    {
+      "q": "Calculate 259 × 206 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "53355",
+        "53354",
+        "53353",
+        "53356"
+      ],
+      "correct": 1,
+      "exp": "Column sums from the right: 54, 30, 30, 10, 4. Carrying from the right gives 53354."
+    },
+    {
+      "q": "Calculate 782 × 325 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "254150",
+        "254151",
+        "254149",
+        "254152"
+      ],
+      "correct": 0,
+      "exp": "Column sums from the right: 10, 44, 57, 38, 21. Carrying from the right gives 254150."
+    },
+    {
+      "q": "Calculate 475 × 595 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "282625",
+        "282626",
+        "282624",
+        "282627"
+      ],
+      "correct": 0,
+      "exp": "Column sums from the right: 25, 80, 108, 71, 20. Carrying from the right gives 282625."
+    },
+    {
+      "q": "Calculate 498 × 267 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "132967",
+        "132966",
+        "132965",
+        "132968"
+      ],
+      "correct": 1,
+      "exp": "Column sums from the right: 56, 111, 98, 42, 8. Carrying from the right gives 132966."
+    },
+    {
+      "q": "Calculate 804 × 899 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "722797",
+        "722795",
+        "722796",
+        "722798"
+      ],
+      "correct": 2,
+      "exp": "Column sums from the right: 36, 36, 104, 72, 64. Carrying from the right gives 722796."
+    },
+    {
+      "q": "Calculate 823 × 461 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "379404",
+        "379402",
+        "379405",
+        "379403"
+      ],
+      "correct": 3,
+      "exp": "Column sums from the right: 3, 20, 32, 56, 32. Carrying from the right gives 379403."
+    },
+    {
+      "q": "Calculate 185 × 714 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "132090",
+        "132091",
+        "132089",
+        "132092"
+      ],
+      "correct": 0,
+      "exp": "Column sums from the right: 20, 37, 47, 57, 7. Carrying from the right gives 132090."
+    },
+    {
+      "q": "Calculate 620 × 360 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "223201",
+        "223199",
+        "223200",
+        "223202"
+      ],
+      "correct": 2,
+      "exp": "Column sums from the right: 0, 0, 12, 42, 18. Carrying from the right gives 223200."
+    },
+    {
+      "q": "Calculate 965 × 123 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "118696",
+        "118695",
+        "118694",
+        "118697"
+      ],
+      "correct": 1,
+      "exp": "Column sums from the right: 15, 28, 44, 24, 9. Carrying from the right gives 118695."
+    }
+  ],
+  "l2_03": [
+    {
+      "q": "What is 10²?",
+      "options": [
+        "101",
+        "99",
+        "102",
+        "100"
+      ],
+      "correct": 3,
+      "exp": "1² = 1, 2 × 1 × 0 = 0, 0² = 0. Combine with place values: 100."
+    },
+    {
+      "q": "What is 26²?",
+      "options": [
+        "677",
+        "675",
+        "676",
+        "678"
+      ],
+      "correct": 2,
+      "exp": "2² = 4, 2 × 2 × 6 = 24, 6² = 36. Combine with place values: 676."
+    },
+    {
+      "q": "What is 47²?",
+      "options": [
+        "2210",
+        "2208",
+        "2209",
+        "2211"
+      ],
+      "correct": 2,
+      "exp": "4² = 16, 2 × 4 × 7 = 56, 7² = 49. Combine with place values: 2209."
+    },
+    {
+      "q": "What is 86²?",
+      "options": [
+        "7397",
+        "7395",
+        "7396",
+        "7398"
+      ],
+      "correct": 2,
+      "exp": "8² = 64, 2 × 8 × 6 = 96, 6² = 36. Combine with place values: 7396."
+    },
+    {
+      "q": "What is 93²?",
+      "options": [
+        "8650",
+        "8648",
+        "8651",
+        "8649"
+      ],
+      "correct": 3,
+      "exp": "9² = 81, 2 × 9 × 3 = 54, 3² = 9. Combine with place values: 8649."
+    },
+    {
+      "q": "What is 43²?",
+      "options": [
+        "1850",
+        "1849",
+        "1848",
+        "1851"
+      ],
+      "correct": 1,
+      "exp": "4² = 16, 2 × 4 × 3 = 24, 3² = 9. Combine with place values: 1849."
+    },
+    {
+      "q": "What is 52²?",
+      "options": [
+        "2705",
+        "2703",
+        "2706",
+        "2704"
+      ],
+      "correct": 3,
+      "exp": "5² = 25, 2 × 5 × 2 = 20, 2² = 4. Combine with place values: 2704."
+    },
+    {
+      "q": "What is 61²?",
+      "options": [
+        "3721",
+        "3722",
+        "3720",
+        "3723"
+      ],
+      "correct": 0,
+      "exp": "6² = 36, 2 × 6 × 1 = 12, 1² = 1. Combine with place values: 3721."
+    },
+    {
+      "q": "What is 28²?",
+      "options": [
+        "785",
+        "784",
+        "783",
+        "786"
+      ],
+      "correct": 1,
+      "exp": "2² = 4, 2 × 2 × 8 = 32, 8² = 64. Combine with place values: 784."
+    },
+    {
+      "q": "What is 20²?",
+      "options": [
+        "401",
+        "400",
+        "399",
+        "402"
+      ],
+      "correct": 1,
+      "exp": "2² = 4, 2 × 2 × 0 = 0, 0² = 0. Combine with place values: 400."
+    },
+    {
+      "q": "What is 14²?",
+      "options": [
+        "197",
+        "196",
+        "195",
+        "198"
+      ],
+      "correct": 1,
+      "exp": "1² = 1, 2 × 1 × 4 = 8, 4² = 16. Combine with place values: 196."
+    },
+    {
+      "q": "What is 54²?",
+      "options": [
+        "2916",
+        "2917",
+        "2915",
+        "2918"
+      ],
+      "correct": 0,
+      "exp": "5² = 25, 2 × 5 × 4 = 40, 4² = 16. Combine with place values: 2916."
+    },
+    {
+      "q": "What is 11²?",
+      "options": [
+        "122",
+        "120",
+        "121",
+        "123"
+      ],
+      "correct": 2,
+      "exp": "1² = 1, 2 × 1 × 1 = 2, 1² = 1. Combine with place values: 121."
+    },
+    {
+      "q": "What is 36²?",
+      "options": [
+        "1297",
+        "1295",
+        "1298",
+        "1296"
+      ],
+      "correct": 3,
+      "exp": "3² = 9, 2 × 3 × 6 = 36, 6² = 36. Combine with place values: 1296."
+    },
+    {
+      "q": "What is 21²?",
+      "options": [
+        "442",
+        "441",
+        "440",
+        "443"
+      ],
+      "correct": 1,
+      "exp": "2² = 4, 2 × 2 × 1 = 4, 1² = 1. Combine with place values: 441."
+    }
+  ],
+  "l2_04": [
+    {
+      "q": "What is 11³?",
+      "options": [
+        "1331",
+        "1332",
+        "1330",
+        "1333"
+      ],
+      "correct": 0,
+      "exp": "Four terms: 1³ = 1, 3 × 1² × 1 = 3, 3 × 1 × 1² = 3, 1³ = 1. Combine with carries: 1331."
+    },
+    {
+      "q": "What is 87³?",
+      "options": [
+        "658504",
+        "658502",
+        "658503",
+        "658505"
+      ],
+      "correct": 2,
+      "exp": "Four terms: 8³ = 512, 3 × 8² × 7 = 1344, 3 × 8 × 7² = 1176, 7³ = 343. Combine with carries: 658503."
+    },
+    {
+      "q": "What is 38³?",
+      "options": [
+        "54873",
+        "54872",
+        "54871",
+        "54874"
+      ],
+      "correct": 1,
+      "exp": "Four terms: 3³ = 27, 3 × 3² × 8 = 216, 3 × 3 × 8² = 576, 8³ = 512. Combine with carries: 54872."
+    },
+    {
+      "q": "What is 83³?",
+      "options": [
+        "571788",
+        "571786",
+        "571787",
+        "571789"
+      ],
+      "correct": 2,
+      "exp": "Four terms: 8³ = 512, 3 × 8² × 3 = 576, 3 × 8 × 3² = 216, 3³ = 27. Combine with carries: 571787."
+    },
+    {
+      "q": "What is 53³?",
+      "options": [
+        "148878",
+        "148876",
+        "148877",
+        "148879"
+      ],
+      "correct": 2,
+      "exp": "Four terms: 5³ = 125, 3 × 5² × 3 = 225, 3 × 5 × 3² = 135, 3³ = 27. Combine with carries: 148877."
+    },
+    {
+      "q": "What is 58³?",
+      "options": [
+        "195113",
+        "195112",
+        "195111",
+        "195114"
+      ],
+      "correct": 1,
+      "exp": "Four terms: 5³ = 125, 3 × 5² × 8 = 600, 3 × 5 × 8² = 960, 8³ = 512. Combine with carries: 195112."
+    },
+    {
+      "q": "What is 50³?",
+      "options": [
+        "125001",
+        "124999",
+        "125002",
+        "125000"
+      ],
+      "correct": 3,
+      "exp": "Four terms: 5³ = 125, 3 × 5² × 0 = 0, 3 × 5 × 0² = 0, 0³ = 0. Combine with carries: 125000."
+    },
+    {
+      "q": "What is 75³?",
+      "options": [
+        "421876",
+        "421874",
+        "421877",
+        "421875"
+      ],
+      "correct": 3,
+      "exp": "Four terms: 7³ = 343, 3 × 7² × 5 = 735, 3 × 7 × 5² = 525, 5³ = 125. Combine with carries: 421875."
+    },
+    {
+      "q": "What is 64³?",
+      "options": [
+        "262144",
+        "262145",
+        "262143",
+        "262146"
+      ],
+      "correct": 0,
+      "exp": "Four terms: 6³ = 216, 3 × 6² × 4 = 432, 3 × 6 × 4² = 288, 4³ = 64. Combine with carries: 262144."
+    },
+    {
+      "q": "What is 62³?",
+      "options": [
+        "238328",
+        "238329",
+        "238327",
+        "238330"
+      ],
+      "correct": 0,
+      "exp": "Four terms: 6³ = 216, 3 × 6² × 2 = 216, 3 × 6 × 2² = 72, 2³ = 8. Combine with carries: 238328."
+    },
+    {
+      "q": "What is 81³?",
+      "options": [
+        "531442",
+        "531440",
+        "531443",
+        "531441"
+      ],
+      "correct": 3,
+      "exp": "Four terms: 8³ = 512, 3 × 8² × 1 = 192, 3 × 8 × 1² = 24, 1³ = 1. Combine with carries: 531441."
+    },
+    {
+      "q": "What is 60³?",
+      "options": [
+        "216001",
+        "216000",
+        "215999",
+        "216002"
+      ],
+      "correct": 1,
+      "exp": "Four terms: 6³ = 216, 3 × 6² × 0 = 0, 3 × 6 × 0² = 0, 0³ = 0. Combine with carries: 216000."
+    },
+    {
+      "q": "What is 37³?",
+      "options": [
+        "50654",
+        "50652",
+        "50653",
+        "50655"
+      ],
+      "correct": 2,
+      "exp": "Four terms: 3³ = 27, 3 × 3² × 7 = 189, 3 × 3 × 7² = 441, 7³ = 343. Combine with carries: 50653."
+    },
+    {
+      "q": "What is 72³?",
+      "options": [
+        "373249",
+        "373248",
+        "373247",
+        "373250"
+      ],
+      "correct": 1,
+      "exp": "Four terms: 7³ = 343, 3 × 7² × 2 = 294, 3 × 7 × 2² = 84, 2³ = 8. Combine with carries: 373248."
+    },
+    {
+      "q": "What is 45³?",
+      "options": [
+        "91126",
+        "91124",
+        "91127",
+        "91125"
+      ],
+      "correct": 3,
+      "exp": "Four terms: 4³ = 64, 3 × 4² × 5 = 240, 3 × 4 × 5² = 300, 5³ = 125. Combine with carries: 91125."
+    }
+  ],
+  "l2_05": [
+    {
+      "q": "What is √6084?",
+      "options": [
+        "78",
+        "79",
+        "77",
+        "80"
+      ],
+      "correct": 0,
+      "exp": "78² = 6084, so √6084 = 78."
+    },
+    {
+      "q": "What is √5929?",
+      "options": [
+        "78",
+        "77",
+        "76",
+        "79"
+      ],
+      "correct": 1,
+      "exp": "77² = 5929, so √5929 = 77."
+    },
+    {
+      "q": "What is √2809?",
+      "options": [
+        "54",
+        "52",
+        "55",
+        "53"
+      ],
+      "correct": 3,
+      "exp": "53² = 2809, so √2809 = 53."
+    },
+    {
+      "q": "What is √3136?",
+      "options": [
+        "57",
+        "55",
+        "56",
+        "58"
+      ],
+      "correct": 2,
+      "exp": "56² = 3136, so √3136 = 56."
+    },
+    {
+      "q": "What is √4624?",
+      "options": [
+        "68",
+        "69",
+        "67",
+        "70"
+      ],
+      "correct": 0,
+      "exp": "68² = 4624, so √4624 = 68."
+    },
+    {
+      "q": "What is √5184?",
+      "options": [
+        "73",
+        "71",
+        "74",
+        "72"
+      ],
+      "correct": 3,
+      "exp": "72² = 5184, so √5184 = 72."
+    },
+    {
+      "q": "What is √3364?",
+      "options": [
+        "59",
+        "57",
+        "58",
+        "60"
+      ],
+      "correct": 2,
+      "exp": "58² = 3364, so √3364 = 58."
+    },
+    {
+      "q": "What is √5476?",
+      "options": [
+        "75",
+        "73",
+        "74",
+        "76"
+      ],
+      "correct": 2,
+      "exp": "74² = 5476, so √5476 = 74."
+    },
+    {
+      "q": "What is √8464?",
+      "options": [
+        "92",
+        "93",
+        "91",
+        "94"
+      ],
+      "correct": 0,
+      "exp": "92² = 8464, so √8464 = 92."
+    },
+    {
+      "q": "What is √7569?",
+      "options": [
+        "88",
+        "87",
+        "86",
+        "89"
+      ],
+      "correct": 1,
+      "exp": "87² = 7569, so √7569 = 87."
+    },
+    {
+      "q": "What is √8100?",
+      "options": [
+        "91",
+        "90",
+        "89",
+        "92"
+      ],
+      "correct": 1,
+      "exp": "90² = 8100, so √8100 = 90."
+    },
+    {
+      "q": "What is √5776?",
+      "options": [
+        "77",
+        "75",
+        "76",
+        "78"
+      ],
+      "correct": 2,
+      "exp": "76² = 5776, so √5776 = 76."
+    },
+    {
+      "q": "What is √2401?",
+      "options": [
+        "50",
+        "48",
+        "51",
+        "49"
+      ],
+      "correct": 3,
+      "exp": "49² = 2401, so √2401 = 49."
+    },
+    {
+      "q": "What is √4489?",
+      "options": [
+        "68",
+        "66",
+        "69",
+        "67"
+      ],
+      "correct": 3,
+      "exp": "67² = 4489, so √4489 = 67."
+    },
+    {
+      "q": "What is √6724?",
+      "options": [
+        "82",
+        "83",
+        "81",
+        "84"
+      ],
+      "correct": 0,
+      "exp": "82² = 6724, so √6724 = 82."
+    }
+  ],
+  "l2_06": [
+    {
+      "q": "What is the cube root of 912673?",
+      "options": [
+        "97",
+        "98",
+        "96",
+        "99"
+      ],
+      "correct": 0,
+      "exp": "97³ = 912673, so the cube root is 97. Last digit check: 7³ ends in 3, matching the last digit 3 of 912673."
+    },
+    {
+      "q": "What is the cube root of 238328?",
+      "options": [
+        "63",
+        "62",
+        "61",
+        "64"
+      ],
+      "correct": 1,
+      "exp": "62³ = 238328, so the cube root is 62. Last digit check: 2³ ends in 8, matching the last digit 8 of 238328."
+    },
+    {
+      "q": "What is the cube root of 830584?",
+      "options": [
+        "95",
+        "93",
+        "94",
+        "96"
+      ],
+      "correct": 2,
+      "exp": "94³ = 830584, so the cube root is 94. Last digit check: 4³ ends in 4, matching the last digit 4 of 830584."
+    },
+    {
+      "q": "What is the cube root of 512000?",
+      "options": [
+        "80",
+        "81",
+        "79",
+        "82"
+      ],
+      "correct": 0,
+      "exp": "80³ = 512000, so the cube root is 80. Last digit check: 0³ ends in 0, matching the last digit 0 of 512000."
+    },
+    {
+      "q": "What is the cube root of 148877?",
+      "options": [
+        "54",
+        "52",
+        "53",
+        "55"
+      ],
+      "correct": 2,
+      "exp": "53³ = 148877, so the cube root is 53. Last digit check: 3³ ends in 7, matching the last digit 7 of 148877."
+    },
+    {
+      "q": "What is the cube root of 357911?",
+      "options": [
+        "72",
+        "71",
+        "70",
+        "73"
+      ],
+      "correct": 1,
+      "exp": "71³ = 357911, so the cube root is 71. Last digit check: 1³ ends in 1, matching the last digit 1 of 357911."
+    },
+    {
+      "q": "What is the cube root of 216000?",
+      "options": [
+        "61",
+        "60",
+        "59",
+        "62"
+      ],
+      "correct": 1,
+      "exp": "60³ = 216000, so the cube root is 60. Last digit check: 0³ ends in 0, matching the last digit 0 of 216000."
+    },
+    {
+      "q": "What is the cube root of 110592?",
+      "options": [
+        "49",
+        "47",
+        "50",
+        "48"
+      ],
+      "correct": 3,
+      "exp": "48³ = 110592, so the cube root is 48. Last digit check: 8³ ends in 2, matching the last digit 2 of 110592."
+    },
+    {
+      "q": "What is the cube root of 405224?",
+      "options": [
+        "74",
+        "75",
+        "73",
+        "76"
+      ],
+      "correct": 0,
+      "exp": "74³ = 405224, so the cube root is 74. Last digit check: 4³ ends in 4, matching the last digit 4 of 405224."
+    },
+    {
+      "q": "What is the cube root of 658503?",
+      "options": [
+        "88",
+        "86",
+        "87",
+        "89"
+      ],
+      "correct": 2,
+      "exp": "87³ = 658503, so the cube root is 87. Last digit check: 7³ ends in 3, matching the last digit 3 of 658503."
+    },
+    {
+      "q": "What is the cube root of 551368?",
+      "options": [
+        "82",
+        "83",
+        "81",
+        "84"
+      ],
+      "correct": 0,
+      "exp": "82³ = 551368, so the cube root is 82. Last digit check: 2³ ends in 8, matching the last digit 8 of 551368."
+    },
+    {
+      "q": "What is the cube root of 681472?",
+      "options": [
+        "88",
+        "89",
+        "87",
+        "90"
+      ],
+      "correct": 0,
+      "exp": "88³ = 681472, so the cube root is 88. Last digit check: 8³ ends in 2, matching the last digit 2 of 681472."
+    },
+    {
+      "q": "What is the cube root of 185193?",
+      "options": [
+        "57",
+        "58",
+        "56",
+        "59"
+      ],
+      "correct": 0,
+      "exp": "57³ = 185193, so the cube root is 57. Last digit check: 7³ ends in 3, matching the last digit 3 of 185193."
+    },
+    {
+      "q": "What is the cube root of 571787?",
+      "options": [
+        "84",
+        "82",
+        "83",
+        "85"
+      ],
+      "correct": 2,
+      "exp": "83³ = 571787, so the cube root is 83. Last digit check: 3³ ends in 7, matching the last digit 7 of 571787."
+    },
+    {
+      "q": "What is the cube root of 250047?",
+      "options": [
+        "64",
+        "62",
+        "65",
+        "63"
+      ],
+      "correct": 3,
+      "exp": "63³ = 250047, so the cube root is 63. Last digit check: 3³ ends in 7, matching the last digit 7 of 250047."
+    }
+  ],
+  "l2_07": [
+    {
+      "q": "Check 52 × 40 = 2080 by casting out nines. What is the digital root of 2080?",
+      "options": [
+        "1",
+        "6",
+        "5",
+        "4"
+      ],
+      "correct": 0,
+      "exp": "Digit sum of 2080 reduces to 1. Check: digital roots of 52 and 40 are 7 and 4, and 7 × 4 reduces to 1."
+    },
+    {
+      "q": "Check 61 × 73 = 4453 by casting out nines. What is the digital root of 4453?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "7"
+      ],
+      "correct": 3,
+      "exp": "Digit sum of 4453 reduces to 7. Check: digital roots of 61 and 73 are 7 and 1, and 7 × 1 reduces to 7."
+    },
+    {
+      "q": "Check 37 × 47 = 1739 by casting out nines. What is the digital root of 1739?",
+      "options": [
+        "5",
+        "7",
+        "6",
+        "2"
+      ],
+      "correct": 3,
+      "exp": "Digit sum of 1739 reduces to 2. Check: digital roots of 37 and 47 are 1 and 2, and 1 × 2 reduces to 2."
+    },
+    {
+      "q": "Check 86 × 58 = 4988 by casting out nines. What is the digital root of 4988?",
+      "options": [
+        "5",
+        "6",
+        "8",
+        "2"
+      ],
+      "correct": 3,
+      "exp": "Digit sum of 4988 reduces to 2. Check: digital roots of 86 and 58 are 5 and 4, and 5 × 4 reduces to 2."
+    },
+    {
+      "q": "Check 35 × 53 = 1855 by casting out nines. What is the digital root of 1855?",
+      "options": [
+        "6",
+        "5",
+        "4",
+        "1"
+      ],
+      "correct": 3,
+      "exp": "Digit sum of 1855 reduces to 1. Check: digital roots of 35 and 53 are 8 and 8, and 8 × 8 reduces to 1."
+    },
+    {
+      "q": "Check 24 × 18 = 432 by casting out nines. What is the digital root of 432?",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "9"
+      ],
+      "correct": 3,
+      "exp": "Digit sum of 432 reduces to 9. Check: digital roots of 24 and 18 are 6 and 9, and 6 × 9 reduces to 9."
+    },
+    {
+      "q": "Check 13 × 18 = 234 by casting out nines. What is the digital root of 234?",
+      "options": [
+        "2",
+        "8",
+        "9",
+        "4"
+      ],
+      "correct": 2,
+      "exp": "Digit sum of 234 reduces to 9. Check: digital roots of 13 and 18 are 4 and 9, and 4 × 9 reduces to 9."
+    },
+    {
+      "q": "Check 41 × 73 = 2993 by casting out nines. What is the digital root of 2993?",
+      "options": [
+        "6",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 3,
+      "exp": "Digit sum of 2993 reduces to 5. Check: digital roots of 41 and 73 are 5 and 1, and 5 × 1 reduces to 5."
+    },
+    {
+      "q": "Check 86 × 73 = 6278 by casting out nines. What is the digital root of 6278?",
+      "options": [
+        "5",
+        "7",
+        "3",
+        "4"
+      ],
+      "correct": 0,
+      "exp": "Digit sum of 6278 reduces to 5. Check: digital roots of 86 and 73 are 5 and 1, and 5 × 1 reduces to 5."
+    },
+    {
+      "q": "Check 30 × 11 = 330 by casting out nines. What is the digital root of 330?",
+      "options": [
+        "3",
+        "9",
+        "1",
+        "6"
+      ],
+      "correct": 3,
+      "exp": "Digit sum of 330 reduces to 6. Check: digital roots of 30 and 11 are 3 and 2, and 3 × 2 reduces to 6."
+    },
+    {
+      "q": "Check 66 × 71 = 4686 by casting out nines. What is the digital root of 4686?",
+      "options": [
+        "1",
+        "6",
+        "5",
+        "4"
+      ],
+      "correct": 1,
+      "exp": "Digit sum of 4686 reduces to 6. Check: digital roots of 66 and 71 are 3 and 8, and 3 × 8 reduces to 6."
+    },
+    {
+      "q": "Check 16 × 15 = 240 by casting out nines. What is the digital root of 240?",
+      "options": [
+        "6",
+        "2",
+        "9",
+        "4"
+      ],
+      "correct": 0,
+      "exp": "Digit sum of 240 reduces to 6. Check: digital roots of 16 and 15 are 7 and 6, and 7 × 6 reduces to 6."
+    },
+    {
+      "q": "Check 62 × 97 = 6014 by casting out nines. What is the digital root of 6014?",
+      "options": [
+        "1",
+        "3",
+        "2",
+        "8"
+      ],
+      "correct": 2,
+      "exp": "Digit sum of 6014 reduces to 2. Check: digital roots of 62 and 97 are 8 and 7, and 8 × 7 reduces to 2."
+    },
+    {
+      "q": "Check 29 × 84 = 2436 by casting out nines. What is the digital root of 2436?",
+      "options": [
+        "7",
+        "5",
+        "9",
+        "6"
+      ],
+      "correct": 3,
+      "exp": "Digit sum of 2436 reduces to 6. Check: digital roots of 29 and 84 are 2 and 3, and 2 × 3 reduces to 6."
+    },
+    {
+      "q": "Check 80 × 65 = 5200 by casting out nines. What is the digital root of 5200?",
+      "options": [
+        "2",
+        "7",
+        "8",
+        "1"
+      ],
+      "correct": 1,
+      "exp": "Digit sum of 5200 reduces to 7. Check: digital roots of 80 and 65 are 8 and 2, and 8 × 2 reduces to 7."
+    }
+  ],
+  "l2_08": [
+    {
+      "q": "What is 63 × 25?",
+      "options": [
+        "1576",
+        "1574",
+        "1575",
+        "1577"
+      ],
+      "correct": 2,
+      "exp": "63 × 100 = 6300, then ÷ 4 = 1575."
+    },
+    {
+      "q": "What is 156 × 5?",
+      "options": [
+        "780",
+        "781",
+        "779",
+        "782"
+      ],
+      "correct": 0,
+      "exp": "156 × 10 = 1560, then ÷ 2 = 780."
+    },
+    {
+      "q": "What is 120 × 25?",
+      "options": [
+        "3001",
+        "2999",
+        "3002",
+        "3000"
+      ],
+      "correct": 3,
+      "exp": "120 × 100 = 12000, then ÷ 4 = 3000."
+    },
+    {
+      "q": "What is 35 × 125?",
+      "options": [
+        "4376",
+        "4374",
+        "4377",
+        "4375"
+      ],
+      "correct": 3,
+      "exp": "35 × 1000 = 35000, then ÷ 8 = 4375."
+    },
+    {
+      "q": "What is 14 × 5?",
       "options": [
         "71",
         "70",
@@ -2267,387 +2918,744 @@ export const PRACTICE_EXTRA = {
         "72"
       ],
       "correct": 1,
-      "exp": "1 + 15 + 54 = 70 = (1 + 6)(1 + 9) = 70."
+      "exp": "14 × 10 = 140, then ÷ 2 = 70."
     },
     {
-      "q": "Factorise x² + 5x + 4.",
+      "q": "What is 40 × 125?",
       "options": [
-        "(x−1)(x−4)",
-        "(x+1)(x+4)",
-        "(x+1)(x−4)",
-        "(x+2)(x+3)"
-      ],
-      "correct": 1,
-      "exp": "Factors of 4 that add to 5: 1 and 4. So x² + 5x + 4 = (x + 1)(x + 4)."
-    },
-    {
-      "q": "What is the sum of the coefficients of x² + 10x + 24?",
-      "options": [
-        "36",
-        "35",
-        "34",
-        "37"
-      ],
-      "correct": 1,
-      "exp": "1 + 10 + 24 = 35 = (1 + 4)(1 + 6) = 35."
-    }
-  ],
-  "l3_15": [
-    {
-      "q": "Expand (2x + 3)(3x + 5).",
-      "options": [
-        "6x² + 19x + 15",
-        "6x² + x + 15",
-        "6x² + 19x − 15",
-        "6x² + 20x + 15"
+        "5000",
+        "5001",
+        "4999",
+        "5002"
       ],
       "correct": 0,
-      "exp": "First: 2 × 3 = 6x². Cross: 2 × 5 + 3 × 3 = 19x. Last: 3 × 5 = 15."
+      "exp": "40 × 1000 = 40000, then ÷ 8 = 5000."
     },
     {
-      "q": "Expand (2x + 3)(2x + 5).",
+      "q": "What is 108 × 125?",
       "options": [
-        "4x² + 4x + 15",
-        "4x² + 16x + 15",
-        "4x² + 16x − 15",
-        "4x² + 17x + 15"
-      ],
-      "correct": 1,
-      "exp": "First: 2 × 2 = 4x². Cross: 2 × 5 + 3 × 2 = 16x. Last: 3 × 5 = 15."
-    },
-    {
-      "q": "Expand (4x + 3)(4x + 6).",
-      "options": [
-        "16x² + 12x + 18",
-        "16x² + 36x − 18",
-        "16x² + 36x + 18",
-        "16x² + 37x + 18"
+        "13501",
+        "13499",
+        "13500",
+        "13502"
       ],
       "correct": 2,
-      "exp": "First: 4 × 4 = 16x². Cross: 4 × 6 + 3 × 4 = 36x. Last: 3 × 6 = 18."
+      "exp": "108 × 1000 = 108000, then ÷ 8 = 13500."
     },
     {
-      "q": "Expand (x − 2)(2x + 3).",
+      "q": "What is 137 × 25?",
       "options": [
-        "2x² + 7x − 6",
-        "2x² − x + 6",
-        "2x² − x − 6",
-        "2x² − 6"
+        "3426",
+        "3424",
+        "3427",
+        "3425"
       ],
-      "correct": 2,
-      "exp": "First: 1 × 2 = 2x². Cross: 1 × 3 + -2 × 2 = -1x. Last: -2 × 3 = -6."
+      "correct": 3,
+      "exp": "137 × 100 = 13700, then ÷ 4 = 3425."
     },
     {
-      "q": "Expand (2x − 4)(2x − 6).",
+      "q": "What is 121 × 5?",
       "options": [
-        "4x² − 4x + 24",
-        "4x² − 20x − 24",
-        "4x² − 20x + 24",
-        "4x² − 19x + 24"
+        "606",
+        "604",
+        "605",
+        "607"
       ],
       "correct": 2,
-      "exp": "First: 2 × 2 = 4x². Cross: 2 × -6 + -4 × 2 = -20x. Last: -4 × -6 = 24."
-    }
-  ],
-  "l3_16": [
-    {
-      "q": "What is 6 × 142857?",
-      "options": [
-        "857143",
-        "857141",
-        "857142",
-        "857144"
-      ],
-      "correct": 2,
-      "exp": "The digits of 142857 rotate: 6 × 142857 = 857142."
+      "exp": "121 × 10 = 1210, then ÷ 2 = 605."
     },
     {
-      "q": "What is 7 × 142857?",
+      "q": "What is 16 × 125?",
       "options": [
-        "1000000",
-        "999998",
-        "999999",
-        "1000001"
-      ],
-      "correct": 2,
-      "exp": "7 × 142857 = 999999, every digit is 9."
-    },
-    {
-      "q": "What is 4 × 142857?",
-      "options": [
-        "571429",
-        "571427",
-        "571428",
-        "571430"
-      ],
-      "correct": 2,
-      "exp": "The digits of 142857 rotate: 4 × 142857 = 571428."
-    },
-    {
-      "q": "What is 1 × 142857?",
-      "options": [
-        "142857",
-        "142858",
-        "142856",
-        "142859"
+        "2000",
+        "2001",
+        "1999",
+        "2002"
       ],
       "correct": 0,
-      "exp": "The digits of 142857 rotate: 1 × 142857 = 142857."
+      "exp": "16 × 1000 = 16000, then ÷ 8 = 2000."
     },
     {
-      "q": "What is 14 × 142857?",
+      "q": "What is 130 × 5?",
       "options": [
-        "1999999",
-        "1999998",
-        "1999997",
-        "2000000"
+        "651",
+        "649",
+        "652",
+        "650"
       ],
-      "correct": 1,
-      "exp": "14 × 142857 = 2 × 999999 = 1999998."
-    }
-  ],
-  "l4_01": [
+      "correct": 3,
+      "exp": "130 × 10 = 1300, then ÷ 2 = 650."
+    },
     {
-      "q": "What is 14³?",
+      "q": "What is 48 × 125?",
       "options": [
-        "2745",
-        "2743",
-        "2744",
-        "2746"
+        "6001",
+        "5999",
+        "6000",
+        "6002"
       ],
       "correct": 2,
-      "exp": "Four terms: 1³ = 1, 3 × 1² × 4 = 12, 3 × 1 × 4² = 48, 4³ = 64. Combine with carries: 2744."
+      "exp": "48 × 1000 = 48000, then ÷ 8 = 6000."
     },
     {
-      "q": "What is 36³?",
+      "q": "What is 190 × 25?",
       "options": [
-        "46656",
-        "46657",
-        "46655",
-        "46658"
-      ],
-      "correct": 0,
-      "exp": "Four terms: 3³ = 27, 3 × 3² × 6 = 162, 3 × 3 × 6² = 324, 6³ = 216. Combine with carries: 46656."
-    },
-    {
-      "q": "What is 20³?",
-      "options": [
-        "8001",
-        "7999",
-        "8002",
-        "8000"
-      ],
-      "correct": 3,
-      "exp": "Four terms: 2³ = 8, 3 × 2² × 0 = 0, 3 × 2 × 0² = 0, 0³ = 0. Combine with carries: 8000."
-    },
-    {
-      "q": "What is 25³?",
-      "options": [
-        "15626",
-        "15624",
-        "15627",
-        "15625"
-      ],
-      "correct": 3,
-      "exp": "Four terms: 2³ = 8, 3 × 2² × 5 = 60, 3 × 2 × 5² = 150, 5³ = 125. Combine with carries: 15625."
-    },
-    {
-      "q": "What is 12³?",
-      "options": [
-        "1728",
-        "1729",
-        "1727",
-        "1730"
-      ],
-      "correct": 0,
-      "exp": "Four terms: 1³ = 1, 3 × 1² × 2 = 6, 3 × 1 × 2² = 12, 2³ = 8. Combine with carries: 1728."
-    }
-  ],
-  "l4_02": [
-    {
-      "q": "Find 6085² using the Duplex method.",
-      "options": [
-        "37027226",
-        "37027225",
-        "37027224",
-        "37027227"
-      ],
-      "correct": 1,
-      "exp": "Duplex (column) sums from the right: 25, 80, 64, 60, 96, 0, 36. Carrying gives 37027225."
-    },
-    {
-      "q": "Find 1671² using the Duplex method.",
-      "options": [
-        "2792242",
-        "2792241",
-        "2792240",
-        "2792243"
-      ],
-      "correct": 1,
-      "exp": "Duplex (column) sums from the right: 1, 14, 61, 86, 50, 12, 1. Carrying gives 2792241."
-    },
-    {
-      "q": "Find 2662² using the Duplex method.",
-      "options": [
-        "7086245",
-        "7086243",
-        "7086244",
-        "7086246"
+        "4751",
+        "4749",
+        "4750",
+        "4752"
       ],
       "correct": 2,
-      "exp": "Duplex (column) sums from the right: 4, 24, 60, 80, 60, 24, 4. Carrying gives 7086244."
+      "exp": "190 × 100 = 19000, then ÷ 4 = 4750."
     },
     {
-      "q": "Find 4617² using the Duplex method.",
+      "q": "What is 123 × 25?",
       "options": [
-        "21316690",
-        "21316688",
-        "21316691",
-        "21316689"
+        "3076",
+        "3074",
+        "3077",
+        "3075"
       ],
       "correct": 3,
-      "exp": "Duplex (column) sums from the right: 49, 14, 85, 68, 44, 48, 16. Carrying gives 21316689."
+      "exp": "123 × 100 = 12300, then ÷ 4 = 3075."
     },
     {
-      "q": "Find 6530² using the Duplex method.",
+      "q": "What is 102 × 5?",
       "options": [
-        "42640901",
-        "42640900",
-        "42640899",
-        "42640902"
+        "511",
+        "509",
+        "512",
+        "510"
+      ],
+      "correct": 3,
+      "exp": "102 × 10 = 1020, then ÷ 2 = 510."
+    }
+  ],
+  "l2_09": [
+    {
+      "q": "What is 3360 ÷ 27? Give the quotient and remainder.",
+      "options": [
+        "Q:125 R:12",
+        "Q:123 R:39",
+        "Q:124 R:12",
+        "Q:124 R:13"
+      ],
+      "correct": 2,
+      "exp": "27 × 124 = 3348, remainder 3360 − 3348 = 12."
+    },
+    {
+      "q": "What is 5484 ÷ 17? Give the quotient and remainder.",
+      "options": [
+        "Q:322 R:10",
+        "Q:323 R:10",
+        "Q:321 R:27",
+        "Q:322 R:11"
+      ],
+      "correct": 0,
+      "exp": "17 × 322 = 5474, remainder 5484 − 5474 = 10."
+    },
+    {
+      "q": "What is 2916 ÷ 54? Give the quotient and remainder.",
+      "options": [
+        "Q:55 R:0",
+        "Q:53 R:54",
+        "Q:54 R:1",
+        "Q:54 R:0"
+      ],
+      "correct": 3,
+      "exp": "54 × 54 = 2916, remainder 2916 − 2916 = 0."
+    },
+    {
+      "q": "What is 5514 ÷ 15? Give the quotient and remainder.",
+      "options": [
+        "Q:368 R:9",
+        "Q:366 R:24",
+        "Q:367 R:9",
+        "Q:367 R:10"
+      ],
+      "correct": 2,
+      "exp": "15 × 367 = 5505, remainder 5514 − 5505 = 9."
+    },
+    {
+      "q": "What is 4277 ÷ 25? Give the quotient and remainder.",
+      "options": [
+        "Q:172 R:2",
+        "Q:171 R:2",
+        "Q:170 R:27",
+        "Q:171 R:3"
       ],
       "correct": 1,
-      "exp": "Duplex (column) sums from the right: 0, 0, 9, 30, 61, 60, 36. Carrying gives 42640900."
-    }
-  ],
-  "l4_03": [
-    {
-      "q": "What is the remainder when 1824 is divided by 7?",
-      "options": [
-        "5",
-        "6",
-        "2",
-        "4"
-      ],
-      "correct": 3,
-      "exp": "1824 = 7 × 260 + 4, so the remainder is 4."
+      "exp": "25 × 171 = 4275, remainder 4277 − 4275 = 2."
     },
     {
-      "q": "What is the remainder when 6250 is divided by 11?",
+      "q": "What is 5368 ÷ 82? Give the quotient and remainder.",
       "options": [
-        "0",
-        "6",
-        "7",
-        "2"
+        "Q:66 R:38",
+        "Q:64 R:120",
+        "Q:65 R:39",
+        "Q:65 R:38"
       ],
       "correct": 3,
-      "exp": "6250 = 11 × 568 + 2, so the remainder is 2."
+      "exp": "82 × 65 = 5330, remainder 5368 − 5330 = 38."
     },
     {
-      "q": "What is the remainder when 8509 is divided by 11?",
+      "q": "What is 4305 ÷ 85? Give the quotient and remainder.",
       "options": [
-        "6",
-        "9",
-        "3",
-        "4"
+        "Q:50 R:55",
+        "Q:51 R:55",
+        "Q:49 R:140",
+        "Q:50 R:56"
       ],
       "correct": 0,
-      "exp": "8509 = 11 × 773 + 6, so the remainder is 6."
+      "exp": "85 × 50 = 4250, remainder 4305 − 4250 = 55."
     },
     {
-      "q": "What is the remainder when 5824 is divided by 11?",
+      "q": "What is 1333 ÷ 5? Give the quotient and remainder.",
       "options": [
-        "10",
-        "4",
-        "8",
-        "5"
+        "Q:267 R:3",
+        "Q:266 R:3",
+        "Q:265 R:8",
+        "Q:266 R:4"
       ],
-      "correct": 3,
-      "exp": "5824 = 11 × 529 + 5, so the remainder is 5."
+      "correct": 1,
+      "exp": "5 × 266 = 1330, remainder 1333 − 1330 = 3."
     },
     {
-      "q": "What is the remainder when 5232 is divided by 13?",
+      "q": "What is 1252 ÷ 37? Give the quotient and remainder.",
       "options": [
-        "12",
-        "7",
-        "2",
-        "6"
+        "Q:34 R:31",
+        "Q:32 R:68",
+        "Q:33 R:32",
+        "Q:33 R:31"
       ],
       "correct": 3,
-      "exp": "5232 = 13 × 402 + 6, so the remainder is 6."
-    }
-  ],
-  "l4_04": [
+      "exp": "37 × 33 = 1221, remainder 1252 − 1221 = 31."
+    },
     {
-      "q": "What is the first digit after the decimal point of 1/47?",
+      "q": "What is 1303 ÷ 94? Give the quotient and remainder.",
       "options": [
-        "0",
-        "5",
-        "9",
-        "7"
+        "Q:14 R:81",
+        "Q:13 R:81",
+        "Q:12 R:175",
+        "Q:13 R:82"
+      ],
+      "correct": 1,
+      "exp": "94 × 13 = 1222, remainder 1303 − 1222 = 81."
+    },
+    {
+      "q": "What is 8286 ÷ 16? Give the quotient and remainder.",
+      "options": [
+        "Q:517 R:14",
+        "Q:518 R:14",
+        "Q:516 R:30",
+        "Q:517 R:15"
       ],
       "correct": 0,
-      "exp": "1 ÷ 47 = 0.021276595744…, so the first digit is 0."
+      "exp": "16 × 517 = 8272, remainder 8286 − 8272 = 14."
     },
     {
-      "q": "What is the first digit after the decimal point of 1/19?",
+      "q": "What is 3114 ÷ 45? Give the quotient and remainder.",
       "options": [
-        "3",
-        "7",
-        "0",
-        "9"
-      ],
-      "correct": 2,
-      "exp": "1 ÷ 19 = 0.052631578947…, so the first digit is 0."
-    },
-    {
-      "q": "What is the first digit after the decimal point of 1/17?",
-      "options": [
-        "8",
-        "2",
-        "4",
-        "0"
+        "Q:70 R:9",
+        "Q:68 R:54",
+        "Q:69 R:10",
+        "Q:69 R:9"
       ],
       "correct": 3,
-      "exp": "1 ÷ 17 = 0.058823529411…, so the first digit is 0."
+      "exp": "45 × 69 = 3105, remainder 3114 − 3105 = 9."
     },
     {
-      "q": "How many digits repeat in the decimal of 1/23?",
+      "q": "What is 4615 ÷ 32? Give the quotient and remainder.",
       "options": [
-        "23",
-        "21",
-        "22",
-        "24"
-      ],
-      "correct": 2,
-      "exp": "Long division of 1 by 23 returns to remainder 1 after 22 digits: 0.043478260869…."
-    },
-    {
-      "q": "How many digits repeat in the decimal of 1/17?",
-      "options": [
-        "17",
-        "15",
-        "18",
-        "16"
+        "Q:145 R:7",
+        "Q:143 R:39",
+        "Q:144 R:8",
+        "Q:144 R:7"
       ],
       "correct": 3,
-      "exp": "Long division of 1 by 17 returns to remainder 1 after 16 digits: 0.058823529411…."
+      "exp": "32 × 144 = 4608, remainder 4615 − 4608 = 7."
+    },
+    {
+      "q": "What is 1919 ÷ 12? Give the quotient and remainder.",
+      "options": [
+        "Q:160 R:11",
+        "Q:158 R:23",
+        "Q:159 R:12",
+        "Q:159 R:11"
+      ],
+      "correct": 3,
+      "exp": "12 × 159 = 1908, remainder 1919 − 1908 = 11."
+    },
+    {
+      "q": "What is 5159 ÷ 45? Give the quotient and remainder.",
+      "options": [
+        "Q:115 R:29",
+        "Q:113 R:74",
+        "Q:114 R:29",
+        "Q:114 R:30"
+      ],
+      "correct": 2,
+      "exp": "45 × 114 = 5130, remainder 5159 − 5130 = 29."
     }
   ],
-  "l4_05": [
+  "l2_10": [
     {
-      "q": "What day of the week does 11 February 2011 fall on?",
+      "q": "Add 1/2 + 6/7. Give your answer in lowest terms.",
       "options": [
-        "Saturday",
+        "20/14",
+        "19/14",
+        "7/9",
+        "19/15"
+      ],
+      "correct": 1,
+      "exp": "(1 × 7 + 6 × 2) / (2 × 7) = 19/14."
+    },
+    {
+      "q": "Add 2/3 + 7/9. Give your answer in lowest terms.",
+      "options": [
+        "13/9",
+        "39/27",
+        "9/12",
+        "14/9"
+      ],
+      "correct": 0,
+      "exp": "(2 × 9 + 7 × 3) / (3 × 9) = 39/27, which simplifies to 13/9."
+    },
+    {
+      "q": "Add 2/5 + 2/6. Give your answer in lowest terms.",
+      "options": [
+        "11/15",
+        "22/30",
+        "4/11",
+        "12/15"
+      ],
+      "correct": 0,
+      "exp": "(2 × 6 + 2 × 5) / (5 × 6) = 22/30, which simplifies to 11/15."
+    },
+    {
+      "q": "Add 1/3 + 3/7. Give your answer in lowest terms.",
+      "options": [
+        "17/21",
+        "4/10",
+        "16/21",
+        "16/22"
+      ],
+      "correct": 2,
+      "exp": "(1 × 7 + 3 × 3) / (3 × 7) = 16/21."
+    },
+    {
+      "q": "Add 2/6 + 2/4. Give your answer in lowest terms.",
+      "options": [
+        "20/24",
+        "4/10",
+        "5/6",
+        "6/6"
+      ],
+      "correct": 2,
+      "exp": "(2 × 4 + 2 × 6) / (6 × 4) = 20/24, which simplifies to 5/6."
+    },
+    {
+      "q": "Add 1/2 + 2/5. Give your answer in lowest terms.",
+      "options": [
+        "10/10",
+        "3/7",
+        "9/11",
+        "9/10"
+      ],
+      "correct": 3,
+      "exp": "(1 × 5 + 2 × 2) / (2 × 5) = 9/10."
+    },
+    {
+      "q": "Add 1/3 + 2/3. Give your answer in lowest terms.",
+      "options": [
+        "9/9",
+        "3/6",
+        "2/1",
+        "1"
+      ],
+      "correct": 3,
+      "exp": "(1 × 3 + 2 × 3) / (3 × 3) = 9/9, which simplifies to 1."
+    },
+    {
+      "q": "Add 5/6 + 7/8. Give your answer in lowest terms.",
+      "options": [
+        "82/48",
+        "12/14",
+        "42/24",
+        "41/24"
+      ],
+      "correct": 3,
+      "exp": "(5 × 8 + 7 × 6) / (6 × 8) = 82/48, which simplifies to 41/24."
+    },
+    {
+      "q": "Add 4/7 + 3/7. Give your answer in lowest terms.",
+      "options": [
+        "1",
+        "49/49",
+        "7/14",
+        "2/1"
+      ],
+      "correct": 0,
+      "exp": "(4 × 7 + 3 × 7) / (7 × 7) = 49/49, which simplifies to 1."
+    },
+    {
+      "q": "Add 1/2 + 4/5. Give your answer in lowest terms.",
+      "options": [
+        "14/10",
+        "5/7",
+        "13/11",
+        "13/10"
+      ],
+      "correct": 3,
+      "exp": "(1 × 5 + 4 × 2) / (2 × 5) = 13/10."
+    },
+    {
+      "q": "Add 2/8 + 6/7. Give your answer in lowest terms.",
+      "options": [
+        "62/56",
+        "8/15",
+        "32/28",
+        "31/28"
+      ],
+      "correct": 3,
+      "exp": "(2 × 7 + 6 × 8) / (8 × 7) = 62/56, which simplifies to 31/28."
+    },
+    {
+      "q": "Add 2/8 + 3/8. Give your answer in lowest terms.",
+      "options": [
+        "40/64",
+        "5/8",
+        "5/16",
+        "6/8"
+      ],
+      "correct": 1,
+      "exp": "(2 × 8 + 3 × 8) / (8 × 8) = 40/64, which simplifies to 5/8."
+    },
+    {
+      "q": "Add 1/6 + 2/4. Give your answer in lowest terms.",
+      "options": [
+        "16/24",
+        "3/10",
+        "2/3",
+        "3/3"
+      ],
+      "correct": 2,
+      "exp": "(1 × 4 + 2 × 6) / (6 × 4) = 16/24, which simplifies to 2/3."
+    },
+    {
+      "q": "Add 1/2 + 1/3. Give your answer in lowest terms.",
+      "options": [
+        "6/6",
+        "5/6",
+        "2/5",
+        "5/7"
+      ],
+      "correct": 1,
+      "exp": "(1 × 3 + 1 × 2) / (2 × 3) = 5/6."
+    },
+    {
+      "q": "Add 3/8 + 1/4. Give your answer in lowest terms.",
+      "options": [
+        "20/32",
+        "5/8",
+        "4/12",
+        "6/8"
+      ],
+      "correct": 1,
+      "exp": "(3 × 4 + 1 × 8) / (8 × 4) = 20/32, which simplifies to 5/8."
+    }
+  ],
+  "l2_11": [
+    {
+      "q": "What is 45 × 45?",
+      "options": [
+        "2026",
+        "2024",
+        "2025",
+        "2027"
+      ],
+      "correct": 2,
+      "exp": "Same tens digit 4, and units 5 + 5 = 10. Tens: 4 × 5 = 20, followed by units 5 × 5 = 25. Answer: 2025."
+    },
+    {
+      "q": "What is 73 × 77?",
+      "options": [
+        "5622",
+        "5620",
+        "5621",
+        "5623"
+      ],
+      "correct": 2,
+      "exp": "Same tens digit 7, and units 3 + 7 = 10. Tens: 7 × 8 = 56, followed by units 3 × 7 = 21. Answer: 5621."
+    },
+    {
+      "q": "What is 12 × 18?",
+      "options": [
+        "216",
+        "217",
+        "215",
+        "218"
+      ],
+      "correct": 0,
+      "exp": "Same tens digit 1, and units 2 + 8 = 10. Tens: 1 × 2 = 2, followed by units 2 × 8 = 16. Answer: 216."
+    },
+    {
+      "q": "What is 63 × 67?",
+      "options": [
+        "4221",
+        "4222",
+        "4220",
+        "4223"
+      ],
+      "correct": 0,
+      "exp": "Same tens digit 6, and units 3 + 7 = 10. Tens: 6 × 7 = 42, followed by units 3 × 7 = 21. Answer: 4221."
+    },
+    {
+      "q": "What is 91 × 99?",
+      "options": [
+        "9010",
+        "9008",
+        "9009",
+        "9011"
+      ],
+      "correct": 2,
+      "exp": "Same tens digit 9, and units 1 + 9 = 10. Tens: 9 × 10 = 90, followed by units 1 × 9 = 09. Answer: 9009."
+    },
+    {
+      "q": "What is 25 × 25?",
+      "options": [
+        "626",
+        "625",
+        "624",
+        "627"
+      ],
+      "correct": 1,
+      "exp": "Same tens digit 2, and units 5 + 5 = 10. Tens: 2 × 3 = 6, followed by units 5 × 5 = 25. Answer: 625."
+    },
+    {
+      "q": "What is 71 × 79?",
+      "options": [
+        "5609",
+        "5610",
+        "5608",
+        "5611"
+      ],
+      "correct": 0,
+      "exp": "Same tens digit 7, and units 1 + 9 = 10. Tens: 7 × 8 = 56, followed by units 1 × 9 = 09. Answer: 5609."
+    },
+    {
+      "q": "What is 97 × 93?",
+      "options": [
+        "9022",
+        "9020",
+        "9023",
+        "9021"
+      ],
+      "correct": 3,
+      "exp": "Same tens digit 9, and units 7 + 3 = 10. Tens: 9 × 10 = 90, followed by units 7 × 3 = 21. Answer: 9021."
+    },
+    {
+      "q": "What is 29 × 21?",
+      "options": [
+        "609",
+        "610",
+        "608",
+        "611"
+      ],
+      "correct": 0,
+      "exp": "Same tens digit 2, and units 9 + 1 = 10. Tens: 2 × 3 = 6, followed by units 9 × 1 = 09. Answer: 609."
+    },
+    {
+      "q": "What is 84 × 86?",
+      "options": [
+        "7225",
+        "7223",
+        "7226",
+        "7224"
+      ],
+      "correct": 3,
+      "exp": "Same tens digit 8, and units 4 + 6 = 10. Tens: 8 × 9 = 72, followed by units 4 × 6 = 24. Answer: 7224."
+    },
+    {
+      "q": "What is 26 × 24?",
+      "options": [
+        "625",
+        "624",
+        "623",
+        "626"
+      ],
+      "correct": 1,
+      "exp": "Same tens digit 2, and units 6 + 4 = 10. Tens: 2 × 3 = 6, followed by units 6 × 4 = 24. Answer: 624."
+    },
+    {
+      "q": "What is 88 × 82?",
+      "options": [
+        "7217",
+        "7215",
+        "7216",
+        "7218"
+      ],
+      "correct": 2,
+      "exp": "Same tens digit 8, and units 8 + 2 = 10. Tens: 8 × 9 = 72, followed by units 8 × 2 = 16. Answer: 7216."
+    },
+    {
+      "q": "What is 47 × 43?",
+      "options": [
+        "2022",
+        "2021",
+        "2020",
+        "2023"
+      ],
+      "correct": 1,
+      "exp": "Same tens digit 4, and units 7 + 3 = 10. Tens: 4 × 5 = 20, followed by units 7 × 3 = 21. Answer: 2021."
+    },
+    {
+      "q": "What is 78 × 72?",
+      "options": [
+        "5616",
+        "5617",
+        "5615",
+        "5618"
+      ],
+      "correct": 0,
+      "exp": "Same tens digit 7, and units 8 + 2 = 10. Tens: 7 × 8 = 56, followed by units 8 × 2 = 16. Answer: 5616."
+    },
+    {
+      "q": "What is 34 × 36?",
+      "options": [
+        "1225",
+        "1223",
+        "1226",
+        "1224"
+      ],
+      "correct": 3,
+      "exp": "Same tens digit 3, and units 4 + 6 = 10. Tens: 3 × 4 = 12, followed by units 4 × 6 = 24. Answer: 1224."
+    }
+  ],
+  "l2_12": [
+    {
+      "q": "What day of the week does 23 April 2015 fall on?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Sunday",
+        "Saturday"
+      ],
+      "correct": 0,
+      "exp": "The day-of-the-week calculation gives Thursday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 7 February 2022 fall on?",
+      "options": [
+        "Wednesday",
+        "Sunday",
+        "Monday",
+        "Thursday"
+      ],
+      "correct": 2,
+      "exp": "The day-of-the-week calculation gives Monday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 26 August 2011 fall on?",
+      "options": [
+        "Monday",
         "Friday",
         "Tuesday",
-        "Monday"
+        "Sunday"
       ],
       "correct": 1,
       "exp": "The day-of-the-week calculation gives Friday, checked against the standard calendar."
     },
     {
-      "q": "What day of the week does 13 April 2012 fall on?",
+      "q": "What day of the week does 19 September 2004 fall on?",
+      "options": [
+        "Thursday",
+        "Monday",
+        "Sunday",
+        "Tuesday"
+      ],
+      "correct": 2,
+      "exp": "The day-of-the-week calculation gives Sunday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 18 December 2021 fall on?",
+      "options": [
+        "Tuesday",
+        "Monday",
+        "Thursday",
+        "Saturday"
+      ],
+      "correct": 3,
+      "exp": "The day-of-the-week calculation gives Saturday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 3 November 2004 fall on?",
+      "options": [
+        "Sunday",
+        "Friday",
+        "Wednesday",
+        "Saturday"
+      ],
+      "correct": 2,
+      "exp": "The day-of-the-week calculation gives Wednesday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 2 May 2004 fall on?",
+      "options": [
+        "Sunday",
+        "Saturday",
+        "Wednesday",
+        "Monday"
+      ],
+      "correct": 0,
+      "exp": "The day-of-the-week calculation gives Sunday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 6 April 2008 fall on?",
+      "options": [
+        "Sunday",
+        "Saturday",
+        "Monday",
+        "Tuesday"
+      ],
+      "correct": 0,
+      "exp": "The day-of-the-week calculation gives Sunday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 10 September 2026 fall on?",
+      "options": [
+        "Sunday",
+        "Thursday",
+        "Tuesday",
+        "Monday"
+      ],
+      "correct": 1,
+      "exp": "The day-of-the-week calculation gives Thursday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 28 April 2027 fall on?",
+      "options": [
+        "Friday",
+        "Wednesday",
+        "Thursday",
+        "Saturday"
+      ],
+      "correct": 1,
+      "exp": "The day-of-the-week calculation gives Wednesday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 21 April 2015 fall on?",
+      "options": [
+        "Sunday",
+        "Tuesday",
+        "Monday",
+        "Saturday"
+      ],
+      "correct": 1,
+      "exp": "The day-of-the-week calculation gives Tuesday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 23 November 2007 fall on?",
       "options": [
         "Wednesday",
         "Thursday",
@@ -2658,235 +3666,1521 @@ export const PRACTICE_EXTRA = {
       "exp": "The day-of-the-week calculation gives Friday, checked against the standard calendar."
     },
     {
-      "q": "What day of the week does 13 July 2026 fall on?",
+      "q": "What day of the week does 13 December 2025 fall on?",
       "options": [
-        "Thursday",
-        "Tuesday",
-        "Monday",
-        "Saturday"
-      ],
-      "correct": 2,
-      "exp": "The day-of-the-week calculation gives Monday, checked against the standard calendar."
-    },
-    {
-      "q": "What day of the week does 23 December 2005 fall on?",
-      "options": [
-        "Saturday",
         "Friday",
-        "Sunday",
+        "Tuesday",
+        "Saturday",
         "Wednesday"
       ],
-      "correct": 1,
+      "correct": 2,
+      "exp": "The day-of-the-week calculation gives Saturday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 10 December 2027 fall on?",
+      "options": [
+        "Saturday",
+        "Monday",
+        "Friday",
+        "Sunday"
+      ],
+      "correct": 2,
       "exp": "The day-of-the-week calculation gives Friday, checked against the standard calendar."
     },
     {
-      "q": "What day of the week does 21 March 2017 fall on?",
+      "q": "What day of the week does 20 February 2000 fall on?",
       "options": [
-        "Friday",
         "Sunday",
-        "Thursday",
-        "Tuesday"
-      ],
-      "correct": 3,
-      "exp": "The day-of-the-week calculation gives Tuesday, checked against the standard calendar."
-    }
-  ],
-  "l4_06": [
-    {
-      "q": "Find √4712 correct to 2 decimal places.",
-      "options": [
-        "68.65",
-        "68.64",
-        "68.63",
-        "68.74"
-      ],
-      "correct": 1,
-      "exp": "68² = 4624 and 69² = 4761, so √4712 lies between 68 and 69. Value: 68.64."
-    },
-    {
-      "q": "Find √947 correct to 2 decimal places.",
-      "options": [
-        "30.78",
-        "30.77",
-        "30.76",
-        "30.87"
-      ],
-      "correct": 1,
-      "exp": "30² = 900 and 31² = 961, so √947 lies between 30 and 31. Value: 30.77."
-    },
-    {
-      "q": "Find √5343 correct to 2 decimal places.",
-      "options": [
-        "73.10",
-        "73.11",
-        "73.09",
-        "73.20"
+        "Friday",
+        "Saturday",
+        "Thursday"
       ],
       "correct": 0,
-      "exp": "73² = 5329 and 74² = 5476, so √5343 lies between 73 and 74. Value: 73.10."
-    },
-    {
-      "q": "Find √5177 correct to 2 decimal places.",
-      "options": [
-        "71.96",
-        "71.94",
-        "71.95",
-        "72.05"
-      ],
-      "correct": 2,
-      "exp": "71² = 5041 and 72² = 5184, so √5177 lies between 71 and 72. Value: 71.95."
-    },
-    {
-      "q": "Find √1935 correct to 2 decimal places.",
-      "options": [
-        "44.00",
-        "43.99",
-        "43.98",
-        "44.09"
-      ],
-      "correct": 1,
-      "exp": "43² = 1849 and 44² = 1936, so √1935 lies between 43 and 44. Value: 43.99."
+      "exp": "The day-of-the-week calculation gives Sunday, checked against the standard calendar."
     }
   ],
-  "l4_07": [
+  "l2_13": [
     {
-      "q": "Factorise 16x² + 20x + 4.",
+      "q": "Calculate 15 × 61 using Urdhva-Tiryagbhyam.",
       "options": [
-        "(4x − 1)(4x + 4)",
-        "(4x + 1)(4x + 4)",
-        "(4x + 1)(4x − 4)",
-        "(4x + 2)(4x + 4)"
+        "916",
+        "915",
+        "914",
+        "917"
       ],
       "correct": 1,
-      "exp": "Expand to check: (4x + 1)(4x + 4) gives 16x² + 20x + 4."
+      "exp": "Units: 5 × 1 = 5. Cross: 1 × 1 + 5 × 6 = 31. Tens: 1 × 6 = 6. Combine with carries: 915."
     },
     {
-      "q": "Factorise 16x² + 20x + 6.",
+      "q": "What is √6889?",
       "options": [
-        "(4x − 3)(4x + 2)",
-        "(4x + 3)(4x − 2)",
-        "(4x + 3)(4x + 2)",
-        "(4x + 4)(4x + 2)"
-      ],
-      "correct": 2,
-      "exp": "Expand to check: (4x + 3)(4x + 2) gives 16x² + 20x + 6."
-    },
-    {
-      "q": "Factorise 6x² − 22x + 12.",
-      "options": [
-        "(2x + 6)(3x − 2)",
-        "(2x − 6)(3x − 2)",
-        "(2x − 6)(3x + 2)",
-        "(2x − 2)(3x − 6)"
-      ],
-      "correct": 1,
-      "exp": "Expand to check: (2x − 6)(3x − 2) gives 6x² − 22x + 12."
-    },
-    {
-      "q": "Factorise 12x² + 27x + 15.",
-      "options": [
-        "(4x − 5)(3x + 3)",
-        "(4x + 5)(3x + 3)",
-        "(4x + 5)(3x − 3)",
-        "(4x + 3)(3x + 5)"
-      ],
-      "correct": 1,
-      "exp": "Expand to check: (4x + 5)(3x + 3) gives 12x² + 27x + 15."
-    },
-    {
-      "q": "Factorise 12x² + 32x + 20.",
-      "options": [
-        "(4x + 4)(3x + 5)",
-        "(4x − 4)(3x + 5)",
-        "(4x + 4)(3x − 5)",
-        "(4x + 5)(3x + 4)"
-      ],
-      "correct": 0,
-      "exp": "Expand to check: (4x + 4)(3x + 5) gives 12x² + 32x + 20."
-    }
-  ],
-  "l4_08": [
-    {
-      "q": "Find 622² using the Duplex method.",
-      "options": [
-        "386885",
-        "386883",
-        "386886",
-        "386884"
+        "84",
+        "82",
+        "85",
+        "83"
       ],
       "correct": 3,
-      "exp": "Duplex (column) sums from the right: 4, 8, 28, 24, 36. Carrying gives 386884."
+      "exp": "83² = 6889, so √6889 = 83."
     },
     {
-      "q": "How many digits repeat in the decimal of 1/17?",
+      "q": "What is √3844?",
       "options": [
-        "17",
-        "15",
-        "16",
-        "18"
+        "63",
+        "61",
+        "62",
+        "64"
       ],
       "correct": 2,
-      "exp": "Long division of 1 by 17 returns to remainder 1 after 16 digits: 0.058823529411…."
+      "exp": "62² = 3844, so √3844 = 62."
     },
     {
-      "q": "What is the remainder when 1317 is divided by 7?",
+      "q": "What is 42³?",
       "options": [
-        "0",
+        "74089",
+        "74088",
+        "74087",
+        "74090"
+      ],
+      "correct": 1,
+      "exp": "Four terms: 4³ = 64, 3 × 4² × 2 = 96, 3 × 4 × 2² = 48, 2³ = 8. Combine with carries: 74088."
+    },
+    {
+      "q": "What is 132 ÷ 69? Give the quotient and remainder.",
+      "options": [
+        "Q:1 R:63",
+        "Q:2 R:63",
+        "Q:0 R:132",
+        "Q:1 R:64"
+      ],
+      "correct": 0,
+      "exp": "69 × 1 = 69, remainder 132 − 69 = 63."
+    },
+    {
+      "q": "Add 2/5 + 2/4. Give your answer in lowest terms.",
+      "options": [
+        "9/10",
+        "18/20",
+        "4/9",
+        "10/10"
+      ],
+      "correct": 0,
+      "exp": "(2 × 4 + 2 × 5) / (5 × 4) = 18/20, which simplifies to 9/10."
+    },
+    {
+      "q": "What is 69³?",
+      "options": [
+        "328510",
+        "328508",
+        "328511",
+        "328509"
+      ],
+      "correct": 3,
+      "exp": "Four terms: 6³ = 216, 3 × 6² × 9 = 972, 3 × 6 × 9² = 1458, 9³ = 729. Combine with carries: 328509."
+    },
+    {
+      "q": "Add 2/7 + 3/4. Give your answer in lowest terms.",
+      "options": [
+        "29/28",
+        "30/28",
+        "5/11",
+        "29/29"
+      ],
+      "correct": 0,
+      "exp": "(2 × 4 + 3 × 7) / (7 × 4) = 29/28."
+    },
+    {
+      "q": "What is √8649?",
+      "options": [
+        "94",
+        "92",
+        "95",
+        "93"
+      ],
+      "correct": 3,
+      "exp": "93² = 8649, so √8649 = 93."
+    },
+    {
+      "q": "What is 85³?",
+      "options": [
+        "614126",
+        "614124",
+        "614125",
+        "614127"
+      ],
+      "correct": 2,
+      "exp": "Four terms: 8³ = 512, 3 × 8² × 5 = 960, 3 × 8 × 5² = 600, 5³ = 125. Combine with carries: 614125."
+    },
+    {
+      "q": "What is √5329?",
+      "options": [
+        "74",
+        "72",
+        "75",
+        "73"
+      ],
+      "correct": 3,
+      "exp": "73² = 5329, so √5329 = 73."
+    },
+    {
+      "q": "Add 6/7 + 1/2. Give your answer in lowest terms.",
+      "options": [
+        "20/14",
+        "7/9",
+        "19/14",
+        "19/15"
+      ],
+      "correct": 2,
+      "exp": "(6 × 2 + 1 × 7) / (7 × 2) = 19/14."
+    },
+    {
+      "q": "Add 2/7 + 2/4. Give your answer in lowest terms.",
+      "options": [
+        "22/28",
+        "4/11",
+        "11/14",
+        "12/14"
+      ],
+      "correct": 2,
+      "exp": "(2 × 4 + 2 × 7) / (7 × 4) = 22/28, which simplifies to 11/14."
+    },
+    {
+      "q": "Calculate 84 × 94 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "7897",
+        "7895",
+        "7898",
+        "7896"
+      ],
+      "correct": 3,
+      "exp": "Units: 4 × 4 = 16. Cross: 8 × 4 + 4 × 9 = 68. Tens: 8 × 9 = 72. Combine with carries: 7896."
+    },
+    {
+      "q": "Add 2/3 + 2/5. Give your answer in lowest terms.",
+      "options": [
+        "17/15",
+        "16/15",
+        "4/8",
+        "16/16"
+      ],
+      "correct": 1,
+      "exp": "(2 × 5 + 2 × 3) / (3 × 5) = 16/15."
+    },
+    {
+      "q": "What is 32²?",
+      "options": [
+        "1025",
+        "1023",
+        "1026",
+        "1024"
+      ],
+      "correct": 3,
+      "exp": "3² = 9, 2 × 3 × 2 = 12, 2² = 4. Combine with place values: 1024."
+    },
+    {
+      "q": "Calculate 22 × 92 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "2025",
+        "2023",
+        "2026",
+        "2024"
+      ],
+      "correct": 3,
+      "exp": "Units: 2 × 2 = 4. Cross: 2 × 2 + 2 × 9 = 22. Tens: 2 × 9 = 18. Combine with carries: 2024."
+    }
+  ],
+  "l2_14": [
+    {
+      "q": "Solve x + y = 20 and x − y = 2. What is y?",
+      "options": [
+        "10",
+        "8",
+        "11",
+        "9"
+      ],
+      "correct": 3,
+      "exp": "Add: 2x = 22, so x = 11. Subtract: 2y = 18, so y = 9."
+    },
+    {
+      "q": "Solve x + y = 18 and x − y = -6. What is x?",
+      "options": [
+        "7",
+        "5",
+        "6",
+        "8"
+      ],
+      "correct": 2,
+      "exp": "Add: 2x = 12, so x = 6. Subtract: 2y = 24, so y = 12."
+    },
+    {
+      "q": "Solve x + y = 6 and x − y = 4. What is y?",
+      "options": [
+        "2",
         "1",
-        "4",
+        "0",
         "3"
       ],
       "correct": 1,
-      "exp": "1317 = 7 × 188 + 1, so the remainder is 1."
+      "exp": "Add: 2x = 10, so x = 5. Subtract: 2y = 2, so y = 1."
     },
     {
-      "q": "Find 367² using the Duplex method.",
+      "q": "Solve x + y = 8 and x − y = -2. What is x?",
       "options": [
-        "134690",
-        "134688",
-        "134689",
-        "134691"
+        "4",
+        "2",
+        "3",
+        "5"
       ],
       "correct": 2,
-      "exp": "Duplex (column) sums from the right: 49, 84, 78, 36, 9. Carrying gives 134689."
+      "exp": "Add: 2x = 6, so x = 3. Subtract: 2y = 10, so y = 5."
     },
     {
-      "q": "What is the remainder when 8766 is divided by 11?",
+      "q": "Solve 3x + 3y = 27 and 3x − 3y = -9. What is x?",
       "options": [
-        "6",
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "correct": 0,
+      "exp": "Add: 6x = 18, so x = 3. Subtract: 6y = 36, so y = 6."
+    },
+    {
+      "q": "Solve 2x + 3y = 35 and 2x − 3y = -19. What is x?",
+      "options": [
+        "5",
+        "3",
+        "4",
+        "6"
+      ],
+      "correct": 2,
+      "exp": "Add: 4x = 16, so x = 4. Subtract: 6y = 54, so y = 9."
+    },
+    {
+      "q": "Solve 5x + 5y = 85 and 5x − 5y = 5. What is y?",
+      "options": [
         "9",
-        "0",
+        "8",
+        "7",
         "10"
       ],
-      "correct": 3,
-      "exp": "8766 = 11 × 796 + 10, so the remainder is 10."
+      "correct": 1,
+      "exp": "Add: 10x = 90, so x = 9. Subtract: 10y = 80, so y = 8."
     },
     {
-      "q": "Find 3298² using the Duplex method.",
+      "q": "Solve x + y = 10 and x − y = 0. What is y?",
       "options": [
-        "10876805",
-        "10876803",
-        "10876806",
-        "10876804"
+        "6",
+        "4",
+        "5",
+        "7"
       ],
-      "correct": 3,
-      "exp": "Duplex (column) sums from the right: 64, 144, 113, 84, 58, 12, 9. Carrying gives 10876804."
+      "correct": 2,
+      "exp": "Add: 2x = 10, so x = 5. Subtract: 2y = 10, so y = 5."
     },
     {
-      "q": "Factorise 4x² − 19x + 12.",
+      "q": "Solve 4x + 3y = 30 and 4x − 3y = 18. What is y?",
       "options": [
-        "(4x + 3)(x − 4)",
-        "(4x − 3)(x − 4)",
-        "(4x − 3)(x + 4)",
-        "(4x − 4)(x − 3)"
+        "3",
+        "2",
+        "1",
+        "4"
       ],
       "correct": 1,
-      "exp": "Expand to check: (4x − 3)(x − 4) gives 4x² − 19x + 12."
+      "exp": "Add: 8x = 48, so x = 6. Subtract: 6y = 12, so y = 2."
+    },
+    {
+      "q": "Solve 5x + 5y = 30 and 5x − 5y = -20. What is y?",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "7"
+      ],
+      "correct": 0,
+      "exp": "Add: 10x = 10, so x = 1. Subtract: 10y = 50, so y = 5."
+    },
+    {
+      "q": "Solve 2x + 5y = 24 and 2x − 5y = 4. What is x?",
+      "options": [
+        "7",
+        "8",
+        "6",
+        "9"
+      ],
+      "correct": 0,
+      "exp": "Add: 4x = 28, so x = 7. Subtract: 10y = 20, so y = 2."
+    },
+    {
+      "q": "Solve x + y = 13 and x − y = 3. What is y?",
+      "options": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ],
+      "correct": 3,
+      "exp": "Add: 2x = 16, so x = 8. Subtract: 2y = 10, so y = 5."
+    },
+    {
+      "q": "Solve x + y = 9 and x − y = 3. What is x?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "8"
+      ],
+      "correct": 0,
+      "exp": "Add: 2x = 12, so x = 6. Subtract: 2y = 6, so y = 3."
+    },
+    {
+      "q": "Solve 5x + 4y = 42 and 5x − 4y = 18. What is y?",
+      "options": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "correct": 3,
+      "exp": "Add: 10x = 60, so x = 6. Subtract: 8y = 24, so y = 3."
+    },
+    {
+      "q": "Solve x + y = 8 and x − y = 4. What is x?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "8"
+      ],
+      "correct": 0,
+      "exp": "Add: 2x = 12, so x = 6. Subtract: 2y = 4, so y = 2."
     }
   ],
-  "l4_09": [
+  "l2_15": [
     {
-      "q": "What is the alternating sum of 96620, starting from the units digit?",
+      "q": "Calculate 95² using Yavadunam (base 100).",
+      "options": [
+        "9026",
+        "9024",
+        "9027",
+        "9025"
+      ],
+      "correct": 3,
+      "exp": "95 is 5 below 100. Left: 95 − 5 = 90. Right: 5² = 25, written as 25. Join: 90|25 = 9025."
+    },
+    {
+      "q": "Calculate 100² using Yavadunam (base 100).",
+      "options": [
+        "10000",
+        "10001",
+        "9999",
+        "10002"
+      ],
+      "correct": 0,
+      "exp": "100 is 0 below 100. Left: 100 − 0 = 100. Right: 0² = 0, written as 00. Join: 100|00 = 10000."
+    },
+    {
+      "q": "Calculate 994² using Yavadunam (base 1000).",
+      "options": [
+        "988037",
+        "988035",
+        "988036",
+        "988038"
+      ],
+      "correct": 2,
+      "exp": "994 is 6 below 1000. Left: 994 − 6 = 988. Right: 6² = 36, written as 036. Join: 988|036 = 988036."
+    },
+    {
+      "q": "Calculate 991² using Yavadunam (base 1000).",
+      "options": [
+        "982082",
+        "982080",
+        "982081",
+        "982083"
+      ],
+      "correct": 2,
+      "exp": "991 is 9 below 1000. Left: 991 − 9 = 982. Right: 9² = 81, written as 081. Join: 982|081 = 982081."
+    },
+    {
+      "q": "Calculate 1004² using Yavadunam (base 1000).",
+      "options": [
+        "1008017",
+        "1008016",
+        "1008015",
+        "1008018"
+      ],
+      "correct": 1,
+      "exp": "1004 is 4 above 1000. Left: 1004 + 4 = 1008. Right: 4² = 16, written as 016. Join: 1008|016 = 1008016."
+    },
+    {
+      "q": "Calculate 1000² using Yavadunam (base 1000).",
+      "options": [
+        "1000001",
+        "1000000",
+        "999999",
+        "1000002"
+      ],
+      "correct": 1,
+      "exp": "1000 is 0 below 1000. Left: 1000 − 0 = 1000. Right: 0² = 0, written as 000. Join: 1000|000 = 1000000."
+    },
+    {
+      "q": "Calculate 107² using Yavadunam (base 100).",
+      "options": [
+        "11450",
+        "11449",
+        "11448",
+        "11451"
+      ],
+      "correct": 1,
+      "exp": "107 is 7 above 100. Left: 107 + 7 = 114. Right: 7² = 49, written as 49. Join: 114|49 = 11449."
+    },
+    {
+      "q": "Calculate 992² using Yavadunam (base 1000).",
+      "options": [
+        "984065",
+        "984063",
+        "984066",
+        "984064"
+      ],
+      "correct": 3,
+      "exp": "992 is 8 below 1000. Left: 992 − 8 = 984. Right: 8² = 64, written as 064. Join: 984|064 = 984064."
+    },
+    {
+      "q": "Calculate 106² using Yavadunam (base 100).",
+      "options": [
+        "11237",
+        "11235",
+        "11238",
+        "11236"
+      ],
+      "correct": 3,
+      "exp": "106 is 6 above 100. Left: 106 + 6 = 112. Right: 6² = 36, written as 36. Join: 112|36 = 11236."
+    },
+    {
+      "q": "Calculate 104² using Yavadunam (base 100).",
+      "options": [
+        "10817",
+        "10816",
+        "10815",
+        "10818"
+      ],
+      "correct": 1,
+      "exp": "104 is 4 above 100. Left: 104 + 4 = 108. Right: 4² = 16, written as 16. Join: 108|16 = 10816."
+    },
+    {
+      "q": "Calculate 993² using Yavadunam (base 1000).",
+      "options": [
+        "986050",
+        "986048",
+        "986051",
+        "986049"
+      ],
+      "correct": 3,
+      "exp": "993 is 7 below 1000. Left: 993 − 7 = 986. Right: 7² = 49, written as 049. Join: 986|049 = 986049."
+    },
+    {
+      "q": "Calculate 997² using Yavadunam (base 1000).",
+      "options": [
+        "994009",
+        "994010",
+        "994008",
+        "994011"
+      ],
+      "correct": 0,
+      "exp": "997 is 3 below 1000. Left: 997 − 3 = 994. Right: 3² = 9, written as 009. Join: 994|009 = 994009."
+    },
+    {
+      "q": "Calculate 101² using Yavadunam (base 100).",
+      "options": [
+        "10201",
+        "10202",
+        "10200",
+        "10203"
+      ],
+      "correct": 0,
+      "exp": "101 is 1 above 100. Left: 101 + 1 = 102. Right: 1² = 1, written as 01. Join: 102|01 = 10201."
+    },
+    {
+      "q": "Calculate 105² using Yavadunam (base 100).",
+      "options": [
+        "11025",
+        "11026",
+        "11024",
+        "11027"
+      ],
+      "correct": 0,
+      "exp": "105 is 5 above 100. Left: 105 + 5 = 110. Right: 5² = 25, written as 25. Join: 110|25 = 11025."
+    },
+    {
+      "q": "Calculate 1007² using Yavadunam (base 1000).",
+      "options": [
+        "1014050",
+        "1014048",
+        "1014051",
+        "1014049"
+      ],
+      "correct": 3,
+      "exp": "1007 is 7 above 1000. Left: 1007 + 7 = 1014. Right: 7² = 49, written as 049. Join: 1014|049 = 1014049."
+    }
+  ],
+  "l3_01": [
+    {
+      "q": "Calculate 69 × 60 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "4141",
+        "4139",
+        "4140",
+        "4142"
+      ],
+      "correct": 2,
+      "exp": "Units: 9 × 0 = 0. Cross: 6 × 0 + 9 × 6 = 54. Tens: 6 × 6 = 36. Combine with carries: 4140."
+    },
+    {
+      "q": "Calculate 154 × 566 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "87165",
+        "87163",
+        "87164",
+        "87166"
+      ],
+      "correct": 2,
+      "exp": "Column sums from the right: 24, 54, 56, 31, 5. Carrying from the right gives 87164."
+    },
+    {
+      "q": "Calculate 66 × 82 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "5413",
+        "5412",
+        "5411",
+        "5414"
+      ],
+      "correct": 1,
+      "exp": "Units: 6 × 2 = 12. Cross: 6 × 2 + 6 × 8 = 60. Tens: 6 × 8 = 48. Combine with carries: 5412."
+    },
+    {
+      "q": "Calculate 39 × 12 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "468",
+        "469",
+        "467",
+        "470"
+      ],
+      "correct": 0,
+      "exp": "Units: 9 × 2 = 18. Cross: 3 × 2 + 9 × 1 = 15. Tens: 3 × 1 = 3. Combine with carries: 468."
+    },
+    {
+      "q": "Calculate 47 × 21 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "987",
+        "988",
+        "986",
+        "989"
+      ],
+      "correct": 0,
+      "exp": "Units: 7 × 1 = 7. Cross: 4 × 1 + 7 × 2 = 18. Tens: 4 × 2 = 8. Combine with carries: 987."
+    },
+    {
+      "q": "Calculate 18 × 64 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "1152",
+        "1153",
+        "1151",
+        "1154"
+      ],
+      "correct": 0,
+      "exp": "Units: 8 × 4 = 32. Cross: 1 × 4 + 8 × 6 = 52. Tens: 1 × 6 = 6. Combine with carries: 1152."
+    },
+    {
+      "q": "Calculate 197 × 659 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "129824",
+        "129822",
+        "129825",
+        "129823"
+      ],
+      "correct": 3,
+      "exp": "Column sums from the right: 63, 116, 96, 59, 6. Carrying from the right gives 129823."
+    },
+    {
+      "q": "Calculate 94 × 41 using Urdhva-Tiryagbhyam.",
+      "options": [
+        "3854",
+        "3855",
+        "3853",
+        "3856"
+      ],
+      "correct": 0,
+      "exp": "Units: 4 × 1 = 4. Cross: 9 × 1 + 4 × 4 = 25. Tens: 9 × 4 = 36. Combine with carries: 3854."
+    },
+    {
+      "q": "Calculate 153 × 718 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "109854",
+        "109855",
+        "109853",
+        "109856"
+      ],
+      "correct": 0,
+      "exp": "Column sums from the right: 24, 43, 34, 36, 7. Carrying from the right gives 109854."
+    },
+    {
+      "q": "Calculate 611 × 235 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "143586",
+        "143585",
+        "143584",
+        "143587"
+      ],
+      "correct": 1,
+      "exp": "Column sums from the right: 5, 8, 35, 20, 12. Carrying from the right gives 143585."
+    },
+    {
+      "q": "Calculate 533 × 537 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "286222",
+        "286221",
+        "286220",
+        "286223"
+      ],
+      "correct": 1,
+      "exp": "Column sums from the right: 21, 30, 59, 30, 25. Carrying from the right gives 286221."
+    },
+    {
+      "q": "Calculate 735 × 739 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "543166",
+        "543164",
+        "543167",
+        "543165"
+      ],
+      "correct": 3,
+      "exp": "Column sums from the right: 45, 42, 107, 42, 49. Carrying from the right gives 543165."
+    },
+    {
+      "q": "Calculate 535 × 878 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "469731",
+        "469729",
+        "469732",
+        "469730"
+      ],
+      "correct": 3,
+      "exp": "Column sums from the right: 40, 59, 101, 59, 40. Carrying from the right gives 469730."
+    },
+    {
+      "q": "Calculate 487 × 523 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "254702",
+        "254700",
+        "254701",
+        "254703"
+      ],
+      "correct": 2,
+      "exp": "Column sums from the right: 21, 38, 63, 48, 20. Carrying from the right gives 254701."
+    },
+    {
+      "q": "Calculate 627 × 394 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "247039",
+        "247037",
+        "247040",
+        "247038"
+      ],
+      "correct": 3,
+      "exp": "Column sums from the right: 28, 71, 63, 60, 18. Carrying from the right gives 247038."
+    }
+  ],
+  "l3_02": [
+    {
+      "q": "Calculate 9603 × 9709 using Nikhilam (base 10000).",
+      "options": [
+        "93235528",
+        "93235527",
+        "93235526",
+        "93235529"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 10000: −397 and −291. Cross: 9603 − 291 = 9312. Deficit product: −397 × −291 = 115527. Answer: 9312 × 10000 + 115527 = 93235527."
+    },
+    {
+      "q": "Calculate 10334 × 10156 using Nikhilam (base 10000).",
+      "options": [
+        "104952105",
+        "104952103",
+        "104952106",
+        "104952104"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 10000: 334 and 156. Cross: 10334 + 156 = 10490. Deficit product: 334 × 156 = 52104. Answer: 10490 × 10000 + 52104 = 104952104."
+    },
+    {
+      "q": "Calculate 9639 × 10267 using Nikhilam (base 10000).",
+      "options": [
+        "98963614",
+        "98963613",
+        "98963612",
+        "98963615"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 10000: −361 and 267. Cross: 9639 + 267 = 9906. Deficit product: −361 × 267 = −96387. Answer: 9906 × 10000 − 96387 = 98963613."
+    },
+    {
+      "q": "Calculate 10990 × 9856 using Nikhilam (base 10000).",
+      "options": [
+        "108317441",
+        "108317440",
+        "108317439",
+        "108317442"
+      ],
+      "correct": 1,
+      "exp": "Deficits from 10000: 990 and −144. Cross: 10990 − 144 = 10846. Deficit product: 990 × −144 = −142560. Answer: 10846 × 10000 − 142560 = 108317440."
+    },
+    {
+      "q": "Calculate 946 × 942 using Nikhilam (base 1000).",
+      "options": [
+        "891133",
+        "891131",
+        "891134",
+        "891132"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 1000: −54 and −58. Cross: 946 − 58 = 888. Deficit product: −54 × −58 = 3132. Answer: 888 × 1000 + 3132 = 891132."
+    },
+    {
+      "q": "Calculate 10721 × 10493 using Nikhilam (base 10000).",
+      "options": [
+        "112495453",
+        "112495454",
+        "112495452",
+        "112495455"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 10000: 721 and 493. Cross: 10721 + 493 = 11214. Deficit product: 721 × 493 = 355453. Answer: 11214 × 10000 + 355453 = 112495453."
+    },
+    {
+      "q": "Calculate 10392 × 9650 using Nikhilam (base 10000).",
+      "options": [
+        "100282801",
+        "100282799",
+        "100282802",
+        "100282800"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 10000: 392 and −350. Cross: 10392 − 350 = 10042. Deficit product: 392 × −350 = −137200. Answer: 10042 × 10000 − 137200 = 100282800."
+    },
+    {
+      "q": "Calculate 1081 × 1077 using Nikhilam (base 1000).",
+      "options": [
+        "1164238",
+        "1164236",
+        "1164239",
+        "1164237"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 1000: 81 and 77. Cross: 1081 + 77 = 1158. Deficit product: 81 × 77 = 6237. Answer: 1158 × 1000 + 6237 = 1164237."
+    },
+    {
+      "q": "Calculate 9323 × 9090 using Nikhilam (base 10000).",
+      "options": [
+        "84746071",
+        "84746069",
+        "84746070",
+        "84746072"
+      ],
+      "correct": 2,
+      "exp": "Deficits from 10000: −677 and −910. Cross: 9323 − 910 = 8413. Deficit product: −677 × −910 = 616070. Answer: 8413 × 10000 + 616070 = 84746070."
+    },
+    {
+      "q": "Calculate 1007 × 970 using Nikhilam (base 1000).",
+      "options": [
+        "976791",
+        "976789",
+        "976792",
+        "976790"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 1000: 7 and −30. Cross: 1007 − 30 = 977. Deficit product: 7 × −30 = −210. Answer: 977 × 1000 − 210 = 976790."
+    },
+    {
+      "q": "Calculate 9260 × 10503 using Nikhilam (base 10000).",
+      "options": [
+        "97257781",
+        "97257779",
+        "97257782",
+        "97257780"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 10000: −740 and 503. Cross: 9260 + 503 = 9763. Deficit product: −740 × 503 = −372220. Answer: 9763 × 10000 − 372220 = 97257780."
+    },
+    {
+      "q": "Calculate 9738 × 10702 using Nikhilam (base 10000).",
+      "options": [
+        "104216077",
+        "104216075",
+        "104216078",
+        "104216076"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 10000: −262 and 702. Cross: 9738 + 702 = 10440. Deficit product: −262 × 702 = −183924. Answer: 10440 × 10000 − 183924 = 104216076."
+    },
+    {
+      "q": "Calculate 10665 × 9142 using Nikhilam (base 10000).",
+      "options": [
+        "97499430",
+        "97499431",
+        "97499429",
+        "97499432"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 10000: 665 and −858. Cross: 10665 − 858 = 9807. Deficit product: 665 × −858 = −570570. Answer: 9807 × 10000 − 570570 = 97499430."
+    },
+    {
+      "q": "Calculate 1047 × 1092 using Nikhilam (base 1000).",
+      "options": [
+        "1143325",
+        "1143323",
+        "1143326",
+        "1143324"
+      ],
+      "correct": 3,
+      "exp": "Deficits from 1000: 47 and 92. Cross: 1047 + 92 = 1139. Deficit product: 47 × 92 = 4324. Answer: 1139 × 1000 + 4324 = 1143324."
+    },
+    {
+      "q": "Calculate 9536 × 10931 using Nikhilam (base 10000).",
+      "options": [
+        "104238016",
+        "104238017",
+        "104238015",
+        "104238018"
+      ],
+      "correct": 0,
+      "exp": "Deficits from 10000: −464 and 931. Cross: 9536 + 931 = 10467. Deficit product: −464 × 931 = −431984. Answer: 10467 × 10000 − 431984 = 104238016."
+    }
+  ],
+  "l3_03": [
+    {
+      "q": "Calculate 16 × 8 using Anurupyena (proportional scaling).",
+      "options": [
+        "128",
+        "129",
+        "127",
+        "130"
+      ],
+      "correct": 0,
+      "exp": "16 : 8 = 8 : 4, both scaled by 2. So 16 × 8 = 2² × 8 × 4 = 4 × 32 = 128."
+    },
+    {
+      "q": "Calculate 18 × 54 using Anurupyena (proportional scaling).",
+      "options": [
+        "972",
+        "973",
+        "971",
+        "974"
+      ],
+      "correct": 0,
+      "exp": "18 : 54 = 2 : 6, both scaled by 9. So 18 × 54 = 9² × 2 × 6 = 81 × 12 = 972."
+    },
+    {
+      "q": "Calculate 36 × 63 using Anurupyena (proportional scaling).",
+      "options": [
+        "2269",
+        "2267",
+        "2270",
+        "2268"
+      ],
+      "correct": 3,
+      "exp": "36 : 63 = 4 : 7, both scaled by 9. So 36 × 63 = 9² × 4 × 7 = 81 × 28 = 2268."
+    },
+    {
+      "q": "Calculate 81 × 27 using Anurupyena (proportional scaling).",
+      "options": [
+        "2188",
+        "2186",
+        "2189",
+        "2187"
+      ],
+      "correct": 3,
+      "exp": "81 : 27 = 9 : 3, both scaled by 9. So 81 × 27 = 9² × 9 × 3 = 81 × 27 = 2187."
+    },
+    {
+      "q": "Calculate 10 × 16 using Anurupyena (proportional scaling).",
+      "options": [
+        "161",
+        "159",
+        "160",
+        "162"
+      ],
+      "correct": 2,
+      "exp": "10 : 16 = 5 : 8, both scaled by 2. So 10 × 16 = 2² × 5 × 8 = 4 × 40 = 160."
+    },
+    {
+      "q": "Calculate 12 × 42 using Anurupyena (proportional scaling).",
+      "options": [
+        "504",
+        "505",
+        "503",
+        "506"
+      ],
+      "correct": 0,
+      "exp": "12 : 42 = 2 : 7, both scaled by 6. So 12 × 42 = 6² × 2 × 7 = 36 × 14 = 504."
+    },
+    {
+      "q": "Calculate 48 × 12 using Anurupyena (proportional scaling).",
+      "options": [
+        "577",
+        "576",
+        "575",
+        "578"
+      ],
+      "correct": 1,
+      "exp": "48 : 12 = 8 : 2, both scaled by 6. So 48 × 12 = 6² × 8 × 2 = 36 × 16 = 576."
+    },
+    {
+      "q": "Calculate 45 × 20 using Anurupyena (proportional scaling).",
+      "options": [
+        "900",
+        "901",
+        "899",
+        "902"
+      ],
+      "correct": 0,
+      "exp": "45 : 20 = 9 : 4, both scaled by 5. So 45 × 20 = 5² × 9 × 4 = 25 × 36 = 900."
+    },
+    {
+      "q": "Calculate 14 × 63 using Anurupyena (proportional scaling).",
+      "options": [
+        "882",
+        "883",
+        "881",
+        "884"
+      ],
+      "correct": 0,
+      "exp": "14 : 63 = 2 : 9, both scaled by 7. So 14 × 63 = 7² × 2 × 9 = 49 × 18 = 882."
+    },
+    {
+      "q": "Calculate 12 × 6 using Anurupyena (proportional scaling).",
+      "options": [
+        "73",
+        "71",
+        "72",
+        "74"
+      ],
+      "correct": 2,
+      "exp": "12 : 6 = 4 : 2, both scaled by 3. So 12 × 6 = 3² × 4 × 2 = 9 × 8 = 72."
+    },
+    {
+      "q": "Calculate 18 × 63 using Anurupyena (proportional scaling).",
+      "options": [
+        "1135",
+        "1133",
+        "1134",
+        "1136"
+      ],
+      "correct": 2,
+      "exp": "18 : 63 = 2 : 7, both scaled by 9. So 18 × 63 = 9² × 2 × 7 = 81 × 14 = 1134."
+    },
+    {
+      "q": "Calculate 8 × 12 using Anurupyena (proportional scaling).",
+      "options": [
+        "97",
+        "95",
+        "96",
+        "98"
+      ],
+      "correct": 2,
+      "exp": "8 : 12 = 4 : 6, both scaled by 2. So 8 × 12 = 2² × 4 × 6 = 4 × 24 = 96."
+    },
+    {
+      "q": "Calculate 48 × 36 using Anurupyena (proportional scaling).",
+      "options": [
+        "1729",
+        "1727",
+        "1730",
+        "1728"
+      ],
+      "correct": 3,
+      "exp": "48 : 36 = 8 : 6, both scaled by 6. So 48 × 36 = 6² × 8 × 6 = 36 × 48 = 1728."
+    },
+    {
+      "q": "Calculate 63 × 45 using Anurupyena (proportional scaling).",
+      "options": [
+        "2836",
+        "2834",
+        "2835",
+        "2837"
+      ],
+      "correct": 2,
+      "exp": "63 : 45 = 7 : 5, both scaled by 9. So 63 × 45 = 9² × 7 × 5 = 81 × 35 = 2835."
+    },
+    {
+      "q": "Calculate 12 × 16 using Anurupyena (proportional scaling).",
+      "options": [
+        "193",
+        "191",
+        "194",
+        "192"
+      ],
+      "correct": 3,
+      "exp": "12 : 16 = 6 : 8, both scaled by 2. So 12 × 16 = 2² × 6 × 8 = 4 × 48 = 192."
+    }
+  ],
+  "l3_04": [
+    {
+      "q": "Calculate 95 × 98 using the vinculum (complement) method.",
+      "options": [
+        "9311",
+        "9310",
+        "9309",
+        "9312"
+      ],
+      "correct": 1,
+      "exp": "Complements from 100: 5 and 2. Cross: 95 − 2 = 93. Product of complements: 5 × 2 = 10. Answer: 9310 = 9310."
+    },
+    {
+      "q": "Calculate 93 × 99 using the vinculum (complement) method.",
+      "options": [
+        "9208",
+        "9207",
+        "9206",
+        "9209"
+      ],
+      "correct": 1,
+      "exp": "Complements from 100: 7 and 1. Cross: 93 − 1 = 92. Product of complements: 7 × 1 = 07. Answer: 9207 = 9207."
+    },
+    {
+      "q": "Calculate 93 × 95 using the vinculum (complement) method.",
+      "options": [
+        "8835",
+        "8836",
+        "8834",
+        "8837"
+      ],
+      "correct": 0,
+      "exp": "Complements from 100: 7 and 5. Cross: 93 − 5 = 88. Product of complements: 7 × 5 = 35. Answer: 8835 = 8835."
+    },
+    {
+      "q": "Calculate 98 × 94 using the vinculum (complement) method.",
+      "options": [
+        "9213",
+        "9211",
+        "9212",
+        "9214"
+      ],
+      "correct": 2,
+      "exp": "Complements from 100: 2 and 6. Cross: 98 − 6 = 92. Product of complements: 2 × 6 = 12. Answer: 9212 = 9212."
+    },
+    {
+      "q": "Calculate 98 × 96 using the vinculum (complement) method.",
+      "options": [
+        "9408",
+        "9409",
+        "9407",
+        "9410"
+      ],
+      "correct": 0,
+      "exp": "Complements from 100: 2 and 4. Cross: 98 − 4 = 94. Product of complements: 2 × 4 = 08. Answer: 9408 = 9408."
+    },
+    {
+      "q": "Calculate 95 × 99 using the vinculum (complement) method.",
+      "options": [
+        "9406",
+        "9404",
+        "9407",
+        "9405"
+      ],
+      "correct": 3,
+      "exp": "Complements from 100: 5 and 1. Cross: 95 − 1 = 94. Product of complements: 5 × 1 = 05. Answer: 9405 = 9405."
+    },
+    {
+      "q": "Calculate 97 × 97 using the vinculum (complement) method.",
+      "options": [
+        "9410",
+        "9409",
+        "9408",
+        "9411"
+      ],
+      "correct": 1,
+      "exp": "Complements from 100: 3 and 3. Cross: 97 − 3 = 94. Product of complements: 3 × 3 = 09. Answer: 9409 = 9409."
+    },
+    {
+      "q": "Calculate 96 × 94 using the vinculum (complement) method.",
+      "options": [
+        "9025",
+        "9023",
+        "9024",
+        "9026"
+      ],
+      "correct": 2,
+      "exp": "Complements from 100: 4 and 6. Cross: 96 − 6 = 90. Product of complements: 4 × 6 = 24. Answer: 9024 = 9024."
+    },
+    {
+      "q": "Calculate 98 × 93 using the vinculum (complement) method.",
+      "options": [
+        "9114",
+        "9115",
+        "9113",
+        "9116"
+      ],
+      "correct": 0,
+      "exp": "Complements from 100: 2 and 7. Cross: 98 − 7 = 91. Product of complements: 2 × 7 = 14. Answer: 9114 = 9114."
+    },
+    {
+      "q": "Calculate 96 × 93 using the vinculum (complement) method.",
+      "options": [
+        "8929",
+        "8927",
+        "8928",
+        "8930"
+      ],
+      "correct": 2,
+      "exp": "Complements from 100: 4 and 7. Cross: 96 − 7 = 89. Product of complements: 4 × 7 = 28. Answer: 8928 = 8928."
+    },
+    {
+      "q": "Calculate 99 × 98 using the vinculum (complement) method.",
+      "options": [
+        "9702",
+        "9703",
+        "9701",
+        "9704"
+      ],
+      "correct": 0,
+      "exp": "Complements from 100: 1 and 2. Cross: 99 − 2 = 97. Product of complements: 1 × 2 = 02. Answer: 9702 = 9702."
+    },
+    {
+      "q": "Calculate 96 × 91 using the vinculum (complement) method.",
+      "options": [
+        "8737",
+        "8735",
+        "8736",
+        "8738"
+      ],
+      "correct": 2,
+      "exp": "Complements from 100: 4 and 9. Cross: 96 − 9 = 87. Product of complements: 4 × 9 = 36. Answer: 8736 = 8736."
+    },
+    {
+      "q": "Calculate 92 × 93 using the vinculum (complement) method.",
+      "options": [
+        "8557",
+        "8555",
+        "8558",
+        "8556"
+      ],
+      "correct": 3,
+      "exp": "Complements from 100: 8 and 7. Cross: 92 − 7 = 85. Product of complements: 8 × 7 = 56. Answer: 8556 = 8556."
+    },
+    {
+      "q": "Calculate 97 × 96 using the vinculum (complement) method.",
+      "options": [
+        "9313",
+        "9311",
+        "9312",
+        "9314"
+      ],
+      "correct": 2,
+      "exp": "Complements from 100: 3 and 4. Cross: 97 − 4 = 93. Product of complements: 3 × 4 = 12. Answer: 9312 = 9312."
+    },
+    {
+      "q": "Calculate 94 × 98 using the vinculum (complement) method.",
+      "options": [
+        "9213",
+        "9211",
+        "9214",
+        "9212"
+      ],
+      "correct": 3,
+      "exp": "Complements from 100: 6 and 2. Cross: 94 − 2 = 92. Product of complements: 6 × 2 = 12. Answer: 9212 = 9212."
+    }
+  ],
+  "l3_05": [
+    {
+      "q": "Find 241² using the Duplex method.",
+      "options": [
+        "58081",
+        "58082",
+        "58080",
+        "58083"
+      ],
+      "correct": 0,
+      "exp": "Duplex (column) sums from the right: 1, 8, 20, 16, 4. Carrying gives 58081."
+    },
+    {
+      "q": "Find 4730² using the Duplex method.",
+      "options": [
+        "22372901",
+        "22372900",
+        "22372899",
+        "22372902"
+      ],
+      "correct": 1,
+      "exp": "Duplex (column) sums from the right: 0, 0, 9, 42, 73, 56, 16. Carrying gives 22372900."
+    },
+    {
+      "q": "Find 4895² using the Duplex method.",
+      "options": [
+        "23961026",
+        "23961024",
+        "23961025",
+        "23961027"
+      ],
+      "correct": 2,
+      "exp": "Duplex (column) sums from the right: 25, 90, 161, 184, 136, 64, 16. Carrying gives 23961025."
+    },
+    {
+      "q": "Find 371² using the Duplex method.",
+      "options": [
+        "137642",
+        "137640",
+        "137643",
+        "137641"
+      ],
+      "correct": 3,
+      "exp": "Duplex (column) sums from the right: 1, 14, 55, 42, 9. Carrying gives 137641."
+    },
+    {
+      "q": "Find 1630² using the Duplex method.",
+      "options": [
+        "2656901",
+        "2656899",
+        "2656900",
+        "2656902"
+      ],
+      "correct": 2,
+      "exp": "Duplex (column) sums from the right: 0, 0, 9, 36, 42, 12, 1. Carrying gives 2656900."
+    },
+    {
+      "q": "Find 852² using the Duplex method.",
+      "options": [
+        "725905",
+        "725903",
+        "725904",
+        "725906"
+      ],
+      "correct": 2,
+      "exp": "Duplex (column) sums from the right: 4, 20, 57, 80, 64. Carrying gives 725904."
+    },
+    {
+      "q": "Find 8389² using the Duplex method.",
+      "options": [
+        "70375322",
+        "70375320",
+        "70375323",
+        "70375321"
+      ],
+      "correct": 3,
+      "exp": "Duplex (column) sums from the right: 81, 144, 118, 192, 137, 48, 64. Carrying gives 70375321."
+    },
+    {
+      "q": "Find 593² using the Duplex method.",
+      "options": [
+        "351650",
+        "351648",
+        "351651",
+        "351649"
+      ],
+      "correct": 3,
+      "exp": "Duplex (column) sums from the right: 9, 54, 111, 90, 25. Carrying gives 351649."
+    },
+    {
+      "q": "Find 9930² using the Duplex method.",
+      "options": [
+        "98604901",
+        "98604899",
+        "98604902",
+        "98604900"
+      ],
+      "correct": 3,
+      "exp": "Duplex (column) sums from the right: 0, 0, 9, 54, 135, 162, 81. Carrying gives 98604900."
+    },
+    {
+      "q": "Find 3440² using the Duplex method.",
+      "options": [
+        "11833601",
+        "11833599",
+        "11833600",
+        "11833602"
+      ],
+      "correct": 2,
+      "exp": "Duplex (column) sums from the right: 0, 0, 16, 32, 40, 24, 9. Carrying gives 11833600."
+    },
+    {
+      "q": "Find 7478² using the Duplex method.",
+      "options": [
+        "55920485",
+        "55920484",
+        "55920483",
+        "55920486"
+      ],
+      "correct": 1,
+      "exp": "Duplex (column) sums from the right: 64, 112, 113, 168, 114, 56, 49. Carrying gives 55920484."
+    },
+    {
+      "q": "Find 8105² using the Duplex method.",
+      "options": [
+        "65691026",
+        "65691024",
+        "65691025",
+        "65691027"
+      ],
+      "correct": 2,
+      "exp": "Duplex (column) sums from the right: 25, 0, 10, 80, 1, 16, 64. Carrying gives 65691025."
+    },
+    {
+      "q": "Find 8139² using the Duplex method.",
+      "options": [
+        "66243322",
+        "66243320",
+        "66243321",
+        "66243323"
+      ],
+      "correct": 2,
+      "exp": "Duplex (column) sums from the right: 81, 54, 27, 150, 49, 16, 64. Carrying gives 66243321."
+    },
+    {
+      "q": "Find 6969² using the Duplex method.",
+      "options": [
+        "48566962",
+        "48566960",
+        "48566963",
+        "48566961"
+      ],
+      "correct": 3,
+      "exp": "Duplex (column) sums from the right: 81, 108, 198, 216, 153, 108, 36. Carrying gives 48566961."
+    },
+    {
+      "q": "Find 834² using the Duplex method.",
+      "options": [
+        "695557",
+        "695555",
+        "695558",
+        "695556"
+      ],
+      "correct": 3,
+      "exp": "Duplex (column) sums from the right: 16, 24, 73, 48, 64. Carrying gives 695556."
+    }
+  ],
+  "l3_06": [
+    {
+      "q": "What is the cube root of 29791?",
+      "options": [
+        "32",
+        "30",
+        "33",
+        "31"
+      ],
+      "correct": 3,
+      "exp": "31 × 31 × 31 = 29791, so the cube root is 31."
+    },
+    {
+      "q": "What is the cube root of 24389?",
+      "options": [
+        "30",
+        "28",
+        "31",
+        "29"
+      ],
+      "correct": 3,
+      "exp": "29 × 29 × 29 = 24389, so the cube root is 29."
+    },
+    {
+      "q": "What is the cube root of 132651?",
+      "options": [
+        "51",
+        "52",
+        "50",
+        "53"
+      ],
+      "correct": 0,
+      "exp": "51 × 51 × 51 = 132651, so the cube root is 51."
+    },
+    {
+      "q": "What is the cube root of 125000?",
+      "options": [
+        "51",
+        "49",
+        "52",
+        "50"
+      ],
+      "correct": 3,
+      "exp": "50 × 50 × 50 = 125000, so the cube root is 50."
+    },
+    {
+      "q": "What is the cube root of 12167?",
+      "options": [
+        "24",
+        "22",
+        "23",
+        "25"
+      ],
+      "correct": 2,
+      "exp": "23 × 23 × 23 = 12167, so the cube root is 23."
+    },
+    {
+      "q": "What is the cube root of 74088?",
+      "options": [
+        "42",
+        "43",
+        "41",
+        "44"
+      ],
+      "correct": 0,
+      "exp": "42 × 42 × 42 = 74088, so the cube root is 42."
+    },
+    {
+      "q": "What is the cube root of 68921?",
+      "options": [
+        "42",
+        "40",
+        "43",
+        "41"
+      ],
+      "correct": 3,
+      "exp": "41 × 41 × 41 = 68921, so the cube root is 41."
+    },
+    {
+      "q": "What is the cube root of 157464?",
+      "options": [
+        "55",
+        "54",
+        "53",
+        "56"
+      ],
+      "correct": 1,
+      "exp": "54 × 54 × 54 = 157464, so the cube root is 54."
+    },
+    {
+      "q": "What is the cube root of 79507?",
+      "options": [
+        "43",
+        "44",
+        "42",
+        "45"
+      ],
+      "correct": 0,
+      "exp": "43 × 43 × 43 = 79507, so the cube root is 43."
+    },
+    {
+      "q": "What is the cube root of 8?",
+      "options": [
+        "3",
+        "2",
+        "1",
+        "4"
+      ],
+      "correct": 1,
+      "exp": "2 × 2 × 2 = 8, so the cube root is 2."
+    },
+    {
+      "q": "What is the cube root of 13824?",
+      "options": [
+        "24",
+        "25",
+        "23",
+        "26"
+      ],
+      "correct": 0,
+      "exp": "24 × 24 × 24 = 13824, so the cube root is 24."
+    },
+    {
+      "q": "What is the cube root of 343?",
       "options": [
         "8",
         "6",
@@ -2894,21 +5188,3117 @@ export const PRACTICE_EXTRA = {
         "9"
       ],
       "correct": 2,
-      "exp": "0 − 2 + 6 − 6 + 9 = 7."
+      "exp": "7 × 7 × 7 = 343, so the cube root is 7."
     },
     {
-      "q": "What is the alternating sum of 3977, starting from the units digit?",
+      "q": "What is the cube root of 59319?",
+      "options": [
+        "39",
+        "40",
+        "38",
+        "41"
+      ],
+      "correct": 0,
+      "exp": "39 × 39 × 39 = 59319, so the cube root is 39."
+    },
+    {
+      "q": "What is the cube root of 1728?",
+      "options": [
+        "13",
+        "12",
+        "11",
+        "14"
+      ],
+      "correct": 1,
+      "exp": "12 × 12 × 12 = 1728, so the cube root is 12."
+    },
+    {
+      "q": "What is the cube root of 27000?",
+      "options": [
+        "31",
+        "29",
+        "32",
+        "30"
+      ],
+      "correct": 3,
+      "exp": "30 × 30 × 30 = 27000, so the cube root is 30."
+    }
+  ],
+  "l3_07": [
+    {
+      "q": "What is 5787 ÷ 37? Give the quotient and remainder.",
+      "options": [
+        "Q:156 R:15",
+        "Q:157 R:15",
+        "Q:155 R:52",
+        "Q:156 R:16"
+      ],
+      "correct": 0,
+      "exp": "37 × 156 = 5772, remainder 5787 − 5772 = 15."
+    },
+    {
+      "q": "What is 1121 ÷ 64? Give the quotient and remainder.",
+      "options": [
+        "Q:17 R:33",
+        "Q:18 R:33",
+        "Q:16 R:97",
+        "Q:17 R:34"
+      ],
+      "correct": 0,
+      "exp": "64 × 17 = 1088, remainder 1121 − 1088 = 33."
+    },
+    {
+      "q": "What is 4374 ÷ 8? Give the quotient and remainder.",
+      "options": [
+        "Q:547 R:6",
+        "Q:545 R:14",
+        "Q:546 R:6",
+        "Q:546 R:7"
+      ],
+      "correct": 2,
+      "exp": "8 × 546 = 4368, remainder 4374 − 4368 = 6."
+    },
+    {
+      "q": "What is 7310 ÷ 76? Give the quotient and remainder.",
+      "options": [
+        "Q:97 R:14",
+        "Q:95 R:90",
+        "Q:96 R:14",
+        "Q:96 R:15"
+      ],
+      "correct": 2,
+      "exp": "76 × 96 = 7296, remainder 7310 − 7296 = 14."
+    },
+    {
+      "q": "What is 6922 ÷ 94? Give the quotient and remainder.",
+      "options": [
+        "Q:74 R:60",
+        "Q:72 R:154",
+        "Q:73 R:60",
+        "Q:73 R:61"
+      ],
+      "correct": 2,
+      "exp": "94 × 73 = 6862, remainder 6922 − 6862 = 60."
+    },
+    {
+      "q": "What is 9052 ÷ 72? Give the quotient and remainder.",
+      "options": [
+        "Q:126 R:52",
+        "Q:124 R:124",
+        "Q:125 R:52",
+        "Q:125 R:53"
+      ],
+      "correct": 2,
+      "exp": "72 × 125 = 9000, remainder 9052 − 9000 = 52."
+    },
+    {
+      "q": "What is 9380 ÷ 73? Give the quotient and remainder.",
+      "options": [
+        "Q:129 R:36",
+        "Q:127 R:109",
+        "Q:128 R:36",
+        "Q:128 R:37"
+      ],
+      "correct": 2,
+      "exp": "73 × 128 = 9344, remainder 9380 − 9344 = 36."
+    },
+    {
+      "q": "What is 946 ÷ 82? Give the quotient and remainder.",
+      "options": [
+        "Q:11 R:44",
+        "Q:12 R:44",
+        "Q:10 R:126",
+        "Q:11 R:45"
+      ],
+      "correct": 0,
+      "exp": "82 × 11 = 902, remainder 946 − 902 = 44."
+    },
+    {
+      "q": "What is 8962 ÷ 68? Give the quotient and remainder.",
+      "options": [
+        "Q:131 R:54",
+        "Q:132 R:54",
+        "Q:130 R:122",
+        "Q:131 R:55"
+      ],
+      "correct": 0,
+      "exp": "68 × 131 = 8908, remainder 8962 − 8908 = 54."
+    },
+    {
+      "q": "What is 8174 ÷ 4? Give the quotient and remainder.",
+      "options": [
+        "Q:2044 R:2",
+        "Q:2043 R:2",
+        "Q:2042 R:6",
+        "Q:2043 R:3"
+      ],
+      "correct": 1,
+      "exp": "4 × 2043 = 8172, remainder 8174 − 8172 = 2."
+    },
+    {
+      "q": "What is 7250 ÷ 24? Give the quotient and remainder.",
+      "options": [
+        "Q:302 R:2",
+        "Q:303 R:2",
+        "Q:301 R:26",
+        "Q:302 R:3"
+      ],
+      "correct": 0,
+      "exp": "24 × 302 = 7248, remainder 7250 − 7248 = 2."
+    },
+    {
+      "q": "What is 5536 ÷ 22? Give the quotient and remainder.",
+      "options": [
+        "Q:252 R:14",
+        "Q:250 R:36",
+        "Q:251 R:15",
+        "Q:251 R:14"
+      ],
+      "correct": 3,
+      "exp": "22 × 251 = 5522, remainder 5536 − 5522 = 14."
+    },
+    {
+      "q": "What is 8956 ÷ 73? Give the quotient and remainder.",
+      "options": [
+        "Q:123 R:50",
+        "Q:121 R:123",
+        "Q:122 R:50",
+        "Q:122 R:51"
+      ],
+      "correct": 2,
+      "exp": "73 × 122 = 8906, remainder 8956 − 8906 = 50."
+    },
+    {
+      "q": "What is 374 ÷ 78? Give the quotient and remainder.",
+      "options": [
+        "Q:5 R:62",
+        "Q:4 R:62",
+        "Q:3 R:140",
+        "Q:4 R:63"
+      ],
+      "correct": 1,
+      "exp": "78 × 4 = 312, remainder 374 − 312 = 62."
+    },
+    {
+      "q": "What is 2721 ÷ 57? Give the quotient and remainder.",
+      "options": [
+        "Q:48 R:42",
+        "Q:47 R:42",
+        "Q:46 R:99",
+        "Q:47 R:43"
+      ],
+      "correct": 1,
+      "exp": "57 × 47 = 2679, remainder 2721 − 2679 = 42."
+    }
+  ],
+  "l3_08": [
+    {
+      "q": "Expand (x + 3)(x − 5).",
+      "options": [
+        "x² − 8x − 15",
+        "x² − 2x + 15",
+        "x² − 2x − 15",
+        "x² − x − 15"
+      ],
+      "correct": 2,
+      "exp": "First: 1 × 1 = 1x². Cross: 1 × -5 + 3 × 1 = -2x. Last: 3 × -5 = -15."
+    },
+    {
+      "q": "Expand (4x + 5)(x + 1).",
+      "options": [
+        "4x² − x + 5",
+        "4x² + 9x − 5",
+        "4x² + 10x + 5",
+        "4x² + 9x + 5"
+      ],
+      "correct": 3,
+      "exp": "First: 4 × 1 = 4x². Cross: 4 × 1 + 5 × 1 = 9x. Last: 5 × 1 = 5."
+    },
+    {
+      "q": "Expand (3x + 3)(3x + 2).",
+      "options": [
+        "9x² − 3x + 6",
+        "9x² + 15x − 6",
+        "9x² + 16x + 6",
+        "9x² + 15x + 6"
+      ],
+      "correct": 3,
+      "exp": "First: 3 × 3 = 9x². Cross: 3 × 2 + 3 × 3 = 15x. Last: 3 × 2 = 6."
+    },
+    {
+      "q": "Expand (2x − 2)(4x − 2).",
+      "options": [
+        "8x² − 12x + 4",
+        "8x² + 4x + 4",
+        "8x² − 12x − 4",
+        "8x² − 11x + 4"
+      ],
+      "correct": 0,
+      "exp": "First: 2 × 4 = 8x². Cross: 2 × -2 + -2 × 4 = -12x. Last: -2 × -2 = 4."
+    },
+    {
+      "q": "Expand (3x − 3)(3x − 5).",
+      "options": [
+        "9x² − 24x + 15",
+        "9x² − 6x + 15",
+        "9x² − 24x − 15",
+        "9x² − 23x + 15"
+      ],
+      "correct": 0,
+      "exp": "First: 3 × 3 = 9x². Cross: 3 × -5 + -3 × 3 = -24x. Last: -3 × -5 = 15."
+    },
+    {
+      "q": "Expand (x + 3)(2x + 5).",
+      "options": [
+        "2x² − x + 15",
+        "2x² + 11x − 15",
+        "2x² + 11x + 15",
+        "2x² + 12x + 15"
+      ],
+      "correct": 2,
+      "exp": "First: 1 × 2 = 2x². Cross: 1 × 5 + 3 × 2 = 11x. Last: 3 × 5 = 15."
+    },
+    {
+      "q": "Expand (3x − 6)(3x − 5).",
+      "options": [
+        "9x² − 33x + 30",
+        "9x² + 3x + 30",
+        "9x² − 33x − 30",
+        "9x² − 32x + 30"
+      ],
+      "correct": 0,
+      "exp": "First: 3 × 3 = 9x². Cross: 3 × -5 + -6 × 3 = -33x. Last: -6 × -5 = 30."
+    },
+    {
+      "q": "Expand (4x − 3)(4x + 5).",
+      "options": [
+        "16x² + 32x − 15",
+        "16x² + 8x + 15",
+        "16x² + 9x − 15",
+        "16x² + 8x − 15"
+      ],
+      "correct": 3,
+      "exp": "First: 4 × 4 = 16x². Cross: 4 × 5 + -3 × 4 = 8x. Last: -3 × 5 = -15."
+    },
+    {
+      "q": "Expand (x + 2)(3x − 3).",
+      "options": [
+        "3x² − 9x − 6",
+        "3x² + 3x + 6",
+        "3x² + 4x − 6",
+        "3x² + 3x − 6"
+      ],
+      "correct": 3,
+      "exp": "First: 1 × 3 = 3x². Cross: 1 × -3 + 2 × 3 = 3x. Last: 2 × -3 = -6."
+    },
+    {
+      "q": "Expand (x + 5)(2x + 5).",
+      "options": [
+        "2x² − 5x + 25",
+        "2x² + 15x + 25",
+        "2x² + 15x − 25",
+        "2x² + 16x + 25"
+      ],
+      "correct": 1,
+      "exp": "First: 1 × 2 = 2x². Cross: 1 × 5 + 5 × 2 = 15x. Last: 5 × 5 = 25."
+    },
+    {
+      "q": "Expand (2x + 3)(3x + 3).",
+      "options": [
+        "6x² − 3x + 9",
+        "6x² + 15x − 9",
+        "6x² + 16x + 9",
+        "6x² + 15x + 9"
+      ],
+      "correct": 3,
+      "exp": "First: 2 × 3 = 6x². Cross: 2 × 3 + 3 × 3 = 15x. Last: 3 × 3 = 9."
+    },
+    {
+      "q": "Expand (2x − 4)(3x − 2).",
+      "options": [
+        "6x² − 16x + 8",
+        "6x² + 8x + 8",
+        "6x² − 16x − 8",
+        "6x² − 15x + 8"
+      ],
+      "correct": 0,
+      "exp": "First: 2 × 3 = 6x². Cross: 2 × -2 + -4 × 3 = -16x. Last: -4 × -2 = 8."
+    },
+    {
+      "q": "Expand (3x − 4)(x + 3).",
+      "options": [
+        "3x² + 5x − 12",
+        "3x² + 13x − 12",
+        "3x² + 5x + 12",
+        "3x² + 6x − 12"
+      ],
+      "correct": 0,
+      "exp": "First: 3 × 1 = 3x². Cross: 3 × 3 + -4 × 1 = 5x. Last: -4 × 3 = -12."
+    },
+    {
+      "q": "Expand (x − 2)(4x − 3).",
+      "options": [
+        "4x² + 5x + 6",
+        "4x² − 11x − 6",
+        "4x² − 11x + 6",
+        "4x² − 10x + 6"
+      ],
+      "correct": 2,
+      "exp": "First: 1 × 4 = 4x². Cross: 1 × -3 + -2 × 4 = -11x. Last: -2 × -3 = 6."
+    },
+    {
+      "q": "Expand (4x + 3)(3x − 1).",
+      "options": [
+        "12x² − 13x − 3",
+        "12x² + 5x + 3",
+        "12x² + 5x − 3",
+        "12x² + 6x − 3"
+      ],
+      "correct": 2,
+      "exp": "First: 4 × 3 = 12x². Cross: 4 × -1 + 3 × 3 = 5x. Last: 3 × -1 = -3."
+    }
+  ],
+  "l3_09": [
+    {
+      "q": "Solve 2x + 3y = 4 and 3x + 2y = 11. What is y?",
+      "options": [
+        "−1",
+        "−3",
+        "−2",
+        "0"
+      ],
+      "correct": 2,
+      "exp": "Check: 2(5) + 3(-2) = 4 ✓ and 3(5) + 2(-2) = 11 ✓. So x = 5 and y = -2."
+    },
+    {
+      "q": "Solve 3x + 4y = 29 and 4x + 1y = 30. What is y?",
+      "options": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "correct": 0,
+      "exp": "Check: 3(7) + 4(2) = 29 ✓ and 4(7) + 1(2) = 30 ✓. So x = 7 and y = 2."
+    },
+    {
+      "q": "Solve 2x + 3y = 13 and 4x + 4y = 28. What is y?",
+      "options": [
+        "−1",
+        "0",
+        "−2",
+        "1"
+      ],
+      "correct": 0,
+      "exp": "Check: 2(8) + 3(-1) = 13 ✓ and 4(8) + 4(-1) = 28 ✓. So x = 8 and y = -1."
+    },
+    {
+      "q": "Solve 1x + 3y = -4 and 4x + 2y = -6. What is y?",
+      "options": [
+        "0",
+        "−2",
+        "−1",
+        "1"
+      ],
+      "correct": 2,
+      "exp": "Check: 1(-1) + 3(-1) = -4 ✓ and 4(-1) + 2(-1) = -6 ✓. So x = -1 and y = -1."
+    },
+    {
+      "q": "Solve 1x + 3y = 29 and 2x + 4y = 42. What is x?",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "7"
+      ],
+      "correct": 0,
+      "exp": "Check: 1(5) + 3(8) = 29 ✓ and 2(5) + 4(8) = 42 ✓. So x = 5 and y = 8."
+    },
+    {
+      "q": "Solve 2x + 1y = 8 and 3x + 1y = 10. What is y?",
+      "options": [
+        "5",
+        "3",
+        "6",
+        "4"
+      ],
+      "correct": 3,
+      "exp": "Check: 2(2) + 1(4) = 8 ✓ and 3(2) + 1(4) = 10 ✓. So x = 2 and y = 4."
+    },
+    {
+      "q": "Solve 3x + 4y = -5 and 3x + 1y = 10. What is x?",
+      "options": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ],
+      "correct": 3,
+      "exp": "Check: 3(5) + 4(-5) = -5 ✓ and 3(5) + 1(-5) = 10 ✓. So x = 5 and y = -5."
+    },
+    {
+      "q": "Solve 1x + 4y = -17 and 2x + 3y = -14. What is y?",
+      "options": [
+        "−4",
+        "−3",
+        "−5",
+        "−2"
+      ],
+      "correct": 0,
+      "exp": "Check: 1(-1) + 4(-4) = -17 ✓ and 2(-1) + 3(-4) = -14 ✓. So x = -1 and y = -4."
+    },
+    {
+      "q": "Solve 2x + 2y = -12 and 1x + 3y = -10. What is y?",
+      "options": [
+        "−1",
+        "−3",
+        "0",
+        "−2"
+      ],
+      "correct": 3,
+      "exp": "Check: 2(-4) + 2(-2) = -12 ✓ and 1(-4) + 3(-2) = -10 ✓. So x = -4 and y = -2."
+    },
+    {
+      "q": "Solve 2x + 1y = 14 and 2x + 3y = 10. What is x?",
+      "options": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ],
+      "correct": 3,
+      "exp": "Check: 2(8) + 1(-2) = 14 ✓ and 2(8) + 3(-2) = 10 ✓. So x = 8 and y = -2."
+    },
+    {
+      "q": "Solve 4x + 2y = 36 and 1x + 1y = 11. What is x?",
+      "options": [
+        "8",
+        "7",
+        "6",
+        "9"
+      ],
+      "correct": 1,
+      "exp": "Check: 4(7) + 2(4) = 36 ✓ and 1(7) + 1(4) = 11 ✓. So x = 7 and y = 4."
+    },
+    {
+      "q": "Solve 2x + 3y = 29 and 1x + 3y = 25. What is y?",
       "options": [
         "7",
+        "8",
+        "6",
+        "9"
+      ],
+      "correct": 0,
+      "exp": "Check: 2(4) + 3(7) = 29 ✓ and 1(4) + 3(7) = 25 ✓. So x = 4 and y = 7."
+    },
+    {
+      "q": "Solve 2x + 2y = 24 and 3x + 4y = 39. What is y?",
+      "options": [
+        "4",
+        "3",
+        "2",
+        "5"
+      ],
+      "correct": 1,
+      "exp": "Check: 2(9) + 2(3) = 24 ✓ and 3(9) + 4(3) = 39 ✓. So x = 9 and y = 3."
+    },
+    {
+      "q": "Solve 1x + 4y = 7 and 3x + 1y = -1. What is y?",
+      "options": [
+        "3",
+        "2",
+        "1",
+        "4"
+      ],
+      "correct": 1,
+      "exp": "Check: 1(-1) + 4(2) = 7 ✓ and 3(-1) + 1(2) = -1 ✓. So x = -1 and y = 2."
+    },
+    {
+      "q": "Solve 2x + 4y = -12 and 4x + 1y = 11. What is y?",
+      "options": [
+        "−5",
+        "−4",
+        "−6",
+        "−3"
+      ],
+      "correct": 0,
+      "exp": "Check: 2(4) + 4(-5) = -12 ✓ and 4(4) + 1(-5) = 11 ✓. So x = 4 and y = -5."
+    }
+  ],
+  "l3_10": [
+    {
+      "q": "Calculate 373 × 842 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "314067",
+        "314065",
+        "314066",
+        "314068"
+      ],
+      "correct": 2,
+      "exp": "Column sums from the right: 6, 26, 58, 68, 24. Carrying from the right gives 314066."
+    },
+    {
+      "q": "Solve x² + 16x + 63 = 0. What is the larger root?",
+      "options": [
+        "−9",
+        "−7",
+        "7",
+        "−6"
+      ],
+      "correct": 1,
+      "exp": "Complete the square: (x + 8)² = 1, so x + 8 = ±1. Roots: -9 and -7."
+    },
+    {
+      "q": "Calculate 901 × 300 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "270300",
+        "270301",
+        "270299",
+        "270302"
+      ],
+      "correct": 0,
+      "exp": "Column sums from the right: 0, 0, 3, 0, 27. Carrying from the right gives 270300."
+    },
+    {
+      "q": "Solve x² − 4x + 3 = 0. What is the larger root?",
+      "options": [
+        "3",
+        "1",
+        "−3",
+        "4"
+      ],
+      "correct": 0,
+      "exp": "Complete the square: (x − 2)² = 1, so x − 2 = ±1. Roots: 1 and 3."
+    },
+    {
+      "q": "Find 946² using the Duplex method.",
+      "options": [
+        "894917",
+        "894915",
+        "894918",
+        "894916"
+      ],
+      "correct": 3,
+      "exp": "Duplex (column) sums from the right: 36, 48, 124, 72, 81. Carrying gives 894916."
+    },
+    {
+      "q": "Solve 3x + 2y = 29 and 1x + 3y = 26. What is x?",
+      "options": [
+        "6",
+        "4",
         "5",
+        "7"
+      ],
+      "correct": 2,
+      "exp": "Check: 3(5) + 2(7) = 29 ✓ and 1(5) + 3(7) = 26 ✓. So x = 5 and y = 7."
+    },
+    {
+      "q": "Calculate 677 × 165 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+      "options": [
+        "111705",
+        "111706",
+        "111704",
+        "111707"
+      ],
+      "correct": 0,
+      "exp": "Column sums from the right: 35, 77, 79, 43, 6. Carrying from the right gives 111705."
+    },
+    {
+      "q": "What is the 1st digit of 5 × 142857?",
+      "options": [
+        "6",
+        "2",
+        "7",
+        "9"
+      ],
+      "correct": 2,
+      "exp": "5 × 142857 = 714285, and its 1st digit is 7."
+    },
+    {
+      "q": "Solve x² + 6x − 7 = 0. What is the smaller root?",
+      "options": [
+        "−7",
+        "1",
+        "−1",
+        "2"
+      ],
+      "correct": 0,
+      "exp": "Complete the square: (x + 3)² = 16, so x + 3 = ±4. Roots: -7 and 1."
+    },
+    {
+      "q": "What is the 3rd digit of 2 × 142857?",
+      "options": [
+        "5",
+        "8",
+        "1",
+        "2"
+      ],
+      "correct": 0,
+      "exp": "2 × 142857 = 285714, and its 3rd digit is 5."
+    },
+    {
+      "q": "Find 8685² using the Duplex method.",
+      "options": [
+        "75429226",
+        "75429224",
+        "75429225",
+        "75429227"
+      ],
+      "correct": 2,
+      "exp": "Duplex (column) sums from the right: 25, 80, 124, 176, 164, 96, 64. Carrying gives 75429225."
+    },
+    {
+      "q": "Solve 1/(x + 5) + 1/(x + 9) = 0. What is x?",
+      "options": [
+        "−7",
+        "7",
+        "−5",
+        "−9"
+      ],
+      "correct": 0,
+      "exp": "Add the denominators: (x + 5) + (x + 9) = 2x + 14 = 0, so x = -7."
+    },
+    {
+      "q": "Expand (2x + 4)(x + 2).",
+      "options": [
+        "2x² + 8",
+        "2x² + 8x − 8",
+        "2x² + 9x + 8",
+        "2x² + 8x + 8"
+      ],
+      "correct": 3,
+      "exp": "First: 2 × 1 = 2x². Cross: 2 × 2 + 4 × 1 = 8x. Last: 4 × 2 = 8."
+    },
+    {
+      "q": "Solve 3x + 4y = 51 and 4x + 2y = 38. What is x?",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "7"
+      ],
+      "correct": 0,
+      "exp": "Check: 3(5) + 4(9) = 51 ✓ and 4(5) + 2(9) = 38 ✓. So x = 5 and y = 9."
+    },
+    {
+      "q": "Solve 3x + 2y = 16 and 2x + 3y = 14. What is y?",
+      "options": [
+        "3",
+        "1",
+        "2",
+        "4"
+      ],
+      "correct": 2,
+      "exp": "Check: 3(4) + 2(2) = 16 ✓ and 2(4) + 3(2) = 14 ✓. So x = 4 and y = 2."
+    },
+    {
+      "q": "Solve 1/(x + 3) + 1/(x + 11) = 0. What is x?",
+      "options": [
+        "7",
+        "−3",
+        "−7",
+        "−11"
+      ],
+      "correct": 2,
+      "exp": "Add the denominators: (x + 3) + (x + 11) = 2x + 14 = 0, so x = -7."
+    },
+    {
+      "q": "Expand (x + 1)(2x − 1).",
+      "options": [
+        "2x² + x − 1",
+        "2x² − 3x − 1",
+        "2x² + x + 1",
+        "2x² + 2x − 1"
+      ],
+      "correct": 0,
+      "exp": "First: 1 × 2 = 2x². Cross: 1 × -1 + 1 × 2 = 1x. Last: 1 × -1 = -1."
+    }
+  ],
+  "l3_11": [
+    {
+      "q": "Solve 1/(x + 7) + 1/(x + 11) = 0. What is x?",
+      "options": [
+        "9",
+        "−7",
+        "−9",
+        "−11"
+      ],
+      "correct": 2,
+      "exp": "Add the denominators: (x + 7) + (x + 11) = 2x + 18 = 0, so x = -9."
+    },
+    {
+      "q": "Solve 1/(x + 9) + 1/(x + 5) = 0. What is x?",
+      "options": [
+        "7",
+        "−9",
+        "−5",
+        "−7"
+      ],
+      "correct": 3,
+      "exp": "Add the denominators: (x + 9) + (x + 5) = 2x + 14 = 0, so x = -7."
+    },
+    {
+      "q": "Solve 1/(x + 4) + 1/(x + 12) = 0. What is x?",
+      "options": [
+        "8",
+        "−4",
+        "−8",
+        "−12"
+      ],
+      "correct": 2,
+      "exp": "Add the denominators: (x + 4) + (x + 12) = 2x + 16 = 0, so x = -8."
+    },
+    {
+      "q": "Solve 1/(x + 12) + 1/(x + 6) = 0. What is x?",
+      "options": [
+        "9",
+        "−12",
+        "−9",
+        "−6"
+      ],
+      "correct": 2,
+      "exp": "Add the denominators: (x + 12) + (x + 6) = 2x + 18 = 0, so x = -9."
+    },
+    {
+      "q": "Solve 1/(x + 11) + 1/(x + 1) = 0. What is x?",
+      "options": [
+        "6",
+        "−11",
+        "−6",
+        "−1"
+      ],
+      "correct": 2,
+      "exp": "Add the denominators: (x + 11) + (x + 1) = 2x + 12 = 0, so x = -6."
+    },
+    {
+      "q": "Solve 1/(x + 8) + 1/(x + 6) = 0. What is x?",
+      "options": [
+        "7",
+        "−8",
+        "−6",
+        "−7"
+      ],
+      "correct": 3,
+      "exp": "Add the denominators: (x + 8) + (x + 6) = 2x + 14 = 0, so x = -7."
+    },
+    {
+      "q": "Solve 1/(x + 8) + 1/(x + 2) = 0. What is x?",
+      "options": [
+        "5",
+        "−8",
+        "−5",
+        "−2"
+      ],
+      "correct": 2,
+      "exp": "Add the denominators: (x + 8) + (x + 2) = 2x + 10 = 0, so x = -5."
+    },
+    {
+      "q": "Solve 1/(x + 4) + 1/(x + 8) = 0. What is x?",
+      "options": [
+        "6",
+        "−4",
+        "−8",
+        "−6"
+      ],
+      "correct": 3,
+      "exp": "Add the denominators: (x + 4) + (x + 8) = 2x + 12 = 0, so x = -6."
+    },
+    {
+      "q": "Solve 1/(x + 6) + 1/(x + 12) = 0. What is x?",
+      "options": [
+        "−9",
+        "9",
+        "−6",
+        "−12"
+      ],
+      "correct": 0,
+      "exp": "Add the denominators: (x + 6) + (x + 12) = 2x + 18 = 0, so x = -9."
+    },
+    {
+      "q": "Solve 1/(x + 3) + 1/(x + 9) = 0. What is x?",
+      "options": [
+        "−6",
+        "6",
+        "−3",
+        "−9"
+      ],
+      "correct": 0,
+      "exp": "Add the denominators: (x + 3) + (x + 9) = 2x + 12 = 0, so x = -6."
+    },
+    {
+      "q": "Solve 1/(x + 5) + 1/(x + 3) = 0. What is x?",
+      "options": [
+        "−4",
+        "4",
+        "−5",
+        "−3"
+      ],
+      "correct": 0,
+      "exp": "Add the denominators: (x + 5) + (x + 3) = 2x + 8 = 0, so x = -4."
+    },
+    {
+      "q": "Solve 1/(x + 11) + 1/(x + 9) = 0. What is x?",
+      "options": [
+        "10",
+        "−11",
+        "−10",
+        "−9"
+      ],
+      "correct": 2,
+      "exp": "Add the denominators: (x + 11) + (x + 9) = 2x + 20 = 0, so x = -10."
+    },
+    {
+      "q": "Solve 1/(x + 4) + 1/(x + 6) = 0. What is x?",
+      "options": [
+        "5",
+        "−4",
+        "−6",
+        "−5"
+      ],
+      "correct": 3,
+      "exp": "Add the denominators: (x + 4) + (x + 6) = 2x + 10 = 0, so x = -5."
+    },
+    {
+      "q": "Solve 1/(x + 12) + 1/(x + 8) = 0. What is x?",
+      "options": [
+        "10",
+        "−10",
+        "−12",
+        "−8"
+      ],
+      "correct": 1,
+      "exp": "Add the denominators: (x + 12) + (x + 8) = 2x + 20 = 0, so x = -10."
+    },
+    {
+      "q": "Solve 1/(x + 9) + 1/(x + 3) = 0. What is x?",
+      "options": [
+        "6",
+        "−9",
+        "−3",
+        "−6"
+      ],
+      "correct": 3,
+      "exp": "Add the denominators: (x + 9) + (x + 3) = 2x + 12 = 0, so x = -6."
+    }
+  ],
+  "l3_12": [
+    {
+      "q": "In 3/7 = 0.428571…, what is the 11th digit after the decimal point?",
+      "options": [
+        "7",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct": 0,
+      "exp": "Remainder method: the digits of 3/7 repeat every 6 places as 428571, so digit 11 is 7."
+    },
+    {
+      "q": "In 5/7 = 0.714285…, what is the 7th digit after the decimal point?",
+      "options": [
+        "3",
+        "7",
+        "6",
+        "9"
+      ],
+      "correct": 1,
+      "exp": "Remainder method: the digits of 5/7 repeat every 6 places as 714285, so digit 7 is 7."
+    },
+    {
+      "q": "In 4/7 = 0.571428…, what is the 10th digit after the decimal point?",
+      "options": [
+        "1",
+        "0",
+        "7",
+        "4"
+      ],
+      "correct": 3,
+      "exp": "Remainder method: the digits of 4/7 repeat every 6 places as 571428, so digit 10 is 4."
+    },
+    {
+      "q": "In 6/7 = 0.857142…, what is the 8th digit after the decimal point?",
+      "options": [
+        "4",
+        "7",
+        "0",
+        "5"
+      ],
+      "correct": 3,
+      "exp": "Remainder method: the digits of 6/7 repeat every 6 places as 857142, so digit 8 is 5."
+    },
+    {
+      "q": "In 2/7 = 0.285714…, what is the 4th digit after the decimal point?",
+      "options": [
+        "3",
+        "7",
+        "5",
+        "0"
+      ],
+      "correct": 1,
+      "exp": "Remainder method: the digits of 2/7 repeat every 6 places as 285714, so digit 4 is 7."
+    },
+    {
+      "q": "In 5/7 = 0.714285…, what is the 1st digit after the decimal point?",
+      "options": [
+        "7",
+        "9",
+        "6",
+        "8"
+      ],
+      "correct": 0,
+      "exp": "Remainder method: the digits of 5/7 repeat every 6 places as 714285, so digit 1 is 7."
+    },
+    {
+      "q": "In 2/7 = 0.285714…, what is the 3rd digit after the decimal point?",
+      "options": [
+        "9",
+        "4",
+        "1",
+        "5"
+      ],
+      "correct": 3,
+      "exp": "Remainder method: the digits of 2/7 repeat every 6 places as 285714, so digit 3 is 5."
+    },
+    {
+      "q": "In 5/7 = 0.714285…, what is the 5th digit after the decimal point?",
+      "options": [
+        "8",
+        "6",
+        "1",
+        "2"
+      ],
+      "correct": 0,
+      "exp": "Remainder method: the digits of 5/7 repeat every 6 places as 714285, so digit 5 is 8."
+    },
+    {
+      "q": "In 3/7 = 0.428571…, what is the 8th digit after the decimal point?",
+      "options": [
+        "4",
+        "7",
+        "2",
+        "1"
+      ],
+      "correct": 2,
+      "exp": "Remainder method: the digits of 3/7 repeat every 6 places as 428571, so digit 8 is 2."
+    },
+    {
+      "q": "In 1/7 = 0.142857…, what is the 10th digit after the decimal point?",
+      "options": [
+        "8",
+        "9",
+        "0",
+        "3"
+      ],
+      "correct": 0,
+      "exp": "Remainder method: the digits of 1/7 repeat every 6 places as 142857, so digit 10 is 8."
+    },
+    {
+      "q": "In 1/7 = 0.142857…, what is the 7th digit after the decimal point?",
+      "options": [
+        "2",
+        "0",
+        "3",
+        "1"
+      ],
+      "correct": 3,
+      "exp": "Remainder method: the digits of 1/7 repeat every 6 places as 142857, so digit 7 is 1."
+    },
+    {
+      "q": "In 2/7 = 0.285714…, what is the 8th digit after the decimal point?",
+      "options": [
+        "5",
+        "8",
+        "6",
+        "0"
+      ],
+      "correct": 1,
+      "exp": "Remainder method: the digits of 2/7 repeat every 6 places as 285714, so digit 8 is 8."
+    },
+    {
+      "q": "In 5/7 = 0.714285…, what is the 11th digit after the decimal point?",
+      "options": [
+        "7",
+        "1",
+        "8",
+        "5"
+      ],
+      "correct": 2,
+      "exp": "Remainder method: the digits of 5/7 repeat every 6 places as 714285, so digit 11 is 8."
+    },
+    {
+      "q": "In 4/7 = 0.571428…, what is the 11th digit after the decimal point?",
+      "options": [
+        "5",
+        "2",
+        "4",
+        "1"
+      ],
+      "correct": 1,
+      "exp": "Remainder method: the digits of 4/7 repeat every 6 places as 571428, so digit 11 is 2."
+    },
+    {
+      "q": "In 5/7 = 0.714285…, what is the 12th digit after the decimal point?",
+      "options": [
+        "5",
+        "3",
+        "0",
+        "2"
+      ],
+      "correct": 0,
+      "exp": "Remainder method: the digits of 5/7 repeat every 6 places as 714285, so digit 12 is 5."
+    }
+  ],
+  "l3_13": [
+    {
+      "q": "Solve x² − 2x − 3 = 0. What is the smaller root?",
+      "options": [
+        "3",
+        "−3",
+        "−1",
+        "4"
+      ],
+      "correct": 2,
+      "exp": "Complete the square: (x − 1)² = 4, so x − 1 = ±2. Roots: -1 and 3."
+    },
+    {
+      "q": "Solve x² + 10x + 24 = 0. What is the smaller root?",
+      "options": [
+        "−4",
+        "−6",
+        "4",
+        "−3"
+      ],
+      "correct": 1,
+      "exp": "Complete the square: (x + 5)² = 1, so x + 5 = ±1. Roots: -6 and -4."
+    },
+    {
+      "q": "Solve x² − 10x + 24 = 0. What is the larger root?",
+      "options": [
+        "6",
+        "4",
+        "−6",
+        "7"
+      ],
+      "correct": 0,
+      "exp": "Complete the square: (x − 5)² = 1, so x − 5 = ±1. Roots: 4 and 6."
+    },
+    {
+      "q": "Solve x² − 8x − 9 = 0. What is the smaller root?",
+      "options": [
+        "−1",
+        "9",
+        "−9",
+        "10"
+      ],
+      "correct": 0,
+      "exp": "Complete the square: (x − 4)² = 25, so x − 4 = ±5. Roots: -1 and 9."
+    },
+    {
+      "q": "Solve x² − 6x + 5 = 0. What is the larger root?",
+      "options": [
+        "1",
+        "−5",
+        "6",
+        "5"
+      ],
+      "correct": 3,
+      "exp": "Complete the square: (x − 3)² = 4, so x − 3 = ±2. Roots: 1 and 5."
+    },
+    {
+      "q": "Solve x² − 2x − 8 = 0. What is the smaller root?",
+      "options": [
+        "4",
+        "−4",
+        "5",
+        "−2"
+      ],
+      "correct": 3,
+      "exp": "Complete the square: (x − 1)² = 9, so x − 1 = ±3. Roots: -2 and 4."
+    },
+    {
+      "q": "Solve x² − 10x + 21 = 0. What is the smaller root?",
+      "options": [
+        "7",
+        "3",
+        "−7",
+        "8"
+      ],
+      "correct": 1,
+      "exp": "Complete the square: (x − 5)² = 4, so x − 5 = ±2. Roots: 3 and 7."
+    },
+    {
+      "q": "Solve x² − 6x − 7 = 0. What is the smaller root?",
+      "options": [
+        "7",
+        "−1",
+        "−7",
+        "8"
+      ],
+      "correct": 1,
+      "exp": "Complete the square: (x − 3)² = 16, so x − 3 = ±4. Roots: -1 and 7."
+    },
+    {
+      "q": "Solve x² − 6x − 16 = 0. What is the smaller root?",
+      "options": [
+        "8",
+        "−8",
+        "9",
+        "−2"
+      ],
+      "correct": 3,
+      "exp": "Complete the square: (x − 3)² = 25, so x − 3 = ±5. Roots: -2 and 8."
+    },
+    {
+      "q": "Solve x² − 6x − 27 = 0. What is the larger root?",
+      "options": [
+        "−3",
+        "9",
+        "−9",
+        "10"
+      ],
+      "correct": 1,
+      "exp": "Complete the square: (x − 3)² = 36, so x − 3 = ±6. Roots: -3 and 9."
+    },
+    {
+      "q": "Solve x² − 16x + 63 = 0. What is the larger root?",
+      "options": [
+        "9",
+        "7",
+        "−9",
+        "10"
+      ],
+      "correct": 0,
+      "exp": "Complete the square: (x − 8)² = 1, so x − 8 = ±1. Roots: 7 and 9."
+    },
+    {
+      "q": "Solve x² + 10x + 21 = 0. What is the larger root?",
+      "options": [
+        "−7",
+        "3",
+        "−2",
+        "−3"
+      ],
+      "correct": 3,
+      "exp": "Complete the square: (x + 5)² = 4, so x + 5 = ±2. Roots: -7 and -3."
+    },
+    {
+      "q": "Solve x² + 6x + 8 = 0. What is the larger root?",
+      "options": [
+        "−2",
+        "−4",
+        "2",
+        "−1"
+      ],
+      "correct": 0,
+      "exp": "Complete the square: (x + 3)² = 1, so x + 3 = ±1. Roots: -4 and -2."
+    },
+    {
+      "q": "Solve x² + 8x − 9 = 0. What is the larger root?",
+      "options": [
+        "−9",
+        "1",
+        "−1",
+        "2"
+      ],
+      "correct": 1,
+      "exp": "Complete the square: (x + 4)² = 25, so x + 4 = ±5. Roots: -9 and 1."
+    },
+    {
+      "q": "Solve x² + 4x − 5 = 0. What is the larger root?",
+      "options": [
+        "−5",
+        "1",
+        "−1",
+        "2"
+      ],
+      "correct": 1,
+      "exp": "Complete the square: (x + 2)² = 9, so x + 2 = ±3. Roots: -5 and 1."
+    }
+  ],
+  "l3_14": [
+    {
+      "q": "What is the sum of the coefficients of x² + 9x + 14?",
+      "options": [
+        "24",
+        "25",
+        "23",
+        "26"
+      ],
+      "correct": 0,
+      "exp": "1 + 9 + 14 = 24 = (1 + 7)(1 + 2) = 24."
+    },
+    {
+      "q": "What is the sum of the coefficients of x² + 12x + 32?",
+      "options": [
+        "45",
+        "46",
+        "44",
+        "47"
+      ],
+      "correct": 0,
+      "exp": "1 + 12 + 32 = 45 = (1 + 8)(1 + 4) = 45."
+    },
+    {
+      "q": "What is the sum of the coefficients of x² + 13x + 40?",
+      "options": [
+        "55",
+        "53",
+        "56",
+        "54"
+      ],
+      "correct": 3,
+      "exp": "1 + 13 + 40 = 54 = (1 + 8)(1 + 5) = 54."
+    },
+    {
+      "q": "What is the sum of the coefficients of x² + 10x + 9?",
+      "options": [
+        "21",
+        "20",
+        "19",
+        "22"
+      ],
+      "correct": 1,
+      "exp": "1 + 10 + 9 = 20 = (1 + 9)(1 + 1) = 20."
+    },
+    {
+      "q": "What is the sum of the coefficients of x² + 11x + 24?",
+      "options": [
+        "37",
+        "36",
+        "35",
+        "38"
+      ],
+      "correct": 1,
+      "exp": "1 + 11 + 24 = 36 = (1 + 8)(1 + 3) = 36."
+    },
+    {
+      "q": "Factorise x² + 12x + 27.",
+      "options": [
+        "(x−3)(x−9)",
+        "(x+3)(x−9)",
+        "(x+3)(x+9)",
+        "(x+4)(x+8)"
+      ],
+      "correct": 2,
+      "exp": "Factors of 27 that add to 12: 3 and 9. So x² + 12x + 27 = (x + 3)(x + 9)."
+    },
+    {
+      "q": "What is the sum of the coefficients of x² + 8x + 7?",
+      "options": [
+        "17",
+        "15",
+        "16",
+        "18"
+      ],
+      "correct": 2,
+      "exp": "1 + 8 + 7 = 16 = (1 + 7)(1 + 1) = 16."
+    },
+    {
+      "q": "Factorise x² + 10x + 24.",
+      "options": [
+        "(x−4)(x−6)",
+        "(x+4)(x−6)",
+        "(x+4)(x+6)",
+        "(x+5)(x+5)"
+      ],
+      "correct": 2,
+      "exp": "Factors of 24 that add to 10: 4 and 6. So x² + 10x + 24 = (x + 4)(x + 6)."
+    },
+    {
+      "q": "What is the sum of the coefficients of x² + 6x + 8?",
+      "options": [
+        "16",
+        "15",
+        "14",
+        "17"
+      ],
+      "correct": 1,
+      "exp": "1 + 6 + 8 = 15 = (1 + 2)(1 + 4) = 15."
+    },
+    {
+      "q": "Factorise x² + 14x + 45.",
+      "options": [
+        "(x−5)(x−9)",
+        "(x+5)(x+9)",
+        "(x+5)(x−9)",
+        "(x+6)(x+8)"
+      ],
+      "correct": 1,
+      "exp": "Factors of 45 that add to 14: 5 and 9. So x² + 14x + 45 = (x + 5)(x + 9)."
+    },
+    {
+      "q": "Factorise x² + 10x + 9.",
+      "options": [
+        "(x−1)(x−9)",
+        "(x+1)(x−9)",
+        "(x+1)(x+9)",
+        "(x+2)(x+8)"
+      ],
+      "correct": 2,
+      "exp": "Factors of 9 that add to 10: 1 and 9. So x² + 10x + 9 = (x + 1)(x + 9)."
+    },
+    {
+      "q": "What is the sum of the coefficients of x² + 12x + 27?",
+      "options": [
+        "41",
+        "39",
+        "40",
+        "42"
+      ],
+      "correct": 2,
+      "exp": "1 + 12 + 27 = 40 = (1 + 3)(1 + 9) = 40."
+    },
+    {
+      "q": "Factorise x² + 11x + 24.",
+      "options": [
+        "(x−3)(x−8)",
+        "(x+3)(x−8)",
+        "(x+3)(x+8)",
+        "(x+4)(x+7)"
+      ],
+      "correct": 2,
+      "exp": "Factors of 24 that add to 11: 3 and 8. So x² + 11x + 24 = (x + 3)(x + 8)."
+    },
+    {
+      "q": "What is the sum of the coefficients of x² + 11x + 18?",
+      "options": [
+        "30",
+        "31",
+        "29",
+        "32"
+      ],
+      "correct": 0,
+      "exp": "1 + 11 + 18 = 30 = (1 + 9)(1 + 2) = 30."
+    },
+    {
+      "q": "Factorise x² + 6x + 5.",
+      "options": [
+        "(x+1)(x+5)",
+        "(x−1)(x−5)",
+        "(x+1)(x−5)",
+        "(x+2)(x+4)"
+      ],
+      "correct": 0,
+      "exp": "Factors of 5 that add to 6: 1 and 5. So x² + 6x + 5 = (x + 1)(x + 5)."
+    }
+  ],
+  "l3_15": [
+    {
+      "q": "Expand (2x − 5)(4x + 2).",
+      "options": [
+        "8x² + 24x − 10",
+        "8x² − 16x + 10",
+        "8x² − 15x − 10",
+        "8x² − 16x − 10"
+      ],
+      "correct": 3,
+      "exp": "First: 2 × 4 = 8x². Cross: 2 × 2 + -5 × 4 = -16x. Last: -5 × 2 = -10."
+    },
+    {
+      "q": "Expand (4x + 6)(2x + 2).",
+      "options": [
+        "8x² − 4x + 12",
+        "8x² + 20x + 12",
+        "8x² + 20x − 12",
+        "8x² + 21x + 12"
+      ],
+      "correct": 1,
+      "exp": "First: 4 × 2 = 8x². Cross: 4 × 2 + 6 × 2 = 20x. Last: 6 × 2 = 12."
+    },
+    {
+      "q": "Expand (x + 5)(4x − 2).",
+      "options": [
+        "4x² − 22x − 10",
+        "4x² + 18x − 10",
+        "4x² + 18x + 10",
+        "4x² + 19x − 10"
+      ],
+      "correct": 1,
+      "exp": "First: 1 × 4 = 4x². Cross: 1 × -2 + 5 × 4 = 18x. Last: 5 × -2 = -10."
+    },
+    {
+      "q": "Expand (2x − 6)(3x − 2).",
+      "options": [
+        "6x² − 22x + 12",
+        "6x² + 14x + 12",
+        "6x² − 22x − 12",
+        "6x² − 21x + 12"
+      ],
+      "correct": 0,
+      "exp": "First: 2 × 3 = 6x². Cross: 2 × -2 + -6 × 3 = -22x. Last: -6 × -2 = 12."
+    },
+    {
+      "q": "Expand (2x + 6)(3x − 6).",
+      "options": [
+        "6x² − 30x − 36",
+        "6x² + 6x + 36",
+        "6x² + 7x − 36",
+        "6x² + 6x − 36"
+      ],
+      "correct": 3,
+      "exp": "First: 2 × 3 = 6x². Cross: 2 × -6 + 6 × 3 = 6x. Last: 6 × -6 = -36."
+    },
+    {
+      "q": "Expand (x + 6)(3x − 5).",
+      "options": [
+        "3x² − 23x − 30",
+        "3x² + 13x − 30",
+        "3x² + 13x + 30",
+        "3x² + 14x − 30"
+      ],
+      "correct": 1,
+      "exp": "First: 1 × 3 = 3x². Cross: 1 × -5 + 6 × 3 = 13x. Last: 6 × -5 = -30."
+    },
+    {
+      "q": "Expand (4x − 2)(3x − 5).",
+      "options": [
+        "12x² − 14x + 10",
+        "12x² − 26x − 10",
+        "12x² − 25x + 10",
+        "12x² − 26x + 10"
+      ],
+      "correct": 3,
+      "exp": "First: 4 × 3 = 12x². Cross: 4 × -5 + -2 × 3 = -26x. Last: -2 × -5 = 10."
+    },
+    {
+      "q": "Expand (4x − 4)(x − 3).",
+      "options": [
+        "4x² − 16x + 12",
+        "4x² − 8x + 12",
+        "4x² − 16x − 12",
+        "4x² − 15x + 12"
+      ],
+      "correct": 0,
+      "exp": "First: 4 × 1 = 4x². Cross: 4 × -3 + -4 × 1 = -16x. Last: -4 × -3 = 12."
+    },
+    {
+      "q": "Expand (4x + 6)(4x − 2).",
+      "options": [
+        "16x² − 32x − 12",
+        "16x² + 16x − 12",
+        "16x² + 16x + 12",
+        "16x² + 17x − 12"
+      ],
+      "correct": 1,
+      "exp": "First: 4 × 4 = 16x². Cross: 4 × -2 + 6 × 4 = 16x. Last: 6 × -2 = -12."
+    },
+    {
+      "q": "Expand (3x − 2)(x − 3).",
+      "options": [
+        "3x² − 11x + 6",
+        "3x² − 7x + 6",
+        "3x² − 11x − 6",
+        "3x² − 10x + 6"
+      ],
+      "correct": 0,
+      "exp": "First: 3 × 1 = 3x². Cross: 3 × -3 + -2 × 1 = -11x. Last: -2 × -3 = 6."
+    },
+    {
+      "q": "Expand (x − 3)(3x − 5).",
+      "options": [
+        "3x² − 14x + 15",
+        "3x² + 4x + 15",
+        "3x² − 14x − 15",
+        "3x² − 13x + 15"
+      ],
+      "correct": 0,
+      "exp": "First: 1 × 3 = 3x². Cross: 1 × -5 + -3 × 3 = -14x. Last: -3 × -5 = 15."
+    },
+    {
+      "q": "Expand (x − 3)(x − 1).",
+      "options": [
+        "x² + 2x + 3",
+        "x² − 4x − 3",
+        "x² − 4x + 3",
+        "x² − 3x + 3"
+      ],
+      "correct": 2,
+      "exp": "First: 1 × 1 = 1x². Cross: 1 × -1 + -3 × 1 = -4x. Last: -3 × -1 = 3."
+    },
+    {
+      "q": "Expand (4x − 2)(2x − 3).",
+      "options": [
+        "8x² − 16x + 6",
+        "8x² − 8x + 6",
+        "8x² − 16x − 6",
+        "8x² − 15x + 6"
+      ],
+      "correct": 0,
+      "exp": "First: 4 × 2 = 8x². Cross: 4 × -3 + -2 × 2 = -16x. Last: -2 × -3 = 6."
+    },
+    {
+      "q": "Expand (x + 2)(3x − 2).",
+      "options": [
+        "3x² − 8x − 4",
+        "3x² + 4x − 4",
+        "3x² + 4x + 4",
+        "3x² + 5x − 4"
+      ],
+      "correct": 1,
+      "exp": "First: 1 × 3 = 3x². Cross: 1 × -2 + 2 × 3 = 4x. Last: 2 × -2 = -4."
+    },
+    {
+      "q": "Expand (3x + 6)(x − 2).",
+      "options": [
+        "3x² − 12x − 12",
+        "3x² + 12",
+        "3x² − 12",
+        "3x² + x − 12"
+      ],
+      "correct": 2,
+      "exp": "First: 3 × 1 = 3x². Cross: 3 × -2 + 6 × 1 = 0x. Last: 6 × -2 = -12."
+    }
+  ],
+  "l3_16": [
+    {
+      "q": "What is the 2nd digit of 5 × 142857?",
+      "options": [
+        "1",
+        "3",
+        "8",
+        "7"
+      ],
+      "correct": 0,
+      "exp": "5 × 142857 = 714285, and its 2nd digit is 1."
+    },
+    {
+      "q": "What is the 5th digit of 4 × 142857?",
+      "options": [
+        "9",
+        "5",
+        "2",
+        "8"
+      ],
+      "correct": 2,
+      "exp": "4 × 142857 = 571428, and its 5th digit is 2."
+    },
+    {
+      "q": "What is the 7th digit of 14 × 142857?",
+      "options": [
+        "9",
+        "3",
+        "8",
+        "4"
+      ],
+      "correct": 2,
+      "exp": "14 × 142857 = 1999998, and its 7th digit is 8."
+    },
+    {
+      "q": "What is the 3rd digit of 1 × 142857?",
+      "options": [
+        "7",
+        "2",
+        "8",
+        "3"
+      ],
+      "correct": 1,
+      "exp": "1 × 142857 = 142857, and its 3rd digit is 2."
+    },
+    {
+      "q": "What is the 6th digit of 7 × 142857?",
+      "options": [
+        "5",
+        "3",
+        "9",
+        "4"
+      ],
+      "correct": 2,
+      "exp": "7 × 142857 = 999999, and its 6th digit is 9."
+    },
+    {
+      "q": "What is 5 × 142857?",
+      "options": [
+        "714286",
+        "714285",
+        "714284",
+        "714287"
+      ],
+      "correct": 1,
+      "exp": "The digits of 142857 rotate: 5 × 142857 = 714285."
+    },
+    {
+      "q": "What is the 2nd digit of 1 × 142857?",
+      "options": [
+        "4",
+        "2",
+        "5",
+        "7"
+      ],
+      "correct": 0,
+      "exp": "1 × 142857 = 142857, and its 2nd digit is 4."
+    },
+    {
+      "q": "What is the 4th digit of 1 × 142857?",
+      "options": [
+        "8",
+        "3",
+        "9",
+        "1"
+      ],
+      "correct": 0,
+      "exp": "1 × 142857 = 142857, and its 4th digit is 8."
+    },
+    {
+      "q": "What is the 2nd digit of 14 × 142857?",
+      "options": [
+        "0",
+        "5",
+        "1",
+        "9"
+      ],
+      "correct": 3,
+      "exp": "14 × 142857 = 1999998, and its 2nd digit is 9."
+    },
+    {
+      "q": "What is the 3rd digit of 3 × 142857?",
+      "options": [
+        "9",
+        "8",
+        "3",
+        "7"
+      ],
+      "correct": 1,
+      "exp": "3 × 142857 = 428571, and its 3rd digit is 8."
+    },
+    {
+      "q": "What is the 5th digit of 7 × 142857?",
+      "options": [
+        "9",
+        "3",
+        "6",
+        "7"
+      ],
+      "correct": 0,
+      "exp": "7 × 142857 = 999999, and its 5th digit is 9."
+    },
+    {
+      "q": "What is the 6th digit of 3 × 142857?",
+      "options": [
+        "1",
+        "9",
+        "8",
+        "7"
+      ],
+      "correct": 0,
+      "exp": "3 × 142857 = 428571, and its 6th digit is 1."
+    },
+    {
+      "q": "What is the 5th digit of 6 × 142857?",
+      "options": [
+        "8",
+        "4",
+        "2",
+        "5"
+      ],
+      "correct": 1,
+      "exp": "6 × 142857 = 857142, and its 5th digit is 4."
+    },
+    {
+      "q": "What is the 4th digit of 7 × 142857?",
+      "options": [
+        "1",
+        "2",
+        "6",
+        "9"
+      ],
+      "correct": 3,
+      "exp": "7 × 142857 = 999999, and its 4th digit is 9."
+    },
+    {
+      "q": "What is the 4th digit of 2 × 142857?",
+      "options": [
+        "4",
+        "8",
+        "0",
+        "7"
+      ],
+      "correct": 3,
+      "exp": "2 × 142857 = 285714, and its 4th digit is 7."
+    }
+  ],
+  "l4_01": [
+    {
+      "q": "What is 56³?",
+      "options": [
+        "175616",
+        "175617",
+        "175615",
+        "175618"
+      ],
+      "correct": 0,
+      "exp": "Four terms: 5³ = 125, 3 × 5² × 6 = 450, 3 × 5 × 6² = 540, 6³ = 216. Combine with carries: 175616."
+    },
+    {
+      "q": "What is 63³?",
+      "options": [
+        "250048",
+        "250046",
+        "250047",
+        "250049"
+      ],
+      "correct": 2,
+      "exp": "Four terms: 6³ = 216, 3 × 6² × 3 = 324, 3 × 6 × 3² = 162, 3³ = 27. Combine with carries: 250047."
+    },
+    {
+      "q": "What is 77³?",
+      "options": [
+        "456534",
+        "456532",
+        "456533",
+        "456535"
+      ],
+      "correct": 2,
+      "exp": "Four terms: 7³ = 343, 3 × 7² × 7 = 1029, 3 × 7 × 7² = 1029, 7³ = 343. Combine with carries: 456533."
+    },
+    {
+      "q": "What is 24³?",
+      "options": [
+        "13825",
+        "13824",
+        "13823",
+        "13826"
+      ],
+      "correct": 1,
+      "exp": "Four terms: 2³ = 8, 3 × 2² × 4 = 48, 3 × 2 × 4² = 96, 4³ = 64. Combine with carries: 13824."
+    },
+    {
+      "q": "What is 54³?",
+      "options": [
+        "157464",
+        "157465",
+        "157463",
+        "157466"
+      ],
+      "correct": 0,
+      "exp": "Four terms: 5³ = 125, 3 × 5² × 4 = 300, 3 × 5 × 4² = 240, 4³ = 64. Combine with carries: 157464."
+    },
+    {
+      "q": "What is 52³?",
+      "options": [
+        "140608",
+        "140609",
+        "140607",
+        "140610"
+      ],
+      "correct": 0,
+      "exp": "Four terms: 5³ = 125, 3 × 5² × 2 = 150, 3 × 5 × 2² = 60, 2³ = 8. Combine with carries: 140608."
+    },
+    {
+      "q": "What is 91³?",
+      "options": [
+        "753572",
+        "753571",
+        "753570",
+        "753573"
+      ],
+      "correct": 1,
+      "exp": "Four terms: 9³ = 729, 3 × 9² × 1 = 243, 3 × 9 × 1² = 27, 1³ = 1. Combine with carries: 753571."
+    },
+    {
+      "q": "What is 95³?",
+      "options": [
+        "857376",
+        "857375",
+        "857374",
+        "857377"
+      ],
+      "correct": 1,
+      "exp": "Four terms: 9³ = 729, 3 × 9² × 5 = 1215, 3 × 9 × 5² = 675, 5³ = 125. Combine with carries: 857375."
+    },
+    {
+      "q": "What is 49³?",
+      "options": [
+        "117650",
+        "117648",
+        "117649",
+        "117651"
+      ],
+      "correct": 2,
+      "exp": "Four terms: 4³ = 64, 3 × 4² × 9 = 432, 3 × 4 × 9² = 972, 9³ = 729. Combine with carries: 117649."
+    },
+    {
+      "q": "What is 17³?",
+      "options": [
+        "4913",
+        "4914",
+        "4912",
+        "4915"
+      ],
+      "correct": 0,
+      "exp": "Four terms: 1³ = 1, 3 × 1² × 7 = 21, 3 × 1 × 7² = 147, 7³ = 343. Combine with carries: 4913."
+    },
+    {
+      "q": "What is 84³?",
+      "options": [
+        "592705",
+        "592703",
+        "592704",
+        "592706"
+      ],
+      "correct": 2,
+      "exp": "Four terms: 8³ = 512, 3 × 8² × 4 = 768, 3 × 8 × 4² = 384, 4³ = 64. Combine with carries: 592704."
+    },
+    {
+      "q": "What is 99³?",
+      "options": [
+        "970300",
+        "970298",
+        "970299",
+        "970301"
+      ],
+      "correct": 2,
+      "exp": "Four terms: 9³ = 729, 3 × 9² × 9 = 2187, 3 × 9 × 9² = 2187, 9³ = 729. Combine with carries: 970299."
+    },
+    {
+      "q": "What is 59³?",
+      "options": [
+        "205380",
+        "205378",
+        "205381",
+        "205379"
+      ],
+      "correct": 3,
+      "exp": "Four terms: 5³ = 125, 3 × 5² × 9 = 675, 3 × 5 × 9² = 1215, 9³ = 729. Combine with carries: 205379."
+    },
+    {
+      "q": "What is 26³?",
+      "options": [
+        "17576",
+        "17577",
+        "17575",
+        "17578"
+      ],
+      "correct": 0,
+      "exp": "Four terms: 2³ = 8, 3 × 2² × 6 = 72, 3 × 2 × 6² = 216, 6³ = 216. Combine with carries: 17576."
+    },
+    {
+      "q": "What is 29³?",
+      "options": [
+        "24389",
+        "24390",
+        "24388",
+        "24391"
+      ],
+      "correct": 0,
+      "exp": "Four terms: 2³ = 8, 3 × 2² × 9 = 108, 3 × 2 × 9² = 486, 9³ = 729. Combine with carries: 24389."
+    }
+  ],
+  "l4_02": [
+    {
+      "q": "Find 242² using the Duplex method.",
+      "options": [
+        "58564",
+        "58565",
+        "58563",
+        "58566"
+      ],
+      "correct": 0,
+      "exp": "Duplex (column) sums from the right: 4, 16, 24, 16, 4. Carrying gives 58564."
+    },
+    {
+      "q": "Find 7087² using the Duplex method.",
+      "options": [
+        "50225570",
+        "50225569",
+        "50225568",
+        "50225571"
+      ],
+      "correct": 1,
+      "exp": "Duplex (column) sums from the right: 49, 112, 64, 98, 112, 0, 49. Carrying gives 50225569."
+    },
+    {
+      "q": "Find 164² using the Duplex method.",
+      "options": [
+        "26897",
+        "26895",
+        "26898",
+        "26896"
+      ],
+      "correct": 3,
+      "exp": "Duplex (column) sums from the right: 16, 48, 44, 12, 1. Carrying gives 26896."
+    },
+    {
+      "q": "Find 7436² using the Duplex method.",
+      "options": [
+        "55294097",
+        "55294096",
+        "55294095",
+        "55294098"
+      ],
+      "correct": 1,
+      "exp": "Duplex (column) sums from the right: 36, 36, 57, 108, 58, 56, 49. Carrying gives 55294096."
+    },
+    {
+      "q": "Find 443² using the Duplex method.",
+      "options": [
+        "196250",
+        "196249",
+        "196248",
+        "196251"
+      ],
+      "correct": 1,
+      "exp": "Duplex (column) sums from the right: 9, 24, 40, 32, 16. Carrying gives 196249."
+    },
+    {
+      "q": "Find 8580² using the Duplex method.",
+      "options": [
+        "73616401",
+        "73616400",
+        "73616399",
+        "73616402"
+      ],
+      "correct": 1,
+      "exp": "Duplex (column) sums from the right: 0, 0, 64, 80, 153, 80, 64. Carrying gives 73616400."
+    },
+    {
+      "q": "Find 127² using the Duplex method.",
+      "options": [
+        "16130",
+        "16129",
+        "16128",
+        "16131"
+      ],
+      "correct": 1,
+      "exp": "Duplex (column) sums from the right: 49, 28, 18, 4, 1. Carrying gives 16129."
+    },
+    {
+      "q": "Find 3344² using the Duplex method.",
+      "options": [
+        "11182336",
+        "11182337",
+        "11182335",
+        "11182338"
+      ],
+      "correct": 0,
+      "exp": "Duplex (column) sums from the right: 16, 32, 40, 48, 33, 18, 9. Carrying gives 11182336."
+    },
+    {
+      "q": "Find 1732² using the Duplex method.",
+      "options": [
+        "2999825",
+        "2999824",
+        "2999823",
+        "2999826"
+      ],
+      "correct": 1,
+      "exp": "Duplex (column) sums from the right: 4, 12, 37, 46, 55, 14, 1. Carrying gives 2999824."
+    },
+    {
+      "q": "Find 4610² using the Duplex method.",
+      "options": [
+        "21252100",
+        "21252101",
+        "21252099",
+        "21252102"
+      ],
+      "correct": 0,
+      "exp": "Duplex (column) sums from the right: 0, 0, 1, 12, 44, 48, 16. Carrying gives 21252100."
+    },
+    {
+      "q": "Find 892² using the Duplex method.",
+      "options": [
+        "795665",
+        "795663",
+        "795664",
+        "795666"
+      ],
+      "correct": 2,
+      "exp": "Duplex (column) sums from the right: 4, 36, 113, 144, 64. Carrying gives 795664."
+    },
+    {
+      "q": "Find 4155² using the Duplex method.",
+      "options": [
+        "17264026",
+        "17264024",
+        "17264027",
+        "17264025"
+      ],
+      "correct": 3,
+      "exp": "Duplex (column) sums from the right: 25, 50, 35, 50, 41, 8, 16. Carrying gives 17264025."
+    },
+    {
+      "q": "Find 9358² using the Duplex method.",
+      "options": [
+        "87572165",
+        "87572163",
+        "87572166",
+        "87572164"
+      ],
+      "correct": 3,
+      "exp": "Duplex (column) sums from the right: 64, 80, 73, 174, 99, 54, 81. Carrying gives 87572164."
+    },
+    {
+      "q": "Find 1318² using the Duplex method.",
+      "options": [
+        "1737125",
+        "1737123",
+        "1737126",
+        "1737124"
+      ],
+      "correct": 3,
+      "exp": "Duplex (column) sums from the right: 64, 16, 49, 22, 11, 6, 1. Carrying gives 1737124."
+    },
+    {
+      "q": "Find 419² using the Duplex method.",
+      "options": [
+        "175562",
+        "175560",
+        "175561",
+        "175563"
+      ],
+      "correct": 2,
+      "exp": "Duplex (column) sums from the right: 81, 18, 73, 8, 16. Carrying gives 175561."
+    }
+  ],
+  "l4_03": [
+    {
+      "q": "What is the remainder when 5285 is divided by 11?",
+      "options": [
+        "6",
+        "9",
+        "5",
+        "10"
+      ],
+      "correct": 2,
+      "exp": "5285 = 11 × 480 + 5, so the remainder is 5."
+    },
+    {
+      "q": "What is the remainder when 2839 is divided by 13?",
+      "options": [
+        "9",
+        "10",
+        "7",
+        "5"
+      ],
+      "correct": 3,
+      "exp": "2839 = 13 × 218 + 5, so the remainder is 5."
+    },
+    {
+      "q": "What is the remainder when 9322 is divided by 13?",
+      "options": [
+        "10",
+        "4",
+        "9",
+        "1"
+      ],
+      "correct": 3,
+      "exp": "9322 = 13 × 717 + 1, so the remainder is 1."
+    },
+    {
+      "q": "What is the remainder when 4131 is divided by 11?",
+      "options": [
+        "7",
+        "6",
+        "0",
+        "2"
+      ],
+      "correct": 1,
+      "exp": "4131 = 11 × 375 + 6, so the remainder is 6."
+    },
+    {
+      "q": "What is the remainder when 4854 is divided by 7?",
+      "options": [
+        "5",
+        "0",
+        "2",
+        "3"
+      ],
+      "correct": 3,
+      "exp": "4854 = 7 × 693 + 3, so the remainder is 3."
+    },
+    {
+      "q": "What is the remainder when 7326 is divided by 11?",
+      "options": [
+        "0",
+        "9",
+        "1",
+        "7"
+      ],
+      "correct": 0,
+      "exp": "7326 = 11 × 666 + 0, so the remainder is 0."
+    },
+    {
+      "q": "What is the remainder when 7435 is divided by 13?",
+      "options": [
+        "12",
+        "9",
+        "8",
+        "11"
+      ],
+      "correct": 0,
+      "exp": "7435 = 13 × 571 + 12, so the remainder is 12."
+    },
+    {
+      "q": "What is the remainder when 2195 is divided by 7?",
+      "options": [
+        "2",
+        "4",
+        "3",
+        "5"
+      ],
+      "correct": 1,
+      "exp": "2195 = 7 × 313 + 4, so the remainder is 4."
+    },
+    {
+      "q": "What is the remainder when 9932 is divided by 13?",
+      "options": [
+        "8",
+        "9",
+        "3",
+        "0"
+      ],
+      "correct": 3,
+      "exp": "9932 = 13 × 764 + 0, so the remainder is 0."
+    },
+    {
+      "q": "What is the remainder when 8550 is divided by 11?",
+      "options": [
+        "3",
+        "1",
+        "5",
+        "9"
+      ],
+      "correct": 0,
+      "exp": "8550 = 11 × 777 + 3, so the remainder is 3."
+    },
+    {
+      "q": "What is the remainder when 2542 is divided by 13?",
+      "options": [
+        "0",
+        "4",
+        "7",
+        "5"
+      ],
+      "correct": 2,
+      "exp": "2542 = 13 × 195 + 7, so the remainder is 7."
+    },
+    {
+      "q": "What is the remainder when 848 is divided by 7?",
+      "options": [
+        "0",
+        "2",
+        "1",
+        "6"
+      ],
+      "correct": 2,
+      "exp": "848 = 7 × 121 + 1, so the remainder is 1."
+    },
+    {
+      "q": "What is the remainder when 8077 is divided by 11?",
+      "options": [
+        "3",
+        "10",
+        "1",
+        "2"
+      ],
+      "correct": 0,
+      "exp": "8077 = 11 × 734 + 3, so the remainder is 3."
+    },
+    {
+      "q": "What is the remainder when 9284 is divided by 13?",
+      "options": [
+        "2",
+        "3",
         "8",
         "6"
       ],
-      "correct": 3,
-      "exp": "7 − 7 + 9 − 3 = 6."
+      "correct": 0,
+      "exp": "9284 = 13 × 714 + 2, so the remainder is 2."
     },
     {
-      "q": "What is the alternating sum of 99077, starting from the units digit?",
+      "q": "What is the remainder when 7628 is divided by 7?",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "5"
+      ],
+      "correct": 3,
+      "exp": "7628 = 7 × 1089 + 5, so the remainder is 5."
+    }
+  ],
+  "l4_04": [
+    {
+      "q": "How many digits repeat in the decimal of 1/47?",
+      "options": [
+        "47",
+        "48",
+        "46",
+        "49"
+      ],
+      "correct": 2,
+      "exp": "Long division of 1 by 47 returns to remainder 1 after 46 digits: 0.021276595744…."
+    },
+    {
+      "q": "What is the 6th digit after the decimal point of 1/7?",
+      "options": [
+        "9",
+        "7",
+        "5",
+        "0"
+      ],
+      "correct": 1,
+      "exp": "1 ÷ 7 = 0.142857, so digit 6 is 7."
+    },
+    {
+      "q": "What is the 4th digit after the decimal point of 1/13?",
+      "options": [
+        "1",
+        "3",
+        "9",
+        "0"
+      ],
+      "correct": 2,
+      "exp": "1 ÷ 13 = 0.076923, so digit 4 is 9."
+    },
+    {
+      "q": "How many digits repeat in the decimal of 1/29?",
+      "options": [
+        "29",
+        "28",
+        "30",
+        "31"
+      ],
+      "correct": 1,
+      "exp": "Long division of 1 by 29 returns to remainder 1 after 28 digits: 0.034482758620…."
+    },
+    {
+      "q": "What is the first digit after the decimal point of 1/13?",
+      "options": [
+        "9",
+        "7",
+        "1",
+        "0"
+      ],
+      "correct": 3,
+      "exp": "1 ÷ 13 = 0.076923, so the first digit is 0."
+    },
+    {
+      "q": "What is the first digit after the decimal point of 1/71?",
+      "options": [
+        "5",
+        "0",
+        "9",
+        "8"
+      ],
+      "correct": 1,
+      "exp": "1 ÷ 71 = 0.014084507042…, so the first digit is 0."
+    },
+    {
+      "q": "What is the first digit after the decimal point of 1/7?",
+      "options": [
+        "7",
+        "1",
+        "4",
+        "6"
+      ],
+      "correct": 1,
+      "exp": "1 ÷ 7 = 0.142857, so the first digit is 1."
+    },
+    {
+      "q": "What is the 4th digit after the decimal point of 1/47?",
+      "options": [
+        "3",
+        "2",
+        "9",
+        "4"
+      ],
+      "correct": 1,
+      "exp": "1 ÷ 47 = 0.021276595744…, so digit 4 is 2."
+    },
+    {
+      "q": "How many digits repeat in the decimal of 1/73?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "correct": 0,
+      "exp": "Long division of 1 by 73 returns to remainder 1 after 8 digits: 0.01369863."
+    },
+    {
+      "q": "How many digits repeat in the decimal of 1/79?",
+      "options": [
+        "14",
+        "13",
+        "15",
+        "16"
+      ],
+      "correct": 1,
+      "exp": "Long division of 1 by 79 returns to remainder 1 after 13 digits: 0.012658227848…."
+    },
+    {
+      "q": "What is the 12th digit after the decimal point of 1/53?",
+      "options": [
+        "6",
+        "9",
+        "5",
+        "8"
+      ],
+      "correct": 3,
+      "exp": "1 ÷ 53 = 0.018867924528…, so digit 12 is 8."
+    },
+    {
+      "q": "How many digits repeat in the decimal of 1/53?",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "correct": 0,
+      "exp": "Long division of 1 by 53 returns to remainder 1 after 13 digits: 0.018867924528…."
+    },
+    {
+      "q": "What is the 9th digit after the decimal point of 1/61?",
+      "options": [
+        "0",
+        "3",
+        "8",
+        "2"
+      ],
+      "correct": 3,
+      "exp": "1 ÷ 61 = 0.016393442622…, so digit 9 is 2."
+    },
+    {
+      "q": "How many digits repeat in the decimal of 1/67?",
+      "options": [
+        "34",
+        "35",
+        "33",
+        "36"
+      ],
+      "correct": 2,
+      "exp": "Long division of 1 by 67 returns to remainder 1 after 33 digits: 0.014925373134…."
+    },
+    {
+      "q": "What is the 2nd digit after the decimal point of 1/43?",
+      "options": [
+        "2",
+        "8",
+        "9",
+        "3"
+      ],
+      "correct": 0,
+      "exp": "1 ÷ 43 = 0.023255813953…, so digit 2 is 2."
+    }
+  ],
+  "l4_05": [
+    {
+      "q": "What day of the week does 9 September 2007 fall on?",
+      "options": [
+        "Sunday",
+        "Wednesday",
+        "Monday",
+        "Thursday"
+      ],
+      "correct": 0,
+      "exp": "The day-of-the-week calculation gives Sunday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 23 June 2025 fall on?",
+      "options": [
+        "Monday",
+        "Sunday",
+        "Tuesday",
+        "Thursday"
+      ],
+      "correct": 0,
+      "exp": "The day-of-the-week calculation gives Monday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 16 June 2004 fall on?",
+      "options": [
+        "Sunday",
+        "Thursday",
+        "Wednesday",
+        "Monday"
+      ],
+      "correct": 2,
+      "exp": "The day-of-the-week calculation gives Wednesday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 26 February 2026 fall on?",
+      "options": [
+        "Saturday",
+        "Tuesday",
+        "Thursday",
+        "Monday"
+      ],
+      "correct": 2,
+      "exp": "The day-of-the-week calculation gives Thursday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 19 January 2030 fall on?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Friday",
+        "Saturday"
+      ],
+      "correct": 3,
+      "exp": "The day-of-the-week calculation gives Saturday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 19 August 2023 fall on?",
+      "options": [
+        "Wednesday",
+        "Saturday",
+        "Friday",
+        "Thursday"
+      ],
+      "correct": 1,
+      "exp": "The day-of-the-week calculation gives Saturday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 8 August 2022 fall on?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Saturday",
+        "Thursday"
+      ],
+      "correct": 1,
+      "exp": "The day-of-the-week calculation gives Monday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 5 December 2006 fall on?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "correct": 1,
+      "exp": "The day-of-the-week calculation gives Tuesday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 2 October 2024 fall on?",
+      "options": [
+        "Sunday",
+        "Friday",
+        "Saturday",
+        "Wednesday"
+      ],
+      "correct": 3,
+      "exp": "The day-of-the-week calculation gives Wednesday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 14 April 2002 fall on?",
+      "options": [
+        "Monday",
+        "Wednesday",
+        "Tuesday",
+        "Sunday"
+      ],
+      "correct": 3,
+      "exp": "The day-of-the-week calculation gives Sunday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 20 March 2010 fall on?",
+      "options": [
+        "Monday",
+        "Wednesday",
+        "Tuesday",
+        "Saturday"
+      ],
+      "correct": 3,
+      "exp": "The day-of-the-week calculation gives Saturday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 21 January 2005 fall on?",
+      "options": [
+        "Sunday",
+        "Tuesday",
+        "Monday",
+        "Friday"
+      ],
+      "correct": 3,
+      "exp": "The day-of-the-week calculation gives Friday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 22 July 2027 fall on?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Friday",
+        "Thursday"
+      ],
+      "correct": 3,
+      "exp": "The day-of-the-week calculation gives Thursday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 18 November 2027 fall on?",
+      "options": [
+        "Thursday",
+        "Monday",
+        "Sunday",
+        "Tuesday"
+      ],
+      "correct": 0,
+      "exp": "The day-of-the-week calculation gives Thursday, checked against the standard calendar."
+    },
+    {
+      "q": "What day of the week does 2 August 2005 fall on?",
+      "options": [
+        "Tuesday",
+        "Thursday",
+        "Friday",
+        "Sunday"
+      ],
+      "correct": 0,
+      "exp": "The day-of-the-week calculation gives Tuesday, checked against the standard calendar."
+    }
+  ],
+  "l4_06": [
+    {
+      "q": "Find √3346 correct to 2 decimal places.",
+      "options": [
+        "57.85",
+        "57.84",
+        "57.83",
+        "57.94"
+      ],
+      "correct": 1,
+      "exp": "57² = 3249 and 58² = 3364, so √3346 lies between 57 and 58. Value: 57.84."
+    },
+    {
+      "q": "Find √9241 correct to 2 decimal places.",
+      "options": [
+        "96.13",
+        "96.14",
+        "96.12",
+        "96.23"
+      ],
+      "correct": 0,
+      "exp": "96² = 9216 and 97² = 9409, so √9241 lies between 96 and 97. Value: 96.13."
+    },
+    {
+      "q": "Find √2230 correct to 2 decimal places.",
+      "options": [
+        "47.22",
+        "47.23",
+        "47.21",
+        "47.32"
+      ],
+      "correct": 0,
+      "exp": "47² = 2209 and 48² = 2304, so √2230 lies between 47 and 48. Value: 47.22."
+    },
+    {
+      "q": "Find √1345 correct to 2 decimal places.",
+      "options": [
+        "36.67",
+        "36.68",
+        "36.66",
+        "36.77"
+      ],
+      "correct": 0,
+      "exp": "36² = 1296 and 37² = 1369, so √1345 lies between 36 and 37. Value: 36.67."
+    },
+    {
+      "q": "Find √4816 correct to 2 decimal places.",
+      "options": [
+        "69.41",
+        "69.39",
+        "69.40",
+        "69.50"
+      ],
+      "correct": 2,
+      "exp": "69² = 4761 and 70² = 4900, so √4816 lies between 69 and 70. Value: 69.40."
+    },
+    {
+      "q": "Find √198 correct to 2 decimal places.",
+      "options": [
+        "14.08",
+        "14.07",
+        "14.06",
+        "14.17"
+      ],
+      "correct": 1,
+      "exp": "14² = 196 and 15² = 225, so √198 lies between 14 and 15. Value: 14.07."
+    },
+    {
+      "q": "Find √7772 correct to 2 decimal places.",
+      "options": [
+        "88.17",
+        "88.15",
+        "88.26",
+        "88.16"
+      ],
+      "correct": 3,
+      "exp": "88² = 7744 and 89² = 7921, so √7772 lies between 88 and 89. Value: 88.16."
+    },
+    {
+      "q": "Find √2552 correct to 2 decimal places.",
+      "options": [
+        "50.52",
+        "50.53",
+        "50.51",
+        "50.62"
+      ],
+      "correct": 0,
+      "exp": "50² = 2500 and 51² = 2601, so √2552 lies between 50 and 51. Value: 50.52."
+    },
+    {
+      "q": "Find √9902 correct to 2 decimal places.",
+      "options": [
+        "99.51",
+        "99.52",
+        "99.50",
+        "99.61"
+      ],
+      "correct": 0,
+      "exp": "99² = 9801 and 100² = 10000, so √9902 lies between 99 and 100. Value: 99.51."
+    },
+    {
+      "q": "Find √1800 correct to 2 decimal places.",
+      "options": [
+        "42.44",
+        "42.42",
+        "42.53",
+        "42.43"
+      ],
+      "correct": 3,
+      "exp": "42² = 1764 and 43² = 1849, so √1800 lies between 42 and 43. Value: 42.43."
+    },
+    {
+      "q": "Find √3078 correct to 2 decimal places.",
+      "options": [
+        "55.48",
+        "55.49",
+        "55.47",
+        "55.58"
+      ],
+      "correct": 0,
+      "exp": "55² = 3025 and 56² = 3136, so √3078 lies between 55 and 56. Value: 55.48."
+    },
+    {
+      "q": "Find √3819 correct to 2 decimal places.",
+      "options": [
+        "61.81",
+        "61.79",
+        "61.80",
+        "61.90"
+      ],
+      "correct": 2,
+      "exp": "61² = 3721 and 62² = 3844, so √3819 lies between 61 and 62. Value: 61.80."
+    },
+    {
+      "q": "Find √2276 correct to 2 decimal places.",
+      "options": [
+        "47.72",
+        "47.70",
+        "47.81",
+        "47.71"
+      ],
+      "correct": 3,
+      "exp": "47² = 2209 and 48² = 2304, so √2276 lies between 47 and 48. Value: 47.71."
+    },
+    {
+      "q": "Find √5911 correct to 2 decimal places.",
+      "options": [
+        "76.88",
+        "76.89",
+        "76.87",
+        "76.98"
+      ],
+      "correct": 0,
+      "exp": "76² = 5776 and 77² = 5929, so √5911 lies between 76 and 77. Value: 76.88."
+    },
+    {
+      "q": "Find √5733 correct to 2 decimal places.",
+      "options": [
+        "75.73",
+        "75.71",
+        "75.82",
+        "75.72"
+      ],
+      "correct": 3,
+      "exp": "75² = 5625 and 76² = 5776, so √5733 lies between 75 and 76. Value: 75.72."
+    }
+  ],
+  "l4_07": [
+    {
+      "q": "Factorise 2x² + 2x − 24.",
+      "options": [
+        "(x + 4)(2x − 6)",
+        "(x − 4)(2x − 6)",
+        "(x + 4)(2x + 6)",
+        "(x − 6)(2x + 4)"
+      ],
+      "correct": 0,
+      "exp": "Expand to check: (x + 4)(2x − 6) gives 2x² + 2x − 24."
+    },
+    {
+      "q": "Factorise 4x² − 12x + 8.",
+      "options": [
+        "(2x − 4)(2x − 2)",
+        "(2x + 4)(2x − 2)",
+        "(2x − 4)(2x + 2)",
+        "(2x − 5)(2x − 2)"
+      ],
+      "correct": 0,
+      "exp": "Expand to check: (2x − 4)(2x − 2) gives 4x² − 12x + 8."
+    },
+    {
+      "q": "Factorise 4x² + 18x + 20.",
+      "options": [
+        "(2x − 4)(2x + 5)",
+        "(2x + 4)(2x − 5)",
+        "(2x + 5)(2x + 5)",
+        "(2x + 4)(2x + 5)"
+      ],
+      "correct": 3,
+      "exp": "Expand to check: (2x + 4)(2x + 5) gives 4x² + 18x + 20."
+    },
+    {
+      "q": "Factorise 16x² + 28x + 10.",
+      "options": [
+        "(4x − 2)(4x + 5)",
+        "(4x + 2)(4x + 5)",
+        "(4x + 2)(4x − 5)",
+        "(4x + 3)(4x + 5)"
+      ],
+      "correct": 1,
+      "exp": "Expand to check: (4x + 2)(4x + 5) gives 16x² + 28x + 10."
+    },
+    {
+      "q": "Factorise 9x² − 24x + 12.",
+      "options": [
+        "(3x + 2)(3x − 6)",
+        "(3x − 2)(3x + 6)",
+        "(3x − 3)(3x − 6)",
+        "(3x − 2)(3x − 6)"
+      ],
+      "correct": 3,
+      "exp": "Expand to check: (3x − 2)(3x − 6) gives 9x² − 24x + 12."
+    },
+    {
+      "q": "Factorise 2x² − x − 10.",
+      "options": [
+        "(2x − 5)(x + 2)",
+        "(2x + 5)(x + 2)",
+        "(2x − 5)(x − 2)",
+        "(2x + 2)(x − 5)"
+      ],
+      "correct": 0,
+      "exp": "Expand to check: (2x − 5)(x + 2) gives 2x² − x − 10."
+    },
+    {
+      "q": "Factorise 6x² + 11x + 4.",
+      "options": [
+        "(2x − 1)(3x + 4)",
+        "(2x + 1)(3x − 4)",
+        "(2x + 1)(3x + 4)",
+        "(2x + 4)(3x + 1)"
+      ],
+      "correct": 2,
+      "exp": "Expand to check: (2x + 1)(3x + 4) gives 6x² + 11x + 4."
+    },
+    {
+      "q": "Factorise 4x² − 2x − 30.",
+      "options": [
+        "(2x − 5)(2x − 6)",
+        "(2x + 5)(2x + 6)",
+        "(2x + 5)(2x − 6)",
+        "(2x + 6)(2x − 6)"
+      ],
+      "correct": 2,
+      "exp": "Expand to check: (2x + 5)(2x − 6) gives 4x² − 2x − 30."
+    },
+    {
+      "q": "Factorise x² + 8x + 12.",
+      "options": [
+        "(x − 2)(x + 6)",
+        "(x + 2)(x + 6)",
+        "(x + 2)(x − 6)",
+        "(x + 3)(x + 6)"
+      ],
+      "correct": 1,
+      "exp": "Expand to check: (x + 2)(x + 6) gives x² + 8x + 12."
+    },
+    {
+      "q": "Factorise 8x² − 20x − 12.",
+      "options": [
+        "(4x − 2)(2x − 6)",
+        "(4x + 2)(2x + 6)",
+        "(4x − 6)(2x + 2)",
+        "(4x + 2)(2x − 6)"
+      ],
+      "correct": 3,
+      "exp": "Expand to check: (4x + 2)(2x − 6) gives 8x² − 20x − 12."
+    },
+    {
+      "q": "Factorise 4x² − 20x + 16.",
+      "options": [
+        "(x + 4)(4x − 4)",
+        "(x − 4)(4x + 4)",
+        "(x − 5)(4x − 4)",
+        "(x − 4)(4x − 4)"
+      ],
+      "correct": 3,
+      "exp": "Expand to check: (x − 4)(4x − 4) gives 4x² − 20x + 16."
+    },
+    {
+      "q": "Factorise 6x² + 18x + 12.",
+      "options": [
+        "(3x − 3)(2x + 4)",
+        "(3x + 3)(2x − 4)",
+        "(3x + 3)(2x + 4)",
+        "(3x + 4)(2x + 3)"
+      ],
+      "correct": 2,
+      "exp": "Expand to check: (3x + 3)(2x + 4) gives 6x² + 18x + 12."
+    },
+    {
+      "q": "Factorise 4x² + 26x + 12.",
+      "options": [
+        "(4x − 2)(x + 6)",
+        "(4x + 2)(x − 6)",
+        "(4x + 2)(x + 6)",
+        "(4x + 6)(x + 2)"
+      ],
+      "correct": 2,
+      "exp": "Expand to check: (4x + 2)(x + 6) gives 4x² + 26x + 12."
+    },
+    {
+      "q": "Factorise 12x² + 9x − 30.",
+      "options": [
+        "(3x − 6)(4x − 5)",
+        "(3x + 6)(4x + 5)",
+        "(3x + 6)(4x − 5)",
+        "(3x − 5)(4x + 6)"
+      ],
+      "correct": 2,
+      "exp": "Expand to check: (3x + 6)(4x − 5) gives 12x² + 9x − 30."
+    },
+    {
+      "q": "Factorise 8x² − 32x + 24.",
+      "options": [
+        "(2x + 6)(4x − 4)",
+        "(2x − 6)(4x + 4)",
+        "(2x − 6)(4x − 4)",
+        "(2x − 4)(4x − 6)"
+      ],
+      "correct": 2,
+      "exp": "Expand to check: (2x − 6)(4x − 4) gives 8x² − 32x + 24."
+    }
+  ],
+  "l4_08": [
+    {
+      "q": "What is 46³?",
+      "options": [
+        "97337",
+        "97336",
+        "97335",
+        "97338"
+      ],
+      "correct": 1,
+      "exp": "Four terms: 4³ = 64, 3 × 4² × 6 = 288, 3 × 4 × 6² = 432, 6³ = 216. Combine with carries: 97336."
+    },
+    {
+      "q": "What is the 12th digit after the decimal point of 1/59?",
+      "options": [
+        "7",
+        "9",
+        "2",
+        "1"
+      ],
+      "correct": 2,
+      "exp": "1 ÷ 59 = 0.016949152542…, so digit 12 is 2."
+    },
+    {
+      "q": "What is the remainder when 2608 is divided by 11?",
+      "options": [
+        "5",
+        "4",
+        "1",
+        "3"
+      ],
+      "correct": 2,
+      "exp": "2608 = 11 × 237 + 1, so the remainder is 1."
+    },
+    {
+      "q": "Find 9109² using the Duplex method.",
+      "options": [
+        "82973881",
+        "82973882",
+        "82973880",
+        "82973883"
+      ],
+      "correct": 0,
+      "exp": "Duplex (column) sums from the right: 81, 0, 18, 162, 1, 18, 81. Carrying gives 82973881."
+    },
+    {
+      "q": "What is the remainder when 4704 is divided by 13?",
+      "options": [
+        "4",
+        "8",
+        "11",
+        "12"
+      ],
+      "correct": 2,
+      "exp": "4704 = 13 × 361 + 11, so the remainder is 11."
+    },
+    {
+      "q": "Find 747² using the Duplex method.",
+      "options": [
+        "558010",
+        "558009",
+        "558008",
+        "558011"
+      ],
+      "correct": 1,
+      "exp": "Duplex (column) sums from the right: 49, 56, 114, 56, 49. Carrying gives 558009."
+    },
+    {
+      "q": "Find 522² using the Duplex method.",
+      "options": [
+        "272485",
+        "272483",
+        "272484",
+        "272486"
+      ],
+      "correct": 2,
+      "exp": "Duplex (column) sums from the right: 4, 8, 24, 20, 25. Carrying gives 272484."
+    },
+    {
+      "q": "Find √4322 correct to 2 decimal places.",
+      "options": [
+        "65.75",
+        "65.73",
+        "65.84",
+        "65.74"
+      ],
+      "correct": 3,
+      "exp": "65² = 4225 and 66² = 4356, so √4322 lies between 65 and 66. Value: 65.74."
+    },
+    {
+      "q": "What is 15³?",
+      "options": [
+        "3376",
+        "3374",
+        "3375",
+        "3377"
+      ],
+      "correct": 2,
+      "exp": "Four terms: 1³ = 1, 3 × 1² × 5 = 15, 3 × 1 × 5² = 75, 5³ = 125. Combine with carries: 3375."
+    },
+    {
+      "q": "Find √2259 correct to 2 decimal places.",
+      "options": [
+        "47.54",
+        "47.53",
+        "47.52",
+        "47.63"
+      ],
+      "correct": 1,
+      "exp": "47² = 2209 and 48² = 2304, so √2259 lies between 47 and 48. Value: 47.53."
+    },
+    {
+      "q": "What is the 1st digit after the decimal point of 1/43?",
+      "options": [
+        "0",
+        "9",
+        "1",
+        "2"
+      ],
+      "correct": 0,
+      "exp": "1 ÷ 43 = 0.023255813953…, so digit 1 is 0."
+    },
+    {
+      "q": "Find √3899 correct to 2 decimal places.",
+      "options": [
+        "62.45",
+        "62.43",
+        "62.54",
+        "62.44"
+      ],
+      "correct": 3,
+      "exp": "62² = 3844 and 63² = 3969, so √3899 lies between 62 and 63. Value: 62.44."
+    },
+    {
+      "q": "What is the remainder when 4946 is divided by 11?",
+      "options": [
+        "8",
+        "0",
+        "4",
+        "7"
+      ],
+      "correct": 3,
+      "exp": "4946 = 11 × 449 + 7, so the remainder is 7."
+    },
+    {
+      "q": "Find √2127 correct to 2 decimal places.",
+      "options": [
+        "46.13",
+        "46.11",
+        "46.12",
+        "46.22"
+      ],
+      "correct": 2,
+      "exp": "46² = 2116 and 47² = 2209, so √2127 lies between 46 and 47. Value: 46.12."
+    },
+    {
+      "q": "Factorise 2x² + 10x − 12.",
+      "options": [
+        "(2x + 2)(x + 6)",
+        "(2x − 2)(x + 6)",
+        "(2x − 2)(x − 6)",
+        "(2x + 6)(x − 2)"
+      ],
+      "correct": 1,
+      "exp": "Expand to check: (2x − 2)(x + 6) gives 2x² + 10x − 12."
+    },
+    {
+      "q": "What is the first digit after the decimal point of 1/97?",
+      "options": [
+        "4",
+        "5",
+        "0",
+        "3"
+      ],
+      "correct": 2,
+      "exp": "1 ÷ 97 = 0.010309278350…, so the first digit is 0."
+    },
+    {
+      "q": "Factorise 9x² − 4.",
+      "options": [
+        "(3x − 2)(3x − 2)",
+        "(3x + 2)(3x + 2)",
+        "(3x + 3)(3x − 2)",
+        "(3x + 2)(3x − 2)"
+      ],
+      "correct": 3,
+      "exp": "Expand to check: (3x + 2)(3x − 2) gives 9x² − 4."
+    }
+  ],
+  "l4_09": [
+    {
+      "q": "What is the alternating sum of 30120, starting from the units digit?",
+      "options": [
+        "3",
+        "1",
+        "2",
+        "4"
+      ],
+      "correct": 2,
+      "exp": "0 − 2 + 1 − 0 + 3 = 2."
+    },
+    {
+      "q": "What is the alternating sum of 55966, starting from the units digit?",
+      "options": [
+        "10",
+        "8",
+        "9",
+        "11"
+      ],
+      "correct": 2,
+      "exp": "6 − 6 + 9 − 5 + 5 = 9."
+    },
+    {
+      "q": "What is the alternating sum of 13321, starting from the units digit?",
       "options": [
         "1",
         "0",
@@ -2916,10 +8306,109 @@ export const PRACTICE_EXTRA = {
         "2"
       ],
       "correct": 1,
-      "exp": "7 − 7 + 0 − 9 + 9 = 0."
+      "exp": "1 − 2 + 3 − 3 + 1 = 0."
     },
     {
-      "q": "What is the alternating sum of 4359, starting from the units digit?",
+      "q": "What is the alternating sum of 49120, starting from the units digit?",
+      "options": [
+        "−6",
+        "−5",
+        "−7",
+        "−4"
+      ],
+      "correct": 0,
+      "exp": "0 − 2 + 1 − 9 + 4 = -6."
+    },
+    {
+      "q": "What is the alternating sum of 12183, starting from the units digit?",
+      "options": [
+        "−4",
+        "−6",
+        "−5",
+        "−3"
+      ],
+      "correct": 2,
+      "exp": "3 − 8 + 1 − 2 + 1 = -5."
+    },
+    {
+      "q": "What is the alternating sum of 89262, starting from the units digit?",
+      "options": [
+        "−2",
+        "−3",
+        "−4",
+        "−1"
+      ],
+      "correct": 1,
+      "exp": "2 − 6 + 2 − 9 + 8 = -3."
+    },
+    {
+      "q": "What is the alternating sum of 55683, starting from the units digit?",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "correct": 0,
+      "exp": "3 − 8 + 6 − 5 + 5 = 1."
+    },
+    {
+      "q": "What is the alternating sum of 23056, starting from the units digit?",
+      "options": [
+        "1",
+        "0",
+        "−1",
+        "2"
+      ],
+      "correct": 1,
+      "exp": "6 − 5 + 0 − 3 + 2 = 0."
+    },
+    {
+      "q": "What is the alternating sum of 715, starting from the units digit?",
+      "options": [
+        "12",
+        "11",
+        "10",
+        "13"
+      ],
+      "correct": 1,
+      "exp": "5 − 1 + 7 = 11."
+    },
+    {
+      "q": "What is the alternating sum of 18763, starting from the units digit?",
+      "options": [
+        "−2",
+        "−4",
+        "−3",
+        "−1"
+      ],
+      "correct": 2,
+      "exp": "3 − 6 + 7 − 8 + 1 = -3."
+    },
+    {
+      "q": "What is the alternating sum of 86992, starting from the units digit?",
+      "options": [
+        "5",
+        "3",
+        "4",
+        "6"
+      ],
+      "correct": 2,
+      "exp": "2 − 9 + 9 − 6 + 8 = 4."
+    },
+    {
+      "q": "What is the alternating sum of 6672, starting from the units digit?",
+      "options": [
+        "−4",
+        "−6",
+        "−5",
+        "−3"
+      ],
+      "correct": 2,
+      "exp": "2 − 7 + 6 − 6 = -5."
+    },
+    {
+      "q": "What is the alternating sum of 95384, starting from the units digit?",
       "options": [
         "4",
         "3",
@@ -2927,722 +8416,725 @@ export const PRACTICE_EXTRA = {
         "5"
       ],
       "correct": 1,
-      "exp": "9 − 5 + 3 − 4 = 3."
+      "exp": "4 − 8 + 3 − 5 + 9 = 3."
     },
     {
-      "q": "What is the alternating sum of 95623, starting from the units digit?",
+      "q": "What is the alternating sum of 65173, starting from the units digit?",
       "options": [
-        "12",
-        "10",
-        "11",
-        "13"
+        "−1",
+        "−2",
+        "−3",
+        "0"
       ],
-      "correct": 2,
-      "exp": "3 − 2 + 6 − 5 + 9 = 11."
+      "correct": 1,
+      "exp": "3 − 7 + 1 − 5 + 6 = -2."
+    },
+    {
+      "q": "What is the alternating sum of 77058, starting from the units digit?",
+      "options": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "correct": 3,
+      "exp": "8 − 5 + 0 − 7 + 7 = 3."
     }
   ]
 };
 
 export const QUIZ_EXTRA = {
-  "l1_10": [
+  "l1_01": [
     {
       "q": {
-        "en": "Calculate 97 × 75 using Urdhva-Tiryagbhyam.",
-        "exp": "Units: 7 × 5 = 35. Cross: 9 × 5 + 7 × 7 = 94. Tens: 9 × 7 = 63. Combine with carries: 7275."
+        "en": "What is the digit sum of 37554?",
+        "exp": "3 + 7 + 5 + 5 + 4 = 24."
       },
       "options": [
-        "7276",
-        "7275",
-        "7274",
-        "7277"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is 84 × 99?",
-        "exp": "84 × 100 − 84 = 8400 − 84 = 8316."
-      },
-      "options": [
-        "8317",
-        "8316",
-        "8315",
-        "8318"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is 30 × 11?",
-        "exp": "Write 3, then 3 + 0 = 3, then 0. Answer: 330."
-      },
-      "options": [
-        "331",
-        "329",
-        "330",
-        "332"
+        "25",
+        "23",
+        "24",
+        "26"
       ],
       "correct": 2
     },
     {
       "q": {
-        "en": "Calculate 28 × 79 using Urdhva-Tiryagbhyam.",
-        "exp": "Units: 8 × 9 = 72. Cross: 2 × 9 + 8 × 7 = 74. Tens: 2 × 7 = 14. Combine with carries: 2212."
+        "en": "Calculate 56 × 43 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 6 × 3 = 18. Cross: 5 × 3 + 6 × 4 = 39. Tens: 5 × 4 = 20. Combine with carries: 2408."
       },
       "options": [
-        "2213",
-        "2211",
-        "2212",
-        "2214"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "What is 40 × 11?",
-        "exp": "Write 4, then 4 + 0 = 4, then 0. Answer: 440."
-      },
-      "options": [
-        "441",
-        "440",
-        "439",
-        "442"
-      ],
-      "correct": 1
-    }
-  ],
-  "l2_13": [
-    {
-      "q": {
-        "en": "What is 86 × 84?",
-        "exp": "Same tens digit 8, and units 6 + 4 = 10. Tens: 8 × 9 = 72, followed by units 6 × 4 = 24. Answer: 7224."
-      },
-      "options": [
-        "7225",
-        "7223",
-        "7224",
-        "7226"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "What is 41³?",
-        "exp": "Four terms: 4³ = 64, 3 × 4² × 1 = 48, 3 × 4 × 1² = 12, 1³ = 1. Combine with carries: 68921."
-      },
-      "options": [
-        "68922",
-        "68921",
-        "68920",
-        "68923"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is 71²?",
-        "exp": "7² = 49, 2 × 7 × 1 = 14, 1² = 1. Combine with place values: 5041."
-      },
-      "options": [
-        "5041",
-        "5042",
-        "5040",
-        "5043"
+        "2408",
+        "2409",
+        "2407",
+        "2410"
       ],
       "correct": 0
     },
     {
       "q": {
-        "en": "Add 2/4 + 1/3. Give your answer in lowest terms.",
-        "exp": "(2 × 3 + 1 × 4) / (4 × 3) = 10/12, which simplifies to 5/6."
+        "en": "Calculate 21 × 92 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 1 × 2 = 2. Cross: 2 × 2 + 1 × 9 = 13. Tens: 2 × 9 = 18. Combine with carries: 1932."
       },
       "options": [
-        "10/12",
-        "3/7",
-        "6/6",
-        "5/6"
+        "1933",
+        "1931",
+        "1934",
+        "1932"
       ],
       "correct": 3
     },
     {
       "q": {
-        "en": "What is 2649 ÷ 79? Give the quotient and remainder.",
-        "exp": "79 × 33 = 2607, remainder 2649 − 2607 = 42."
+        "en": "What is the digit sum of 99297?",
+        "exp": "9 + 9 + 2 + 9 + 7 = 36."
       },
       "options": [
-        "Q:34 R:42",
-        "Q:33 R:42",
-        "Q:32 R:121",
-        "Q:33 R:43"
+        "37",
+        "36",
+        "35",
+        "38"
       ],
       "correct": 1
-    }
-  ],
-  "l2_14": [
+    },
     {
       "q": {
-        "en": "Solve x + y = 13 and x − y = 5. What is y?",
-        "exp": "Add: 2x = 18, so x = 9. Subtract: 2y = 8, so y = 4."
+        "en": "What is 48 × 11?",
+        "exp": "Write 4, then 4 + 8 = 12, then 8. Carry the 1 into the first digit. Answer: 528."
       },
       "options": [
-        "4",
-        "5",
-        "3",
-        "6"
+        "529",
+        "527",
+        "528",
+        "530"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 83 × 11?",
+        "exp": "Write 8, then 8 + 3 = 11, then 3. Carry the 1 into the first digit. Answer: 913."
+      },
+      "options": [
+        "914",
+        "912",
+        "915",
+        "913"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the digit sum of 44278?",
+        "exp": "4 + 4 + 2 + 7 + 8 = 25."
+      },
+      "options": [
+        "25",
+        "26",
+        "24",
+        "27"
       ],
       "correct": 0
     },
     {
       "q": {
-        "en": "Solve x + y = 15 and x − y = -3. What is x?",
-        "exp": "Add: 2x = 12, so x = 6. Subtract: 2y = 18, so y = 9."
+        "en": "What is the digit sum of 70641?",
+        "exp": "7 + 0 + 6 + 4 + 1 = 18."
       },
       "options": [
-        "7",
-        "6",
-        "5",
-        "8"
+        "19",
+        "18",
+        "17",
+        "20"
       ],
       "correct": 1
     },
     {
       "q": {
-        "en": "Solve x + y = 7 and x − y = -1. What is x?",
-        "exp": "Add: 2x = 6, so x = 3. Subtract: 2y = 8, so y = 4."
+        "en": "Calculate 58 × 12 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 8 × 2 = 16. Cross: 5 × 2 + 8 × 1 = 18. Tens: 5 × 1 = 5. Combine with carries: 696."
       },
       "options": [
-        "4",
+        "697",
+        "695",
+        "696",
+        "698"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the digit sum of 56434?",
+        "exp": "5 + 6 + 4 + 3 + 4 = 22."
+      },
+      "options": [
+        "23",
+        "21",
+        "24",
+        "22"
+      ],
+      "correct": 3
+    }
+  ],
+  "l1_02": [
+    {
+      "q": {
+        "en": "What is 375²?",
+        "exp": "Ekadhikena Purvena: 37 × 38 = 1406, then append 25 → 140625."
+      },
+      "options": [
+        "140626",
+        "140624",
+        "140627",
+        "140625"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 795²?",
+        "exp": "Ekadhikena Purvena: 79 × 80 = 6320, then append 25 → 632025."
+      },
+      "options": [
+        "632026",
+        "632024",
+        "632027",
+        "632025"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 725²?",
+        "exp": "Ekadhikena Purvena: 72 × 73 = 5256, then append 25 → 525625."
+      },
+      "options": [
+        "525626",
+        "525624",
+        "525625",
+        "525627"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 345²?",
+        "exp": "Ekadhikena Purvena: 34 × 35 = 1190, then append 25 → 119025."
+      },
+      "options": [
+        "119025",
+        "119026",
+        "119024",
+        "119027"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 775²?",
+        "exp": "Ekadhikena Purvena: 77 × 78 = 6006, then append 25 → 600625."
+      },
+      "options": [
+        "600625",
+        "600626",
+        "600624",
+        "600627"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 645²?",
+        "exp": "Ekadhikena Purvena: 64 × 65 = 4160, then append 25 → 416025."
+      },
+      "options": [
+        "416026",
+        "416025",
+        "416024",
+        "416027"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 695²?",
+        "exp": "Ekadhikena Purvena: 69 × 70 = 4830, then append 25 → 483025."
+      },
+      "options": [
+        "483026",
+        "483024",
+        "483027",
+        "483025"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 395²?",
+        "exp": "Ekadhikena Purvena: 39 × 40 = 1560, then append 25 → 156025."
+      },
+      "options": [
+        "156026",
+        "156024",
+        "156025",
+        "156027"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 825²?",
+        "exp": "Ekadhikena Purvena: 82 × 83 = 6806, then append 25 → 680625."
+      },
+      "options": [
+        "680626",
+        "680624",
+        "680627",
+        "680625"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 685²?",
+        "exp": "Ekadhikena Purvena: 68 × 69 = 4692, then append 25 → 469225."
+      },
+      "options": [
+        "469226",
+        "469224",
+        "469227",
+        "469225"
+      ],
+      "correct": 3
+    }
+  ],
+  "l1_03": [
+    {
+      "q": {
+        "en": "Calculate 9 × 6 using Nikhilam (base 10).",
+        "exp": "Deficits from 10: −1 and −4. Cross: 9 − 4 = 5. Deficit product: −1 × −4 = 4. Answer: 5 × 10 + 4 = 54."
+      },
+      "options": [
+        "55",
+        "53",
+        "56",
+        "54"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 6 × 14 using Nikhilam (base 10).",
+        "exp": "Deficits from 10: −4 and 4. Cross: 6 + 4 = 10. Deficit product: −4 × 4 = −16. Answer: 10 × 10 − 16 = 84."
+      },
+      "options": [
+        "85",
+        "84",
+        "83",
+        "86"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 6 × 6 using Nikhilam (base 10).",
+        "exp": "Deficits from 10: −4 and −4. Cross: 6 − 4 = 2. Deficit product: −4 × −4 = 16. Answer: 2 × 10 + 16 = 36."
+      },
+      "options": [
+        "37",
+        "35",
+        "36",
+        "38"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 9 × 11 using Nikhilam (base 10).",
+        "exp": "Deficits from 10: −1 and 1. Cross: 9 + 1 = 10. Deficit product: −1 × 1 = −1. Answer: 10 × 10 − 1 = 99."
+      },
+      "options": [
+        "100",
+        "99",
+        "98",
+        "101"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 15 × 13 using Nikhilam (base 10).",
+        "exp": "Deficits from 10: 5 and 3. Cross: 15 + 3 = 18. Deficit product: 5 × 3 = 15. Answer: 18 × 10 + 15 = 195."
+      },
+      "options": [
+        "195",
+        "196",
+        "194",
+        "197"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 8 × 7 using Nikhilam (base 10).",
+        "exp": "Deficits from 10: −2 and −3. Cross: 8 − 3 = 5. Deficit product: −2 × −3 = 6. Answer: 5 × 10 + 6 = 56."
+      },
+      "options": [
+        "56",
+        "57",
+        "55",
+        "58"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 12 × 11 using Nikhilam (base 10).",
+        "exp": "Deficits from 10: 2 and 1. Cross: 12 + 1 = 13. Deficit product: 2 × 1 = 2. Answer: 13 × 10 + 2 = 132."
+      },
+      "options": [
+        "133",
+        "131",
+        "134",
+        "132"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 7 × 15 using Nikhilam (base 10).",
+        "exp": "Deficits from 10: −3 and 5. Cross: 7 + 5 = 12. Deficit product: −3 × 5 = −15. Answer: 12 × 10 − 15 = 105."
+      },
+      "options": [
+        "106",
+        "104",
+        "107",
+        "105"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 8 × 15 using Nikhilam (base 10).",
+        "exp": "Deficits from 10: −2 and 5. Cross: 8 + 5 = 13. Deficit product: −2 × 5 = −10. Answer: 13 × 10 − 10 = 120."
+      },
+      "options": [
+        "121",
+        "119",
+        "122",
+        "120"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 12 × 12 using Nikhilam (base 10).",
+        "exp": "Deficits from 10: 2 and 2. Cross: 12 + 2 = 14. Deficit product: 2 × 2 = 4. Answer: 14 × 10 + 4 = 144."
+      },
+      "options": [
+        "145",
+        "143",
+        "144",
+        "146"
+      ],
+      "correct": 2
+    }
+  ],
+  "l1_04": [
+    {
+      "q": {
+        "en": "Calculate 107 × 95 using Nikhilam (base 100).",
+        "exp": "Deficits from 100: 7 and −5. Cross: 107 − 5 = 102. Deficit product: 7 × −5 = −35. Answer: 102 × 100 − 35 = 10165."
+      },
+      "options": [
+        "10166",
+        "10164",
+        "10165",
+        "10167"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 106 × 91 using Nikhilam (base 100).",
+        "exp": "Deficits from 100: 6 and −9. Cross: 106 − 9 = 97. Deficit product: 6 × −9 = −54. Answer: 97 × 100 − 54 = 9646."
+      },
+      "options": [
+        "9647",
+        "9645",
+        "9648",
+        "9646"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 95 × 92 using Nikhilam (base 100).",
+        "exp": "Deficits from 100: −5 and −8. Cross: 95 − 8 = 87. Deficit product: −5 × −8 = 40. Answer: 87 × 100 + 40 = 8740."
+      },
+      "options": [
+        "8741",
+        "8739",
+        "8742",
+        "8740"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 96 × 91 using Nikhilam (base 100).",
+        "exp": "Deficits from 100: −4 and −9. Cross: 96 − 9 = 87. Deficit product: −4 × −9 = 36. Answer: 87 × 100 + 36 = 8736."
+      },
+      "options": [
+        "8737",
+        "8735",
+        "8736",
+        "8738"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 101 × 98 using Nikhilam (base 100).",
+        "exp": "Deficits from 100: 1 and −2. Cross: 101 − 2 = 99. Deficit product: 1 × −2 = −2. Answer: 99 × 100 − 2 = 9898."
+      },
+      "options": [
+        "9898",
+        "9899",
+        "9897",
+        "9900"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 109 × 102 using Nikhilam (base 100).",
+        "exp": "Deficits from 100: 9 and 2. Cross: 109 + 2 = 111. Deficit product: 9 × 2 = 18. Answer: 111 × 100 + 18 = 11118."
+      },
+      "options": [
+        "11119",
+        "11118",
+        "11117",
+        "11120"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 99 × 95 using Nikhilam (base 100).",
+        "exp": "Deficits from 100: −1 and −5. Cross: 99 − 5 = 94. Deficit product: −1 × −5 = 5. Answer: 94 × 100 + 5 = 9405."
+      },
+      "options": [
+        "9406",
+        "9404",
+        "9407",
+        "9405"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 91 × 104 using Nikhilam (base 100).",
+        "exp": "Deficits from 100: −9 and 4. Cross: 91 + 4 = 95. Deficit product: −9 × 4 = −36. Answer: 95 × 100 − 36 = 9464."
+      },
+      "options": [
+        "9465",
+        "9463",
+        "9466",
+        "9464"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 98 × 91 using Nikhilam (base 100).",
+        "exp": "Deficits from 100: −2 and −9. Cross: 98 − 9 = 89. Deficit product: −2 × −9 = 18. Answer: 89 × 100 + 18 = 8918."
+      },
+      "options": [
+        "8919",
+        "8917",
+        "8920",
+        "8918"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 98 × 101 using Nikhilam (base 100).",
+        "exp": "Deficits from 100: −2 and 1. Cross: 98 + 1 = 99. Deficit product: −2 × 1 = −2. Answer: 99 × 100 − 2 = 9898."
+      },
+      "options": [
+        "9899",
+        "9898",
+        "9897",
+        "9900"
+      ],
+      "correct": 1
+    }
+  ],
+  "l1_05": [
+    {
+      "q": {
+        "en": "Calculate 1018 × 952 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: 18 and −48. Cross: 1018 − 48 = 970. Deficit product: 18 × −48 = −864. Answer: 970 × 1000 − 864 = 969136."
+      },
+      "options": [
+        "969136",
+        "969137",
+        "969135",
+        "969138"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 1046 × 937 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: 46 and −63. Cross: 1046 − 63 = 983. Deficit product: 46 × −63 = −2898. Answer: 983 × 1000 − 2898 = 980102."
+      },
+      "options": [
+        "980102",
+        "980103",
+        "980101",
+        "980104"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 960 × 926 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: −40 and −74. Cross: 960 − 74 = 886. Deficit product: −40 × −74 = 2960. Answer: 886 × 1000 + 2960 = 888960."
+      },
+      "options": [
+        "888961",
+        "888960",
+        "888959",
+        "888962"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 1065 × 1017 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: 65 and 17. Cross: 1065 + 17 = 1082. Deficit product: 65 × 17 = 1105. Answer: 1082 × 1000 + 1105 = 1083105."
+      },
+      "options": [
+        "1083105",
+        "1083106",
+        "1083104",
+        "1083107"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 941 × 938 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: −59 and −62. Cross: 941 − 62 = 879. Deficit product: −59 × −62 = 3658. Answer: 879 × 1000 + 3658 = 882658."
+      },
+      "options": [
+        "882659",
+        "882658",
+        "882657",
+        "882660"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 931 × 1084 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: −69 and 84. Cross: 931 + 84 = 1015. Deficit product: −69 × 84 = −5796. Answer: 1015 × 1000 − 5796 = 1009204."
+      },
+      "options": [
+        "1009205",
+        "1009204",
+        "1009203",
+        "1009206"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 1024 × 1093 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: 24 and 93. Cross: 1024 + 93 = 1117. Deficit product: 24 × 93 = 2232. Answer: 1117 × 1000 + 2232 = 1119232."
+      },
+      "options": [
+        "1119233",
+        "1119231",
+        "1119232",
+        "1119234"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 1091 × 986 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: 91 and −14. Cross: 1091 − 14 = 1077. Deficit product: 91 × −14 = −1274. Answer: 1077 × 1000 − 1274 = 1075726."
+      },
+      "options": [
+        "1075727",
+        "1075725",
+        "1075726",
+        "1075728"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 945 × 1089 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: −55 and 89. Cross: 945 + 89 = 1034. Deficit product: −55 × 89 = −4895. Answer: 1034 × 1000 − 4895 = 1029105."
+      },
+      "options": [
+        "1029105",
+        "1029106",
+        "1029104",
+        "1029107"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 938 × 946 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: −62 and −54. Cross: 938 − 54 = 884. Deficit product: −62 × −54 = 3348. Answer: 884 × 1000 + 3348 = 887348."
+      },
+      "options": [
+        "887349",
+        "887347",
+        "887350",
+        "887348"
+      ],
+      "correct": 3
+    }
+  ],
+  "l1_06": [
+    {
+      "q": {
+        "en": "Check 55 × 80 = 4400 by casting out nines. What is the digital root of 4400?",
+        "exp": "Digit sum of 4400 reduces to 8. Check: digital roots of 55 and 80 are 1 and 8, and 1 × 8 reduces to 8."
+      },
+      "options": [
+        "5",
         "2",
+        "1",
+        "8"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Check 22 × 29 = 638 by casting out nines. What is the digital root of 638?",
+        "exp": "Digit sum of 638 reduces to 8. Check: digital roots of 22 and 29 are 4 and 2, and 4 × 2 reduces to 8."
+      },
+      "options": [
         "3",
+        "4",
+        "8",
         "5"
       ],
       "correct": 2
     },
     {
       "q": {
-        "en": "Solve 2x + 5y = 38 and 2x − 5y = -22. What is y?",
-        "exp": "Add: 4x = 16, so x = 4. Subtract: 10y = 60, so y = 6."
-      },
-      "options": [
-        "7",
-        "6",
-        "5",
-        "8"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Solve 5x + 5y = 35 and 5x − 5y = -15. What is y?",
-        "exp": "Add: 10x = 20, so x = 2. Subtract: 10y = 50, so y = 5."
-      },
-      "options": [
-        "6",
-        "4",
-        "5",
-        "7"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Solve x + y = 17 and x − y = 1. What is x?",
-        "exp": "Add: 2x = 18, so x = 9. Subtract: 2y = 16, so y = 8."
-      },
-      "options": [
-        "10",
-        "8",
-        "9",
-        "11"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Solve 4x + 3y = 22 and 4x − 3y = -14. What is y?",
-        "exp": "Add: 8x = 8, so x = 1. Subtract: 6y = 36, so y = 6."
-      },
-      "options": [
-        "6",
-        "7",
-        "5",
-        "8"
-      ],
-      "correct": 0
-    }
-  ],
-  "l2_15": [
-    {
-      "q": {
-        "en": "Calculate 93² using Yavadunam (base 100).",
-        "exp": "93 is 7 below 100. Left: 93 − 7 = 86. Right: 7² = 49, written as 49. Join: 86|49 = 8649."
-      },
-      "options": [
-        "8650",
-        "8648",
-        "8649",
-        "8651"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Calculate 8² using Yavadunam (base 10).",
-        "exp": "8 is 2 below 10. Left: 8 − 2 = 6. Right: 2² = 4, written as 4. Join: 6|4 = 64."
-      },
-      "options": [
-        "65",
-        "63",
-        "66",
-        "64"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Calculate 94² using Yavadunam (base 100).",
-        "exp": "94 is 6 below 100. Left: 94 − 6 = 88. Right: 6² = 36, written as 36. Join: 88|36 = 8836."
-      },
-      "options": [
-        "8837",
-        "8836",
-        "8835",
-        "8838"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Calculate 9² using Yavadunam (base 10).",
-        "exp": "9 is 1 below 10. Left: 9 − 1 = 8. Right: 1² = 1, written as 1. Join: 8|1 = 81."
-      },
-      "options": [
-        "82",
-        "80",
-        "83",
-        "81"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Calculate 13² using Yavadunam (base 10).",
-        "exp": "13 is 3 above 10. Left: 13 + 3 = 16. Right: 3² = 9, written as 9. Join: 16|9 = 169."
-      },
-      "options": [
-        "170",
-        "169",
-        "168",
-        "171"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Calculate 7² using Yavadunam (base 10).",
-        "exp": "7 is 3 below 10. Left: 7 − 3 = 4. Right: 3² = 9, written as 9. Join: 4|9 = 49."
-      },
-      "options": [
-        "49",
-        "50",
-        "48",
-        "51"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "Calculate 11² using Yavadunam (base 10).",
-        "exp": "11 is 1 above 10. Left: 11 + 1 = 12. Right: 1² = 1, written as 1. Join: 12|1 = 121."
-      },
-      "options": [
-        "121",
-        "122",
-        "120",
-        "123"
-      ],
-      "correct": 0
-    }
-  ],
-  "l3_01": [
-    {
-      "q": {
-        "en": "Calculate 38 × 25 using Urdhva-Tiryagbhyam.",
-        "exp": "Units: 8 × 5 = 40. Cross: 3 × 5 + 8 × 2 = 31. Tens: 3 × 2 = 6. Combine with carries: 950."
-      },
-      "options": [
-        "951",
-        "950",
-        "949",
-        "952"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Calculate 66 × 34 using Urdhva-Tiryagbhyam.",
-        "exp": "Units: 6 × 4 = 24. Cross: 6 × 4 + 6 × 3 = 42. Tens: 6 × 3 = 18. Combine with carries: 2244."
-      },
-      "options": [
-        "2245",
-        "2244",
-        "2243",
-        "2246"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Calculate 28 × 47 using Urdhva-Tiryagbhyam.",
-        "exp": "Units: 8 × 7 = 56. Cross: 2 × 7 + 8 × 4 = 46. Tens: 2 × 4 = 8. Combine with carries: 1316."
-      },
-      "options": [
-        "1317",
-        "1315",
-        "1316",
-        "1318"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Calculate 851 × 506 using Urdhva-Tiryagbhyam (vertically and crosswise).",
-        "exp": "Column sums from the right: 6, 30, 53, 25, 40. Carrying from the right gives 430606."
-      },
-      "options": [
-        "430607",
-        "430606",
-        "430605",
-        "430608"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Calculate 19 × 86 using Urdhva-Tiryagbhyam.",
-        "exp": "Units: 9 × 6 = 54. Cross: 1 × 6 + 9 × 8 = 78. Tens: 1 × 8 = 8. Combine with carries: 1634."
-      },
-      "options": [
-        "1635",
-        "1634",
-        "1633",
-        "1636"
-      ],
-      "correct": 1
-    }
-  ],
-  "l3_02": [
-    {
-      "q": {
-        "en": "Calculate 9660 × 10290 using Nikhilam (base 10000).",
-        "exp": "Deficits from 10000: −340 and 290. Cross: 9660 + 290 = 9950. Deficit product: −340 × 290 = −98600. Answer: 9950 × 10000 − 98600 = 99401400."
-      },
-      "options": [
-        "99401401",
-        "99401399",
-        "99401402",
-        "99401400"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Calculate 10973 × 10180 using Nikhilam (base 10000).",
-        "exp": "Deficits from 10000: 973 and 180. Cross: 10973 + 180 = 11153. Deficit product: 973 × 180 = 175140. Answer: 11153 × 10000 + 175140 = 111705140."
-      },
-      "options": [
-        "111705140",
-        "111705141",
-        "111705139",
-        "111705142"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "Calculate 9587 × 10792 using Nikhilam (base 10000).",
-        "exp": "Deficits from 10000: −413 and 792. Cross: 9587 + 792 = 10379. Deficit product: −413 × 792 = −327096. Answer: 10379 × 10000 − 327096 = 103462904."
-      },
-      "options": [
-        "103462905",
-        "103462903",
-        "103462904",
-        "103462906"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Calculate 1098 × 915 using Nikhilam (base 1000).",
-        "exp": "Deficits from 1000: 98 and −85. Cross: 1098 − 85 = 1013. Deficit product: 98 × −85 = −8330. Answer: 1013 × 1000 − 8330 = 1004670."
-      },
-      "options": [
-        "1004671",
-        "1004669",
-        "1004670",
-        "1004672"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Calculate 1015 × 915 using Nikhilam (base 1000).",
-        "exp": "Deficits from 1000: 15 and −85. Cross: 1015 − 85 = 930. Deficit product: 15 × −85 = −1275. Answer: 930 × 1000 − 1275 = 928725."
-      },
-      "options": [
-        "928725",
-        "928726",
-        "928724",
-        "928727"
-      ],
-      "correct": 0
-    }
-  ],
-  "l3_03": [
-    {
-      "q": {
-        "en": "Calculate 25 × 20 using Anurupyena (proportional scaling).",
-        "exp": "25 : 20 = 5 : 4, both scaled by 5. So 25 × 20 = 5² × 5 × 4 = 25 × 20 = 500."
-      },
-      "options": [
-        "500",
-        "501",
-        "499",
-        "502"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "Calculate 42 × 56 using Anurupyena (proportional scaling).",
-        "exp": "42 : 56 = 6 : 8, both scaled by 7. So 42 × 56 = 7² × 6 × 8 = 49 × 48 = 2352."
-      },
-      "options": [
-        "2352",
-        "2353",
-        "2351",
-        "2354"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "Calculate 56 × 21 using Anurupyena (proportional scaling).",
-        "exp": "56 : 21 = 8 : 3, both scaled by 7. So 56 × 21 = 7² × 8 × 3 = 49 × 24 = 1176."
-      },
-      "options": [
-        "1177",
-        "1175",
-        "1176",
-        "1178"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Calculate 40 × 24 using Anurupyena (proportional scaling).",
-        "exp": "40 : 24 = 5 : 3, both scaled by 8. So 40 × 24 = 8² × 5 × 3 = 64 × 15 = 960."
-      },
-      "options": [
-        "961",
-        "959",
-        "960",
-        "962"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Calculate 48 × 16 using Anurupyena (proportional scaling).",
-        "exp": "48 : 16 = 6 : 2, both scaled by 8. So 48 × 16 = 8² × 6 × 2 = 64 × 12 = 768."
-      },
-      "options": [
-        "769",
-        "768",
-        "767",
-        "770"
-      ],
-      "correct": 1
-    }
-  ],
-  "l3_04": [
-    {
-      "q": {
-        "en": "Calculate 99 × 95 using the vinculum (complement) method.",
-        "exp": "Complements from 100: 1 and 5. Cross: 99 − 5 = 94. Product of complements: 1 × 5 = 05. Answer: 9405 = 9405."
-      },
-      "options": [
-        "9406",
-        "9405",
-        "9404",
-        "9407"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Calculate 99 × 93 using the vinculum (complement) method.",
-        "exp": "Complements from 100: 1 and 7. Cross: 99 − 7 = 92. Product of complements: 1 × 7 = 07. Answer: 9207 = 9207."
-      },
-      "options": [
-        "9208",
-        "9206",
-        "9209",
-        "9207"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Calculate 96 × 92 using the vinculum (complement) method.",
-        "exp": "Complements from 100: 4 and 8. Cross: 96 − 8 = 88. Product of complements: 4 × 8 = 32. Answer: 8832 = 8832."
-      },
-      "options": [
-        "8832",
-        "8833",
-        "8831",
-        "8834"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "Calculate 99 × 94 using the vinculum (complement) method.",
-        "exp": "Complements from 100: 1 and 6. Cross: 99 − 6 = 93. Product of complements: 1 × 6 = 06. Answer: 9306 = 9306."
-      },
-      "options": [
-        "9307",
-        "9306",
-        "9305",
-        "9308"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Calculate 96 × 98 using the vinculum (complement) method.",
-        "exp": "Complements from 100: 4 and 2. Cross: 96 − 2 = 94. Product of complements: 4 × 2 = 08. Answer: 9408 = 9408."
-      },
-      "options": [
-        "9408",
-        "9409",
-        "9407",
-        "9410"
-      ],
-      "correct": 0
-    }
-  ],
-  "l3_05": [
-    {
-      "q": {
-        "en": "Find 1934² using the Duplex method.",
-        "exp": "Duplex (column) sums from the right: 16, 24, 81, 62, 87, 18, 1. Carrying gives 3740356."
-      },
-      "options": [
-        "3740356",
-        "3740357",
-        "3740355",
-        "3740358"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "Find 738² using the Duplex method.",
-        "exp": "Duplex (column) sums from the right: 64, 48, 121, 42, 49. Carrying gives 544644."
-      },
-      "options": [
-        "544645",
-        "544643",
-        "544644",
-        "544646"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Find 263² using the Duplex method.",
-        "exp": "Duplex (column) sums from the right: 9, 36, 48, 24, 4. Carrying gives 69169."
-      },
-      "options": [
-        "69170",
-        "69168",
-        "69169",
-        "69171"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Find 267² using the Duplex method.",
-        "exp": "Duplex (column) sums from the right: 49, 84, 64, 24, 4. Carrying gives 71289."
-      },
-      "options": [
-        "71290",
-        "71288",
-        "71291",
-        "71289"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Find 7151² using the Duplex method.",
-        "exp": "Duplex (column) sums from the right: 1, 10, 27, 24, 71, 14, 49. Carrying gives 51136801."
-      },
-      "options": [
-        "51136802",
-        "51136800",
-        "51136801",
-        "51136803"
-      ],
-      "correct": 2
-    }
-  ],
-  "l3_06": [
-    {
-      "q": {
-        "en": "What is the cube root of 8000?",
-        "exp": "20 × 20 × 20 = 8000, so the cube root is 20."
-      },
-      "options": [
-        "21",
-        "20",
-        "19",
-        "22"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is the cube root of 1000?",
-        "exp": "10 × 10 × 10 = 1000, so the cube root is 10."
-      },
-      "options": [
-        "11",
-        "10",
-        "9",
-        "12"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is the cube root of 4913?",
-        "exp": "17 × 17 × 17 = 4913, so the cube root is 17."
-      },
-      "options": [
-        "18",
-        "16",
-        "17",
-        "19"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "What is the cube root of 10648?",
-        "exp": "22 × 22 × 22 = 10648, so the cube root is 22."
+        "en": "What is the digit sum of 42169?",
+        "exp": "4 + 2 + 1 + 6 + 9 = 22."
       },
       "options": [
         "23",
@@ -3654,1009 +9146,34 @@ export const QUIZ_EXTRA = {
     },
     {
       "q": {
-        "en": "What is the cube root of 2744?",
-        "exp": "14 × 14 × 14 = 2744, so the cube root is 14."
+        "en": "Check 26 × 85 = 2210 by casting out nines. What is the digital root of 2210?",
+        "exp": "Digit sum of 2210 reduces to 5. Check: digital roots of 26 and 85 are 8 and 4, and 8 × 4 reduces to 5."
       },
       "options": [
-        "15",
-        "14",
-        "13",
-        "16"
-      ],
-      "correct": 1
-    }
-  ],
-  "l3_07": [
-    {
-      "q": {
-        "en": "What is 3764 ÷ 42? Give the quotient and remainder.",
-        "exp": "42 × 89 = 3738, remainder 3764 − 3738 = 26."
-      },
-      "options": [
-        "Q:90 R:26",
-        "Q:88 R:68",
-        "Q:89 R:27",
-        "Q:89 R:26"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "What is 6653 ÷ 73? Give the quotient and remainder.",
-        "exp": "73 × 91 = 6643, remainder 6653 − 6643 = 10."
-      },
-      "options": [
-        "Q:92 R:10",
-        "Q:90 R:83",
-        "Q:91 R:11",
-        "Q:91 R:10"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "What is 3371 ÷ 24? Give the quotient and remainder.",
-        "exp": "24 × 140 = 3360, remainder 3371 − 3360 = 11."
-      },
-      "options": [
-        "Q:141 R:11",
-        "Q:140 R:11",
-        "Q:139 R:35",
-        "Q:140 R:12"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is 6095 ÷ 90? Give the quotient and remainder.",
-        "exp": "90 × 67 = 6030, remainder 6095 − 6030 = 65."
-      },
-      "options": [
-        "Q:67 R:65",
-        "Q:68 R:65",
-        "Q:66 R:155",
-        "Q:67 R:66"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "What is 8392 ÷ 58? Give the quotient and remainder.",
-        "exp": "58 × 144 = 8352, remainder 8392 − 8352 = 40."
-      },
-      "options": [
-        "Q:145 R:40",
-        "Q:143 R:98",
-        "Q:144 R:41",
-        "Q:144 R:40"
-      ],
-      "correct": 3
-    }
-  ],
-  "l3_08": [
-    {
-      "q": {
-        "en": "Expand (3x − 6)(3x + 6).",
-        "exp": "First: 3 × 3 = 9x². Cross: 3 × 6 + -6 × 3 = 0x. Last: -6 × 6 = -36."
-      },
-      "options": [
-        "9x² − 36",
-        "9x² + 36x − 36",
-        "9x² + 36",
-        "9x² + x − 36"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "Expand (3x + 4)(2x + 3).",
-        "exp": "First: 3 × 2 = 6x². Cross: 3 × 3 + 4 × 2 = 17x. Last: 4 × 3 = 12."
-      },
-      "options": [
-        "6x² + x + 12",
-        "6x² + 17x + 12",
-        "6x² + 17x − 12",
-        "6x² + 18x + 12"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Expand (x + 5)(3x − 5).",
-        "exp": "First: 1 × 3 = 3x². Cross: 1 × -5 + 5 × 3 = 10x. Last: 5 × -5 = -25."
-      },
-      "options": [
-        "3x² − 20x − 25",
-        "3x² + 10x + 25",
-        "3x² + 11x − 25",
-        "3x² + 10x − 25"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Expand (x + 6)(4x + 4).",
-        "exp": "First: 1 × 4 = 4x². Cross: 1 × 4 + 6 × 4 = 28x. Last: 6 × 4 = 24."
-      },
-      "options": [
-        "4x² − 20x + 24",
-        "4x² + 28x − 24",
-        "4x² + 28x + 24",
-        "4x² + 29x + 24"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Expand (2x − 1)(3x − 5).",
-        "exp": "First: 2 × 3 = 6x². Cross: 2 × -5 + -1 × 3 = -13x. Last: -1 × -5 = 5."
-      },
-      "options": [
-        "6x² − 7x + 5",
-        "6x² − 13x − 5",
-        "6x² − 12x + 5",
-        "6x² − 13x + 5"
-      ],
-      "correct": 3
-    }
-  ],
-  "l3_09": [
-    {
-      "q": {
-        "en": "Solve 2x + 1y = -8 and 2x + 2y = -12. What is y?",
-        "exp": "Check: 2(-2) + 1(-4) = -8 ✓ and 2(-2) + 2(-4) = -12 ✓. So x = -2 and y = -4."
-      },
-      "options": [
-        "−4",
-        "−3",
-        "−5",
-        "−2"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "Solve 4x + 3y = 28 and 4x + 1y = 12. What is x?",
-        "exp": "Check: 4(1) + 3(8) = 28 ✓ and 4(1) + 1(8) = 12 ✓. So x = 1 and y = 8."
-      },
-      "options": [
-        "1",
+        "7",
         "2",
-        "0",
+        "5",
         "3"
       ],
-      "correct": 0
+      "correct": 2
     },
     {
       "q": {
-        "en": "Solve 2x + 1y = -6 and 3x + 2y = -9. What is x?",
-        "exp": "Check: 2(-3) + 1(0) = -6 ✓ and 3(-3) + 2(0) = -9 ✓. So x = -3 and y = 0."
+        "en": "Check 65 × 95 = 6175 by casting out nines. What is the digital root of 6175?",
+        "exp": "Digit sum of 6175 reduces to 1. Check: digital roots of 65 and 95 are 2 and 5, and 2 × 5 reduces to 1."
       },
       "options": [
-        "−2",
-        "−3",
-        "−4",
-        "−1"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Solve 2x + 2y = 10 and 2x + 3y = 18. What is x?",
-        "exp": "Check: 2(-3) + 2(8) = 10 ✓ and 2(-3) + 3(8) = 18 ✓. So x = -3 and y = 8."
-      },
-      "options": [
-        "−2",
-        "−3",
-        "−4",
-        "−1"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Solve 2x + 4y = 54 and 1x + 4y = 45. What is y?",
-        "exp": "Check: 2(9) + 4(9) = 54 ✓ and 1(9) + 4(9) = 45 ✓. So x = 9 and y = 9."
-      },
-      "options": [
-        "10",
+        "1",
         "8",
         "9",
-        "11"
-      ],
-      "correct": 2
-    }
-  ],
-  "l3_11": [
-    {
-      "q": {
-        "en": "Solve 1/(x + 6) + 1/(x + 4) = 0. What is x?",
-        "exp": "Add the denominators: (x + 6) + (x + 4) = 2x + 10 = 0, so x = -5."
-      },
-      "options": [
-        "5",
-        "−5",
-        "−6",
-        "−4"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Solve 1/(x + 2) + 1/(x + 6) = 0. What is x?",
-        "exp": "Add the denominators: (x + 2) + (x + 6) = 2x + 8 = 0, so x = -4."
-      },
-      "options": [
-        "4",
-        "−2",
-        "−4",
-        "−6"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Solve 1/(x + 1) + 1/(x + 5) = 0. What is x?",
-        "exp": "Add the denominators: (x + 1) + (x + 5) = 2x + 6 = 0, so x = -3."
-      },
-      "options": [
-        "−3",
-        "3",
-        "−1",
-        "−5"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "Solve 1/(x + 9) + 1/(x + 1) = 0. What is x?",
-        "exp": "Add the denominators: (x + 9) + (x + 1) = 2x + 10 = 0, so x = -5."
-      },
-      "options": [
-        "5",
-        "−9",
-        "−5",
-        "−1"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Solve 1/(x + 3) + 1/(x + 5) = 0. What is x?",
-        "exp": "Add the denominators: (x + 3) + (x + 5) = 2x + 8 = 0, so x = -4."
-      },
-      "options": [
-        "4",
-        "−4",
-        "−3",
-        "−5"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Solve 1/(x + 5) + 1/(x + 7) = 0. What is x?",
-        "exp": "Add the denominators: (x + 5) + (x + 7) = 2x + 12 = 0, so x = -6."
-      },
-      "options": [
-        "6",
-        "−6",
-        "−5",
-        "−7"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Solve 1/(x + 1) + 1/(x + 9) = 0. What is x?",
-        "exp": "Add the denominators: (x + 1) + (x + 9) = 2x + 10 = 0, so x = -5."
-      },
-      "options": [
-        "−5",
-        "5",
-        "−1",
-        "−9"
-      ],
-      "correct": 0
-    }
-  ],
-  "l3_12": [
-    {
-      "q": {
-        "en": "In 5/7 = 0.714285…, what is the 9th digit after the decimal point?",
-        "exp": "Remainder method: the digits of 5/7 repeat every 6 places as 714285, so digit 9 is 4."
-      },
-      "options": [
-        "8",
-        "2",
-        "0",
-        "4"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "In 1/7 = 0.142857…, what is the 4th digit after the decimal point?",
-        "exp": "Remainder method: the digits of 1/7 repeat every 6 places as 142857, so digit 4 is 8."
-      },
-      "options": [
-        "2",
-        "4",
-        "3",
-        "8"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "In 5/7 = 0.714285…, what is the 3rd digit after the decimal point?",
-        "exp": "Remainder method: the digits of 5/7 repeat every 6 places as 714285, so digit 3 is 4."
-      },
-      "options": [
-        "4",
-        "2",
-        "7",
-        "0"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "In 1/7 = 0.142857…, what is the 3rd digit after the decimal point?",
-        "exp": "Remainder method: the digits of 1/7 repeat every 6 places as 142857, so digit 3 is 2."
-      },
-      "options": [
-        "9",
-        "2",
-        "1",
-        "7"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "In 4/7 = 0.571428…, what is the 6th digit after the decimal point?",
-        "exp": "Remainder method: the digits of 4/7 repeat every 6 places as 571428, so digit 6 is 8."
-      },
-      "options": [
-        "7",
-        "2",
-        "5",
-        "8"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "In 4/7 = 0.571428…, what is the 5th digit after the decimal point?",
-        "exp": "Remainder method: the digits of 4/7 repeat every 6 places as 571428, so digit 5 is 2."
-      },
-      "options": [
-        "6",
-        "7",
-        "2",
-        "0"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "In 6/7 = 0.857142…, what is the 2nd digit after the decimal point?",
-        "exp": "Remainder method: the digits of 6/7 repeat every 6 places as 857142, so digit 2 is 5."
-      },
-      "options": [
-        "5",
-        "2",
-        "0",
-        "8"
-      ],
-      "correct": 0
-    }
-  ],
-  "l3_13": [
-    {
-      "q": {
-        "en": "Solve x² + 14x + 48 = 0. What is the smaller root?",
-        "exp": "Complete the square: (x + 7)² = 1, so x + 7 = ±1. Roots: -8 and -6."
-      },
-      "options": [
-        "−6",
-        "6",
-        "−5",
-        "−8"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Solve x² − 2x − 15 = 0. What is the smaller root?",
-        "exp": "Complete the square: (x − 1)² = 16, so x − 1 = ±4. Roots: -3 and 5."
-      },
-      "options": [
-        "5",
-        "−3",
-        "−5",
-        "6"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Solve x² − 4x + 3 = 0. What is the smaller root?",
-        "exp": "Complete the square: (x − 2)² = 1, so x − 2 = ±1. Roots: 1 and 3."
-      },
-      "options": [
-        "3",
-        "−3",
-        "1",
-        "4"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Solve x² − 8x + 12 = 0. What is the larger root?",
-        "exp": "Complete the square: (x − 4)² = 4, so x − 4 = ±2. Roots: 2 and 6."
-      },
-      "options": [
-        "2",
-        "−6",
-        "7",
-        "6"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Solve x² + 4x − 32 = 0. What is the smaller root?",
-        "exp": "Complete the square: (x + 2)² = 36, so x + 2 = ±6. Roots: -8 and 4."
-      },
-      "options": [
-        "4",
-        "−4",
-        "−8",
-        "5"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Solve x² − 8x − 9 = 0. What is the larger root?",
-        "exp": "Complete the square: (x − 4)² = 25, so x − 4 = ±5. Roots: -1 and 9."
-      },
-      "options": [
-        "−1",
-        "−9",
-        "10",
-        "9"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Solve x² − 4x − 21 = 0. What is the smaller root?",
-        "exp": "Complete the square: (x − 2)² = 25, so x − 2 = ±5. Roots: -3 and 7."
-      },
-      "options": [
-        "7",
-        "−7",
-        "−3",
-        "8"
-      ],
-      "correct": 2
-    }
-  ],
-  "l3_14": [
-    {
-      "q": {
-        "en": "Factorise x² + 9x + 18.",
-        "exp": "Factors of 18 that add to 9: 3 and 6. So x² + 9x + 18 = (x + 3)(x + 6)."
-      },
-      "options": [
-        "(x−3)(x−6)",
-        "(x+3)(x+6)",
-        "(x+3)(x−6)",
-        "(x+4)(x+5)"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is the sum of the coefficients of x² + 13x + 36?",
-        "exp": "1 + 13 + 36 = 50 = (1 + 9)(1 + 4) = 50."
-      },
-      "options": [
-        "50",
-        "51",
-        "49",
-        "52"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "Factorise x² + 10x + 16.",
-        "exp": "Factors of 16 that add to 10: 2 and 8. So x² + 10x + 16 = (x + 2)(x + 8)."
-      },
-      "options": [
-        "(x−2)(x−8)",
-        "(x+2)(x+8)",
-        "(x+2)(x−8)",
-        "(x+3)(x+7)"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Factorise x² + 4x + 3.",
-        "exp": "Factors of 3 that add to 4: 1 and 3. So x² + 4x + 3 = (x + 1)(x + 3)."
-      },
-      "options": [
-        "(x−1)(x−3)",
-        "(x+1)(x−3)",
-        "(x+2)(x+2)",
-        "(x+1)(x+3)"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "What is the sum of the coefficients of x² + 10x + 16?",
-        "exp": "1 + 10 + 16 = 27 = (1 + 8)(1 + 2) = 27."
-      },
-      "options": [
-        "28",
-        "27",
-        "26",
-        "29"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Factorise x² + 11x + 18.",
-        "exp": "Factors of 18 that add to 11: 2 and 9. So x² + 11x + 18 = (x + 2)(x + 9)."
-      },
-      "options": [
-        "(x+2)(x+9)",
-        "(x−2)(x−9)",
-        "(x+2)(x−9)",
-        "(x+3)(x+8)"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "Factorise x² + 12x + 32.",
-        "exp": "Factors of 32 that add to 12: 4 and 8. So x² + 12x + 32 = (x + 4)(x + 8)."
-      },
-      "options": [
-        "(x−4)(x−8)",
-        "(x+4)(x−8)",
-        "(x+4)(x+8)",
-        "(x+5)(x+7)"
-      ],
-      "correct": 2
-    }
-  ],
-  "l3_15": [
-    {
-      "q": {
-        "en": "Expand (x + 3)(2x + 6).",
-        "exp": "First: 1 × 2 = 2x². Cross: 1 × 6 + 3 × 2 = 12x. Last: 3 × 6 = 18."
-      },
-      "options": [
-        "2x² + 18",
-        "2x² + 12x + 18",
-        "2x² + 12x − 18",
-        "2x² + 13x + 18"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Expand (2x + 1)(4x − 6).",
-        "exp": "First: 2 × 4 = 8x². Cross: 2 × -6 + 1 × 4 = -8x. Last: 1 × -6 = -6."
-      },
-      "options": [
-        "8x² − 16x − 6",
-        "8x² − 8x + 6",
-        "8x² − 8x − 6",
-        "8x² − 7x − 6"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Expand (2x + 5)(x − 5).",
-        "exp": "First: 2 × 1 = 2x². Cross: 2 × -5 + 5 × 1 = -5x. Last: 5 × -5 = -25."
-      },
-      "options": [
-        "2x² − 15x − 25",
-        "2x² − 5x + 25",
-        "2x² − 5x − 25",
-        "2x² − 4x − 25"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Expand (x − 4)(4x − 5).",
-        "exp": "First: 1 × 4 = 4x². Cross: 1 × -5 + -4 × 4 = -21x. Last: -4 × -5 = 20."
-      },
-      "options": [
-        "4x² + 11x + 20",
-        "4x² − 21x + 20",
-        "4x² − 21x − 20",
-        "4x² − 20x + 20"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Expand (3x + 5)(x + 6).",
-        "exp": "First: 3 × 1 = 3x². Cross: 3 × 6 + 5 × 1 = 23x. Last: 5 × 6 = 30."
-      },
-      "options": [
-        "3x² + 13x + 30",
-        "3x² + 23x − 30",
-        "3x² + 24x + 30",
-        "3x² + 23x + 30"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Expand (4x − 2)(x + 4).",
-        "exp": "First: 4 × 1 = 4x². Cross: 4 × 4 + -2 × 1 = 14x. Last: -2 × 4 = -8."
-      },
-      "options": [
-        "4x² + 18x − 8",
-        "4x² + 14x − 8",
-        "4x² + 14x + 8",
-        "4x² + 15x − 8"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Expand (3x + 3)(x + 3).",
-        "exp": "First: 3 × 1 = 3x². Cross: 3 × 3 + 3 × 1 = 12x. Last: 3 × 3 = 9."
-      },
-      "options": [
-        "3x² + 12x + 9",
-        "3x² + 6x + 9",
-        "3x² + 12x − 9",
-        "3x² + 13x + 9"
-      ],
-      "correct": 0
-    }
-  ],
-  "l3_16": [
-    {
-      "q": {
-        "en": "What is 7 × 142857?",
-        "exp": "7 × 142857 = 999999, every digit is 9."
-      },
-      "options": [
-        "1000000",
-        "999999",
-        "999998",
-        "1000001"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is 4 × 142857?",
-        "exp": "The digits of 142857 rotate: 4 × 142857 = 571428."
-      },
-      "options": [
-        "571429",
-        "571427",
-        "571428",
-        "571430"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "What is 1 × 142857?",
-        "exp": "The digits of 142857 rotate: 1 × 142857 = 142857."
-      },
-      "options": [
-        "142858",
-        "142856",
-        "142857",
-        "142859"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "What is 14 × 142857?",
-        "exp": "14 × 142857 = 2 × 999999 = 1999998."
-      },
-      "options": [
-        "1999999",
-        "1999997",
-        "2000000",
-        "1999998"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "What is 3 × 142857?",
-        "exp": "The digits of 142857 rotate: 3 × 142857 = 428571."
-      },
-      "options": [
-        "428572",
-        "428570",
-        "428571",
-        "428573"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "What is 2 × 142857?",
-        "exp": "The digits of 142857 rotate: 2 × 142857 = 285714."
-      },
-      "options": [
-        "285714",
-        "285715",
-        "285713",
-        "285716"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "What is 6 × 142857?",
-        "exp": "The digits of 142857 rotate: 6 × 142857 = 857142."
-      },
-      "options": [
-        "857143",
-        "857141",
-        "857142",
-        "857144"
-      ],
-      "correct": 2
-    }
-  ],
-  "l4_01": [
-    {
-      "q": {
-        "en": "What is 13³?",
-        "exp": "Four terms: 1³ = 1, 3 × 1² × 3 = 9, 3 × 1 × 3² = 27, 3³ = 27. Combine with carries: 2197."
-      },
-      "options": [
-        "2198",
-        "2196",
-        "2197",
-        "2199"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "What is 32³?",
-        "exp": "Four terms: 3³ = 27, 3 × 3² × 2 = 54, 3 × 3 × 2² = 36, 2³ = 8. Combine with carries: 32768."
-      },
-      "options": [
-        "32769",
-        "32768",
-        "32767",
-        "32770"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is 27³?",
-        "exp": "Four terms: 2³ = 8, 3 × 2² × 7 = 84, 3 × 2 × 7² = 294, 7³ = 343. Combine with carries: 19683."
-      },
-      "options": [
-        "19684",
-        "19683",
-        "19682",
-        "19685"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is 22³?",
-        "exp": "Four terms: 2³ = 8, 3 × 2² × 2 = 24, 3 × 2 × 2² = 24, 2³ = 8. Combine with carries: 10648."
-      },
-      "options": [
-        "10649",
-        "10648",
-        "10647",
-        "10650"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is 30³?",
-        "exp": "Four terms: 3³ = 27, 3 × 3² × 0 = 0, 3 × 3 × 0² = 0, 0³ = 0. Combine with carries: 27000."
-      },
-      "options": [
-        "27001",
-        "26999",
-        "27002",
-        "27000"
-      ],
-      "correct": 3
-    }
-  ],
-  "l4_02": [
-    {
-      "q": {
-        "en": "Find 355² using the Duplex method.",
-        "exp": "Duplex (column) sums from the right: 25, 50, 55, 30, 9. Carrying gives 126025."
-      },
-      "options": [
-        "126026",
-        "126024",
-        "126025",
-        "126027"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Find 916² using the Duplex method.",
-        "exp": "Duplex (column) sums from the right: 36, 12, 109, 18, 81. Carrying gives 839056."
-      },
-      "options": [
-        "839057",
-        "839055",
-        "839056",
-        "839058"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Find 3286² using the Duplex method.",
-        "exp": "Duplex (column) sums from the right: 36, 96, 88, 68, 52, 12, 9. Carrying gives 10797796."
-      },
-      "options": [
-        "10797797",
-        "10797795",
-        "10797798",
-        "10797796"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Find 9959² using the Duplex method.",
-        "exp": "Duplex (column) sums from the right: 81, 90, 187, 252, 171, 162, 81. Carrying gives 99181681."
-      },
-      "options": [
-        "99181682",
-        "99181680",
-        "99181683",
-        "99181681"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "Find 8667² using the Duplex method.",
-        "exp": "Duplex (column) sums from the right: 49, 84, 120, 184, 132, 96, 64. Carrying gives 75116889."
-      },
-      "options": [
-        "75116889",
-        "75116890",
-        "75116888",
-        "75116891"
-      ],
-      "correct": 0
-    }
-  ],
-  "l4_03": [
-    {
-      "q": {
-        "en": "What is the remainder when 4020 is divided by 13?",
-        "exp": "4020 = 13 × 309 + 3, so the remainder is 3."
-      },
-      "options": [
-        "0",
-        "12",
-        "3",
-        "7"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "What is the remainder when 3323 is divided by 13?",
-        "exp": "3323 = 13 × 255 + 8, so the remainder is 8."
-      },
-      "options": [
-        "8",
-        "6",
-        "4",
         "7"
       ],
       "correct": 0
     },
     {
       "q": {
-        "en": "What is the remainder when 9685 is divided by 13?",
-        "exp": "9685 = 13 × 745 + 0, so the remainder is 0."
-      },
-      "options": [
-        "0",
-        "6",
-        "12",
-        "11"
-      ],
-      "correct": 0
-    },
-    {
-      "q": {
-        "en": "What is the remainder when 6003 is divided by 11?",
-        "exp": "6003 = 11 × 545 + 8, so the remainder is 8."
-      },
-      "options": [
-        "6",
-        "8",
-        "0",
-        "3"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is the remainder when 7388 is divided by 11?",
-        "exp": "7388 = 11 × 671 + 7, so the remainder is 7."
-      },
-      "options": [
-        "7",
-        "1",
-        "4",
-        "10"
-      ],
-      "correct": 0
-    }
-  ],
-  "l4_04": [
-    {
-      "q": {
-        "en": "What is the first digit after the decimal point of 1/17?",
-        "exp": "1 ÷ 17 = 0.058823529411…, so the first digit is 0."
-      },
-      "options": [
-        "1",
-        "0",
-        "7",
-        "4"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What is the first digit after the decimal point of 1/41?",
-        "exp": "1 ÷ 41 = 0.02439, so the first digit is 0."
-      },
-      "options": [
-        "3",
-        "2",
-        "5",
-        "0"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "How many digits repeat in the decimal of 1/23?",
-        "exp": "Long division of 1 by 23 returns to remainder 1 after 22 digits: 0.043478260869…."
+        "en": "What is the digit sum of 43591?",
+        "exp": "4 + 3 + 5 + 9 + 1 = 22."
       },
       "options": [
         "23",
@@ -4668,276 +9185,2449 @@ export const QUIZ_EXTRA = {
     },
     {
       "q": {
-        "en": "How many digits repeat in the decimal of 1/31?",
-        "exp": "Long division of 1 by 31 returns to remainder 1 after 15 digits: 0.032258064516…."
+        "en": "What is the digit sum of 14517?",
+        "exp": "1 + 4 + 5 + 1 + 7 = 18."
       },
       "options": [
-        "16",
-        "14",
-        "15",
-        "17"
+        "19",
+        "17",
+        "18",
+        "20"
       ],
       "correct": 2
     },
     {
       "q": {
-        "en": "What is the first digit after the decimal point of 1/43?",
-        "exp": "1 ÷ 43 = 0.023255813953…, so the first digit is 0."
+        "en": "What is the digit sum of 36291?",
+        "exp": "3 + 6 + 2 + 9 + 1 = 21."
       },
       "options": [
-        "4",
-        "0",
-        "8",
-        "3"
+        "21",
+        "22",
+        "20",
+        "23"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the digit sum of 42957?",
+        "exp": "4 + 2 + 9 + 5 + 7 = 27."
+      },
+      "options": [
+        "28",
+        "27",
+        "26",
+        "29"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Check 20 × 98 = 1960 by casting out nines. What is the digital root of 1960?",
+        "exp": "Digit sum of 1960 reduces to 7. Check: digital roots of 20 and 98 are 2 and 8, and 2 × 8 reduces to 7."
+      },
+      "options": [
+        "2",
+        "9",
+        "3",
+        "7"
+      ],
+      "correct": 3
+    }
+  ],
+  "l1_07": [
+    {
+      "q": {
+        "en": "Calculate 16 × 25 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 6 × 5 = 30. Cross: 1 × 5 + 6 × 2 = 17. Tens: 1 × 2 = 2. Combine with carries: 400."
+      },
+      "options": [
+        "401",
+        "399",
+        "402",
+        "400"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 23 × 19 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 3 × 9 = 27. Cross: 2 × 9 + 3 × 1 = 21. Tens: 2 × 1 = 2. Combine with carries: 437."
+      },
+      "options": [
+        "437",
+        "438",
+        "436",
+        "439"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 63 × 86 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 3 × 6 = 18. Cross: 6 × 6 + 3 × 8 = 60. Tens: 6 × 8 = 48. Combine with carries: 5418."
+      },
+      "options": [
+        "5419",
+        "5418",
+        "5417",
+        "5420"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 83 × 35 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 3 × 5 = 15. Cross: 8 × 5 + 3 × 3 = 49. Tens: 8 × 3 = 24. Combine with carries: 2905."
+      },
+      "options": [
+        "2906",
+        "2904",
+        "2907",
+        "2905"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 89 × 50 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 9 × 0 = 0. Cross: 8 × 0 + 9 × 5 = 45. Tens: 8 × 5 = 40. Combine with carries: 4450."
+      },
+      "options": [
+        "4451",
+        "4450",
+        "4449",
+        "4452"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 24 × 91 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 4 × 1 = 4. Cross: 2 × 1 + 4 × 9 = 38. Tens: 2 × 9 = 18. Combine with carries: 2184."
+      },
+      "options": [
+        "2184",
+        "2185",
+        "2183",
+        "2186"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 37 × 71 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 7 × 1 = 7. Cross: 3 × 1 + 7 × 7 = 52. Tens: 3 × 7 = 21. Combine with carries: 2627."
+      },
+      "options": [
+        "2628",
+        "2626",
+        "2629",
+        "2627"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 80 × 81 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 0 × 1 = 0. Cross: 8 × 1 + 0 × 8 = 8. Tens: 8 × 8 = 64. Combine with carries: 6480."
+      },
+      "options": [
+        "6481",
+        "6479",
+        "6482",
+        "6480"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 65 × 45 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 5 × 5 = 25. Cross: 6 × 5 + 5 × 4 = 50. Tens: 6 × 4 = 24. Combine with carries: 2925."
+      },
+      "options": [
+        "2925",
+        "2926",
+        "2924",
+        "2927"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 99 × 54 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 9 × 4 = 36. Cross: 9 × 4 + 9 × 5 = 81. Tens: 9 × 5 = 45. Combine with carries: 5346."
+      },
+      "options": [
+        "5346",
+        "5347",
+        "5345",
+        "5348"
+      ],
+      "correct": 0
+    }
+  ],
+  "l1_08": [
+    {
+      "q": {
+        "en": "What is 50 × 12?",
+        "exp": "50 × 10 = 500, and 2 × 50 = 100. Sum: 600."
+      },
+      "options": [
+        "601",
+        "599",
+        "600",
+        "602"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 27 × 11?",
+        "exp": "Write 2, then 2 + 7 = 9, then 7. Answer: 297."
+      },
+      "options": [
+        "298",
+        "296",
+        "299",
+        "297"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 61 × 12?",
+        "exp": "61 × 10 = 610, and 2 × 61 = 122. Sum: 732."
+      },
+      "options": [
+        "732",
+        "733",
+        "731",
+        "734"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 25 × 11?",
+        "exp": "Write 2, then 2 + 5 = 7, then 5. Answer: 275."
+      },
+      "options": [
+        "275",
+        "276",
+        "274",
+        "277"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 38 × 11?",
+        "exp": "Write 3, then 3 + 8 = 11, then 8. Carry the 1 into the first digit. Answer: 418."
+      },
+      "options": [
+        "419",
+        "417",
+        "420",
+        "418"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 65 × 12?",
+        "exp": "65 × 10 = 650, and 2 × 65 = 130. Sum: 780."
+      },
+      "options": [
+        "781",
+        "779",
+        "782",
+        "780"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 22 × 12?",
+        "exp": "22 × 10 = 220, and 2 × 22 = 44. Sum: 264."
+      },
+      "options": [
+        "265",
+        "264",
+        "263",
+        "266"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 23 × 12?",
+        "exp": "23 × 10 = 230, and 2 × 23 = 46. Sum: 276."
+      },
+      "options": [
+        "277",
+        "276",
+        "275",
+        "278"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 63 × 11?",
+        "exp": "Write 6, then 6 + 3 = 9, then 3. Answer: 693."
+      },
+      "options": [
+        "694",
+        "692",
+        "693",
+        "695"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 35 × 12?",
+        "exp": "35 × 10 = 350, and 2 × 35 = 70. Sum: 420."
+      },
+      "options": [
+        "420",
+        "421",
+        "419",
+        "422"
+      ],
+      "correct": 0
+    }
+  ],
+  "l1_09": [
+    {
+      "q": {
+        "en": "What is 62 × 999?",
+        "exp": "62 × 1000 − 62 = 62000 − 62 = 61938."
+      },
+      "options": [
+        "61939",
+        "61937",
+        "61940",
+        "61938"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 80 × 99?",
+        "exp": "80 × 100 − 80 = 8000 − 80 = 7920."
+      },
+      "options": [
+        "7921",
+        "7920",
+        "7919",
+        "7922"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 28 × 99?",
+        "exp": "28 × 100 − 28 = 2800 − 28 = 2772."
+      },
+      "options": [
+        "2773",
+        "2772",
+        "2771",
+        "2774"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 19 × 999?",
+        "exp": "19 × 1000 − 19 = 19000 − 19 = 18981."
+      },
+      "options": [
+        "18982",
+        "18981",
+        "18980",
+        "18983"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 48 × 999?",
+        "exp": "48 × 1000 − 48 = 48000 − 48 = 47952."
+      },
+      "options": [
+        "47953",
+        "47951",
+        "47952",
+        "47954"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 39 × 99?",
+        "exp": "39 × 100 − 39 = 3900 − 39 = 3861."
+      },
+      "options": [
+        "3861",
+        "3862",
+        "3860",
+        "3863"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 23 × 99?",
+        "exp": "23 × 100 − 23 = 2300 − 23 = 2277."
+      },
+      "options": [
+        "2278",
+        "2276",
+        "2277",
+        "2279"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 75 × 999?",
+        "exp": "75 × 1000 − 75 = 75000 − 75 = 74925."
+      },
+      "options": [
+        "74926",
+        "74924",
+        "74927",
+        "74925"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 94 × 999?",
+        "exp": "94 × 1000 − 94 = 94000 − 94 = 93906."
+      },
+      "options": [
+        "93906",
+        "93907",
+        "93905",
+        "93908"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 50 × 999?",
+        "exp": "50 × 1000 − 50 = 50000 − 50 = 49950."
+      },
+      "options": [
+        "49951",
+        "49950",
+        "49949",
+        "49952"
       ],
       "correct": 1
     }
   ],
-  "l4_05": [
+  "l1_10": [
     {
       "q": {
-        "en": "What day of the week does 18 June 2002 fall on?",
-        "exp": "The day-of-the-week calculation gives Tuesday, checked against the standard calendar."
+        "en": "What is 92 × 99?",
+        "exp": "92 × 100 − 92 = 9200 − 92 = 9108."
       },
       "options": [
+        "9109",
+        "9107",
+        "9110",
+        "9108"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 48 × 16 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 8 × 6 = 48. Cross: 4 × 6 + 8 × 1 = 32. Tens: 4 × 1 = 4. Combine with carries: 768."
+      },
+      "options": [
+        "768",
+        "769",
+        "767",
+        "770"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 92 × 70 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 2 × 0 = 0. Cross: 9 × 0 + 2 × 7 = 14. Tens: 9 × 7 = 63. Combine with carries: 6440."
+      },
+      "options": [
+        "6441",
+        "6439",
+        "6440",
+        "6442"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 25 × 74 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 5 × 4 = 20. Cross: 2 × 4 + 5 × 7 = 43. Tens: 2 × 7 = 14. Combine with carries: 1850."
+      },
+      "options": [
+        "1850",
+        "1851",
+        "1849",
+        "1852"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 92 × 40 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 2 × 0 = 0. Cross: 9 × 0 + 2 × 4 = 8. Tens: 9 × 4 = 36. Combine with carries: 3680."
+      },
+      "options": [
+        "3681",
+        "3680",
+        "3679",
+        "3682"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the digit sum of 2773?",
+        "exp": "2 + 7 + 7 + 3 = 19."
+      },
+      "options": [
+        "20",
+        "18",
+        "21",
+        "19"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 815²?",
+        "exp": "Ekadhikena Purvena: 81 × 82 = 6642, then append 25 → 664225."
+      },
+      "options": [
+        "664226",
+        "664224",
+        "664227",
+        "664225"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 96 × 53 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 6 × 3 = 18. Cross: 9 × 3 + 6 × 5 = 57. Tens: 9 × 5 = 45. Combine with carries: 5088."
+      },
+      "options": [
+        "5089",
+        "5088",
+        "5087",
+        "5090"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 32 × 55 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 2 × 5 = 10. Cross: 3 × 5 + 2 × 5 = 25. Tens: 3 × 5 = 15. Combine with carries: 1760."
+      },
+      "options": [
+        "1761",
+        "1760",
+        "1759",
+        "1762"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 13 × 11?",
+        "exp": "Write 1, then 1 + 3 = 4, then 3. Answer: 143."
+      },
+      "options": [
+        "144",
+        "142",
+        "143",
+        "145"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 20 × 92 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 0 × 2 = 0. Cross: 2 × 2 + 0 × 9 = 4. Tens: 2 × 9 = 18. Combine with carries: 1840."
+      },
+      "options": [
+        "1841",
+        "1840",
+        "1839",
+        "1842"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 605²?",
+        "exp": "Ekadhikena Purvena: 60 × 61 = 3660, then append 25 → 366025."
+      },
+      "options": [
+        "366025",
+        "366026",
+        "366024",
+        "366027"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 99 × 41 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 9 × 1 = 9. Cross: 9 × 1 + 9 × 4 = 45. Tens: 9 × 4 = 36. Combine with carries: 4059."
+      },
+      "options": [
+        "4060",
+        "4058",
+        "4059",
+        "4061"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 86 × 11?",
+        "exp": "Write 8, then 8 + 6 = 14, then 6. Carry the 1 into the first digit. Answer: 946."
+      },
+      "options": [
+        "946",
+        "947",
+        "945",
+        "948"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 85 × 11?",
+        "exp": "Write 8, then 8 + 5 = 13, then 5. Carry the 1 into the first digit. Answer: 935."
+      },
+      "options": [
+        "936",
+        "934",
+        "935",
+        "937"
+      ],
+      "correct": 2
+    }
+  ],
+  "l2_01": [
+    {
+      "q": {
+        "en": "What is 3413 ÷ 91? Give the quotient and remainder.",
+        "exp": "91 × 37 = 3367, remainder 3413 − 3367 = 46."
+      },
+      "options": [
+        "Q:38 R:46",
+        "Q:36 R:137",
+        "Q:37 R:47",
+        "Q:37 R:46"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 4548 ÷ 32? Give the quotient and remainder.",
+        "exp": "32 × 142 = 4544, remainder 4548 − 4544 = 4."
+      },
+      "options": [
+        "Q:143 R:4",
+        "Q:141 R:36",
+        "Q:142 R:5",
+        "Q:142 R:4"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 141 ÷ 88? Give the quotient and remainder.",
+        "exp": "88 × 1 = 88, remainder 141 − 88 = 53."
+      },
+      "options": [
+        "Q:1 R:53",
+        "Q:2 R:53",
+        "Q:0 R:141",
+        "Q:1 R:54"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 2788 ÷ 84? Give the quotient and remainder.",
+        "exp": "84 × 33 = 2772, remainder 2788 − 2772 = 16."
+      },
+      "options": [
+        "Q:34 R:16",
+        "Q:32 R:100",
+        "Q:33 R:16",
+        "Q:33 R:17"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 6627 ÷ 66? Give the quotient and remainder.",
+        "exp": "66 × 100 = 6600, remainder 6627 − 6600 = 27."
+      },
+      "options": [
+        "Q:101 R:27",
+        "Q:99 R:93",
+        "Q:100 R:28",
+        "Q:100 R:27"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 6175 ÷ 55? Give the quotient and remainder.",
+        "exp": "55 × 112 = 6160, remainder 6175 − 6160 = 15."
+      },
+      "options": [
+        "Q:113 R:15",
+        "Q:112 R:15",
+        "Q:111 R:70",
+        "Q:112 R:16"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 4221 ÷ 95? Give the quotient and remainder.",
+        "exp": "95 × 44 = 4180, remainder 4221 − 4180 = 41."
+      },
+      "options": [
+        "Q:45 R:41",
+        "Q:44 R:41",
+        "Q:43 R:136",
+        "Q:44 R:42"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 6403 ÷ 13? Give the quotient and remainder.",
+        "exp": "13 × 492 = 6396, remainder 6403 − 6396 = 7."
+      },
+      "options": [
+        "Q:493 R:7",
+        "Q:491 R:20",
+        "Q:492 R:8",
+        "Q:492 R:7"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 9247 ÷ 17? Give the quotient and remainder.",
+        "exp": "17 × 543 = 9231, remainder 9247 − 9231 = 16."
+      },
+      "options": [
+        "Q:544 R:16",
+        "Q:542 R:33",
+        "Q:543 R:16",
+        "Q:543 R:17"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 7453 ÷ 92? Give the quotient and remainder.",
+        "exp": "92 × 81 = 7452, remainder 7453 − 7452 = 1."
+      },
+      "options": [
+        "Q:81 R:1",
+        "Q:82 R:1",
+        "Q:80 R:93",
+        "Q:81 R:2"
+      ],
+      "correct": 0
+    }
+  ],
+  "l2_02": [
+    {
+      "q": {
+        "en": "Calculate 597 × 368 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 56, 114, 115, 57, 15. Carrying from the right gives 219696."
+      },
+      "options": [
+        "219697",
+        "219696",
+        "219695",
+        "219698"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 392 × 527 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 14, 67, 49, 51, 15. Carrying from the right gives 206584."
+      },
+      "options": [
+        "206585",
+        "206583",
+        "206586",
+        "206584"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 877 × 789 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 63, 119, 177, 113, 56. Carrying from the right gives 691953."
+      },
+      "options": [
+        "691954",
+        "691952",
+        "691953",
+        "691955"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 186 × 903 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 18, 24, 57, 72, 9. Carrying from the right gives 167958."
+      },
+      "options": [
+        "167959",
+        "167957",
+        "167958",
+        "167960"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 807 × 516 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 42, 7, 83, 8, 40. Carrying from the right gives 416412."
+      },
+      "options": [
+        "416413",
+        "416412",
+        "416411",
+        "416414"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 625 × 640 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 0, 20, 38, 36, 36. Carrying from the right gives 400000."
+      },
+      "options": [
+        "400000",
+        "400001",
+        "399999",
+        "400002"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 691 × 503 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 3, 27, 23, 45, 30. Carrying from the right gives 347573."
+      },
+      "options": [
+        "347573",
+        "347574",
+        "347572",
+        "347575"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 804 × 294 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 16, 36, 40, 72, 16. Carrying from the right gives 236376."
+      },
+      "options": [
+        "236377",
+        "236376",
+        "236375",
+        "236378"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 765 × 256 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 30, 61, 82, 47, 14. Carrying from the right gives 195840."
+      },
+      "options": [
+        "195841",
+        "195839",
+        "195842",
+        "195840"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 665 × 714 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 20, 29, 65, 48, 42. Carrying from the right gives 474810."
+      },
+      "options": [
+        "474811",
+        "474809",
+        "474810",
+        "474812"
+      ],
+      "correct": 2
+    }
+  ],
+  "l2_03": [
+    {
+      "q": {
+        "en": "What is 98²?",
+        "exp": "9² = 81, 2 × 9 × 8 = 144, 8² = 64. Combine with place values: 9604."
+      },
+      "options": [
+        "9605",
+        "9603",
+        "9604",
+        "9606"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 48²?",
+        "exp": "4² = 16, 2 × 4 × 8 = 64, 8² = 64. Combine with place values: 2304."
+      },
+      "options": [
+        "2305",
+        "2303",
+        "2304",
+        "2306"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 49²?",
+        "exp": "4² = 16, 2 × 4 × 9 = 72, 9² = 81. Combine with place values: 2401."
+      },
+      "options": [
+        "2402",
+        "2401",
+        "2400",
+        "2403"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 63²?",
+        "exp": "6² = 36, 2 × 6 × 3 = 36, 3² = 9. Combine with place values: 3969."
+      },
+      "options": [
+        "3970",
+        "3968",
+        "3969",
+        "3971"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 46²?",
+        "exp": "4² = 16, 2 × 4 × 6 = 48, 6² = 36. Combine with place values: 2116."
+      },
+      "options": [
+        "2116",
+        "2117",
+        "2115",
+        "2118"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 38²?",
+        "exp": "3² = 9, 2 × 3 × 8 = 48, 8² = 64. Combine with place values: 1444."
+      },
+      "options": [
+        "1445",
+        "1443",
+        "1446",
+        "1444"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 13²?",
+        "exp": "1² = 1, 2 × 1 × 3 = 6, 3² = 9. Combine with place values: 169."
+      },
+      "options": [
+        "169",
+        "170",
+        "168",
+        "171"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 33²?",
+        "exp": "3² = 9, 2 × 3 × 3 = 18, 3² = 9. Combine with place values: 1089."
+      },
+      "options": [
+        "1090",
+        "1088",
+        "1091",
+        "1089"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 90²?",
+        "exp": "9² = 81, 2 × 9 × 0 = 0, 0² = 0. Combine with place values: 8100."
+      },
+      "options": [
+        "8101",
+        "8100",
+        "8099",
+        "8102"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 15²?",
+        "exp": "1² = 1, 2 × 1 × 5 = 10, 5² = 25. Combine with place values: 225."
+      },
+      "options": [
+        "225",
+        "226",
+        "224",
+        "227"
+      ],
+      "correct": 0
+    }
+  ],
+  "l2_04": [
+    {
+      "q": {
+        "en": "What is 96³?",
+        "exp": "Four terms: 9³ = 729, 3 × 9² × 6 = 1458, 3 × 9 × 6² = 972, 6³ = 216. Combine with carries: 884736."
+      },
+      "options": [
+        "884737",
+        "884736",
+        "884735",
+        "884738"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 31³?",
+        "exp": "Four terms: 3³ = 27, 3 × 3² × 1 = 27, 3 × 3 × 1² = 9, 1³ = 1. Combine with carries: 29791."
+      },
+      "options": [
+        "29792",
+        "29791",
+        "29790",
+        "29793"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 51³?",
+        "exp": "Four terms: 5³ = 125, 3 × 5² × 1 = 75, 3 × 5 × 1² = 15, 1³ = 1. Combine with carries: 132651."
+      },
+      "options": [
+        "132652",
+        "132650",
+        "132653",
+        "132651"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 47³?",
+        "exp": "Four terms: 4³ = 64, 3 × 4² × 7 = 336, 3 × 4 × 7² = 588, 7³ = 343. Combine with carries: 103823."
+      },
+      "options": [
+        "103823",
+        "103824",
+        "103822",
+        "103825"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 39³?",
+        "exp": "Four terms: 3³ = 27, 3 × 3² × 9 = 243, 3 × 3 × 9² = 729, 9³ = 729. Combine with carries: 59319."
+      },
+      "options": [
+        "59320",
+        "59318",
+        "59321",
+        "59319"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 88³?",
+        "exp": "Four terms: 8³ = 512, 3 × 8² × 8 = 1536, 3 × 8 × 8² = 1536, 8³ = 512. Combine with carries: 681472."
+      },
+      "options": [
+        "681473",
+        "681471",
+        "681472",
+        "681474"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 73³?",
+        "exp": "Four terms: 7³ = 343, 3 × 7² × 3 = 441, 3 × 7 × 3² = 189, 3³ = 27. Combine with carries: 389017."
+      },
+      "options": [
+        "389018",
+        "389017",
+        "389016",
+        "389019"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 70³?",
+        "exp": "Four terms: 7³ = 343, 3 × 7² × 0 = 0, 3 × 7 × 0² = 0, 0³ = 0. Combine with carries: 343000."
+      },
+      "options": [
+        "343001",
+        "342999",
+        "343002",
+        "343000"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 34³?",
+        "exp": "Four terms: 3³ = 27, 3 × 3² × 4 = 108, 3 × 3 × 4² = 144, 4³ = 64. Combine with carries: 39304."
+      },
+      "options": [
+        "39305",
+        "39303",
+        "39304",
+        "39306"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 44³?",
+        "exp": "Four terms: 4³ = 64, 3 × 4² × 4 = 192, 3 × 4 × 4² = 192, 4³ = 64. Combine with carries: 85184."
+      },
+      "options": [
+        "85185",
+        "85183",
+        "85184",
+        "85186"
+      ],
+      "correct": 2
+    }
+  ],
+  "l2_05": [
+    {
+      "q": {
+        "en": "What is √4356?",
+        "exp": "66² = 4356, so √4356 = 66."
+      },
+      "options": [
+        "67",
+        "66",
+        "65",
+        "68"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is √2209?",
+        "exp": "47² = 2209, so √2209 = 47."
+      },
+      "options": [
+        "48",
+        "47",
+        "46",
+        "49"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is √8836?",
+        "exp": "94² = 8836, so √8836 = 94."
+      },
+      "options": [
+        "95",
+        "93",
+        "94",
+        "96"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is √7225?",
+        "exp": "85² = 7225, so √7225 = 85."
+      },
+      "options": [
+        "86",
+        "84",
+        "87",
+        "85"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is √9604?",
+        "exp": "98² = 9604, so √9604 = 98."
+      },
+      "options": [
+        "99",
+        "98",
+        "97",
+        "100"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is √1681?",
+        "exp": "41² = 1681, so √1681 = 41."
+      },
+      "options": [
+        "41",
+        "42",
+        "40",
+        "43"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is √3600?",
+        "exp": "60² = 3600, so √3600 = 60."
+      },
+      "options": [
+        "61",
+        "59",
+        "60",
+        "62"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is √1849?",
+        "exp": "43² = 1849, so √1849 = 43."
+      },
+      "options": [
+        "44",
+        "42",
+        "43",
+        "45"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is √4096?",
+        "exp": "64² = 4096, so √4096 = 64."
+      },
+      "options": [
+        "65",
+        "64",
+        "63",
+        "66"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is √7744?",
+        "exp": "88² = 7744, so √7744 = 88."
+      },
+      "options": [
+        "89",
+        "87",
+        "88",
+        "90"
+      ],
+      "correct": 2
+    }
+  ],
+  "l2_06": [
+    {
+      "q": {
+        "en": "What is the cube root of 884736?",
+        "exp": "96³ = 884736, so the cube root is 96. Last digit check: 6³ ends in 6, matching the last digit 6 of 884736."
+      },
+      "options": [
+        "97",
+        "96",
+        "95",
+        "98"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 175616?",
+        "exp": "56³ = 175616, so the cube root is 56. Last digit check: 6³ ends in 6, matching the last digit 6 of 175616."
+      },
+      "options": [
+        "57",
+        "55",
+        "58",
+        "56"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 314432?",
+        "exp": "68³ = 314432, so the cube root is 68. Last digit check: 8³ ends in 2, matching the last digit 2 of 314432."
+      },
+      "options": [
+        "69",
+        "67",
+        "68",
+        "70"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 970299?",
+        "exp": "99³ = 970299, so the cube root is 99. Last digit check: 9³ ends in 9, matching the last digit 9 of 970299."
+      },
+      "options": [
+        "100",
+        "98",
+        "99",
+        "101"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 389017?",
+        "exp": "73³ = 389017, so the cube root is 73. Last digit check: 3³ ends in 7, matching the last digit 7 of 389017."
+      },
+      "options": [
+        "74",
+        "72",
+        "73",
+        "75"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 438976?",
+        "exp": "76³ = 438976, so the cube root is 76. Last digit check: 6³ ends in 6, matching the last digit 6 of 438976."
+      },
+      "options": [
+        "77",
+        "76",
+        "75",
+        "78"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 103823?",
+        "exp": "47³ = 103823, so the cube root is 47. Last digit check: 7³ ends in 3, matching the last digit 3 of 103823."
+      },
+      "options": [
+        "47",
+        "48",
+        "46",
+        "49"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 262144?",
+        "exp": "64³ = 262144, so the cube root is 64. Last digit check: 4³ ends in 4, matching the last digit 4 of 262144."
+      },
+      "options": [
+        "65",
+        "63",
+        "66",
+        "64"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 531441?",
+        "exp": "81³ = 531441, so the cube root is 81. Last digit check: 1³ ends in 1, matching the last digit 1 of 531441."
+      },
+      "options": [
+        "81",
+        "82",
+        "80",
+        "83"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 729000?",
+        "exp": "90³ = 729000, so the cube root is 90. Last digit check: 0³ ends in 0, matching the last digit 0 of 729000."
+      },
+      "options": [
+        "91",
+        "90",
+        "89",
+        "92"
+      ],
+      "correct": 1
+    }
+  ],
+  "l2_07": [
+    {
+      "q": {
+        "en": "Check 72 × 89 = 6408 by casting out nines. What is the digital root of 6408?",
+        "exp": "Digit sum of 6408 reduces to 9. Check: digital roots of 72 and 89 are 9 and 8, and 9 × 8 reduces to 9."
+      },
+      "options": [
+        "1",
+        "9",
+        "7",
+        "2"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Check 88 × 19 = 1672 by casting out nines. What is the digital root of 1672?",
+        "exp": "Digit sum of 1672 reduces to 7. Check: digital roots of 88 and 19 are 7 and 1, and 7 × 1 reduces to 7."
+      },
+      "options": [
+        "7",
+        "8",
+        "5",
+        "2"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Check 16 × 79 = 1264 by casting out nines. What is the digital root of 1264?",
+        "exp": "Digit sum of 1264 reduces to 4. Check: digital roots of 16 and 79 are 7 and 7, and 7 × 7 reduces to 4."
+      },
+      "options": [
+        "9",
+        "7",
+        "1",
+        "4"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Check 44 × 16 = 704 by casting out nines. What is the digital root of 704?",
+        "exp": "Digit sum of 704 reduces to 2. Check: digital roots of 44 and 16 are 8 and 7, and 8 × 7 reduces to 2."
+      },
+      "options": [
+        "5",
+        "1",
+        "2",
+        "7"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Check 67 × 90 = 6030 by casting out nines. What is the digital root of 6030?",
+        "exp": "Digit sum of 6030 reduces to 9. Check: digital roots of 67 and 90 are 4 and 9, and 4 × 9 reduces to 9."
+      },
+      "options": [
+        "9",
+        "2",
+        "7",
+        "5"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Check 12 × 21 = 252 by casting out nines. What is the digital root of 252?",
+        "exp": "Digit sum of 252 reduces to 9. Check: digital roots of 12 and 21 are 3 and 3, and 3 × 3 reduces to 9."
+      },
+      "options": [
+        "3",
+        "9",
+        "6",
+        "1"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Check 65 × 51 = 3315 by casting out nines. What is the digital root of 3315?",
+        "exp": "Digit sum of 3315 reduces to 3. Check: digital roots of 65 and 51 are 2 and 6, and 2 × 6 reduces to 3."
+      },
+      "options": [
+        "3",
+        "8",
+        "4",
+        "5"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Check 94 × 72 = 6768 by casting out nines. What is the digital root of 6768?",
+        "exp": "Digit sum of 6768 reduces to 9. Check: digital roots of 94 and 72 are 4 and 9, and 4 × 9 reduces to 9."
+      },
+      "options": [
+        "9",
+        "5",
+        "6",
+        "4"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Check 96 × 88 = 8448 by casting out nines. What is the digital root of 8448?",
+        "exp": "Digit sum of 8448 reduces to 6. Check: digital roots of 96 and 88 are 6 and 7, and 6 × 7 reduces to 6."
+      },
+      "options": [
+        "8",
+        "2",
+        "9",
+        "6"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Check 53 × 19 = 1007 by casting out nines. What is the digital root of 1007?",
+        "exp": "Digit sum of 1007 reduces to 8. Check: digital roots of 53 and 19 are 8 and 1, and 8 × 1 reduces to 8."
+      },
+      "options": [
+        "8",
+        "6",
+        "4",
+        "2"
+      ],
+      "correct": 0
+    }
+  ],
+  "l2_08": [
+    {
+      "q": {
+        "en": "What is 156 × 25?",
+        "exp": "156 × 100 = 15600, then ÷ 4 = 3900."
+      },
+      "options": [
+        "3900",
+        "3901",
+        "3899",
+        "3902"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 18 × 25?",
+        "exp": "18 × 100 = 1800, then ÷ 4 = 450."
+      },
+      "options": [
+        "451",
+        "449",
+        "452",
+        "450"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 18 × 125?",
+        "exp": "18 × 1000 = 18000, then ÷ 8 = 2250."
+      },
+      "options": [
+        "2251",
+        "2249",
+        "2250",
+        "2252"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 199 × 125?",
+        "exp": "199 × 1000 = 199000, then ÷ 8 = 24875."
+      },
+      "options": [
+        "24876",
+        "24874",
+        "24877",
+        "24875"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 37 × 5?",
+        "exp": "37 × 10 = 370, then ÷ 2 = 185."
+      },
+      "options": [
+        "186",
+        "185",
+        "184",
+        "187"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 98 × 25?",
+        "exp": "98 × 100 = 9800, then ÷ 4 = 2450."
+      },
+      "options": [
+        "2450",
+        "2451",
+        "2449",
+        "2452"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 41 × 5?",
+        "exp": "41 × 10 = 410, then ÷ 2 = 205."
+      },
+      "options": [
+        "206",
+        "204",
+        "205",
+        "207"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 178 × 125?",
+        "exp": "178 × 1000 = 178000, then ÷ 8 = 22250."
+      },
+      "options": [
+        "22251",
+        "22250",
+        "22249",
+        "22252"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 64 × 125?",
+        "exp": "64 × 1000 = 64000, then ÷ 8 = 8000."
+      },
+      "options": [
+        "8001",
+        "7999",
+        "8000",
+        "8002"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 113 × 125?",
+        "exp": "113 × 1000 = 113000, then ÷ 8 = 14125."
+      },
+      "options": [
+        "14126",
+        "14125",
+        "14124",
+        "14127"
+      ],
+      "correct": 1
+    }
+  ],
+  "l2_09": [
+    {
+      "q": {
+        "en": "What is 4603 ÷ 46? Give the quotient and remainder.",
+        "exp": "46 × 100 = 4600, remainder 4603 − 4600 = 3."
+      },
+      "options": [
+        "Q:101 R:3",
+        "Q:99 R:49",
+        "Q:100 R:3",
+        "Q:100 R:4"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 5139 ÷ 44? Give the quotient and remainder.",
+        "exp": "44 × 116 = 5104, remainder 5139 − 5104 = 35."
+      },
+      "options": [
+        "Q:117 R:35",
+        "Q:115 R:79",
+        "Q:116 R:35",
+        "Q:116 R:36"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 9113 ÷ 4? Give the quotient and remainder.",
+        "exp": "4 × 2278 = 9112, remainder 9113 − 9112 = 1."
+      },
+      "options": [
+        "Q:2278 R:1",
+        "Q:2279 R:1",
+        "Q:2277 R:5",
+        "Q:2278 R:2"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 4068 ÷ 4? Give the quotient and remainder.",
+        "exp": "4 × 1017 = 4068, remainder 4068 − 4068 = 0."
+      },
+      "options": [
+        "Q:1017 R:0",
+        "Q:1018 R:0",
+        "Q:1016 R:4",
+        "Q:1017 R:1"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 3903 ÷ 29? Give the quotient and remainder.",
+        "exp": "29 × 134 = 3886, remainder 3903 − 3886 = 17."
+      },
+      "options": [
+        "Q:134 R:17",
+        "Q:135 R:17",
+        "Q:133 R:46",
+        "Q:134 R:18"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 7050 ÷ 61? Give the quotient and remainder.",
+        "exp": "61 × 115 = 7015, remainder 7050 − 7015 = 35."
+      },
+      "options": [
+        "Q:116 R:35",
+        "Q:114 R:96",
+        "Q:115 R:35",
+        "Q:115 R:36"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 3273 ÷ 72? Give the quotient and remainder.",
+        "exp": "72 × 45 = 3240, remainder 3273 − 3240 = 33."
+      },
+      "options": [
+        "Q:45 R:33",
+        "Q:46 R:33",
+        "Q:44 R:105",
+        "Q:45 R:34"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 7843 ÷ 26? Give the quotient and remainder.",
+        "exp": "26 × 301 = 7826, remainder 7843 − 7826 = 17."
+      },
+      "options": [
+        "Q:302 R:17",
+        "Q:300 R:43",
+        "Q:301 R:18",
+        "Q:301 R:17"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 3197 ÷ 44? Give the quotient and remainder.",
+        "exp": "44 × 72 = 3168, remainder 3197 − 3168 = 29."
+      },
+      "options": [
+        "Q:73 R:29",
+        "Q:71 R:73",
+        "Q:72 R:29",
+        "Q:72 R:30"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 1762 ÷ 12? Give the quotient and remainder.",
+        "exp": "12 × 146 = 1752, remainder 1762 − 1752 = 10."
+      },
+      "options": [
+        "Q:147 R:10",
+        "Q:145 R:22",
+        "Q:146 R:10",
+        "Q:146 R:11"
+      ],
+      "correct": 2
+    }
+  ],
+  "l2_10": [
+    {
+      "q": {
+        "en": "Add 7/9 + 1/4. Give your answer in lowest terms.",
+        "exp": "(7 × 4 + 1 × 9) / (9 × 4) = 37/36."
+      },
+      "options": [
+        "38/36",
+        "37/36",
+        "8/13",
+        "37/37"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Add 6/8 + 2/3. Give your answer in lowest terms.",
+        "exp": "(6 × 3 + 2 × 8) / (8 × 3) = 34/24, which simplifies to 17/12."
+      },
+      "options": [
+        "34/24",
+        "17/12",
+        "8/11",
+        "18/12"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Add 5/9 + 5/6. Give your answer in lowest terms.",
+        "exp": "(5 × 6 + 5 × 9) / (9 × 6) = 75/54, which simplifies to 25/18."
+      },
+      "options": [
+        "25/18",
+        "75/54",
+        "10/15",
+        "26/18"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Add 3/6 + 1/5. Give your answer in lowest terms.",
+        "exp": "(3 × 5 + 1 × 6) / (6 × 5) = 21/30, which simplifies to 7/10."
+      },
+      "options": [
+        "21/30",
+        "4/11",
+        "8/10",
+        "7/10"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Add 1/3 + 3/5. Give your answer in lowest terms.",
+        "exp": "(1 × 5 + 3 × 3) / (3 × 5) = 14/15."
+      },
+      "options": [
+        "15/15",
+        "14/15",
+        "4/8",
+        "14/16"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Add 2/6 + 2/3. Give your answer in lowest terms.",
+        "exp": "(2 × 3 + 2 × 6) / (6 × 3) = 18/18, which simplifies to 1."
+      },
+      "options": [
+        "1",
+        "18/18",
+        "4/9",
+        "2/1"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Add 4/8 + 1/6. Give your answer in lowest terms.",
+        "exp": "(4 × 6 + 1 × 8) / (8 × 6) = 32/48, which simplifies to 2/3."
+      },
+      "options": [
+        "32/48",
+        "5/14",
+        "2/3",
+        "3/3"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Add 8/9 + 4/7. Give your answer in lowest terms.",
+        "exp": "(8 × 7 + 4 × 9) / (9 × 7) = 92/63."
+      },
+      "options": [
+        "93/63",
+        "92/63",
+        "12/16",
+        "92/64"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Add 6/8 + 4/6. Give your answer in lowest terms.",
+        "exp": "(6 × 6 + 4 × 8) / (8 × 6) = 68/48, which simplifies to 17/12."
+      },
+      "options": [
+        "17/12",
+        "68/48",
+        "10/14",
+        "18/12"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Add 2/4 + 2/4. Give your answer in lowest terms.",
+        "exp": "(2 × 4 + 2 × 4) / (4 × 4) = 16/16, which simplifies to 1."
+      },
+      "options": [
+        "1",
+        "16/16",
+        "4/8",
+        "2/1"
+      ],
+      "correct": 0
+    }
+  ],
+  "l2_11": [
+    {
+      "q": {
+        "en": "What is 99 × 91?",
+        "exp": "Same tens digit 9, and units 9 + 1 = 10. Tens: 9 × 10 = 90, followed by units 9 × 1 = 09. Answer: 9009."
+      },
+      "options": [
+        "9010",
+        "9008",
+        "9011",
+        "9009"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 37 × 33?",
+        "exp": "Same tens digit 3, and units 7 + 3 = 10. Tens: 3 × 4 = 12, followed by units 7 × 3 = 21. Answer: 1221."
+      },
+      "options": [
+        "1222",
+        "1220",
+        "1221",
+        "1223"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 33 × 37?",
+        "exp": "Same tens digit 3, and units 3 + 7 = 10. Tens: 3 × 4 = 12, followed by units 3 × 7 = 21. Answer: 1221."
+      },
+      "options": [
+        "1222",
+        "1221",
+        "1220",
+        "1223"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 72 × 78?",
+        "exp": "Same tens digit 7, and units 2 + 8 = 10. Tens: 7 × 8 = 56, followed by units 2 × 8 = 16. Answer: 5616."
+      },
+      "options": [
+        "5617",
+        "5616",
+        "5615",
+        "5618"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 46 × 44?",
+        "exp": "Same tens digit 4, and units 6 + 4 = 10. Tens: 4 × 5 = 20, followed by units 6 × 4 = 24. Answer: 2024."
+      },
+      "options": [
+        "2024",
+        "2025",
+        "2023",
+        "2026"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 52 × 58?",
+        "exp": "Same tens digit 5, and units 2 + 8 = 10. Tens: 5 × 6 = 30, followed by units 2 × 8 = 16. Answer: 3016."
+      },
+      "options": [
+        "3016",
+        "3017",
+        "3015",
+        "3018"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 59 × 51?",
+        "exp": "Same tens digit 5, and units 9 + 1 = 10. Tens: 5 × 6 = 30, followed by units 9 × 1 = 09. Answer: 3009."
+      },
+      "options": [
+        "3010",
+        "3008",
+        "3009",
+        "3011"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 64 × 66?",
+        "exp": "Same tens digit 6, and units 4 + 6 = 10. Tens: 6 × 7 = 42, followed by units 4 × 6 = 24. Answer: 4224."
+      },
+      "options": [
+        "4225",
+        "4224",
+        "4223",
+        "4226"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 21 × 29?",
+        "exp": "Same tens digit 2, and units 1 + 9 = 10. Tens: 2 × 3 = 6, followed by units 1 × 9 = 09. Answer: 609."
+      },
+      "options": [
+        "609",
+        "610",
+        "608",
+        "611"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 79 × 71?",
+        "exp": "Same tens digit 7, and units 9 + 1 = 10. Tens: 7 × 8 = 56, followed by units 9 × 1 = 09. Answer: 5609."
+      },
+      "options": [
+        "5610",
+        "5608",
+        "5609",
+        "5611"
+      ],
+      "correct": 2
+    }
+  ],
+  "l2_12": [
+    {
+      "q": {
+        "en": "What day of the week does 19 November 2029 fall on?",
+        "exp": "The day-of-the-week calculation gives Monday, checked against the standard calendar."
+      },
+      "options": [
+        "Monday",
+        "Thursday",
         "Friday",
-        "Wednesday",
+        "Saturday"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What day of the week does 19 September 2025 fall on?",
+        "exp": "The day-of-the-week calculation gives Friday, checked against the standard calendar."
+      },
+      "options": [
         "Tuesday",
+        "Sunday",
+        "Friday",
         "Monday"
       ],
       "correct": 2
     },
     {
       "q": {
-        "en": "What day of the week does 3 November 2011 fall on?",
-        "exp": "The day-of-the-week calculation gives Thursday, checked against the standard calendar."
+        "en": "What day of the week does 21 January 2018 fall on?",
+        "exp": "The day-of-the-week calculation gives Sunday, checked against the standard calendar."
       },
       "options": [
         "Saturday",
-        "Thursday",
-        "Tuesday",
-        "Friday"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "What day of the week does 20 October 2023 fall on?",
-        "exp": "The day-of-the-week calculation gives Friday, checked against the standard calendar."
-      },
-      "options": [
-        "Thursday",
-        "Friday",
-        "Monday",
+        "Sunday",
+        "Wednesday",
         "Tuesday"
       ],
       "correct": 1
     },
     {
       "q": {
-        "en": "What day of the week does 3 July 2022 fall on?",
-        "exp": "The day-of-the-week calculation gives Sunday, checked against the standard calendar."
+        "en": "What day of the week does 13 December 2000 fall on?",
+        "exp": "The day-of-the-week calculation gives Wednesday, checked against the standard calendar."
       },
       "options": [
+        "Monday",
+        "Friday",
         "Saturday",
+        "Wednesday"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What day of the week does 26 February 2027 fall on?",
+        "exp": "The day-of-the-week calculation gives Friday, checked against the standard calendar."
+      },
+      "options": [
+        "Wednesday",
+        "Friday",
         "Tuesday",
+        "Thursday"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What day of the week does 27 May 2014 fall on?",
+        "exp": "The day-of-the-week calculation gives Tuesday, checked against the standard calendar."
+      },
+      "options": [
+        "Monday",
+        "Sunday",
+        "Tuesday",
+        "Friday"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What day of the week does 17 July 2006 fall on?",
+        "exp": "The day-of-the-week calculation gives Monday, checked against the standard calendar."
+      },
+      "options": [
+        "Monday",
+        "Friday",
+        "Thursday",
+        "Tuesday"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What day of the week does 25 August 2029 fall on?",
+        "exp": "The day-of-the-week calculation gives Saturday, checked against the standard calendar."
+      },
+      "options": [
+        "Sunday",
+        "Saturday",
+        "Wednesday",
+        "Friday"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What day of the week does 12 July 2030 fall on?",
+        "exp": "The day-of-the-week calculation gives Friday, checked against the standard calendar."
+      },
+      "options": [
+        "Monday",
+        "Thursday",
+        "Friday",
+        "Sunday"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What day of the week does 19 July 2000 fall on?",
+        "exp": "The day-of-the-week calculation gives Wednesday, checked against the standard calendar."
+      },
+      "options": [
+        "Tuesday",
+        "Friday",
         "Wednesday",
         "Sunday"
       ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "What day of the week does 21 December 2000 fall on?",
-        "exp": "The day-of-the-week calculation gives Thursday, checked against the standard calendar."
-      },
-      "options": [
-        "Saturday",
-        "Wednesday",
-        "Sunday",
-        "Thursday"
-      ],
-      "correct": 3
+      "correct": 2
     }
   ],
-  "l4_06": [
+  "l2_13": [
     {
       "q": {
-        "en": "Find √7344 correct to 2 decimal places.",
-        "exp": "85² = 7225 and 86² = 7396, so √7344 lies between 85 and 86. Value: 85.70."
+        "en": "What is 3713 ÷ 23? Give the quotient and remainder.",
+        "exp": "23 × 161 = 3703, remainder 3713 − 3703 = 10."
       },
       "options": [
-        "85.71",
-        "85.69",
-        "85.80",
-        "85.70"
+        "Q:162 R:10",
+        "Q:160 R:33",
+        "Q:161 R:11",
+        "Q:161 R:10"
       ],
       "correct": 3
     },
     {
       "q": {
-        "en": "Find √297 correct to 2 decimal places.",
-        "exp": "17² = 289 and 18² = 324, so √297 lies between 17 and 18. Value: 17.23."
+        "en": "Calculate 33 × 93 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 3 × 3 = 9. Cross: 3 × 3 + 3 × 9 = 36. Tens: 3 × 9 = 27. Combine with carries: 3069."
       },
       "options": [
-        "17.23",
-        "17.24",
-        "17.22",
-        "17.33"
+        "3069",
+        "3070",
+        "3068",
+        "3071"
       ],
       "correct": 0
     },
     {
       "q": {
-        "en": "Find √4789 correct to 2 decimal places.",
-        "exp": "69² = 4761 and 70² = 4900, so √4789 lies between 69 and 70. Value: 69.20."
+        "en": "Add 3/6 + 1/9. Give your answer in lowest terms.",
+        "exp": "(3 × 9 + 1 × 6) / (6 × 9) = 33/54, which simplifies to 11/18."
       },
       "options": [
-        "69.20",
-        "69.21",
-        "69.19",
-        "69.30"
+        "11/18",
+        "33/54",
+        "4/15",
+        "12/18"
       ],
       "correct": 0
     },
     {
       "q": {
-        "en": "Find √5656 correct to 2 decimal places.",
-        "exp": "75² = 5625 and 76² = 5776, so √5656 lies between 75 and 76. Value: 75.21."
+        "en": "What is 53 × 57?",
+        "exp": "Same tens digit 5, and units 3 + 7 = 10. Tens: 5 × 6 = 30, followed by units 3 × 7 = 21. Answer: 3021."
       },
       "options": [
-        "75.22",
-        "75.20",
-        "75.21",
-        "75.31"
+        "3021",
+        "3022",
+        "3020",
+        "3023"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is √9216?",
+        "exp": "96² = 9216, so √9216 = 96."
+      },
+      "options": [
+        "96",
+        "97",
+        "95",
+        "98"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 61³?",
+        "exp": "Four terms: 6³ = 216, 3 × 6² × 1 = 108, 3 × 6 × 1² = 18, 1³ = 1. Combine with carries: 226981."
+      },
+      "options": [
+        "226982",
+        "226980",
+        "226981",
+        "226983"
       ],
       "correct": 2
     },
     {
       "q": {
-        "en": "Find √91 correct to 2 decimal places.",
-        "exp": "9² = 81 and 10² = 100, so √91 lies between 9 and 10. Value: 9.54."
+        "en": "What is 249 ÷ 58? Give the quotient and remainder.",
+        "exp": "58 × 4 = 232, remainder 249 − 232 = 17."
       },
       "options": [
-        "9.54",
-        "9.55",
-        "9.53",
-        "9.64"
+        "Q:4 R:17",
+        "Q:5 R:17",
+        "Q:3 R:75",
+        "Q:4 R:18"
       ],
       "correct": 0
-    }
-  ],
-  "l4_07": [
+    },
     {
       "q": {
-        "en": "Factorise 3x² + 20x + 25.",
-        "exp": "Expand to check: (3x + 5)(x + 5) gives 3x² + 20x + 25."
+        "en": "Calculate 53 × 77 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 3 × 7 = 21. Cross: 5 × 7 + 3 × 7 = 56. Tens: 5 × 7 = 35. Combine with carries: 4081."
       },
       "options": [
-        "(3x − 5)(x + 5)",
-        "(3x + 5)(x + 5)",
-        "(3x + 5)(x − 5)",
-        "(3x + 6)(x + 5)"
+        "4082",
+        "4080",
+        "4081",
+        "4083"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 17 × 13?",
+        "exp": "Same tens digit 1, and units 7 + 3 = 10. Tens: 1 × 2 = 2, followed by units 7 × 3 = 21. Answer: 221."
+      },
+      "options": [
+        "222",
+        "220",
+        "223",
+        "221"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 5685 ÷ 80? Give the quotient and remainder.",
+        "exp": "80 × 71 = 5680, remainder 5685 − 5680 = 5."
+      },
+      "options": [
+        "Q:71 R:5",
+        "Q:72 R:5",
+        "Q:70 R:85",
+        "Q:71 R:6"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Add 5/7 + 3/6. Give your answer in lowest terms.",
+        "exp": "(5 × 6 + 3 × 7) / (7 × 6) = 51/42, which simplifies to 17/14."
+      },
+      "options": [
+        "51/42",
+        "8/13",
+        "18/14",
+        "17/14"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 50²?",
+        "exp": "5² = 25, 2 × 5 × 0 = 0, 0² = 0. Combine with place values: 2500."
+      },
+      "options": [
+        "2501",
+        "2499",
+        "2500",
+        "2502"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 72²?",
+        "exp": "7² = 49, 2 × 7 × 2 = 28, 2² = 4. Combine with place values: 5184."
+      },
+      "options": [
+        "5185",
+        "5183",
+        "5184",
+        "5186"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Add 4/8 + 4/7. Give your answer in lowest terms.",
+        "exp": "(4 × 7 + 4 × 8) / (8 × 7) = 60/56, which simplifies to 15/14."
+      },
+      "options": [
+        "60/56",
+        "15/14",
+        "8/15",
+        "16/14"
       ],
       "correct": 1
     },
     {
       "q": {
-        "en": "Factorise 12x² + 19x + 5.",
-        "exp": "Expand to check: (4x + 5)(3x + 1) gives 12x² + 19x + 5."
+        "en": "What is √1296?",
+        "exp": "36² = 1296, so √1296 = 36."
       },
       "options": [
-        "(4x − 5)(3x + 1)",
-        "(4x + 5)(3x + 1)",
-        "(4x + 5)(3x − 1)",
-        "(4x + 1)(3x + 5)"
-      ],
-      "correct": 1
-    },
-    {
-      "q": {
-        "en": "Factorise 9x² − 3x − 2.",
-        "exp": "Expand to check: (3x + 1)(3x − 2) gives 9x² − 3x − 2."
-      },
-      "options": [
-        "(3x − 1)(3x − 2)",
-        "(3x + 1)(3x + 2)",
-        "(3x + 2)(3x − 2)",
-        "(3x + 1)(3x − 2)"
+        "37",
+        "35",
+        "38",
+        "36"
       ],
       "correct": 3
-    },
-    {
-      "q": {
-        "en": "Factorise 4x² + 10x + 4.",
-        "exp": "Expand to check: (2x + 4)(2x + 1) gives 4x² + 10x + 4."
-      },
-      "options": [
-        "(2x − 4)(2x + 1)",
-        "(2x + 4)(2x − 1)",
-        "(2x + 4)(2x + 1)",
-        "(2x + 5)(2x + 1)"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "Factorise 2x² − 7x − 30.",
-        "exp": "Expand to check: (2x + 5)(x − 6) gives 2x² − 7x − 30."
-      },
-      "options": [
-        "(2x − 5)(x − 6)",
-        "(2x + 5)(x + 6)",
-        "(2x + 5)(x − 6)",
-        "(2x − 6)(x + 5)"
-      ],
-      "correct": 2
     }
   ],
-  "l4_09": [
+  "l2_14": [
     {
       "q": {
-        "en": "What is the alternating sum of 73245, starting from the units digit?",
-        "exp": "5 − 4 + 2 − 3 + 7 = 7."
-      },
-      "options": [
-        "8",
-        "6",
-        "7",
-        "9"
-      ],
-      "correct": 2
-    },
-    {
-      "q": {
-        "en": "What is the alternating sum of 16249, starting from the units digit?",
-        "exp": "9 − 4 + 2 − 6 + 1 = 2."
+        "en": "Solve 3x + 4y = 30 and 3x − 4y = -18. What is x?",
+        "exp": "Add: 6x = 12, so x = 2. Subtract: 8y = 48, so y = 6."
       },
       "options": [
         "3",
         "1",
-        "4",
-        "2"
+        "2",
+        "4"
       ],
-      "correct": 3
+      "correct": 2
     },
     {
       "q": {
-        "en": "What is the alternating sum of 50424, starting from the units digit?",
-        "exp": "4 − 2 + 4 − 0 + 5 = 11."
-      },
-      "options": [
-        "12",
-        "10",
-        "13",
-        "11"
-      ],
-      "correct": 3
-    },
-    {
-      "q": {
-        "en": "What is the alternating sum of 13776, starting from the units digit?",
-        "exp": "6 − 7 + 7 − 3 + 1 = 4."
+        "en": "Solve 2x + 3y = 24 and 2x − 3y = 0. What is y?",
+        "exp": "Add: 4x = 24, so x = 6. Subtract: 6y = 24, so y = 4."
       },
       "options": [
         "4",
@@ -4949,21 +11639,1413 @@ export const QUIZ_EXTRA = {
     },
     {
       "q": {
-        "en": "What is the alternating sum of 77813, starting from the units digit?",
-        "exp": "3 − 1 + 8 − 7 + 7 = 10."
+        "en": "Solve 4x + 4y = 52 and 4x − 4y = -20. What is x?",
+        "exp": "Add: 8x = 32, so x = 4. Subtract: 8y = 72, so y = 9."
       },
       "options": [
-        "10",
-        "11",
+        "5",
+        "3",
+        "4",
+        "6"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve x + y = 16 and x − y = 0. What is y?",
+        "exp": "Add: 2x = 16, so x = 8. Subtract: 2y = 16, so y = 8."
+      },
+      "options": [
         "9",
-        "12"
+        "8",
+        "7",
+        "10"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve 3x + 2y = 24 and 3x − 2y = 12. What is x?",
+        "exp": "Add: 6x = 36, so x = 6. Subtract: 4y = 12, so y = 3."
+      },
+      "options": [
+        "7",
+        "6",
+        "5",
+        "8"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve 5x + 4y = 40 and 5x − 4y = 0. What is x?",
+        "exp": "Add: 10x = 40, so x = 4. Subtract: 8y = 40, so y = 5."
+      },
+      "options": [
+        "5",
+        "3",
+        "6",
+        "4"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Solve x + y = 17 and x − y = 1. What is y?",
+        "exp": "Add: 2x = 18, so x = 9. Subtract: 2y = 16, so y = 8."
+      },
+      "options": [
+        "8",
+        "9",
+        "7",
+        "10"
       ],
       "correct": 0
     },
     {
       "q": {
-        "en": "What is the alternating sum of 30377, starting from the units digit?",
-        "exp": "7 − 7 + 3 − 0 + 3 = 6."
+        "en": "Solve 3x + 3y = 33 and 3x − 3y = -15. What is x?",
+        "exp": "Add: 6x = 18, so x = 3. Subtract: 6y = 48, so y = 8."
+      },
+      "options": [
+        "4",
+        "2",
+        "3",
+        "5"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve 2x + 3y = 38 and 2x − 3y = -10. What is y?",
+        "exp": "Add: 4x = 28, so x = 7. Subtract: 6y = 48, so y = 8."
+      },
+      "options": [
+        "9",
+        "7",
+        "8",
+        "10"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve x + y = 16 and x − y = 8. What is y?",
+        "exp": "Add: 2x = 24, so x = 12. Subtract: 2y = 8, so y = 4."
+      },
+      "options": [
+        "4",
+        "5",
+        "3",
+        "6"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve 5x + 3y = 16 and 5x − 3y = 4. What is y?",
+        "exp": "Add: 10x = 20, so x = 2. Subtract: 6y = 12, so y = 2."
+      },
+      "options": [
+        "3",
+        "2",
+        "1",
+        "4"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve x + y = 7 and x − y = -3. What is y?",
+        "exp": "Add: 2x = 4, so x = 2. Subtract: 2y = 10, so y = 5."
+      },
+      "options": [
+        "5",
+        "6",
+        "4",
+        "7"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve x + y = 12 and x − y = 0. What is y?",
+        "exp": "Add: 2x = 12, so x = 6. Subtract: 2y = 12, so y = 6."
+      },
+      "options": [
+        "7",
+        "6",
+        "5",
+        "8"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve 3x + 4y = 28 and 3x − 4y = -4. What is y?",
+        "exp": "Add: 6x = 24, so x = 4. Subtract: 8y = 32, so y = 4."
+      },
+      "options": [
+        "5",
+        "4",
+        "3",
+        "6"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve x + y = 15 and x − y = -1. What is y?",
+        "exp": "Add: 2x = 14, so x = 7. Subtract: 2y = 16, so y = 8."
+      },
+      "options": [
+        "9",
+        "7",
+        "8",
+        "10"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve 2x + 3y = 45 and 2x − 3y = -9. What is x?",
+        "exp": "Add: 4x = 36, so x = 9. Subtract: 6y = 54, so y = 9."
+      },
+      "options": [
+        "9",
+        "10",
+        "8",
+        "11"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve 3x + 3y = 9 and 3x − 3y = 3. What is y?",
+        "exp": "Add: 6x = 12, so x = 2. Subtract: 6y = 6, so y = 1."
+      },
+      "options": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "correct": 0
+    }
+  ],
+  "l2_15": [
+    {
+      "q": {
+        "en": "Calculate 998² using Yavadunam (base 1000).",
+        "exp": "998 is 2 below 1000. Left: 998 − 2 = 996. Right: 2² = 4, written as 004. Join: 996|004 = 996004."
+      },
+      "options": [
+        "996005",
+        "996004",
+        "996003",
+        "996006"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 103² using Yavadunam (base 100).",
+        "exp": "103 is 3 above 100. Left: 103 + 3 = 106. Right: 3² = 9, written as 09. Join: 106|09 = 10609."
+      },
+      "options": [
+        "10610",
+        "10608",
+        "10611",
+        "10609"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 1002² using Yavadunam (base 1000).",
+        "exp": "1002 is 2 above 1000. Left: 1002 + 2 = 1004. Right: 2² = 4, written as 004. Join: 1004|004 = 1004004."
+      },
+      "options": [
+        "1004005",
+        "1004003",
+        "1004006",
+        "1004004"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 995² using Yavadunam (base 1000).",
+        "exp": "995 is 5 below 1000. Left: 995 − 5 = 990. Right: 5² = 25, written as 025. Join: 990|025 = 990025."
+      },
+      "options": [
+        "990025",
+        "990026",
+        "990024",
+        "990027"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 1003² using Yavadunam (base 1000).",
+        "exp": "1003 is 3 above 1000. Left: 1003 + 3 = 1006. Right: 3² = 9, written as 009. Join: 1006|009 = 1006009."
+      },
+      "options": [
+        "1006009",
+        "1006010",
+        "1006008",
+        "1006011"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 1001² using Yavadunam (base 1000).",
+        "exp": "1001 is 1 above 1000. Left: 1001 + 1 = 1002. Right: 1² = 1, written as 001. Join: 1002|001 = 1002001."
+      },
+      "options": [
+        "1002002",
+        "1002000",
+        "1002001",
+        "1002003"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 99² using Yavadunam (base 100).",
+        "exp": "99 is 1 below 100. Left: 99 − 1 = 98. Right: 1² = 1, written as 01. Join: 98|01 = 9801."
+      },
+      "options": [
+        "9802",
+        "9800",
+        "9803",
+        "9801"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 102² using Yavadunam (base 100).",
+        "exp": "102 is 2 above 100. Left: 102 + 2 = 104. Right: 2² = 4, written as 04. Join: 104|04 = 10404."
+      },
+      "options": [
+        "10405",
+        "10404",
+        "10403",
+        "10406"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 108² using Yavadunam (base 100).",
+        "exp": "108 is 8 above 100. Left: 108 + 8 = 116. Right: 8² = 64, written as 64. Join: 116|64 = 11664."
+      },
+      "options": [
+        "11665",
+        "11664",
+        "11663",
+        "11666"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 999² using Yavadunam (base 1000).",
+        "exp": "999 is 1 below 1000. Left: 999 − 1 = 998. Right: 1² = 1, written as 001. Join: 998|001 = 998001."
+      },
+      "options": [
+        "998002",
+        "998000",
+        "998003",
+        "998001"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 1009² using Yavadunam (base 1000).",
+        "exp": "1009 is 9 above 1000. Left: 1009 + 9 = 1018. Right: 9² = 81, written as 081. Join: 1018|081 = 1018081."
+      },
+      "options": [
+        "1018082",
+        "1018080",
+        "1018083",
+        "1018081"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 1006² using Yavadunam (base 1000).",
+        "exp": "1006 is 6 above 1000. Left: 1006 + 6 = 1012. Right: 6² = 36, written as 036. Join: 1012|036 = 1012036."
+      },
+      "options": [
+        "1012037",
+        "1012036",
+        "1012035",
+        "1012038"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 12² using Yavadunam (base 10).",
+        "exp": "12 is 2 above 10. Left: 12 + 2 = 14. Right: 2² = 4, written as 4. Join: 14|4 = 144."
+      },
+      "options": [
+        "145",
+        "143",
+        "146",
+        "144"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 96² using Yavadunam (base 100).",
+        "exp": "96 is 4 below 100. Left: 96 − 4 = 92. Right: 4² = 16, written as 16. Join: 92|16 = 9216."
+      },
+      "options": [
+        "9217",
+        "9216",
+        "9215",
+        "9218"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 91² using Yavadunam (base 100).",
+        "exp": "91 is 9 below 100. Left: 91 − 9 = 82. Right: 9² = 81, written as 81. Join: 82|81 = 8281."
+      },
+      "options": [
+        "8282",
+        "8280",
+        "8281",
+        "8283"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 1005² using Yavadunam (base 1000).",
+        "exp": "1005 is 5 above 1000. Left: 1005 + 5 = 1010. Right: 5² = 25, written as 025. Join: 1010|025 = 1010025."
+      },
+      "options": [
+        "1010026",
+        "1010025",
+        "1010024",
+        "1010027"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 996² using Yavadunam (base 1000).",
+        "exp": "996 is 4 below 1000. Left: 996 − 4 = 992. Right: 4² = 16, written as 016. Join: 992|016 = 992016."
+      },
+      "options": [
+        "992016",
+        "992017",
+        "992015",
+        "992018"
+      ],
+      "correct": 0
+    }
+  ],
+  "l3_01": [
+    {
+      "q": {
+        "en": "Calculate 925 × 665 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 25, 40, 87, 66, 54. Carrying from the right gives 615125."
+      },
+      "options": [
+        "615126",
+        "615124",
+        "615127",
+        "615125"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 32 × 30 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 2 × 0 = 0. Cross: 3 × 0 + 2 × 3 = 6. Tens: 3 × 3 = 9. Combine with carries: 960."
+      },
+      "options": [
+        "961",
+        "959",
+        "960",
+        "962"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 156 × 876 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 36, 72, 89, 47, 8. Carrying from the right gives 136656."
+      },
+      "options": [
+        "136657",
+        "136655",
+        "136656",
+        "136658"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 15 × 90 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 5 × 0 = 0. Cross: 1 × 0 + 5 × 9 = 45. Tens: 1 × 9 = 9. Combine with carries: 1350."
+      },
+      "options": [
+        "1350",
+        "1351",
+        "1349",
+        "1352"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 460 × 698 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 0, 48, 86, 72, 24. Carrying from the right gives 321080."
+      },
+      "options": [
+        "321081",
+        "321079",
+        "321082",
+        "321080"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 914 × 693 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 12, 39, 60, 87, 54. Carrying from the right gives 633402."
+      },
+      "options": [
+        "633403",
+        "633401",
+        "633404",
+        "633402"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 67 × 61 using Urdhva-Tiryagbhyam.",
+        "exp": "Units: 7 × 1 = 7. Cross: 6 × 1 + 7 × 6 = 48. Tens: 6 × 6 = 36. Combine with carries: 4087."
+      },
+      "options": [
+        "4088",
+        "4086",
+        "4089",
+        "4087"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 930 × 948 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 0, 24, 84, 63, 81. Carrying from the right gives 881640."
+      },
+      "options": [
+        "881640",
+        "881641",
+        "881639",
+        "881642"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 400 × 103 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 0, 0, 12, 0, 4. Carrying from the right gives 41200."
+      },
+      "options": [
+        "41201",
+        "41200",
+        "41199",
+        "41202"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 984 × 969 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 36, 96, 165, 126, 81. Carrying from the right gives 953496."
+      },
+      "options": [
+        "953497",
+        "953496",
+        "953495",
+        "953498"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 188 × 811 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 8, 16, 73, 65, 8. Carrying from the right gives 152468."
+      },
+      "options": [
+        "152469",
+        "152467",
+        "152470",
+        "152468"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 621 × 663 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 3, 12, 36, 48, 36. Carrying from the right gives 411723."
+      },
+      "options": [
+        "411723",
+        "411724",
+        "411722",
+        "411725"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 646 × 526 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 36, 36, 74, 32, 30. Carrying from the right gives 339796."
+      },
+      "options": [
+        "339797",
+        "339795",
+        "339796",
+        "339798"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 357 × 201 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 7, 5, 17, 10, 6. Carrying from the right gives 71757."
+      },
+      "options": [
+        "71757",
+        "71758",
+        "71756",
+        "71759"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 615 × 114 using Urdhva-Tiryagbhyam (vertically and crosswise).",
+        "exp": "Column sums from the right: 20, 9, 30, 7, 6. Carrying from the right gives 70110."
+      },
+      "options": [
+        "70111",
+        "70109",
+        "70112",
+        "70110"
+      ],
+      "correct": 3
+    }
+  ],
+  "l3_02": [
+    {
+      "q": {
+        "en": "Calculate 9632 × 9820 using Nikhilam (base 10000).",
+        "exp": "Deficits from 10000: −368 and −180. Cross: 9632 − 180 = 9452. Deficit product: −368 × −180 = 66240. Answer: 9452 × 10000 + 66240 = 94586240."
+      },
+      "options": [
+        "94586241",
+        "94586240",
+        "94586239",
+        "94586242"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 9076 × 9947 using Nikhilam (base 10000).",
+        "exp": "Deficits from 10000: −924 and −53. Cross: 9076 − 53 = 9023. Deficit product: −924 × −53 = 48972. Answer: 9023 × 10000 + 48972 = 90278972."
+      },
+      "options": [
+        "90278973",
+        "90278972",
+        "90278971",
+        "90278974"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 9551 × 10795 using Nikhilam (base 10000).",
+        "exp": "Deficits from 10000: −449 and 795. Cross: 9551 + 795 = 10346. Deficit product: −449 × 795 = −356955. Answer: 10346 × 10000 − 356955 = 103103045."
+      },
+      "options": [
+        "103103045",
+        "103103046",
+        "103103044",
+        "103103047"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 1049 × 992 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: 49 and −8. Cross: 1049 − 8 = 1041. Deficit product: 49 × −8 = −392. Answer: 1041 × 1000 − 392 = 1040608."
+      },
+      "options": [
+        "1040609",
+        "1040607",
+        "1040608",
+        "1040610"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 10108 × 9832 using Nikhilam (base 10000).",
+        "exp": "Deficits from 10000: 108 and −168. Cross: 10108 − 168 = 9940. Deficit product: 108 × −168 = −18144. Answer: 9940 × 10000 − 18144 = 99381856."
+      },
+      "options": [
+        "99381857",
+        "99381856",
+        "99381855",
+        "99381858"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 1084 × 1040 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: 84 and 40. Cross: 1084 + 40 = 1124. Deficit product: 84 × 40 = 3360. Answer: 1124 × 1000 + 3360 = 1127360."
+      },
+      "options": [
+        "1127361",
+        "1127359",
+        "1127362",
+        "1127360"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 948 × 979 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: −52 and −21. Cross: 948 − 21 = 927. Deficit product: −52 × −21 = 1092. Answer: 927 × 1000 + 1092 = 928092."
+      },
+      "options": [
+        "928092",
+        "928093",
+        "928091",
+        "928094"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 941 × 1071 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: −59 and 71. Cross: 941 + 71 = 1012. Deficit product: −59 × 71 = −4189. Answer: 1012 × 1000 − 4189 = 1007811."
+      },
+      "options": [
+        "1007812",
+        "1007810",
+        "1007813",
+        "1007811"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 10568 × 10157 using Nikhilam (base 10000).",
+        "exp": "Deficits from 10000: 568 and 157. Cross: 10568 + 157 = 10725. Deficit product: 568 × 157 = 89176. Answer: 10725 × 10000 + 89176 = 107339176."
+      },
+      "options": [
+        "107339177",
+        "107339175",
+        "107339178",
+        "107339176"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 1058 × 1085 using Nikhilam (base 1000).",
+        "exp": "Deficits from 1000: 58 and 85. Cross: 1058 + 85 = 1143. Deficit product: 58 × 85 = 4930. Answer: 1143 × 1000 + 4930 = 1147930."
+      },
+      "options": [
+        "1147931",
+        "1147929",
+        "1147930",
+        "1147932"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 9428 × 10198 using Nikhilam (base 10000).",
+        "exp": "Deficits from 10000: −572 and 198. Cross: 9428 + 198 = 9626. Deficit product: −572 × 198 = −113256. Answer: 9626 × 10000 − 113256 = 96146744."
+      },
+      "options": [
+        "96146745",
+        "96146744",
+        "96146743",
+        "96146746"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 10160 × 9742 using Nikhilam (base 10000).",
+        "exp": "Deficits from 10000: 160 and −258. Cross: 10160 − 258 = 9902. Deficit product: 160 × −258 = −41280. Answer: 9902 × 10000 − 41280 = 98978720."
+      },
+      "options": [
+        "98978721",
+        "98978719",
+        "98978720",
+        "98978722"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 9432 × 10011 using Nikhilam (base 10000).",
+        "exp": "Deficits from 10000: −568 and 11. Cross: 9432 + 11 = 9443. Deficit product: −568 × 11 = −6248. Answer: 9443 × 10000 − 6248 = 94423752."
+      },
+      "options": [
+        "94423753",
+        "94423751",
+        "94423754",
+        "94423752"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 9307 × 9372 using Nikhilam (base 10000).",
+        "exp": "Deficits from 10000: −693 and −628. Cross: 9307 − 628 = 8679. Deficit product: −693 × −628 = 435204. Answer: 8679 × 10000 + 435204 = 87225204."
+      },
+      "options": [
+        "87225205",
+        "87225203",
+        "87225206",
+        "87225204"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 9785 × 10738 using Nikhilam (base 10000).",
+        "exp": "Deficits from 10000: −215 and 738. Cross: 9785 + 738 = 10523. Deficit product: −215 × 738 = −158670. Answer: 10523 × 10000 − 158670 = 105071330."
+      },
+      "options": [
+        "105071331",
+        "105071330",
+        "105071329",
+        "105071332"
+      ],
+      "correct": 1
+    }
+  ],
+  "l3_03": [
+    {
+      "q": {
+        "en": "Calculate 18 × 27 using Anurupyena (proportional scaling).",
+        "exp": "18 : 27 = 2 : 3, both scaled by 9. So 18 × 27 = 9² × 2 × 3 = 81 × 6 = 486."
+      },
+      "options": [
+        "487",
+        "486",
+        "485",
+        "488"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 6 × 12 using Anurupyena (proportional scaling).",
+        "exp": "6 : 12 = 2 : 4, both scaled by 3. So 6 × 12 = 3² × 2 × 4 = 9 × 8 = 72."
+      },
+      "options": [
+        "72",
+        "73",
+        "71",
+        "74"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 14 × 6 using Anurupyena (proportional scaling).",
+        "exp": "14 : 6 = 7 : 3, both scaled by 2. So 14 × 6 = 2² × 7 × 3 = 4 × 21 = 84."
+      },
+      "options": [
+        "85",
+        "84",
+        "83",
+        "86"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 6 × 9 using Anurupyena (proportional scaling).",
+        "exp": "6 : 9 = 2 : 3, both scaled by 3. So 6 × 9 = 3² × 2 × 3 = 9 × 6 = 54."
+      },
+      "options": [
+        "55",
+        "54",
+        "53",
+        "56"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 20 × 16 using Anurupyena (proportional scaling).",
+        "exp": "20 : 16 = 5 : 4, both scaled by 4. So 20 × 16 = 4² × 5 × 4 = 16 × 20 = 320."
+      },
+      "options": [
+        "321",
+        "319",
+        "320",
+        "322"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 18 × 9 using Anurupyena (proportional scaling).",
+        "exp": "18 : 9 = 6 : 3, both scaled by 3. So 18 × 9 = 3² × 6 × 3 = 9 × 18 = 162."
+      },
+      "options": [
+        "163",
+        "161",
+        "164",
+        "162"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 42 × 21 using Anurupyena (proportional scaling).",
+        "exp": "42 : 21 = 6 : 3, both scaled by 7. So 42 × 21 = 7² × 6 × 3 = 49 × 18 = 882."
+      },
+      "options": [
+        "882",
+        "883",
+        "881",
+        "884"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 10 × 40 using Anurupyena (proportional scaling).",
+        "exp": "10 : 40 = 2 : 8, both scaled by 5. So 10 × 40 = 5² × 2 × 8 = 25 × 16 = 400."
+      },
+      "options": [
+        "400",
+        "401",
+        "399",
+        "402"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 15 × 45 using Anurupyena (proportional scaling).",
+        "exp": "15 : 45 = 3 : 9, both scaled by 5. So 15 × 45 = 5² × 3 × 9 = 25 × 27 = 675."
+      },
+      "options": [
+        "676",
+        "674",
+        "677",
+        "675"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 64 × 48 using Anurupyena (proportional scaling).",
+        "exp": "64 : 48 = 8 : 6, both scaled by 8. So 64 × 48 = 8² × 8 × 6 = 64 × 48 = 3072."
+      },
+      "options": [
+        "3073",
+        "3071",
+        "3072",
+        "3074"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 63 × 42 using Anurupyena (proportional scaling).",
+        "exp": "63 : 42 = 9 : 6, both scaled by 7. So 63 × 42 = 7² × 9 × 6 = 49 × 54 = 2646."
+      },
+      "options": [
+        "2647",
+        "2645",
+        "2648",
+        "2646"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 54 × 27 using Anurupyena (proportional scaling).",
+        "exp": "54 : 27 = 6 : 3, both scaled by 9. So 54 × 27 = 9² × 6 × 3 = 81 × 18 = 1458."
+      },
+      "options": [
+        "1459",
+        "1458",
+        "1457",
+        "1460"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 18 × 81 using Anurupyena (proportional scaling).",
+        "exp": "18 : 81 = 2 : 9, both scaled by 9. So 18 × 81 = 9² × 2 × 9 = 81 × 18 = 1458."
+      },
+      "options": [
+        "1458",
+        "1459",
+        "1457",
+        "1460"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 18 × 6 using Anurupyena (proportional scaling).",
+        "exp": "18 : 6 = 9 : 3, both scaled by 2. So 18 × 6 = 2² × 9 × 3 = 4 × 27 = 108."
+      },
+      "options": [
+        "109",
+        "107",
+        "110",
+        "108"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 35 × 45 using Anurupyena (proportional scaling).",
+        "exp": "35 : 45 = 7 : 9, both scaled by 5. So 35 × 45 = 5² × 7 × 9 = 25 × 63 = 1575."
+      },
+      "options": [
+        "1575",
+        "1576",
+        "1574",
+        "1577"
+      ],
+      "correct": 0
+    }
+  ],
+  "l3_04": [
+    {
+      "q": {
+        "en": "Calculate 95 × 94 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 5 and 6. Cross: 95 − 6 = 89. Product of complements: 5 × 6 = 30. Answer: 8930 = 8930."
+      },
+      "options": [
+        "8931",
+        "8929",
+        "8930",
+        "8932"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 97 × 91 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 3 and 9. Cross: 97 − 9 = 88. Product of complements: 3 × 9 = 27. Answer: 8827 = 8827."
+      },
+      "options": [
+        "8828",
+        "8826",
+        "8827",
+        "8829"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 95 × 96 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 5 and 4. Cross: 95 − 4 = 91. Product of complements: 5 × 4 = 20. Answer: 9120 = 9120."
+      },
+      "options": [
+        "9121",
+        "9119",
+        "9122",
+        "9120"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 94 × 96 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 6 and 4. Cross: 94 − 4 = 90. Product of complements: 6 × 4 = 24. Answer: 9024 = 9024."
+      },
+      "options": [
+        "9025",
+        "9023",
+        "9024",
+        "9026"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Calculate 96 × 95 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 4 and 5. Cross: 96 − 5 = 91. Product of complements: 4 × 5 = 20. Answer: 9120 = 9120."
+      },
+      "options": [
+        "9121",
+        "9120",
+        "9119",
+        "9122"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 94 × 91 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 6 and 9. Cross: 94 − 9 = 85. Product of complements: 6 × 9 = 54. Answer: 8554 = 8554."
+      },
+      "options": [
+        "8554",
+        "8555",
+        "8553",
+        "8556"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 98 × 95 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 2 and 5. Cross: 98 − 5 = 93. Product of complements: 2 × 5 = 10. Answer: 9310 = 9310."
+      },
+      "options": [
+        "9310",
+        "9311",
+        "9309",
+        "9312"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 99 × 91 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 1 and 9. Cross: 99 − 9 = 90. Product of complements: 1 × 9 = 09. Answer: 9009 = 9009."
+      },
+      "options": [
+        "9009",
+        "9010",
+        "9008",
+        "9011"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 98 × 98 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 2 and 2. Cross: 98 − 2 = 96. Product of complements: 2 × 2 = 04. Answer: 9604 = 9604."
+      },
+      "options": [
+        "9605",
+        "9604",
+        "9603",
+        "9606"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 97 × 94 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 3 and 6. Cross: 97 − 6 = 91. Product of complements: 3 × 6 = 18. Answer: 9118 = 9118."
+      },
+      "options": [
+        "9119",
+        "9117",
+        "9120",
+        "9118"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Calculate 91 × 95 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 9 and 5. Cross: 91 − 5 = 86. Product of complements: 9 × 5 = 45. Answer: 8645 = 8645."
+      },
+      "options": [
+        "8645",
+        "8646",
+        "8644",
+        "8647"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 91 × 93 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 9 and 7. Cross: 91 − 7 = 84. Product of complements: 9 × 7 = 63. Answer: 8463 = 8463."
+      },
+      "options": [
+        "8464",
+        "8463",
+        "8462",
+        "8465"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 92 × 94 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 8 and 6. Cross: 92 − 6 = 86. Product of complements: 8 × 6 = 48. Answer: 8648 = 8648."
+      },
+      "options": [
+        "8648",
+        "8649",
+        "8647",
+        "8650"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 92 × 97 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 8 and 3. Cross: 92 − 3 = 89. Product of complements: 8 × 3 = 24. Answer: 8924 = 8924."
+      },
+      "options": [
+        "8925",
+        "8924",
+        "8923",
+        "8926"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Calculate 92 × 95 using the vinculum (complement) method.",
+        "exp": "Complements from 100: 8 and 5. Cross: 92 − 5 = 87. Product of complements: 8 × 5 = 40. Answer: 8740 = 8740."
+      },
+      "options": [
+        "8741",
+        "8740",
+        "8739",
+        "8742"
+      ],
+      "correct": 1
+    }
+  ],
+  "l3_05": [
+    {
+      "q": {
+        "en": "Find 315² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 25, 10, 31, 6, 9. Carrying gives 99225."
+      },
+      "options": [
+        "99225",
+        "99226",
+        "99224",
+        "99227"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find 1925² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 25, 20, 94, 46, 85, 18, 1. Carrying gives 3705625."
+      },
+      "options": [
+        "3705626",
+        "3705624",
+        "3705625",
+        "3705627"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find 296² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 36, 108, 105, 36, 4. Carrying gives 87616."
+      },
+      "options": [
+        "87617",
+        "87615",
+        "87618",
+        "87616"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find 6952² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 4, 20, 61, 114, 141, 108, 36. Carrying gives 48330304."
+      },
+      "options": [
+        "48330304",
+        "48330305",
+        "48330303",
+        "48330306"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find 7039² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 81, 54, 9, 126, 42, 0, 49. Carrying gives 49547521."
+      },
+      "options": [
+        "49547521",
+        "49547522",
+        "49547520",
+        "49547523"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find 304² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 16, 0, 24, 0, 9. Carrying gives 92416."
+      },
+      "options": [
+        "92417",
+        "92416",
+        "92415",
+        "92418"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Find 6615² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 25, 10, 61, 72, 48, 72, 36. Carrying gives 43758225."
+      },
+      "options": [
+        "43758226",
+        "43758224",
+        "43758227",
+        "43758225"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find 1773² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 9, 42, 91, 104, 63, 14, 1. Carrying gives 3143529."
+      },
+      "options": [
+        "3143529",
+        "3143530",
+        "3143528",
+        "3143531"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find 2176² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 36, 84, 61, 38, 29, 4, 4. Carrying gives 4734976."
+      },
+      "options": [
+        "4734977",
+        "4734975",
+        "4734976",
+        "4734978"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find 802² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 4, 0, 32, 0, 64. Carrying gives 643204."
+      },
+      "options": [
+        "643204",
+        "643205",
+        "643203",
+        "643206"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find 944² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 16, 32, 88, 72, 81. Carrying gives 891136."
+      },
+      "options": [
+        "891137",
+        "891136",
+        "891135",
+        "891138"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Find 6960² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 0, 0, 36, 108, 153, 108, 36. Carrying gives 48441600."
+      },
+      "options": [
+        "48441600",
+        "48441601",
+        "48441599",
+        "48441602"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find 7602² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 4, 0, 24, 28, 36, 84, 49. Carrying gives 57790404."
+      },
+      "options": [
+        "57790405",
+        "57790403",
+        "57790404",
+        "57790406"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find 6804² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 16, 0, 64, 48, 64, 96, 36. Carrying gives 46294416."
+      },
+      "options": [
+        "46294417",
+        "46294416",
+        "46294415",
+        "46294418"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Find 3739² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 81, 54, 135, 96, 67, 42, 9. Carrying gives 13980121."
+      },
+      "options": [
+        "13980122",
+        "13980120",
+        "13980123",
+        "13980121"
+      ],
+      "correct": 3
+    }
+  ],
+  "l3_06": [
+    {
+      "q": {
+        "en": "What is the cube root of 216?",
+        "exp": "6 × 6 × 6 = 216, so the cube root is 6."
       },
       "options": [
         "6",
@@ -4975,16 +13057,3980 @@ export const QUIZ_EXTRA = {
     },
     {
       "q": {
-        "en": "What is the alternating sum of 79097, starting from the units digit?",
-        "exp": "7 − 9 + 0 − 9 + 7 = -4."
+        "en": "What is the cube root of 117649?",
+        "exp": "49 × 49 × 49 = 117649, so the cube root is 49."
+      },
+      "options": [
+        "50",
+        "48",
+        "51",
+        "49"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 21952?",
+        "exp": "28 × 28 × 28 = 21952, so the cube root is 28."
+      },
+      "options": [
+        "29",
+        "27",
+        "28",
+        "30"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 166375?",
+        "exp": "55 × 55 × 55 = 166375, so the cube root is 55."
+      },
+      "options": [
+        "56",
+        "55",
+        "54",
+        "57"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 125?",
+        "exp": "5 × 5 × 5 = 125, so the cube root is 5."
+      },
+      "options": [
+        "6",
+        "4",
+        "5",
+        "7"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 35937?",
+        "exp": "33 × 33 × 33 = 35937, so the cube root is 33."
+      },
+      "options": [
+        "33",
+        "34",
+        "32",
+        "35"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 140608?",
+        "exp": "52 × 52 × 52 = 140608, so the cube root is 52."
+      },
+      "options": [
+        "53",
+        "51",
+        "52",
+        "54"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 195112?",
+        "exp": "58 × 58 × 58 = 195112, so the cube root is 58."
+      },
+      "options": [
+        "59",
+        "57",
+        "60",
+        "58"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 32768?",
+        "exp": "32 × 32 × 32 = 32768, so the cube root is 32."
+      },
+      "options": [
+        "33",
+        "32",
+        "31",
+        "34"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 39304?",
+        "exp": "34 × 34 × 34 = 39304, so the cube root is 34."
+      },
+      "options": [
+        "34",
+        "35",
+        "33",
+        "36"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 205379?",
+        "exp": "59 × 59 × 59 = 205379, so the cube root is 59."
+      },
+      "options": [
+        "60",
+        "59",
+        "58",
+        "61"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 9261?",
+        "exp": "21 × 21 × 21 = 9261, so the cube root is 21."
+      },
+      "options": [
+        "22",
+        "21",
+        "20",
+        "23"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 54872?",
+        "exp": "38 × 38 × 38 = 54872, so the cube root is 38."
+      },
+      "options": [
+        "39",
+        "38",
+        "37",
+        "40"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 97336?",
+        "exp": "46 × 46 × 46 = 97336, so the cube root is 46."
+      },
+      "options": [
+        "46",
+        "47",
+        "45",
+        "48"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the cube root of 46656?",
+        "exp": "36 × 36 × 36 = 46656, so the cube root is 36."
+      },
+      "options": [
+        "37",
+        "35",
+        "36",
+        "38"
+      ],
+      "correct": 2
+    }
+  ],
+  "l3_07": [
+    {
+      "q": {
+        "en": "What is 291 ÷ 43? Give the quotient and remainder.",
+        "exp": "43 × 6 = 258, remainder 291 − 258 = 33."
+      },
+      "options": [
+        "Q:7 R:33",
+        "Q:5 R:76",
+        "Q:6 R:34",
+        "Q:6 R:33"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 3450 ÷ 57? Give the quotient and remainder.",
+        "exp": "57 × 60 = 3420, remainder 3450 − 3420 = 30."
+      },
+      "options": [
+        "Q:60 R:30",
+        "Q:61 R:30",
+        "Q:59 R:87",
+        "Q:60 R:31"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 6455 ÷ 11? Give the quotient and remainder.",
+        "exp": "11 × 586 = 6446, remainder 6455 − 6446 = 9."
+      },
+      "options": [
+        "Q:587 R:9",
+        "Q:586 R:9",
+        "Q:585 R:20",
+        "Q:586 R:10"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 842 ÷ 89? Give the quotient and remainder.",
+        "exp": "89 × 9 = 801, remainder 842 − 801 = 41."
+      },
+      "options": [
+        "Q:10 R:41",
+        "Q:8 R:130",
+        "Q:9 R:42",
+        "Q:9 R:41"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 6395 ÷ 25? Give the quotient and remainder.",
+        "exp": "25 × 255 = 6375, remainder 6395 − 6375 = 20."
+      },
+      "options": [
+        "Q:256 R:20",
+        "Q:254 R:45",
+        "Q:255 R:20",
+        "Q:255 R:21"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 1598 ÷ 87? Give the quotient and remainder.",
+        "exp": "87 × 18 = 1566, remainder 1598 − 1566 = 32."
+      },
+      "options": [
+        "Q:18 R:32",
+        "Q:19 R:32",
+        "Q:17 R:119",
+        "Q:18 R:33"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 9693 ÷ 37? Give the quotient and remainder.",
+        "exp": "37 × 261 = 9657, remainder 9693 − 9657 = 36."
+      },
+      "options": [
+        "Q:262 R:36",
+        "Q:260 R:73",
+        "Q:261 R:37",
+        "Q:261 R:36"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 491 ÷ 18? Give the quotient and remainder.",
+        "exp": "18 × 27 = 486, remainder 491 − 486 = 5."
+      },
+      "options": [
+        "Q:28 R:5",
+        "Q:27 R:5",
+        "Q:26 R:23",
+        "Q:27 R:6"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 9217 ÷ 9? Give the quotient and remainder.",
+        "exp": "9 × 1024 = 9216, remainder 9217 − 9216 = 1."
+      },
+      "options": [
+        "Q:1024 R:1",
+        "Q:1025 R:1",
+        "Q:1023 R:10",
+        "Q:1024 R:2"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 8152 ÷ 4? Give the quotient and remainder.",
+        "exp": "4 × 2038 = 8152, remainder 8152 − 8152 = 0."
+      },
+      "options": [
+        "Q:2039 R:0",
+        "Q:2038 R:0",
+        "Q:2037 R:4",
+        "Q:2038 R:1"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 6042 ÷ 9? Give the quotient and remainder.",
+        "exp": "9 × 671 = 6039, remainder 6042 − 6039 = 3."
+      },
+      "options": [
+        "Q:672 R:3",
+        "Q:670 R:12",
+        "Q:671 R:4",
+        "Q:671 R:3"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 5631 ÷ 96? Give the quotient and remainder.",
+        "exp": "96 × 58 = 5568, remainder 5631 − 5568 = 63."
+      },
+      "options": [
+        "Q:59 R:63",
+        "Q:58 R:63",
+        "Q:57 R:159",
+        "Q:58 R:64"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 7404 ÷ 67? Give the quotient and remainder.",
+        "exp": "67 × 110 = 7370, remainder 7404 − 7370 = 34."
+      },
+      "options": [
+        "Q:110 R:34",
+        "Q:111 R:34",
+        "Q:109 R:101",
+        "Q:110 R:35"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 8519 ÷ 44? Give the quotient and remainder.",
+        "exp": "44 × 193 = 8492, remainder 8519 − 8492 = 27."
+      },
+      "options": [
+        "Q:194 R:27",
+        "Q:193 R:27",
+        "Q:192 R:71",
+        "Q:193 R:28"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 9123 ÷ 64? Give the quotient and remainder.",
+        "exp": "64 × 142 = 9088, remainder 9123 − 9088 = 35."
+      },
+      "options": [
+        "Q:143 R:35",
+        "Q:141 R:99",
+        "Q:142 R:36",
+        "Q:142 R:35"
+      ],
+      "correct": 3
+    }
+  ],
+  "l3_08": [
+    {
+      "q": {
+        "en": "Expand (x − 1)(x − 3).",
+        "exp": "First: 1 × 1 = 1x². Cross: 1 × -3 + -1 × 1 = -4x. Last: -1 × -3 = 3."
+      },
+      "options": [
+        "x² − 2x + 3",
+        "x² − 4x − 3",
+        "x² − 3x + 3",
+        "x² − 4x + 3"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Expand (4x + 4)(3x − 6).",
+        "exp": "First: 4 × 3 = 12x². Cross: 4 × -6 + 4 × 3 = -12x. Last: 4 × -6 = -24."
+      },
+      "options": [
+        "12x² − 36x − 24",
+        "12x² − 12x − 24",
+        "12x² − 12x + 24",
+        "12x² − 11x − 24"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Expand (x + 6)(x − 1).",
+        "exp": "First: 1 × 1 = 1x². Cross: 1 × -1 + 6 × 1 = 5x. Last: 6 × -1 = -6."
+      },
+      "options": [
+        "x² − 7x − 6",
+        "x² + 5x + 6",
+        "x² + 6x − 6",
+        "x² + 5x − 6"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Expand (4x + 5)(3x − 4).",
+        "exp": "First: 4 × 3 = 12x². Cross: 4 × -4 + 5 × 3 = -1x. Last: 5 × -4 = -20."
+      },
+      "options": [
+        "12x² − 31x − 20",
+        "12x² − x − 20",
+        "12x² − x + 20",
+        "12x² − 20"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Expand (2x + 4)(x − 1).",
+        "exp": "First: 2 × 1 = 2x². Cross: 2 × -1 + 4 × 1 = 2x. Last: 4 × -1 = -4."
+      },
+      "options": [
+        "2x² − 6x − 4",
+        "2x² + 2x + 4",
+        "2x² + 2x − 4",
+        "2x² + 3x − 4"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Expand (2x − 3)(3x + 6).",
+        "exp": "First: 2 × 3 = 6x². Cross: 2 × 6 + -3 × 3 = 3x. Last: -3 × 6 = -18."
+      },
+      "options": [
+        "6x² + 21x − 18",
+        "6x² + 3x − 18",
+        "6x² + 3x + 18",
+        "6x² + 4x − 18"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Expand (4x + 2)(3x − 3).",
+        "exp": "First: 4 × 3 = 12x². Cross: 4 × -3 + 2 × 3 = -6x. Last: 2 × -3 = -6."
+      },
+      "options": [
+        "12x² − 18x − 6",
+        "12x² − 6x + 6",
+        "12x² − 5x − 6",
+        "12x² − 6x − 6"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Expand (3x + 6)(3x − 5).",
+        "exp": "First: 3 × 3 = 9x². Cross: 3 × -5 + 6 × 3 = 3x. Last: 6 × -5 = -30."
+      },
+      "options": [
+        "9x² − 33x − 30",
+        "9x² + 3x + 30",
+        "9x² + 4x − 30",
+        "9x² + 3x − 30"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Expand (3x − 6)(4x + 1).",
+        "exp": "First: 3 × 4 = 12x². Cross: 3 × 1 + -6 × 4 = -21x. Last: -6 × 1 = -6."
+      },
+      "options": [
+        "12x² + 27x − 6",
+        "12x² − 21x + 6",
+        "12x² − 21x − 6",
+        "12x² − 20x − 6"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Expand (4x + 4)(3x − 2).",
+        "exp": "First: 4 × 3 = 12x². Cross: 4 × -2 + 4 × 3 = 4x. Last: 4 × -2 = -8."
+      },
+      "options": [
+        "12x² − 20x − 8",
+        "12x² + 4x − 8",
+        "12x² + 4x + 8",
+        "12x² + 5x − 8"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Expand (3x − 2)(4x − 4).",
+        "exp": "First: 3 × 4 = 12x². Cross: 3 × -4 + -2 × 4 = -20x. Last: -2 × -4 = 8."
+      },
+      "options": [
+        "12x² − 4x + 8",
+        "12x² − 20x − 8",
+        "12x² − 20x + 8",
+        "12x² − 19x + 8"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Expand (x − 3)(4x + 6).",
+        "exp": "First: 1 × 4 = 4x². Cross: 1 × 6 + -3 × 4 = -6x. Last: -3 × 6 = -18."
+      },
+      "options": [
+        "4x² + 18x − 18",
+        "4x² − 6x + 18",
+        "4x² − 6x − 18",
+        "4x² − 5x − 18"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Expand (3x + 3)(4x − 4).",
+        "exp": "First: 3 × 4 = 12x². Cross: 3 × -4 + 3 × 4 = 0x. Last: 3 × -4 = -12."
+      },
+      "options": [
+        "12x² − 24x − 12",
+        "12x² + 12",
+        "12x² − 12",
+        "12x² + x − 12"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Expand (4x − 4)(2x + 5).",
+        "exp": "First: 4 × 2 = 8x². Cross: 4 × 5 + -4 × 2 = 12x. Last: -4 × 5 = -20."
+      },
+      "options": [
+        "8x² + 28x − 20",
+        "8x² + 12x + 20",
+        "8x² + 13x − 20",
+        "8x² + 12x − 20"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Expand (x + 6)(3x + 1).",
+        "exp": "First: 1 × 3 = 3x². Cross: 1 × 1 + 6 × 3 = 19x. Last: 6 × 1 = 6."
+      },
+      "options": [
+        "3x² − 17x + 6",
+        "3x² + 19x − 6",
+        "3x² + 19x + 6",
+        "3x² + 20x + 6"
+      ],
+      "correct": 2
+    }
+  ],
+  "l3_09": [
+    {
+      "q": {
+        "en": "Solve 1x + 2y = -2 and 1x + 4y = -8. What is x?",
+        "exp": "Check: 1(4) + 2(-3) = -2 ✓ and 1(4) + 4(-3) = -8 ✓. So x = 4 and y = -3."
+      },
+      "options": [
+        "5",
+        "3",
+        "4",
+        "6"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve 3x + 4y = 36 and 4x + 2y = 38. What is y?",
+        "exp": "Check: 3(8) + 4(3) = 36 ✓ and 4(8) + 2(3) = 38 ✓. So x = 8 and y = 3."
+      },
+      "options": [
+        "4",
+        "2",
+        "3",
+        "5"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve 1x + 4y = -3 and 4x + 1y = 33. What is x?",
+        "exp": "Check: 1(9) + 4(-3) = -3 ✓ and 4(9) + 1(-3) = 33 ✓. So x = 9 and y = -3."
+      },
+      "options": [
+        "10",
+        "8",
+        "11",
+        "9"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Solve 4x + 4y = 4 and 1x + 4y = 4. What is y?",
+        "exp": "Check: 4(0) + 4(1) = 4 ✓ and 1(0) + 4(1) = 4 ✓. So x = 0 and y = 1."
+      },
+      "options": [
+        "2",
+        "0",
+        "3",
+        "1"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Solve 2x + 3y = -13 and 2x + 1y = -7. What is y?",
+        "exp": "Check: 2(-2) + 3(-3) = -13 ✓ and 2(-2) + 1(-3) = -7 ✓. So x = -2 and y = -3."
+      },
+      "options": [
+        "−2",
+        "−4",
+        "−1",
+        "−3"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Solve 4x + 3y = 48 and 3x + 1y = 31. What is x?",
+        "exp": "Check: 4(9) + 3(4) = 48 ✓ and 3(9) + 1(4) = 31 ✓. So x = 9 and y = 4."
+      },
+      "options": [
+        "10",
+        "8",
+        "9",
+        "11"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve 2x + 2y = 22 and 2x + 4y = 38. What is y?",
+        "exp": "Check: 2(3) + 2(8) = 22 ✓ and 2(3) + 4(8) = 38 ✓. So x = 3 and y = 8."
+      },
+      "options": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Solve 1x + 3y = 20 and 2x + 1y = 0. What is y?",
+        "exp": "Check: 1(-4) + 3(8) = 20 ✓ and 2(-4) + 1(8) = 0 ✓. So x = -4 and y = 8."
+      },
+      "options": [
+        "9",
+        "8",
+        "7",
+        "10"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve 1x + 3y = 33 and 1x + 4y = 41. What is x?",
+        "exp": "Check: 1(9) + 3(8) = 33 ✓ and 1(9) + 4(8) = 41 ✓. So x = 9 and y = 8."
+      },
+      "options": [
+        "10",
+        "9",
+        "8",
+        "11"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve 1x + 1y = 15 and 3x + 1y = 29. What is y?",
+        "exp": "Check: 1(7) + 1(8) = 15 ✓ and 3(7) + 1(8) = 29 ✓. So x = 7 and y = 8."
+      },
+      "options": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Solve 3x + 1y = -10 and 2x + 2y = -4. What is y?",
+        "exp": "Check: 3(-4) + 1(2) = -10 ✓ and 2(-4) + 2(2) = -4 ✓. So x = -4 and y = 2."
+      },
+      "options": [
+        "3",
+        "1",
+        "2",
+        "4"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve 1x + 3y = 20 and 2x + 2y = 8. What is x?",
+        "exp": "Check: 1(-4) + 3(8) = 20 ✓ and 2(-4) + 2(8) = 8 ✓. So x = -4 and y = 8."
+      },
+      "options": [
+        "−4",
+        "−3",
+        "−5",
+        "−2"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve 3x + 1y = 10 and 2x + 2y = 12. What is x?",
+        "exp": "Check: 3(2) + 1(4) = 10 ✓ and 2(2) + 2(4) = 12 ✓. So x = 2 and y = 4."
+      },
+      "options": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve 1x + 4y = 32 and 4x + 4y = 56. What is y?",
+        "exp": "Check: 1(8) + 4(6) = 32 ✓ and 4(8) + 4(6) = 56 ✓. So x = 8 and y = 6."
+      },
+      "options": [
+        "6",
+        "7",
+        "5",
+        "8"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve 3x + 3y = -3 and 1x + 4y = 2. What is y?",
+        "exp": "Check: 3(-2) + 3(1) = -3 ✓ and 1(-2) + 4(1) = 2 ✓. So x = -2 and y = 1."
+      },
+      "options": [
+        "2",
+        "1",
+        "0",
+        "3"
+      ],
+      "correct": 1
+    }
+  ],
+  "l3_10": [
+    {
+      "q": {
+        "en": "Find 2591² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 1, 18, 91, 94, 61, 20, 4. Carrying gives 6713281."
+      },
+      "options": [
+        "6713281",
+        "6713282",
+        "6713280",
+        "6713283"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 32 × 16 using Anurupyena (proportional scaling).",
+        "exp": "32 : 16 = 4 : 2, both scaled by 8. So 32 × 16 = 8² × 4 × 2 = 64 × 8 = 512."
+      },
+      "options": [
+        "512",
+        "513",
+        "511",
+        "514"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve x² + 10x + 9 = 0. What is the larger root?",
+        "exp": "Complete the square: (x + 5)² = 16, so x + 5 = ±4. Roots: -9 and -1."
+      },
+      "options": [
+        "−9",
+        "−1",
+        "1",
+        "0"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Expand (4x + 1)(3x − 5).",
+        "exp": "First: 4 × 3 = 12x². Cross: 4 × -5 + 1 × 3 = -17x. Last: 1 × -5 = -5."
+      },
+      "options": [
+        "12x² − 23x − 5",
+        "12x² − 17x + 5",
+        "12x² − 16x − 5",
+        "12x² − 17x − 5"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Expand (x + 2)(4x − 1).",
+        "exp": "First: 1 × 4 = 4x². Cross: 1 × -1 + 2 × 4 = 7x. Last: 2 × -1 = -2."
+      },
+      "options": [
+        "4x² − 9x − 2",
+        "4x² + 7x − 2",
+        "4x² + 7x + 2",
+        "4x² + 8x − 2"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Find 930² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 0, 0, 9, 54, 81. Carrying gives 864900."
+      },
+      "options": [
+        "864900",
+        "864901",
+        "864899",
+        "864902"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Calculate 24 × 36 using Anurupyena (proportional scaling).",
+        "exp": "24 : 36 = 6 : 9, both scaled by 4. So 24 × 36 = 4² × 6 × 9 = 16 × 54 = 864."
+      },
+      "options": [
+        "865",
+        "863",
+        "864",
+        "866"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the sum of the coefficients of x² + 11x + 28?",
+        "exp": "1 + 11 + 28 = 40 = (1 + 7)(1 + 4) = 40."
+      },
+      "options": [
+        "41",
+        "39",
+        "42",
+        "40"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find 982² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 4, 32, 100, 144, 81. Carrying gives 964324."
+      },
+      "options": [
+        "964325",
+        "964324",
+        "964323",
+        "964326"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve x² − 10x + 9 = 0. What is the larger root?",
+        "exp": "Complete the square: (x − 5)² = 16, so x − 5 = ±4. Roots: 1 and 9."
+      },
+      "options": [
+        "9",
+        "1",
+        "−9",
+        "10"
+      ],
+      "correct": 0
+    }
+  ],
+  "l3_11": [
+    {
+      "q": {
+        "en": "Solve 1/(x + 6) + 1/(x + 8) = 0. What is x?",
+        "exp": "Add the denominators: (x + 6) + (x + 8) = 2x + 14 = 0, so x = -7."
+      },
+      "options": [
+        "−7",
+        "7",
+        "−6",
+        "−8"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 9) + 1/(x + 11) = 0. What is x?",
+        "exp": "Add the denominators: (x + 9) + (x + 11) = 2x + 20 = 0, so x = -10."
+      },
+      "options": [
+        "−10",
+        "10",
+        "−9",
+        "−11"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 10) + 1/(x + 2) = 0. What is x?",
+        "exp": "Add the denominators: (x + 10) + (x + 2) = 2x + 12 = 0, so x = -6."
+      },
+      "options": [
+        "6",
+        "−6",
+        "−10",
+        "−2"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 7) + 1/(x + 9) = 0. What is x?",
+        "exp": "Add the denominators: (x + 7) + (x + 9) = 2x + 16 = 0, so x = -8."
+      },
+      "options": [
+        "8",
+        "−7",
+        "−8",
+        "−9"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 6) + 1/(x + 10) = 0. What is x?",
+        "exp": "Add the denominators: (x + 6) + (x + 10) = 2x + 16 = 0, so x = -8."
+      },
+      "options": [
+        "8",
+        "−6",
+        "−10",
+        "−8"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 11) + 1/(x + 7) = 0. What is x?",
+        "exp": "Add the denominators: (x + 11) + (x + 7) = 2x + 18 = 0, so x = -9."
+      },
+      "options": [
+        "9",
+        "−11",
+        "−9",
+        "−7"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 2) + 1/(x + 10) = 0. What is x?",
+        "exp": "Add the denominators: (x + 2) + (x + 10) = 2x + 12 = 0, so x = -6."
+      },
+      "options": [
+        "6",
+        "−6",
+        "−2",
+        "−10"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 4) + 1/(x + 10) = 0. What is x?",
+        "exp": "Add the denominators: (x + 4) + (x + 10) = 2x + 14 = 0, so x = -7."
+      },
+      "options": [
+        "7",
+        "−4",
+        "−7",
+        "−10"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 7) + 1/(x + 1) = 0. What is x?",
+        "exp": "Add the denominators: (x + 7) + (x + 1) = 2x + 8 = 0, so x = -4."
+      },
+      "options": [
+        "−4",
+        "4",
+        "−7",
+        "−1"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 2) + 1/(x + 8) = 0. What is x?",
+        "exp": "Add the denominators: (x + 2) + (x + 8) = 2x + 10 = 0, so x = -5."
+      },
+      "options": [
+        "−5",
+        "5",
+        "−2",
+        "−8"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 10) + 1/(x + 8) = 0. What is x?",
+        "exp": "Add the denominators: (x + 10) + (x + 8) = 2x + 18 = 0, so x = -9."
+      },
+      "options": [
+        "9",
+        "−10",
+        "−9",
+        "−8"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 10) + 1/(x + 4) = 0. What is x?",
+        "exp": "Add the denominators: (x + 10) + (x + 4) = 2x + 14 = 0, so x = -7."
+      },
+      "options": [
+        "7",
+        "−10",
+        "−7",
+        "−4"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 8) + 1/(x + 10) = 0. What is x?",
+        "exp": "Add the denominators: (x + 8) + (x + 10) = 2x + 18 = 0, so x = -9."
+      },
+      "options": [
+        "9",
+        "−8",
+        "−10",
+        "−9"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 10) + 1/(x + 6) = 0. What is x?",
+        "exp": "Add the denominators: (x + 10) + (x + 6) = 2x + 16 = 0, so x = -8."
+      },
+      "options": [
+        "8",
+        "−8",
+        "−10",
+        "−6"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 10) + 1/(x + 12) = 0. What is x?",
+        "exp": "Add the denominators: (x + 10) + (x + 12) = 2x + 22 = 0, so x = -11."
+      },
+      "options": [
+        "11",
+        "−10",
+        "−12",
+        "−11"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 11) + 1/(x + 3) = 0. What is x?",
+        "exp": "Add the denominators: (x + 11) + (x + 3) = 2x + 14 = 0, so x = -7."
+      },
+      "options": [
+        "−7",
+        "7",
+        "−11",
+        "−3"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve 1/(x + 8) + 1/(x + 4) = 0. What is x?",
+        "exp": "Add the denominators: (x + 8) + (x + 4) = 2x + 12 = 0, so x = -6."
+      },
+      "options": [
+        "6",
+        "−6",
+        "−8",
+        "−4"
+      ],
+      "correct": 1
+    }
+  ],
+  "l3_12": [
+    {
+      "q": {
+        "en": "In 5/7 = 0.714285…, what is the 6th digit after the decimal point?",
+        "exp": "Remainder method: the digits of 5/7 repeat every 6 places as 714285, so digit 6 is 5."
+      },
+      "options": [
+        "0",
+        "2",
+        "1",
+        "5"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "In 1/7 = 0.142857…, what is the 6th digit after the decimal point?",
+        "exp": "Remainder method: the digits of 1/7 repeat every 6 places as 142857, so digit 6 is 7."
+      },
+      "options": [
+        "3",
+        "9",
+        "7",
+        "2"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "In 3/7 = 0.428571…, what is the 6th digit after the decimal point?",
+        "exp": "Remainder method: the digits of 3/7 repeat every 6 places as 428571, so digit 6 is 1."
+      },
+      "options": [
+        "3",
+        "8",
+        "1",
+        "4"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "In 4/7 = 0.571428…, what is the 9th digit after the decimal point?",
+        "exp": "Remainder method: the digits of 4/7 repeat every 6 places as 571428, so digit 9 is 1."
+      },
+      "options": [
+        "8",
+        "1",
+        "9",
+        "6"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "In 6/7 = 0.857142…, what is the 10th digit after the decimal point?",
+        "exp": "Remainder method: the digits of 6/7 repeat every 6 places as 857142, so digit 10 is 1."
+      },
+      "options": [
+        "2",
+        "8",
+        "3",
+        "1"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "In 3/7 = 0.428571…, what is the 3rd digit after the decimal point?",
+        "exp": "Remainder method: the digits of 3/7 repeat every 6 places as 428571, so digit 3 is 8."
+      },
+      "options": [
+        "6",
+        "8",
+        "3",
+        "9"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "In 2/7 = 0.285714…, what is the 11th digit after the decimal point?",
+        "exp": "Remainder method: the digits of 2/7 repeat every 6 places as 285714, so digit 11 is 1."
+      },
+      "options": [
+        "1",
+        "7",
+        "0",
+        "4"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "In 6/7 = 0.857142…, what is the 3rd digit after the decimal point?",
+        "exp": "Remainder method: the digits of 6/7 repeat every 6 places as 857142, so digit 3 is 7."
+      },
+      "options": [
+        "6",
+        "7",
+        "1",
+        "3"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "In 6/7 = 0.857142…, what is the 1st digit after the decimal point?",
+        "exp": "Remainder method: the digits of 6/7 repeat every 6 places as 857142, so digit 1 is 8."
+      },
+      "options": [
+        "8",
+        "6",
+        "9",
+        "2"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "In 1/7 = 0.142857…, what is the 8th digit after the decimal point?",
+        "exp": "Remainder method: the digits of 1/7 repeat every 6 places as 142857, so digit 8 is 4."
+      },
+      "options": [
+        "8",
+        "7",
+        "4",
+        "5"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "In 6/7 = 0.857142…, what is the 4th digit after the decimal point?",
+        "exp": "Remainder method: the digits of 6/7 repeat every 6 places as 857142, so digit 4 is 1."
+      },
+      "options": [
+        "6",
+        "1",
+        "7",
+        "3"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "In 2/7 = 0.285714…, what is the 1st digit after the decimal point?",
+        "exp": "Remainder method: the digits of 2/7 repeat every 6 places as 285714, so digit 1 is 2."
+      },
+      "options": [
+        "2",
+        "5",
+        "3",
+        "6"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "In 3/7 = 0.428571…, what is the 7th digit after the decimal point?",
+        "exp": "Remainder method: the digits of 3/7 repeat every 6 places as 428571, so digit 7 is 4."
+      },
+      "options": [
+        "5",
+        "4",
+        "3",
+        "9"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "In 6/7 = 0.857142…, what is the 7th digit after the decimal point?",
+        "exp": "Remainder method: the digits of 6/7 repeat every 6 places as 857142, so digit 7 is 8."
+      },
+      "options": [
+        "8",
+        "2",
+        "1",
+        "6"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "In 3/7 = 0.428571…, what is the 2nd digit after the decimal point?",
+        "exp": "Remainder method: the digits of 3/7 repeat every 6 places as 428571, so digit 2 is 2."
+      },
+      "options": [
+        "0",
+        "6",
+        "2",
+        "9"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "In 1/7 = 0.142857…, what is the 1st digit after the decimal point?",
+        "exp": "Remainder method: the digits of 1/7 repeat every 6 places as 142857, so digit 1 is 1."
+      },
+      "options": [
+        "3",
+        "5",
+        "1",
+        "4"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "In 2/7 = 0.285714…, what is the 9th digit after the decimal point?",
+        "exp": "Remainder method: the digits of 2/7 repeat every 6 places as 285714, so digit 9 is 5."
+      },
+      "options": [
+        "5",
+        "9",
+        "3",
+        "1"
+      ],
+      "correct": 0
+    }
+  ],
+  "l3_13": [
+    {
+      "q": {
+        "en": "Solve x² − 6x − 27 = 0. What is the smaller root?",
+        "exp": "Complete the square: (x − 3)² = 36, so x − 3 = ±6. Roots: -3 and 9."
       },
       "options": [
         "−3",
-        "−5",
+        "9",
+        "−9",
+        "10"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve x² − 2x − 24 = 0. What is the larger root?",
+        "exp": "Complete the square: (x − 1)² = 25, so x − 1 = ±5. Roots: -4 and 6."
+      },
+      "options": [
         "−4",
-        "−2"
+        "6",
+        "−6",
+        "7"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve x² + 10x + 16 = 0. What is the smaller root?",
+        "exp": "Complete the square: (x + 5)² = 9, so x + 5 = ±3. Roots: -8 and -2."
+      },
+      "options": [
+        "−8",
+        "−2",
+        "2",
+        "−1"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve x² − 10x + 16 = 0. What is the larger root?",
+        "exp": "Complete the square: (x − 5)² = 9, so x − 5 = ±3. Roots: 2 and 8."
+      },
+      "options": [
+        "2",
+        "−8",
+        "8",
+        "9"
       ],
       "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve x² + 12x + 32 = 0. What is the smaller root?",
+        "exp": "Complete the square: (x + 6)² = 4, so x + 6 = ±2. Roots: -8 and -4."
+      },
+      "options": [
+        "−4",
+        "−8",
+        "4",
+        "−3"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve x² + 4x − 21 = 0. What is the smaller root?",
+        "exp": "Complete the square: (x + 2)² = 25, so x + 2 = ±5. Roots: -7 and 3."
+      },
+      "options": [
+        "−7",
+        "3",
+        "−3",
+        "4"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve x² − 4x − 5 = 0. What is the smaller root?",
+        "exp": "Complete the square: (x − 2)² = 9, so x − 2 = ±3. Roots: -1 and 5."
+      },
+      "options": [
+        "5",
+        "−1",
+        "−5",
+        "6"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Solve x² + 4x − 32 = 0. What is the larger root?",
+        "exp": "Complete the square: (x + 2)² = 36, so x + 2 = ±6. Roots: -8 and 4."
+      },
+      "options": [
+        "−8",
+        "−4",
+        "5",
+        "4"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Solve x² + 4x − 5 = 0. What is the smaller root?",
+        "exp": "Complete the square: (x + 2)² = 9, so x + 2 = ±3. Roots: -5 and 1."
+      },
+      "options": [
+        "1",
+        "−1",
+        "2",
+        "−5"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Solve x² − 14x + 48 = 0. What is the smaller root?",
+        "exp": "Complete the square: (x − 7)² = 1, so x − 7 = ±1. Roots: 6 and 8."
+      },
+      "options": [
+        "6",
+        "8",
+        "−8",
+        "9"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve x² − 12x + 32 = 0. What is the larger root?",
+        "exp": "Complete the square: (x − 6)² = 4, so x − 6 = ±2. Roots: 4 and 8."
+      },
+      "options": [
+        "4",
+        "−8",
+        "8",
+        "9"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve x² + 10x + 24 = 0. What is the larger root?",
+        "exp": "Complete the square: (x + 5)² = 1, so x + 5 = ±1. Roots: -6 and -4."
+      },
+      "options": [
+        "−6",
+        "4",
+        "−4",
+        "−3"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve x² − 2x − 48 = 0. What is the larger root?",
+        "exp": "Complete the square: (x − 1)² = 49, so x − 1 = ±7. Roots: -6 and 8."
+      },
+      "options": [
+        "8",
+        "−6",
+        "−8",
+        "9"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve x² − 4x − 21 = 0. What is the larger root?",
+        "exp": "Complete the square: (x − 2)² = 25, so x − 2 = ±5. Roots: -3 and 7."
+      },
+      "options": [
+        "7",
+        "−3",
+        "−7",
+        "8"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve x² − 8x + 7 = 0. What is the smaller root?",
+        "exp": "Complete the square: (x − 4)² = 9, so x − 4 = ±3. Roots: 1 and 7."
+      },
+      "options": [
+        "7",
+        "−7",
+        "1",
+        "8"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Solve x² − 8x + 15 = 0. What is the smaller root?",
+        "exp": "Complete the square: (x − 4)² = 1, so x − 4 = ±1. Roots: 3 and 5."
+      },
+      "options": [
+        "3",
+        "5",
+        "−5",
+        "6"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Solve x² − 4x − 12 = 0. What is the smaller root?",
+        "exp": "Complete the square: (x − 2)² = 16, so x − 2 = ±4. Roots: -2 and 6."
+      },
+      "options": [
+        "6",
+        "−2",
+        "−6",
+        "7"
+      ],
+      "correct": 1
+    }
+  ],
+  "l3_14": [
+    {
+      "q": {
+        "en": "What is the sum of the coefficients of x² + 9x + 18?",
+        "exp": "1 + 9 + 18 = 28 = (1 + 3)(1 + 6) = 28."
+      },
+      "options": [
+        "29",
+        "27",
+        "28",
+        "30"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the sum of the coefficients of x² + 5x + 4?",
+        "exp": "1 + 5 + 4 = 10 = (1 + 4)(1 + 1) = 10."
+      },
+      "options": [
+        "11",
+        "9",
+        "12",
+        "10"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Factorise x² + 9x + 8.",
+        "exp": "Factors of 8 that add to 9: 1 and 8. So x² + 9x + 8 = (x + 1)(x + 8)."
+      },
+      "options": [
+        "(x−1)(x−8)",
+        "(x+1)(x+8)",
+        "(x+1)(x−8)",
+        "(x+2)(x+7)"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the sum of the coefficients of x² + 10x + 21?",
+        "exp": "1 + 10 + 21 = 32 = (1 + 3)(1 + 7) = 32."
+      },
+      "options": [
+        "33",
+        "31",
+        "32",
+        "34"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the sum of the coefficients of x² + 8x + 12?",
+        "exp": "1 + 8 + 12 = 21 = (1 + 6)(1 + 2) = 21."
+      },
+      "options": [
+        "22",
+        "21",
+        "20",
+        "23"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the sum of the coefficients of x² + 7x + 6?",
+        "exp": "1 + 7 + 6 = 14 = (1 + 6)(1 + 1) = 14."
+      },
+      "options": [
+        "15",
+        "13",
+        "14",
+        "16"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Factorise x² + 14x + 48.",
+        "exp": "Factors of 48 that add to 14: 6 and 8. So x² + 14x + 48 = (x + 6)(x + 8)."
+      },
+      "options": [
+        "(x−6)(x−8)",
+        "(x+6)(x−8)",
+        "(x+7)(x+7)",
+        "(x+6)(x+8)"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Factorise x² + 8x + 7.",
+        "exp": "Factors of 7 that add to 8: 1 and 7. So x² + 8x + 7 = (x + 1)(x + 7)."
+      },
+      "options": [
+        "(x+1)(x+7)",
+        "(x−1)(x−7)",
+        "(x+1)(x−7)",
+        "(x+2)(x+6)"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Factorise x² + 13x + 36.",
+        "exp": "Factors of 36 that add to 13: 4 and 9. So x² + 13x + 36 = (x + 4)(x + 9)."
+      },
+      "options": [
+        "(x+4)(x+9)",
+        "(x−4)(x−9)",
+        "(x+4)(x−9)",
+        "(x+5)(x+8)"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Factorise x² + 15x + 54.",
+        "exp": "Factors of 54 that add to 15: 6 and 9. So x² + 15x + 54 = (x + 6)(x + 9)."
+      },
+      "options": [
+        "(x+6)(x+9)",
+        "(x−6)(x−9)",
+        "(x+6)(x−9)",
+        "(x+7)(x+8)"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Factorise x² + 7x + 6.",
+        "exp": "Factors of 6 that add to 7: 1 and 6. So x² + 7x + 6 = (x + 1)(x + 6)."
+      },
+      "options": [
+        "(x−1)(x−6)",
+        "(x+1)(x−6)",
+        "(x+1)(x+6)",
+        "(x+2)(x+5)"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Factorise x² + 13x + 40.",
+        "exp": "Factors of 40 that add to 13: 5 and 8. So x² + 13x + 40 = (x + 5)(x + 8)."
+      },
+      "options": [
+        "(x+5)(x+8)",
+        "(x−5)(x−8)",
+        "(x+5)(x−8)",
+        "(x+6)(x+7)"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the sum of the coefficients of x² + 14x + 45?",
+        "exp": "1 + 14 + 45 = 60 = (1 + 5)(1 + 9) = 60."
+      },
+      "options": [
+        "61",
+        "59",
+        "60",
+        "62"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Factorise x² + 16x + 63.",
+        "exp": "Factors of 63 that add to 16: 7 and 9. So x² + 16x + 63 = (x + 7)(x + 9)."
+      },
+      "options": [
+        "(x−7)(x−9)",
+        "(x+7)(x+9)",
+        "(x+7)(x−9)",
+        "(x+8)(x+8)"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the sum of the coefficients of x² + 14x + 48?",
+        "exp": "1 + 14 + 48 = 63 = (1 + 8)(1 + 6) = 63."
+      },
+      "options": [
+        "64",
+        "62",
+        "63",
+        "65"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the sum of the coefficients of x² + 4x + 3?",
+        "exp": "1 + 4 + 3 = 8 = (1 + 3)(1 + 1) = 8."
+      },
+      "options": [
+        "8",
+        "9",
+        "7",
+        "10"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the sum of the coefficients of x² + 12x + 35?",
+        "exp": "1 + 12 + 35 = 48 = (1 + 7)(1 + 5) = 48."
+      },
+      "options": [
+        "49",
+        "48",
+        "47",
+        "50"
+      ],
+      "correct": 1
+    }
+  ],
+  "l3_15": [
+    {
+      "q": {
+        "en": "Expand (4x − 4)(2x − 2).",
+        "exp": "First: 4 × 2 = 8x². Cross: 4 × -2 + -4 × 2 = -16x. Last: -4 × -2 = 8."
+      },
+      "options": [
+        "8x² + 8",
+        "8x² − 16x − 8",
+        "8x² − 15x + 8",
+        "8x² − 16x + 8"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Expand (2x + 5)(4x + 1).",
+        "exp": "First: 2 × 4 = 8x². Cross: 2 × 1 + 5 × 4 = 22x. Last: 5 × 1 = 5."
+      },
+      "options": [
+        "8x² + 22x + 5",
+        "8x² − 18x + 5",
+        "8x² + 22x − 5",
+        "8x² + 23x + 5"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Expand (x − 2)(x − 4).",
+        "exp": "First: 1 × 1 = 1x². Cross: 1 × -4 + -2 × 1 = -6x. Last: -2 × -4 = 8."
+      },
+      "options": [
+        "x² − 2x + 8",
+        "x² − 6x − 8",
+        "x² − 6x + 8",
+        "x² − 5x + 8"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Expand (4x − 1)(3x − 6).",
+        "exp": "First: 4 × 3 = 12x². Cross: 4 × -6 + -1 × 3 = -27x. Last: -1 × -6 = 6."
+      },
+      "options": [
+        "12x² − 21x + 6",
+        "12x² − 27x − 6",
+        "12x² − 27x + 6",
+        "12x² − 26x + 6"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Expand (2x − 1)(2x + 2).",
+        "exp": "First: 2 × 2 = 4x². Cross: 2 × 2 + -1 × 2 = 2x. Last: -1 × 2 = -2."
+      },
+      "options": [
+        "4x² + 2x − 2",
+        "4x² + 6x − 2",
+        "4x² + 2x + 2",
+        "4x² + 3x − 2"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Expand (2x + 5)(3x + 1).",
+        "exp": "First: 2 × 3 = 6x². Cross: 2 × 1 + 5 × 3 = 17x. Last: 5 × 1 = 5."
+      },
+      "options": [
+        "6x² + 17x + 5",
+        "6x² − 13x + 5",
+        "6x² + 17x − 5",
+        "6x² + 18x + 5"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Expand (2x − 4)(2x − 4).",
+        "exp": "First: 2 × 2 = 4x². Cross: 2 × -4 + -4 × 2 = -16x. Last: -4 × -4 = 16."
+      },
+      "options": [
+        "4x² + 16",
+        "4x² − 16x + 16",
+        "4x² − 16x − 16",
+        "4x² − 15x + 16"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Expand (4x + 5)(4x − 1).",
+        "exp": "First: 4 × 4 = 16x². Cross: 4 × -1 + 5 × 4 = 16x. Last: 5 × -1 = -5."
+      },
+      "options": [
+        "16x² − 24x − 5",
+        "16x² + 16x + 5",
+        "16x² + 16x − 5",
+        "16x² + 17x − 5"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Expand (4x − 1)(x + 2).",
+        "exp": "First: 4 × 1 = 4x². Cross: 4 × 2 + -1 × 1 = 7x. Last: -1 × 2 = -2."
+      },
+      "options": [
+        "4x² + 7x − 2",
+        "4x² + 9x − 2",
+        "4x² + 7x + 2",
+        "4x² + 8x − 2"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Expand (2x − 6)(x − 4).",
+        "exp": "First: 2 × 1 = 2x². Cross: 2 × -4 + -6 × 1 = -14x. Last: -6 × -4 = 24."
+      },
+      "options": [
+        "2x² − 2x + 24",
+        "2x² − 14x − 24",
+        "2x² − 13x + 24",
+        "2x² − 14x + 24"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Expand (2x + 4)(2x + 1).",
+        "exp": "First: 2 × 2 = 4x². Cross: 2 × 1 + 4 × 2 = 10x. Last: 4 × 1 = 4."
+      },
+      "options": [
+        "4x² + 10x + 4",
+        "4x² − 6x + 4",
+        "4x² + 10x − 4",
+        "4x² + 11x + 4"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Expand (3x − 1)(x − 1).",
+        "exp": "First: 3 × 1 = 3x². Cross: 3 × -1 + -1 × 1 = -4x. Last: -1 × -1 = 1."
+      },
+      "options": [
+        "3x² − 2x + 1",
+        "3x² − 4x + 1",
+        "3x² − 4x − 1",
+        "3x² − 3x + 1"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Expand (2x − 1)(x + 6).",
+        "exp": "First: 2 × 1 = 2x². Cross: 2 × 6 + -1 × 1 = 11x. Last: -1 × 6 = -6."
+      },
+      "options": [
+        "2x² + 13x − 6",
+        "2x² + 11x + 6",
+        "2x² + 12x − 6",
+        "2x² + 11x − 6"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Expand (3x − 1)(3x − 3).",
+        "exp": "First: 3 × 3 = 9x². Cross: 3 × -3 + -1 × 3 = -12x. Last: -1 × -3 = 3."
+      },
+      "options": [
+        "9x² − 6x + 3",
+        "9x² − 12x + 3",
+        "9x² − 12x − 3",
+        "9x² − 11x + 3"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Expand (3x − 3)(2x + 4).",
+        "exp": "First: 3 × 2 = 6x². Cross: 3 × 4 + -3 × 2 = 6x. Last: -3 × 4 = -12."
+      },
+      "options": [
+        "6x² + 6x − 12",
+        "6x² + 18x − 12",
+        "6x² + 6x + 12",
+        "6x² + 7x − 12"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Expand (x − 1)(4x − 2).",
+        "exp": "First: 1 × 4 = 4x². Cross: 1 × -2 + -1 × 4 = -6x. Last: -1 × -2 = 2."
+      },
+      "options": [
+        "4x² + 2x + 2",
+        "4x² − 6x − 2",
+        "4x² − 5x + 2",
+        "4x² − 6x + 2"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Expand (2x + 2)(3x + 5).",
+        "exp": "First: 2 × 3 = 6x². Cross: 2 × 5 + 2 × 3 = 16x. Last: 2 × 5 = 10."
+      },
+      "options": [
+        "6x² + 16x + 10",
+        "6x² + 4x + 10",
+        "6x² + 16x − 10",
+        "6x² + 17x + 10"
+      ],
+      "correct": 0
+    }
+  ],
+  "l3_16": [
+    {
+      "q": {
+        "en": "What is the 3rd digit of 6 × 142857?",
+        "exp": "6 × 142857 = 857142, and its 3rd digit is 7."
+      },
+      "options": [
+        "4",
+        "2",
+        "7",
+        "0"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the 2nd digit of 2 × 142857?",
+        "exp": "2 × 142857 = 285714, and its 2nd digit is 8."
+      },
+      "options": [
+        "0",
+        "6",
+        "9",
+        "8"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the 5th digit of 3 × 142857?",
+        "exp": "3 × 142857 = 428571, and its 5th digit is 7."
+      },
+      "options": [
+        "9",
+        "7",
+        "8",
+        "1"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the 5th digit of 2 × 142857?",
+        "exp": "2 × 142857 = 285714, and its 5th digit is 1."
+      },
+      "options": [
+        "8",
+        "1",
+        "9",
+        "6"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the 6th digit of 5 × 142857?",
+        "exp": "5 × 142857 = 714285, and its 6th digit is 5."
+      },
+      "options": [
+        "2",
+        "5",
+        "9",
+        "7"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the 4th digit of 3 × 142857?",
+        "exp": "3 × 142857 = 428571, and its 4th digit is 5."
+      },
+      "options": [
+        "8",
+        "4",
+        "7",
+        "5"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the 1st digit of 7 × 142857?",
+        "exp": "7 × 142857 = 999999, and its 1st digit is 9."
+      },
+      "options": [
+        "9",
+        "6",
+        "7",
+        "5"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the 3rd digit of 7 × 142857?",
+        "exp": "7 × 142857 = 999999, and its 3rd digit is 9."
+      },
+      "options": [
+        "1",
+        "6",
+        "9",
+        "8"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the 1st digit of 4 × 142857?",
+        "exp": "4 × 142857 = 571428, and its 1st digit is 5."
+      },
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the 1st digit of 14 × 142857?",
+        "exp": "14 × 142857 = 1999998, and its 1st digit is 1."
+      },
+      "options": [
+        "5",
+        "1",
+        "6",
+        "2"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the 1st digit of 2 × 142857?",
+        "exp": "2 × 142857 = 285714, and its 1st digit is 2."
+      },
+      "options": [
+        "6",
+        "4",
+        "2",
+        "1"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the 3rd digit of 5 × 142857?",
+        "exp": "5 × 142857 = 714285, and its 3rd digit is 4."
+      },
+      "options": [
+        "4",
+        "6",
+        "0",
+        "2"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the 5th digit of 1 × 142857?",
+        "exp": "1 × 142857 = 142857, and its 5th digit is 5."
+      },
+      "options": [
+        "8",
+        "5",
+        "0",
+        "2"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the 1st digit of 3 × 142857?",
+        "exp": "3 × 142857 = 428571, and its 1st digit is 4."
+      },
+      "options": [
+        "4",
+        "3",
+        "6",
+        "5"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the 4th digit of 6 × 142857?",
+        "exp": "6 × 142857 = 857142, and its 4th digit is 1."
+      },
+      "options": [
+        "5",
+        "6",
+        "0",
+        "1"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the 6th digit of 2 × 142857?",
+        "exp": "2 × 142857 = 285714, and its 6th digit is 4."
+      },
+      "options": [
+        "9",
+        "5",
+        "8",
+        "4"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the 5th digit of 5 × 142857?",
+        "exp": "5 × 142857 = 714285, and its 5th digit is 8."
+      },
+      "options": [
+        "8",
+        "0",
+        "5",
+        "3"
+      ],
+      "correct": 0
+    }
+  ],
+  "l4_01": [
+    {
+      "q": {
+        "en": "What is 67³?",
+        "exp": "Four terms: 6³ = 216, 3 × 6² × 7 = 756, 3 × 6 × 7² = 882, 7³ = 343. Combine with carries: 300763."
+      },
+      "options": [
+        "300764",
+        "300763",
+        "300762",
+        "300765"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 98³?",
+        "exp": "Four terms: 9³ = 729, 3 × 9² × 8 = 1944, 3 × 9 × 8² = 1728, 8³ = 512. Combine with carries: 941192."
+      },
+      "options": [
+        "941193",
+        "941191",
+        "941194",
+        "941192"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 55³?",
+        "exp": "Four terms: 5³ = 125, 3 × 5² × 5 = 375, 3 × 5 × 5² = 375, 5³ = 125. Combine with carries: 166375."
+      },
+      "options": [
+        "166376",
+        "166374",
+        "166377",
+        "166375"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 90³?",
+        "exp": "Four terms: 9³ = 729, 3 × 9² × 0 = 0, 3 × 9 × 0² = 0, 0³ = 0. Combine with carries: 729000."
+      },
+      "options": [
+        "729001",
+        "728999",
+        "729002",
+        "729000"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is 97³?",
+        "exp": "Four terms: 9³ = 729, 3 × 9² × 7 = 1701, 3 × 9 × 7² = 1323, 7³ = 343. Combine with carries: 912673."
+      },
+      "options": [
+        "912674",
+        "912672",
+        "912673",
+        "912675"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 33³?",
+        "exp": "Four terms: 3³ = 27, 3 × 3² × 3 = 81, 3 × 3 × 3² = 81, 3³ = 27. Combine with carries: 35937."
+      },
+      "options": [
+        "35938",
+        "35937",
+        "35936",
+        "35939"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 86³?",
+        "exp": "Four terms: 8³ = 512, 3 × 8² × 6 = 1152, 3 × 8 × 6² = 864, 6³ = 216. Combine with carries: 636056."
+      },
+      "options": [
+        "636056",
+        "636057",
+        "636055",
+        "636058"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 78³?",
+        "exp": "Four terms: 7³ = 343, 3 × 7² × 8 = 1176, 3 × 7 × 8² = 1344, 8³ = 512. Combine with carries: 474552."
+      },
+      "options": [
+        "474553",
+        "474551",
+        "474552",
+        "474554"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 65³?",
+        "exp": "Four terms: 6³ = 216, 3 × 6² × 5 = 540, 3 × 6 × 5² = 450, 5³ = 125. Combine with carries: 274625."
+      },
+      "options": [
+        "274625",
+        "274626",
+        "274624",
+        "274627"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 93³?",
+        "exp": "Four terms: 9³ = 729, 3 × 9² × 3 = 729, 3 × 9 × 3² = 243, 3³ = 27. Combine with carries: 804357."
+      },
+      "options": [
+        "804358",
+        "804357",
+        "804356",
+        "804359"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is 76³?",
+        "exp": "Four terms: 7³ = 343, 3 × 7² × 6 = 882, 3 × 7 × 6² = 756, 6³ = 216. Combine with carries: 438976."
+      },
+      "options": [
+        "438977",
+        "438975",
+        "438976",
+        "438978"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 18³?",
+        "exp": "Four terms: 1³ = 1, 3 × 1² × 8 = 24, 3 × 1 × 8² = 192, 8³ = 512. Combine with carries: 5832."
+      },
+      "options": [
+        "5833",
+        "5831",
+        "5832",
+        "5834"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 92³?",
+        "exp": "Four terms: 9³ = 729, 3 × 9² × 2 = 486, 3 × 9 × 2² = 108, 2³ = 8. Combine with carries: 778688."
+      },
+      "options": [
+        "778689",
+        "778687",
+        "778688",
+        "778690"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is 28³?",
+        "exp": "Four terms: 2³ = 8, 3 × 2² × 8 = 96, 3 × 2 × 8² = 384, 8³ = 512. Combine with carries: 21952."
+      },
+      "options": [
+        "21952",
+        "21953",
+        "21951",
+        "21954"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is 35³?",
+        "exp": "Four terms: 3³ = 27, 3 × 3² × 5 = 135, 3 × 3 × 5² = 225, 5³ = 125. Combine with carries: 42875."
+      },
+      "options": [
+        "42876",
+        "42874",
+        "42877",
+        "42875"
+      ],
+      "correct": 3
+    }
+  ],
+  "l4_02": [
+    {
+      "q": {
+        "en": "Find 625² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 25, 20, 64, 24, 36. Carrying gives 390625."
+      },
+      "options": [
+        "390626",
+        "390624",
+        "390627",
+        "390625"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find 256² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 36, 60, 49, 20, 4. Carrying gives 65536."
+      },
+      "options": [
+        "65537",
+        "65535",
+        "65536",
+        "65538"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find 4831² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 1, 6, 25, 56, 88, 64, 16. Carrying gives 23338561."
+      },
+      "options": [
+        "23338561",
+        "23338562",
+        "23338560",
+        "23338563"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find 1514² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 16, 8, 41, 18, 27, 10, 1. Carrying gives 2292196."
+      },
+      "options": [
+        "2292197",
+        "2292195",
+        "2292198",
+        "2292196"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find 7385² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 25, 80, 94, 118, 121, 42, 49. Carrying gives 54538225."
+      },
+      "options": [
+        "54538226",
+        "54538224",
+        "54538227",
+        "54538225"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find 9655² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 25, 50, 85, 150, 126, 108, 81. Carrying gives 93219025."
+      },
+      "options": [
+        "93219026",
+        "93219024",
+        "93219025",
+        "93219027"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find 992² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 4, 36, 117, 162, 81. Carrying gives 984064."
+      },
+      "options": [
+        "984065",
+        "984063",
+        "984066",
+        "984064"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find 740² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 0, 0, 16, 56, 49. Carrying gives 547600."
+      },
+      "options": [
+        "547601",
+        "547600",
+        "547599",
+        "547602"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Find 402² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 4, 0, 16, 0, 16. Carrying gives 161604."
+      },
+      "options": [
+        "161605",
+        "161603",
+        "161606",
+        "161604"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find 1813² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 9, 6, 49, 22, 66, 16, 1. Carrying gives 3286969."
+      },
+      "options": [
+        "3286970",
+        "3286968",
+        "3286969",
+        "3286971"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find 9602² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 4, 0, 24, 36, 36, 108, 81. Carrying gives 92198404."
+      },
+      "options": [
+        "92198405",
+        "92198403",
+        "92198406",
+        "92198404"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find 5850² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 0, 0, 25, 80, 114, 80, 25. Carrying gives 34222500."
+      },
+      "options": [
+        "34222501",
+        "34222499",
+        "34222502",
+        "34222500"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find 807² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 49, 0, 112, 0, 64. Carrying gives 651249."
+      },
+      "options": [
+        "651250",
+        "651248",
+        "651249",
+        "651251"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find 3423² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 9, 12, 28, 34, 28, 24, 9. Carrying gives 11716929."
+      },
+      "options": [
+        "11716929",
+        "11716930",
+        "11716928",
+        "11716931"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find 227² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 49, 28, 32, 8, 4. Carrying gives 51529."
+      },
+      "options": [
+        "51530",
+        "51528",
+        "51529",
+        "51531"
+      ],
+      "correct": 2
+    }
+  ],
+  "l4_03": [
+    {
+      "q": {
+        "en": "What is the remainder when 6609 is divided by 13?",
+        "exp": "6609 = 13 × 508 + 5, so the remainder is 5."
+      },
+      "options": [
+        "11",
+        "5",
+        "1",
+        "7"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 1518 is divided by 13?",
+        "exp": "1518 = 13 × 116 + 10, so the remainder is 10."
+      },
+      "options": [
+        "10",
+        "8",
+        "6",
+        "4"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 4237 is divided by 7?",
+        "exp": "4237 = 7 × 605 + 2, so the remainder is 2."
+      },
+      "options": [
+        "3",
+        "5",
+        "6",
+        "2"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 4771 is divided by 13?",
+        "exp": "4771 = 13 × 367 + 0, so the remainder is 0."
+      },
+      "options": [
+        "5",
+        "1",
+        "3",
+        "0"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 6269 is divided by 7?",
+        "exp": "6269 = 7 × 895 + 4, so the remainder is 4."
+      },
+      "options": [
+        "4",
+        "6",
+        "3",
+        "0"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 613 is divided by 13?",
+        "exp": "613 = 13 × 47 + 2, so the remainder is 2."
+      },
+      "options": [
+        "2",
+        "5",
+        "3",
+        "9"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 2054 is divided by 7?",
+        "exp": "2054 = 7 × 293 + 3, so the remainder is 3."
+      },
+      "options": [
+        "3",
+        "1",
+        "2",
+        "6"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 5710 is divided by 11?",
+        "exp": "5710 = 11 × 519 + 1, so the remainder is 1."
+      },
+      "options": [
+        "2",
+        "6",
+        "8",
+        "1"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 1028 is divided by 11?",
+        "exp": "1028 = 11 × 93 + 5, so the remainder is 5."
+      },
+      "options": [
+        "2",
+        "1",
+        "5",
+        "10"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 3927 is divided by 11?",
+        "exp": "3927 = 11 × 357 + 0, so the remainder is 0."
+      },
+      "options": [
+        "0",
+        "2",
+        "3",
+        "10"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 8852 is divided by 11?",
+        "exp": "8852 = 11 × 804 + 8, so the remainder is 8."
+      },
+      "options": [
+        "9",
+        "8",
+        "7",
+        "5"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 4539 is divided by 7?",
+        "exp": "4539 = 7 × 648 + 3, so the remainder is 3."
+      },
+      "options": [
+        "6",
+        "0",
+        "3",
+        "5"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 1040 is divided by 11?",
+        "exp": "1040 = 11 × 94 + 6, so the remainder is 6."
+      },
+      "options": [
+        "6",
+        "10",
+        "9",
+        "1"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 6120 is divided by 13?",
+        "exp": "6120 = 13 × 470 + 10, so the remainder is 10."
+      },
+      "options": [
+        "7",
+        "1",
+        "2",
+        "10"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 8442 is divided by 7?",
+        "exp": "8442 = 7 × 1206 + 0, so the remainder is 0."
+      },
+      "options": [
+        "3",
+        "0",
+        "5",
+        "2"
+      ],
+      "correct": 1
+    }
+  ],
+  "l4_04": [
+    {
+      "q": {
+        "en": "How many digits repeat in the decimal of 1/37?",
+        "exp": "Long division of 1 by 37 returns to remainder 1 after 3 digits: 0.027."
+      },
+      "options": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "How many digits repeat in the decimal of 1/13?",
+        "exp": "Long division of 1 by 13 returns to remainder 1 after 6 digits: 0.076923."
+      },
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the 11th digit after the decimal point of 1/19?",
+        "exp": "1 ÷ 19 = 0.052631578947…, so digit 11 is 4."
+      },
+      "options": [
+        "8",
+        "4",
+        "3",
+        "5"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the 3rd digit after the decimal point of 1/67?",
+        "exp": "1 ÷ 67 = 0.014925373134…, so digit 3 is 4."
+      },
+      "options": [
+        "0",
+        "1",
+        "8",
+        "4"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "How many digits repeat in the decimal of 1/97?",
+        "exp": "Long division of 1 by 97 returns to remainder 1 after 96 digits: 0.010309278350…."
+      },
+      "options": [
+        "97",
+        "98",
+        "96",
+        "99"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the first digit after the decimal point of 1/61?",
+        "exp": "1 ÷ 61 = 0.016393442622…, so the first digit is 0."
+      },
+      "options": [
+        "2",
+        "0",
+        "3",
+        "4"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the first digit after the decimal point of 1/3?",
+        "exp": "1 ÷ 3 = 0.3, so the first digit is 3."
+      },
+      "options": [
+        "0",
+        "2",
+        "3",
+        "1"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the 2nd digit after the decimal point of 1/11?",
+        "exp": "1 ÷ 11 = 0.09, so digit 2 is 9."
+      },
+      "options": [
+        "4",
+        "6",
+        "9",
+        "8"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the 7th digit after the decimal point of 1/79?",
+        "exp": "1 ÷ 79 = 0.012658227848…, so digit 7 is 2."
+      },
+      "options": [
+        "2",
+        "4",
+        "6",
+        "1"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "How many digits repeat in the decimal of 1/89?",
+        "exp": "Long division of 1 by 89 returns to remainder 1 after 44 digits: 0.011235955056…."
+      },
+      "options": [
+        "44",
+        "45",
+        "46",
+        "47"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the 2nd digit after the decimal point of 1/47?",
+        "exp": "1 ÷ 47 = 0.021276595744…, so digit 2 is 2."
+      },
+      "options": [
+        "2",
+        "1",
+        "3",
+        "7"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the 12th digit after the decimal point of 1/67?",
+        "exp": "1 ÷ 67 = 0.014925373134…, so digit 12 is 4."
+      },
+      "options": [
+        "9",
+        "0",
+        "4",
+        "2"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "How many digits repeat in the decimal of 1/71?",
+        "exp": "Long division of 1 by 71 returns to remainder 1 after 35 digits: 0.014084507042…."
+      },
+      "options": [
+        "36",
+        "37",
+        "38",
+        "35"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the first digit after the decimal point of 1/73?",
+        "exp": "1 ÷ 73 = 0.01369863, so the first digit is 0."
+      },
+      "options": [
+        "0",
+        "7",
+        "6",
+        "9"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the 6th digit after the decimal point of 1/67?",
+        "exp": "1 ÷ 67 = 0.014925373134…, so digit 6 is 5."
+      },
+      "options": [
+        "9",
+        "4",
+        "2",
+        "5"
+      ],
+      "correct": 3
+    }
+  ],
+  "l4_05": [
+    {
+      "q": {
+        "en": "What day of the week does 1 August 2011 fall on?",
+        "exp": "The day-of-the-week calculation gives Monday, checked against the standard calendar."
+      },
+      "options": [
+        "Thursday",
+        "Tuesday",
+        "Monday",
+        "Wednesday"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What day of the week does 18 September 2005 fall on?",
+        "exp": "The day-of-the-week calculation gives Sunday, checked against the standard calendar."
+      },
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Wednesday",
+        "Monday"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What day of the week does 4 October 2001 fall on?",
+        "exp": "The day-of-the-week calculation gives Thursday, checked against the standard calendar."
+      },
+      "options": [
+        "Thursday",
+        "Tuesday",
+        "Friday",
+        "Saturday"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What day of the week does 13 October 2014 fall on?",
+        "exp": "The day-of-the-week calculation gives Monday, checked against the standard calendar."
+      },
+      "options": [
+        "Saturday",
+        "Friday",
+        "Wednesday",
+        "Monday"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What day of the week does 5 November 2010 fall on?",
+        "exp": "The day-of-the-week calculation gives Friday, checked against the standard calendar."
+      },
+      "options": [
+        "Saturday",
+        "Thursday",
+        "Friday",
+        "Sunday"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What day of the week does 16 September 2007 fall on?",
+        "exp": "The day-of-the-week calculation gives Sunday, checked against the standard calendar."
+      },
+      "options": [
+        "Thursday",
+        "Monday",
+        "Sunday",
+        "Tuesday"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What day of the week does 18 October 2024 fall on?",
+        "exp": "The day-of-the-week calculation gives Friday, checked against the standard calendar."
+      },
+      "options": [
+        "Tuesday",
+        "Friday",
+        "Wednesday",
+        "Saturday"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What day of the week does 27 February 2024 fall on?",
+        "exp": "The day-of-the-week calculation gives Tuesday, checked against the standard calendar."
+      },
+      "options": [
+        "Sunday",
+        "Tuesday",
+        "Thursday",
+        "Saturday"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What day of the week does 8 April 2006 fall on?",
+        "exp": "The day-of-the-week calculation gives Saturday, checked against the standard calendar."
+      },
+      "options": [
+        "Friday",
+        "Monday",
+        "Wednesday",
+        "Saturday"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What day of the week does 28 August 2023 fall on?",
+        "exp": "The day-of-the-week calculation gives Monday, checked against the standard calendar."
+      },
+      "options": [
+        "Wednesday",
+        "Thursday",
+        "Tuesday",
+        "Monday"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What day of the week does 22 March 2028 fall on?",
+        "exp": "The day-of-the-week calculation gives Wednesday, checked against the standard calendar."
+      },
+      "options": [
+        "Wednesday",
+        "Thursday",
+        "Tuesday",
+        "Friday"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What day of the week does 28 January 2003 fall on?",
+        "exp": "The day-of-the-week calculation gives Tuesday, checked against the standard calendar."
+      },
+      "options": [
+        "Tuesday",
+        "Sunday",
+        "Wednesday",
+        "Friday"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What day of the week does 9 December 2004 fall on?",
+        "exp": "The day-of-the-week calculation gives Thursday, checked against the standard calendar."
+      },
+      "options": [
+        "Thursday",
+        "Monday",
+        "Sunday",
+        "Saturday"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What day of the week does 25 October 2012 fall on?",
+        "exp": "The day-of-the-week calculation gives Thursday, checked against the standard calendar."
+      },
+      "options": [
+        "Saturday",
+        "Friday",
+        "Tuesday",
+        "Thursday"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What day of the week does 8 April 2007 fall on?",
+        "exp": "The day-of-the-week calculation gives Sunday, checked against the standard calendar."
+      },
+      "options": [
+        "Sunday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "correct": 0
+    }
+  ],
+  "l4_06": [
+    {
+      "q": {
+        "en": "Find √8872 correct to 2 decimal places.",
+        "exp": "94² = 8836 and 95² = 9025, so √8872 lies between 94 and 95. Value: 94.19."
+      },
+      "options": [
+        "94.20",
+        "94.18",
+        "94.29",
+        "94.19"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find √1209 correct to 2 decimal places.",
+        "exp": "34² = 1156 and 35² = 1225, so √1209 lies between 34 and 35. Value: 34.77."
+      },
+      "options": [
+        "34.78",
+        "34.77",
+        "34.76",
+        "34.87"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Find √4450 correct to 2 decimal places.",
+        "exp": "66² = 4356 and 67² = 4489, so √4450 lies between 66 and 67. Value: 66.71."
+      },
+      "options": [
+        "66.72",
+        "66.71",
+        "66.70",
+        "66.81"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Find √5866 correct to 2 decimal places.",
+        "exp": "76² = 5776 and 77² = 5929, so √5866 lies between 76 and 77. Value: 76.59."
+      },
+      "options": [
+        "76.60",
+        "76.58",
+        "76.59",
+        "76.69"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find √5840 correct to 2 decimal places.",
+        "exp": "76² = 5776 and 77² = 5929, so √5840 lies between 76 and 77. Value: 76.42."
+      },
+      "options": [
+        "76.42",
+        "76.43",
+        "76.41",
+        "76.52"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find √9356 correct to 2 decimal places.",
+        "exp": "96² = 9216 and 97² = 9409, so √9356 lies between 96 and 97. Value: 96.73."
+      },
+      "options": [
+        "96.73",
+        "96.74",
+        "96.72",
+        "96.83"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find √4358 correct to 2 decimal places.",
+        "exp": "66² = 4356 and 67² = 4489, so √4358 lies between 66 and 67. Value: 66.02."
+      },
+      "options": [
+        "66.03",
+        "66.01",
+        "66.02",
+        "66.12"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find √7079 correct to 2 decimal places.",
+        "exp": "84² = 7056 and 85² = 7225, so √7079 lies between 84 and 85. Value: 84.14."
+      },
+      "options": [
+        "84.15",
+        "84.13",
+        "84.24",
+        "84.14"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find √8202 correct to 2 decimal places.",
+        "exp": "90² = 8100 and 91² = 8281, so √8202 lies between 90 and 91. Value: 90.56."
+      },
+      "options": [
+        "90.57",
+        "90.55",
+        "90.56",
+        "90.66"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find √2569 correct to 2 decimal places.",
+        "exp": "50² = 2500 and 51² = 2601, so √2569 lies between 50 and 51. Value: 50.69."
+      },
+      "options": [
+        "50.69",
+        "50.70",
+        "50.68",
+        "50.79"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find √4779 correct to 2 decimal places.",
+        "exp": "69² = 4761 and 70² = 4900, so √4779 lies between 69 and 70. Value: 69.13."
+      },
+      "options": [
+        "69.13",
+        "69.14",
+        "69.12",
+        "69.23"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find √9478 correct to 2 decimal places.",
+        "exp": "97² = 9409 and 98² = 9604, so √9478 lies between 97 and 98. Value: 97.36."
+      },
+      "options": [
+        "97.37",
+        "97.35",
+        "97.36",
+        "97.46"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find √2216 correct to 2 decimal places.",
+        "exp": "47² = 2209 and 48² = 2304, so √2216 lies between 47 and 48. Value: 47.07."
+      },
+      "options": [
+        "47.08",
+        "47.06",
+        "47.07",
+        "47.17"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find √3069 correct to 2 decimal places.",
+        "exp": "55² = 3025 and 56² = 3136, so √3069 lies between 55 and 56. Value: 55.40."
+      },
+      "options": [
+        "55.40",
+        "55.41",
+        "55.39",
+        "55.50"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find √3631 correct to 2 decimal places.",
+        "exp": "60² = 3600 and 61² = 3721, so √3631 lies between 60 and 61. Value: 60.26."
+      },
+      "options": [
+        "60.27",
+        "60.25",
+        "60.26",
+        "60.36"
+      ],
+      "correct": 2
+    }
+  ],
+  "l4_07": [
+    {
+      "q": {
+        "en": "Factorise 12x² + 39x + 30.",
+        "exp": "Expand to check: (3x + 6)(4x + 5) gives 12x² + 39x + 30."
+      },
+      "options": [
+        "(3x − 6)(4x + 5)",
+        "(3x + 6)(4x − 5)",
+        "(3x + 6)(4x + 5)",
+        "(3x + 5)(4x + 6)"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Factorise 4x² + 24x + 20.",
+        "exp": "Expand to check: (x + 5)(4x + 4) gives 4x² + 24x + 20."
+      },
+      "options": [
+        "(x − 5)(4x + 4)",
+        "(x + 5)(4x − 4)",
+        "(x + 5)(4x + 4)",
+        "(x + 4)(4x + 5)"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Factorise 2x² + 8x − 10.",
+        "exp": "Expand to check: (x + 5)(2x − 2) gives 2x² + 8x − 10."
+      },
+      "options": [
+        "(x − 5)(2x − 2)",
+        "(x + 5)(2x + 2)",
+        "(x − 2)(2x + 5)",
+        "(x + 5)(2x − 2)"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Factorise 2x² − 7x + 6.",
+        "exp": "Expand to check: (x − 2)(2x − 3) gives 2x² − 7x + 6."
+      },
+      "options": [
+        "(x + 2)(2x − 3)",
+        "(x − 2)(2x + 3)",
+        "(x − 3)(2x − 2)",
+        "(x − 2)(2x − 3)"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Factorise 6x² − 7x − 3.",
+        "exp": "Expand to check: (2x − 3)(3x + 1) gives 6x² − 7x − 3."
+      },
+      "options": [
+        "(2x + 3)(3x + 1)",
+        "(2x − 3)(3x − 1)",
+        "(2x − 3)(3x + 1)",
+        "(2x + 1)(3x − 3)"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Factorise 2x² − 18.",
+        "exp": "Expand to check: (2x − 6)(x + 3) gives 2x² − 18."
+      },
+      "options": [
+        "(2x + 6)(x + 3)",
+        "(2x − 6)(x − 3)",
+        "(2x − 6)(x + 3)",
+        "(2x + 3)(x − 6)"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Factorise 4x² + 10x + 6.",
+        "exp": "Expand to check: (4x + 6)(x + 1) gives 4x² + 10x + 6."
+      },
+      "options": [
+        "(4x − 6)(x + 1)",
+        "(4x + 6)(x − 1)",
+        "(4x + 6)(x + 1)",
+        "(4x + 1)(x + 6)"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Factorise 2x² + 17x + 30.",
+        "exp": "Expand to check: (2x + 5)(x + 6) gives 2x² + 17x + 30."
+      },
+      "options": [
+        "(2x − 5)(x + 6)",
+        "(2x + 5)(x − 6)",
+        "(2x + 5)(x + 6)",
+        "(2x + 6)(x + 5)"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Factorise 8x² + 8x − 6.",
+        "exp": "Expand to check: (2x + 3)(4x − 2) gives 8x² + 8x − 6."
+      },
+      "options": [
+        "(2x − 3)(4x − 2)",
+        "(2x + 3)(4x + 2)",
+        "(2x − 2)(4x + 3)",
+        "(2x + 3)(4x − 2)"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Factorise 4x² + 13x + 10.",
+        "exp": "Expand to check: (4x + 5)(x + 2) gives 4x² + 13x + 10."
+      },
+      "options": [
+        "(4x + 5)(x + 2)",
+        "(4x − 5)(x + 2)",
+        "(4x + 5)(x − 2)",
+        "(4x + 2)(x + 5)"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Factorise 8x² − 8x − 30.",
+        "exp": "Expand to check: (4x + 6)(2x − 5) gives 8x² − 8x − 30."
+      },
+      "options": [
+        "(4x − 6)(2x − 5)",
+        "(4x + 6)(2x − 5)",
+        "(4x + 6)(2x + 5)",
+        "(4x − 5)(2x + 6)"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Factorise 8x² + 4x − 4.",
+        "exp": "Expand to check: (4x − 2)(2x + 2) gives 8x² + 4x − 4."
+      },
+      "options": [
+        "(4x + 2)(2x + 2)",
+        "(4x − 2)(2x + 2)",
+        "(4x − 2)(2x − 2)",
+        "(4x + 2)(2x − 2)"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Factorise 4x² + 22x + 10.",
+        "exp": "Expand to check: (x + 5)(4x + 2) gives 4x² + 22x + 10."
+      },
+      "options": [
+        "(x − 5)(4x + 2)",
+        "(x + 5)(4x + 2)",
+        "(x + 5)(4x − 2)",
+        "(x + 2)(4x + 5)"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Factorise 2x² + 4x + 2.",
+        "exp": "Expand to check: (2x + 2)(x + 1) gives 2x² + 4x + 2."
+      },
+      "options": [
+        "(2x − 2)(x + 1)",
+        "(2x + 2)(x + 1)",
+        "(2x + 2)(x − 1)",
+        "(2x + 1)(x + 2)"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "Factorise 9x² + 3x − 2.",
+        "exp": "Expand to check: (3x − 1)(3x + 2) gives 9x² + 3x − 2."
+      },
+      "options": [
+        "(3x − 1)(3x + 2)",
+        "(3x + 1)(3x + 2)",
+        "(3x − 1)(3x − 2)",
+        "(3x − 2)(3x + 2)"
+      ],
+      "correct": 0
+    }
+  ],
+  "l4_08": [
+    {
+      "q": {
+        "en": "Find 6826² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 36, 24, 100, 104, 88, 96, 36. Carrying gives 46594276."
+      },
+      "options": [
+        "46594276",
+        "46594277",
+        "46594275",
+        "46594278"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find 473² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 9, 42, 73, 56, 16. Carrying gives 223729."
+      },
+      "options": [
+        "223730",
+        "223728",
+        "223731",
+        "223729"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find √3115 correct to 2 decimal places.",
+        "exp": "55² = 3025 and 56² = 3136, so √3115 lies between 55 and 56. Value: 55.81."
+      },
+      "options": [
+        "55.81",
+        "55.82",
+        "55.80",
+        "55.91"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Find 462² using the Duplex method.",
+        "exp": "Duplex (column) sums from the right: 4, 24, 52, 48, 16. Carrying gives 213444."
+      },
+      "options": [
+        "213445",
+        "213443",
+        "213446",
+        "213444"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 4713 is divided by 13?",
+        "exp": "4713 = 13 × 362 + 7, so the remainder is 7."
+      },
+      "options": [
+        "7",
+        "5",
+        "0",
+        "2"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "Factorise 4x² + 23x + 15.",
+        "exp": "Expand to check: (x + 5)(4x + 3) gives 4x² + 23x + 15."
+      },
+      "options": [
+        "(x − 5)(4x + 3)",
+        "(x + 5)(4x − 3)",
+        "(x + 3)(4x + 5)",
+        "(x + 5)(4x + 3)"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "Find √8229 correct to 2 decimal places.",
+        "exp": "90² = 8100 and 91² = 8281, so √8229 lies between 90 and 91. Value: 90.71."
+      },
+      "options": [
+        "90.72",
+        "90.70",
+        "90.81",
+        "90.71"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the remainder when 1354 is divided by 11?",
+        "exp": "1354 = 11 × 123 + 1, so the remainder is 1."
+      },
+      "options": [
+        "4",
+        "0",
+        "1",
+        "3"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Factorise 6x² − x − 15.",
+        "exp": "Expand to check: (3x − 5)(2x + 3) gives 6x² − x − 15."
+      },
+      "options": [
+        "(3x + 5)(2x + 3)",
+        "(3x − 5)(2x − 3)",
+        "(3x − 5)(2x + 3)",
+        "(3x + 3)(2x − 5)"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "Find √5160 correct to 2 decimal places.",
+        "exp": "71² = 5041 and 72² = 5184, so √5160 lies between 71 and 72. Value: 71.83."
+      },
+      "options": [
+        "71.84",
+        "71.82",
+        "71.83",
+        "71.93"
+      ],
+      "correct": 2
+    }
+  ],
+  "l4_09": [
+    {
+      "q": {
+        "en": "What is the alternating sum of 77862, starting from the units digit?",
+        "exp": "2 − 6 + 8 − 7 + 7 = 4."
+      },
+      "options": [
+        "5",
+        "3",
+        "4",
+        "6"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 5570, starting from the units digit?",
+        "exp": "0 − 7 + 5 − 5 = -7."
+      },
+      "options": [
+        "−6",
+        "−7",
+        "−8",
+        "−5"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 37197, starting from the units digit?",
+        "exp": "7 − 9 + 1 − 7 + 3 = -5."
+      },
+      "options": [
+        "−4",
+        "−6",
+        "−5",
+        "−3"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 23691, starting from the units digit?",
+        "exp": "1 − 9 + 6 − 3 + 2 = -3."
+      },
+      "options": [
+        "−2",
+        "−4",
+        "−1",
+        "−3"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 68694, starting from the units digit?",
+        "exp": "4 − 9 + 6 − 8 + 6 = -1."
+      },
+      "options": [
+        "−1",
+        "0",
+        "−2",
+        "1"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 13999, starting from the units digit?",
+        "exp": "9 − 9 + 9 − 3 + 1 = 7."
+      },
+      "options": [
+        "7",
+        "8",
+        "6",
+        "9"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 58918, starting from the units digit?",
+        "exp": "8 − 1 + 9 − 8 + 5 = 13."
+      },
+      "options": [
+        "13",
+        "14",
+        "12",
+        "15"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 97260, starting from the units digit?",
+        "exp": "0 − 6 + 2 − 7 + 9 = -2."
+      },
+      "options": [
+        "−2",
+        "−1",
+        "−3",
+        "0"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 90387, starting from the units digit?",
+        "exp": "7 − 8 + 3 − 0 + 9 = 11."
+      },
+      "options": [
+        "12",
+        "10",
+        "11",
+        "13"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 82671, starting from the units digit?",
+        "exp": "1 − 7 + 6 − 2 + 8 = 6."
+      },
+      "options": [
+        "7",
+        "6",
+        "5",
+        "8"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 73857, starting from the units digit?",
+        "exp": "7 − 5 + 8 − 3 + 7 = 14."
+      },
+      "options": [
+        "15",
+        "13",
+        "14",
+        "16"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 29737, starting from the units digit?",
+        "exp": "7 − 3 + 7 − 9 + 2 = 4."
+      },
+      "options": [
+        "5",
+        "4",
+        "3",
+        "6"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 17955, starting from the units digit?",
+        "exp": "5 − 5 + 9 − 7 + 1 = 3."
+      },
+      "options": [
+        "4",
+        "3",
+        "2",
+        "5"
+      ],
+      "correct": 1
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 30932, starting from the units digit?",
+        "exp": "2 − 3 + 9 − 0 + 3 = 11."
+      },
+      "options": [
+        "11",
+        "12",
+        "10",
+        "13"
+      ],
+      "correct": 0
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 82332, starting from the units digit?",
+        "exp": "2 − 3 + 3 − 2 + 8 = 8."
+      },
+      "options": [
+        "9",
+        "7",
+        "8",
+        "10"
+      ],
+      "correct": 2
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 72132, starting from the units digit?",
+        "exp": "2 − 3 + 1 − 2 + 7 = 5."
+      },
+      "options": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ],
+      "correct": 3
+    },
+    {
+      "q": {
+        "en": "What is the alternating sum of 84970, starting from the units digit?",
+        "exp": "0 − 7 + 9 − 4 + 8 = 6."
+      },
+      "options": [
+        "7",
+        "5",
+        "8",
+        "6"
+      ],
+      "correct": 3
     }
   ]
 };

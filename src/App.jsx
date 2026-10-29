@@ -43,6 +43,7 @@ const ProfilePage            = lazy(() => import('@/pages/ProfilePage'));
 const NotFoundPage           = lazy(() => import('@/pages/NotFoundPage'));
 const DemoPage               = lazy(() => import('@/pages/DemoPage'));
 const CurriculumPage         = lazy(() => import('@/pages/CurriculumPage'));
+const LevelConceptPrintPage  = lazy(() => import('@/pages/LevelConceptPrintPage'));
 const DailyQuizPage          = lazy(() => import('@/pages/DailyQuizPage'));
 const DailyQuizResultsPage   = lazy(() => import('@/pages/DailyQuizResultsPage'));
 const LeaderboardPage        = lazy(() => import('@/pages/LeaderboardPage'));
@@ -186,6 +187,7 @@ function RouteTransition() {
                 <Route path="/profile"             element={<ProfilePage />} />
                 <Route path="/demo"                element={<DemoPage />} />
                 <Route path="/curriculum"          element={<CurriculumPage />} />
+                <Route path="/learn/level/:level/print" element={<LevelConceptPrintPage />} />
                 <Route path="/daily-quiz"          element={<ProfileCompletionGate><DailyQuizPage /></ProfileCompletionGate>} />
                 <Route path="/daily-quiz/results"  element={<DailyQuizResultsPage />} />
                 <Route path="/leaderboard"         element={<LeaderboardPage />} />

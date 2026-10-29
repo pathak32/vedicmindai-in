@@ -85,6 +85,19 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
               {/* Lesson list */}
               {isOpen && (
                 <div style={{ paddingLeft: 4 }}>
+                  {!locked && (
+                    <div style={{ display: 'flex', gap: 6, padding: '4px 12px 8px', flexWrap: 'wrap' }}>
+                      {['en', 'hi'].map((lang) => (
+                        <button
+                          key={lang}
+                          onClick={() => window.open(`/learn/level/${level.level}/print?lang=${lang}`, '_blank')}
+                          style={{ fontSize: 11, padding: '4px 10px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.2)', background: 'transparent', color: '#F5F3FF', cursor: 'pointer', fontFamily: 'var(--font-body)' }}
+                        >
+                          ⬇ Level {level.level} {lang === 'hi' ? 'हिन्दी' : 'English'}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                   {locked ? (
                     <div style={{ padding: '8px 12px', fontSize: 12, color: '#6B6590', fontFamily: 'var(--font-body)' }}>
                       Complete Level {level.level - 1} to unlock
