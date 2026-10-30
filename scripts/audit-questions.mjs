@@ -39,10 +39,24 @@ const BANKS = [
 // ── shape handling ───────────────────────────────────────────────────────────
 // Banks are variously a flat array, an object of arrays, or nested groups.
 // Walk whatever comes back and pull out anything that looks like a question.
+// Bilingual questions store text as { en, hi } (and options as { en, hi }). Answers are
+// keyed on the English text, so audit the English side.
+const enText = (v) => (v && typeof v === 'object' && typeof v.en === 'string' ? v.en : v);
+function englishOf(q) {
+  return {
+    ...q,
+    prompt: enText(q.prompt),
+    question: enText(q.question),
+    q: enText(q.q),
+    exp: enText(q.exp),
+    explanation: enText(q.explanation),
+    options: q.options.map((o) => (o && typeof o === 'object' && typeof o.en === 'string' ? { ...o, label: o.en } : o)),
+  };
+}
 function collect(node, out = []) {
   if (Array.isArray(node)) { node.forEach(n => collect(n, out)); return out; }
   if (node && typeof node === 'object') {
-    if ((node.prompt || node.question || node.q) && Array.isArray(node.options)) { out.push(node); return out; }
+    if ((node.prompt || node.question || node.q) && Array.isArray(node.options)) { out.push(englishOf(node)); return out; }
     Object.values(node).forEach(v => collect(v, out));
   }
   return out;
