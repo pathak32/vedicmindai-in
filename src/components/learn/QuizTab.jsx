@@ -6,6 +6,7 @@ import { awardPoints, recalculateMonthlyStatus, POINTS } from '@/lib/knowledgePo
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { QUIZ_EXTRA } from '../../data/vedicExtraQuestions';
 import { difficultyAt } from './curriculumData';
+import { localizeVedicQuestion } from '../../data/vedicHindiLocalize';
 
 // Resolves a field that may be a plain string (older English-only question
 // banks) or a { en, hi } bilingual object (new banks). Falls back to English.
@@ -17,7 +18,7 @@ function tr(field, language) {
 
 // ─── Per-lesson quiz question banks ──────────────────────────────────────────
 
-const LESSON_QUESTIONS = {
+export const LESSON_QUESTIONS = {
   l1_01: [
     { q: { en: 'Who is credited with compiling the modern system of Vedic Mathematics?', hi: 'वैदिक गणित की आधुनिक प्रणाली को संकलित करने का श्रेय किसे दिया जाता है?' , exp: 'Bharati Krishna Tirthaji compiled the 16 sutras that form the modern Vedic Mathematics system, first published in 1965.' }, options: ['Aryabhata', 'Bharati Krishna Tirthaji', 'Ramanujan', 'Brahmagupta'], correct: 1 },
     { q: { en: 'How many main sutras (aphorisms) make up the core Vedic Mathematics system?', hi: 'वैदिक गणित की मुख्य प्रणाली में कितने मुख्य सूत्र (सूत्रवाक्य) होते हैं?' , exp: 'The system is built on 16 main sutras, each a short rule covering a family of calculation techniques.' }, options: ['10', '13', '16', '21'], correct: 2 },
@@ -730,7 +731,7 @@ for (const [id, items] of Object.entries(QUIZ_EXTRA)) {
 
 // Every quiz question gets easy, medium or hard, spread across each lesson.
 for (const [id, items] of Object.entries(LESSON_QUESTIONS)) {
-  LESSON_QUESTIONS[id] = items.map((q, i) => ({ difficulty: difficultyAt(i), ...q }));
+  LESSON_QUESTIONS[id] = items.map((q, i) => localizeVedicQuestion({ difficulty: difficultyAt(i), ...q }));
 }
 
 function getQuestions(lessonId) {
@@ -1203,7 +1204,7 @@ export default function QuizTab({lesson, glass, onComplete, onNextLesson, allLes
             }}>
               {selected !== q.correct && (
                 <p style={{ margin: '0 0 6px', fontWeight: 700, color: '#B91C1C' }}>
-                  {language === 'hi' ? `सही उत्तर: ${q.options[q.correct]}` : `Correct answer: ${q.options[q.correct]}`}
+                  {language === 'hi' ? `सही उत्तर: ${tr(q.options[q.correct], language)}` : `Correct answer: ${tr(q.options[q.correct], language)}`}
                 </p>
               )}
               {(() => {

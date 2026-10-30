@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { PRACTICE_EXTRA } from '../../data/vedicExtraQuestions';
 import { difficultyAt } from './curriculumData';
+import { localizeVedicQuestion } from '../../data/vedicHindiLocalize';
 
 // Resolves a field that may be a plain string (older English-only practice
 // sets) or a { en, hi } bilingual object (new sets). Falls back to English.
@@ -14,7 +15,7 @@ function tr(field, language) {
 
 // ─── Per-lesson MCQ practice problems ────────────────────────────────────────
 
-const LESSON_PROBLEMS = {
+export const LESSON_PROBLEMS = {
   l1_01: [
     { q: { en: 'Calculate 35² using Ekadhikena Purvena', hi: 'एकाधिकेन पूर्वेण का उपयोग करके 35² निकालें' }, options: ['1025','1125','1225','1325'], correct: 2, exp: { en: '3×4=12, append 25 → 1225', hi: '3×4=12, 25 जोड़ें → 1225' } },
     { q: { en: 'Calculate 75²', hi: '75² निकालें' }, options: ['5425','5525','5625','5725'], correct: 2, exp: { en: '7×8=56, append 25 → 5625', hi: '7×8=56, 25 जोड़ें → 5625' } },
@@ -376,7 +377,7 @@ for (const [id, items] of Object.entries(PRACTICE_EXTRA)) {
 
 // Every practice question gets easy, medium or hard, spread across each lesson.
 for (const [id, items] of Object.entries(LESSON_PROBLEMS)) {
-  LESSON_PROBLEMS[id] = items.map((q, i) => ({ difficulty: difficultyAt(i), ...q }));
+  LESSON_PROBLEMS[id] = items.map((q, i) => localizeVedicQuestion({ difficulty: difficultyAt(i), ...q }));
 }
 
 // Default fallback for lessons without custom problems
@@ -452,7 +453,7 @@ function MCQCard({ problem, idx, glass, savedSelected, onSelect }) {
       {problem.options.map((opt, i) => (
         <OptionBtn
           key={i}
-          label={opt}
+          label={tr(opt, language)}
           idx={i}
           selected={selected}
           correct={problem.correct}
