@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
+import { tx, optKey, optLabel } from '@/lib/bilingual';
 import { getQuestionsByChapter } from '@/data/reasoningAptitudeLevel1';
 import {
   StepBox, ExampleCard, SectionTitle, OriginBox, WhyItWorksBox, CommonMistakeBox, RealWorldBox,
@@ -119,10 +120,11 @@ export default function ReasoningPilotPage() {
                 Question {qIndex + 1} of {QUESTIONS.length} · Score: {score}
               </p>
               <p style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>
-                {q.prompt}
+                {tx(q.prompt, language)}
               </p>
               <div style={{ display: 'grid', gap: 10 }}>
-                {q.options.map((opt) => {
+                {q.options.map((o) => {
+                  const opt = optKey(o);
                   const isCorrect = opt === q.answer;
                   let bg = '#F3F4F6';
                   if (selected && isCorrect) bg = '#D1FAE5';
@@ -134,7 +136,7 @@ export default function ReasoningPilotPage() {
                       disabled={!!selected}
                       style={{ padding: '12px 16px', borderRadius: 10, border: '1px solid #E5E7EB', background: bg, textAlign: 'left', cursor: 'pointer', fontSize: 15 }}
                     >
-                      {opt}
+                      {optLabel(o, language)}
                     </button>
                   );
                 })}

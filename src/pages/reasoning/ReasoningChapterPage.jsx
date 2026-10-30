@@ -5,6 +5,7 @@ import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
 import ReasoningSidebar from '@/components/learn/ReasoningSidebar';
 import { useLanguage } from '@/lib/LanguageContext';
+import { tx, optKey, optLabel } from '@/lib/bilingual';
 import { getQuestionsByChapter } from '@/data/reasoningAptitudeLevel1';
 import { RA_LEVEL1_CHAPTERS, getChapterContent } from '@/data/reasoningAptitudeLevel1Content';
 import { getLevel2QuestionsByChapter } from '@/data/reasoningAptitudeLevel2';
@@ -254,10 +255,11 @@ export default function ReasoningChapterPage() {
                     {language === 'hi' ? `प्रश्न ${qIndex + 1} / ${questions.length} · स्कोर: ${score}` : `Question ${qIndex + 1} of ${questions.length} · Score: ${score}`}
                   </p>
                   <p style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 20 }}>
-                    {q.prompt}
+                    {tx(q.prompt, language)}
                   </p>
                   <div style={{ display: 'grid', gap: 10 }}>
-                    {q.options.map((opt) => {
+                    {q.options.map((o) => {
+                      const opt = optKey(o);
                       const isCorrect = opt === q.answer;
                       let bg = '#F3F4F6';
                       if (selected && isCorrect) bg = '#D1FAE5';
@@ -269,7 +271,7 @@ export default function ReasoningChapterPage() {
                           disabled={!!selected}
                           style={{ padding: '12px 16px', borderRadius: 10, border: '1px solid #E5E7EB', background: bg, textAlign: 'left', cursor: 'pointer', fontSize: 15, fontFamily: 'var(--font-body)' }}
                         >
-                          {opt}
+                          {optLabel(o, language)}
                         </button>
                       );
                     })}
@@ -290,7 +292,7 @@ export default function ReasoningChapterPage() {
                           {language === 'hi' ? `सही उत्तर: ${q.answer}` : `Correct answer: ${q.answer}`}
                         </p>
                       )}
-                      <p style={{ margin: 0 }}>💡 {q.exp}</p>
+                      <p style={{ margin: 0 }}>💡 {tx(q.exp, language)}</p>
                     </div>
                   )}
                   {selected && qIndex < questions.length - 1 && (

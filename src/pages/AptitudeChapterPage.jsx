@@ -5,6 +5,7 @@ import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
 import AptitudeSidebar from '@/components/learn/AptitudeSidebar';
 import { useLanguage } from '@/lib/LanguageContext';
+import { tx, optKey, optLabel } from '@/lib/bilingual';
 import { APTITUDE_CHAPTERS, getAptitudeChapterContent, getAptitudeChaptersByLevel } from '@/data/aptitudeContent';
 import { getAptitudeQuestionsByChapter } from '@/data/aptitudeQuizBank';
 import { pickQuizQuestions } from '@/lib/quizQuestionPicker';
@@ -21,8 +22,9 @@ const tr = (field, language) => field?.[language] ?? field?.en ?? '';
 // an {label, image} object (Pre-K match/odd-one-out/big-or-small), or a plain
 // numeric string for counting questions (rendered large, no image).
 function OptionButton({ opt, isCorrect, selected, onClick, disabled }) {
+  const { language } = useLanguage();
   const isImageOption = opt && typeof opt === 'object' && opt.image;
-  const label = isImageOption ? opt.label : opt;
+  const label = optKey(opt);
   let bg = '#F3F4F6';
   if (selected && isCorrect) bg = '#D1FAE5';
   else if (selected === label && !isCorrect) bg = '#FEE2E2';
@@ -38,7 +40,7 @@ function OptionButton({ opt, isCorrect, selected, onClick, disabled }) {
       }}
     >
       {isImageOption && <img src={opt.image} alt={opt.label} style={{ width: 56, height: 56, objectFit: 'cover', borderRadius: 8 }} />}
-      <span>{label}</span>
+      <span>{optLabel(opt, language)}</span>
     </button>
   );
 }
@@ -255,7 +257,7 @@ export default function AptitudeChapterPage() {
                   <p style={{ fontSize: 13, color: '#6B7280', marginBottom: 8 }}>
                     {language === 'hi' ? `प्रश्न ${qIndex + 1} / ${questions.length} · स्कोर: ${score}` : `Question ${qIndex + 1} of ${questions.length} · Score: ${score}`}
                   </p>
-                  <p style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>{q.prompt}</p>
+                  <p style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>{tx(q.prompt, language)}</p>
 
                   {q.display_image && (
                     <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
@@ -273,14 +275,14 @@ export default function AptitudeChapterPage() {
 
                   <div style={{ display: 'grid', gap: 10 }}>
                     {q.options.map((opt, i) => (
-                      <OptionButton key={i} opt={opt} isCorrect={(typeof opt === 'object' ? opt.label : opt) === q.answer} selected={selected} onClick={handleAnswer} disabled={!!selected} />
+                      <OptionButton key={i} opt={opt} isCorrect={optKey(opt) === q.answer} selected={selected} onClick={handleAnswer} disabled={!!selected} />
                     ))}
                   </div>
 
                   {selected && q.exp && (
                     <div style={{ marginTop: 14, background: selected === q.answer ? '#F0FDF4' : '#FEF2F2', border: `1px solid ${selected === q.answer ? '#BBF7D0' : '#FECACA'}`, borderRadius: 12, padding: '14px 16px', fontSize: 14, color: '#374151', lineHeight: 1.65 }}>
                       {selected !== q.answer && <p style={{ margin: '0 0 6px', fontWeight: 700, color: '#B91C1C' }}>{language === 'hi' ? `सही उत्तर: ${q.answer}` : `Correct answer: ${q.answer}`}</p>}
-                      <p style={{ margin: 0 }}>💡 {q.exp}</p>
+                      <p style={{ margin: 0 }}>💡 {tx(q.exp, language)}</p>
                     </div>
                   )}
 

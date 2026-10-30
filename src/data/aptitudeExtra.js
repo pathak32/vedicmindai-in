@@ -127,7 +127,7 @@ ANT.forEach(([w, a], i) => {
 });
 out.push(...pickTwenty('word-meanings', wordCands, rng));
 
-const POLY = ['Triangle', 'Square', 'Pentagon', 'Hexagon', 'Heptagon', 'Octagon', 'Nonagon', 'Decagon'];
+const POLY = ['Triangle', 'Square', 'Pentagon', 'Hexagon', 'Heptagon', 'Octagon', 'Nonagon', 'Decagon', 'Hendecagon', 'Dodecagon'];
 const shapeCands = [];
 for (let s = 0; s <= 4; s++) {
   const seq = [POLY[s], POLY[s + 1], POLY[s + 2]];

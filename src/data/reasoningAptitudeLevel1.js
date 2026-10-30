@@ -5,6 +5,7 @@
 // Ready to be loaded into Supabase `questions` table once reviewed.
 
 import { RA_EXTRA_L1_QUESTIONS } from './raAptitudeExtra.js';
+import { localizeOddOneOut, localizeNumberSeries, localizeAnalogy, localizeRankingFull, localizeDirection, localizeCoding, localizeBlood, localizeCalendar, localizeMirror, localizePattern } from './raL1Hindi.js';
 
 export const RA_LEVEL1_QUESTIONS = [
   // ---------------- Chapter 1: Odd One Out (Classification) ----------------
@@ -146,7 +147,7 @@ export const RA_LEVEL1_QUESTIONS = [
   { chapter: 'direction-basic', prompt: 'A compass needle\'s red tip always points toward which direction?', options: ['South', 'North', 'East'], answer: 'North', difficulty: 'medium' , exp: 'A compass needle\'s red tip always points toward magnetic North -- a fixed physical fact.' },
   { chapter: 'direction-basic', prompt: 'Facing West, if you turn right, which direction do you face?', options: ['South', 'East', 'North'], answer: 'North', difficulty: 'medium' , exp: 'Following standard clockwise/counter-clockwise turn rules from the compass, the resulting direction is North.' },
   { chapter: 'direction-basic', prompt: 'You walk 8m North and then 8m South. How far are you from the start?', options: ['0m', '8m', '16m'], answer: '0m', difficulty: 'medium' , exp: 'The two legs cancel out exactly -- you are back at your starting point, 0m away.' },
-  { chapter: 'direction-basic', prompt: 'If South is to your left, which direction are you facing?', options: ['West', 'East', 'North'], answer: 'East', difficulty: 'medium' , exp: 'If South is directly to your left, you must be facing East (South is 90 degrees clockwise from East).' },
+  { chapter: 'direction-basic', prompt: 'If South is to your left, which direction are you facing?', options: ['West', 'East', 'North'], answer: 'West', difficulty: 'medium' , exp: 'If South is directly to your left, you must be facing West (South is 90 degrees counter-clockwise from West).' },
   { chapter: 'direction-basic', prompt: 'Facing East, if you turn left, which direction do you face?', options: ['South', 'West', 'North'], answer: 'North', difficulty: 'medium' , exp: 'Following standard clockwise/counter-clockwise turn rules from the compass, the resulting direction is North.' },
   { chapter: 'direction-basic', prompt: 'Facing South, if you turn right twice (90 degrees each), which direction do you face?', options: ['North', 'East', 'West'], answer: 'North', difficulty: 'medium' , exp: 'Following standard clockwise/counter-clockwise turn rules from the compass, the resulting direction is North.' },
   { chapter: 'direction-basic', prompt: 'You walk facing North, then turn left twice (90 degrees each). Which direction are you facing now?', options: ['East', 'South', 'West'], answer: 'South', difficulty: 'medium' , exp: 'Following standard clockwise/counter-clockwise turn rules from the compass, the resulting direction is South.' },
@@ -276,7 +277,7 @@ export const RA_LEVEL1_QUESTIONS = [
   { chapter: 'blood-relations-basic', prompt: 'My mother\'s husband is my ?', options: ['Uncle', 'Father', 'Grandfather'], answer: 'Father', difficulty: 'medium' , exp: 'Your mother\'s husband is your father.' },
 
   // ---------------- Chapter 10: Mirror Images (Basic) ----------------
-  { chapter: 'mirror-images-basic', prompt: 'In a mirror, the letter "b" looks like which letter?', options: ['d', 'p', 'q'], answer: 'd', difficulty: 'easy' , exp: 'A mirror flips left and right. The stroke in "b" is on the right — flipped, it moves to the left, which is exactly "d".' },
+  { chapter: 'mirror-images-basic', prompt: 'In a mirror, the letter "b" looks like which letter?', options: ['d', 'p', 'q'], answer: 'd', difficulty: 'easy' , exp: 'A mirror flips left and right. The stroke in "b" is on the left — flipped, it moves to the right, which is exactly "d".' },
   { chapter: 'mirror-images-basic', prompt: 'In a mirror, does "3:00" on a clock face appear reversed as which time position?', options: ['9:00 position', '3:00 position', '6:00 position'], answer: '9:00 position', difficulty: 'medium' , exp: 'A clock face is mirrored left-to-right. The 3:00 position (right side) moves to the left side, which is the 9:00 position.' },
   { chapter: 'mirror-images-basic', prompt: 'In a mirror, the word "MOM" appears as ?', options: ['MOM', 'WOW', 'MOW'], answer: 'MOM', difficulty: 'medium' , exp: 'M and O are both left-right symmetric letters, and MOM reads the same forwards and backwards — so it mirrors to itself: MOM.' },
   { chapter: 'mirror-images-basic', prompt: 'In a mirror, your left hand appears as your ?', options: ['Right hand', 'Left hand', 'Both hands'], answer: 'Right hand', difficulty: 'easy' , exp: 'In a mirror, left and right are swapped — your left hand appears where your right hand would be.' },
@@ -296,7 +297,7 @@ export const RA_LEVEL1_QUESTIONS = [
   { chapter: 'mirror-images-basic', prompt: 'In a mirror, the word "WOW" appears as ?', options: ['WOW', 'MOM', 'WOO'], answer: 'WOW', difficulty: 'medium' , exp: 'W and O are both left-right symmetric letters, and WOW reads the same forwards and backwards — so it mirrors to itself: WOW.' },
   { chapter: 'mirror-images-basic', prompt: 'In a mirror, the 12:00 position on a clock face appears as which position?', options: ['6:00 position', '12:00 position', '3:00 position'], answer: '12:00 position', difficulty: 'medium' , exp: 'The 12:00 position sits directly on the vertical mirror axis (straight up), so it is unaffected by a left-right flip -- it stays at 12:00.' },
   { chapter: 'mirror-images-basic', prompt: 'Which letter looks the same in a mirror: X, K, or Q?', options: ['K', 'Q', 'X'], answer: 'X', difficulty: 'medium' , exp: 'X is vertically symmetric — its left and right halves mirror each other exactly. K and Q are not symmetric this way.' },
-  { chapter: 'mirror-images-basic', prompt: 'In a mirror, the letter "d" looks like which letter?', options: ['b', 'p', 'q'], answer: 'b', difficulty: 'medium' , exp: 'A mirror flips left and right. The stroke in "d" is on the left — flipped, it moves to the right, which is exactly "b".' },
+  { chapter: 'mirror-images-basic', prompt: 'In a mirror, the letter "d" looks like which letter?', options: ['b', 'p', 'q'], answer: 'b', difficulty: 'medium' , exp: 'A mirror flips left and right. The stroke in "d" is on the right — flipped, it moves to the left, which is exactly "b".' },
   { chapter: 'mirror-images-basic', prompt: 'In a mirror, the word "AHA" appears as ?', options: ['HAHA', 'AHA', 'AHAH'], answer: 'AHA', difficulty: 'medium' , exp: 'A and H are both left-right symmetric letters, and AHA reads the same forwards and backwards — so it mirrors to itself: AHA.' },
   { chapter: 'mirror-images-basic', prompt: 'Which of these words looks the same forward and in a mirror: MOM, DOG, CAT?', options: ['DOG', 'CAT', 'MOM'], answer: 'MOM', difficulty: 'medium' , exp: 'M and O are both symmetric, and MOM is a palindrome — so it mirrors to itself. DOG and CAT contain asymmetric letters and are not palindromes.' },
   { chapter: 'mirror-images-basic', prompt: 'In a mirror, your right foot appears as your ?', options: ['Left foot', 'Right foot', 'Both feet'], answer: 'Left foot', difficulty: 'medium' , exp: 'In a mirror, left and right are swapped — your right foot appears where your left foot would be.' },
@@ -308,6 +309,17 @@ export const RA_LEVEL1_QUESTIONS = [
 
 // Extra 20 questions per chapter, generated and checked in raAptitudeExtra.js.
 RA_LEVEL1_QUESTIONS.push(...RA_EXTRA_L1_QUESTIONS);
+// Hindi for the odd-one-out chapter (answers keep their English key).
+RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizeOddOneOut(q); });
+RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizeNumberSeries(q); });
+RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizeAnalogy(q); });
+RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizeRankingFull(q); });
+RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizeDirection(q); });
+RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizeCoding(q); });
+RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizeBlood(q); });
+RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizeCalendar(q); });
+RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizeMirror(q); });
+RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizePattern(q); });
 
 export function getQuestionsByChapter(chapterId) {
   const qs = RA_LEVEL1_QUESTIONS.filter((q) => q.chapter === chapterId);
