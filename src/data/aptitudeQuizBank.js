@@ -17,6 +17,7 @@
 // what-comes-next) and still sit approved-but-unused in pending_questions.
 
 import { APTITUDE_PREK_EXTRA_QUESTIONS } from './aptitudePrekExtra.js';
+import { tagDifficulty } from '../lib/difficulty.js';
 import { APT_LOCALIZERS } from './aptHindi.js';
 import { APTITUDE_EXTRA_QUESTIONS } from './aptitudeExtra.js';
 
@@ -393,6 +394,9 @@ for (const q of [...APTITUDE_EXTRA_QUESTIONS, ...APTITUDE_PREK_EXTRA_QUESTIONS])
 
 // Hindi for the non Pre-K chapters (answers keep the English key).
 APT_LOCALIZERS.forEach((fn) => APTITUDE_QUESTIONS.forEach((q, i) => { APTITUDE_QUESTIONS[i] = fn(q); }));
+
+// Pre-K is on hold, so its chapters keep no difficulty tag for now.
+tagDifficulty(APTITUDE_QUESTIONS, ['match-the-picture', 'what-doesnt-belong', 'count-the-objects', 'big-or-small', 'what-comes-next']);
 
 export function getAptitudeQuestionsByChapter(chapterId) {
   return APTITUDE_QUESTIONS.filter((q) => q.chapter === chapterId);

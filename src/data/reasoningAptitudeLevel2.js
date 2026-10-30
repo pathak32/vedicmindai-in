@@ -4,6 +4,7 @@
 // Unlocked once the user passes ALL Level 1 chapters (≥ 60% each).
 
 import { RA_EXTRA_L2_QUESTIONS } from './raAptitudeExtra.js';
+import { tagDifficulty } from '../lib/difficulty.js';
 import { RA_L2_LOCALIZERS } from './raL2Hindi.js';
 
 export const RA_LEVEL2_QUESTIONS = [
@@ -312,6 +313,8 @@ export const RA_LEVEL2_QUESTIONS = [
 // Extra 20 questions per chapter, generated and checked in raAptitudeExtra.js.
 RA_LEVEL2_QUESTIONS.push(...RA_EXTRA_L2_QUESTIONS);
 RA_L2_LOCALIZERS.forEach((fn) => RA_LEVEL2_QUESTIONS.forEach((q, i) => { RA_LEVEL2_QUESTIONS[i] = fn(q); }));
+
+tagDifficulty(RA_LEVEL2_QUESTIONS);
 
 export function getLevel2QuestionsByChapter(chapterId) {
   const qs = RA_LEVEL2_QUESTIONS.filter((q) => q.chapter === chapterId);
