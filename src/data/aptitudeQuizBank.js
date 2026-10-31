@@ -19,6 +19,7 @@
 import { APTITUDE_PREK_EXTRA_QUESTIONS } from './aptitudePrekExtra.js';
 import { tagDifficulty } from '../lib/difficulty.js';
 import { APT_LOCALIZERS } from './aptHindi.js';
+import { applyAptDifficulty } from './aptDifficulty.js';
 import { APTITUDE_EXTRA_QUESTIONS } from './aptitudeExtra.js';
 
 export const APTITUDE_QUESTIONS = [
@@ -397,6 +398,7 @@ APT_LOCALIZERS.forEach((fn) => APTITUDE_QUESTIONS.forEach((q, i) => { APTITUDE_Q
 
 // Pre-K is on hold, so its chapters keep no difficulty tag for now.
 tagDifficulty(APTITUDE_QUESTIONS, ['match-the-picture', 'what-doesnt-belong', 'count-the-objects', 'big-or-small', 'what-comes-next']);
+applyAptDifficulty(APTITUDE_QUESTIONS);
 
 export function getAptitudeQuestionsByChapter(chapterId) {
   return APTITUDE_QUESTIONS.filter((q) => q.chapter === chapterId);
