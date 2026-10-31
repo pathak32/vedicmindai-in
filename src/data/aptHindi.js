@@ -1,4 +1,6 @@
-// Hindi for the Aptitude question bank (non Pre-K chapters). Answers keep their English key.
+import { localizePrek } from './aptPrekHindi.js';
+
+// Hindi for the Aptitude question bank (Pre-K lives in aptPrekHindi.js). Answers keep their English key.
 // Vocabulary questions keep the English word and add a Hindi gloss, so the learner still practises the English word.
 
 const bi = (q, hi, exp, optMap) => ({
@@ -782,4 +784,4 @@ export function localizeDataSufficiency(q) {
   return bi(q, hi, exp, dsOpt);
 }
 
-export const APT_LOCALIZERS = [localizeWordMeanings, localizeShapePatterns, localizeReasoningConnect, localizePercentage, localizeSpeedMaths, localizeVerbalClassification, localizeNumberPuzzles, localizeCubeNets, localizeRotatingShapes, localizeDataInterpretation, localizeAdvancedDI, localize3dSpatial, localizeReasoningConnectSecondary, localizeVerbalReasoning, localizeCriticalReasoning, localizeDataSufficiency];
+export const APT_LOCALIZERS = [localizeWordMeanings, localizeShapePatterns, localizeReasoningConnect, localizePercentage, localizeSpeedMaths, localizeVerbalClassification, localizeNumberPuzzles, localizeCubeNets, localizeRotatingShapes, localizeDataInterpretation, localizeAdvancedDI, localize3dSpatial, localizeReasoningConnectSecondary, localizeVerbalReasoning, localizeCriticalReasoning, localizeDataSufficiency, localizePrek];
