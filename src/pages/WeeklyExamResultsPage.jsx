@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
-import { getClassGroupLabel, formatMMSS } from '@/lib/weeklyExamEngine';
+import { getClassGroupLabel, formatMMSS, seededShuffle, getSeedFromWeekAndGroup, POINTS_CORRECT, POINTS_FAST, FAST_SECONDS } from '@/lib/weeklyExamEngine';
 import { QUESTION_BANKS } from '@/lib/weeklyQuestionBanks';
+import { tx, optLabel } from '@/lib/bilingual';
 import { useLanguage } from '@/lib/LanguageContext';
 import { awardPoints, POINTS } from '@/lib/knowledgePoints';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
@@ -33,10 +34,11 @@ function useCountUp(target, duration = 1200) {
 }
 
 function QuestionRow({ q, ans, index }) {
+  const { language } = useLanguage();
   const [expanded, setExpanded] = useState(false);
   const LABELS = ['A', 'B', 'C', 'D'];
   const isCorrect = ans?.correct;
-  const pts = isCorrect ? (ans.timeTaken < 30 ? 6 : 5) : 0;
+  const pts = isCorrect ? (ans.timeTaken < FAST_SECONDS ? POINTS_CORRECT + POINTS_FAST : POINTS_CORRECT) : 0;
 
   return (
     <div style={{
@@ -60,7 +62,7 @@ function QuestionRow({ q, ans, index }) {
         <span style={{
           fontFamily: 'var(--font-body)', fontSize: 13, color: '#0A1628',
           flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-        }}>{q.q}</span>
+        }}>{tx(q.q, language)}</span>
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: '#4B5563', flexShrink: 0 }}>
           +{pts}pts · {ans ? ans.timeTaken + 's' : '—'}
         </span>
@@ -68,7 +70,7 @@ function QuestionRow({ q, ans, index }) {
 
       {expanded && (
         <div style={{ padding: '0 14px 14px' }}>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#0A1628', marginBottom: 10 }}>{q.q}</p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#0A1628', marginBottom: 10, whiteSpace: 'pre-line' }}>{tx(q.q, language)}</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 10 }}>
             {q.options.map((opt, i) => {
               let bg = 'transparent'; let border = '1px solid rgba(30,64,175,0.12)'; let color = '#4B5563';
@@ -79,14 +81,14 @@ function QuestionRow({ q, ans, index }) {
               return (
                 <div key={i} style={{ background: bg, border, borderRadius: 8, padding: '8px 12px', display: 'flex', gap: 8, alignItems: 'center' }}>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color, fontWeight: 700 }}>{LABELS[i]}.</span>
-                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color }}>{opt}</span>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color }}>{optLabel(opt, language)}</span>
                 </div>
               );
             })}
           </div>
           {q.hint && (
             <div style={{ background: '#F0F4FF', borderRadius: 8, padding: '8px 12px' }}>
-              <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>💡 {q.hint}</span>
+              <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563' }}>💡 {tx(q.hint, language)}</span>
             </div>
           )}
         </div>
@@ -107,6 +109,16 @@ export default function WeeklyExamResultsPage() {
 
   const animatedScore = useCountUp(result?.score || 0, 1200);
 
+  // Award Knowledge Points for weekly exam (fire-and-forget)
+  useEffect(() => {
+    if (!user?.id || !result) return;
+    const correct = (result.answers || []).filter(a => a?.correct).length;
+    const wrong = (result.answers || []).filter(a => a?.correct === false).length;
+    const netAnswerPts = correct * POINTS.QUESTION_CORRECT + wrong * POINTS.QUESTION_WRONG;
+    awardPoints(user.id, netAnswerPts, 'weekly_exam', result.weekId || result.date);
+    awardPoints(user.id, POINTS.WEEKLY_EXAM_COMPLETE, 'weekly_exam_complete', result.weekId || result.date);
+  }, [user?.id]);
+
   if (!result) {
     return (
       <div style={{ minHeight: '100vh', background: '#F0F4FF' }}>
@@ -123,16 +135,9 @@ export default function WeeklyExamResultsPage() {
 
   const { score, totalPossible, timeTaken, classGroup, answers = [], weekId } = result;
 
-  // Award Knowledge Points for weekly exam (fire-and-forget)
-  useEffect(() => {
-    if (!user?.id || !result) return;
-    const correct = (result.answers || []).filter(a => a?.correct).length;
-    const wrong = (result.answers || []).filter(a => a?.correct === false).length;
-    const netAnswerPts = correct * POINTS.QUESTION_CORRECT + wrong * POINTS.QUESTION_WRONG;
-    awardPoints(user.id, netAnswerPts, 'weekly_exam', result.weekId || result.date);
-    awardPoints(user.id, POINTS.WEEKLY_EXAM_COMPLETE, 'weekly_exam_complete', result.weekId || result.date);
-  }, [user?.id]);
-  const questions = QUESTION_BANKS[classGroup] || QUESTION_BANKS.middle;
+  // The exact questions the student sat. Older results did not store them, so rebuild the old shuffled order.
+  const questions = result.questions
+    || seededShuffle(QUESTION_BANKS[classGroup] || QUESTION_BANKS.middle, getSeedFromWeekAndGroup(weekId, classGroup));
   const correctCount = answers.filter(a => a?.correct).length;
   const accuracy = answers.length > 0 ? Math.round((correctCount / answers.length) * 100) : 0;
   const xpEarned = Math.floor(score / 2);
@@ -146,7 +151,7 @@ export default function WeeklyExamResultsPage() {
   else { perfMsg = 'Keep going! 🧮 Every attempt builds skill.'; perfColor = '#EF4444'; }
 
   const whatsappMsg = encodeURIComponent(
-    `I scored ${score}/120 on VedicMind's Weekly Vedic Maths Exam this Sunday! 🧮🏆\nGroup: ${groupLabel}\nCan you beat my score? Challenge accepted?\nTry FREE at vedicmindai.in`
+    `I scored ${score}/${totalPossible} on VedicMind's Weekly Exam this Sunday! 🧮🏆\nGroup: ${groupLabel}\nCan you beat my score? Challenge accepted?\nTry FREE at vedicmindai.in`
   );
 
   const visibleCount = showAll ? questions.length : 5;
@@ -180,7 +185,7 @@ export default function WeeklyExamResultsPage() {
         {/* Stats Row */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 16 }}>
           {[
-            { icon: '✅', value: `${correctCount}/20`, label: 'Correct' },
+            { icon: '✅', value: `${correctCount}/${questions.length}`, label: 'Correct' },
             { icon: '🎯', value: `${accuracy}%`, label: 'Accuracy' },
             { icon: '⭐', value: `+${xpEarned}`, label: 'XP Earned' },
           ].map(({ icon, value, label }) => (
@@ -219,7 +224,7 @@ export default function WeeklyExamResultsPage() {
         {/* Share Card */}
         <div style={{ background: '#0A1628', borderRadius: 16, padding: 20, marginBottom: 16, textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'white', margin: '0 0 4px', fontWeight: 600 }}>
-            I scored {score}/120 on VedicMind's Weekly Exam! 🧮
+            I scored {score}/{totalPossible} on VedicMind's Weekly Exam! 🧮
           </p>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.7)', margin: '0 0 16px' }}>
             Group: {groupLabel} · Can you beat me? Try at vedicmindai.in

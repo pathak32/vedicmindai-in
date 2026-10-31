@@ -5,13 +5,14 @@ import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import {
   getWeekId, getWeeklyExamStatus, getDaysUntilSunday,
   getSecondsUntilSunday10AM, getSecondsUntil10AM,
-  formatCountdown, formatMMSS, seededShuffle,
-  getSeedFromWeekAndGroup, getThisWeekResult,
+  formatCountdown, formatMMSS, getThisWeekResult,
   saveExamResult, getClassGroup, getClassGroupLabel, getGradeForGroup,
+  buildWeeklyExam, scoreExam, loadAttempt, saveAttempt, clearAttempt,
+  EXAM_QUESTION_COUNT, EXAM_TIME_SECONDS, EXAM_SECONDS_PER_Q, EXAM_MAX_SCORE,
 } from '@/lib/weeklyExamEngine';
+import { tx, optLabel } from '@/lib/bilingual';
 import { getSupabase } from '@/lib/supabaseClient';
 import { saveUserProgress } from '@/lib/supabaseDataService';
-import { QUESTION_BANKS } from '@/lib/weeklyQuestionBanks';
 import { useLanguage } from '@/lib/LanguageContext';
 
 const glass = {
@@ -144,7 +145,7 @@ function UpcomingState({
 
           {/* Info Pills */}
           <div style={{ display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 24 }}>
-            {['📝 20 Questions', '⏱ 45 Minutes',
+            {['📝 30 Questions', '⏱ 60 Minutes',
               isWaiting ? '🔴 Today' : `🎯 ${getClassGroupLabel(classGroup)}`
             ].map(p => (
               <span key={p} style={{
@@ -281,103 +282,86 @@ function CompletedState({ result, classGroup }) {
 
 // ─── Exam Interface (Live State) ──────────────────────────────────────────────
 
-function ExamInterface({ classGroup }) {
-  const { t } = useLanguage();
+const TYPE_TINT = {
+  vedic: { background: '#EFF6FF', color: '#1D4ED8' },
+  reasoning: { background: '#F5F3FF', color: '#6D28D9' },
+  aptitude: { background: '#FFF7ED', color: '#C2410C' },
+};
+
+// testMode (admin only, /weekly-exam?test=1) runs the exam any day and saves nothing.
+function ExamInterface({ classGroup, testMode = false }) {
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
-  const { user, loading } = useVedicAuth();
-  const weekId = getWeekId();
-  const seed = getSeedFromWeekAndGroup(weekId, classGroup);
-  const questions = seededShuffle(QUESTION_BANKS[classGroup] || QUESTION_BANKS.middle, seed);
+  const weekId = testMode ? `test-${getWeekId()}` : getWeekId();
 
-  const TOTAL_TIME = 45 * 60; // 45 min in seconds
-  const PER_Q_TIME = 135;     // visual only
-
+  const [questions, setQuestions] = useState(null);
+  const [loadError, setLoadError] = useState(false);
   const [current, setCurrent] = useState(0);
-  const [answers, setAnswers] = useState(Array(20).fill(null));
-  const [selected, setSelected] = useState(null);
-  const [revealed, setRevealed] = useState(false);
-  const [globalTime, setGlobalTime] = useState(TOTAL_TIME);
-  const [perQTime, setPerQTime] = useState(PER_Q_TIME);
-  const [questionStartTime, setQuestionStartTime] = useState(Date.now());
+  const [answers, setAnswers] = useState(Array(EXAM_QUESTION_COUNT).fill(null));
+  const [globalTime, setGlobalTime] = useState(EXAM_TIME_SECONDS);
+  const [perQTime, setPerQTime] = useState(EXAM_SECONDS_PER_Q);
   const [showSubmitModal, setShowSubmitModal] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const globalTimerRef = useRef(null);
-  const perQTimerRef = useRef(null);
 
-  // Global timer
+  // The timer and the submit handler run long after the first render, so they read these refs.
+  const questionsRef = useRef(null);
+  const answersRef = useRef(answers);
+  const startedAtRef = useRef(Date.now());
+  const questionShownAtRef = useRef(Date.now());
+  const submittedRef = useRef(false);
+
+  // Start the exam, or resume the one already started this week (answers and clock survive a refresh).
   useEffect(() => {
-    globalTimerRef.current = setInterval(() => {
-      setGlobalTime(prev => {
-        if (prev <= 1) { clearInterval(globalTimerRef.current); handleSubmit(true); return 0; }
-        return prev - 1;
-      });
-    }, 1000);
-    return () => clearInterval(globalTimerRef.current);
+    let cancelled = false;
+    (async () => {
+      try {
+        const saved = loadAttempt(weekId, classGroup);
+        const qs = saved?.questions || await buildWeeklyExam(classGroup, weekId);
+        if (cancelled) return;
+        if (saved) {
+          startedAtRef.current = saved.startedAt;
+          answersRef.current = saved.answers;
+          setAnswers(saved.answers);
+          const firstOpen = saved.answers.findIndex(a => a === null);
+          setCurrent(firstOpen === -1 ? qs.length - 1 : firstOpen);
+        } else {
+          startedAtRef.current = Date.now();
+          saveAttempt({ weekId, classGroup, startedAt: startedAtRef.current, questions: qs, answers: answersRef.current });
+        }
+        questionsRef.current = qs;
+        setQuestions(qs);
+      } catch (e) {
+        console.error('Weekly exam load failed:', e);
+        if (!cancelled) setLoadError(true);
+      }
+    })();
+    return () => { cancelled = true; };
   }, []);
 
-  // Per-question timer (visual only)
-  useEffect(() => {
-    setPerQTime(PER_Q_TIME);
-    setQuestionStartTime(Date.now());
-    perQTimerRef.current = setInterval(() => {
-      setPerQTime(prev => Math.max(0, prev - 1));
-    }, 1000);
-    return () => clearInterval(perQTimerRef.current);
-  }, [current]);
-
-  // Restore selected answer when navigating back
-  useEffect(() => {
-    setSelected(answers[current]);
-    setRevealed(answers[current] !== null);
-  }, [current]);
-
-  const handleSelect = (idx) => {
-    if (revealed) return;
-    const timeTaken = Math.floor((Date.now() - questionStartTime) / 1000);
-    const newAnswers = [...answers];
-    newAnswers[current] = { selectedOption: idx, timeTaken };
-    setAnswers(newAnswers);
-    setSelected(idx);
-    setRevealed(true);
-
-    // Auto-advance after 1.2s
-    setTimeout(() => {
-      if (current < 19) {
-        setCurrent(c => c + 1);
-        setSelected(null);
-        setRevealed(false);
-      }
-    }, 1200);
-  };
-
-  const handleSubmit = (auto = false) => {
-    if (submitted) return;
-    setSubmitted(true);
-    clearInterval(globalTimerRef.current);
-
-    // Calculate score
-    let score = 0;
-    const answerDetails = answers.map((ans, i) => {
-      if (!ans) return { questionIndex: i, selectedOption: null, correct: false, timeTaken: 0 };
-      const isCorrect = ans.selectedOption === questions[i].correct;
-      let pts = isCorrect ? 5 : 0;
-      if (isCorrect && ans.timeTaken < 30) pts += 1;
-      score += pts;
-      return { questionIndex: i, selectedOption: ans.selectedOption, correct: isCorrect, timeTaken: ans.timeTaken };
-    });
-
+  const handleSubmit = () => {
+    if (submittedRef.current || !questionsRef.current) return;
+    submittedRef.current = true;
+    const qs = questionsRef.current;
+    const { score, details } = scoreExam(qs, answersRef.current);
+    if (testMode) {
+      clearAttempt();
+      window.alert(`Test exam finished: ${score} / ${EXAM_MAX_SCORE}. Nothing was saved.`);
+      navigate('/weekly-exam');
+      return;
+    }
     const result = {
       weekId,
       classGroup,
       score,
-      totalPossible: 120,
-      timeTaken: TOTAL_TIME - globalTime,
-      answers: answerDetails,
+      totalPossible: EXAM_MAX_SCORE,
+      timeTaken: Math.min(EXAM_TIME_SECONDS, Math.round((Date.now() - startedAtRef.current) / 1000)),
+      answers: details,
+      questions: qs,
       completedAt: new Date().toISOString(),
       rank: null,
     };
 
     saveExamResult(result);
+    clearAttempt();
 
     // Also save to Supabase
     (async () => {
@@ -387,26 +371,85 @@ function ExamInterface({ classGroup }) {
         if (session?.user?.id) {
           const weekStart = new Date();
           weekStart.setDate(weekStart.getDate() - weekStart.getDay());
-          await supabase.from('weekly_exam_results').upsert({
+          const weekStartStr = weekStart.getFullYear() + '-' + String(weekStart.getMonth() + 1).padStart(2, '0') + '-' + String(weekStart.getDate()).padStart(2, '0');
+          const payload = {
             user_id: session.user.id,
-            week_start: weekStart.toISOString().split('T')[0],
-            score: result.score || 0,
-            total_possible: result.total || 100,
-            answers: result.answers || [],
-          }, { onConflict: 'user_id,week_start' });
+            week_start: weekStartStr,
+            score: result.score,
+            total_possible: result.totalPossible,
+            answers: result.answers,
+          };
+          // Select-then-write works whether or not the table has a unique key on (user_id, week_start).
+          const { data: existing } = await supabase.from('weekly_exam_results').select('id')
+            .eq('user_id', session.user.id).eq('week_start', weekStartStr).maybeSingle();
+          const { error } = existing
+            ? await supabase.from('weekly_exam_results').update(payload).eq('id', existing.id)
+            : await supabase.from('weekly_exam_results').insert(payload);
+          if (error) console.warn('Weekly exam Supabase save failed:', error);
         }
-      } catch(e) { console.warn('Weekly exam Supabase save failed:', e); }
+      } catch (e) { console.warn('Weekly exam Supabase save failed:', e); }
     })();
 
     navigate('/weekly-exam/results');
   };
 
+  // The clock counts down to a fixed end time; at zero the answers given so far are submitted.
+  useEffect(() => {
+    if (!questions) return undefined;
+    const tick = () => {
+      const left = Math.max(0, EXAM_TIME_SECONDS - Math.floor((Date.now() - startedAtRef.current) / 1000));
+      setGlobalTime(left);
+      if (left <= 0) handleSubmit();
+    };
+    tick();
+    const timer = setInterval(tick, 1000);
+    return () => clearInterval(timer);
+  }, [questions]);
+
+  // Per-question timer (visual only)
+  useEffect(() => {
+    setPerQTime(EXAM_SECONDS_PER_Q);
+    questionShownAtRef.current = Date.now();
+    const timer = setInterval(() => setPerQTime(prev => Math.max(0, prev - 1)), 1000);
+    return () => clearInterval(timer);
+  }, [current]);
+
+  const handleSelect = (idx) => {
+    if (answersRef.current[current]) return; // locked once answered
+    const timeTaken = Math.floor((Date.now() - questionShownAtRef.current) / 1000);
+    const newAnswers = [...answersRef.current];
+    newAnswers[current] = { selectedOption: idx, timeTaken };
+    answersRef.current = newAnswers;
+    setAnswers(newAnswers);
+    saveAttempt({ weekId, classGroup, startedAt: startedAtRef.current, questions: questionsRef.current, answers: newAnswers });
+
+    // Move on shortly after answering. Right or wrong is not shown until the exam is submitted.
+    const from = current;
+    setTimeout(() => {
+      setCurrent(c => (c === from && c < EXAM_QUESTION_COUNT - 1 ? c + 1 : c));
+    }, 500);
+  };
+
+  if (loadError) {
+    return (
+      <div style={{ minHeight: '100vh', background: '#F0F4FF', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24, textAlign: 'center' }}>
+        <div>
+          <p style={{ fontFamily: 'var(--font-body)', color: '#4B5563', marginBottom: 16 }}>The exam could not be loaded. Please refresh.</p>
+          <button onClick={() => window.location.reload()} style={{ padding: '10px 24px', background: '#0A1628', color: 'white', border: 'none', borderRadius: 12, cursor: 'pointer' }}>Refresh</button>
+        </div>
+      </div>
+    );
+  }
+  if (!questions) return <div style={{ minHeight: '100vh', background: '#F0F4FF' }} />;
+
+  const last = questions.length - 1;
   const answeredCount = answers.filter(a => a !== null).length;
   const q = questions[current];
   const timerColor = globalTime <= 60 ? '#EF4444' : globalTime <= 300 ? '#F59E0B' : '#0A1628';
-  const perQPct = (perQTime / PER_Q_TIME) * 100;
+  const perQPct = (perQTime / EXAM_SECONDS_PER_Q) * 100;
   const perQColor = perQTime < 10 ? '#EF4444' : perQTime < 30 ? '#F59E0B' : '#3B82F6';
   const LABELS = ['A', 'B', 'C', 'D'];
+  const chosen = answers[current]?.selectedOption;
 
   return (
     <div style={{ minHeight: '100vh', background: '#F0F4FF', paddingBottom: 80 }}>
@@ -422,7 +465,7 @@ function ExamInterface({ classGroup }) {
           {t('weeklyExam')}
         </span>
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#4B5563' }}>
-          Q{current + 1} / 20
+          Q{current + 1} / {questions.length}
         </span>
         <span style={{
           fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: timerColor,
@@ -436,7 +479,7 @@ function ExamInterface({ classGroup }) {
       <div style={{ height: 4, background: '#E5E7EB' }}>
         <div style={{
           height: '100%', background: '#3B82F6',
-          width: `${(answeredCount / 20) * 100}%`,
+          width: `${(answeredCount / questions.length) * 100}%`,
           transition: 'width 0.3s ease',
         }} />
       </div>
@@ -452,10 +495,10 @@ function ExamInterface({ classGroup }) {
               borderRadius: 6, padding: '3px 8px',
             }}>Q{current + 1}</span>
             <span style={{
-              background: '#EFF6FF', color: '#1D4ED8',
+              ...(TYPE_TINT[q.type] || TYPE_TINT.vedic),
               fontFamily: 'var(--font-body)', fontSize: 10,
               borderRadius: 99, padding: '2px 10px', flex: 1, textAlign: 'center',
-            }}>{q.topic}</span>
+            }}>{tx(q.topic, language)}</span>
             <span style={{
               fontFamily: 'var(--font-body)', fontSize: 10, borderRadius: 99, padding: '2px 10px',
               ...(q.difficulty === 'easy'
@@ -476,64 +519,49 @@ function ExamInterface({ classGroup }) {
           </div>
 
           {/* Question text */}
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, fontWeight: 500, color: '#0A1628', lineHeight: 1.6, margin: '0 0 16px' }}>
-            {q.q}
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, fontWeight: 500, color: '#0A1628', lineHeight: 1.6, margin: '0 0 16px', whiteSpace: 'pre-line' }}>
+            {tx(q.q, language)}
           </p>
 
           {/* Options */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {q.options.map((opt, i) => {
-              let border = '1.5px solid rgba(30,64,175,0.12)';
-              let bg = 'white';
-              let labelBg = '#F0F4FF';
-              let labelColor = '#0A1628';
-
-              if (revealed) {
-                if (i === q.correct) {
-                  border = '2px solid #10B981'; bg = '#ECFDF5'; labelBg = '#10B981'; labelColor = 'white';
-                } else if (i === (selected?.selectedOption ?? selected) && i !== q.correct) {
-                  border = '2px solid #EF4444'; bg = '#FEF2F2'; labelBg = '#EF4444'; labelColor = 'white';
-                }
-              } else if (answers[current]?.selectedOption === i) {
-                border = '2px solid #0A1628'; bg = '#F0F4FF'; labelBg = '#0A1628'; labelColor = 'white';
-              }
-
-              const isSelectedNow = !revealed && answers[current]?.selectedOption === i;
-
+              const picked = chosen === i;
               return (
                 <button
                   key={i}
                   onClick={() => handleSelect(i)}
                   style={{
-                    border, borderRadius: 12, padding: '14px 16px',
-                    background: bg, minHeight: 52,
+                    border: picked ? '2px solid #0A1628' : '1.5px solid rgba(30,64,175,0.12)',
+                    borderRadius: 12, padding: '14px 16px',
+                    background: picked ? '#F0F4FF' : 'white', minHeight: 52,
                     display: 'flex', alignItems: 'center', gap: 12,
-                    cursor: revealed ? 'default' : 'pointer',
+                    cursor: answers[current] ? 'default' : 'pointer',
                     transition: 'all 0.15s ease',
                     textAlign: 'left', width: '100%',
                   }}
                 >
                   <span style={{
                     width: 28, height: 28, borderRadius: '50%',
-                    background: labelBg, color: labelColor,
+                    background: picked ? '#0A1628' : '#F0F4FF', color: picked ? 'white' : '#0A1628',
                     fontFamily: 'var(--font-mono)', fontSize: 12,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     flexShrink: 0, transition: 'all 0.15s',
                   }}>{LABELS[i]}</span>
-                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#0A1628' }}>{opt}</span>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#0A1628' }}>{optLabel(opt, language)}</span>
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* Bottom Nav — Desktop */}
+        {/* Bottom Nav */}
         <div style={{
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
           marginTop: 16, gap: 16,
         }}>
           <button
-            onClick={() => { setCurrent(c => Math.max(0, c - 1)); setRevealed(false); }}
+            onClick={() => setCurrent(c => Math.max(0, c - 1))}
             disabled={current === 0}
             style={{
               height: 44, minWidth: 80, background: 'transparent',
@@ -545,8 +573,8 @@ function ExamInterface({ classGroup }) {
 
           {/* Dots */}
           <div style={{ display: 'flex', gap: 5, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-            {Array(20).fill(0).map((_, i) => (
-              <div key={i} onClick={() => { setCurrent(i); setRevealed(false); }}
+            {questions.map((_, i) => (
+              <div key={i} onClick={() => setCurrent(i)}
                 style={{
                   width: i === current ? 10 : 8,
                   height: i === current ? 10 : 8,
@@ -558,14 +586,19 @@ function ExamInterface({ classGroup }) {
           </div>
 
           <button
-            onClick={() => current === 19 ? setShowSubmitModal(true) : setCurrent(c => c + 1)}
+            onClick={() => current === last ? setShowSubmitModal(true) : setCurrent(c => c + 1)}
             style={{
               height: 44, minWidth: 80, background: '#0A1628', color: 'white',
               border: 'none', borderRadius: 12,
               fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 500, cursor: 'pointer',
             }}
           >
-            {current === 19 ? 'Submit Exam' : 'Next →'}
+            {current === last ? 'Submit Exam' : 'Next →'}
+          </button>
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 12 }}>
+          <button onClick={() => setShowSubmitModal(true)} style={{ background: 'none', border: 'none', color: '#3B82F6', fontFamily: 'var(--font-body)', fontSize: 13, cursor: 'pointer' }}>
+            Submit exam
           </button>
         </div>
       </div>
@@ -582,14 +615,14 @@ function ExamInterface({ classGroup }) {
               Submit Your Exam?
             </h2>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginBottom: 4 }}>
-              Answered: {answeredCount} / 20 questions
+              Answered: {answeredCount} / {questions.length} questions
             </p>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginBottom: answeredCount < 20 ? 8 : 16 }}>
-              Unanswered: {20 - answeredCount} questions
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#4B5563', marginBottom: answeredCount < questions.length ? 8 : 16 }}>
+              Unanswered: {questions.length - answeredCount} questions
             </p>
-            {answeredCount < 20 && (
+            {answeredCount < questions.length && (
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#F59E0B', marginBottom: 16 }}>
-                ⚠️ {20 - answeredCount} questions will be marked wrong
+                ⚠️ {questions.length - answeredCount} questions will be marked wrong
               </p>
             )}
             <button
@@ -638,6 +671,8 @@ export default function WeeklyExamPage() {
   const progress = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
   const weeklyHistory = progress.weeklyExamHistory || [];
 
+  const adminTest = new URLSearchParams(window.location.search).get('test') === '1' && user?.app_metadata?.role === 'admin';
+  if (adminTest) return <ExamInterface classGroup={classGroup} testMode />;
   if (status === 'live') return <ExamInterface classGroup={classGroup} />;
   if (status === 'completed') {
     const result = getThisWeekResult();

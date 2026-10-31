@@ -341,21 +341,21 @@ export const dailyMaxScore = (questionCount) => questionCount * DAILY_POINTS_PER
 
 // Aptitude chapters that suit each grade band. Visual chapters (cube nets, rotating
 // shapes, 3D) and Pre-K are left out because the daily quiz shows plain text only.
-const APT_CHAPTERS = {
+export const APT_CHAPTERS = {
   JUNIOR: ['word-meanings', 'number-puzzles', 'speed-maths-connect'],
   MIDDLE: ['verbal-classification', 'percentage-puzzles', 'reasoning-connect'],
   SENIOR: ['data-interpretation', 'verbal-reasoning', 'reasoning-connect-secondary'],
   HIGHER: ['critical-reasoning', 'data-sufficiency', 'advanced-data-interpretation'],
 };
-const ALL_APT_CHAPTERS = Object.values(APT_CHAPTERS).flat();
+export const ALL_APT_CHAPTERS = Object.values(APT_CHAPTERS).flat();
 
-function hashString(s) {
+export function hashString(s) {
   let h = 2166136261;
   for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
   return h >>> 0;
 }
 
-function mulberry(seed) {
+export function mulberry(seed) {
   let a = seed >>> 0;
   return () => {
     a = (a + 0x6d2b79f5) >>> 0;
@@ -366,7 +366,7 @@ function mulberry(seed) {
   };
 }
 
-function shuffled(arr, rand) {
+export function shuffled(arr, rand) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(rand() * (i + 1));
@@ -375,11 +375,11 @@ function shuffled(arr, rand) {
   return a;
 }
 
-const isTextOnly = (q) => !q.display_image && !q.sequence_images
+export const isTextOnly = (q) => !q.display_image && !q.sequence_images
   && Array.isArray(q.options) && q.options.every((o) => typeof o === 'string' || !o.image);
 
 // One question from each of `count` different chapters (repeating chapters only if there are fewer).
-function pickAcrossChapters(pool, count, rand) {
+export function pickAcrossChapters(pool, count, rand) {
   const byChapter = new Map();
   pool.forEach((q) => { if (!byChapter.has(q.chapter)) byChapter.set(q.chapter, []); byChapter.get(q.chapter).push(q); });
   const chapters = shuffled([...byChapter.keys()], rand);
