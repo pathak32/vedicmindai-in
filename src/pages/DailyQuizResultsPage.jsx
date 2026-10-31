@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { getTodayString } from '@/lib/dailyQuizEngine';
 import { useLanguage } from '@/lib/LanguageContext';
+import { tx } from '@/lib/bilingual';
 
 // ─── Countdown to midnight ────────────────────────────────────────────────────
 
@@ -91,6 +92,7 @@ function ScoreRing({ pct, animatedScore, maxScore }) {
 // ─── Question Row ─────────────────────────────────────────────────────────────
 
 function QuestionRow({ index, answer, question, expanded, onToggle }) {
+  const { language } = useLanguage();
   const correct = answer?.correct;
   const timeS = answer?.timeMs != null ? (answer.timeMs / 1000).toFixed(1) : '—';
   const pts = answer?.pts || 0;
@@ -127,7 +129,7 @@ function QuestionRow({ index, answer, question, expanded, onToggle }) {
           display: '-webkit-box', WebkitLineClamp: expanded ? 'none' : 1,
           WebkitBoxOrient: 'vertical',
         }}>
-          {question?.question || (correct ? 'Correct' : timedOut ? 'Timed out' : 'Wrong')}
+          {tx(question?.question, language) || (correct ? 'Correct' : timedOut ? 'Timed out' : 'Wrong')}
         </span>
 
         {/* Time */}
@@ -171,7 +173,7 @@ function QuestionRow({ index, answer, question, expanded, onToggle }) {
                   {question.sutra}
                 </span>
               )}
-              <p style={{ margin: 0 }}>💡 {question.explanation}</p>
+              <p style={{ margin: 0 }}>💡 {tx(question.explanation, language)}</p>
             </div>
           </motion.div>
         )}
@@ -182,9 +184,9 @@ function QuestionRow({ index, answer, question, expanded, onToggle }) {
 
 // ─── Share Modal ──────────────────────────────────────────────────────────────
 
-function ShareModal({ score, onClose }) {
+function ShareModal({ score, maxScore = 110, onClose }) {
   const [copied, setCopied] = useState(false);
-  const shareText = `I scored ${score}/110 on VedicMind's Daily Quiz today! 🧮⚡ Can you beat me?\n👉 Join FREE: https://vedicmindai.in\n#VedicMind #VedicMaths #MentalMath`;
+  const shareText = `I scored ${score}/${maxScore} on VedicMind's Daily Quiz today! 🧮⚡ Can you beat me?\n👉 Join FREE: https://vedicmindai.in\n#VedicMind #VedicMaths #MentalMath`;
   const encodedText = encodeURIComponent(shareText);
 
   const handleCopy = () => {
@@ -306,7 +308,8 @@ function DailyQuizResultsPageInner() {
   const maxScore = result?.maxScore || 110;
   const answers = Array.isArray(result?.answers) ? result.answers : [];
   const correctCount = answers.filter(a => a.correct).length;
-  const allCorrect = correctCount === 5;
+  const questionCount = answers.length || 5;
+  const allCorrect = answers.length > 0 && correctCount === answers.length;
   const pct = Math.round((score / maxScore) * 100);
 
   const animatedScore = useCountUp(score, 1200);
@@ -439,7 +442,7 @@ function DailyQuizResultsPageInner() {
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <div>
                 <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 2 }}>Correct</div>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: '#10B981' }}>{correctCount}/5</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: '#10B981' }}>{correctCount}/{questionCount}</span>
               </div>
               <div>
                 <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 2 }}>{t('accuracy')}</div>
@@ -505,7 +508,7 @@ function DailyQuizResultsPageInner() {
           </div>
 
           {/* Rows */}
-          {answers.slice(0, 5).map((answer, i) => (
+          {answers.map((answer, i) => (
             <QuestionRow
               key={i}
               index={i}
@@ -553,7 +556,7 @@ function DailyQuizResultsPageInner() {
 
         {/* Share Modal */}
         {showShareModal && (
-          <ShareModal score={score} onClose={() => setShowShareModal(false)} />
+          <ShareModal score={score} maxScore={maxScore} onClose={() => setShowShareModal(false)} />
         )}
 
       </div>

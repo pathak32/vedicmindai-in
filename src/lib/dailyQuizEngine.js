@@ -330,6 +330,112 @@ export function getDailyQuestions(grade) {
   });
 }
 
+// ─── Daily mix: 5 Vedic Maths (from the API) + 3 Reasoning + 2 Aptitude ───────
+
+export const DAILY_REASONING_COUNT = 3;
+export const DAILY_APTITUDE_COUNT = 2;
+// Per correct answer the quiz awards up to 20 points, plus 10 if all are right.
+export const DAILY_POINTS_PER_Q = 20;
+export const DAILY_PERFECT_BONUS = 10;
+export const dailyMaxScore = (questionCount) => questionCount * DAILY_POINTS_PER_Q + DAILY_PERFECT_BONUS;
+
+// Aptitude chapters that suit each grade band. Visual chapters (cube nets, rotating
+// shapes, 3D) and Pre-K are left out because the daily quiz shows plain text only.
+const APT_CHAPTERS = {
+  JUNIOR: ['word-meanings', 'number-puzzles', 'speed-maths-connect'],
+  MIDDLE: ['verbal-classification', 'percentage-puzzles', 'reasoning-connect'],
+  SENIOR: ['data-interpretation', 'verbal-reasoning', 'reasoning-connect-secondary'],
+  HIGHER: ['critical-reasoning', 'data-sufficiency', 'advanced-data-interpretation'],
+};
+const ALL_APT_CHAPTERS = Object.values(APT_CHAPTERS).flat();
+
+function hashString(s) {
+  let h = 2166136261;
+  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+
+function mulberry(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function shuffled(arr, rand) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const isTextOnly = (q) => !q.display_image && !q.sequence_images
+  && Array.isArray(q.options) && q.options.every((o) => typeof o === 'string' || !o.image);
+
+// One question from each of `count` different chapters (repeating chapters only if there are fewer).
+function pickAcrossChapters(pool, count, rand) {
+  const byChapter = new Map();
+  pool.forEach((q) => { if (!byChapter.has(q.chapter)) byChapter.set(q.chapter, []); byChapter.get(q.chapter).push(q); });
+  const chapters = shuffled([...byChapter.keys()], rand);
+  const out = [];
+  for (let i = 0; out.length < count && chapters.length && i < count * 3; i++) {
+    const list = byChapter.get(chapters[i % chapters.length]);
+    const q = list[Math.floor(rand() * list.length)];
+    if (!out.includes(q)) out.push(q);
+  }
+  return out;
+}
+
+function toQuizQuestion(q, type, rand, n) {
+  const keyOf = (o) => (typeof o === 'string' ? o : (o.en ?? o.label));
+  const opts = shuffled(q.options, rand);
+  return {
+    id: `${type[0]}${n}`,
+    type,
+    question: q.prompt,
+    options: opts,
+    correctIndex: opts.findIndex((o) => keyOf(o) === q.answer),
+    explanation: q.exp || null,
+    sutra: null,
+    topic: q.chapter,
+  };
+}
+
+// The Reasoning and Aptitude part of today's quiz. Same user and day give the same picks.
+export async function getDailyExtraQuestions(grade, userId) {
+  const rand = mulberry(hashString(`${getTodayString()}|${userId || ''}`));
+  const band = grade ? getGradeBand(grade) : null;
+  const [l1, l2, apt] = await Promise.all([
+    import('../data/reasoningAptitudeLevel1.js'),
+    import('../data/reasoningAptitudeLevel2.js'),
+    import('../data/aptitudeQuizBank.js'),
+  ]);
+
+  const raAll = band === 'JUNIOR' ? l1.RA_LEVEL1_QUESTIONS
+    : band === 'SENIOR' || band === 'HIGHER' ? l2.RA_LEVEL2_QUESTIONS
+    : [...l1.RA_LEVEL1_QUESTIONS, ...l2.RA_LEVEL2_QUESTIONS];
+  const aptChapters = new Set(band ? APT_CHAPTERS[band] : ALL_APT_CHAPTERS);
+
+  const ra = pickAcrossChapters(raAll.filter(isTextOnly), DAILY_REASONING_COUNT, rand);
+  const ap = pickAcrossChapters(apt.APTITUDE_QUESTIONS.filter((q) => aptChapters.has(q.chapter) && isTextOnly(q)), DAILY_APTITUDE_COUNT, rand);
+  return [
+    ...ra.map((q, i) => toQuizQuestion(q, 'reasoning', rand, i + 1)),
+    ...ap.map((q, i) => toQuizQuestion(q, 'aptitude', rand, i + 1)),
+  ].filter((q) => q.correctIndex >= 0);
+}
+
+// Mixes the Vedic questions with the extras so the topics are interleaved, in a fixed order per user and day.
+export function mixDailyQuestions(vedic, extras, userId) {
+  const rand = mulberry(hashString(`mix|${getTodayString()}|${userId || ''}`));
+  return shuffled([...vedic.map((q) => ({ ...q, type: 'vedic' })), ...extras], rand);
+}
+
 export function getDailyQuizStatus(progress) {
   const hour = new Date().getHours();
   if (hour < 8) return 'waiting';

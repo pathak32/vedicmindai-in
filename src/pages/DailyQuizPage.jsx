@@ -5,7 +5,12 @@ import {
   getDailyQuizStatus,
   getTodayString,
   getTodayQuizResult,
+  getDailyExtraQuestions,
+  mixDailyQuestions,
+  dailyMaxScore,
+  DAILY_PERFECT_BONUS,
 } from '@/lib/dailyQuizEngine';
+import { tx, optLabel } from '@/lib/bilingual';
 import { saveDailyQuizResult, saveUserProgress } from '@/lib/supabaseDataService';
 import { awardPoints, recalculateMonthlyStatus, POINTS } from '@/lib/knowledgePoints';
 import { getSupabase } from '@/lib/supabaseClient';
@@ -169,7 +174,14 @@ function CountdownIntro({ onDone }) {
 
 // ─── Quiz Screen ──────────────────────────────────────────────────────────────
 
+const TYPE_LABEL = {
+  vedic: { en: 'Vedic Maths', hi: 'वैदिक गणित' },
+  reasoning: { en: 'Reasoning', hi: 'तर्क' },
+  aptitude: { en: 'Aptitude', hi: 'अभिक्षमता' },
+};
+
 function QuizScreen({ questions, onComplete }) {
+  const { language } = useLanguage();
   const [qIndex, setQIndex] = useState(0);
   const [fraction, setFraction] = useState(1); // 1 = full, 0 = empty
   const [answered, setAnswered] = useState(false);
@@ -253,7 +265,7 @@ function QuizScreen({ questions, onComplete }) {
       const allAnswers = answersRef.current;
       const score = allAnswers.reduce((s, a) => s + (a.pts || 0), 0);
       const allCorrect = allAnswers.every(a => a.correct);
-      const finalScore = score + (allCorrect ? 10 : 0);
+      const finalScore = score + (allCorrect ? DAILY_PERFECT_BONUS : 0);
       onComplete(allAnswers, finalScore);
     } else {
       setQIndex(i => i + 1);
@@ -316,17 +328,17 @@ function QuizScreen({ questions, onComplete }) {
             style={{ flex: 1 }}
           >
             {/* Sutra badge */}
-            {q.sutra && (
+            {(q.sutra || TYPE_LABEL[q.type]) && (
               <div style={{ marginBottom: 12 }}>
                 <span style={{ background: 'rgba(59,130,246,0.2)', border: '1px solid rgba(59,130,246,0.4)', color: '#93C5FD', borderRadius: 100, padding: '4px 14px', fontFamily: 'var(--font-body)', fontSize: 12 }}>
-                  {q.sutra}
+                  {q.sutra || tx(TYPE_LABEL[q.type], language)}
                 </span>
               </div>
             )}
 
             {/* Question text */}
-            <p className="font-heading" style={{ fontSize: 'clamp(18px,4vw,22px)', fontWeight: 700, color: 'white', lineHeight: 1.45, marginBottom: 28 }}>
-              {q.question}
+            <p className="font-heading" style={{ fontSize: 'clamp(18px,4vw,22px)', fontWeight: 700, color: 'white', lineHeight: 1.45, marginBottom: 28, whiteSpace: 'pre-line' }}>
+              {tx(q.question, language)}
             </p>
 
             {/* Options */}
@@ -335,7 +347,7 @@ function QuizScreen({ questions, onComplete }) {
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'rgba(255,255,255,0.4)', minWidth: 18 }}>
                   {LETTERS[idx]}
                 </span>
-                <span style={{ flex: 1 }}>{opt}</span>
+                <span style={{ flex: 1 }}>{optLabel(opt, language)}</span>
                 {answered && idx === q.correctIndex && <span style={{ color: '#10B981', fontSize: 18 }}>✓</span>}
                 {answered && idx === selected && idx !== q.correctIndex && <span style={{ color: '#EF4444', fontSize: 18 }}>✗</span>}
               </button>
@@ -351,7 +363,7 @@ function QuizScreen({ questions, onComplete }) {
               <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
                 style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 10, padding: '12px 16px', marginTop: 12 }}>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.75)', margin: 0, lineHeight: 1.6 }}>
-                  💡 {q.explanation}
+                  💡 {tx(q.explanation, language)}
                 </p>
               </motion.div>
             )}
@@ -428,7 +440,8 @@ function saveQuizResult(answers, totalScore, questions) {
   progress.dailyQuizHistory.push({
     date: today,
     score: totalScore,
-    maxScore: 110,
+    maxScore: dailyMaxScore((questions || []).length),
+    totalPossible: dailyMaxScore((questions || []).length),
     answers: answers,
     questions: questionsById,
     completedAt: Date.now(),
@@ -458,7 +471,7 @@ function saveQuizResult(answers, totalScore, questions) {
       const { data: { session } } = await supabase.auth.getSession();
       if (session?.user?.id) {
         await saveDailyQuizResult(session.user.id, {
-          score: totalScore, totalPossible: 110, answers: answers, timeTaken: 0,
+          score: totalScore, totalPossible: dailyMaxScore((questions || []).length), answers: answers, timeTaken: 0,
         });
         await saveUserProgress(session.user.id, progress);
         awardPoints(session.user.id, POINTS.DAILY_QUIZ_COMPLETE, 'daily_quiz', new Date().toISOString().slice(0, 10))
@@ -518,7 +531,15 @@ function DailyQuizPageInner() {
         const res = await fetch(`/api/get-daily-quiz?user_id=${user.id}`);
         if (!res.ok) throw new Error('Failed to load quiz questions');
         const data = await res.json();
-        setQuestions(data.questions || []);
+        const vedic = data.questions || [];
+        let all = vedic;
+        try {
+          const extras = await getDailyExtraQuestions(user.user_metadata?.grade, user.id);
+          all = mixDailyQuestions(vedic, extras, user.id);
+        } catch (e) {
+          console.warn('Daily quiz: Reasoning/Aptitude questions unavailable, using Vedic Maths only:', e);
+        }
+        setQuestions(all);
         setScreen('countdown');
       } catch (e) {
         console.error('Daily quiz load failed:', e);

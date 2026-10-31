@@ -1,6 +1,7 @@
 // Vercel Serverless Function — Daily Quiz question selector
-// Picks 5 questions for the logged-in user from quiz_questions,
-// based on their completed lessons (from the 'progress' table).
+// Picks the 5 Vedic Maths questions of the Daily Quiz for the logged-in user from
+// quiz_questions, one per lesson, from their completed lessons (the 'progress' table).
+// The page adds 3 Reasoning and 2 Aptitude questions to make the 10 (see dailyQuizEngine.js).
 //
 // SETUP REQUIRED before this works:
 // Vercel -> Settings -> Environment Variables -> add:
@@ -120,29 +121,63 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Failed to load questions', details: poolError.message });
     }
 
-    if (!candidatePool || candidatePool.length === 0) {
+    let pool = candidatePool || [];
+
+    // A learner with fewer than 5 lessons done would otherwise get every question
+    // from one or two lessons. Fill the gap with the next lessons in order.
+    const lessonIdsIn = (rows) => [...new Set(rows.map(q => q.lesson_id))];
+    if (lessonIdsIn(pool).length < DAILY_QUIZ_QUESTION_COUNT) {
+      const { data: extraPool, error: extraError } = await supabase
+        .from('quiz_questions')
+        .select('*')
+        .not('lesson_id', 'in', `(${completedLessons.join(',')})`)
+        .in('quiz_type', ['daily', 'both'])
+        .eq('status', 'approved')
+        .order('lesson_id', { ascending: true })
+        .limit(400);
+      if (!extraError && extraPool?.length) {
+        const wanted = lessonIdsIn(extraPool).slice(0, DAILY_QUIZ_QUESTION_COUNT - lessonIdsIn(pool).length);
+        pool = pool.concat(extraPool.filter(q => wanted.includes(q.lesson_id)));
+      }
+    }
+
+    if (pool.length === 0) {
       return res.status(404).json({ error: 'No approved questions available for this user yet' });
     }
 
-    // 4. Pick questions per difficulty bucket, falling back to whatever
-    //    is available if a bucket is short (graceful degradation).
-    const byDifficulty = { easy: [], medium: [], hard: [] };
-    for (const q of candidatePool) {
-      if (byDifficulty[q.difficulty]) byDifficulty[q.difficulty].push(q);
+    // 4. One question per lesson so the quiz covers different topics: shuffle the
+    //    lessons, give each of the 5 slots its own lesson and its target difficulty,
+    //    and take the least-used question of that difficulty (any difficulty if none).
+    const byLesson = new Map();
+    for (const q of pool) {
+      if (!byLesson.has(q.lesson_id)) byLesson.set(q.lesson_id, []);
+      byLesson.get(q.lesson_id).push(q);
     }
+    const lessonOrder = [...byLesson.keys()];
+    for (let i = lessonOrder.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [lessonOrder[i], lessonOrder[j]] = [lessonOrder[j], lessonOrder[i]];
+    }
+    const slotDifficulties = [
+      ...Array(counts.easy).fill('easy'),
+      ...Array(counts.medium).fill('medium'),
+      ...Array(counts.hard).fill('hard'),
+    ];
 
     let selected = [];
-    selected = selected.concat(weightedPick(byDifficulty.easy, counts.easy));
-    selected = selected.concat(weightedPick(byDifficulty.medium, counts.medium));
-    selected = selected.concat(weightedPick(byDifficulty.hard, counts.hard));
+    const pickedIds = new Set();
+    for (let slot = 0; slot < DAILY_QUIZ_QUESTION_COUNT; slot++) {
+      // Lessons repeat only when fewer than 5 lessons have questions.
+      const lessonQs = byLesson.get(lessonOrder[slot % lessonOrder.length]).filter(q => !pickedIds.has(q.id));
+      const sameDifficulty = lessonQs.filter(q => q.difficulty === slotDifficulties[slot]);
+      const [q] = weightedPick(sameDifficulty.length ? sameDifficulty : lessonQs, 1);
+      if (q) { selected.push(q); pickedIds.add(q.id); }
+    }
 
-    // If we still don't have enough (small lesson pool), top up from
-    // whatever remains in the full candidate pool, excluding picks made.
+    // If a lesson ran dry, top up from whatever remains in the pool.
     if (selected.length < DAILY_QUIZ_QUESTION_COUNT) {
-      const pickedIds = new Set(selected.map(q => q.id));
-      const leftover = candidatePool.filter(q => !pickedIds.has(q.id));
-      const topUp = weightedPick(leftover, DAILY_QUIZ_QUESTION_COUNT - selected.length);
-      selected = selected.concat(topUp);
+      const leftover = pool.filter(q => !pickedIds.has(q.id));
+      selected = selected.concat(weightedPick(leftover, DAILY_QUIZ_QUESTION_COUNT - selected.length));
     }
 
     // Shuffle final order so difficulty isn't always in the same sequence

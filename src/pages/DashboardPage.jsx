@@ -313,7 +313,7 @@ function DailyQuizCard() {
                 {todayEntry.score ?? 0}
               </span>
               <span style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#9CA3AF', marginLeft: 4 }}>
-                / {todayEntry.totalPossible ?? 110}
+                / {todayEntry.totalPossible ?? todayEntry.maxScore ?? 110}
               </span>
             </div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#4B5563', marginBottom: todayEntry.rank ? 8 : 12 }}>
