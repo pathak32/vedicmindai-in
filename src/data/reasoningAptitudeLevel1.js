@@ -6,6 +6,7 @@
 
 import { RA_EXTRA_L1_QUESTIONS } from './raAptitudeExtra.js';
 import { tagDifficulty } from '../lib/difficulty.js';
+import { applyRaL1Difficulty } from './raDifficulty.js';
 import { localizeOddOneOut, localizeNumberSeries, localizeAnalogy, localizeRankingFull, localizeDirection, localizeCoding, localizeBlood, localizeCalendar, localizeMirror, localizePattern } from './raL1Hindi.js';
 
 export const RA_LEVEL1_QUESTIONS = [
@@ -323,6 +324,7 @@ RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizeMirror(
 RA_LEVEL1_QUESTIONS.forEach((q, i) => { RA_LEVEL1_QUESTIONS[i] = localizePattern(q); });
 
 tagDifficulty(RA_LEVEL1_QUESTIONS);
+applyRaL1Difficulty(RA_LEVEL1_QUESTIONS);
 
 export function getQuestionsByChapter(chapterId) {
   const qs = RA_LEVEL1_QUESTIONS.filter((q) => q.chapter === chapterId);

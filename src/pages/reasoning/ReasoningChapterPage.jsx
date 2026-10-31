@@ -6,9 +6,10 @@ import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
 import ReasoningSidebar from '@/components/learn/ReasoningSidebar';
 import { useLanguage } from '@/lib/LanguageContext';
 import { tx, optKey, optLabel } from '@/lib/bilingual';
-import { getQuestionsByChapter } from '@/data/reasoningAptitudeLevel1';
+import { getQuestionsByChapter, RA_LEVEL1_QUESTIONS } from '@/data/reasoningAptitudeLevel1';
+import { buildAptitudeLessons, getLessonBests, saveLessonResult } from '@/lib/aptitudeLessons';
 import { RA_LEVEL1_CHAPTERS, getChapterContent } from '@/data/reasoningAptitudeLevel1Content';
-import { getLevel2QuestionsByChapter } from '@/data/reasoningAptitudeLevel2';
+import { getLevel2QuestionsByChapter, RA_LEVEL2_QUESTIONS } from '@/data/reasoningAptitudeLevel2';
 import { RA_LEVEL2_CHAPTERS, getLevel2ChapterContent } from '@/data/reasoningAptitudeLevel2Content';
 import {
   StepBox, ExampleCard, SectionTitle, OriginBox, WhyItWorksBox, CommonMistakeBox, RealWorldBox,
@@ -63,12 +64,35 @@ export default function ReasoningChapterPage() {
   // question sitting at the current index could silently become a
   // different question between renders, which is exactly what testers
   // were seeing as repeats/skips mid-quiz.
+  // Chapters run as lessons of 10, easiest first. The pool is read in file order (not the
+  // shuffled getters) so each lesson holds the same questions on every visit.
+  const lessonsFor = (id, l2) => buildAptitudeLessons((l2 ? RA_LEVEL2_QUESTIONS : RA_LEVEL1_QUESTIONS).filter((x) => x.chapter === id)).lessons;
+  const initialLessons = lessonsFor(chapterId, isL2Chapter);
+  const [lessons, setLessons] = useState(initialLessons);
+  const [lessonIndex, setLessonIndex] = useState(0);
+  const [chapterScore, setChapterScore] = useState(null);
+  const [, setBestTick] = useState(0);
+  const useLessons = lessons.length > 0;
   const [questions, setQuestions] = useState(() =>
-    pickQuizQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId)).questions
+    initialLessons.length > 0
+      ? initialLessons[0]
+      : pickQuizQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId)).questions
   );
   useEffect(() => {
-    setQuestions(pickQuizQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId)).questions);
+    const built = lessonsFor(chapterId, isL2Chapter);
+    setLessons(built);
+    setLessonIndex(0);
+    setChapterScore(null);
+    setQuestions(built.length > 0
+      ? built[0]
+      : pickQuizQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId)).questions);
   }, [chapterId, isL2Chapter]);
+
+  const loadLesson = (idx) => {
+    setLessonIndex(idx);
+    setQuestions(lessons[idx]);
+    setQIndex(0); setSelected(null); setScore(0); setFinalScore(null);
+  };
 
   const chapterIndex = allChapters.findIndex((c) => c.id === chapterId);
   const nextChapter = allChapters[chapterIndex + 1];
@@ -116,12 +140,16 @@ export default function ReasoningChapterPage() {
     if (qIndex === questions.length - 1) {
       const pct = Math.round((newScore / questions.length) * 100);
       setFinalScore(pct);
+      // With lessons, the chapter score is the average of the best score in each lesson.
+      const chapterPct = useLessons ? saveLessonResult(chapterId, lessonIndex, pct, lessons.length) : pct;
+      setChapterScore(chapterPct);
+      setBestTick((n) => n + 1);
       const priorBest = getReasoningScores()[chapterId] ?? -1;
-      saveReasoningChapterResult(chapterId, pct);
+      saveReasoningChapterResult(chapterId, chapterPct);
       // Knowledge Points: same idempotent guard as the XP award below it —
       // only award on a genuinely new pass, never on a repeat attempt of an
       // already-passed chapter.
-      if (user?.id && pct >= REASONING_PASS_THRESHOLD && priorBest < REASONING_PASS_THRESHOLD) {
+      if (user?.id && chapterPct >= REASONING_PASS_THRESHOLD && priorBest < REASONING_PASS_THRESHOLD) {
         awardPoints(user.id, newScore * POINTS.QUESTION_CORRECT, 'reasoning_lesson_quiz', chapterId);
         awardPoints(user.id, (questions.length - newScore) * POINTS.QUESTION_WRONG, 'reasoning_lesson_quiz', chapterId);
         awardPoints(user.id, POINTS.LESSON_COMPLETE, 'reasoning_lesson_completion', chapterId)
@@ -140,6 +168,7 @@ export default function ReasoningChapterPage() {
     setQIndex(0);
     setScore(0);
     setFinalScore(null);
+    if (useLessons) { setQuestions(lessons[lessonIndex]); return; }
     setQuestions(pickQuizQuestions(isL2Chapter ? getLevel2QuestionsByChapter(chapterId) : getQuestionsByChapter(chapterId)).questions);
   };
 
@@ -249,6 +278,19 @@ export default function ReasoningChapterPage() {
                 </>
               )}
 
+              {tab === 'quiz' && useLessons && (
+                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 18 }}>
+                  {lessons.map((_, i) => {
+                    const best = getLessonBests(chapterId)[i];
+                    return (
+                      <button key={i} onClick={() => loadLesson(i)} style={{ padding: '7px 16px', borderRadius: 99, border: '1px solid #D1D5DB', cursor: 'pointer', fontWeight: 600, fontSize: 13, fontFamily: 'var(--font-body)', background: i === lessonIndex ? '#0A1628' : 'white', color: i === lessonIndex ? 'white' : '#374151' }}>
+                        {language === 'hi' ? `पाठ ${i + 1}` : `Lesson ${i + 1}`}{best !== undefined ? ` · ${best}%` : ''}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
               {tab === 'quiz' && q && (
                 <div>
                   <p style={{ fontSize: 13, color: '#6B7280', marginBottom: 8, fontFamily: 'var(--font-body)' }}>
@@ -304,7 +346,7 @@ export default function ReasoningChapterPage() {
                     <div style={{ marginTop: 20 }}>
                       {(() => {
                         const pct = finalScore;
-                        const passed = pct >= REASONING_PASS_THRESHOLD;
+                        const passed = (chapterScore ?? pct) >= REASONING_PASS_THRESHOLD;
                         // Re-read unlock status AFTER save — finalScore means save already happened
                         const nextNowUnlocked = nextChapter
                           ? isReasoningChapterUnlocked(nextChapter.id, sortedChapterIds)
@@ -327,8 +369,7 @@ export default function ReasoningChapterPage() {
                           {language === 'hi' ? 'दोबारा करें' : 'Retry Quiz'}
                         </button>
                         {nextChapter && (() => {
-                          const pct = finalScore;
-                          const passed = pct >= REASONING_PASS_THRESHOLD;
+                          const passed = (chapterScore ?? finalScore) >= REASONING_PASS_THRESHOLD;
                           const nextNowUnlocked = nextChapter
                             ? isReasoningChapterUnlocked(nextChapter.id, sortedChapterIds)
                             : false;
