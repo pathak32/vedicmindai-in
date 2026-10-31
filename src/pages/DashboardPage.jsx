@@ -18,6 +18,7 @@ import { generateLeaderboard, getUserEntry, getTopN, getUserPercentile } from '@
 import { useLanguage, translations } from '@/lib/LanguageContext';
 import { recalculateMonthlyStatus, pointsToNextTier } from '@/lib/knowledgePoints';
 import { TOTAL_VEDIC_LESSONS } from '@/components/learn/curriculumData';
+import { isLevelUnlocked } from '@/lib/levelUnlock';
 // ─── helpers ────────────────────────────────────────────────────────────────
 
 function greeting(auth, profile, t) {
@@ -864,7 +865,7 @@ function DashboardPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
             {LEVELS(t).map(lv => {
               const lvCompleted = completed.filter(id => id.startsWith(lv.prefix.slice(0, 2))).length;
-              const isLocked = lv.lockKey ? (scores[lv.lockKey] || 0) < 60 : false;
+              const isLocked = !isLevelUnlocked(lv.id, completed, scores);
               const isDone = lvCompleted >= lv.count;
               return (
                 <div key={lv.id} style={{

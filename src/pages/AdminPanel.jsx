@@ -20,6 +20,7 @@ import AdminDataRecovery from '@/components/admin/AdminDataRecovery';
 import AdminSchoolAnalytics from '@/components/admin/AdminSchoolAnalytics';
 import AdminAnnouncements from '@/components/admin/AdminAnnouncements';
 import AdminReferrals from '@/components/admin/AdminReferrals';
+import AdminPdfRequests from '@/components/admin/AdminPdfRequests';
 
 const TABS = [
   { id: 'live',      label: '🟢 Live Today' },
@@ -41,6 +42,7 @@ const TABS = [
   { id: 'school', label: '🏫 School Analytics' },
   { id: 'announcements', label: '📣 Announcements' },
   { id: 'referrals', label: '🎁 Referrals' },
+  { id: 'pdfrequests', label: '📄 PDF Requests' },
 ];
 
 // ─── Admin Dashboard ─────────────────────────────────────────────────────────
@@ -98,6 +100,7 @@ function AdminDashboard() {
           {activeTab === 'school' && <AdminSchoolAnalytics />}
           {activeTab === 'announcements' && <AdminAnnouncements />}
           {activeTab === 'referrals' && <AdminReferrals />}
+          {activeTab === 'pdfrequests' && <AdminPdfRequests />}
           </motion.div>
         </AnimatePresence>
       </main>

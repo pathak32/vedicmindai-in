@@ -7,6 +7,7 @@ import LearnPillarSwitcher from '@/components/learn/LearnPillarSwitcher';
 import LessonViewer from '@/components/learn/LessonViewer';
 import AITutorPanel from '@/components/learn/AITutorPanel';
 import { CURRICULUM } from '@/components/learn/curriculumData';
+import { isLevelUnlocked } from '@/lib/levelUnlock';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { saveUserProgress } from '@/lib/supabaseDataService';
 import { getSupabase } from '@/lib/supabaseClient';
@@ -34,14 +35,29 @@ export default function LearnPage() {
   // A ?lesson=<id> link (e.g. from "Continue Learning") wins over the saved position.
   const requestedLesson = new URLSearchParams(window.location.search).get('lesson');
   const savedCurrent = progress.currentLesson || 'l1_01';
-  const defaultLesson = allIds.includes(requestedLesson)
+  // A lesson in a locked level (previous level not fully completed and passed) cannot be opened by link,
+  // by "next lesson" or by a saved position. Those land on the first unfinished lesson of an open level.
+  const completedIds = progress.completedLessons || [];
+  const scoreMap = progress.lessonScores || {};
+  const canOpenLesson = (id) => {
+    if (progress.isReviewer) return true;
+    const lv = CURRICULUM.find(l => l.lessons.some(x => x.id === id));
+    return !lv || isLevelUnlocked(lv.level, completedIds, scoreMap);
+  };
+  const firstOpenLesson = () => {
+    const open = CURRICULUM.filter(lv => isLevelUnlocked(lv.level, completedIds, scoreMap)).flatMap(lv => lv.lessons.map(l => l.id));
+    return open.find(id => !completedIds.includes(id)) || open[open.length - 1] || 'l1_01';
+  };
+  const wanted = allIds.includes(requestedLesson)
     ? requestedLesson
     : allIds.includes(savedCurrent) ? savedCurrent : 'l1_01';
+  const defaultLesson = canOpenLesson(wanted) ? wanted : firstOpenLesson();
   const [activeLessonId, setActiveLessonId] = useState(defaultLesson);
 
   const activeLesson = CURRICULUM.flatMap(lv => lv.lessons).find(l => l.id === activeLessonId);
 
   const handleSelectLesson = (id) => {
+    if (!canOpenLesson(id)) return;
     setActiveLessonId(id);
     setSidebarOpen(false);
     window.scrollTo(0, 0);
@@ -95,7 +111,7 @@ export default function LearnPage() {
                 lesson={activeLesson}
                 progress={progress}
                 allLessonIds={allIds}
-                onNavigateToLesson={(id) => { setActiveLessonId(id); window.scrollTo(0, 0); }}
+                onNavigateToLesson={(id) => { if (!canOpenLesson(id)) return; setActiveLessonId(id); window.scrollTo(0, 0); }}
                 onLessonComplete={(lessonId, xp, score) => {
                   const p = JSON.parse(localStorage.getItem('vedicmind_progress') || '{}');
                   if (!p.lessonScores) p.lessonScores = {};

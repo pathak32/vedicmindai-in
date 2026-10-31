@@ -3,10 +3,13 @@ import { X, ChevronDown, ChevronRight } from 'lucide-react';
 import { CURRICULUM } from './curriculumData';
 import { isLessonAccessible } from '@/lib/trialEngine';
 import { isLessonFreeAccess, getUserPlan } from '@/lib/planEngine';
+import { getLevelUnlockProgress } from '@/lib/levelUnlock';
+import { hasDirectPdfAccess } from '@/lib/pdfAccess';
+import { useVedicAuth } from '@/lib/VedicAuthContext';
 
-function isLevelLocked(level, scores) {
-  if (!level.lockKey) return false;
-  return (scores?.[level.lockKey] || 0) < 60;
+// A level stays locked until every lesson of the previous level is completed and its assessment is passed.
+function isLevelLocked(level, completed, scores) {
+  return !getLevelUnlockProgress(level.level, completed, scores).unlocked;
 }
 
 function isLessonUnlocked(lessonId, completed, scores, isReviewer) {
@@ -21,7 +24,7 @@ function isLessonUnlocked(lessonId, completed, scores, isReviewer) {
   if (isReviewer) return true;
   // level lock check
   const level = CURRICULUM.find(lv => lv.lessons.some(l => l.id === lessonId));
-  if (level && isLevelLocked(level, scores)) return false;
+  if (level && isLevelLocked(level, completed, scores)) return false;
   // Free-PLAN users get l1_01-l1_05 unlocked by plan alone, bypassing the
   // sequential chain below — checked against getUserPlan() directly (not
   // isLessonFreeAccess alone) because that function returns true for every
@@ -39,6 +42,8 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
   const completed = progress.completedLessons || [];
   const scores = progress.lessonScores || {};
   const isReviewer = !!progress.isReviewer;
+  const { user } = useVedicAuth();
+  const pdfDirect = hasDirectPdfAccess(user);
   const [collapsed, setCollapsed] = useState({});
   const [lockedTooltip, setLockedTooltip] = useState(null); // lessonId of the tooltip to show
 
@@ -57,7 +62,8 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
 
       <div style={{ flex: 1, overflowY: 'auto' }}>
         {CURRICULUM.map((level) => {
-          const locked = isLevelLocked(level, scores);
+          const locked = !isReviewer && isLevelLocked(level, completed, scores);
+          const unlockInfo = getLevelUnlockProgress(level.level, completed, scores);
           const isOpen = !collapsed[level.level];
           const lvCompleted = completed.filter(id => id.startsWith(`l${level.level}_`)).length;
 
@@ -93,14 +99,15 @@ export default function LearnSidebar({ activeLessonId, onSelect, progress, onClo
                           onClick={() => window.open(`/learn/level/${level.level}/print?lang=${lang}`, '_blank')}
                           style={{ fontSize: 11, padding: '4px 10px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.2)', background: 'transparent', color: '#F5F3FF', cursor: 'pointer', fontFamily: 'var(--font-body)' }}
                         >
-                          ⬇ Level {level.level} {lang === 'hi' ? 'हिन्दी' : 'English'}
+                          {pdfDirect ? '⬇' : '🔒'} Level {level.level} {lang === 'hi' ? 'हिन्दी' : 'English'}
                         </button>
                       ))}
                     </div>
                   )}
                   {locked ? (
                     <div style={{ padding: '8px 12px', fontSize: 12, color: '#6B6590', fontFamily: 'var(--font-body)' }}>
-                      Complete Level {level.level - 1} to unlock
+                      Complete all {unlockInfo.lessonsTotal} Level {unlockInfo.previousLevel} lessons ({unlockInfo.lessonsDone}/{unlockInfo.lessonsTotal} done)
+                      {unlockInfo.assessmentPassed ? '' : ' and pass its assessment with 60% or more'} to unlock
                     </div>
                   ) : (
                     level.lessons.map((lesson) => {
