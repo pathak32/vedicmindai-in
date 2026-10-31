@@ -9,6 +9,7 @@ import { tx, optKey, optLabel } from '@/lib/bilingual';
 import { APTITUDE_CHAPTERS, getAptitudeChapterContent, getAptitudeChaptersByLevel } from '@/data/aptitudeContent';
 import { getAptitudeQuestionsByChapter } from '@/data/aptitudeQuizBank';
 import { pickQuizQuestions } from '@/lib/quizQuestionPicker';
+import { buildAptitudeLessons, getLessonBests, saveLessonResult } from '@/lib/aptitudeLessons';
 import { saveAptitudeChapterResult, isAptitudeChapterUnlocked, isAptitudeLevelUnlocked, getAptitudeScores, APTITUDE_PASS_THRESHOLD, reconcileAptitudeFromServer } from '@/lib/aptitudeProgress';
 import { useVedicAuth } from '@/lib/VedicAuthContext';
 import { isAptitudeChapterFreeAccess, getUserPlan } from '@/lib/planEngine';
@@ -101,10 +102,27 @@ export default function AptitudeChapterPage() {
   );
 
   const [questions, setQuestions] = useState([]);
+  const [lessons, setLessons] = useState([]);
+  const [lessonIndex, setLessonIndex] = useState(0);
+  const [, setBestTick] = useState(0);
+  const [chapterScore, setChapterScore] = useState(null);
+  const useLessons = !isPreK && lessons.length > 0;
+
+  // Non Pre-K chapters run as lessons of 10; Pre-K keeps its single capped quiz.
+  function loadLesson(all, idx) {
+    setLessonIndex(idx);
+    setQuestions(all[idx]);
+    setQIndex(0); setSelected(null); setScore(0); setFinalScore(null);
+  }
   useEffect(() => {
-    setQuestions(pickQuizQuestions(getAptitudeQuestionsByChapter(chapterId) || []).questions);
+    const pool = getAptitudeQuestionsByChapter(chapterId) || [];
+    const built = isPreK ? { lessons: [] } : buildAptitudeLessons(pool);
+    setLessons(built.lessons);
+    if (built.lessons.length > 0) setQuestions(built.lessons[0]);
+    else setQuestions(pickQuizQuestions(pool).questions);
+    setLessonIndex(0);
     setQIndex(0); setSelected(null); setScore(0); setTab('concept'); setFinalScore(null);
-  }, [chapterId]);
+  }, [chapterId, isPreK]);
 
   const q = questions[qIndex];
 
@@ -113,8 +131,11 @@ export default function AptitudeChapterPage() {
   useEffect(() => {
     if (questions.length > 0 && selected && qIndex === questions.length - 1) {
       const pct = Math.round((score / questions.length) * 100);
-      saveAptitudeChapterResult(chapterId, pct);
+      const chapterPct = useLessons ? saveLessonResult(chapterId, lessonIndex, pct, lessons.length) : pct;
+      saveAptitudeChapterResult(chapterId, chapterPct);
       setFinalScore(pct);
+      setChapterScore(chapterPct);
+      setBestTick((n) => n + 1);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected, qIndex, questions.length]);
@@ -129,6 +150,7 @@ export default function AptitudeChapterPage() {
     setQIndex((i) => i + 1);
   }
   function restartQuiz() {
+    if (useLessons) { loadLesson(lessons, lessonIndex); return; }
     setQuestions(pickQuizQuestions(getAptitudeQuestionsByChapter(chapterId) || []).questions);
     setSelected(null); setQIndex(0); setScore(0); setFinalScore(null);
   }
@@ -252,6 +274,19 @@ export default function AptitudeChapterPage() {
                 </>
               )}
 
+              {tab === 'quiz' && useLessons && (
+                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 18 }}>
+                  {lessons.map((_, i) => {
+                    const best = getLessonBests(chapterId)[i];
+                    return (
+                      <button key={i} onClick={() => loadLesson(lessons, i)} style={{ padding: '7px 16px', borderRadius: 99, border: '1px solid #D1D5DB', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: i === lessonIndex ? '#0A1628' : 'white', color: i === lessonIndex ? 'white' : '#374151' }}>
+                        {language === 'hi' ? `पाठ ${i + 1}` : `Lesson ${i + 1}`}{best !== undefined ? ` · ${best}%` : ''}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
               {tab === 'quiz' && q && (
                 <div>
                   <p style={{ fontSize: 13, color: '#6B7280', marginBottom: 8 }}>
@@ -294,7 +329,7 @@ export default function AptitudeChapterPage() {
                   {selected && qIndex === questions.length - 1 && finalScore !== null && (
                     <div style={{ marginTop: 20 }}>
                       {(() => {
-                        const passed = finalScore >= APTITUDE_PASS_THRESHOLD;
+                        const passed = (chapterScore ?? finalScore) >= APTITUDE_PASS_THRESHOLD;
                         return (
                           <>
                             <p style={{ fontWeight: 700, color: passed ? '#059669' : '#0A1628', marginBottom: 6 }}>
