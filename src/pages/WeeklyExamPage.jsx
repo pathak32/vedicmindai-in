@@ -290,7 +290,7 @@ const TYPE_TINT = {
 
 // testMode (admin only, /weekly-exam?test=1) runs the exam any day and saves nothing.
 function ExamInterface({ classGroup, testMode = false }) {
-  const { t, language } = useLanguage();
+  const { t, language, toggleLanguage } = useLanguage();
   const navigate = useNavigate();
   const weekId = testMode ? `test-${getWeekId()}` : getWeekId();
 
@@ -461,8 +461,18 @@ function ExamInterface({ classGroup, testMode = false }) {
         height: 56, display: 'flex', alignItems: 'center',
         justifyContent: 'space-between', padding: '0 16px',
       }}>
-        <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628' }}>
-          {t('weeklyExam')}
+        <span style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: '#0A1628' }}>
+            {t('weeklyExam')}
+          </span>
+          <button
+            onClick={toggleLanguage}
+            style={{
+              background: '#F0F4FF', border: '1px solid rgba(30,64,175,0.2)', borderRadius: 99,
+              padding: '3px 10px', fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 600,
+              color: '#0A1628', cursor: 'pointer',
+            }}
+          >{language === 'hi' ? 'EN' : 'हिंदी'}</button>
         </span>
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: '#4B5563' }}>
           Q{current + 1} / {questions.length}
