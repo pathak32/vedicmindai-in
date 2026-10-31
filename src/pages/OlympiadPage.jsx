@@ -189,6 +189,8 @@ function RulesModal({ onStart }) {
 // ─── Upcoming / Today Waiting State ──────────────────────────────────────────
 
 function UpcomingView({ level, onLevelChange, status }) {
+  const { user } = useVedicAuth();
+  const [remindState, setRemindState] = useState('idle');
   const next = getNextOlympiadDate();
   const days = getDaysUntil(next);
   const countdown = useCountdown(10);

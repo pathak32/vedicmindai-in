@@ -45,6 +45,7 @@ const TABS = [
 
 // ─── Admin Dashboard ─────────────────────────────────────────────────────────
 function AdminDashboard() {
+  const { signOut } = useVedicAuth();
   const [activeTab, setActiveTab] = useState('live');
 
   return (

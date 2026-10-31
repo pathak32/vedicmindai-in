@@ -74,6 +74,7 @@ function CircularTimer({ fraction, seconds }) {
 
 function WaitingScreen() {
   const navigate = useNavigate();
+  const { language } = useLanguage();
   const [countdown, setCountdown] = useState(timeUntil8AM());
   useEffect(() => {
     const iv = setInterval(() => setCountdown(timeUntil8AM()), 1000);
@@ -481,7 +482,7 @@ class QuizErrorBoundary extends React.Component {
         <div style={{ ...BG, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 16, padding: 40, textAlign: 'center' }}>
           <span style={{ fontSize: 48 }}>⚠️</span>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'white' }}>Something went wrong. Please refresh.</p>
-          <button onClick={() => window.location.reload()} style={{ minHeight: 48, padding: '0 32px', background: '#3B82F6', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>{t('refresh')}</button>
+          <button onClick={() => window.location.reload()} style={{ minHeight: 48, padding: '0 32px', background: '#3B82F6', color: 'white', border: 'none', borderRadius: 12, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>Refresh</button>
         </div>
       );
     }

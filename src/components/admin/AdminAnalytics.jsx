@@ -4,6 +4,8 @@ import { useLanguage } from '@/lib/LanguageContext';
 
 const card = { background:'rgba(255,255,255,0.9)', border:'1px solid rgba(30,64,175,0.1)', borderRadius:14, padding:20, boxShadow:'0 2px 12px rgba(0,0,0,0.05)', marginBottom:16 };
 
+const pctOf = (q) => (q.total_possible ? Math.min(100, Math.round(((q.score || 0) / q.total_possible) * 100)) : Math.min(100, q.score || 0));
+
 export default function AdminAnalytics() {
   const { t } = useLanguage();
   const [stats, setStats] = useState(null);
@@ -33,7 +35,6 @@ export default function AdminAnalytics() {
 
       const totalXP = users.reduce((a,u)=>a+(u.xp||0), 0);
       const completedLessons = progress.reduce((a,p)=>a+((p.completed_lessons||[]).length), 0);
-      const pctOf = (q) => (q.total_possible ? Math.min(100, Math.round(((q.score || 0) / q.total_possible) * 100)) : Math.min(100, q.score || 0));
       const avgScore = quiz.length > 0 ? Math.round(quiz.reduce((a,q)=>a+pctOf(q),0)/quiz.length) : 0;
 
       setStats({
