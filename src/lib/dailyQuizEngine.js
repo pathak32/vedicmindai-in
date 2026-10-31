@@ -378,6 +378,20 @@ export function shuffled(arr, rand) {
 export const isTextOnly = (q) => !q.display_image && !q.sequence_images
   && Array.isArray(q.options) && q.options.every((o) => typeof o === 'string' || !o.image);
 
+// A question's text in English, lower-cased, used to spot the same question in two banks.
+export const promptKey = (q) => String(typeof q.prompt === 'string' ? q.prompt : q.prompt?.en ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+
+// Drops questions whose text is already in `seen` or repeats inside the pool; picked keys are added to `seen` by the caller.
+export function uniqueByPrompt(pool, seen) {
+  const local = new Set();
+  return pool.filter((q) => {
+    const k = promptKey(q);
+    if (seen.has(k) || local.has(k)) return false;
+    local.add(k);
+    return true;
+  });
+}
+
 // One question from each of `count` different chapters (repeating chapters only if there are fewer).
 export function pickAcrossChapters(pool, count, rand) {
   const byChapter = new Map();
@@ -422,8 +436,10 @@ export async function getDailyExtraQuestions(grade, userId) {
     : [...l1.RA_LEVEL1_QUESTIONS, ...l2.RA_LEVEL2_QUESTIONS];
   const aptChapters = new Set(band ? APT_CHAPTERS[band] : ALL_APT_CHAPTERS);
 
-  const ra = pickAcrossChapters(raAll.filter(isTextOnly), DAILY_REASONING_COUNT, rand);
-  const ap = pickAcrossChapters(apt.APTITUDE_QUESTIONS.filter((q) => aptChapters.has(q.chapter) && isTextOnly(q)), DAILY_APTITUDE_COUNT, rand);
+  const seen = new Set();
+  const ra = pickAcrossChapters(uniqueByPrompt(raAll.filter(isTextOnly), seen), DAILY_REASONING_COUNT, rand);
+  ra.forEach((q) => seen.add(promptKey(q)));
+  const ap = pickAcrossChapters(uniqueByPrompt(apt.APTITUDE_QUESTIONS.filter((q) => aptChapters.has(q.chapter) && isTextOnly(q)), seen), DAILY_APTITUDE_COUNT, rand);
   return [
     ...ra.map((q, i) => toQuizQuestion(q, 'reasoning', rand, i + 1)),
     ...ap.map((q, i) => toQuizQuestion(q, 'aptitude', rand, i + 1)),

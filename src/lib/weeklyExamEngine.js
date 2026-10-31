@@ -164,7 +164,7 @@ function preferDifficulty(pool, allowed, needed) {
 export async function buildWeeklyExam(classGroup, weekId) {
   const group = VEDIC_LEVELS[classGroup] ? classGroup : 'middle';
   const engine = await import('./dailyQuizEngine.js');
-  const { hashString, mulberry, shuffled, isTextOnly, pickAcrossChapters, APT_CHAPTERS, ALL_APT_CHAPTERS } = engine;
+  const { hashString, mulberry, shuffled, isTextOnly, pickAcrossChapters, uniqueByPrompt, promptKey, APT_CHAPTERS, ALL_APT_CHAPTERS } = engine;
   const rand = mulberry(hashString(`${weekId}|${group}|weekly`));
 
   const [{ LESSON_QUESTIONS }, l1, l2, apt] = await Promise.all([
@@ -177,11 +177,13 @@ export async function buildWeeklyExam(classGroup, weekId) {
   // Vedic Maths: one question from each of 10 different lessons.
   const lessonIds = shuffled(Object.keys(LESSON_QUESTIONS).filter((id) => VEDIC_LEVELS[group].some((lv) => id.startsWith(`${lv}_`))), rand);
   const vedic = [];
+  const vedicKeys = new Set();
   for (let i = 0; vedic.length < EXAM_SECTION_SIZE && lessonIds.length && i < EXAM_SECTION_SIZE * 3; i++) {
     const id = lessonIds[i % lessonIds.length];
     const pool = preferDifficulty(LESSON_QUESTIONS[id], VEDIC_DIFFICULTY[group], 1);
     const q = pool[Math.floor(rand() * pool.length)];
-    if (q && !vedic.some((v) => v.q === q)) vedic.push({ ...q, lesson: id });
+    const key = q && String(q.q?.en ?? q.q).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    if (q && !vedicKeys.has(key)) { vedicKeys.add(key); vedic.push({ ...q, lesson: id }); }
   }
   const vedicOut = vedic.map((q, i) => ({
     id: `v${i + 1}`,
@@ -198,10 +200,13 @@ export async function buildWeeklyExam(classGroup, weekId) {
   const raBase = group === 'junior' ? l1.RA_LEVEL1_QUESTIONS
     : group === 'senior' || group === 'higher' ? l2.RA_LEVEL2_QUESTIONS
     : [...l1.RA_LEVEL1_QUESTIONS, ...l2.RA_LEVEL2_QUESTIONS];
-  const ra = pickAcrossChapters(preferDifficulty(raBase.filter(isTextOnly), VEDIC_DIFFICULTY[group], EXAM_SECTION_SIZE), EXAM_SECTION_SIZE, rand);
+  // No question appears twice in the exam, even when Reasoning and Aptitude hold the same one.
+  const seen = new Set();
+  const ra = pickAcrossChapters(preferDifficulty(uniqueByPrompt(raBase.filter(isTextOnly), seen), VEDIC_DIFFICULTY[group], EXAM_SECTION_SIZE), EXAM_SECTION_SIZE, rand);
+  ra.forEach((q) => seen.add(promptKey(q)));
   const aptChapters = new Set(BAND_OF_GROUP[group] ? APT_CHAPTERS[BAND_OF_GROUP[group]] : ALL_APT_CHAPTERS);
   const ap = pickAcrossChapters(
-    preferDifficulty(apt.APTITUDE_QUESTIONS.filter((q) => aptChapters.has(q.chapter) && isTextOnly(q)), VEDIC_DIFFICULTY[group], EXAM_SECTION_SIZE),
+    preferDifficulty(uniqueByPrompt(apt.APTITUDE_QUESTIONS.filter((q) => aptChapters.has(q.chapter) && isTextOnly(q)), seen), VEDIC_DIFFICULTY[group], EXAM_SECTION_SIZE),
     EXAM_SECTION_SIZE, rand,
   );
 
